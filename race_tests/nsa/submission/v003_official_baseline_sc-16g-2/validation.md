@@ -1,0 +1,1 @@
+The exact run_kernel entrypoint passed the 14 official cases in the project runner using `torch.allclose(atol=1e-2, rtol=1e-2)`. Timing settings were 7 warmups and 25 repeats per case. The source hash is in submission.sha256.

@@ -1,0 +1,17 @@
+{
+  "iteration": "v003_official_baseline_sc-16g-2",
+  "status": "baseline_complete",
+  "machine": "sc-16g-2 / MetaX C500 / 25% compute / 16000 MiB quota",
+  "branch": "nsa-dev",
+  "commit": "4b48deafe8e0af425f6048ddb6daa0d93cf1b746",
+  "cases": "race_tests/nsa/official_case.json (14)",
+  "source_hashes": "experiments/v003_official_baseline_sc-16g-2/source_sha256.txt",
+  "submission_hash": "462d505fe28efb0a0140feb1a1a4ca00df24b31d89f08beef2478c18685ca0b1",
+  "correctness": "14/14; torch.allclose(atol=1e-2, rtol=1e-2)",
+  "warmup": 7,
+  "repeat": 25,
+  "mean_latency_ms": 0.127957,
+  "min_latency_ms": 0.014479,
+  "max_latency_ms": 0.578970,
+  "metric": "arithmetic mean of per-case run_kernel CUDA-event latency"
+}
