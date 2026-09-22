@@ -1,0 +1,11 @@
+--- submission.py.v003
++++ submission.py.threads192
+@@ -33,7 +33,7 @@
+     assert dim <= 256, "The key dimension can not be larger than 256"
+ 
+     output_tiles = tilelang.cdiv(dim, tile_dim)
+-    threads = 64
++    threads = 192
+     stages = selected_blocks
+     block_tokens = block_size
+ 

@@ -1,0 +1,13 @@
+{
+  "iteration": "v004_threads_sweep_sc-16g-2",
+  "status": "failed",
+  "machine": "sc-16g-2 / MetaX C500 / 25% compute / 16000 MiB quota",
+  "parent": "v003_official_baseline_sc-16g-2",
+  "parameter": "threads",
+  "values": [64, 128, 192, 256],
+  "correctness": "64-thread control passed 14/14; candidate values failed compilation",
+  "benchmark_settings": {"warmup": 7, "repeat": 25},
+  "control_mean_latency_ms": 0.1205,
+  "candidate_latency": "unavailable: compilation failed before timing",
+  "failure": "FullRow GEMM lowering produced warp_cols=0 for threads >=128"
+}

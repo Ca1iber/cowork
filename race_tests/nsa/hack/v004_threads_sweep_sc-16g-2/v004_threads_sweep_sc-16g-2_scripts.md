@@ -1,0 +1,1 @@
+`run_thread_sweep.sh` generates each variant from the v003 baseline, changes only `threads`, invokes the shared 14-case submission test runner, records per-case CSV/log/exit code, alternates the sweep order on the second round, and restores the v003 root submission on exit. No fixed test/reference files are copied into this version directory.
