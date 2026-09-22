@@ -234,7 +234,7 @@ def _run_one_case(B, SEQ_LEN, H, HQ, D, S, block_size, is_causal, dtype=torch.fl
 
 def main():
     import json, pathlib, csv
-    json_path = pathlib.Path(__file__).parent / "test_cases_nsa_fwd.json"
+    json_path = pathlib.Path(__file__).parent / "official_case.json"
     csv_path = pathlib.Path(__file__).parent / "benchmark_results_nsa_fwd.csv"
     test_cases = json.load(open(json_path))
 
