@@ -1,3 +1,3 @@
-# Interrupted baseline command
+# Interrupted legacy baseline command
 
-The exact launch command is in `command.txt`. It ran the project-local 109-case test script and wrote the CSV beside the copied script. The user stopped it during compilation; preserved stdout and partial CSV are in `race_tests/nsa/rep/v002_baseline_sc-16g-2/benchmark/`.
+`command.txt` is the exact command that launched the old 109-case script. Partial results and logs are in `race_tests/nsa/rep/v002_baseline_sc-16g-2/benchmark/`. This attempt is archived as interrupted, not as the official baseline.
