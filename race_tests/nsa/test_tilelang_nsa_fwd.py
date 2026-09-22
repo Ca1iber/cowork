@@ -5,6 +5,7 @@
 # ruff: noqa
 import torch
 from reference import naive_nsa
+from submission import run_kernel
 import tilelang
 from tilelang import language as T
 import tilelang.testing
@@ -130,7 +131,7 @@ def native_sparse_attention(batch, heads, seq_len, dim, is_causal, scale=None, b
     return native_sparse_attention
 
 
-def _run_one_case(B, SEQ_LEN, H, HQ, D, S, block_size, is_causal, dtype=torch.float16, scale=0.1):
+def _run_one_case(B, SEQ_LEN, H, HQ, D, S, block_size, is_causal, dtype=torch.float16, scale=None):
     G = HQ // H
     # Estimate shared memory: Q_shared[G,BK] + K_shared[BS,BK] + V_shared[BS,BV]
     #                        + O_shared[G,BV] + acc_s[G,BS] + acc_s_cast[G,BS]
@@ -149,24 +150,6 @@ def _run_one_case(B, SEQ_LEN, H, HQ, D, S, block_size, is_causal, dtype=torch.fl
         print(f"  (skipped: smem {smem_bytes} > {max_smem})")
         return 0.0
 
-    try:
-        kernel = native_sparse_attention(
-            batch=B,
-            heads=HQ,
-            seq_len=SEQ_LEN,
-            dim=D,
-            is_causal=is_causal,
-            block_size=block_size,
-            groups=HQ // H,
-            selected_blocks=S,
-            scale=scale,
-        )
-    except Exception as e:
-        msg = str(e)
-        if any(x in msg.lower() for x in ["shared memory", "invalid argument", "must be divisible"]):
-            print(f"  (skipped: {msg[:100]})")
-            return 0.0
-        raise
     torch.random.manual_seed(0)
     Q = torch.randn((B, SEQ_LEN, HQ, D), dtype=dtype, device="cuda").requires_grad_(True)
     K = torch.randn((B, SEQ_LEN, H, D), dtype=dtype, device="cuda").requires_grad_(True)
@@ -183,66 +166,68 @@ def _run_one_case(B, SEQ_LEN, H, HQ, D, S, block_size, is_causal, dtype=torch.fl
                 block_counts[b, t, h] = (block_indices[b, t, h] != SEQ_LEN).sum().item()
     block_indices = block_indices.sort(-1)[0]
 
+    block_indices_i32 = block_indices.to(torch.int32).contiguous()
+    out = torch.empty_like(Q)
     try:
-        out = kernel(Q, K, V, block_indices.to(torch.int32))
-    except Exception as e:
-        msg = str(e)
-        if any(x in msg.lower() for x in ["shared memory", "invalid argument", "must be divisible"]):
-            print(f"  (skipped: {msg[:100]})")
-            return 0.0
-        raise
-
-    # Skip reference comparison for large configs (naive_nsa is O(N^2) Python, too slow)
-    skip_ref = (B >= 4 and SEQ_LEN >= 512 and D >= 64) or (B >= 2 and SEQ_LEN >= 512 and block_size >= 64)
-    if not skip_ref:
-        ref = naive_nsa(
-            q=Q,
-            k=K,
-            v=V,
-            g_slc=g_slc,
-            g_swa=g_swa,
-            block_indices=block_indices,
-            block_counts=block_counts,
-            block_size=block_size,
-            scale=scale,
+        run_kernel(
+            Q, K, V, block_indices_i32, out,
+            B, SEQ_LEN, H, HQ, D, S, block_size, int(is_causal),
         )
-        torch.testing.assert_close(ref, out, atol=1e-2, rtol=1e-2)
-    else:
-        print("  (skipped reference check for large config)")
-
-    # Manual warmup + CUDA event timing to avoid do_bench hanging on large kernels
-    n_warmup = 3
-    n_repeat = 50
-    try:
-        for _ in range(n_warmup):
-            kernel(Q, K, V, block_indices.to(torch.int32))
-        torch.cuda.synchronize()
-        start_event = torch.cuda.Event(enable_timing=True)
-        end_event = torch.cuda.Event(enable_timing=True)
-        start_event.record()
-        for _ in range(n_repeat):
-            kernel(Q, K, V, block_indices.to(torch.int32))
-        end_event.record()
-        end_event.synchronize()
-        latency = start_event.elapsed_time(end_event) / n_repeat
     except Exception as e:
-        print(f"  (skipped: kernel timing failed - {str(e)[:80]})")
-        return 0.0
+        raise RuntimeError(f"submission.run_kernel failed: {e}") from e
+
+    ref = naive_nsa(
+        q=Q,
+        k=K,
+        v=V,
+        g_slc=g_slc,
+        g_swa=g_swa,
+        block_indices=block_indices,
+        block_counts=block_counts,
+        block_size=block_size,
+        scale=scale,
+    )
+    torch.testing.assert_close(ref, out, atol=1e-2, rtol=1e-2)
+
+    # Time the exact run_kernel submission entry with a reused output buffer.
+    n_warmup = 7
+    n_repeat = 25
+    def run_once():
+        run_kernel(
+            Q, K, V, block_indices_i32, out,
+            B, SEQ_LEN, H, HQ, D, S, block_size, int(is_causal),
+        )
+
+    for _ in range(n_warmup):
+        run_once()
+    torch.cuda.synchronize()
+    start_event = torch.cuda.Event(enable_timing=True)
+    end_event = torch.cuda.Event(enable_timing=True)
+    start_event.record()
+    for _ in range(n_repeat):
+        run_once()
+    end_event.record()
+    end_event.synchronize()
+    latency = start_event.elapsed_time(end_event) / n_repeat
     print(f"  GPU latency: {latency:.4f} ms")
     return latency
 
 
 def main():
-    import json, pathlib, csv
+    import json, pathlib, csv, os
     json_path = pathlib.Path(__file__).parent / "official_case.json"
-    csv_path = pathlib.Path(__file__).parent / "benchmark_results_nsa_fwd.csv"
+    default_csv = pathlib.Path(__file__).parent / "official_case_results.csv"
+    csv_path = pathlib.Path(os.environ.get("NSA_RESULTS_PATH", default_csv))
     test_cases = json.load(open(json_path))
 
     n_cases = len(test_cases)
     total_latency = 0.0
     n_success = 0
     fieldnames = ["idx", "B", "SEQ_LEN", "H", "HQ", "D", "S", "block_size", "is_causal", "latency_ms", "status"]
-    written_header = False
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(csv_path, "w", newline="") as f:
+        csv.DictWriter(f, fieldnames=fieldnames).writeheader()
+    written_header = True
     for i, tc in enumerate(test_cases):
         print(f"[{i+1}/{n_cases}] B={tc['B']} SEQ_LEN={tc['SEQ_LEN']} H={tc['H']} HQ={tc['HQ']} D={tc['D']} S={tc['S']} block_size={tc['block_size']} is_causal={tc['is_causal']}")
         lat = _run_one_case(tc['B'], tc['SEQ_LEN'], tc['H'], tc['HQ'], tc['D'], tc['S'], tc['block_size'], tc['is_causal'])
