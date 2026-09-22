@@ -37,6 +37,7 @@ def native_sparse_attention(batch, heads, seq_len, dim, is_causal, scale=None, b
     block_T = min(128, tilelang.math.next_power_of_2(dim))
 
     NK = tilelang.cdiv(dim, block_T)
+    # 输出特征 D 的分块
     NV = tilelang.cdiv(dim, block_T)
     assert NK == 1, "The key dimension can not be larger than 256"
 
@@ -55,6 +56,7 @@ def native_sparse_attention(batch, heads, seq_len, dim, is_causal, scale=None, b
         BlockIndices: T.Tensor(block_indices_shape, block_indices_dtype),
         Output: T.Tensor(q_shape, dtype),
     ):
+        # 按照 q-token, 维度, batch_head 三个方向切分 
         with T.Kernel(seq_len, NV, batch * head_kv, threads=threads) as (bx, by, bz):
             Q_shared = T.alloc_shared([G, BK], dtype)
             K_shared = T.alloc_shared([BS, BK], dtype)
@@ -70,7 +72,11 @@ def native_sparse_attention(batch, heads, seq_len, dim, is_causal, scale=None, b
             scores_sum = T.alloc_fragment([G], accum_dtype)
             logsum = T.alloc_fragment([G], accum_dtype)
 
+            # token, dimension, batch_head
             i_t, i_v, i_bh = bx, by, bz
+            # 将联合编号 i_bh 还原成 batch 下标 i_b 和 KV head 下标 i_h。
+            # 同一 batch 内的 KV head 编号连续排列：
+            # i_bh = i_b * head_kv + i_h
             i_b, i_h = i_bh // head_kv, i_bh % head_kv
 
             NS = S
@@ -81,6 +87,7 @@ def native_sparse_attention(batch, heads, seq_len, dim, is_causal, scale=None, b
             T.fill(scores_max, -T.infinity(accum_dtype))
 
             for i in T.Pipelined(NS, num_stages=num_stages):
+                # 把当前选中的 block 编号换算成这个 block 在 K/V 序列中的起始 token 位置
                 i_s = BlockIndices[i_b, i_t, i_h, i] * BS
                 if i_s <= i_t and i_s >= 0:
                     # [BS, BK]
