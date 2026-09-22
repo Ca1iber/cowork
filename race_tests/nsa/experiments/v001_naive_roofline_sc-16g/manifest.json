@@ -1,0 +1,123 @@
+{
+  "iteration": "v001_naive_roofline_sc-16g",
+  "status": "profiled_diagnostic_not_optimization_verdict",
+  "machine": "sc-16g-2 / MetaX C500 / sGPU minor 000 / 25% compute quota / 16000 MiB quota",
+  "git_branch": "exp/nsa-baseline",
+  "git_commit": "7512abd38c7d9e2b360d5a1d76a01dbce99b6789",
+  "source": "race_tests/nsa/test_tilelang_nsa_fwd.py",
+  "source_sha256": "0b40db79695301c6623a674905863492532e9124c621cf6753e46e2db8af78a5",
+  "case": {
+    "json_index_1based": 40,
+    "B": 4,
+    "SEQ_LEN": 512,
+    "H": 1,
+    "HQ": 16,
+    "D": 64,
+    "S": 1,
+    "block_size": 16,
+    "is_causal": true,
+    "dtype": "float16",
+    "scale": 0.1
+  },
+  "profile_scope": "Only 20 synchronized kernel launches between torch.cuda.profiler.start/stop; 3 warmups before range; per-kernel mcProfiler RoofLine; mcProfiler counts=2.",
+  "correctness_note": "Profile runner executes the same kernel/shape but does not compare against reference. Repository case 40 also skips reference; this capture is not a correctness verdict. The user previously ran a separate small reference-checked smoke (B=2,T=128,D=32), but its exact source hash predates the current comment-only commit.",
+  "tools": {
+    "mcProfiler": "3.8.1.4 (20260715214228)",
+    "MACA": "3.7.1.5",
+    "KMD": "3.8.30",
+    "BIOS": "1.33.5.0",
+    "mx_smi": "2.3.1",
+    "torch": "2.8.0+metax3.7.1.3",
+    "tilelang": "0.1.9+cuda.git7512abd3"
+  },
+  "full_card_model": {
+    "compute_roof_TFLOPS_inferred": 1916.928,
+    "basis": "C500 FP16 MMA inferred roof at the profile-reported 1.125 GHz, per hardware-awareness reference; not an sGPU guarantee",
+    "physical_bandwidth_roof_GBps": 1843.2,
+    "prior_sc16_conservative_measured_bandwidth_GBps": 1400.0,
+    "prior_measurement_note": "Historical idle single-tenant sc-16g result; shown as a conservative reference roof, not remeasured in this capture."
+  },
+  "profiler_samples": [
+    {
+      "file": "1_native_sparse_attention_kernel.txt.csv",
+      "all_ops": 169250048.0,
+      "all_memacs": 8894624.0,
+      "block_num": 104,
+      "during": 25241.0,
+      "core_clk": 1.125,
+      "MAX_Flops_base": 1,
+      "case_flops": 64.47463680885494,
+      "MAX_Bandwith": 1843.2,
+      "MAX_I": 260.0,
+      "case_I": 162.63549834569812,
+      "case_bandwith": 396.4364327879244,
+      "case_VL1_I": 348.2932323538832,
+      "case_L2C_I": 116.09774411796107,
+      "mc_clk": 0.9
+    },
+    {
+      "file": "2_native_sparse_attention_kernel.txt.csv",
+      "all_ops": 169250048.0,
+      "all_memacs": 8894560.0,
+      "block_num": 104,
+      "during": 25425.0,
+      "core_clk": 1.125,
+      "MAX_Flops_base": 1,
+      "case_flops": 64.00803570077906,
+      "MAX_Bandwith": 1843.2,
+      "MAX_I": 260.0,
+      "case_I": 162.63666857468013,
+      "case_bandwith": 393.5646017699115,
+      "case_VL1_I": 348.2932323538832,
+      "case_L2C_I": 116.09774411796107,
+      "mc_clk": 0.9
+    }
+  ],
+  "averaged_point": {
+    "ai_flop_per_byte": 162.63608346018913,
+    "tflops": 64.241336254817,
+    "profiler_derived_bandwidth_gbps": 395.000517278918
+  },
+  "commands": {
+    "mcprofiler": "env MACA_PATH=/opt/maca PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa MCTX_TARGET_PROFILE_PATH=/root/tilelang-metax/race_tests/nsa/experiments/v001_naive_roofline_sc-16g/mcprofiler/raw /opt/conda/bin/python -c 'import sys,torch,tilelang; sys.path.insert(0, \"/root/tilelang-metax/race_tests/nsa\"); tilelang.set_log_level(\"ERROR\"); from test_tilelang_nsa_fwd import native_sparse_attention; B,T,H,HQ,D,S,BS=4,512,1,16,64,1,16; torch.manual_seed(0); q=torch.randn((B,T,HQ,D),device=\"cuda\",dtype=torch.float16); k=torch.randn((B,T,H,D),device=\"cuda\",dtype=torch.float16); v=torch.randn((B,T,H,D),device=\"cuda\",dtype=torch.float16); prior=(torch.arange(T,device=\"cuda\",dtype=torch.int32)//BS).clamp(min=1).view(1,T,1,1); bi=(torch.rand((B,T,H,S),device=\"cuda\")*prior).to(torch.int32); kernel=native_sparse_attention(batch=B,heads=HQ,seq_len=T,dim=D,is_causal=True,block_size=BS,groups=HQ//H,selected_blocks=S,scale=0.1); kernel(q,k,v,bi); torch.cuda.synchronize(); exec(\"for _ in range(3): kernel(q,k,v,bi)\"); torch.cuda.synchronize(); torch.cuda.profiler.start(); exec(\"for _ in range(20): kernel(q,k,v,bi)\"); torch.cuda.synchronize(); torch.cuda.profiler.stop(); print(\"NSA_ROOFLINE_PROFILE_DONE case=40 repetitions=20\",flush=True)'",
+    "profile_cli": "mcProfiler perf_exec --per-kernel --profile-from-start 0 --counts 2 --metrics RoofLine"
+  },
+  "files": {
+    "raw_profile_dir": "mcprofiler/raw/mcprofiler_output",
+    "native_plot": "roofline/native_mcprofiler_roofline.png",
+    "normalized_plots": [
+      "roofline/nsa_naive_case40_fullcard_model_sc-16g.svg"
+    ]
+  },
+  "primary_point": {
+    "source": "report.txt.csv aggregate over profiled kernel task",
+    "ai_flop_per_byte": 126.82799707560305,
+    "tflops": 63.10440969765723,
+    "profiler_derived_bandwidth_gbps": 497.55898660167486,
+    "all_ops": 4211530752.0,
+    "all_memacs": 283817376.0,
+    "profiled_kernel_duration_ns": 641722.0
+  },
+  "per_kernel_samples": [
+    {
+      "sample": 1,
+      "ai_flop_per_byte": 162.63549834569812,
+      "tflops": 64.47463680885494,
+      "profiler_derived_bandwidth_gbps": 396.4364327879244,
+      "duration_ns": 25241.0
+    },
+    {
+      "sample": 2,
+      "ai_flop_per_byte": 162.63666857468013,
+      "tflops": 64.00803570077906,
+      "profiler_derived_bandwidth_gbps": 393.5646017699115,
+      "duration_ns": 25425.0
+    }
+  ],
+  "averaged_point_note": "The plot uses mcProfiler report aggregate as the primary point; the two per-kernel samples are retained separately because they are not identical to the report aggregate.",
+  "profiler_reported_model": {
+    "MAX_I_raw": 260.0,
+    "MAX_Bandwith_GBps": 1843.2,
+    "interpretation": "Preserved as profiler-reported fields; MAX_I is not converted into a compute roof without confirmed tool semantics."
+  }
+}
