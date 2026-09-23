@@ -9,4 +9,4 @@ v008 在线 OJ 的实际错误发生在 warmup 前：sandbox 将内嵌类改写�
 - 14 个官方形状均编译成功，源码和生成设备代码静态校验通过。与 v008 相比，13 个形状的 host/device 源码完全相同；case 11 的 host 源码相同，device 仅交换 max/sum 归约 shared 暂存偏移。
 - 本地官方测试从本目录精确源码调用 `run_kernel`：14/14 PASS，warmup 10、repeat 50，14 case 平均 0.0720 ms。主机内存采样峰值约 25.6 GB，测试前后 OOM kill 计数均为 1。
 
-生成代码归档 `generated_code.tar.gz` 的 SHA-256 是 `5d3c48f2418d4f54e741fd187a53573ec69aff9f61429010d2d47bb00e78481d`。**在线 OJ 尚未验证**：本地运行不会执行 OJ 的 sandbox 源码改写，只有在线提交才能确认此 NameError 是否消失以及后续校验是否通过。候选只保存在 `submission/v009_nested_metaclass_sc-16g-2/submission.py`。
+生成代码归档 `generated_code.tar.gz` 的 SHA-256 是 `5d3c48f2418d4f54e741fd187a53573ec69aff9f61429010d2d47bb00e78481d`。**在线 OJ：用户于 2026-09-23 反馈 v009 Accepted。** 这确认了此前的 sandbox NameError 已消失，且该次提交通过 OJ 正确性校验；没有收到逐 case 成绩或数值日志，因此不填造分数。候选只保存在 `submission/v009_nested_metaclass_sc-16g-2/submission.py`。
