@@ -1,0 +1,20 @@
+{
+  "study": "compare_w10_r50_baseline_v005_v006_sc-16g-2_20260923",
+  "machine": "sc-16g-2 / MetaX C500 / 16G sGPU",
+  "start_utc": "2026-09-23T02:57:23Z",
+  "end_utc": "2026-09-23T03:08:34Z",
+  "benchmark_sha256": "65d0f43627ec2196d28900f504365b0bda1f177a9683acba7ba911d06788ed49",
+  "baseline_sha256": "462d505fe28efb0a0140feb1a1a4ca00df24b31d89f08beef2478c18685ca0b1",
+  "v005_sha256": "32af6c4ba94279470a97e4d6cfb0093f28690c9409265f32ee54023b4f5195f5",
+  "v006_sha256": "cf19f92faf1f4474c4b0053f4c251495d277ca3019c404b8597087df288794a6",
+  "official_cases": 14,
+  "warmup": 10,
+  "repeat": 50,
+  "run_order": ["baseline", "v005", "v006", "v005", "v006", "baseline", "v006", "baseline", "v005"],
+  "correctness": "9/9 complete runs, each 14/14 PASS",
+  "baseline_run_mean_ms": [0.078683, 0.076982, 0.077882],
+  "v005_run_mean_ms": [0.073324, 0.072081, 0.074591],
+  "v006_run_mean_ms": [0.075905, 0.070776, 0.073074],
+  "mean_of_case_medians_ms": {"baseline": 0.075764, "v005": 0.071542, "v006": 0.074061},
+  "conclusion": "lower whole-suite variance in this window; per-case variance remains and causality of timing-parameter change is unproven"
+}

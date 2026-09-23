@@ -190,8 +190,8 @@ def _run_one_case(B, SEQ_LEN, H, HQ, D, S, block_size, is_causal, dtype=torch.fl
     torch.testing.assert_close(ref, out, atol=1e-2, rtol=1e-2)
 
     # Time the exact run_kernel submission entry with a reused output buffer.
-    n_warmup = 7
-    n_repeat = 25
+    n_warmup = 10
+    n_repeat = 50
     def run_once():
         run_kernel(
             Q, K, V, block_indices_i32, out,
