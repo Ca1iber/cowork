@@ -1,0 +1,25 @@
+--- submission/v008_nested_mma_sc-16g-2/submission.py	2026-09-23 04:11:58.940727981 +0000
++++ submission/v009_nested_metaclass_sc-16g-2/submission.py	2026-09-23 04:41:22.146513113 +0000
+@@ -2,10 +2,6 @@
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+ 
+-
+-def _qk_reverse_load_layout(thread_id, local_id):
+-    return thread_id % 16, (thread_id // 16) * 8 + local_id
+-
+ _KERNEL_CACHE = {}
+ 
+ 
+@@ -27,6 +23,11 @@
+     key = (B, seq_len, H, HQ, D, S, block_size, bool(is_causal))
+     kernel = _KERNEL_CACHE.get(key)
+     if kernel is None:
++        __metaclass__ = type
++
++        def _qk_reverse_load_layout(thread_id, local_id):
++            return thread_id % 16, (thread_id // 16) * 8 + local_id
++
+         class _ManualMacaQK:
+             """One-warp MFMA for Q[G,D] @ K[BS,D].T, adapted from moe_sota_inline.py."""
+ 
