@@ -1,0 +1,19 @@
+{
+  "study": "compare_baseline_v005_v006_sc-16g-2_20260923",
+  "machine": "sc-16g-2 / MetaX C500 / 16G sGPU",
+  "start_utc": "2026-09-23T02:30:52Z",
+  "end_utc": "2026-09-23T02:41:55Z",
+  "baseline_sha256": "462d505fe28efb0a0140feb1a1a4ca00df24b31d89f08beef2478c18685ca0b1",
+  "v005_sha256": "32af6c4ba94279470a97e4d6cfb0093f28690c9409265f32ee54023b4f5195f5",
+  "v006_sha256": "cf19f92faf1f4474c4b0053f4c251495d277ca3019c404b8597087df288794a6",
+  "official_cases": 14,
+  "warmup": 7,
+  "repeat": 25,
+  "run_order": ["baseline", "v005", "v006", "v005", "v006", "baseline", "v006", "baseline", "v005"],
+  "correctness": "9/9 complete runs, each 14/14 PASS",
+  "baseline_run_mean_ms": [0.113742, 0.142945, 0.223052],
+  "v005_run_mean_ms": [0.106452, 0.105400, 0.105594],
+  "v006_run_mean_ms": [0.114853, 0.114939, 0.107386],
+  "mean_of_case_medians_ms": {"baseline": 0.114162, "v005": 0.106775, "v006": 0.109713},
+  "conclusion": "no aggregation error; large runtime timing outliers; precise hardware cause unproven"
+}

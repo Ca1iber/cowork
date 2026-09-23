@@ -1,0 +1,82 @@
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[1/14] B=1 SEQ_LEN=64 H=1 HQ=16 D=32 S=1 block_size=16 is_causal=True
+2026-09-23 02:31:16  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:31:18  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:31:19  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.0140 ms
+[2/14] B=1 SEQ_LEN=128 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+2026-09-23 02:31:22  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:31:23  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:31:25  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.0175 ms
+[3/14] B=1 SEQ_LEN=256 H=1 HQ=16 D=128 S=1 block_size=16 is_causal=True
+2026-09-23 02:31:26  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:31:28  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:31:30  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.0157 ms
+[4/14] B=2 SEQ_LEN=512 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+2026-09-23 02:31:31  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:31:33  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:31:35  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.0166 ms
+[5/14] B=4 SEQ_LEN=1024 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+2026-09-23 02:31:37  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:31:39  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:31:41  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.0692 ms
+[6/14] B=8 SEQ_LEN=1024 H=1 HQ=16 D=128 S=1 block_size=32 is_causal=True
+2026-09-23 02:31:44  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:31:46  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:31:48  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.2218 ms
+[7/14] B=1 SEQ_LEN=4096 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+2026-09-23 02:31:53  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:31:54  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:31:56  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.1649 ms
+[8/14] B=2 SEQ_LEN=4096 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+2026-09-23 02:32:00  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:32:02  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:32:04  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.3634 ms
+[9/14] B=1 SEQ_LEN=8192 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+2026-09-23 02:32:09  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:32:11  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:32:12  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.4708 ms
+[10/14] B=1 SEQ_LEN=256 H=1 HQ=16 D=64 S=2 block_size=16 is_causal=True
+2026-09-23 02:32:16  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:32:18  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:32:20  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.0171 ms
+[11/14] B=2 SEQ_LEN=512 H=1 HQ=16 D=64 S=4 block_size=16 is_causal=True
+2026-09-23 02:32:21  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:32:23  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:32:25  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.0300 ms
+[12/14] B=4 SEQ_LEN=1024 H=1 HQ=16 D=64 S=8 block_size=16 is_causal=True
+2026-09-23 02:32:27  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:32:29  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:32:31  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.1407 ms
+[13/14] B=1 SEQ_LEN=256 H=2 HQ=32 D=64 S=1 block_size=16 is_causal=True
+2026-09-23 02:32:33  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:32:35  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:32:37  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.0150 ms
+[14/14] B=2 SEQ_LEN=512 H=2 HQ=32 D=64 S=1 block_size=16 is_causal=True
+2026-09-23 02:32:38  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:133): TileLang begins to compile kernel `native_sparse_attention` with `out_idx=[]`
+2026-09-23 02:32:40  [TileLang:tilelang:WARNING] (phase.py:274): Should support PDL for maca target
+2026-09-23 02:32:42  [TileLang:tilelang.jit.kernel:INFO] (kernel.py:141): TileLang completes to compile kernel `native_sparse_attention`
+  GPU latency: 0.0357 ms
+
+=== Summary: 14/14 cases, avg latency: 0.1137 ms ===
+Results saved to: /root/tilelang-metax/race_tests/nsa/rep/compare_baseline_v005_v006_sc-16g-2_20260923/01_baseline.csv
