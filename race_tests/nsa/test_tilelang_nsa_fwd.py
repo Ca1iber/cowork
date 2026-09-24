@@ -176,17 +176,18 @@ def _run_one_case(B, SEQ_LEN, H, HQ, D, S, block_size, is_causal, dtype=torch.fl
     except Exception as e:
         raise RuntimeError(f"submission.run_kernel failed: {e}") from e
 
-    ref = naive_nsa(
-        q=Q,
-        k=K,
-        v=V,
-        g_slc=g_slc,
-        g_swa=g_swa,
-        block_indices=block_indices,
-        block_counts=block_counts,
-        block_size=block_size,
-        scale=scale,
-    )
+    with torch.no_grad():
+        ref = naive_nsa(
+            q=Q,
+            k=K,
+            v=V,
+            g_slc=g_slc,
+            g_swa=g_swa,
+            block_indices=block_indices,
+            block_counts=block_counts,
+            block_size=block_size,
+            scale=scale,
+        )
     torch.testing.assert_close(ref, out, atol=1e-2, rtol=1e-2)
 
     # Time the exact run_kernel submission entry with a reused output buffer.
