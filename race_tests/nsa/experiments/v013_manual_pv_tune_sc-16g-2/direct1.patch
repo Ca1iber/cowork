@@ -1,0 +1,152 @@
+--- /root/tilelang-metax/race_tests/nsa/submission/v009_nested_metaclass_sc-16g-2/submission.py
++++ /tmp/nsa_pv_v013/submission_direct1.py
+@@ -118,6 +118,98 @@
+ 
+                 return warp_mma(a_local_buf, b_local_buf, c_local_buf)
+ 
++
++        class _ManualMacaPV:
++            """One-warp MFMA for scores[G,BS] @ V[BS,D]."""
++
++            def __init__(self, groups, block_tokens, dim):
++                self.warp_rows = groups // 16
++                self.warp_cols = dim // 16
++                self.block_tokens = block_tokens
++                self.k_pack = min(1, block_tokens // 16)
++
++            def make_mma_load_layout(self, local_buf):
++                warp_rows = self.warp_rows
++                k_tiles = self.block_tokens // 16
++
++                def forward_thread(i, j):
++                    return (i % 16) + ((j % 16) // 4) * 16
++
++                def forward_index(i, j):
++                    return (i // 16) * (k_tiles * 4) + (j // 16) * 4 + j % 4
++
++                return T.Fragment(
++                    local_buf.shape,
++                    forward_thread_fn=forward_thread,
++                    forward_index_fn=forward_index,
++                )
++
++            def make_mma_store_layout(self, local_buf):
++                warp_rows = self.warp_rows
++                warp_cols = self.warp_cols
++
++                def forward_thread(i, j):
++                    mma_i = i % 16
++                    mma_j = j % 16
++                    return mma_i + (mma_j // 4) * 16
++
++                def forward_index(i, j):
++                    warp_i = (i // 16) % warp_rows
++                    warp_j = (j // 16) % warp_cols
++                    return warp_i * (warp_cols * 4) + warp_j * 4 + j % 4
++
++                return T.Fragment(
++                    local_buf.shape,
++                    forward_thread_fn=forward_thread,
++                    forward_index_fn=forward_index,
++                )
++
++            def ldmatrix_b(self, b_local_buf, b_shared_buf, ki):
++                warp_cols = self.warp_cols
++                k_pack = self.k_pack
++                thread_binding = T.KernelLaunchFrame.Current().get_thread_binding()
++
++                @T.macro
++                def warp_ldmatrix_b(b_local_buf, b_shared_buf, ki, thread_binding):
++                    lane_id = thread_binding % 64
++                    for j in T.serial(warp_cols):
++                        for local_id in T.vectorized(k_pack * 4):
++                            row = local_id + (lane_id // 16) * (k_pack * 4)
++                            col = lane_id % 16
++                            b_local_buf[j * k_pack * 4 + local_id] = b_shared_buf[
++                                ki * k_pack * 16 + row, j * 16 + col
++                            ]
++
++                return warp_ldmatrix_b(b_local_buf, b_shared_buf, ki, thread_binding)
++
++            def mma(self, a_local_buf, b_local_buf, c_local_buf, ki):
++                warp_rows = self.warp_rows
++                warp_cols = self.warp_cols
++                k_pack = self.k_pack
++                a_local_stride = ki * k_pack
++                a_row_stride = self.block_tokens // 16
++
++                @T.macro
++                def warp_mma(a_local_buf, b_local_buf, c_local_buf):
++                    for kp, i, j in T.grid(k_pack, warp_rows, warp_cols):
++                        T.tvm_mfma(
++                            "16x16x16f16",
++                            "row",
++                            "row",
++                            "float16x4",
++                            "float16x4",
++                            "float32x4",
++                            b_local_buf.data,
++                            j * k_pack + kp,
++                            a_local_buf.data,
++                            a_local_stride + i * a_row_stride + kp,
++                            c_local_buf.data,
++                            i * warp_cols + j,
++                            dtype="float32x4",
++                        )
++
++                return warp_mma(a_local_buf, b_local_buf, c_local_buf)
++
+         @tilelang.jit(
+             out_idx=[],
+             pass_configs={
+@@ -156,6 +248,8 @@
+             use_manual_qk = block_size == 32 or selected_blocks > 1
+             if use_manual_qk:
+                 qk_mma = _ManualMacaQK(groups, block_tokens, dim)
++            pv_mma = _ManualMacaPV(groups, block_tokens, dim)
++            pv_chunks = block_tokens // (16 * pv_mma.k_pack)
+ 
+             @T.prim_func
+             def native_sparse_attention(
+@@ -186,6 +280,7 @@
+                     rescale = T.alloc_fragment([groups], accum_dtype)
+                     block_sum = T.alloc_fragment([groups], accum_dtype)
+                     denominator = T.alloc_fragment([groups], accum_dtype)
++                    pv_b_local = T.alloc_local(pv_mma.warp_cols * pv_mma.k_pack * 4, dtype)
+                     if use_manual_qk:
+                         k_local = T.alloc_local(qk_mma.warp_cols * 8, dtype)
+                         T.annotate_layout(
+@@ -193,6 +288,17 @@
+                                 q_shared: qk_mma.make_mma_load_layout(q_shared),
+                                 k_shared: make_swizzled_layout(k_shared),
+                                 scores: qk_mma.make_mma_store_layout(scores),
++                                scores_half: pv_mma.make_mma_load_layout(scores_half),
++                                v_shared: make_swizzled_layout(v_shared),
++                                output_acc: pv_mma.make_mma_store_layout(output_acc),
++                            }
++                        )
++                    else:
++                        T.annotate_layout(
++                            {
++                                scores_half: pv_mma.make_mma_load_layout(scores_half),
++                                v_shared: make_swizzled_layout(v_shared),
++                                output_acc: pv_mma.make_mma_store_layout(output_acc),
+                             }
+                         )
+ 
+@@ -293,12 +399,9 @@
+                                 ],
+                                 v_shared,
+                             )
+-                            T.gemm(
+-                                scores_half,
+-                                v_shared,
+-                                output_acc,
+-                                policy=T.GemmWarpPolicy.FullRow,
+-                            )
++                            for ki in T.serial(pv_chunks):
++                                pv_mma.ldmatrix_b(pv_b_local, v_shared, ki)
++                                pv_mma.mma(scores_half, pv_b_local, output_acc, ki)
+ 
+                     for head, feature in T.Parallel(groups, tile_dim):
+                         output_acc[head, feature] /= denominator[head]
