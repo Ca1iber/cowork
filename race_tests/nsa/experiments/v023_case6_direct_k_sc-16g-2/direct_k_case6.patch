@@ -1,0 +1,39 @@
+--- /root/tilelang-metax/race_tests/nsa/submission/v022_case6_case12_combined_sc-16g-2/submission.py
++++ /tmp/nsa_v023/submission_direct_k_case6.py
+@@ -174,7 +174,7 @@
+             block_tokens = block_size
+             assert groups % 16 == 0 and block_tokens % 16 == 0 and dim % 32 == 0
+             use_manual_qk = block_size == 32 or selected_blocks > 1
+-            use_direct_k = selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16
++            use_direct_k = (selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16) or (selected_blocks == 1 and block_size == 32 and dim == 128 and groups == 16)
+             if use_manual_qk:
+                 qk_mma = _ManualMacaQK(groups, block_tokens, dim)
+ 
+@@ -211,12 +211,21 @@
+                     if use_manual_qk:
+                         k_local = T.alloc_local(qk_mma.warp_cols * 8, dtype)
+                         if use_direct_k:
+-                            T.annotate_layout(
+-                                {
+-                                    q_shared: qk_mma.make_mma_load_layout(q_shared),
+-                                    scores: qk_mma.make_mma_store_layout(scores),
+-                                }
+-                            )
++                            if block_size == 32:
++                                T.annotate_layout(
++                                    {
++                                        q_shared: qk_mma.make_mma_load_layout(q_shared),
++                                        scores: qk_mma.make_mma_store_layout(scores),
++                                        output_shared: make_swizzled_layout(output_shared),
++                                    }
++                                )
++                            else:
++                                T.annotate_layout(
++                                    {
++                                        q_shared: qk_mma.make_mma_load_layout(q_shared),
++                                        scores: qk_mma.make_mma_store_layout(scores),
++                                    }
++                                )
+                         else:
+                             if block_size == 32:
+                                 T.annotate_layout(

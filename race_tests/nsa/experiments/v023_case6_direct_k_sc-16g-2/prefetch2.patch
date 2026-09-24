@@ -1,0 +1,109 @@
+--- /tmp/nsa_v023/submission_direct_k_case6.py
++++ /tmp/nsa_v023/submission_prefetch2.py
+@@ -112,6 +112,50 @@
+                     b_local_buf, K, batch_id, block_start, kv_head, ki, thread_binding
+                 )
+ 
++            def ldmatrix_b_global_prefetch(
++                self, b_local_buf, K, batch_id, block_start, kv_head, ki, local_ki
++            ):
++                warp_cols = self.warp_cols
++                thread_binding = T.KernelLaunchFrame.Current().get_thread_binding()
++
++                @T.macro
++                def warp_load(
++                    b_local_buf, K, batch_id, block_start, kv_head, ki, local_ki, thread_binding
++                ):
++                    lane_id = thread_binding % 64
++                    for j in T.serial(warp_cols):
++                        for local_id in T.vectorized(8):
++                            row, col = T.meta_var(_qk_reverse_load_layout(lane_id, local_id))
++                            b_local_buf[local_ki * warp_cols * 8 + j * 8 + local_id] = K[
++                                batch_id, block_start + j * 16 + row, kv_head, ki * 32 + col
++                            ]
++
++                return warp_load(
++                    b_local_buf, K, batch_id, block_start, kv_head, ki, local_ki, thread_binding
++                )
++
++            def mma_prefetched(self, a_local_buf, b_local_buf, c_local_buf, ki, local_ki):
++                warp_rows = self.warp_rows
++                warp_cols = self.warp_cols
++                a_local_stride = ki * warp_rows * 8
++                b_local_stride = local_ki * warp_cols * 2
++
++                @T.macro
++                def warp_mma(a_local_buf, b_local_buf, c_local_buf):
++                    for kp, i, j in T.grid(2, warp_rows, warp_cols):
++                        T.tvm_mfma(
++                            "16x16x16f16", "row", "row",
++                            "float16x4", "float16x4", "float32x4",
++                            b_local_buf.data,
++                            b_local_stride + j * 2 + kp,
++                            a_local_buf.data,
++                            a_local_stride // 4 + i * 2 + kp,
++                            c_local_buf.data,
++                            i * warp_cols + j,
++                            dtype="float32x4",
++                        )
++                return warp_mma(a_local_buf, b_local_buf, c_local_buf)
++
+             def mma(self, a_local_buf, b_local_buf, c_local_buf, ki):
+                 warp_rows = self.warp_rows
+                 warp_cols = self.warp_cols
+@@ -175,6 +219,7 @@
+             assert groups % 16 == 0 and block_tokens % 16 == 0 and dim % 32 == 0
+             use_manual_qk = block_size == 32 or selected_blocks > 1
+             use_direct_k = (selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16) or (selected_blocks == 1 and block_size == 32 and dim == 128 and groups == 16)
++            use_prefetch_k = selected_blocks == 1 and block_size == 32 and dim == 128 and groups == 16
+             if use_manual_qk:
+                 qk_mma = _ManualMacaQK(groups, block_tokens, dim)
+ 
+@@ -209,7 +254,10 @@
+                     block_sum = T.alloc_fragment([groups], accum_dtype)
+                     denominator = T.alloc_fragment([groups], accum_dtype)
+                     if use_manual_qk:
+-                        k_local = T.alloc_local(qk_mma.warp_cols * 8, dtype)
++                        if use_prefetch_k:
++                            k_local = T.alloc_local(qk_mma.warp_cols * 8 * 2, dtype)
++                        else:
++                            k_local = T.alloc_local(qk_mma.warp_cols * 8, dtype)
+                         if use_direct_k:
+                             if block_size == 32:
+                                 T.annotate_layout(
+@@ -283,14 +331,27 @@
+ 
+                             if use_manual_qk:
+                                 T.clear(scores)
+-                                for ki in T.serial(dim // 32):
+-                                    if use_direct_k:
+-                                        qk_mma.ldmatrix_b_global(
+-                                            k_local, K, batch_id, block_start, kv_head, ki
+-                                        )
+-                                    else:
+-                                        qk_mma.ldmatrix_b(k_local, k_shared, ki)
+-                                    qk_mma.mma(q_shared, k_local, scores, ki)
++                                if use_prefetch_k:
++                                    for k_group in T.serial(dim // 64):
++                                        for local_ki in T.serial(2):
++                                            ki = k_group * 2 + local_ki
++                                            qk_mma.ldmatrix_b_global_prefetch(
++                                                k_local, K, batch_id, block_start, kv_head, ki, local_ki
++                                            )
++                                        for local_ki in T.serial(2):
++                                            ki = k_group * 2 + local_ki
++                                            qk_mma.mma_prefetched(
++                                                q_shared, k_local, scores, ki, local_ki
++                                            )
++                                else:
++                                    for ki in T.serial(dim // 32):
++                                        if use_direct_k:
++                                            qk_mma.ldmatrix_b_global(
++                                                k_local, K, batch_id, block_start, kv_head, ki
++                                            )
++                                        else:
++                                            qk_mma.ldmatrix_b(k_local, k_shared, ki)
++                                        qk_mma.mma(q_shared, k_local, scores, ki)
+                                 if is_causal:
+                                     for head, offset in T.Parallel(groups, block_tokens):
+                                         scores[head, offset] = T.if_then_else(
