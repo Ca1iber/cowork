@@ -1,0 +1,30 @@
+--- /root/tilelang-metax/race_tests/nsa/submission/v009_nested_metaclass_sc-16g-2/submission.py
++++ /tmp/nsa_v016/submission_k_xor16.py
+@@ -188,13 +188,22 @@
+                     denominator = T.alloc_fragment([groups], accum_dtype)
+                     if use_manual_qk:
+                         k_local = T.alloc_local(qk_mma.warp_cols * 8, dtype)
+-                        T.annotate_layout(
+-                            {
++                        if block_size == 32:
++                            T.annotate_layout(
++                                {
+                                 q_shared: qk_mma.make_mma_load_layout(q_shared),
+-                                k_shared: make_swizzled_layout(k_shared),
++                                k_shared: T.Layout(k_shared.shape, lambda row, col: (row, (((col // 16) ^ (row % (dim // 16))) * 16 + col % 16))),
+                                 scores: qk_mma.make_mma_store_layout(scores),
+-                            }
+-                        )
++                                }
++                            )
++                        else:
++                            T.annotate_layout(
++                                {
++                                    q_shared: qk_mma.make_mma_load_layout(q_shared),
++                                    k_shared: make_swizzled_layout(k_shared),
++                                    scores: qk_mma.make_mma_store_layout(scores),
++                                }
++                            )
+ 
+                     batch_id = batch_head // kv_heads
+                     kv_head = batch_head % kv_heads

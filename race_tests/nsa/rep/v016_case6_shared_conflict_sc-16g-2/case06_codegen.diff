@@ -1,0 +1,17 @@
+--- /tmp/nsa_v016/codegen/v009/case06.device.cpp	2026-09-24 08:02:04.161628139 +0000
++++ /tmp/nsa_v016/codegen_exact/case_06.device.cpp	2026-09-24 08:14:11.816255131 +0000
+@@ -159,12 +159,12 @@
+     ((half2*)(&__2))[0] = __float22half2_rn(((float2*)(&v__1))[0]);
+     ((half2*)(&__2))[1] = __float22half2_rn(((float2*)(&v__1))[1]);
+     *(uint2*)(output_shared_local_cast + 0) = __2;
+-    *(uint2*)(((half_t*)buf_dyn_shmem) + ((((((int)threadIdx.x) & 15) * 128) + (i_10 * 16)) + ((((int)threadIdx.x) >> 4) * 4))) = *(uint2*)(output_shared_local_cast + 0);
++    *(uint2*)(((half_t*)buf_dyn_shmem) + (((((((i_10 >> 2) * 1024) + ((((int)threadIdx.x) & 15) * 64)) + (((((((int)threadIdx.x) & 7) >> 2) + ((i_10 & 3) >> 1)) & 1) * 32)) + (((((((int)threadIdx.x) & 3) >> 1) + (i_10 & 1)) & 1) * 16)) + ((((((int)threadIdx.x) >> 5) + (((int)threadIdx.x) & 1)) & 1) * 8)) + (((((int)threadIdx.x) & 31) >> 4) * 4))) = *(uint2*)(output_shared_local_cast + 0);
+   }
+   __syncthreads();
+   #pragma unroll
+   for (int i_11 = 0; i_11 < 4; ++i_11) {
+-    *(uint4*)(Output + ((((((int)blockIdx.z) * 2097152) + (((int)blockIdx.x) * 2048)) + (i_11 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(((half_t*)buf_dyn_shmem) + ((i_11 * 512) + (((int)threadIdx.x) * 8)));
++    *(uint4*)(Output + ((((((int)blockIdx.z) * 2097152) + (((int)blockIdx.x) * 2048)) + (i_11 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(((half_t*)buf_dyn_shmem) + ((((((((((int)threadIdx.x) & 15) >> 3) * 1024) + (i_11 * 256)) + ((((int)threadIdx.x) >> 4) * 64)) + (((((((int)threadIdx.x) & 7) >> 2) + (i_11 & 1)) & 1) * 32)) + ((((((int)threadIdx.x) >> 5) + ((((int)threadIdx.x) & 3) >> 1)) & 1) * 16)) + (((((((int)threadIdx.x) & 31) >> 4) + (((int)threadIdx.x) & 1)) & 1) * 8)));
+   }
+ }
+ 
