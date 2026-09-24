@@ -1,0 +1,113 @@
+--- /root/tilelang-metax/race_tests/nsa/submission/v009_nested_metaclass_sc-16g-2/submission.py
++++ /tmp/nsa_v021/submission_direct_k.py
+@@ -92,6 +92,26 @@
+ 
+                 return warp_ldmatrix_b(b_local_buf, b_shared_buf, ki, thread_binding)
+ 
++            def ldmatrix_b_global(self, b_local_buf, K, batch_id, block_start, kv_head, ki):
++                warp_cols = self.warp_cols
++                thread_binding = T.KernelLaunchFrame.Current().get_thread_binding()
++
++                @T.macro
++                def warp_ldmatrix_b_global(
++                    b_local_buf, K, batch_id, block_start, kv_head, ki, thread_binding
++                ):
++                    lane_id = thread_binding % 64
++                    for j in T.serial(warp_cols):
++                        for local_id in T.vectorized(8):
++                            row, col = T.meta_var(_qk_reverse_load_layout(lane_id, local_id))
++                            b_local_buf[j * 8 + local_id] = K[
++                                batch_id, block_start + j * 16 + row, kv_head, ki * 32 + col
++                            ]
++
++                return warp_ldmatrix_b_global(
++                    b_local_buf, K, batch_id, block_start, kv_head, ki, thread_binding
++                )
++
+             def mma(self, a_local_buf, b_local_buf, c_local_buf, ki):
+                 warp_rows = self.warp_rows
+                 warp_cols = self.warp_cols
+@@ -154,6 +174,7 @@
+             block_tokens = block_size
+             assert groups % 16 == 0 and block_tokens % 16 == 0 and dim % 32 == 0
+             use_manual_qk = block_size == 32 or selected_blocks > 1
++            use_direct_k = selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16
+             if use_manual_qk:
+                 qk_mma = _ManualMacaQK(groups, block_tokens, dim)
+ 
+@@ -174,7 +195,8 @@
+                         q_shared = T.alloc_fragment([groups, tile_dim], dtype)
+                     else:
+                         q_shared = T.alloc_shared([groups, tile_dim], dtype)
+-                    k_shared = T.alloc_shared([block_tokens, tile_dim], dtype)
++                    if not use_direct_k:
++                        k_shared = T.alloc_shared([block_tokens, tile_dim], dtype)
+                     v_shared = T.alloc_shared([block_tokens, tile_dim], dtype)
+                     output_shared = T.alloc_shared([groups, tile_dim], dtype)
+ 
+@@ -188,13 +210,21 @@
+                     denominator = T.alloc_fragment([groups], accum_dtype)
+                     if use_manual_qk:
+                         k_local = T.alloc_local(qk_mma.warp_cols * 8, dtype)
+-                        T.annotate_layout(
+-                            {
+-                                q_shared: qk_mma.make_mma_load_layout(q_shared),
+-                                k_shared: make_swizzled_layout(k_shared),
+-                                scores: qk_mma.make_mma_store_layout(scores),
+-                            }
+-                        )
++                        if use_direct_k:
++                            T.annotate_layout(
++                                {
++                                    q_shared: qk_mma.make_mma_load_layout(q_shared),
++                                    scores: qk_mma.make_mma_store_layout(scores),
++                                }
++                            )
++                        else:
++                            T.annotate_layout(
++                                {
++                                    q_shared: qk_mma.make_mma_load_layout(q_shared),
++                                    k_shared: make_swizzled_layout(k_shared),
++                                    scores: qk_mma.make_mma_store_layout(scores),
++                                }
++                            )
+ 
+                     batch_id = batch_head // kv_heads
+                     kv_head = batch_head % kv_heads
+@@ -221,20 +251,26 @@
+ 
+                         # seq_len is the invalid-block sentinel; future blocks are also skipped.
+                         if block_start >= 0 and block_start <= token:
+-                            T.copy(
+-                                K[
+-                                    batch_id,
+-                                    block_start : block_start + block_tokens,
+-                                    kv_head,
+-                                    :,
+-                                ],
+-                                k_shared,
+-                            )
++                            if not use_direct_k:
++                                T.copy(
++                                    K[
++                                        batch_id,
++                                        block_start : block_start + block_tokens,
++                                        kv_head,
++                                        :,
++                                    ],
++                                    k_shared,
++                                )
+ 
+                             if use_manual_qk:
+                                 T.clear(scores)
+                                 for ki in T.serial(dim // 32):
+-                                    qk_mma.ldmatrix_b(k_local, k_shared, ki)
++                                    if use_direct_k:
++                                        qk_mma.ldmatrix_b_global(
++                                            k_local, K, batch_id, block_start, kv_head, ki
++                                        )
++                                    else:
++                                        qk_mma.ldmatrix_b(k_local, k_shared, ki)
+                                     qk_mma.mma(q_shared, k_local, scores, ki)
+                                 if is_causal:
+                                     for head, offset in T.Parallel(groups, block_tokens):
