@@ -1,0 +1,46 @@
+--- /root/tilelang-metax/race_tests/nsa/submission/v016_case6_shared_conflict_sc-16g-2/submission.py
++++ /tmp/nsa_v018/submission_k_v_together.py
+@@ -240,6 +240,17 @@
+                                 ],
+                                 k_shared,
+                             )
++
++                            if block_size == 32:
++                                T.copy(
++                                    V[
++                                        batch_id,
++                                        block_start : block_start + block_tokens,
++                                        kv_head,
++                                        output_tile * tile_dim : (output_tile + 1) * tile_dim,
++                                    ],
++                                    v_shared,
++                                )
+ 
+                             if use_manual_qk:
+                                 T.clear(scores)
+@@ -294,15 +305,16 @@
+                             for head, feature in T.Parallel(groups, tile_dim):
+                                 output_acc[head, feature] *= rescale[head]
+ 
+-                            T.copy(
+-                                V[
+-                                    batch_id,
+-                                    block_start : block_start + block_tokens,
+-                                    kv_head,
+-                                    output_tile * tile_dim : (output_tile + 1) * tile_dim,
+-                                ],
+-                                v_shared,
+-                            )
++                            if block_size != 32:
++                                T.copy(
++                                    V[
++                                        batch_id,
++                                        block_start : block_start + block_tokens,
++                                        kv_head,
++                                        output_tile * tile_dim : (output_tile + 1) * tile_dim,
++                                    ],
++                                    v_shared,
++                                )
+                             T.gemm(
+                                 scores_half,
+                                 v_shared,

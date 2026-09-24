@@ -1,0 +1,46 @@
+--- /root/tilelang-metax/race_tests/nsa/submission/v016_case6_shared_conflict_sc-16g-2/submission.py
++++ /tmp/nsa_v018/submission_v_during_softmax.py
+@@ -271,6 +271,17 @@
+                                     policy=T.GemmWarpPolicy.FullRow,
+                                 )
+ 
++                            if block_size == 32:
++                                T.copy(
++                                    V[
++                                        batch_id,
++                                        block_start : block_start + block_tokens,
++                                        kv_head,
++                                        output_tile * tile_dim : (output_tile + 1) * tile_dim,
++                                    ],
++                                    v_shared,
++                                )
++
+                             T.copy(block_max, previous_max)
+                             T.fill(block_max, -T.infinity(accum_dtype))
+                             T.reduce_max(scores, block_max, dim=1, clear=True)
+@@ -294,15 +305,16 @@
+                             for head, feature in T.Parallel(groups, tile_dim):
+                                 output_acc[head, feature] *= rescale[head]
+ 
+-                            T.copy(
+-                                V[
+-                                    batch_id,
+-                                    block_start : block_start + block_tokens,
+-                                    kv_head,
+-                                    output_tile * tile_dim : (output_tile + 1) * tile_dim,
+-                                ],
+-                                v_shared,
+-                            )
++                            if block_size != 32:
++                                T.copy(
++                                    V[
++                                        batch_id,
++                                        block_start : block_start + block_tokens,
++                                        kv_head,
++                                        output_tile * tile_dim : (output_tile + 1) * tile_dim,
++                                    ],
++                                    v_shared,
++                                )
+                             T.gemm(
+                                 scores_half,
+                                 v_shared,
