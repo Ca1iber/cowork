@@ -1,0 +1,65 @@
+--- /root/tilelang-metax/race_tests/nsa/submission/v016_case6_shared_conflict_sc-16g-2/submission.py
++++ /tmp/nsa_v019/submission_single_block.py
+@@ -271,28 +271,40 @@
+                                     policy=T.GemmWarpPolicy.FullRow,
+                                 )
+ 
+-                            T.copy(block_max, previous_max)
+-                            T.fill(block_max, -T.infinity(accum_dtype))
+-                            T.reduce_max(scores, block_max, dim=1, clear=True)
+-
+-                            for head in T.Parallel(groups):
+-                                rescale[head] = T.exp2(
+-                                    previous_max[head] * scale - block_max[head] * scale
+-                                )
+-                            for head, offset in T.Parallel(groups, block_tokens):
+-                                scores[head, offset] = T.exp2(
+-                                    scores[head, offset] * scale - block_max[head] * scale
+-                                )
+-
+-                            T.reduce_sum(scores, block_sum, dim=1)
+-                            for head in T.Parallel(groups):
+-                                denominator[head] = (
+-                                    denominator[head] * rescale[head] + block_sum[head]
+-                                )
+-                            T.copy(scores, scores_half)
+-
+-                            for head, feature in T.Parallel(groups, tile_dim):
+-                                output_acc[head, feature] *= rescale[head]
++                            if block_size == 32 and selected_blocks == 1:
++                                T.fill(block_max, -T.infinity(accum_dtype))
++                                T.reduce_max(scores, block_max, dim=1, clear=True)
++                                for head, offset in T.Parallel(groups, block_tokens):
++                                    scores[head, offset] = T.exp2(
++                                        scores[head, offset] * scale - block_max[head] * scale
++                                    )
++                                T.reduce_sum(scores, block_sum, dim=1)
++                                for head in T.Parallel(groups):
++                                    denominator[head] = block_sum[head]
++                                T.copy(scores, scores_half)
++                            else:
++                                T.copy(block_max, previous_max)
++                                T.fill(block_max, -T.infinity(accum_dtype))
++                                T.reduce_max(scores, block_max, dim=1, clear=True)
++
++                                for head in T.Parallel(groups):
++                                    rescale[head] = T.exp2(
++                                        previous_max[head] * scale - block_max[head] * scale
++                                    )
++                                for head, offset in T.Parallel(groups, block_tokens):
++                                    scores[head, offset] = T.exp2(
++                                        scores[head, offset] * scale - block_max[head] * scale
++                                    )
++
++                                T.reduce_sum(scores, block_sum, dim=1)
++                                for head in T.Parallel(groups):
++                                    denominator[head] = (
++                                        denominator[head] * rescale[head] + block_sum[head]
++                                    )
++                                T.copy(scores, scores_half)
++
++                                for head, feature in T.Parallel(groups, tile_dim):
++                                    output_acc[head, feature] *= rescale[head]
+ 
+                             T.copy(
+                                 V[
