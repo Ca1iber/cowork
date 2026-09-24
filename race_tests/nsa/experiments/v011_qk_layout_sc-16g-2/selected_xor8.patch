@@ -1,0 +1,11 @@
+--- submission/v009_nested_metaclass_sc-16g-2/submission.py	2026-09-23 04:41:22.000000000 +0000
++++ submission/v011_qk_layout_sc-16g-2/submission.py	2026-09-24 04:59:33.677807743 +0000
+@@ -191,7 +191,7 @@
+                         T.annotate_layout(
+                             {
+                                 q_shared: qk_mma.make_mma_load_layout(q_shared),
+-                                k_shared: make_swizzled_layout(k_shared),
++                                k_shared: T.Layout(k_shared.shape, lambda row, col: (row, (((col // 8) ^ (row % (dim // 8))) * 8 + col % 8))),
+                                 scores: qk_mma.make_mma_store_layout(scores),
+                             }
+                         )

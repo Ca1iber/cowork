@@ -1,0 +1,11 @@
+--- /root/tilelang-metax/race_tests/nsa/submission/v009_nested_metaclass_sc-16g-2/submission.py
++++ /tmp/nsa_qk_layout_v011/submission_ft.py
+@@ -191,7 +191,7 @@
+                         T.annotate_layout(
+                             {
+                                 q_shared: qk_mma.make_mma_load_layout(q_shared),
+-                                k_shared: make_swizzled_layout(k_shared),
++                                k_shared: make_swizzled_layout(k_shared, k_major=False, allow_pad=True),
+                                 scores: qk_mma.make_mma_store_layout(scores),
+                             }
+                         )
