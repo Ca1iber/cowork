@@ -1,0 +1,63 @@
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+Traceback (most recent call last):
+  File "/root/tilelang-metax/race_tests/nsa/test_tilelang_nsa_fwd.py", line 172, in _run_one_case
+    run_kernel(
+  File "/tmp/nsa_v020/submission_group4_t256.py", line 439, in run_kernel
+    kernel = _make_grouped_attention(
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/jit/__init__.py", line 465, in __call__
+    kernel = self.compile(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/jit/__init__.py", line 395, in compile
+    kernel_result = compile(
+                    ^^^^^^^^
+  File "/root/tilelang-metax/tilelang/jit/__init__.py", line 115, in compile
+    return cached(
+           ^^^^^^^
+  File "/root/tilelang-metax/tilelang/cache/__init__.py", line 74, in cached
+    return _dispatch_map[execution_backend].cached(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/cache/kernel_cache.py", line 345, in cached
+    kernel = JITKernel(
+             ^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/jit/kernel.py", line 136, in __init__
+    adapter = self._compile_and_create_adapter(func, out_idx)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/jit/kernel.py", line 247, in _compile_and_create_adapter
+    artifact = tilelang.lower(
+               ^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/engine/lower.py", line 362, in lower
+    mod = LowerAndLegalize(mod, target)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/engine/phase.py", line 192, in LowerAndLegalize
+    mod = tilelang.transform.LayoutInference()(mod)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/3rdparty/tvm/python/tvm/ir/transform.py", line 167, in __call__
+    return _ffi_transform_api.RunPass(self, mod)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "python/tvm_ffi/cython/function.pxi", line 968, in tvm_ffi.core.Function.__call__
+tvm.error.InternalError: Layout infer conflict between scores and scores_half in T.Parallel loop:
+    loop Fragment([16, 64] -> [16], replicate: 4, thread: 256, forward_thread: _rep * 64 + _j % 16 // 4 * 16 + _i, forward_index: [_j // 16 * 4 + _j % 4], thread_range: I.Range(0, 256))
+    fragment Fragment([16, 64] -> [4], replicate: 1, thread: 256, forward_thread: _j // 4 * 16 + _i, forward_index: [_j % 4], thread_range: I.Range(0, 256))
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/tilelang-metax/race_tests/nsa/hack/v020_case12_grouped_blocks_sc-16g-2/run_case12.py", line 21, in <module>
+    latency=test._run_one_case(c["B"],c["SEQ_LEN"],c["H"],c["HQ"],c["D"],c["S"],c["block_size"],c["is_causal"])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/race_tests/nsa/test_tilelang_nsa_fwd.py", line 177, in _run_one_case
+    raise RuntimeError(f"submission.run_kernel failed: {e}") from e
+RuntimeError: submission.run_kernel failed: Layout infer conflict between scores and scores_half in T.Parallel loop:
+    loop Fragment([16, 64] -> [16], replicate: 4, thread: 256, forward_thread: _rep * 64 + _j % 16 // 4 * 16 + _i, forward_index: [_j // 16 * 4 + _j % 4], thread_range: I.Range(0, 256))
+    fragment Fragment([16, 64] -> [4], replicate: 1, thread: 256, forward_thread: _j // 4 * 16 + _i, forward_index: [_j % 4], thread_range: I.Range(0, 256))
+
