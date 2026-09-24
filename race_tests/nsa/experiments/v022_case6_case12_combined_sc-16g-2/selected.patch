@@ -1,0 +1,33 @@
+--- /root/tilelang-metax/race_tests/nsa/submission/v021_case12_direct_k_sc-16g-2/submission.py
++++ /root/tilelang-metax/race_tests/nsa/submission/v022_case6_case12_combined_sc-16g-2/submission.py
+@@ -218,13 +218,23 @@
+                                 }
+                             )
+                         else:
+-                            T.annotate_layout(
+-                                {
+-                                    q_shared: qk_mma.make_mma_load_layout(q_shared),
+-                                    k_shared: make_swizzled_layout(k_shared),
+-                                    scores: qk_mma.make_mma_store_layout(scores),
+-                                }
+-                            )
++                            if block_size == 32:
++                                T.annotate_layout(
++                                    {
++                                        q_shared: qk_mma.make_mma_load_layout(q_shared),
++                                        k_shared: make_swizzled_layout(k_shared),
++                                        scores: qk_mma.make_mma_store_layout(scores),
++                                        output_shared: make_swizzled_layout(output_shared),
++                                    }
++                                )
++                            else:
++                                T.annotate_layout(
++                                    {
++                                        q_shared: qk_mma.make_mma_load_layout(q_shared),
++                                        k_shared: make_swizzled_layout(k_shared),
++                                        scores: qk_mma.make_mma_store_layout(scores),
++                                    }
++                                )
+ 
+                     batch_id = batch_head // kv_heads
+                     kv_head = batch_head % kv_heads
