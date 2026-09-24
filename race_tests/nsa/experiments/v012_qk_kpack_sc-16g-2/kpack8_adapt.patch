@@ -1,0 +1,105 @@
+--- v009/submission.py
++++ /tmp/nsa_qk_kpack_v012/submission_kp8_adapt.py
+@@ -26,7 +26,8 @@
+         __metaclass__ = type
+ 
+         def _qk_reverse_load_layout(thread_id, local_id):
+-            return thread_id % 16, (thread_id // 16) * 8 + local_id
++            k_pack = min(8, D // 16)
++            return thread_id % 16, (thread_id // 16) * (4 * k_pack) + local_id
+ 
+         class _ManualMacaQK:
+             """One-warp MFMA for Q[G,D] @ K[BS,D].T, adapted from moe_sota_inline.py."""
+@@ -35,25 +36,25 @@
+                 self.warp_rows = groups // 16
+                 self.warp_cols = block_tokens // 16
+                 self.chunk = dim
+-                self.k_pack = 2
++                self.k_pack = min(8, dim // 16)
+                 self.local_size_a = 4
+                 self.local_size_b = 4
+                 self.local_size_out = 4
+ 
+             def make_mma_load_layout(self, local_buf):
+                 def forward_thread(i, j):
+-                    return i + 16 * (j // 8)
++                    return i + 16 * (j // (4 * self.k_pack))
+ 
+                 def forward_index(i, j):
+-                    return j % 8
++                    return j % (4 * self.k_pack)
+ 
+                 base = T.Fragment(
+-                    [16, 32],
++                    [16, 16 * self.k_pack],
+                     forward_thread_fn=forward_thread,
+                     forward_index_fn=forward_index,
+                 )
+                 return base.repeat(
+-                    [self.warp_rows, self.chunk // 32],
++                    [self.warp_rows, self.chunk // (16 * self.k_pack)],
+                     repeat_on_thread=False,
+                     lower_dim_first=False,
+                 )
+@@ -81,25 +82,27 @@
+             def ldmatrix_b(self, b_local_buf, b_shared_buf, ki):
+                 warp_cols = self.warp_cols
+                 thread_binding = T.KernelLaunchFrame.Current().get_thread_binding()
++                k_pack = self.k_pack
+ 
+                 @T.macro
+                 def warp_ldmatrix_b(b_local_buf, b_shared_buf, ki, thread_binding):
+                     lane_id = thread_binding % 64
+                     for j in T.serial(warp_cols):
+-                        for local_id in T.vectorized(8):
++                        for local_id in T.vectorized(4 * k_pack):
+                             row, col = T.meta_var(_qk_reverse_load_layout(lane_id, local_id))
+-                            b_local_buf[j * 8 + local_id] = b_shared_buf[j * 16 + row, ki * 32 + col]
++                            b_local_buf[j * (4 * k_pack) + local_id] = b_shared_buf[j * 16 + row, ki * (16 * k_pack) + col]
+ 
+                 return warp_ldmatrix_b(b_local_buf, b_shared_buf, ki, thread_binding)
+ 
+             def mma(self, a_local_buf, b_local_buf, c_local_buf, ki):
+                 warp_rows = self.warp_rows
+                 warp_cols = self.warp_cols
+-                a_local_stride = ki * warp_rows * 8
++                k_pack = self.k_pack
++                a_local_stride = ki * warp_rows * (4 * k_pack)
+ 
+                 @T.macro
+                 def warp_mma(a_local_buf, b_local_buf, c_local_buf):
+-                    for kp, i, j in T.grid(2, warp_rows, warp_cols):
++                    for kp, i, j in T.grid(k_pack, warp_rows, warp_cols):
+                         T.tvm_mfma(
+                             "16x16x16f16",
+                             "row",
+@@ -108,9 +111,9 @@
+                             "float16x4",
+                             "float32x4",
+                             b_local_buf.data,
+-                            j * 2 + kp,
++                            j * k_pack + kp,
+                             a_local_buf.data,
+-                            a_local_stride // 4 + i * 2 + kp,
++                            a_local_stride // 4 + i * k_pack + kp,
+                             c_local_buf.data,
+                             i * warp_cols + j,
+                             dtype="float32x4",
+@@ -187,7 +190,7 @@
+                     block_sum = T.alloc_fragment([groups], accum_dtype)
+                     denominator = T.alloc_fragment([groups], accum_dtype)
+                     if use_manual_qk:
+-                        k_local = T.alloc_local(qk_mma.warp_cols * 8, dtype)
++                        k_local = T.alloc_local(qk_mma.warp_cols * (4 * qk_mma.k_pack), dtype)
+                         T.annotate_layout(
+                             {
+                                 q_shared: qk_mma.make_mma_load_layout(q_shared),
+@@ -233,7 +236,7 @@
+ 
+                             if use_manual_qk:
+                                 T.clear(scores)
+-                                for ki in T.serial(dim // 32):
++                                for ki in T.serial(dim // (16 * qk_mma.k_pack)):
+                                     qk_mma.ldmatrix_b(k_local, k_shared, ki)
+                                     qk_mma.mma(q_shared, k_local, scores, ki)
+                                 if is_causal:

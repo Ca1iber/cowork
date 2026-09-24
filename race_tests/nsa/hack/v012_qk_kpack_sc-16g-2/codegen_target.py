@@ -1,0 +1,33 @@
+import importlib.util
+import json
+import os
+from pathlib import Path
+import torch
+import tilelang
+
+tilelang.set_log_level("ERROR")
+root = Path("/root/tilelang-metax/race_tests/nsa")
+source = Path(os.environ["NSA_VARIANT_SOURCE"])
+label = os.environ["NSA_VARIANT_LABEL"]
+out = Path("/tmp/nsa_qk_kpack_v012/codegen") / label
+out.mkdir(parents=True, exist_ok=True)
+spec = importlib.util.spec_from_file_location("submission", source)
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+cases = json.loads((root / "official_case.json").read_text())
+for idx in (6, 12):
+    c = cases[idx - 1]
+    b, seq, h, hq, d, s, bs = (c[key] for key in ("B", "SEQ_LEN", "H", "HQ", "D", "S", "block_size"))
+    q = torch.zeros((b, seq, hq, d), device="cuda", dtype=torch.float16)
+    k = torch.zeros((b, seq, h, d), device="cuda", dtype=torch.float16)
+    v = torch.zeros((b, seq, h, d), device="cuda", dtype=torch.float16)
+    indices = torch.zeros((b, seq, h, s), device="cuda", dtype=torch.int32)
+    output = torch.empty_like(q)
+    module.run_kernel(q, k, v, indices, output, b, seq, h, hq, d, s, bs, int(c["is_causal"]))
+    torch.cuda.synchronize()
+    key = (b, seq, h, hq, d, s, bs, bool(c["is_causal"]))
+    module._KERNEL_CACHE[key].export_sources(
+        kernel_path=str(out / f"case_{idx:02d}.device.cpp"),
+        host_path=str(out / f"case_{idx:02d}.host.cpp"),
+    )
+    print(label, idx, flush=True)
