@@ -1,0 +1,53 @@
+--- race_tests/nsa/submission/v026_full_past_mask_sc-16g-2/submission.py	2026-09-24 13:28:56.390475104 +0000
++++ /tmp/nsa_v027/pre_softmax.py	2026-09-24 13:37:35.621460570 +0000
+@@ -221,6 +221,7 @@
+             use_direct_k = (selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16) or (selected_blocks == 1 and block_size == 32 and dim == 128 and groups == 16)
+             use_prefetch_k = selected_blocks == 1 and block_size == 32 and dim == 128 and groups == 16
+             use_full_past_mask = selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16
++            use_early_v = use_direct_k
+             if use_manual_qk:
+                 qk_mma = _ManualMacaQK(groups, block_tokens, dim)
+ 
+@@ -387,6 +388,16 @@
+                                     policy=T.GemmWarpPolicy.FullRow,
+                                 )
+ 
++                            if use_early_v:
++                                T.copy(
++                                    V[
++                                        batch_id,
++                                        block_start : block_start + block_tokens,
++                                        kv_head,
++                                        output_tile * tile_dim : (output_tile + 1) * tile_dim,
++                                    ],
++                                    v_shared,
++                                )
+                             T.copy(block_max, previous_max)
+                             T.fill(block_max, -T.infinity(accum_dtype))
+                             T.reduce_max(scores, block_max, dim=1, clear=True)
+@@ -410,15 +421,16 @@
+                             for head, feature in T.Parallel(groups, tile_dim):
+                                 output_acc[head, feature] *= rescale[head]
+ 
+-                            T.copy(
+-                                V[
+-                                    batch_id,
+-                                    block_start : block_start + block_tokens,
+-                                    kv_head,
+-                                    output_tile * tile_dim : (output_tile + 1) * tile_dim,
+-                                ],
+-                                v_shared,
+-                            )
++                            if not use_early_v:
++                                T.copy(
++                                    V[
++                                        batch_id,
++                                        block_start : block_start + block_tokens,
++                                        kv_head,
++                                        output_tile * tile_dim : (output_tile + 1) * tile_dim,
++                                    ],
++                                    v_shared,
++                                )
+                             T.gemm(
+                                 scores_half,
+                                 v_shared,

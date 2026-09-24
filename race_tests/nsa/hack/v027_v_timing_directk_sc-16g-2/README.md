@@ -1,0 +1,1 @@
+`generate.py` 从 v026 精确源码生成两个 V 加载时机候选；`run_screen.sh` 调用共享官方 `_run_one_case` 做 case6/12 交替正确性与 warmup10/repeat50 计时；`codegen_target.py`/`run_codegen.sh` 提取目标形状设备代码并做 OJ 静态检查。拒绝版本只归档 experiments/hack/rep，不创建 submission 目录。
