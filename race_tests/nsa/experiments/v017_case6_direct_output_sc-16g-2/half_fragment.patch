@@ -1,0 +1,42 @@
+--- /root/tilelang-metax/race_tests/nsa/submission/v016_case6_shared_conflict_sc-16g-2/submission.py
++++ /tmp/nsa_v017/submission_half_fragment.py
+@@ -177,6 +177,7 @@
+                     k_shared = T.alloc_shared([block_tokens, tile_dim], dtype)
+                     v_shared = T.alloc_shared([block_tokens, tile_dim], dtype)
+                     output_shared = T.alloc_shared([groups, tile_dim], dtype)
++                    output_half = T.alloc_fragment([groups, tile_dim], dtype)
+ 
+                     scores = T.alloc_fragment([groups, block_tokens], accum_dtype)
+                     scores_half = T.alloc_fragment([groups, block_tokens], dtype)
+@@ -313,16 +314,25 @@
+                     for head, feature in T.Parallel(groups, tile_dim):
+                         output_acc[head, feature] /= denominator[head]
+ 
+-                    T.copy(output_acc, output_shared)
+-                    T.copy(
+-                        output_shared,
+-                        Output[
++                    if block_size == 32:
++                        T.copy(output_acc, output_half)
++                        T.copy(output_half, Output[
+                             batch_id,
+                             token,
+                             kv_head * groups : (kv_head + 1) * groups,
+                             output_tile * tile_dim : (output_tile + 1) * tile_dim,
+-                        ],
+-                    )
++                        ])
++                    else:
++                        T.copy(output_acc, output_shared)
++                        T.copy(
++                            output_shared,
++                            Output[
++                                batch_id,
++                                token,
++                                kv_head * groups : (kv_head + 1) * groups,
++                                output_tile * tile_dim : (output_tile + 1) * tile_dim,
++                            ],
++                        )
+ 
+             return native_sparse_attention
+ 
