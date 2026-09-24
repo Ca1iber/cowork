@@ -1,0 +1,38 @@
+--- race_tests/nsa/submission/v023_case6_direct_k_sc-16g-2/submission.py	2026-09-24 12:14:54.005571733 +0000
++++ /tmp/nsa_v026/submission.py	2026-09-24 13:18:57.697722504 +0000
+@@ -220,6 +220,7 @@
+             use_manual_qk = block_size == 32 or selected_blocks > 1
+             use_direct_k = (selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16) or (selected_blocks == 1 and block_size == 32 and dim == 128 and groups == 16)
+             use_prefetch_k = selected_blocks == 1 and block_size == 32 and dim == 128 and groups == 16
++            use_full_past_mask = selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16
+             if use_manual_qk:
+                 qk_mma = _ManualMacaQK(groups, block_tokens, dim)
+ 
+@@ -353,12 +354,21 @@
+                                             qk_mma.ldmatrix_b(k_local, k_shared, ki)
+                                         qk_mma.mma(q_shared, k_local, scores, ki)
+                                 if is_causal:
+-                                    for head, offset in T.Parallel(groups, block_tokens):
+-                                        scores[head, offset] = T.if_then_else(
+-                                            token >= block_start + offset,
+-                                            scores[head, offset],
+-                                            -T.infinity(accum_dtype),
+-                                        )
++                                    if use_full_past_mask:
++                                        if block_start + block_tokens > token:
++                                            for head, offset in T.Parallel(groups, block_tokens):
++                                                scores[head, offset] = T.if_then_else(
++                                                    token >= block_start + offset,
++                                                    scores[head, offset],
++                                                    -T.infinity(accum_dtype),
++                                                )
++                                    else:
++                                        for head, offset in T.Parallel(groups, block_tokens):
++                                            scores[head, offset] = T.if_then_else(
++                                                token >= block_start + offset,
++                                                scores[head, offset],
++                                                -T.infinity(accum_dtype),
++                                            )
+                             else:
+                                 if is_causal:
+                                     for head, offset in T.Parallel(groups, block_tokens):

@@ -1,0 +1,1 @@
+`generate.py` 从 v023 生成隔离候选，`run_edge.py` 测当前 block/sentinel 边界，`run_screen.sh` 和 `run_confirm.sh` 复用共享官方 `_run_one_case`，`run_official.sh` 跑完整14 case，`codegen_exact.py`/`run_codegen.sh` 提取并静态检查全部设备代码，`run_mcprof.sh` 和 `run_hbm.sh` 采集 case12 硬件证据，`analyze.py` 汇总逐 case CSV。均在 sc-16g-2 容器执行，不复制官方 JSON、reference 或共享测试入口。

@@ -1,0 +1,28 @@
+--- /tmp/nsa_v026/base_codegen/codegen_exact/case_12.device.cpp	2026-09-24 12:24:23.000000000 +0000
++++ /tmp/nsa_v026/codegen_exact/case_12.device.cpp	2026-09-24 13:23:01.207544817 +0000
+@@ -53,15 +53,17 @@
+     };
+         }
+       }
+-      #pragma unroll
+-      for (int i_2 = 0; i_2 < 4; ++i_2) {
+-        float condval_1;
+-        if ((((((((int)threadIdx.x) >> 4) * 4) + block_start) + i_2) <= ((int)blockIdx.x))) {
+-          condval_1 = scores[i_2];
+-        } else {
+-          condval_1 = -MACART_INF_F;
++      if (((int)blockIdx.x) < (block_start + 16)) {
++        #pragma unroll
++        for (int i_2 = 0; i_2 < 4; ++i_2) {
++          float condval_1;
++          if ((((((((int)threadIdx.x) >> 4) * 4) + block_start) + i_2) <= ((int)blockIdx.x))) {
++            condval_1 = scores[i_2];
++          } else {
++            condval_1 = -MACART_INF_F;
++          }
++          scores[i_2] = condval_1;
+         }
+-        scores[i_2] = condval_1;
+       }
+       previous_max[0] = block_max[0];
+       block_max[0] = -MACART_INF_F;
