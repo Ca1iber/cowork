@@ -1,0 +1,40 @@
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[1/14] B=1 SEQ_LEN=64 H=1 HQ=16 D=32 S=1 block_size=16 is_causal=True
+  GPU latency: 0.0091 ms
+[2/14] B=1 SEQ_LEN=128 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+  GPU latency: 0.0095 ms
+[3/14] B=1 SEQ_LEN=256 H=1 HQ=16 D=128 S=1 block_size=16 is_causal=True
+  GPU latency: 0.0123 ms
+[4/14] B=2 SEQ_LEN=512 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+  GPU latency: 0.0128 ms
+[5/14] B=4 SEQ_LEN=1024 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+  GPU latency: 0.0310 ms
+[6/14] B=8 SEQ_LEN=1024 H=1 HQ=16 D=128 S=1 block_size=32 is_causal=True
+  GPU latency: 0.1686 ms
+[7/14] B=1 SEQ_LEN=4096 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+  GPU latency: 0.0312 ms
+[8/14] B=2 SEQ_LEN=4096 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+  GPU latency: 0.0518 ms
+[9/14] B=1 SEQ_LEN=8192 H=1 HQ=16 D=64 S=1 block_size=16 is_causal=True
+  GPU latency: 0.0520 ms
+[10/14] B=1 SEQ_LEN=256 H=1 HQ=16 D=64 S=2 block_size=16 is_causal=True
+  GPU latency: 0.0168 ms
+[11/14] B=2 SEQ_LEN=512 H=1 HQ=16 D=64 S=4 block_size=16 is_causal=True
+  GPU latency: 0.0232 ms
+[12/14] B=4 SEQ_LEN=1024 H=1 HQ=16 D=64 S=8 block_size=16 is_causal=True
+  GPU latency: 0.1031 ms
+[13/14] B=1 SEQ_LEN=256 H=2 HQ=32 D=64 S=1 block_size=16 is_causal=True
+  GPU latency: 0.0106 ms
+[14/14] B=2 SEQ_LEN=512 H=2 HQ=32 D=64 S=1 block_size=16 is_causal=True
+  GPU latency: 0.0198 ms
+
+=== Summary: 14/14 cases, avg latency: 0.0394 ms ===
+Results saved to: /root/tilelang-metax/race_tests/nsa/rep/v015_targeted_pv_sc-16g-2/official_04_v009.csv
