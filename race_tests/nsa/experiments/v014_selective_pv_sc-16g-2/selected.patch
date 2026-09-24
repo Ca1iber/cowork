@@ -1,0 +1,62 @@
+--- /root/tilelang-metax/race_tests/nsa/submission/v013_manual_pv_tune_sc-16g-2/submission.py
++++ /root/tilelang-metax/race_tests/nsa/submission/v014_selective_pv_sc-16g-2/submission.py
+@@ -248,8 +248,10 @@
+             use_manual_qk = block_size == 32 or selected_blocks > 1
+             if use_manual_qk:
+                 qk_mma = _ManualMacaQK(groups, block_tokens, dim)
+-            pv_mma = _ManualMacaPV(groups, block_tokens, dim)
+-            pv_chunks = block_tokens // (16 * pv_mma.k_pack)
++            use_manual_pv = use_manual_qk
++            if use_manual_pv:
++                pv_mma = _ManualMacaPV(groups, block_tokens, dim)
++                pv_chunks = block_tokens // (16 * pv_mma.k_pack)
+ 
+             @T.prim_func
+             def native_sparse_attention(
+@@ -280,7 +282,8 @@
+                     rescale = T.alloc_fragment([groups], accum_dtype)
+                     block_sum = T.alloc_fragment([groups], accum_dtype)
+                     denominator = T.alloc_fragment([groups], accum_dtype)
+-                    pv_b_local = T.alloc_local(pv_mma.warp_cols * pv_mma.k_pack * 4, dtype)
++                    if use_manual_pv:
++                        pv_b_local = T.alloc_local(pv_mma.warp_cols * pv_mma.k_pack * 4, dtype)
+                     if use_manual_qk:
+                         k_local = T.alloc_local(qk_mma.warp_cols * 8, dtype)
+                         T.annotate_layout(
+@@ -293,15 +296,6 @@
+                                 output_acc: pv_mma.make_mma_store_layout(output_acc),
+                             }
+                         )
+-                    else:
+-                        T.annotate_layout(
+-                            {
+-                                scores_half: pv_mma.make_mma_load_layout(scores_half),
+-                                v_shared: tilelang.layout.make_linear_layout(v_shared),
+-                                output_acc: pv_mma.make_mma_store_layout(output_acc),
+-                            }
+-                        )
+-
+                     batch_id = batch_head // kv_heads
+                     kv_head = batch_head % kv_heads
+ 
+@@ -399,9 +393,17 @@
+                                 ],
+                                 v_shared,
+                             )
+-                            for ki in T.serial(pv_chunks):
+-                                pv_mma.ldmatrix_b(pv_b_local, v_shared, ki)
+-                                pv_mma.mma(scores_half, pv_b_local, output_acc, ki)
++                            if use_manual_pv:
++                                for ki in T.serial(pv_chunks):
++                                    pv_mma.ldmatrix_b(pv_b_local, v_shared, ki)
++                                    pv_mma.mma(scores_half, pv_b_local, output_acc, ki)
++                            else:
++                                T.gemm(
++                                    scores_half,
++                                    v_shared,
++                                    output_acc,
++                                    policy=T.GemmWarpPolicy.FullRow,
++                                )
+ 
+                     for head, feature in T.Parallel(groups, tile_dim):
+                         output_acc[head, feature] /= denominator[head]
