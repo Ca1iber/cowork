@@ -1,0 +1,11 @@
+--- race_tests/nsa/submission/v026_full_past_mask_sc-16g-2/submission.py	2026-09-24 13:28:56.390475104 +0000
++++ /tmp/nsa_v028/output_swizzle.py	2026-09-24 13:46:18.196483876 +0000
+@@ -260,7 +260,7 @@
+                         else:
+                             k_local = T.alloc_local(qk_mma.warp_cols * 8, dtype)
+                         if use_direct_k:
+-                            if block_size == 32:
++                            if block_size == 32 or (selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16):
+                                 T.annotate_layout(
+                                     {
+                                         q_shared: qk_mma.make_mma_load_layout(q_shared),

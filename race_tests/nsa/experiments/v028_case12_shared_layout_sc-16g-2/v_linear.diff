@@ -1,0 +1,30 @@
+--- race_tests/nsa/submission/v026_full_past_mask_sc-16g-2/submission.py	2026-09-24 13:28:56.390475104 +0000
++++ /tmp/nsa_v028/v_linear.py	2026-09-24 13:46:18.260482076 +0000
+@@ -269,12 +269,21 @@
+                                     }
+                                 )
+                             else:
+-                                T.annotate_layout(
+-                                    {
+-                                        q_shared: qk_mma.make_mma_load_layout(q_shared),
+-                                        scores: qk_mma.make_mma_store_layout(scores),
+-                                    }
+-                                )
++                                if selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16:
++                                    T.annotate_layout(
++                                        {
++                                            q_shared: qk_mma.make_mma_load_layout(q_shared),
++                                            scores: qk_mma.make_mma_store_layout(scores),
++                                            v_shared: tilelang.layout.make_linear_layout(v_shared),
++                                        }
++                                    )
++                                else:
++                                    T.annotate_layout(
++                                        {
++                                            q_shared: qk_mma.make_mma_load_layout(q_shared),
++                                            scores: qk_mma.make_mma_store_layout(scores),
++                                        }
++                                    )
+                         else:
+                             if block_size == 32:
+                                 T.annotate_layout(

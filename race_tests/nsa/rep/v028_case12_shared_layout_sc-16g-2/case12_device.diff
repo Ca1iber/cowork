@@ -1,0 +1,20 @@
+--- /tmp/nsa_v026/codegen_exact/case_12.device.cpp	2026-09-24 13:23:01.207544817 +0000
++++ /tmp/nsa_v028/codegen_exact/case_12.device.cpp	2026-09-24 13:57:30.249476497 +0000
+@@ -109,7 +109,7 @@
+         } else {
+           condval_2 = make_uint4(__pack_half2(broadcast_var_3, broadcast_var_3), __pack_half2(broadcast_var_3, broadcast_var_3), __pack_half2(broadcast_var_3, broadcast_var_3), __pack_half2(broadcast_var_3, broadcast_var_3));
+         }
+-        *(uint4*)(((half_t*)buf_dyn_shmem) + (((((i_5 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + ((((((int)threadIdx.x) >> 5) + ((((int)threadIdx.x) & 7) >> 2)) & 1) * 32)) + (((((((int)threadIdx.x) & 31) >> 4) + ((((int)threadIdx.x) & 3) >> 1)) & 1) * 16)) + (((((((int)threadIdx.x) & 15) >> 3) + (((int)threadIdx.x) & 1)) & 1) * 8))) = condval_2;
++        *(uint4*)(((half_t*)buf_dyn_shmem) + ((i_5 * 512) + (((int)threadIdx.x) * 8))) = condval_2;
+       }
+     }
+     __syncthreads();
+@@ -117,7 +117,7 @@
+       half_t B_local[16];
+       for (int j = 0; j < 4; ++j) {
+         for (int local_id = 0; local_id < 4; ++local_id) {
+-          B_local[((j * 4) + local_id)] = ((half_t*)buf_dyn_shmem)[(((((((((int)threadIdx.x) >> 4) * 256) + (local_id * 64)) + (((((((int)threadIdx.x) & 31) >> 4) + (j >> 1)) & 1) * 32)) + ((((local_id >> 1) + (j & 1)) & 1) * 16)) + (((((((int)threadIdx.x) & 15) >> 3) + (local_id & 1)) & 1) * 8)) + (((int)threadIdx.x) & 7))];
++          B_local[((j * 4) + local_id)] = ((half_t*)buf_dyn_shmem)[(((((((int)threadIdx.x) >> 4) * 256) + (local_id * 64)) + (j * 16)) + (((int)threadIdx.x) & 15))];
+         }
+       }
+       for (int j_1 = 0; j_1 < 4; ++j_1) {
