@@ -1,0 +1,1 @@
+Initial baseline case11 profile invocation used a mistaken archive path after blanket label replacement; mcProfiler itself exited0 despite target failure. Preserve this invalid bundle, never interpret it as baseline attention counters. Retry exact shared-root baseline from39ff49e7b with validated SHA. Native benchmarks were unaffected.
