@@ -1,0 +1,86 @@
+{
+  "iteration": "v035_codex_power_s1_feature_ctas_sc-16g-2",
+  "status": "rejected_target_screen_regression",
+  "submission_sha256": "db556f6ab24d12b9fd5564b5e23bbb25845cec796e36a26f88e385701ee310d7",
+  "native_case6_us": 298.941,
+  "correctness": "PASS",
+  "static": "PASS",
+  "compiler": "50MT 30ST zero stack staticMax8",
+  "tracer": {
+    "tool": "mcTracer",
+    "raw_unit": "ns",
+    "matching_launches": 31,
+    "steady_launches": 20,
+    "median_device_us": 295.424,
+    "resources": {
+      "dynamic_shared": 12288,
+      "private_per_thread": 0,
+      "private_total": 0,
+      "registers_per_thread": 50,
+      "static_shared": 0
+    }
+  },
+  "profile": [
+    {
+      "variant": "power_v035",
+      "sample": 1,
+      "waves": 16384.0,
+      "achieved_waves_raw": 16384.0,
+      "l2_hit_pct": 80.79,
+      "read_bytes": 37594528.0,
+      "write_bytes": 33555520.0,
+      "mte_pct": 29.42,
+      "mma_pct": 4.63,
+      "shared_nonconflict_pct": 75.51,
+      "conflict_cycles": 1.26,
+      "load_latency_cycles": 42.55,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "power_v035",
+      "sample": 2,
+      "waves": 16384.0,
+      "achieved_waves_raw": 16384.0,
+      "l2_hit_pct": 80.8,
+      "read_bytes": 37594400.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 29.42,
+      "mma_pct": 4.63,
+      "shared_nonconflict_pct": 75.51,
+      "conflict_cycles": 1.26,
+      "load_latency_cycles": 42.48,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 1,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8192.0,
+      "l2_hit_pct": 76.52,
+      "read_bytes": 37847584.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 34.92,
+      "mma_pct": 6.06,
+      "shared_nonconflict_pct": 89.19,
+      "conflict_cycles": 0.36,
+      "load_latency_cycles": 38.18,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 2,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8192.0,
+      "l2_hit_pct": 76.53,
+      "read_bytes": 37847264.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 34.93,
+      "mma_pct": 6.06,
+      "shared_nonconflict_pct": 89.19,
+      "conflict_cycles": 0.36,
+      "load_latency_cycles": 38.24,
+      "unavailable_raw": {}
+    }
+  ],
+  "goal_complete": false
+}

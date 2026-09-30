@@ -1,0 +1,1 @@
+Initial own profile used an invalid candidate filename after label replacement. mcProfiler exited0 but did not execute attention; preserve invalid bundle and do not treat it as counters. Native screen298.941us and correctness were unaffected. Retry exact candidate with path/hash validation.
