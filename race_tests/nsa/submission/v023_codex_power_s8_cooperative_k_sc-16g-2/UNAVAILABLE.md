@@ -1,0 +1,1 @@
+Rejected for final use: full14 latency gate versus v28 fails; no OJ result. Root v013 unchanged; use v28 for requested comparison. Candidate is experiments/v023_codex_power_s8_cooperative_k_sc-16g-2/candidate.py.

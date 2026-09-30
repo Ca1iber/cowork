@@ -1,0 +1,31 @@
+--- /root/tilelang-metax/race_tests/nsa/experiments/v024_codex_power_host_kernel_cache_sc-16g-2/candidate.py
++++ /root/tilelang-metax/race_tests/nsa/experiments/v025_codex_power_s2_s4_register_qk_sc-16g-2/candidate.py
+@@ -1,4 +1,4 @@
+-# codex-power v024
++# codex-power v025
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -200,11 +200,11 @@
+         tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     },
+ )
+-def _make_s8_register_qk(
++def _make_multiblock_register_qk(
+     batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal,
+ ):
+     groups = query_heads // kv_heads
+-    assert selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16
++    assert selected_blocks in (2, 4, 8) and block_size == 16 and dim == 64 and groups == 16
+     scale = (1.0 / dim) ** 0.5 * 1.44269504
+     q_shape = [batch, seq_len, query_heads, dim]
+     kv_shape = [batch, seq_len, kv_heads, dim]
+@@ -339,7 +339,7 @@
+     key = (B, seq_len, H, HQ, D, S, block_size, bool(is_causal))
+     kernel = _compiled_kernels.get(key)
+     if kernel is None:
+-        factory = _make_s8_register_qk if (S == 8 and block_size == 16 and D == 64 and HQ // H == 16) else _make_native_sparse_attention
++        factory = _make_multiblock_register_qk if (S in (2, 4, 8) and block_size == 16 and D == 64 and HQ // H == 16) else _make_native_sparse_attention
+         kernel = factory(
+             batch=B,
+             seq_len=seq_len,

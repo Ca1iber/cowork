@@ -1,0 +1,24 @@
+{
+  "iteration": "v004_codex_power_s1_reprofile_sc-16g-2",
+  "status": "baseline_reprofiled_after_three_failed_versions",
+  "machine": "sc-16g-2 / MetaX C500 / 16G sGPU",
+  "branch": "codex-power",
+  "parent_commit": "78177bee12de796615afbaa2d173d1389791a48d",
+  "source_sha256": "462d505fe28efb0a0140feb1a1a4ca00df24b31d89f08beef2478c18685ca0b1",
+  "correctness": "case6 and case12 PASS, project-native reference, warmup10/repeat50",
+  "official_case6_ms": 0.220974,
+  "official_case12_ms": 0.123448,
+  "mctrace_case6_us": 218.624,
+  "mctrace_case12_us": 120.576,
+  "hbm_case6_median_gbps": 320.5885,
+  "mcprofiler_unavailable_metrics": [
+    "global_read_bytes",
+    "global_write_bytes",
+    "mte_duty_pct",
+    "wg_load_latency_cycles"
+  ],
+  "next_mechanism": "case6 shared operand layout, independent of S8 dense tile family",
+  "report": "race_tests/nsa/rep/v004_codex_power_s1_reprofile_sc-16g-2/report_sc-16g-2.md",
+  "artifact_index": "race_tests/nsa/rep/v004_codex_power_s1_reprofile_sc-16g-2/artifact_hashes_sc-16g-2.txt",
+  "artifact_index_sha256": "e90ef1597492ed7096462a2d6ee3e71315acd212a25e5576d3c1b056614fd21e"
+}

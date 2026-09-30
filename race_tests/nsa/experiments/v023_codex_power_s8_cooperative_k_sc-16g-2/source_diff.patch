@@ -1,0 +1,41 @@
+--- race_tests/nsa/experiments/v022_codex_power_s1_past_block_mask_sc-16g-2/candidate.py
++++ race_tests/nsa/experiments/v023_codex_power_s8_cooperative_k_sc-16g-2/candidate.py
+@@ -1,4 +1,4 @@
+-# codex-power v022
++# codex-power v023
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -223,6 +223,7 @@
+         with T.Kernel(seq_len, batch * kv_heads, threads=64) as (token, batch_head):
+             batch_id = batch_head // kv_heads
+             kv_head = batch_head % kv_heads
++            k_shared = T.alloc_shared([block_size, dim], dtype)
+             v_shared = T.alloc_shared([block_size, dim], dtype)
+             scores_half = T.alloc_fragment([groups, block_size], dtype)
+             output_shared = T.alloc_shared([groups, dim], dtype)
+@@ -236,6 +237,7 @@
+             block_sum = T.alloc_fragment([groups], accum_dtype)
+             denominator = T.alloc_fragment([groups], accum_dtype)
+             T.annotate_layout({
++                k_shared: make_swizzled_layout(k_shared),
+                 v_shared: T.Layout(
+                     [block_size, dim],
+                     lambda row, col: (row, ((col // 8) ^ (2 * (row // 4))) * 8 + col % 8),
+@@ -260,14 +262,13 @@
+             for selected in T.serial(selected_blocks):
+                 block_start = BlockIndices[batch_id, token, kv_head, selected] * block_size
+                 if block_start >= 0 and block_start <= token:
++                    T.copy(K[batch_id, block_start:block_start + block_size, kv_head, :], k_shared)
+                     T.fill(scores, 0)
+                     for chunk in T.serial(4):
+                         for element in T.vectorized(4):
+                             row = lane_id % 16
+                             feature = chunk * 16 + (lane_id // 16) * 4 + element
+-                            k_local[element] = K[
+-                                batch_id, block_start + row, kv_head, feature
+-                            ]
++                            k_local[element] = k_shared[row, feature]
+                         T.tvm_mfma(
+                             '16x16x16f16', 'row', 'row',
+                             'float16x4', 'float16x4', 'float32x4',

@@ -1,0 +1,1 @@
+The selected-shape generated device C++ is byte-identical to the baseline, falsifying the intended mechanism before formal paired testing. Full 14-case official benchmark, mcTracer, mcProfiler, sustained HBM sampling and external OJ were not run for this redundant candidate. The v004 fresh baseline profile remains the evidence for the current kernel.

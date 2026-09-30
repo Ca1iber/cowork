@@ -1,0 +1,66 @@
+--- /root/tilelang-metax/race_tests/nsa/experiments/v028_codex_power_adaptive_normalizer_sc-16g-2/candidate.py
++++ /root/tilelang-metax/race_tests/nsa/experiments/v029_codex_power_multiblock_direct_v_sc-16g-2/candidate.py
+@@ -1,4 +1,4 @@
+-# codex-power v028
++# codex-power v029
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -225,7 +225,7 @@
+             batch_id = batch_head // kv_heads
+             kv_head = batch_head % kv_heads
+             k_shared = T.alloc_shared([block_size, dim], dtype)
+-            v_shared = T.alloc_shared([block_size, dim], dtype)
++            v_local = T.alloc_local(4, dtype)
+             scores_half = T.alloc_fragment([groups, block_size], dtype)
+             output_shared = T.alloc_shared([groups, dim], dtype)
+             q_local = T.alloc_local(16, dtype)
+@@ -238,11 +238,17 @@
+             block_sum = T.alloc_fragment([groups], accum_dtype)
+             denominator = T.alloc_fragment([groups], accum_dtype)
+             T.annotate_layout({
++                scores_half: T.Fragment(
++                    [groups, block_size],
++                    forward_thread_fn=lambda row, col: row + 16 * (col // 4),
++                    forward_index_fn=lambda row, col: col % 4,
++                ),
++                output_acc: T.Fragment(
++                    [groups, dim],
++                    forward_thread_fn=lambda row, col: row + 16 * ((col % 16) // 4),
++                    forward_index_fn=lambda row, col: col % 4 + 4 * (col // 16),
++                ),
+                 k_shared: make_swizzled_layout(k_shared),
+-                v_shared: T.Layout(
+-                    [block_size, dim],
+-                    lambda row, col: (row, ((col // 8) ^ (2 * (row // 4))) * 8 + col % 8),
+-                ),
+                 scores: T.Fragment(
+                     [groups, block_size],
+                     forward_thread_fn=lambda row, col: row + 16 * (col // 4),
+@@ -306,15 +312,17 @@
+                     for head, feature in T.Parallel(groups, dim):
+                         if rescale[head] != 1.0:
+                             output_acc[head, feature] *= rescale[head]
+-                    T.copy(
+-                        V[batch_id, block_start:block_start + block_size, kv_head, :],
+-                        v_shared,
+-                    )
+-                    T.sync_warp()
+-                    T.gemm(
+-                        scores_half, v_shared, output_acc,
+-                        policy=T.GemmWarpPolicy.FullRow,
+-                    )
++                    for feature_tile in T.unroll(4):
++                        for element in T.serial(4):
++                            row = (lane_id // 16) * 4 + element
++                            feature = feature_tile * 16 + lane_id % 16
++                            v_local[element] = V[batch_id, block_start + row, kv_head, feature]
++                        T.tvm_mfma(
++                            '16x16x16f16', 'row', 'row',
++                            'float16x4', 'float16x4', 'float32x4',
++                            v_local.data, 0, scores_half.data, 0, output_acc.data, feature_tile,
++                            dtype='float32x4',
++                        )
+             T.sync_warp()
+             for head, feature in T.Parallel(groups, dim):
+                 output_acc[head, feature] /= denominator[head]

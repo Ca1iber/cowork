@@ -1,0 +1,9 @@
+# v020: case6 shared-score bridge layout only
+
+Parent is case6 feature-tiling rejection4664fb602 on codex-power. Candidate base is own v016, not rejected v019. Current case6 target: own159.813 versus v028156.639 us. No previous team optimized code is read/copied.
+
+Evidence: existing128-thread case6 has an FP16 [16,32] shared bridge between QK and PV. Its generated copy/A-load address is row*32 plus a default8-half-chunk swizzle with phase(row//2)%4. This is not plain row-major. Under the framework32-bank/4-byte model applied to a16-lane phase and an8-byte vector, distinct head rows0 and8 share banks; modeled max distinct words per bank2. This is a model, not a hardware guarantee. Existing own case6 shared nonconflict about80.33% versus archived v02889.19% is only motivation, not standalone bottleneck proof.
+
+Hypothesis: [row,col]->[row,4*((col//4) XOR(row//2))+col%4] in the same1024B score allocation. On16 rows and32 columns it is bijective, preserves4-half vector stores/loads, and distributes16 head rows' two-word requests across32 banks under the phase model. Keep128-thread geometry, Q/K/V, score math, normalization location, accumulator, output and other shape paths unchanged. Only shared-score physical mapping changes.
+
+Predictions: vector width remains uint2 for score copy/A loads, no added memory/sync/spills, shared conflict metric improves and elapsed time falls. Risks: layout inference/vectorization, actual bank semantics and shared contribution too small to matter. Inspect model/codegen/resources before launch, native case6 reference/timing, then matched v016/v028 if the screen improves. Header # codex-power v020; three imports, no custom class, async or foreign source. Case12 v016 still loses to v028 and full14/no-regression remain required before final promotion.

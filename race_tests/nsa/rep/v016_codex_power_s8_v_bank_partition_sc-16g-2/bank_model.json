@@ -1,0 +1,136 @@
+{
+  "assumption": "framework 32 banks x4-byte word, adjacent half-word lanes may broadcast; not a platform guarantee",
+  "mapping": "(row,col)->(row,col XOR16*(row//4))",
+  "bijection": true,
+  "8half_vectors_contiguous": true,
+  "loads": [
+    {
+      "tile": 0,
+      "element": 0,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 0,
+      "element": 1,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 0,
+      "element": 2,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 0,
+      "element": 3,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 1,
+      "element": 0,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 1,
+      "element": 1,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 1,
+      "element": 2,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 1,
+      "element": 3,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 2,
+      "element": 0,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 2,
+      "element": 1,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 2,
+      "element": 2,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 2,
+      "element": 3,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 3,
+      "element": 0,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 3,
+      "element": 1,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 3,
+      "element": 2,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    },
+    {
+      "tile": 3,
+      "element": 3,
+      "default_banks": 16,
+      "default_max_distinct_words_per_bank": 2,
+      "partitioned_banks": 32,
+      "partitioned_max_distinct_words_per_bank": 1
+    }
+  ]
+}

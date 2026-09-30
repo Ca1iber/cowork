@@ -1,0 +1,61 @@
+--- /root/tilelang-metax/race_tests/nsa/experiments/v026_codex_power_multiblock_warp_sync_sc-16g-2/candidate.py
++++ /root/tilelang-metax/race_tests/nsa/experiments/v028_codex_power_adaptive_normalizer_sc-16g-2/candidate.py
+@@ -1,4 +1,4 @@
+-# codex-power v026
++# codex-power v028
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -233,7 +233,7 @@
+             scores = T.alloc_fragment([groups, block_size], accum_dtype)
+             output_acc = T.alloc_fragment([groups, dim], accum_dtype)
+             block_max = T.alloc_fragment([groups], accum_dtype)
+-            previous_max = T.alloc_fragment([groups], accum_dtype)
++            normalizer = T.alloc_fragment([groups], accum_dtype)
+             rescale = T.alloc_fragment([groups], accum_dtype)
+             block_sum = T.alloc_fragment([groups], accum_dtype)
+             denominator = T.alloc_fragment([groups], accum_dtype)
+@@ -259,7 +259,7 @@
+                     ]
+             T.fill(output_acc, 0)
+             T.fill(denominator, 0)
+-            T.fill(block_max, -T.infinity(accum_dtype))
++            T.fill(normalizer, -T.infinity(accum_dtype))
+             for selected in T.serial(selected_blocks):
+                 block_start = BlockIndices[batch_id, token, kv_head, selected] * block_size
+                 if block_start >= 0 and block_start <= token:
+@@ -285,23 +285,27 @@
+                                 scores[head, offset],
+                                 -T.infinity(accum_dtype),
+                             )
+-                    T.copy(block_max, previous_max)
+                     T.fill(block_max, -T.infinity(accum_dtype))
+                     T.reduce_max(scores, block_max, dim=1, clear=True)
+                     for head in T.Parallel(groups):
+-                        rescale[head] = T.exp2(
+-                            previous_max[head] * scale - block_max[head] * scale
+-                        )
++                        if (block_max[head] - normalizer[head]) * scale > 7.0:
++                            rescale[head] = T.exp2((normalizer[head] - block_max[head]) * scale)
++                            normalizer[head] = block_max[head]
++                        else:
++                            rescale[head] = 1.0
+                     for head, offset in T.Parallel(groups, block_size):
+                         scores[head, offset] = T.exp2(
+-                            scores[head, offset] * scale - block_max[head] * scale
++                            (scores[head, offset] - normalizer[head]) * scale + 8.0
+                         )
+                     T.reduce_sum(scores, block_sum, dim=1)
+                     for head in T.Parallel(groups):
+-                        denominator[head] = denominator[head] * rescale[head] + block_sum[head]
++                        if rescale[head] != 1.0:
++                            denominator[head] *= rescale[head]
++                        denominator[head] += block_sum[head]
+                     T.copy(scores, scores_half)
+                     for head, feature in T.Parallel(groups, dim):
+-                        output_acc[head, feature] *= rescale[head]
++                        if rescale[head] != 1.0:
++                            output_acc[head, feature] *= rescale[head]
+                     T.copy(
+                         V[batch_id, block_start:block_start + block_size, kv_head, :],
+                         v_shared,

@@ -1,0 +1,1 @@
+Native case6 correctness and static rules pass but screen225.075 us loses to the159.813 us own path and156.639 us v028 target. No full14, OJ or new tracer/profiler/Roofline/ISA is run after this negative screen.

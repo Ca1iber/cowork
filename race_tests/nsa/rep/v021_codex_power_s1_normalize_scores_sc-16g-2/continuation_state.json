@@ -1,0 +1,49 @@
+{
+  "goal": "continue optimizing; active; not complete",
+  "remote_repo": "/root/tilelang-metax",
+  "branch": "codex-power",
+  "root_submission_version": "v013, unchanged, SHA e51d49834fdf06bb02f4c7c2ea0bc2bbc9d6a95b81578e58c2317eee0bdfbe76",
+  "best_own_experiment": "v021 candidate.py combines case6 normalization local gain and unchanged v016 case12 helper",
+  "case6_matched_us": {
+    "v016": 160.2,
+    "v021": 158.3715,
+    "v028": 157.35049999999998
+  },
+  "case12_previous_matched_us": {
+    "v016": 114.7775,
+    "v028": 83.8065
+  },
+  "constraints": [
+    "only three exact TileLang imports",
+    "custom class if needed inside run_kernel; none used",
+    "first line # codex-power vxxx",
+    "edit directly inside container; no apply_patch",
+    "main repo and current branch; no extra worktree",
+    "AKO4ALL, full naive_nsa, native warmup10/repeat50",
+    "no regression on all14 versus v028 before final promotion",
+    "minimize referencing previous team code; v028 only black-box benchmark/profile"
+  ],
+  "next_candidates": [
+    "case6: skip per-element causal initializer for fully past block, retaining zero score initialization; only case6 constexpr guard",
+    "case12: cooperative vectorized K staging into small shared tile while preserving Q register cache",
+    "case12: synchronous next-block K register preload while current softmax/PV runs",
+    "case12: smaller score groups if resource footprint justified"
+  ],
+  "source_v028_git_commit": "95e8a78ce",
+  "source_v028_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "runner": "hack/v000_codex_power_baseline_sc-16g-2/test_tilelang_nsa_fwd_v28.py",
+  "failed_versions": [
+    "v014 block split173-187us",
+    "v015 dense vector gather167us",
+    "v017 current K preload117us",
+    "v018 register pool132.746us,102MT; serial same resources",
+    "v019 feature tiling225.075us",
+    "v020 bridge layout159.002us no target win"
+  ],
+  "evidence": [
+    "v016 matched profiler with v028, source/gen/LLVM archived; bank counter unchanged",
+    "mcTracer fresh v013120s timeout/incompleteJSON, not valid timing",
+    "mxcc -S unsupported; LLVM available with -c -emit-llvm -maca-device-only then llvm-dis"
+  ],
+  "own_gpu_jobs": "all recorded native/profiler tasks terminal; see fresh checkpoint snapshot"
+}

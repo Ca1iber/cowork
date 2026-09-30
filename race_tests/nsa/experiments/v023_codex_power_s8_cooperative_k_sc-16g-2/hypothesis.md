@@ -1,0 +1,9 @@
+# v023: cooperative vector K staging for case12
+
+Parent0b88af7c6 on codex-power. Base is own v022, preserving case6's local checkpoint and unchanged own v016 case12 arithmetic. Target case12 v02883.8065 us versus own114.7775 us. No previous team optimized implementation is read/copied.
+
+Evidence: current QK reads four uint2 K chunks directly from global memory, each followed by a dependent MFMA. Explicit current-block register prefetch materializes but fails117.012 us. Fresh own/v028 profiling has same4096 waves and nearly same physical read/write bytes; v028 has higher MTE/MMA duty despite worse average load/shared metrics. This motivates changed access organization, not a claim that any single counter proves the bottleneck.
+
+Hypothesis: copy the16x64 K tile cooperatively through a small shared buffer using wide contiguous global reads, then use four fast shared-vector operand loads for the existing QK MFMA. Q stays cached in registers. Global access per copy round is contiguous across threads, unlike the native MFMA-oriented global K lane mapping. Expected two uint4 global copy rounds replacing four uint2 global operand loads; new shared K reads and synchronization are explicit costs. Same payload/math/grid, additional2048B shared unless lifetime reuse occurs.
+
+Predictions: generated coalesced uint4 K reads, vector shared operand reads, no spills; MTE organization can improve end-to-end latency despite extra shared operations. Risks: staging/barrier cost, shared residency, vectorization or no dominant K access penalty. Inspect lowering/resources before native case12 reference/timing, then matched own/v028 comparison if improved. Preserve invalid and causal logic. Header # codex-power v023, exact three imports, no class/async/foreign source. Final full14/no-regression gate still required.

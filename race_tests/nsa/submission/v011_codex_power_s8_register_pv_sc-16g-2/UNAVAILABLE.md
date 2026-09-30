@@ -1,0 +1,1 @@
+No OJ submission is archived for v011. The register-fed PV path passes the case12 naive_nsa reference and source/generated-code static checks, but its 164.122 us screen is 39% slower than v010. The candidate and codegen are retained for diagnosis.

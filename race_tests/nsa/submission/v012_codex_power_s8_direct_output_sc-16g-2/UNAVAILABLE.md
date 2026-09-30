@@ -1,0 +1,1 @@
+No OJ submission is archived for v012. Although direct output removes two static barriers and passes case12 reference and static source/code rules, it is 0.61% slower than v010 in 16 paired runs. v010 remains the winning local candidate.

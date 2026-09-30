@@ -1,0 +1,50 @@
+--- /root/tilelang-metax/race_tests/nsa/experiments/v023_codex_power_s8_cooperative_k_sc-16g-2/candidate.py
++++ /root/tilelang-metax/race_tests/nsa/experiments/v024_codex_power_host_kernel_cache_sc-16g-2/candidate.py
+@@ -1,4 +1,4 @@
+-# codex-power v023
++# codex-power v024
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -318,6 +318,9 @@
+     return native_sparse_attention
+ 
+ 
++_compiled_kernels = {}
++
++
+ def run_kernel(
+     q,
+     k,
+@@ -333,16 +336,20 @@
+     block_size,
+     is_causal,
+ ):
+-    factory = _make_s8_register_qk if (S == 8 and block_size == 16 and D == 64 and HQ // H == 16) else _make_native_sparse_attention
+-    kernel = factory(
+-        batch=B,
+-        seq_len=seq_len,
+-        kv_heads=H,
+-        query_heads=HQ,
+-        dim=D,
+-        selected_blocks=S,
+-        block_size=block_size,
+-        is_causal=bool(is_causal),
+-    )
++    key = (B, seq_len, H, HQ, D, S, block_size, bool(is_causal))
++    kernel = _compiled_kernels.get(key)
++    if kernel is None:
++        factory = _make_s8_register_qk if (S == 8 and block_size == 16 and D == 64 and HQ // H == 16) else _make_native_sparse_attention
++        kernel = factory(
++            batch=B,
++            seq_len=seq_len,
++            kv_heads=H,
++            query_heads=HQ,
++            dim=D,
++            selected_blocks=S,
++            block_size=block_size,
++            is_causal=bool(is_causal),
++        )
++        _compiled_kernels[key] = kernel
+     # out_idx=[] makes the caller-provided output buffer an ordinary kernel argument.
+     kernel(q, k, v, block_indices, output)

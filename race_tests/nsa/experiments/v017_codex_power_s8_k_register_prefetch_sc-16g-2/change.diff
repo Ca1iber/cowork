@@ -1,0 +1,41 @@
+diff --git a/race_tests/nsa/experiments/v016_codex_power_s8_v_bank_partition_sc-16g-2/candidate.py b/race_tests/nsa/experiments/v017_codex_power_s8_k_register_prefetch_sc-16g-2/candidate.py
+index dda67a503..f746423da 100644
+--- a/race_tests/nsa/experiments/v016_codex_power_s8_v_bank_partition_sc-16g-2/candidate.py
++++ b/race_tests/nsa/experiments/v017_codex_power_s8_k_register_prefetch_sc-16g-2/candidate.py
+@@ -1,4 +1,4 @@
+-# codex-power v016
++# codex-power v017
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -218,7 +218,7 @@ def _make_s8_register_qk(
+             scores_half = T.alloc_fragment([groups, block_size], dtype)
+             output_shared = T.alloc_shared([groups, dim], dtype)
+             q_local = T.alloc_local(16, dtype)
+-            k_local = T.alloc_local(4, dtype)
++            k_local = T.alloc_local(16, dtype)
+             scores = T.alloc_fragment([groups, block_size], accum_dtype)
+             output_acc = T.alloc_fragment([groups, dim], accum_dtype)
+             block_max = T.alloc_fragment([groups], accum_dtype)
+@@ -252,17 +252,18 @@ def _make_s8_register_qk(
+                 block_start = BlockIndices[batch_id, token, kv_head, selected] * block_size
+                 if block_start >= 0 and block_start <= token:
+                     T.fill(scores, 0)
+-                    for chunk in T.serial(4):
++                    for chunk in T.unroll(4):
+                         for element in T.vectorized(4):
+                             row = lane_id % 16
+                             feature = chunk * 16 + (lane_id // 16) * 4 + element
+-                            k_local[element] = K[
++                            k_local[chunk * 4 + element] = K[
+                                 batch_id, block_start + row, kv_head, feature
+                             ]
++                    for chunk in T.unroll(4):
+                         T.tvm_mfma(
+                             '16x16x16f16', 'row', 'row',
+                             'float16x4', 'float16x4', 'float32x4',
+-                            k_local.data, 0, q_local.data, chunk, scores.data, 0,
++                            k_local.data, chunk, q_local.data, chunk, scores.data, 0,
+                             dtype='float32x4',
+                         )
+                     if is_causal:

@@ -1,0 +1,1 @@
+Case12 correctness passed, but the project-native screen measured 164.122 us versus v010 at roughly 117.7 us. Full 14-case benchmark, mcTracer, mcProfiler, Roofline and OJ were intentionally not run for this rejected mechanism.

@@ -1,0 +1,49 @@
+{
+  "iteration": "v027_codex_power_multiblock_scaled_max_sc-16g-2",
+  "parent_commit": "a79d13653573265240e5bfde051a55560352cb9b",
+  "status": "rejected_register_ceiling_prediction_failed",
+  "source_sha256": "60b00d088d3424f29a360389f7e46310550943b3783326c1f68af913a30e8129",
+  "native_screens": [
+    {
+      "case": "10",
+      "B": "1",
+      "SEQ_LEN": "256",
+      "H": "1",
+      "HQ": "16",
+      "D": "64",
+      "S": "2",
+      "block_size": "16",
+      "latency_ms": "0.011546",
+      "status": "PASS"
+    },
+    {
+      "case": "11",
+      "B": "2",
+      "SEQ_LEN": "512",
+      "H": "1",
+      "HQ": "16",
+      "D": "64",
+      "S": "4",
+      "block_size": "16",
+      "latency_ms": "0.025011",
+      "status": "PASS"
+    },
+    {
+      "case": "12",
+      "B": "4",
+      "SEQ_LEN": "1024",
+      "H": "1",
+      "HQ": "16",
+      "D": "64",
+      "S": "8",
+      "block_size": "16",
+      "latency_ms": "0.098289",
+      "status": "PASS"
+    }
+  ],
+  "resources": "65MT32ST max7 unchanged zero stack",
+  "source_generated_static": "PASS",
+  "LLVM": "captured",
+  "matched_full14_OJ_profiles": "not run after resource prediction failed",
+  "artifact_index_sha256": "06399071defbaf4d4746fb437c502d3f95be9bf4a11e02043d64a5c1d2868ac3"
+}

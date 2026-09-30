@@ -1,0 +1,1 @@
+No OJ submission is archived for v008. The exact three-import candidate passed source static validation but TileLang compilation failed on the official case12 shape with `Check failed: pb->value != 0 ... Divide by zero`. No correctness or performance result exists for this candidate. The failure source and log remain in experiments/ and rep/.

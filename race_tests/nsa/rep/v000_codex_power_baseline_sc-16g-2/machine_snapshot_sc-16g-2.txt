@@ -1,0 +1,77 @@
+Tue Sep 29 12:35:19 UTC 2026
+Linux 12f2c206715d 5.15.0-58-generic #64~20.04.1-Ubuntu SMP Fri Jan 6 16:42:31 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+codex-power
+ffa68b684e3876df2821fe34c9959493c2ca065a
+462d505fe28efb0a0140feb1a1a4ca00df24b31d89f08beef2478c18685ca0b1  race_tests/nsa/submission.py
+85f2c34acd793fb0a45084175acd7bcde48ff5d717a395d370800c30cf4e7036  race_tests/nsa/official_case.json
+e31d5f188923d8696c7ad190b1652d5b3142c004dc96d0604f371c71f179bf32  race_tests/nsa/reference.py
+a1d1871b389bfc7af8d59d054e14ae35bc3e623094b945119d2c5cd54ef4d443  race_tests/nsa/test_tilelang_nsa_fwd.py
+6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568  race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/test_tilelang_nsa_fwd_v28.py
+
+mx-smi  version: 2.3.1
+
+mx-smi  version: 2.3.1
+
+=================== MetaX System Management Interface Log ===================
+Timestamp                                         : Tue Sep 29 12:35:19 2026
+
+Attached GPUs                                     : 1
+GPU#0  MXC500  0000:0e:00.0
+    Clock
+        XCORE                                     : 428 MHz
+        MC                                        : 1800 MHz
+        VPUE                                      : 535 MHz
+        VPUD                                      : 525 MHz
+
+End of Log
+mx-smi  version: 2.3.1
+
+=================== MetaX System Management Interface Log ===================
+Timestamp                                         : Tue Sep 29 12:35:19 2026
+
+Attached GPUs                                     : 1
+GPU#0  MXC500  0000:0e:00.0
+                         Ap Usage
+Index  0   1   2   3   4   5   6   7   8   9   10  11  12  
+dpc0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+dpc1   0   0   0   0   0   0   0   0   0   0   0   0   0   
+dpc2   0   0   0   0   0   0   0   0   0   0   0   0   0   
+dpc3   0   0   0   0   0   0   0   0   0   0   0   0   0   
+dpc4   0   0   0   0   0   0   0   0   0   0   0   0   0   
+dpc5   0   0   0   0   0   0   0   0   0   0   0   0   0   
+dpc6   0   0   0   0   0   0   0   0   0   0   0   0   0   
+dpc7   0   0   0   0   0   0   0   0   0   0   0   0   0   
+
+End of Log
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+/opt/conda/lib/python3.12/site-packages/tvm_ffi/registry.py:85: UserWarning: Field 'span' in 'ir.TupleType' duplicates an ancestor field. Child types should not re-register inherited fields.
+  info = core._register_object_by_index(type_index, cls)
+/opt/conda/lib/python3.12/site-packages/tvm_ffi/registry.py:85: UserWarning: Field 'span' in 'ir.FuncType' duplicates an ancestor field. Child types should not re-register inherited fields.
+  info = core._register_object_by_index(type_index, cls)
+/opt/conda/lib/python3.12/site-packages/tvm_ffi/registry.py:85: UserWarning: Field 'span' in 'ir.TensorMapType' duplicates an ancestor field. Child types should not re-register inherited fields.
+  info = core._register_object_by_index(type_index, cls)
+/opt/conda/lib/python3.12/site-packages/tvm_ffi/registry.py:85: UserWarning: Field 'name' in 'relax.TEPlaceholderOp' duplicates an ancestor field. Child types should not re-register inherited fields.
+  info = core._register_object_by_index(type_index, cls)
+/opt/conda/lib/python3.12/site-packages/tvm_ffi/registry.py:85: UserWarning: Field 'tag' in 'relax.TEPlaceholderOp' duplicates an ancestor field. Child types should not re-register inherited fields.
+  info = core._register_object_by_index(type_index, cls)
+/opt/conda/lib/python3.12/site-packages/tvm_ffi/registry.py:85: UserWarning: Field 'attrs' in 'relax.TEPlaceholderOp' duplicates an ancestor field. Child types should not re-register inherited fields.
+  info = core._register_object_by_index(type_index, cls)
+/opt/conda/lib/python3.12/site-packages/tvm_ffi/registry.py:85: UserWarning: Field 'shape' in 'relax.TEPlaceholderOp' duplicates an ancestor field. Child types should not re-register inherited fields.
+  info = core._register_object_by_index(type_index, cls)
+/opt/conda/lib/python3.12/site-packages/tvm_ffi/registry.py:85: UserWarning: Field 'dtype' in 'relax.TEPlaceholderOp' duplicates an ancestor field. Child types should not re-register inherited fields.
+  info = core._register_object_by_index(type_index, cls)
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+/opt/conda/lib/python3.12/site-packages/tvm_ffi/registry.py:85: UserWarning: Field 'policy_type' in 'tl.GemmSPWarpPolicy' duplicates an ancestor field. Child types should not re-register inherited fields.
+  info = core._register_object_by_index(type_index, cls)
+/opt/conda/lib/python3.12/site-packages/tvm_ffi/registry.py:85: UserWarning: Field 'm_warp' in 'tl.GemmSPWarpPolicy' duplicates an ancestor field. Child types should not re-register inherited fields.
+  info = core._register_object_by_index(type_index, cls)
+/opt/conda/lib/python3.12/site-packages/tvm_ffi/registry.py:85: UserWarning: Field 'n_warp' in 'tl.GemmSPWarpPolicy' duplicates an ancestor field. Child types should not re-register inherited fields.
+  info = core._register_object_by_index(type_index, cls)
+torch 2.8.0+metax3.7.1.3 tilelang /root/tilelang-metax/tilelang/__init__.py

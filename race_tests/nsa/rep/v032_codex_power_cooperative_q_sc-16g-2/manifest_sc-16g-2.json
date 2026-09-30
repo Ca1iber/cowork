@@ -1,0 +1,62 @@
+{
+  "iteration": "v032_codex_power_cooperative_q_sc-16g-2",
+  "parent_commit": "e9475f6ca994ff63c56f3a487940c8b4de750fe2",
+  "status": "S4_gain_whole_source_gate_failed",
+  "source_hashes": {
+    "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "power_v031": "6bc18d4ffbaa3f2ffafad5df3f3c1088a7c4099c31f5ce1370d95ac73c7f8c04",
+    "power_v032": "9aac49ce222ef47bec54408754c8ff1b1f4ee71c6dcc495c8b8b1f18a99b4973"
+  },
+  "paired": {
+    "reference": "36/36 targets PASS",
+    "cases": [
+      {
+        "case": 10,
+        "medians_us": {
+          "baseline_v28": 11.6765,
+          "power_v031": 11.812,
+          "power_v032": 11.671
+        },
+        "vs_parent_pct": -1.193701320690821,
+        "vs_baseline_pct": -0.04710315591145431
+      },
+      {
+        "case": 11,
+        "medians_us": {
+          "baseline_v28": 23.818,
+          "power_v031": 24.002499999999998,
+          "power_v032": 21.706
+        },
+        "vs_parent_pct": -9.5677533590251,
+        "vs_baseline_pct": -8.867243261398949
+      },
+      {
+        "case": 12,
+        "medians_us": {
+          "baseline_v28": 83.689,
+          "power_v031": 94.2745,
+          "power_v032": 92.40299999999999
+        },
+        "vs_parent_pct": -1.9851603561938935,
+        "vs_baseline_pct": 10.412360047318048
+      }
+    ]
+  },
+  "resources": "70MT26ST max7 zero stack shared4608",
+  "tracer": {
+    "tool": "mcTracer",
+    "raw_unit": "ns",
+    "steady_launches": 20,
+    "median_device_us": 88.576,
+    "resources": {
+      "dynamic_shared": 4608,
+      "private_per_thread": 0,
+      "private_total": 0,
+      "registers_per_thread": 70,
+      "static_shared": 0
+    }
+  },
+  "mcProfiler": "two valid samples each",
+  "full14_OJ": "not run for regressing whole path",
+  "artifact_index_sha256": "46589a79b94ee4bf5b64936e1457634933eb06317f883ce2d2c89993aaf5cb77"
+}

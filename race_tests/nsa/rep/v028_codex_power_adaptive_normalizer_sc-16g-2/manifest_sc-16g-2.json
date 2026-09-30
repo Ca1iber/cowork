@@ -1,0 +1,49 @@
+{
+  "iteration": "v028_codex_power_adaptive_normalizer_sc-16g-2",
+  "history_parent": "9adb1d73a3539db6a1e1ca3f857d97d89b18fef4",
+  "kernel_parent": "v026",
+  "status": "target_gate_failed",
+  "source_sha256": "0e060d67b21fbcc04193bbea4a8adec9a8674670e0d57299eb30b0023375f3a1",
+  "screens": [
+    {
+      "case": "10",
+      "B": "1",
+      "SEQ_LEN": "256",
+      "H": "1",
+      "HQ": "16",
+      "D": "64",
+      "S": "2",
+      "block_size": "16",
+      "latency_ms": "0.011510",
+      "status": "PASS"
+    },
+    {
+      "case": "11",
+      "B": "2",
+      "SEQ_LEN": "512",
+      "H": "1",
+      "HQ": "16",
+      "D": "64",
+      "S": "4",
+      "block_size": "16",
+      "latency_ms": "0.024407",
+      "status": "PASS"
+    },
+    {
+      "case": "12",
+      "B": "4",
+      "SEQ_LEN": "1024",
+      "H": "1",
+      "HQ": "16",
+      "D": "64",
+      "S": "8",
+      "block_size": "16",
+      "latency_ms": "0.096957",
+      "status": "PASS"
+    }
+  ],
+  "resources": "64MT32ST max8 zero stack",
+  "static_generated": "PASS",
+  "full14_OJ_new_profiles": "not run after target gate failed",
+  "artifact_index_sha256": "1c91c01624e33bbd3c537a6531671727e93734b0308aee3a0cd0d6e94f24e9b6"
+}

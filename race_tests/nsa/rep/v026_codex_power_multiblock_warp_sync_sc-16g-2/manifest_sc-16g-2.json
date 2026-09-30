@@ -1,0 +1,66 @@
+{
+  "iteration": "v026_codex_power_multiblock_warp_sync_sc-16g-2",
+  "parent_commit": "9d2282724355937e1b9cec6f780358934d5d1bc5",
+  "status": "local_gain; full_v28_gate_failed",
+  "source_hashes": {
+    "v028": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "v025": "525bb54c89237c735994930717cb077db658a7e0055ddff899a053ea604300f9",
+    "v026": "d55eb6906ebcd7c9b96e5bb37c1523326826672c4fc42d740711fc1b6ac1dbef"
+  },
+  "targets": {
+    "reference": "18/18 targets PASS",
+    "cases": [
+      {
+        "case": 10,
+        "medians_us": {
+          "v028": 11.827,
+          "v025": 12.165,
+          "v026": 11.565999999999999
+        },
+        "v026_vs_parent_pct": -4.923962186600905,
+        "v026_vs_v28_pct": -2.206814915024946
+      },
+      {
+        "case": 11,
+        "medians_us": {
+          "v028": 23.139499999999998,
+          "v025": 24.7245,
+          "v026": 24.5735
+        },
+        "v026_vs_parent_pct": -0.6107302473255305,
+        "v026_vs_v28_pct": 6.197195272153677
+      },
+      {
+        "case": 12,
+        "medians_us": {
+          "v028": 83.382,
+          "v025": 100.48750000000001,
+          "v026": 97.5795
+        },
+        "v026_vs_parent_pct": -2.893892275158616,
+        "v026_vs_v28_pct": 17.027056199179658
+      }
+    ]
+  },
+  "mcProfiler": "two matched samples each; valid",
+  "mcTracer": {
+    "tool": "mcTracer",
+    "unit": "ns->us",
+    "steady_launches": 20,
+    "device_us_median": 94.208,
+    "device_us_min": 93.696,
+    "device_us_max": 94.976,
+    "resource": {
+      "dynamic_shared": 4608,
+      "private_per_thread": 0,
+      "private_total": 0,
+      "registers_per_thread": 65,
+      "static_shared": 0
+    }
+  },
+  "source_generated_static": "PASS",
+  "synchronization": "explicit native64 warp fences; proof archived",
+  "resources": "65MT32ST zero-stack max7; LLVM warp barriers confirmed, ISA unavailable",
+  "full14_OJ": "not run after targets11/12 still slower",
+  "artifact_index_sha256": "296643b5eafb8fe2c151ee6e96d531a66e25daf26fb6c45153c2ea58f096b7b4"
+}

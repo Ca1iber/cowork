@@ -1,0 +1,35 @@
+{
+  "source_argument": "uniform block_start and full64 lanes; fences before reuse, after K/V writes, before/after output relay",
+  "cases": [
+    {
+      "case": 10,
+      "k_shared_store": "*(uint4*)(((half_t*)buf_dyn_shmem) + (((((i_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + ((((((int)threadIdx.x) >> 5) + ((((int)threadIdx.x) & 7) >> 2)) & 1) * 32)) + (((((((int)threadIdx.x) & 31) >> 4) + ((((int)threadIdx.x) & 3) >> 1)) & 1) * 16)) + (((((((int)threadIdx.x) & 15) >> 3) + (((int)threadIdx.x) & 1)) & 1) * 8))) = condval;",
+      "v_shared_store": "*(uint4*)(((half_t*)buf_dyn_shmem) + ((((i_5 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ ((i_5 * 4) + ((((int)threadIdx.x) >> 5) * 2))) * 8)) + 1024)) = condval_2;",
+      "wave_size": 64,
+      "block_threads": 64,
+      "CTA_barriers": 0,
+      "warp_fences": 5,
+      "AllReduce": "64,16 native shuffle; workspace pointer unused by instantiated branch"
+    },
+    {
+      "case": 11,
+      "k_shared_store": "*(uint4*)(((half_t*)buf_dyn_shmem) + (((((i_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + ((((((int)threadIdx.x) >> 5) + ((((int)threadIdx.x) & 7) >> 2)) & 1) * 32)) + (((((((int)threadIdx.x) & 31) >> 4) + ((((int)threadIdx.x) & 3) >> 1)) & 1) * 16)) + (((((((int)threadIdx.x) & 15) >> 3) + (((int)threadIdx.x) & 1)) & 1) * 8))) = condval;",
+      "v_shared_store": "*(uint4*)(((half_t*)buf_dyn_shmem) + ((((i_5 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ ((i_5 * 4) + ((((int)threadIdx.x) >> 5) * 2))) * 8)) + 1024)) = condval_2;",
+      "wave_size": 64,
+      "block_threads": 64,
+      "CTA_barriers": 0,
+      "warp_fences": 5,
+      "AllReduce": "64,16 native shuffle; workspace pointer unused by instantiated branch"
+    },
+    {
+      "case": 12,
+      "k_shared_store": "*(uint4*)(((half_t*)buf_dyn_shmem) + (((((i_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + ((((((int)threadIdx.x) >> 5) + ((((int)threadIdx.x) & 7) >> 2)) & 1) * 32)) + (((((((int)threadIdx.x) & 31) >> 4) + ((((int)threadIdx.x) & 3) >> 1)) & 1) * 16)) + (((((((int)threadIdx.x) & 15) >> 3) + (((int)threadIdx.x) & 1)) & 1) * 8))) = condval;",
+      "v_shared_store": "*(uint4*)(((half_t*)buf_dyn_shmem) + ((((i_5 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ ((i_5 * 4) + ((((int)threadIdx.x) >> 5) * 2))) * 8)) + 1024)) = condval_2;",
+      "wave_size": 64,
+      "block_threads": 64,
+      "CTA_barriers": 0,
+      "warp_fences": 5,
+      "AllReduce": "64,16 native shuffle; workspace pointer unused by instantiated branch"
+    }
+  ]
+}

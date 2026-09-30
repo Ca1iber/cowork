@@ -1,0 +1,1 @@
+The unrolled register-pool source passes native case12 reference at132.746 us but loses to v016/v028. Serial block loops compile with the same102 MT/60 ST,0B stack,staticMaxWarps4 and are not timed after this unfavorable resource gate. Full14, OJ and new tracer/profiler/Roofline/ISA are not run. Sources, two codegens and resources are archived.

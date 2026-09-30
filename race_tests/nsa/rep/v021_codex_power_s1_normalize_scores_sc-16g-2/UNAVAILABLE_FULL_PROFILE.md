@@ -1,0 +1,1 @@
+Matched case6 native reference/timing is complete12/12 PASS. v021158.3715 us improves own v016160.200 us, but loses to v028157.3505 us. Full14, external OJ and new tracer/profiler/Roofline/ISA are not run after the target gate fails. Codegen/resources and exact hashes are archived.

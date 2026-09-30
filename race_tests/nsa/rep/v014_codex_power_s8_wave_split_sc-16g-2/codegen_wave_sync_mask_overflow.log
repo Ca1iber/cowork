@@ -1,0 +1,316 @@
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+2026-09-30 01:07:03  [TileLang:tilelang.language.eager.builder:CRITICAL] (builder.py:1281): Failed to build prim_func from native_sparse_attention
+args={'Q': tir.Buffer(data=tir.Var(span=None, dtype=handle, name="Q", type_annotation=ir.PointerType(span=None, element_type=ir.PrimType(span=None, dtype=float16), storage_scope="global")), dtype=float16, shape=(ir.IntImm(span=None, dtype=int32, value=4), ir.IntImm(span=None, dtype=int32, value=1024), ir.IntImm(span=None, dtype=int32, value=16), ir.IntImm(span=None, dtype=int32, value=64)), strides=(ir.IntImm(span=None, dtype=int32, value=1048576), ir.IntImm(span=None, dtype=int32, value=1024), ir.IntImm(span=None, dtype=int32, value=64), ir.IntImm(span=None, dtype=int32, value=1)), axis_separators=(), elem_offset=ir.IntImm(span=None, dtype=int32, value=0), name="Q", data_alignment=64, offset_factor=1, buffer_type=1, span=None), 'K': tir.Buffer(data=tir.Var(span=None, dtype=handle, name="K", type_annotation=ir.PointerType(span=None, element_type=ir.PrimType(span=None, dtype=float16), storage_scope="global")), dtype=float16, shape=(ir.IntImm(span=None, dtype=int32, value=4), ir.IntImm(span=None, dtype=int32, value=1024), ir.IntImm(span=None, dtype=int32, value=1), ir.IntImm(span=None, dtype=int32, value=64)), strides=(ir.IntImm(span=None, dtype=int32, value=65536), ir.IntImm(span=None, dtype=int32, value=64), ir.IntImm(span=None, dtype=int32, value=64), ir.IntImm(span=None, dtype=int32, value=1)), axis_separators=(), elem_offset=ir.IntImm(span=None, dtype=int32, value=0), name="K", data_alignment=64, offset_factor=1, buffer_type=1, span=None), 'V': tir.Buffer(data=tir.Var(span=None, dtype=handle, name="V", type_annotation=ir.PointerType(span=None, element_type=ir.PrimType(span=None, dtype=float16), storage_scope="global")), dtype=float16, shape=(ir.IntImm(span=None, dtype=int32, value=4), ir.IntImm(span=None, dtype=int32, value=1024), ir.IntImm(span=None, dtype=int32, value=1), ir.IntImm(span=None, dtype=int32, value=64)), strides=(ir.IntImm(span=None, dtype=int32, value=65536), ir.IntImm(span=None, dtype=int32, value=64), ir.IntImm(span=None, dtype=int32, value=64), ir.IntImm(span=None, dtype=int32, value=1)), axis_separators=(), elem_offset=ir.IntImm(span=None, dtype=int32, value=0), name="V", data_alignment=64, offset_factor=1, buffer_type=1, span=None), 'BlockIndices': tir.Buffer(data=tir.Var(span=None, dtype=handle, name="BlockIndices", type_annotation=ir.PointerType(span=None, element_type=ir.PrimType(span=None, dtype=int32), storage_scope="global")), dtype=int32, shape=(ir.IntImm(span=None, dtype=int32, value=4), ir.IntImm(span=None, dtype=int32, value=1024), ir.IntImm(span=None, dtype=int32, value=1), ir.IntImm(span=None, dtype=int32, value=8)), strides=(ir.IntImm(span=None, dtype=int32, value=8192), ir.IntImm(span=None, dtype=int32, value=8), ir.IntImm(span=None, dtype=int32, value=8), ir.IntImm(span=None, dtype=int32, value=1)), axis_separators=(), elem_offset=ir.IntImm(span=None, dtype=int32, value=0), name="BlockIndices", data_alignment=64, offset_factor=1, buffer_type=1, span=None), 'Output': tir.Buffer(data=tir.Var(span=None, dtype=handle, name="Output", type_annotation=ir.PointerType(span=None, element_type=ir.PrimType(span=None, dtype=float16), storage_scope="global")), dtype=float16, shape=(ir.IntImm(span=None, dtype=int32, value=4), ir.IntImm(span=None, dtype=int32, value=1024), ir.IntImm(span=None, dtype=int32, value=16), ir.IntImm(span=None, dtype=int32, value=64)), strides=(ir.IntImm(span=None, dtype=int32, value=1048576), ir.IntImm(span=None, dtype=int32, value=1024), ir.IntImm(span=None, dtype=int32, value=64), ir.IntImm(span=None, dtype=int32, value=1)), axis_separators=(), elem_offset=ir.IntImm(span=None, dtype=int32, value=0), name="Output", data_alignment=64, offset_factor=1, buffer_type=1, span=None)}
+source=def make_closure(accum_dtype, batch, block_size, dim, dtype, groups, head_layout, is_causal, kv_heads, output_layout, scale, score_layout, seq_len):
+
+    def native_sparse_attention(__tb):
+        __tb_fl = 'candidate.py'
+        __tb_fn = 'native_sparse_attention'
+        range = __tb.override('range')
+        __tb.set_fileline(__tb_fl, 224, __tb_fn)
+
+        def native_sparse_attention(Q, K, V, BlockIndices, Output, **__kwargs):
+            __tb.set_fileline(__tb_fl, 225, __tb_fn)
+            Q = __tb.arg('Q', Q)
+            __tb.set_fileline(__tb_fl, 226, __tb_fn)
+            K = __tb.arg('K', K)
+            __tb.set_fileline(__tb_fl, 227, __tb_fn)
+            V = __tb.arg('V', V)
+            __tb.set_fileline(__tb_fl, 228, __tb_fn)
+            BlockIndices = __tb.arg('BlockIndices', BlockIndices)
+            __tb.set_fileline(__tb_fl, 229, __tb_fn)
+            Output = __tb.arg('Output', Output)
+            __tb.set_fileline(__tb_fl, 1, __tb_fn)
+            if __tb.skip_kernel_ctx():
+                __tb.set_fileline(__tb_fl, 1, __tb_fn)
+                return
+            __tb.set_fileline(__tb_fl, 231, __tb_fn)
+            with __tb.ctx_with(__tb.rval('T', T).Kernel(__tb.rval('seq_len', seq_len), __tb.rval('batch', batch) * __tb.rval('kv_heads', kv_heads), threads=128)) as (token, batch_head):
+                __tb.set_fileline(__tb_fl, 232, __tb_fn)
+                batch_id = __tb.bind('batch_id', __tb.rval('batch_head', batch_head) // __tb.rval('kv_heads', kv_heads))
+                __tb.set_fileline(__tb_fl, 233, __tb_fn)
+                kv_head = __tb.bind('kv_head', __tb.rval('batch_head', batch_head) % __tb.rval('kv_heads', kv_heads))
+                __tb.set_fileline(__tb_fl, 234, __tb_fn)
+                tx = __tb.bind('tx', __tb.rval('T', T).KernelLaunchFrame.Current().get_thread_binding())
+                __tb.set_fileline(__tb_fl, 235, __tb_fn)
+                wave_id = __tb.bind('wave_id', __tb.rval('tx', tx) // 64)
+                __tb.set_fileline(__tb_fl, 236, __tb_fn)
+                lane_id = __tb.bind('lane_id', __tb.rval('tx', tx) % 64)
+                __tb.set_fileline(__tb_fl, 237, __tb_fn)
+                q_local = __tb.bind('q_local', __tb.rval('T', T).alloc_local(16, __tb.rval('dtype', dtype)))
+                __tb.set_fileline(__tb_fl, 238, __tb_fn)
+                k_local = __tb.bind('k_local', __tb.rval('T', T).alloc_local(4, __tb.rval('dtype', dtype)))
+                __tb.set_fileline(__tb_fl, 239, __tb_fn)
+                v_local = __tb.bind('v_local', __tb.rval('T', T).alloc_local(4, __tb.rval('dtype', dtype)))
+                __tb.set_fileline(__tb_fl, 240, __tb_fn)
+                v_shared = __tb.bind('v_shared', __tb.rval('T', T).alloc_shared([2, __tb.rval('block_size', block_size), __tb.rval('dim', dim)], __tb.rval('dtype', dtype)))
+                __tb.set_fileline(__tb_fl, 241, __tb_fn)
+                partial_output = __tb.bind('partial_output', __tb.rval('T', T).alloc_shared([2, __tb.rval('groups', groups), __tb.rval('dim', dim)], __tb.rval('accum_dtype', accum_dtype)))
+                __tb.set_fileline(__tb_fl, 242, __tb_fn)
+                partial_max = __tb.bind('partial_max', __tb.rval('T', T).alloc_shared([2, __tb.rval('groups', groups)], __tb.rval('accum_dtype', accum_dtype)))
+                __tb.set_fileline(__tb_fl, 243, __tb_fn)
+                partial_denominator = __tb.bind('partial_denominator', __tb.rval('T', T).alloc_shared([2, __tb.rval('groups', groups)], __tb.rval('accum_dtype', accum_dtype)))
+                __tb.set_fileline(__tb_fl, 244, __tb_fn)
+                weights = __tb.bind('weights', __tb.rval('T', T).alloc_shared([2, __tb.rval('groups', groups)], __tb.rval('accum_dtype', accum_dtype)))
+                __tb.set_fileline(__tb_fl, 245, __tb_fn)
+                scores = __tb.bind('scores', __tb.rval('T', T).alloc_fragment([2, __tb.rval('groups', groups), __tb.rval('block_size', block_size)], __tb.rval('accum_dtype', accum_dtype)))
+                __tb.set_fileline(__tb_fl, 246, __tb_fn)
+                scores_half = __tb.bind('scores_half', __tb.rval('T', T).alloc_fragment([2, __tb.rval('groups', groups), __tb.rval('block_size', block_size)], __tb.rval('dtype', dtype)))
+                __tb.set_fileline(__tb_fl, 247, __tb_fn)
+                output_acc = __tb.bind('output_acc', __tb.rval('T', T).alloc_fragment([2, __tb.rval('groups', groups), __tb.rval('dim', dim)], __tb.rval('accum_dtype', accum_dtype)))
+                __tb.set_fileline(__tb_fl, 248, __tb_fn)
+                block_max = __tb.bind('block_max', __tb.rval('T', T).alloc_fragment([2, __tb.rval('groups', groups)], __tb.rval('accum_dtype', accum_dtype)))
+                __tb.set_fileline(__tb_fl, 249, __tb_fn)
+                previous_max = __tb.bind('previous_max', __tb.rval('T', T).alloc_fragment([2, __tb.rval('groups', groups)], __tb.rval('accum_dtype', accum_dtype)))
+                __tb.set_fileline(__tb_fl, 250, __tb_fn)
+                rescale = __tb.bind('rescale', __tb.rval('T', T).alloc_fragment([2, __tb.rval('groups', groups)], __tb.rval('accum_dtype', accum_dtype)))
+                __tb.set_fileline(__tb_fl, 251, __tb_fn)
+                block_sum = __tb.bind('block_sum', __tb.rval('T', T).alloc_fragment([2, __tb.rval('groups', groups)], __tb.rval('accum_dtype', accum_dtype)))
+                __tb.set_fileline(__tb_fl, 252, __tb_fn)
+                denominator = __tb.bind('denominator', __tb.rval('T', T).alloc_fragment([2, __tb.rval('groups', groups)], __tb.rval('accum_dtype', accum_dtype)))
+                __tb.set_fileline(__tb_fl, 253, __tb_fn)
+                __tb.eval(__tb.rval('T', T).annotate_layout({__tb.rval('scores', scores): __tb.rval('score_layout', score_layout), __tb.rval('scores_half', scores_half): __tb.rval('score_layout', score_layout), __tb.rval('output_acc', output_acc): __tb.rval('output_layout', output_layout), __tb.rval('block_max', block_max): __tb.rval('head_layout', head_layout), __tb.rval('previous_max', previous_max): __tb.rval('head_layout', head_layout), __tb.rval('rescale', rescale): __tb.rval('head_layout', head_layout), __tb.rval('block_sum', block_sum): __tb.rval('head_layout', head_layout), __tb.rval('denominator', denominator): __tb.rval('head_layout', head_layout), __tb.rval('v_shared', v_shared): __tb.rval('make_swizzled_layout', make_swizzled_layout)(__tb.rval('v_shared', v_shared)), __tb.rval('partial_output', partial_output): __tb.rval('make_swizzled_layout', make_swizzled_layout)(__tb.rval('partial_output', partial_output))}))
+                __tb.set_fileline(__tb_fl, 265, __tb_fn)
+                for __1 in __tb.ctx_for(__tb.rval('T', T).serial(4)):
+                    __tb.set_fileline(__tb_fl, 265, __tb_fn)
+                    chunk = __tb.bind('chunk', __1)
+                    __tb.set_fileline(__tb_fl, 266, __tb_fn)
+                    for __0 in __tb.ctx_for(__tb.rval('T', T).vectorized(4)):
+                        __tb.set_fileline(__tb_fl, 266, __tb_fn)
+                        element = __tb.bind('element', __0)
+                        __tb.set_fileline(__tb_fl, 267, __tb_fn)
+                        head = __tb.bind('head', __tb.rval('lane_id', lane_id) % 16)
+                        __tb.set_fileline(__tb_fl, 268, __tb_fn)
+                        feature = __tb.bind('feature', __tb.rval('chunk', chunk) * 16 + __tb.rval('lane_id', lane_id) // 16 * 4 + __tb.rval('element', element))
+                        __tb.set_fileline(__tb_fl, 269, __tb_fn)
+                        __tb.assign_slice(__tb.rval('q_local', q_local), __tb.rval('chunk', chunk) * 4 + __tb.rval('element', element), __tb.rval('Q', Q)[__tb.rval('batch_id', batch_id), __tb.rval('token', token), __tb.rval('kv_head', kv_head) * __tb.rval('groups', groups) + __tb.rval('head', head), __tb.rval('feature', feature)])
+                __tb.set_fileline(__tb_fl, 272, __tb_fn)
+                __tb.eval(__tb.rval('T', T).fill(__tb.rval('output_acc', output_acc), 0))
+                __tb.set_fileline(__tb_fl, 273, __tb_fn)
+                __tb.eval(__tb.rval('T', T).fill(__tb.rval('denominator', denominator), 0))
+                __tb.set_fileline(__tb_fl, 274, __tb_fn)
+                __tb.eval(__tb.rval('T', T).fill(__tb.rval('block_max', block_max), -__tb.rval('T', T).infinity(__tb.rval('accum_dtype', accum_dtype))))
+                __tb.set_fileline(__tb_fl, 275, __tb_fn)
+                for __29 in __tb.ctx_for(__tb.rval('T', T).serial(4)):
+                    __tb.set_fileline(__tb_fl, 275, __tb_fn)
+                    selected_round = __tb.bind('selected_round', __29)
+                    __tb.set_fileline(__tb_fl, 276, __tb_fn)
+                    block_start = __tb.bind('block_start', __tb.rval('BlockIndices', BlockIndices)[__tb.rval('batch_id', batch_id), __tb.rval('token', token), __tb.rval('kv_head', kv_head), __tb.rval('selected_round', selected_round) * 2 + __tb.rval('wave_id', wave_id)] * __tb.rval('block_size', block_size))
+                    __tb.set_fileline(__tb_fl, 279, __tb_fn)
+                    for __23 in __tb.ctx_if(__tb.boolop('And', __tb.rval('block_start', block_start) >= 0, lambda: __tb.rval('block_start', block_start) <= __tb.rval('token', token))):
+                        __tb.set_fileline(__tb_fl, 279, __tb_fn)
+                        for _ in __tb.ctx_then(__23):
+                            __tb.set_fileline(__tb_fl, 280, __tb_fn)
+                            __tb.eval(__tb.rval('T', T).fill(__tb.rval('scores', scores), 0))
+                            __tb.set_fileline(__tb_fl, 281, __tb_fn)
+                            for __3 in __tb.ctx_for(__tb.rval('T', T).serial(4)):
+                                __tb.set_fileline(__tb_fl, 281, __tb_fn)
+                                chunk = __tb.bind('chunk', __3)
+                                __tb.set_fileline(__tb_fl, 282, __tb_fn)
+                                for __2 in __tb.ctx_for(__tb.rval('T', T).vectorized(4)):
+                                    __tb.set_fileline(__tb_fl, 282, __tb_fn)
+                                    element = __tb.bind('element', __2)
+                                    __tb.set_fileline(__tb_fl, 283, __tb_fn)
+                                    row = __tb.bind('row', __tb.rval('lane_id', lane_id) % 16)
+                                    __tb.set_fileline(__tb_fl, 284, __tb_fn)
+                                    feature = __tb.bind('feature', __tb.rval('chunk', chunk) * 16 + __tb.rval('lane_id', lane_id) // 16 * 4 + __tb.rval('element', element))
+                                    __tb.set_fileline(__tb_fl, 285, __tb_fn)
+                                    __tb.assign_slice(__tb.rval('k_local', k_local), __tb.rval('element', element), __tb.rval('K', K)[__tb.rval('batch_id', batch_id), __tb.rval('block_start', block_start) + __tb.rval('row', row), __tb.rval('kv_head', kv_head), __tb.rval('feature', feature)])
+                                __tb.set_fileline(__tb_fl, 288, __tb_fn)
+                                __tb.eval(__tb.rval('T', T).tvm_mfma('16x16x16f16', 'row', 'row', 'float16x4', 'float16x4', 'float32x4', __tb.rval('k_local', k_local).data, 0, __tb.rval('q_local', q_local).data, __tb.rval('chunk', chunk), __tb.rval('scores', scores).data, 0, dtype='float32x4'))
+                            __tb.set_fileline(__tb_fl, 294, __tb_fn)
+                            for __8 in __tb.ctx_if(__tb.rval('is_causal', is_causal)):
+                                __tb.set_fileline(__tb_fl, 294, __tb_fn)
+                                for _ in __tb.ctx_then(__8):
+                                    __tb.set_fileline(__tb_fl, 295, __tb_fn)
+                                    for __4 in __tb.ctx_for(__tb.rval('T', T).Parallel(2, __tb.rval('groups', groups), __tb.rval('block_size', block_size))):
+                                        __5, __6, __7 = __tb.unwrap_value(__4)
+                                        __tb.set_fileline(__tb_fl, 295, __tb_fn)
+                                        __5, __6, __7 = (__tb.bind('_', __5), __tb.bind('_', __6), __tb.bind('_', __7))
+                                        __tb.set_fileline(__tb_fl, 295, __tb_fn)
+                                        wave, head, offset = (__tb.bind('wave', __5), __tb.bind('head', __6), __tb.bind('offset', __7))
+                                        __tb.set_fileline(__tb_fl, 296, __tb_fn)
+                                        __tb.assign_slice(__tb.rval('scores', scores), (__tb.rval('wave', wave), __tb.rval('head', head), __tb.rval('offset', offset)), __tb.rval('T', T).if_then_else(__tb.rval('token', token) >= __tb.rval('block_start', block_start) + __tb.rval('offset', offset), __tb.rval('scores', scores)[__tb.rval('wave', wave), __tb.rval('head', head), __tb.rval('offset', offset)], -__tb.rval('T', T).infinity(__tb.rval('accum_dtype', accum_dtype))))
+                            __tb.set_fileline(__tb_fl, 301, __tb_fn)
+                            __tb.eval(__tb.rval('T', T).copy(__tb.rval('block_max', block_max), __tb.rval('previous_max', previous_max)))
+                            __tb.set_fileline(__tb_fl, 302, __tb_fn)
+                            __tb.eval(__tb.rval('T', T).fill(__tb.rval('block_max', block_max), -__tb.rval('T', T).infinity(__tb.rval('accum_dtype', accum_dtype))))
+                            __tb.set_fileline(__tb_fl, 303, __tb_fn)
+                            __tb.eval(__tb.rval('T', T).reduce_max(__tb.rval('scores', scores), __tb.rval('block_max', block_max), dim=2, clear=True))
+                            __tb.set_fileline(__tb_fl, 304, __tb_fn)
+                            for __9 in __tb.ctx_for(__tb.rval('T', T).Parallel(2, __tb.rval('groups', groups))):
+                                __10, __11 = __tb.unwrap_value(__9)
+                                __tb.set_fileline(__tb_fl, 304, __tb_fn)
+                                __10, __11 = (__tb.bind('_', __10), __tb.bind('_', __11))
+                                __tb.set_fileline(__tb_fl, 304, __tb_fn)
+                                wave, head = (__tb.bind('wave', __10), __tb.bind('head', __11))
+                                __tb.set_fileline(__tb_fl, 305, __tb_fn)
+                                __tb.assign_slice(__tb.rval('rescale', rescale), (__tb.rval('wave', wave), __tb.rval('head', head)), __tb.rval('T', T).exp2(__tb.rval('previous_max', previous_max)[__tb.rval('wave', wave), __tb.rval('head', head)] * __tb.rval('scale', scale) - __tb.rval('block_max', block_max)[__tb.rval('wave', wave), __tb.rval('head', head)] * __tb.rval('scale', scale)))
+                            __tb.set_fileline(__tb_fl, 308, __tb_fn)
+                            for __12 in __tb.ctx_for(__tb.rval('T', T).Parallel(2, __tb.rval('groups', groups), __tb.rval('block_size', block_size))):
+                                __13, __14, __15 = __tb.unwrap_value(__12)
+                                __tb.set_fileline(__tb_fl, 308, __tb_fn)
+                                __13, __14, __15 = (__tb.bind('_', __13), __tb.bind('_', __14), __tb.bind('_', __15))
+                                __tb.set_fileline(__tb_fl, 308, __tb_fn)
+                                wave, head, offset = (__tb.bind('wave', __13), __tb.bind('head', __14), __tb.bind('offset', __15))
+                                __tb.set_fileline(__tb_fl, 309, __tb_fn)
+                                __tb.assign_slice(__tb.rval('scores', scores), (__tb.rval('wave', wave), __tb.rval('head', head), __tb.rval('offset', offset)), __tb.rval('T', T).exp2(__tb.rval('scores', scores)[__tb.rval('wave', wave), __tb.rval('head', head), __tb.rval('offset', offset)] * __tb.rval('scale', scale) - __tb.rval('block_max', block_max)[__tb.rval('wave', wave), __tb.rval('head', head)] * __tb.rval('scale', scale)))
+                            __tb.set_fileline(__tb_fl, 312, __tb_fn)
+                            __tb.eval(__tb.rval('T', T).reduce_sum(__tb.rval('scores', scores), __tb.rval('block_sum', block_sum), dim=2))
+                            __tb.set_fileline(__tb_fl, 313, __tb_fn)
+                            for __16 in __tb.ctx_for(__tb.rval('T', T).Parallel(2, __tb.rval('groups', groups))):
+                                __17, __18 = __tb.unwrap_value(__16)
+                                __tb.set_fileline(__tb_fl, 313, __tb_fn)
+                                __17, __18 = (__tb.bind('_', __17), __tb.bind('_', __18))
+                                __tb.set_fileline(__tb_fl, 313, __tb_fn)
+                                wave, head = (__tb.bind('wave', __17), __tb.bind('head', __18))
+                                __tb.set_fileline(__tb_fl, 314, __tb_fn)
+                                __tb.assign_slice(__tb.rval('denominator', denominator), (__tb.rval('wave', wave), __tb.rval('head', head)), __tb.rval('denominator', denominator)[__tb.rval('wave', wave), __tb.rval('head', head)] * __tb.rval('rescale', rescale)[__tb.rval('wave', wave), __tb.rval('head', head)] + __tb.rval('block_sum', block_sum)[__tb.rval('wave', wave), __tb.rval('head', head)])
+                            __tb.set_fileline(__tb_fl, 317, __tb_fn)
+                            __tb.eval(__tb.rval('T', T).copy(__tb.rval('scores', scores), __tb.rval('scores_half', scores_half)))
+                            __tb.set_fileline(__tb_fl, 318, __tb_fn)
+                            for __19 in __tb.ctx_for(__tb.rval('T', T).Parallel(2, __tb.rval('groups', groups), __tb.rval('dim', dim))):
+                                __20, __21, __22 = __tb.unwrap_value(__19)
+                                __tb.set_fileline(__tb_fl, 318, __tb_fn)
+                                __20, __21, __22 = (__tb.bind('_', __20), __tb.bind('_', __21), __tb.bind('_', __22))
+                                __tb.set_fileline(__tb_fl, 318, __tb_fn)
+                                wave, head, feature = (__tb.bind('wave', __20), __tb.bind('head', __21), __tb.bind('feature', __22))
+                                __tb.set_fileline(__tb_fl, 319, __tb_fn)
+                                __tb.aug_assign_slice('Mult', __tb.rval('output_acc', output_acc), (__tb.rval('wave', wave), __tb.rval('head', head), __tb.rval('feature', feature)), __tb.rval('rescale', rescale)[__tb.rval('wave', wave), __tb.rval('head', head)])
+                    __tb.set_fileline(__tb_fl, 320, __tb_fn)
+                    for __25 in __tb.ctx_for(__tb.rval('T', T).serial(2)):
+                        __tb.set_fileline(__tb_fl, 320, __tb_fn)
+                        iteration = __tb.bind('iteration', __25)
+                        __tb.set_fileline(__tb_fl, 321, __tb_fn)
+                        for __24 in __tb.ctx_for(__tb.rval('T', T).vectorized(8)):
+                            __tb.set_fileline(__tb_fl, 321, __tb_fn)
+                            element = __tb.bind('element', __24)
+                            __tb.set_fileline(__tb_fl, 322, __tb_fn)
+                            linear = __tb.bind('linear', __tb.rval('iteration', iteration) * 512 + __tb.rval('lane_id', lane_id) * 8 + __tb.rval('element', element))
+                            __tb.set_fileline(__tb_fl, 323, __tb_fn)
+                            row = __tb.bind('row', __tb.rval('linear', linear) // __tb.rval('dim', dim))
+                            __tb.set_fileline(__tb_fl, 324, __tb_fn)
+                            feature = __tb.bind('feature', __tb.rval('linear', linear) % __tb.rval('dim', dim))
+                            __tb.set_fileline(__tb_fl, 325, __tb_fn)
+                            __tb.assign_slice(__tb.rval('v_shared', v_shared), (__tb.rval('wave_id', wave_id), __tb.rval('row', row), __tb.rval('feature', feature)), __tb.rval('T', T).if_then_else(__tb.boolop('And', __tb.rval('block_start', block_start) >= 0, lambda: __tb.rval('block_start', block_start) <= __tb.rval('token', token)), __tb.rval('V', V)[__tb.rval('batch_id', batch_id), __tb.rval('block_start', block_start) + __tb.rval('row', row), __tb.rval('kv_head', kv_head), __tb.rval('feature', feature)], 0))
+                    __tb.set_fileline(__tb_fl, 330, __tb_fn)
+                    __tb.eval(__tb.rval('T', T).sync_warp(18446744073709551615))
+                    __tb.set_fileline(__tb_fl, 331, __tb_fn)
+                    for __28 in __tb.ctx_if(__tb.boolop('And', __tb.rval('block_start', block_start) >= 0, lambda: __tb.rval('block_start', block_start) <= __tb.rval('token', token))):
+                        __tb.set_fileline(__tb_fl, 331, __tb_fn)
+                        for _ in __tb.ctx_then(__28):
+                            __tb.set_fileline(__tb_fl, 332, __tb_fn)
+                            for __27 in __tb.ctx_for(__tb.rval('T', T).serial(4)):
+                                __tb.set_fileline(__tb_fl, 332, __tb_fn)
+                                tile = __tb.bind('tile', __27)
+                                __tb.set_fileline(__tb_fl, 333, __tb_fn)
+                                for __26 in __tb.ctx_for(__tb.rval('T', T).vectorized(4)):
+                                    __tb.set_fileline(__tb_fl, 333, __tb_fn)
+                                    element = __tb.bind('element', __26)
+                                    __tb.set_fileline(__tb_fl, 334, __tb_fn)
+                                    row = __tb.bind('row', __tb.rval('lane_id', lane_id) // 16 * 4 + __tb.rval('element', element))
+                                    __tb.set_fileline(__tb_fl, 335, __tb_fn)
+                                    feature = __tb.bind('feature', __tb.rval('tile', tile) * 16 + __tb.rval('lane_id', lane_id) % 16)
+                                    __tb.set_fileline(__tb_fl, 336, __tb_fn)
+                                    __tb.assign_slice(__tb.rval('v_local', v_local), __tb.rval('element', element), __tb.rval('v_shared', v_shared)[__tb.rval('wave_id', wave_id), __tb.rval('row', row), __tb.rval('feature', feature)])
+                                __tb.set_fileline(__tb_fl, 337, __tb_fn)
+                                __tb.eval(__tb.rval('T', T).tvm_mfma('16x16x16f16', 'row', 'row', 'float16x4', 'float16x4', 'float32x4', __tb.rval('v_local', v_local).data, 0, __tb.rval('scores_half', scores_half).data, 0, __tb.rval('output_acc', output_acc).data, __tb.rval('tile', tile), dtype='float32x4'))
+                    __tb.set_fileline(__tb_fl, 343, __tb_fn)
+                    __tb.eval(__tb.rval('T', T).sync_warp(18446744073709551615))
+                __tb.set_fileline(__tb_fl, 344, __tb_fn)
+                __tb.eval(__tb.rval('T', T).sync_threads())
+                __tb.set_fileline(__tb_fl, 345, __tb_fn)
+                __tb.eval(__tb.rval('T', T).copy(__tb.rval('output_acc', output_acc), __tb.rval('partial_output', partial_output)))
+                __tb.set_fileline(__tb_fl, 346, __tb_fn)
+                __tb.eval(__tb.rval('T', T).copy(__tb.rval('block_max', block_max), __tb.rval('partial_max', partial_max)))
+                __tb.set_fileline(__tb_fl, 347, __tb_fn)
+                __tb.eval(__tb.rval('T', T).copy(__tb.rval('denominator', denominator), __tb.rval('partial_denominator', partial_denominator)))
+                __tb.set_fileline(__tb_fl, 348, __tb_fn)
+                __tb.eval(__tb.rval('T', T).sync_threads())
+                __tb.set_fileline(__tb_fl, 349, __tb_fn)
+                for __30 in __tb.ctx_for(__tb.rval('T', T).Parallel(__tb.rval('groups', groups))):
+                    __tb.set_fileline(__tb_fl, 349, __tb_fn)
+                    head = __tb.bind('head', __30)
+                    __tb.set_fileline(__tb_fl, 350, __tb_fn)
+                    maximum = __tb.bind('maximum', __tb.rval('T', T).max(__tb.rval('partial_max', partial_max)[0, __tb.rval('head', head)], __tb.rval('partial_max', partial_max)[1, __tb.rval('head', head)]))
+                    __tb.set_fileline(__tb_fl, 351, __tb_fn)
+                    scale0 = __tb.bind('scale0', __tb.rval('T', T).if_then_else(__tb.rval('partial_denominator', partial_denominator)[0, __tb.rval('head', head)] > 0, __tb.rval('T', T).exp2((__tb.rval('partial_max', partial_max)[0, __tb.rval('head', head)] - __tb.rval('maximum', maximum)) * __tb.rval('scale', scale)), 0.0))
+                    __tb.set_fileline(__tb_fl, 356, __tb_fn)
+                    scale1 = __tb.bind('scale1', __tb.rval('T', T).if_then_else(__tb.rval('partial_denominator', partial_denominator)[1, __tb.rval('head', head)] > 0, __tb.rval('T', T).exp2((__tb.rval('partial_max', partial_max)[1, __tb.rval('head', head)] - __tb.rval('maximum', maximum)) * __tb.rval('scale', scale)), 0.0))
+                    __tb.set_fileline(__tb_fl, 361, __tb_fn)
+                    total = __tb.bind('total', __tb.rval('partial_denominator', partial_denominator)[0, __tb.rval('head', head)] * __tb.rval('scale0', scale0) + __tb.rval('partial_denominator', partial_denominator)[1, __tb.rval('head', head)] * __tb.rval('scale1', scale1))
+                    __tb.set_fileline(__tb_fl, 362, __tb_fn)
+                    __tb.assign_slice(__tb.rval('weights', weights), (0, __tb.rval('head', head)), __tb.rval('T', T).if_then_else(__tb.rval('total', total) > 0, __tb.rval('scale0', scale0) / __tb.rval('total', total), 0.0))
+                    __tb.set_fileline(__tb_fl, 363, __tb_fn)
+                    __tb.assign_slice(__tb.rval('weights', weights), (1, __tb.rval('head', head)), __tb.rval('T', T).if_then_else(__tb.rval('total', total) > 0, __tb.rval('scale1', scale1) / __tb.rval('total', total), 0.0))
+                __tb.set_fileline(__tb_fl, 364, __tb_fn)
+                __tb.eval(__tb.rval('T', T).sync_threads())
+                __tb.set_fileline(__tb_fl, 365, __tb_fn)
+                for __31 in __tb.ctx_for(__tb.rval('T', T).Parallel(__tb.rval('groups', groups), __tb.rval('dim', dim))):
+                    __32, __33 = __tb.unwrap_value(__31)
+                    __tb.set_fileline(__tb_fl, 365, __tb_fn)
+                    __32, __33 = (__tb.bind('_', __32), __tb.bind('_', __33))
+                    __tb.set_fileline(__tb_fl, 365, __tb_fn)
+                    head, feature = (__tb.bind('head', __32), __tb.bind('feature', __33))
+                    __tb.set_fileline(__tb_fl, 366, __tb_fn)
+                    __tb.assign_slice(__tb.rval('Output', Output), (__tb.rval('batch_id', batch_id), __tb.rval('token', token), __tb.rval('kv_head', kv_head) * __tb.rval('groups', groups) + __tb.rval('head', head), __tb.rval('feature', feature)), __tb.rval('T', T).cast(__tb.rval('partial_output', partial_output)[0, __tb.rval('head', head), __tb.rval('feature', feature)] * __tb.rval('weights', weights)[0, __tb.rval('head', head)] + __tb.rval('partial_output', partial_output)[1, __tb.rval('head', head), __tb.rval('feature', feature)] * __tb.rval('weights', weights)[1, __tb.rval('head', head)], __tb.rval('dtype', dtype)))
+        return native_sparse_attention
+    return native_sparse_attention
+Traceback (most recent call last):
+  File "/root/tilelang-metax/race_tests/nsa/hack/v014_codex_power_s8_wave_split_sc-16g-2/export_codegen.py", line 16, in <module>
+    kernel = module._make_s8_wave_split(4, 1024, 1, 16, 64, 8, 16, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/jit/__init__.py", line 465, in __call__
+    kernel = self.compile(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/jit/__init__.py", line 394, in compile
+    prim_func = self.get_tir(*args, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/jit/__init__.py", line 315, in get_tir
+    tir = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/language/eager/builder.py", line 1203, in __call__
+    return self.get_tir(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/language/eager/builder.py", line 1199, in get_tir
+    self.p1_cache[p1_key] = self._build_tir_template(**kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/language/eager/builder.py", line 1169, in _build_tir_template
+    return TirTemplate.from_lazy_style(self.orig_func.__name__, self.orig_func(*args, **kwargs))
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/race_tests/nsa/experiments/v014_codex_power_s8_wave_split_sc-16g-2/candidate.py", line 223, in _make_s8_wave_split
+    @T.prim_func
+     ^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/language/eager/builder.py", line 1284, in prim_func
+    return impl(func) if func is not None else impl
+           ^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/language/eager/builder.py", line 1282, in impl
+    raise e
+  File "/root/tilelang-metax/tilelang/language/eager/builder.py", line 1275, in impl
+    ir_gen.gen(builder)(**annot)
+  File "/root/tilelang-metax/race_tests/nsa/experiments/v014_codex_power_s8_wave_split_sc-16g-2/candidate.py", line 330, in native_sparse_attention
+    T.sync_warp(0xFFFFFFFFFFFFFFFF)
+  File "/root/tilelang-metax/tilelang/language/builtin.py", line 965, in sync_warp
+    return tir.call_intrin("void", tir.op.Op.get("tl.sync_warp"), mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/3rdparty/tvm/python/tvm/tir/op.py", line 193, in call_intrin
+    return Call(dtype, func_name, args, annotations=annotations, span=span)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/3rdparty/tvm/python/tvm/tir/expr.py", line 1289, in __init__
+    self.__init_handle_by_constructor__(_ffi_api.Call, dtype, op, args, annotations, span)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "python/tvm_ffi/cython/object.pxi", line 355, in tvm_ffi.core.Object.__init_handle_by_constructor__
+  File "python/tvm_ffi/cython/object.pxi", line 183, in tvm_ffi.core.CObject.__init_handle_by_constructor__
+  File "python/tvm_ffi/cython/function.pxi", line 122, in tvm_ffi.core.ConstructorCall
+  File "python/tvm_ffi/cython/function.pxi", line 587, in tvm_ffi.core.TVMFFIPyArgSetterTuple_
+  File "python/tvm_ffi/cython/function.pxi", line 122, in tvm_ffi.core.ConstructorCall
+  File "python/tvm_ffi/cython/function.pxi", line 331, in tvm_ffi.core.TVMFFIPyArgSetterIntegral_
+OverflowError: Python int too large to convert to C long

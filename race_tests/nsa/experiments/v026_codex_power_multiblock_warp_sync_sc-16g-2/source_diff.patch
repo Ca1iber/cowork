@@ -1,0 +1,43 @@
+--- /root/tilelang-metax/race_tests/nsa/experiments/v025_codex_power_s2_s4_register_qk_sc-16g-2/candidate.py
++++ /root/tilelang-metax/race_tests/nsa/experiments/v026_codex_power_multiblock_warp_sync_sc-16g-2/candidate.py
+@@ -1,4 +1,4 @@
+-# codex-power v025
++# codex-power v026
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -198,6 +198,7 @@
+     pass_configs={
+         tilelang.PassConfigKey.TL_ENABLE_FAST_MATH: True,
+         tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
++        tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+     },
+ )
+ def _make_multiblock_register_qk(
+@@ -262,7 +263,9 @@
+             for selected in T.serial(selected_blocks):
+                 block_start = BlockIndices[batch_id, token, kv_head, selected] * block_size
+                 if block_start >= 0 and block_start <= token:
++                    T.sync_warp()
+                     T.copy(K[batch_id, block_start:block_start + block_size, kv_head, :], k_shared)
++                    T.sync_warp()
+                     T.fill(scores, 0)
+                     for chunk in T.serial(4):
+                         for element in T.vectorized(4):
+@@ -303,13 +306,16 @@
+                         V[batch_id, block_start:block_start + block_size, kv_head, :],
+                         v_shared,
+                     )
++                    T.sync_warp()
+                     T.gemm(
+                         scores_half, v_shared, output_acc,
+                         policy=T.GemmWarpPolicy.FullRow,
+                     )
++            T.sync_warp()
+             for head, feature in T.Parallel(groups, dim):
+                 output_acc[head, feature] /= denominator[head]
+             T.copy(output_acc, output_shared)
++            T.sync_warp()
+             T.copy(
+                 output_shared,
+                 Output[batch_id, token, kv_head * groups:(kv_head + 1) * groups, :],

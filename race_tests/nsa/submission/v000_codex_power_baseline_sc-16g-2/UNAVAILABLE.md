@@ -1,0 +1,1 @@
+No OJ-ready submission is archived for the historical v000 baseline. Its source is the exact ffa68b684e3876df2821fe34c9959493c2ca065a:race_tests/nsa/submission.py, which uses a disallowed TileLang import form under the current user contract. This directory records that limitation and does not claim an OJ-valid candidate.

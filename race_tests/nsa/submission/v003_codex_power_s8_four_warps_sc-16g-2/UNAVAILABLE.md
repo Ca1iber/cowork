@@ -1,0 +1,1 @@
+No OJ submission is archived for v003. The final 256-thread candidate passes the case12 reference and static source/device checks but takes 338.908 us versus the v000 124.155 us baseline. The earlier 256-thread fragment variant failed TileLang layout inference and is preserved in experiments/. This version stops before promotion.

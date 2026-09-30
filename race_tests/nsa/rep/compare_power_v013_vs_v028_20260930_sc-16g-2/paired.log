@@ -1,0 +1,44 @@
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+case 6 {'B': 8, 'SEQ_LEN': 1024, 'H': 1, 'HQ': 16, 'D': 128, 'S': 1, 'block_size': 32, 'is_causal': True}
+  GPU latency: 0.1567 ms
+6 1 v028 0.15673855781555177 PASS
+  GPU latency: 0.1599 ms
+6 2 power_v013 0.15987199783325196 PASS
+  GPU latency: 0.1596 ms
+6 3 power_v013 0.15962112426757813 PASS
+  GPU latency: 0.1565 ms
+6 4 v028 0.15653887748718262 PASS
+  GPU latency: 0.1565 ms
+6 5 v028 0.15651328086853028 PASS
+  GPU latency: 0.1598 ms
+6 6 power_v013 0.1597542381286621 PASS
+  GPU latency: 0.1607 ms
+6 7 power_v013 0.16065023422241212 PASS
+  GPU latency: 0.1573 ms
+6 8 v028 0.15731712341308593 PASS
+case 12 {'B': 4, 'SEQ_LEN': 1024, 'H': 1, 'HQ': 16, 'D': 64, 'S': 8, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0843 ms
+12 1 v028 0.08427007675170899 PASS
+  GPU latency: 0.1172 ms
+12 2 power_v013 0.11717632293701172 PASS
+  GPU latency: 0.1170 ms
+12 3 power_v013 0.11695103645324707 PASS
+  GPU latency: 0.0836 ms
+12 4 v028 0.08356863975524903 PASS
+  GPU latency: 0.0837 ms
+12 5 v028 0.08368639945983887 PASS
+  GPU latency: 0.1164 ms
+12 6 power_v013 0.11636735916137696 PASS
+  GPU latency: 0.1171 ms
+12 7 power_v013 0.11710975646972656 PASS
+  GPU latency: 0.0838 ms
+12 8 v028 0.08375295639038086 PASS
+source hashes: {'v028': '42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd', 'power_v013': 'e51d49834fdf06bb02f4c7c2ea0bc2bbc9d6a95b81578e58c2317eee0bdfbe76'}

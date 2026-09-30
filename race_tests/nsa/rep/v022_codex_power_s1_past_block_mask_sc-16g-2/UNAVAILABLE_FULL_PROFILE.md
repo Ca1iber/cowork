@@ -1,0 +1,1 @@
+Case6 matched native reference/timing24/24 PASS; v022157.6295 us, v021158.162 us, v028156.8615 us. Target not met. Full14/OJ and new counter/tracer/Roofline/ISA bundles are not collected after this target gate. Generated code/resources are available.

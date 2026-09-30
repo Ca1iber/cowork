@@ -1,0 +1,87 @@
+@tilelang.jit(
+    out_idx=[],
+    pass_configs={
+        tilelang.PassConfigKey.TL_ENABLE_FAST_MATH: True,
+        tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+    },
+)
+def _make_s1_feature_tiles(
+    batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal,
+):
+    groups = query_heads // kv_heads
+    assert selected_blocks == 1 and block_size == 32 and dim == 128 and groups == 16
+    value_tile = 64
+    scale = (1.0 / dim) ** 0.5 * 1.44269504
+    q_shape = [batch, seq_len, query_heads, dim]
+    kv_shape = [batch, seq_len, kv_heads, dim]
+    index_shape = [batch, seq_len, kv_heads, selected_blocks]
+    dtype = T.float16
+    accum_dtype = T.float32
+    empty_value = float('nan')
+
+    @T.prim_func
+    def native_sparse_attention(
+        Q: T.Tensor(q_shape, dtype),
+        K: T.Tensor(kv_shape, dtype),
+        V: T.Tensor(kv_shape, dtype),
+        BlockIndices: T.Tensor(index_shape, T.int32),
+        Output: T.Tensor(q_shape, dtype),
+    ):
+        with T.Kernel(seq_len, batch * kv_heads, threads=64) as (token, batch_head):
+            batch_id = batch_head // kv_heads
+            kv_head = batch_head % kv_heads
+            block_start = BlockIndices[batch_id, token, kv_head, 0] * block_size
+            q_shared = T.alloc_shared([groups, dim], dtype)
+            k_shared = T.alloc_shared([block_size, dim], dtype)
+            v_shared = T.alloc_shared([block_size, value_tile], dtype)
+            scores = T.alloc_fragment([groups, block_size], accum_dtype)
+            scores_half = T.alloc_fragment([groups, block_size], dtype)
+            output_acc = T.alloc_fragment([groups, value_tile], accum_dtype)
+            maximum = T.alloc_fragment([groups], accum_dtype)
+            denominator = T.alloc_fragment([groups], accum_dtype)
+            T.annotate_layout({
+                q_shared: make_swizzled_layout(q_shared),
+                k_shared: make_swizzled_layout(k_shared),
+                v_shared: make_swizzled_layout(v_shared),
+            })
+            T.fill(scores, -T.infinity(accum_dtype))
+            if block_start >= 0 and block_start <= token:
+                T.copy(
+                    Q[batch_id, token, kv_head * groups:(kv_head + 1) * groups, :],
+                    q_shared,
+                )
+                T.copy(K[batch_id, block_start:block_start + block_size, kv_head, :], k_shared)
+                T.fill(scores, 0)
+                T.gemm(q_shared, k_shared, scores, transpose_B=True, policy=T.GemmWarpPolicy.FullRow)
+                if is_causal:
+                    for head, offset in T.Parallel(groups, block_size):
+                        scores[head, offset] = T.if_then_else(
+                            token >= block_start + offset,
+                            scores[head, offset], -T.infinity(accum_dtype),
+                        )
+            T.fill(maximum, -T.infinity(accum_dtype))
+            T.reduce_max(scores, maximum, dim=1, clear=True)
+            for head, offset in T.Parallel(groups, block_size):
+                scores[head, offset] = T.exp2(scores[head, offset] * scale - maximum[head] * scale)
+            T.reduce_sum(scores, denominator, dim=1)
+            for head, offset in T.Parallel(groups, block_size):
+                scores[head, offset] /= denominator[head]
+            T.copy(scores, scores_half)
+            for output_tile in T.serial(dim // value_tile):
+                if block_start >= 0 and block_start <= token:
+                    T.copy(
+                        V[batch_id, block_start:block_start + block_size, kv_head,
+                          output_tile * value_tile:(output_tile + 1) * value_tile],
+                        v_shared,
+                    )
+                    T.fill(output_acc, 0)
+                    T.gemm(scores_half, v_shared, output_acc, policy=T.GemmWarpPolicy.FullRow)
+                else:
+                    T.fill(output_acc, empty_value)
+                T.copy(
+                    output_acc,
+                    Output[batch_id, token, kv_head * groups:(kv_head + 1) * groups,
+                           output_tile * value_tile:(output_tile + 1) * value_tile],
+                )
+
+    return native_sparse_attention

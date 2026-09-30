@@ -1,0 +1,87 @@
+@tilelang.jit(
+    out_idx=[],
+    pass_configs={
+        tilelang.PassConfigKey.TL_ENABLE_FAST_MATH: True,
+        tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+    },
+)
+def _make_s8_onepass(
+    batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal,
+):
+    groups = query_heads // kv_heads
+    assert selected_blocks == 8 and block_size == 16 and dim == 64 and groups == 16
+    all_tokens = selected_blocks * block_size
+    scale = (1.0 / dim) ** 0.5 * 1.44269504
+    q_shape = [batch, seq_len, query_heads, dim]
+    kv_shape = [batch, seq_len, kv_heads, dim]
+    indices_shape = [batch, seq_len, kv_heads, selected_blocks]
+    dtype = T.float16
+    accum_dtype = T.float32
+
+    @T.prim_func
+    def native_sparse_attention(
+        Q: T.Tensor(q_shape, dtype),
+        K: T.Tensor(kv_shape, dtype),
+        V: T.Tensor(kv_shape, dtype),
+        BlockIndices: T.Tensor(indices_shape, T.int32),
+        Output: T.Tensor(q_shape, dtype),
+    ):
+        with T.Kernel(seq_len, batch * kv_heads, threads=256) as (token, batch_head):
+            batch_id = batch_head // kv_heads
+            kv_head = batch_head % kv_heads
+            q_shared = T.alloc_shared([groups, dim], dtype)
+            k_shared = T.alloc_shared([all_tokens, dim], dtype)
+            v_shared = T.alloc_shared([all_tokens, dim], dtype)
+            output_shared = T.alloc_shared([groups, dim], dtype)
+            scores = T.alloc_fragment([groups, all_tokens], accum_dtype)
+            scores_half = T.alloc_shared([groups, all_tokens], dtype)
+            output_acc = T.alloc_fragment([groups, dim], accum_dtype)
+            row_max = T.alloc_fragment([groups], accum_dtype)
+            denominator = T.alloc_fragment([groups], accum_dtype)
+
+            T.copy(Q[batch_id, token, kv_head * groups:(kv_head + 1) * groups, :], q_shared)
+            for selected in T.serial(selected_blocks):
+                block_start = BlockIndices[batch_id, token, kv_head, selected] * block_size
+                if block_start >= 0 and block_start <= token:
+                    T.copy(
+                        K[batch_id, block_start:block_start + block_size, kv_head, :],
+                        k_shared[selected * block_size:(selected + 1) * block_size, :],
+                    )
+                    T.copy(
+                        V[batch_id, block_start:block_start + block_size, kv_head, :],
+                        v_shared[selected * block_size:(selected + 1) * block_size, :],
+                    )
+                else:
+                    for row, feature in T.Parallel(block_size, dim):
+                        k_shared[selected * block_size + row, feature] = 0
+                        v_shared[selected * block_size + row, feature] = 0
+
+            T.clear(scores)
+            T.gemm(q_shared, k_shared, scores, transpose_B=True, policy=T.GemmWarpPolicy.FullRow)
+            for head, position in T.Parallel(groups, all_tokens):
+                selected = position // block_size
+                offset = position % block_size
+                block_start = BlockIndices[batch_id, token, kv_head, selected] * block_size
+                scores[head, position] = T.if_then_else(
+                    block_start >= 0 and block_start <= token and token >= block_start + offset,
+                    scores[head, position],
+                    -T.infinity(accum_dtype),
+                )
+            T.reduce_max(scores, row_max, dim=1, clear=True)
+            for head, position in T.Parallel(groups, all_tokens):
+                scores[head, position] = T.exp2(
+                    scores[head, position] * scale - row_max[head] * scale
+                )
+            T.reduce_sum(scores, denominator, dim=1)
+            T.copy(scores, scores_half)
+            T.fill(output_acc, 0)
+            T.gemm(scores_half, v_shared, output_acc, policy=T.GemmWarpPolicy.FullRow)
+            for head, feature in T.Parallel(groups, dim):
+                output_acc[head, feature] /= denominator[head]
+            T.copy(output_acc, output_shared)
+            T.copy(
+                output_shared,
+                Output[batch_id, token, kv_head * groups:(kv_head + 1) * groups, :],
+            )
+
+    return native_sparse_attention

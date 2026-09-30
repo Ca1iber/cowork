@@ -1,0 +1,61 @@
+{
+  "iteration": "v029_codex_power_multiblock_direct_v_sc-16g-2",
+  "parent_commit": "e99c3d70affa2ff3af44b1a617bfef45730493a5",
+  "status": "rejected_global_V_operand_latency",
+  "source_sha256": "33ec4ad5fc74a615479a90149375b5c9ae9902cb21fc28fa09b0efc2a40dd914",
+  "baseline_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "screens": [
+    {
+      "case": "10",
+      "B": "1",
+      "SEQ_LEN": "256",
+      "H": "1",
+      "HQ": "16",
+      "D": "64",
+      "S": "2",
+      "block_size": "16",
+      "latency_ms": "0.017920",
+      "status": "PASS"
+    },
+    {
+      "case": "11",
+      "B": "2",
+      "SEQ_LEN": "512",
+      "H": "1",
+      "HQ": "16",
+      "D": "64",
+      "S": "4",
+      "block_size": "16",
+      "latency_ms": "0.034540",
+      "status": "PASS"
+    },
+    {
+      "case": "12",
+      "B": "4",
+      "SEQ_LEN": "1024",
+      "H": "1",
+      "HQ": "16",
+      "D": "64",
+      "S": "8",
+      "block_size": "16",
+      "latency_ms": "0.136177",
+      "status": "PASS"
+    }
+  ],
+  "profile": "two valid samples each power/baseline",
+  "tracer": {
+    "tool": "mcTracer",
+    "raw_unit": "ns",
+    "steady_launches": 20,
+    "median_device_us": 135.168,
+    "resources": {
+      "dynamic_shared": 2560,
+      "private_per_thread": 0,
+      "private_total": 0,
+      "registers_per_thread": 57,
+      "static_shared": 0
+    }
+  },
+  "full14_OJ": "not run after clear target regression",
+  "artifact_index_sha256": "011a6df8f464805a002b2d78458ac8e8adcdde87ec44e56f47b6d474d3f8436d"
+}

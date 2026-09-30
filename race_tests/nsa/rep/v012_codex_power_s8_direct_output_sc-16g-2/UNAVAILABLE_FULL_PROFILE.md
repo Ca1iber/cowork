@@ -1,0 +1,1 @@
+Case12 correctness passed, but the 16-run paired project-native screen showed v012 117.2405 us versus v010 116.534 us. Full 14-case profiling, mcTracer, mcProfiler, Roofline and external OJ were not run for this rejected mechanism.

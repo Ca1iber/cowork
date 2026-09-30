@@ -1,0 +1,1 @@
+The explicit vectorized-gather candidate passes the exact case12 reference and static generated-source validation, but screens at167.117 us versus v013117.0305 us and v02883.7195 us. Full14, exact external OJ, fresh tracer/profiler/Roofline and ISA were not run after this falsifying screen. Codegen and resource reports are available.

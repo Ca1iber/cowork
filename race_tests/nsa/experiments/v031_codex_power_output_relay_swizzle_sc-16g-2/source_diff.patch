@@ -1,0 +1,19 @@
+--- /root/tilelang-metax/race_tests/nsa/experiments/v030_codex_power_v_microtile_transpose_sc-16g-2/candidate.py
++++ /root/tilelang-metax/race_tests/nsa/experiments/v031_codex_power_output_relay_swizzle_sc-16g-2/candidate.py
+@@ -1,4 +1,4 @@
+-# codex-power v030
++# codex-power v031
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -240,6 +240,10 @@
+             block_sum = T.alloc_fragment([groups], accum_dtype)
+             denominator = T.alloc_fragment([groups], accum_dtype)
+             T.annotate_layout({
++                output_shared: T.Layout(
++                    [groups, dim],
++                    lambda row, col: (row, ((col // 8) ^ (row % 8)) * 8 + col % 8),
++                ),
+                 k_shared: make_swizzled_layout(k_shared),
+                 v_shared: T.Layout(
+                     [block_size, dim],

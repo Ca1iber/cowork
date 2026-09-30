@@ -1,0 +1,11 @@
+# v009: two selected blocks per tile, two-wave case12 CTA
+
+Starting branch: codex-power, parent commit 8796bde97. Base source is this branch's independent v007 OJ-ready source, ultimately descended from the user's ffa68b684e3876df2821fe34c9959493c2ca065a start. No pre-existing optimized NSA kernel is imported or copied. Machine: sc-16g-2 / C500 16G sGPU.
+
+Observed evidence: original case12 B4,N1024,H1,HQ16,D64,S8,BS16 is correct at about 123-124 us. V008 attempted two waves on each 16-column selected block and failed TileLang compile with a Divide by zero. Inspection of TileLang GemmWarpPolicy.FullRow suggests M=16,N=16 is too narrow to partition N over two waves while preserving a full MFMA column tile. V001's 128-token one-pass tile and v002's 64-token group-four tile with 64 threads were correct but slower and resource-heavy. V007's case6 two-wave path proved that shared FP16 score bridging can resolve fragment-layout conflicts and reduce per-thread work when the GEMM tile is wide enough.
+
+Hypothesis: group two selected 16-token K/V blocks into a 32-token tile. Process four online-softmax segments with 128 threads so each wave can handle 16 output columns. Expected K/V shared storage is only 4 KB per operand, scores are [16,32], and per-thread fragment/register pressure is lower than the earlier 64/128-token grouped designs. Predicted case12 official latency falls below 123-124 us, while v007 case6 and all other shapes remain unchanged. Falsifiers: compiler or reference failure, no changed target device code, high resource pressure, or no reproducible end-to-end gain. Sentinel/future masking, all-invalid segments and reduction order remain risks.
+
+Final source imports only the user's three allowed TileLang forms. No helper class is needed; no async copy, foreign code or Torch GPU kernel work.
+
+Outcome: Shared-score candidate case12 reference PASS, 135.557 us screen; MXCC 64 MT/26 ST, staticMaxWarps/PEU=8. Replacing the sequential two-block T.copy gather with a T.Parallel scalar load changed device code but screened at 135.511 us, effectively unchanged. Replacing shared FP16 scores with a fragment failed TileLang layout inference. All correct variants remain slower than the 123-124 us baseline, so this family is stopped and archived. No full official or OJ performance claim is made.

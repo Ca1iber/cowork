@@ -1,0 +1,27 @@
+{
+  "rows": [
+    {
+      "label": "v023",
+      "matmul_flops": 2000683008,
+      "latency_us": 100.3825,
+      "tflops": 19.93059555201355,
+      "requested_bytes": 141950976,
+      "unique_array_bytes": 17956864,
+      "profiler_physical_bytes": 17946112.0,
+      "ai_requested": 14.094182825484765,
+      "ai_physical_counter": 111.48281076146186
+    },
+    {
+      "label": "v028",
+      "matmul_flops": 2000683008,
+      "latency_us": 84.3185,
+      "tflops": 23.727687375842788,
+      "requested_bytes": 141950976,
+      "unique_array_bytes": 17956864,
+      "profiler_physical_bytes": 17962464.0,
+      "ai_requested": 14.094182825484765,
+      "ai_physical_counter": 111.38132318595044
+    }
+  ],
+  "model": "QK+PV GEMM FLOPs only; excludes softmax scalar ops. Requested bytes include repeated K/V CTA reads served by caches. Unique arrays are a coverage upper estimate, not verified compulsory traffic. Physical counters exclude cached reads. Times are native event medians, not mcProfiler native roofline points. Compute roof UNKNOWN; no saturation/floor claim.1400GB/s roof is historical sc16 engineering sensitivity, not a platform guarantee."
+}

@@ -1,0 +1,39 @@
+{
+  "iteration": "v025_codex_power_s2_s4_register_qk_sc-16g-2",
+  "parent_commit": "a91e3117259f532d672c3c0b655c3c055398b031",
+  "status": "S4_local_gain_S2_regression_target_gate_rejected",
+  "source_hashes": {
+    "v028": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "v024": "95db639acc7f8fbebe7598784d7d8b976d90cbc06a69bdf978efe0f73e3aed01",
+    "v025": "525bb54c89237c735994930717cb077db658a7e0055ddff899a053ea604300f9"
+  },
+  "paired": {
+    "reference": "12/12 target PASS",
+    "cases": [
+      {
+        "case": 10,
+        "medians_us": {
+          "v028": 12.3955,
+          "v024": 12.6435,
+          "v025": 12.913
+        },
+        "v025_vs_v024_pct": 2.13153003519595,
+        "v025_vs_v028_pct": 4.174902182243567
+      },
+      {
+        "case": 11,
+        "medians_us": {
+          "v028": 23.962000000000003,
+          "v024": 28.475,
+          "v025": 25.0855
+        },
+        "v025_vs_v024_pct": -11.90342405618965,
+        "v025_vs_v028_pct": 4.688673733411219
+      }
+    ]
+  },
+  "full14_OJ": "not run after target gate failed",
+  "source_generated_static": "PASS; three target shapes",
+  "resources": "70MT26ST zero-stack staticMax7 versus parent60MT26ST max8",
+  "artifact_index_sha256": "be25bddf5c16f961fd5281993705f6ec52d461121444b1768a6f5fc27c018b7a"
+}

@@ -1,0 +1,17 @@
+# v018: register-resident score pool with one softmax and streamed PV
+
+Parent is v017 rejectiondb9ad1ddc on codex-power. Best independent source is v016; target v02883.8065 us, local v016114.7775 us, power v013116.961 us in matched case12 testing. Current-block K prefetchv017 materializes in LLVM but fails at117.012 us, with unchanged66 MT/28 ST,2560B shared,five barrier sites. Next-block K prefetch remains an untested option; this iteration instead tests math/score organization.
+
+Observed structure: current v016 performs eight max and eight sum reductions, eight denominator/rescale updates and per-block output rescaling. C500 work uses a64-thread wave; each head's reduction invokes cross-lane shuffles. Fresh matched v028 is faster despite worse shared/load metrics, so those counters are not used as standalone bottleneck proof. The previous four-wave materialized K/V gather has22KB shared and cross-wave reductions, failing at167.117 us; it does not falsify a single-wave register score pool.
+
+Hypothesis: retain all16x128 FP32 scores in registers (32 values per lane) while processing eight independent QK blocks. Mask after QK, perform one max/sum softmax, cast unnormalized exponentials to FP16, then stream eight16x64 V tiles through the existing small shared buffer and accumulate PV under one global max. Divide output once by the global denominator. This removes repeated output-rescale work and reduces dynamic max/sum AllReduce calls from16 to2, without materializing128x64 K/V tiles.
+
+Geometry/dataflow:64-thread single-wave CTA, Q remains register-cached, K uses existing direct-register MFMA. Explicit pool layout maps each16-token block to one float32x4 accumulator per lane; unroll selected-block loops so MFMA pool offsets are constant and avoid local-memory spills. Defer masking until all independent QK blocks are computed. PV consumes one FP16x4 pool block at a time and streams V through2048B shared. No partial-output merge or extra GPU launch.
+
+Predictions: fewer rescale/denominator/shuffle operations, small shared footprint, no dense gather, no asynchronous primitives. Risks:32-score register residency, constant-offset promotion, FP16 global-exponential conversion, accumulation order, automatic synchronization and manual MFMA layout. Global Q/K/V payload and grid remain the same; index lookup count/order can change.
+
+Falsifiers: compiler spills or layout failure, unsafe/missing shared synchronization, exact naive_nsa or three-import/generated rules fail, or no repeatable improvement against v016/v028. Inspect codegen/resources first, then native case12 reference/timing. Full14 and no-regression against v028 are required before final promotion. Header # codex-power v018. No previous team kernel code is copied, no custom class, foreign source or Torch computation is used.
+
+## Loop-organization diagnostic before editing
+
+Full register pool passes case12 at132.746 us. It materializes32-score/32-half arrays and only two AllReduce calls, but MXCC reports102 MT/60 ST,0B stack,staticMaxWarps4. Hypothesis: forced eight-block unrolling creates broad live/control state; serial selected-block loops may reduce register footprint. The mathematical pool and normalization remain identical. Risk: dynamic pool offsets can create local-memory spills, or the compiler may re-unroll automatically. Inspect resources and IR before GPU timing; reject spilled or unchanged unfavorable lowering rather than assume loop annotations are beneficial.

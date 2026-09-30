@@ -1,0 +1,1 @@
+Native case6 reference/static pass at159.002 us, but no target win versus v028156.639 us is established. New profiler/tracer/Roofline, full14 and OJ are not run after this negative target screen. The bank model is an assumption and its metric movement is not validated.

@@ -1,0 +1,1 @@
+The case12 screen is roughly 1.95x slower than the historical baseline. A full 14-case official benchmark, mcTracer, mcProfiler, sustained HBM and external OJ were not run for this rejected screen. Their absence is explicit; no values are inferred. Selected-shape correctness, source/generated-code static validation, generated device C++ and MXCC resource output are available.

@@ -1,0 +1,1 @@
+Case12 reference/static checks pass, but117.012 us does not improve the v016114.7775 us local checkpoint and loses to v02883.8065 us. Full14, fresh profiler/tracer/Roofline and OJ are not run after this negative target screen. Generated C++, device bitcode/LLVM IR and resource reports are available; device ISA tooling limitation is documented in v016.

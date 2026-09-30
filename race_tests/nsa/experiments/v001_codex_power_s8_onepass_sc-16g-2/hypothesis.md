@@ -1,0 +1,13 @@
+# v001: one-pass sparse tile for S=8
+
+Starting branch: codex-power, commit eb4a08f9fff739138de3f15efc4a9e807b69ad18; original kernel remains the historical ffa68b684e3876df2821fe34c9959493c2ca065a source. Machine: sc-16g-2 / C500 16G sGPU. Official inputs and project-native correctness/timing runner are pinned in v000.
+
+Observed evidence: v000 case12 (B4,N1024,H1,HQ16,D64,S8,BS16) passes the reference but costs 124.155 us end-to-end, 120.576 us device median with 2.816 us launch gap. The original kernel executes QK, online softmax and PV once per selected block in a T.serial(8) loop. mcProfiler sees 9.557/8.389 MB global read/write, and sustained physical HBM is 143.451 GB/s at 1125/1800 MHz. The conservative minimum-byte HBM floor is 12.83 us. Repeated per-block compute/reductions/synchronization are a plausible bottleneck; the existing evidence does not isolate one instruction family.
+
+Hypothesis: gather the eight selected K and V blocks into contiguous shared tiles [128,64], then perform a single QK GEMM, one masked softmax over all 128 positions, and one PV GEMM. This exposes selected blocks as a matrix dimension and eliminates repeated online-softmax updates. It is a new implementation based on the initial submission and the NSA math, without copying prior optimized kernels.
+
+Predictions: case12 dynamic GEMM/reduction/synchronization work falls; device median falls below 100 us if the larger tile compiles efficiently. Global bytes remain similar, shared allocation rises to about 36 KB/CTA, and occupancy/registers may worsen. Falsifiers: incorrect output under the unmodified full reference, OJ/static rule violation, compilation failure, or no reproducible official end-to-end latency gain. Risks: sentinel/future block masking, all-invalid rows, changed floating-point reduction order, shared resource limits, and backend lowering of larger GEMMs.
+
+Allowed source imports are exactly `import tilelang`, `import tilelang.language as T`, and `from tilelang.layout import make_swizzled_layout`. No async copy, foreign code, or Torch kernel computation. If a helper class is ever needed, define it within run_kernel(). The exact submission file must pass all 14 official cases and source/generated-code validation before OJ testing.
+
+Outcome: Falsified by the first project-native case12 screen. Correctness passed, but latency rose to 674.616 us from the v000 baseline's 124.155 us. MXCC reports 109 MT/56 ST registers and staticMaxWarps/PEU=4, versus baseline 73/28 and 6. The generated QK and PV still have long sequential MMA loops, so a single call did not make the 128-token matrix work cheap. Stop this version and archive it before any different design.

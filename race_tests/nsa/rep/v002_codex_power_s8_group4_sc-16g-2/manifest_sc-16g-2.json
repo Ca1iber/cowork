@@ -1,0 +1,29 @@
+{
+  "iteration": "v002_codex_power_s8_group4_sc-16g-2",
+  "status": "screen_rejected_latency_regression",
+  "machine": "sc-16g-2 / MetaX C500 / 16G sGPU",
+  "branch": "codex-power",
+  "parent_commit": "dc10af54b761911d04941a5b22fe7a6ecbe81972",
+  "source_sha256": "15e8a7b7a0cbd5220dd7628ceab9eef48713f87ce2432f70b43714b4efac6c19",
+  "source_and_selected_codegen_oj_static": "PASS",
+  "case12_reference": "PASS",
+  "case12_baseline_screen_us": 124.155,
+  "case12_candidate_screen_us": 242.396,
+  "latency_ratio": 1.9523659941202527,
+  "resource": {
+    "baseline_MT_ST": [
+      73,
+      28
+    ],
+    "candidate_MT_ST": [
+      150,
+      30
+    ],
+    "baseline_static_warps": 6,
+    "candidate_static_warps": 3
+  },
+  "full_official_and_oj": "not_run_due_to_falsifying_screen",
+  "report": "race_tests/nsa/rep/v002_codex_power_s8_group4_sc-16g-2/report_sc-16g-2.md",
+  "artifact_index": "race_tests/nsa/rep/v002_codex_power_s8_group4_sc-16g-2/artifact_hashes_sc-16g-2.txt",
+  "artifact_index_sha256": "6b9258308c8fff753ac29f09fadcdc742696ee6aa7c6f1287f8a818598e3646b"
+}

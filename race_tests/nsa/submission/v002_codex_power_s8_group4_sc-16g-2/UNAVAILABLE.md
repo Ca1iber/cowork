@@ -1,0 +1,1 @@
+No OJ submission is archived for v002. The original-reference case12 screen passed correctness but measured 242.396 us versus the exact v000 baseline's 124.155 us. The version stops after the falsifying screen. Source is kept in experiments/v002_codex_power_s8_group4_sc-16g-2/candidate.py.

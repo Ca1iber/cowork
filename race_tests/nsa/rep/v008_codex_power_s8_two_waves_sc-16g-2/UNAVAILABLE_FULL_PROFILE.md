@@ -1,0 +1,1 @@
+The candidate did not compile for its target official case12 shape. No correctness, full official benchmark, generated device code, mcTracer, mcProfiler, sustained HBM or external OJ measurement is available. None is estimated. The source static OJ import check passed before compilation, but import compliance is not evidence of a runnable kernel.

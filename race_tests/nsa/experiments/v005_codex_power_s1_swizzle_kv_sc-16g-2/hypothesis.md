@@ -1,0 +1,11 @@
+# v005: explicit K/V shared swizzle on the S=1 case6 path
+
+Starting branch: codex-power, parent v004 re-profile commit 19e71aa63. Candidate is built only from the user's ffa68b684e3876df2821fe34c9959493c2ca065a original NSA source and the public TileLang make_swizzled_layout primitive; no prior optimized NSA kernel is imported or copied. Machine: sc-16g-2 / C500 16G sGPU.
+
+Observed evidence: case6 B8,N1024,H1,HQ16,D128,S1,BS32 remains about 220.974 us under a fresh full-reference warmup10/repeat50 run; mcTracer device median 218.624 us, launch gap 2.816 us. mcProfiler measured only 44.19% shared nonconflict accesses, 4.65 average conflict extra cycles per instruction, 4.23% MMA duty and 65.05% L2 hit. Four other derived counters were unavailable. Sustained physical HBM was 320.589 GB/s at XCORE/MC 1125/1800 MHz, below the conservative 1400 GB/s single-tenant roof. Shared operand feed is a falsifiable candidate bottleneck, not a proven exclusive cause.
+
+Hypothesis: explicitly swizzling the case6 K and V shared buffers changes their physical bank mapping, reduces shared conflicts and improves QK/PV operand feed without changing mathematical work. Predicted generated C++ addresses for case6 change, shared conflict extra cycles fall below 4.65, and case6 official end-to-end latency falls below the paired baseline. Falsifiers: no generated-code change, any reference failure, OJ/static violation, no reproducible latency improvement, or worse resource occupancy.
+
+Risk: swizzle address arithmetic or copy behavior may offset bank gains. Only this compile-time shape gets the annotation; other shapes retain the original calculation. The exact source must use only the user's three import statements. No class, async copy, foreign device code or Torch kernel work.
+
+Outcome: case6 reference passed and its screen measured 220.549 us, but generated case6 device C++ is byte-identical to the baseline (SHA-256 5092f1f787bbc3c1de8b332937554714069b40ec7228fda591778ca8b3ada039). The explicit layout annotation was redundant under the compiler's default mapping. The small single-run time difference is noise rather than a source-caused gain. Stop and archive before selecting a mechanism that changes generated code.
