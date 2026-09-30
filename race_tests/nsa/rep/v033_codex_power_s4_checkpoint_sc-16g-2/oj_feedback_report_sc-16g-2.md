@@ -44,3 +44,7 @@
 ## 7. 实验总结
 
 rejected。case11和5各升1分不能抵消其他case退化。恢复基线，继续独立优化6/12，目标仍未完成。
+
+## 降分路径生成代码核验
+
+tool-only codegen重新导出精确v28的case3/6/8，并与v033已归档device.cpp比较，三项均byte-identical。未执行GPU工作，非timing结果。这个检查排除了本机lowering生成代码变化，不能证明OJ实际二进制/环境/计时无变化，也不能把退化归为噪声。结论仍为rejected，root保持原v28。
