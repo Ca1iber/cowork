@@ -1,0 +1,93 @@
+{
+  "iteration": "v036_codex_power_s1_shared_lifetime_sc-16g-2",
+  "status": "rejected_native_target_regression",
+  "submission_sha256": "c000f002f2a52ad28fc44eb3f4e30a72d1e9547e916f52bb85095813c41587ed",
+  "paired": {
+    "medians_us": {
+      "baseline_v28": 157.0405,
+      "power_v036": 179.8195
+    },
+    "delta_pct": 14.505175416532667,
+    "reference": "8/8 PASS",
+    "order": "ABBA x2"
+  },
+  "static": "PASS",
+  "compiler": "58MT 46ST stack0 staticMax8",
+  "profile": [
+    {
+      "variant": "power_v036",
+      "sample": 1,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8192.0,
+      "l2_hit_pct": 73.28,
+      "read_bytes": 38001888.0,
+      "write_bytes": 33578144.0,
+      "mte_pct": 27.87,
+      "mma_pct": 5.32,
+      "shared_nonconflict_pct": 80.33,
+      "conflict_cycles": 0.86,
+      "load_latency_cycles": 41.02,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "power_v036",
+      "sample": 2,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8192.0,
+      "l2_hit_pct": 73.36,
+      "read_bytes": 37839264.0,
+      "write_bytes": 33569600.0,
+      "mte_pct": 28.42,
+      "mma_pct": 5.42,
+      "shared_nonconflict_pct": 80.33,
+      "conflict_cycles": 0.86,
+      "load_latency_cycles": 41.07,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 1,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8192.0,
+      "l2_hit_pct": 76.53,
+      "read_bytes": 37849760.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 35.1,
+      "mma_pct": 6.09,
+      "shared_nonconflict_pct": 89.19,
+      "conflict_cycles": 0.36,
+      "load_latency_cycles": 38.24,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 2,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8192.0,
+      "l2_hit_pct": 76.53,
+      "read_bytes": 37849440.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 35.07,
+      "mma_pct": 6.08,
+      "shared_nonconflict_pct": 89.19,
+      "conflict_cycles": 0.36,
+      "load_latency_cycles": 38.21,
+      "unavailable_raw": {}
+    }
+  ],
+  "tracer": {
+    "tool": "mcTracer",
+    "raw_unit": "ns",
+    "matching_launches": 31,
+    "steady_launches": 20,
+    "median_device_us": 175.488,
+    "resources": {
+      "dynamic_shared": 8448,
+      "private_per_thread": 0,
+      "private_total": 0,
+      "registers_per_thread": 58,
+      "static_shared": 0
+    }
+  },
+  "goal_complete": false
+}
