@@ -1,0 +1,17 @@
+{
+  "iteration": "v040_codex_power_s8_pv_fence_sc-16g-2",
+  "status": "rejected_target_screen",
+  "submission_sha256": "92ed642612ebedc754c3152fee1876f3133b91ec8ed463b284f689633674c291",
+  "native_case12_us": 93.384,
+  "reference": "PASS",
+  "static": "PASS",
+  "compiler": "72MT30ST stack0 max7 shared4608",
+  "barrier_IR": {
+    "parent_v039_static_IR_warp_barrier_calls": 35,
+    "candidate_v040_static_IR_warp_barrier_calls": 31,
+    "delta": -4,
+    "note": "IR fully unrolled calls, conditional validity means dynamic executedcount varies; not ISA count"
+  },
+  "candidate_profile": "not run after losing screen",
+  "goal_complete": false
+}
