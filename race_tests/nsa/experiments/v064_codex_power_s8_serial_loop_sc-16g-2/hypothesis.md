@@ -1,0 +1,8 @@
+# v064: runtime selected-block loop
+
+Observed evidence: v061 actual C12 bank metrics improve79.88->97.40%/conflict1.04->0.10 but native+0.740%,80MT/max6 versus current72MT/max7. v062/v063 selectors remain scalarized and slower. v063 fresh original-v28 profile/code/resource is unchanged and internally consistent; bank-counter optimization alone has not improved end-to-end. Own score-pool/multiwave failures are referenced observations,not algorithms reused.
+Hypothesis: keep v061 data movement/mapping but remove forced outer8-block compiler unrolling, reducing code expansion and live temporary state while preserving runtime work and online update order.
+Mechanism: change only selected loop T.unroll(8)->T.serial(8); all inner vector/unrolls,logical indices,math,probability/den/rescale,masks,sync,arena/proven bounds and old output/PV remain exact v061. Keep exact own v060 C6 helper.
+Predictions: CPP loses outer pragma; optimized IR retains a backedge and fewer static MMA sites/code size,actual executed MMA/bytes/iteration order unchanged. Resources/timing empirical; compiler ceiling is not occupancy. Serial here is compiler loop form,not new GPU parallelism.
+Falsifier: backend still fully unrolls the loop,reference fails,private allocation/resource growth outweighs benefit,formal C12 fails to beat current v060,or another official regresses. Missing OJ does not establish global no-regression.
+Risks: loop/control overhead and less scheduling visibility,reg retention or compiler auto-unroll. Exact official shape,input,seed0,full native naive_nsa/W10R50; only three exact imports/normal primitives,no async/injection/manual builtins.

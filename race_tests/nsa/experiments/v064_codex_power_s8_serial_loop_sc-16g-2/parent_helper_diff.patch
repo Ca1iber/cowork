@@ -1,0 +1,26 @@
+--- race_tests/nsa/experiments/v061_codex_power_s8_qk_pair_swap_sc-16g-2/s8_kernel.py
++++ race_tests/nsa/experiments/v064_codex_power_s8_serial_loop_sc-16g-2/s8_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v061
++# codex-power v064
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s8_qk_pair_swap(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s8_serial_loop(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+@@ -67,7 +67,7 @@
+             T.fill(numerator, 0)
+             denominator[0] = 0
+             maximum[0] = -T.infinity(accum_dtype)
+-            for selected in T.unroll(selected_blocks):
++            for selected in T.serial(selected_blocks):
+                 block_start = Indices[batch_id, token, kv_head, selected] * block_size
+                 if block_start >= 0 and block_start <= token:
+                     T.sync_warp()
