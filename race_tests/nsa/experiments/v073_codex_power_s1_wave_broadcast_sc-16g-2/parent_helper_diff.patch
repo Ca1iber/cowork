@@ -1,0 +1,26 @@
+--- race_tests/nsa/experiments/v072_codex_power_s1_two_query_waves_sc-16g-2/s1_kernel.py
++++ race_tests/nsa/experiments/v073_codex_power_s1_wave_broadcast_sc-16g-2/s1_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v072
++# codex-power v073
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_two_query_waves(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s1_wave_broadcast(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
+     assert seq_len % block_size == 0
+@@ -37,7 +37,7 @@
+             batch_id = batch_head // kv_heads
+             kv_head = batch_head % kv_heads
+             lane = T.KernelLaunchFrame.Current().get_thread_binding() % 64
+-            wave = T.KernelLaunchFrame.Current().get_thread_binding() // 64
++            wave = T.shfl_sync(T.KernelLaunchFrame.Current().get_thread_binding() // 64, 0, width=64, mask=0xFFFFFFFFFFFFFFFF)
+             token = token_pair * 2 + wave
+             shared = T.alloc_shared([2, 4096], dtype)
+             q_local = T.alloc_local(32, dtype)

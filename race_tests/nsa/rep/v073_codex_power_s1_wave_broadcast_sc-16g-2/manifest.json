@@ -1,0 +1,135 @@
+{
+  "version": "v073_codex_power_s1_wave_broadcast_sc-16g-2",
+  "status": "rejected_target_regression_despite_lower_MT",
+  "closed_utc": "2026-10-01T19:49:06.086267+00:00",
+  "start": {
+    "utc": "2026-10-01T19:37:50.710280+00:00",
+    "version": "v073_codex_power_s1_wave_broadcast_sc-16g-2",
+    "head": "0601c643a885d26fc7c9c3caeed8fe65fa342d29",
+    "branch": "codex-power-v28-base",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent_v072_sha256": "40bb24ef1bc16d022ec910f27b2ce876dd5a7a2b686313c3fff961171c0c9b6f",
+    "target_current_v068_sha256": "589d4ca2c5f82f97581cfb3f82eca96ad81c4c49b8624c60326eac0e34b14949"
+  },
+  "source_sha256": "49d07624534fdf4f9aefb1a19a966a132a667049489f4a8ae80d27268df6229f",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "native_reference_checks": "17 selected C6 full naive_nsa PASS,W10/R50;no all14 correctness claim",
+  "paired": {
+    "baseline_v28": {
+      "us_values": [
+        156.43099999999998,
+        156.498,
+        156.692,
+        157.128
+      ],
+      "median_us": 156.595,
+      "min_us": 156.43099999999998,
+      "max_us": 157.128
+    },
+    "parent_v068": {
+      "us_values": [
+        95.539,
+        95.498,
+        96.328,
+        96.118
+      ],
+      "median_us": 95.82849999999999,
+      "min_us": 95.498,
+      "max_us": 96.328
+    },
+    "trial_v072": {
+      "us_values": [
+        100.977,
+        101.1,
+        100.884,
+        101.074
+      ],
+      "median_us": 101.0255,
+      "min_us": 100.884,
+      "max_us": 101.1
+    },
+    "power_v073": {
+      "us_values": [
+        103.28099999999999,
+        103.342,
+        104.08399999999999,
+        103.80799999999999
+      ],
+      "median_us": 103.57499999999999,
+      "min_us": 103.28099999999999,
+      "max_us": 104.08399999999999
+    },
+    "candidate_vs_baseline_v28_pct": -33.858041444490574,
+    "candidate_vs_parent_v068_pct": 8.08371204808591,
+    "candidate_vs_trial_v072_pct": 2.523620274089211,
+    "correctness": "16/16 full native naive_nsa W10R50 PASS",
+    "all_samples_retained": true,
+    "candidate_range_all_below_current": false
+  },
+  "codegen": {
+    "source_sha256": "49d07624534fdf4f9aefb1a19a966a132a667049489f4a8ae80d27268df6229f",
+    "static_MMA": 32,
+    "fdiv": 32,
+    "MT": 86,
+    "ST": 28,
+    "stack_bytes": 0,
+    "static_max_warps_peu": 5,
+    "private_allocas": [],
+    "shared_bytes": 16384,
+    "threads": 128,
+    "CTA_grid": [
+      512,
+      8
+    ],
+    "waves": 8192,
+    "readlane_related_calls": [
+      "%3 = tail call noundef i32 @llvm.mxc.bsm.bpermute(i32 %shl.i, i32 %shr), !dbg !56",
+      "%102 = tail call noundef i32 @llvm.mxc.bsm.bpermute(i32 %shl.i.i, i32 %98), !dbg !134",
+      "%109 = tail call noundef i32 @llvm.mxc.bsm.bpermute(i32 %shl.i.i1031, i32 %105), !dbg !149",
+      "%148 = tail call noundef i32 @llvm.mxc.bsm.bpermute(i32 %shl.i.i1053, i32 %144), !dbg !218",
+      "%154 = tail call noundef i32 @llvm.mxc.bsm.bpermute(i32 %shl.i.i1058, i32 %150), !dbg !232"
+    ],
+    "caution": "broadcast uniformity/register effect verified only by actual compiler/native evidence;static max not occupancy"
+  },
+  "broadcast_identity": {
+    "normalized_AST_exact_parent": true,
+    "integer_identity_threads_checked": 128,
+    "subgroups": 2,
+    "width": 64,
+    "source_lane": 0,
+    "full64mask": true,
+    "broadcast_before_any_validbranch": "all128threads participate",
+    "addresses_math_and_replication": "unchanged because value equalsfloor(tid/64)",
+    "prior_ownership_proof": "race_tests/nsa/rep/v072_codex_power_s1_two_query_waves_sc-16g-2/two_query_ownership_proof.json",
+    "prior_proof_sha256": "073d83f9078e3857a0c25b37f19ac4348cb8490434f84e92c27a9f3d2cdd3941",
+    "uniform_compiler_allocation": "not assumed;actual resources and native gate required"
+  },
+  "machine_text": {
+    "command_scope": "same mxcc -device-obj O3/lineinfo/use-fast-math C6 resource capture",
+    "sections": {
+      "parent_v060": {
+        ".text": {
+          "bytes": 8448,
+          "sha256": "d2972f80a1d713b8d598e1298cf6422bb78193f26c13334390325bb086d81538"
+        }
+      },
+      "power_v073": {
+        ".text": {
+          "bytes": 9216,
+          "sha256": "1d1b081dfd23bee9e21b7a8d34c920925bc4ae288ee2925e0a891c3194588c69"
+        }
+      }
+    },
+    "limitations": "binary section comparison is not ISA decoding;same CLI flags/normal source export required;not a timing waiver",
+    "text_sections_identical": false
+  },
+  "skipped": {
+    "full14_risk_OJ": "MT112to86 but target8.084percent slower vs68,2.524percent slower vs72;not promoted",
+    "mcProfiler_mcTracer": "clear targetregression,fresh70 referenced,not current73 metrics",
+    "ISA_decode": "unavailable;ELF section comparison is not disassembly",
+    "roofline": "actual sGPU roofs uncalibrated"
+  },
+  "cache": "code objects only,all attention content recomputed",
+  "promotion": "none;root v28 and pending64/68 unchanged",
+  "job_state": "known codegen/compiler/native groups terminal;no unowned kills"
+}

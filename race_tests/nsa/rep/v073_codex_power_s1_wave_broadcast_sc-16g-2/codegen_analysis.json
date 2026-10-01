@@ -1,0 +1,25 @@
+{
+  "source_sha256": "49d07624534fdf4f9aefb1a19a966a132a667049489f4a8ae80d27268df6229f",
+  "static_MMA": 32,
+  "fdiv": 32,
+  "MT": 86,
+  "ST": 28,
+  "stack_bytes": 0,
+  "static_max_warps_peu": 5,
+  "private_allocas": [],
+  "shared_bytes": 16384,
+  "threads": 128,
+  "CTA_grid": [
+    512,
+    8
+  ],
+  "waves": 8192,
+  "readlane_related_calls": [
+    "%3 = tail call noundef i32 @llvm.mxc.bsm.bpermute(i32 %shl.i, i32 %shr), !dbg !56",
+    "%102 = tail call noundef i32 @llvm.mxc.bsm.bpermute(i32 %shl.i.i, i32 %98), !dbg !134",
+    "%109 = tail call noundef i32 @llvm.mxc.bsm.bpermute(i32 %shl.i.i1031, i32 %105), !dbg !149",
+    "%148 = tail call noundef i32 @llvm.mxc.bsm.bpermute(i32 %shl.i.i1053, i32 %144), !dbg !218",
+    "%154 = tail call noundef i32 @llvm.mxc.bsm.bpermute(i32 %shl.i.i1058, i32 %150), !dbg !232"
+  ],
+  "caution": "broadcast uniformity/register effect verified only by actual compiler/native evidence;static max not occupancy"
+}
