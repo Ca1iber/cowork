@@ -1,5 +1,8 @@
 # codex-power v073：两查询CTA的wave编号广播
 
+**计数更正：整组实验（含对照）17次参考检查；精确候选为5次，覆盖官方case [6]。下文整组总数不得解读为候选单独执行次数；原始CSV、正确性结果及延迟结论不变。**
+
+
 ## 1. 上版本遗留问题
 
 v072两个64线程query wave打包128线程CTA，完整C6通过但112MT/26ST、16KB shared、比v068慢6.526%。怀疑wave=threadIdx/64的地址表达式被当作varying；这是待验证原因，未解码ISA。
@@ -18,7 +21,7 @@ v072两个64线程query wave打包128线程CTA，完整C6通过但112MT/26ST、1
 
 ## 5. Benchmark 对比
 
-sc-16g-2，开始HEAD0601c643a，codex-power-v28-base；C6官方形状和完整v000::_run_one_case/naive_nsa/seed/容差不变，W10R50。screen102.492us PASS，四版B-I-P-C-C-P-I-B x2共16/16 PASS，最终源17次完整C6参考。
+sc-16g-2，开始HEAD0601c643a，codex-power-v28-base；C6官方形状和完整v000::_run_one_case/naive_nsa/seed/容差不变，W10R50。screen102.492us PASS，四版B-I-P-C-C-P-I-B x2共16/16 PASS，整组实验17次完整C6参考，其中精确候选5次。
 
 |版本|中位数us|范围us|
 |---|---:|---:|

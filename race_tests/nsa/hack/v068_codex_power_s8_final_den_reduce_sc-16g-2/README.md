@@ -21,3 +21,5 @@ No external OJ submission is performed. Main race_tests/nsa/submission.py remain
 - run_archive_native.sh: full14 native checks from exact archived candidate SHA, W10/R50; no reduced reference.
 - run_final_evidence.sh: strict sequential native-completed guard -> source export -> profile -> archived full14.
 - close_version.py: gated archive checks, SHA inventory and exact scoped staging only; commit is separate.
+
+Reference count scope correction: 99 checks from the exact candidate, 271 total with controls; see rep/reference_count_scope.json. Distinct official cases: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].

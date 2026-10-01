@@ -12,7 +12,18 @@ assert not json.loads((r/'machine_text_comparison.json').read_text())['text_sect
 assert (r/'report_sc-16g-2.md').read_text().count('## ')==7
 owned={'135357','135551','135552','135782'};ps=subprocess.check_output(['ps','-eo','pid,pgid,comm'],text=True).splitlines();assert not [x for x in ps[1:] if x.split()[0] in owned or x.split()[1] in owned]
 manifest={'version':v,'status':'rejected_target_regression_no_MT_benefit','closed_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'start':json.loads((r/'start_identity.json').read_text()),'source_sha256':sha,'main_sha256':base,'native_reference_checks':'13 selected C6 full naive_nsa PASS,W10/R50;no all14 correctness claim','paired':json.loads((r/'paired_summary.json').read_text()),'codegen':json.loads((r/'codegen_analysis.json').read_text()),'integer_identity':json.loads((r/'blockstart_identity_proof.json').read_text()),'machine_text':json.loads((r/'machine_text_comparison.json').read_text()),'skipped':{'full14_risk_OJ':'MT100 unchanged,ST24,target2.193percent slower;not promoted','mcProfiler_mcTracer':'clear targetregression,fresh70 referenced,not current74 counters','ISA_decode':'unavailable;ELF section comparison is not disassembly','roofline':'actual sGPU roofs uncalibrated'},'cache':'code objects only,all attention content recomputed','promotion':'none;root v28 and pending64/68 unchanged','job_state':'known codegen/compiler/native groups terminal;no unowned kills'}
-(r/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');(p/'submission'/v/'status.json').write_text(json.dumps({'status':manifest['status'],'archive_only':True,'sha256':sha,'source_checks':'13selected C6;no all14/OJ claim'},indent=2)+'\n')
+# Counts below distinguish the tested candidate from comparison/control modules.
+count_rows=[];candidate_label='power_'+v.split('_')[0]
+for table in sorted(r.glob('*.csv')):
+ if not any(table.name.startswith(x) for x in ['screen_case','paired_case','paired_all14','paired_risk','archive_native_all14']):continue
+ data=list(csv.DictReader(table.open()));assert data and all(x['status']=='PASS' for x in data)
+ chosen=[x for x in data if x.get('variant')==candidate_label] if 'variant' in data[0] else data
+ count_rows.append({'path':str(table),'experiment_checks_with_controls':len(data),'candidate_checks':len(chosen),'candidate_cases':sorted({int(x['case']) for x in chosen})})
+count_scope={'candidate_label':candidate_label,'candidate_checks':sum(x['candidate_checks'] for x in count_rows),'experiment_checks_with_controls':sum(x['experiment_checks_with_controls'] for x in count_rows),'rows':count_rows}
+manifest['reference_count_scope']=count_scope
+if 'native_correctness' in manifest:manifest['native_correctness']=count_scope
+if 'native_reference_checks' in manifest:manifest['native_reference_checks']=count_scope
+(r/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');(p/'submission'/v/'status.json').write_text(json.dumps({'status':manifest['status'],'archive_only':True,'sha256':sha,'source_checks':count_scope},indent=2)+'\n')
 for d in ['experiments','hack','rep','submission']:(p/d/v/'.gitattributes').write_text('* -text -eol -diff\n*.patch -diff\n')
 files=[f for d in ['experiments','hack','rep','submission'] for f in (p/d/v).rglob('*') if f.is_file() and f.name!='archive_sha256.json'];index={str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(files)};(r/'archive_sha256.json').write_text(json.dumps(index,indent=2)+'\n');assert all(hashlib.sha256((root/f).read_bytes()).hexdigest()==h for f,h in index.items())
 assert not subprocess.check_output(['git','diff','--cached','--name-only'],text=True).strip();paths=[str((p/d/v).relative_to(root)) for d in ['experiments','hack','rep','submission']];subprocess.run(['git','add','-f']+paths,check=True)

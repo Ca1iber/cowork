@@ -1,5 +1,8 @@
 # codex-power v064 selected runtime loop / sc-16g-2
 
+**计数更正：整组实验（含对照）271次参考检查；精确候选为99次，覆盖官方case [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]。下文整组总数不得解读为候选单独执行次数；原始CSV、正确性结果及延迟结论不变。**
+
+
 ## 1. 上版本遗留问题
 
 v061 bank接近97%却native+0.740%，v062/v063 selector/scalarization仍慢。v063按three-failure刷新v28 profile/code/resource，incumbent无变化。main原v28及待OJ v060不变，本轮更换compiler loop/lifetime方向。
@@ -40,7 +43,7 @@ actual CPP去除outer pragma，optimizedLLVM保留selected backedge；staticMMA6
 |14|19.7480|19.7605|19.7145|-0.170%|-0.233%|
 
 Profiler actual terminal后，exact archive六项风险三方对称72/72 reference PASS：case2 +1.236%；case3 +0.104%；case5 +0.189%；case7 +0.658%；case9 +0.078%；case10 -0.795%。case10增加未复现，2/3/5/7/9仍positive，不因source identity叫noise或豁免；保留case7 candidate32.814us等全部观察，没有继续采样选好结果。
-Final exact archive另跑14/14 complete reference PASS。最终SHA共271完整checks：screen1+target16+all14168+risk72+archive14，W10/R50未改；归档单次us不与旧baseline跨时段相除。
+Final exact archive另跑14/14 complete reference PASS。整组实验（包含对照）共271完整checks：screen1+target16+all14168+risk72+archive14，W10/R50未改；归档单次us不与旧baseline跨时段相除。
 
 ## 6. Profile 指标变化
 

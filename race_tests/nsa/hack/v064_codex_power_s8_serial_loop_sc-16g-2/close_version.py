@@ -14,6 +14,17 @@ assert json.loads((r/'mx_smi_sampler_summary.json').read_text())['exit_code']==0
 report=(r/'report_sc-16g-2.md').read_text();assert report.count('## ')==7 and 'DETAILS_PENDING' not in report
 all14=json.loads((r/'paired_all14_summary.json').read_text());scope=json.loads((r/'mcprof_scope_checks.json').read_text())
 manifest={'version':v,'status':'inconclusive_pending_external_oj_no_regression','source_sha256':expected,'baseline_sha256':'42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd','entry_prefix_AST':'exact original v28 unchanged','compiled_cache':'code object only; no attention tensor content caching','native_correctness':'screen1+paired_target16+paired_all14_168+risk72+archive14=271 full reference PASS at unchanged W10/R50','native_source_path':'/tmp/nsa_power_v064_proven_bounds.py','archive_source':'exact archived file verified 14/14 full native at W10/R50','case6':all14['cases'][5],'case12':all14['cases'][11],'untouched_device_sources':'12/12 byte-identical v28; C6 device byte-identical v060','positive_other_case_medians':[x['case'] for x in all14['cases'] if x['case'] not in (6,12) and x['candidate_vs_v28_pct']>0],'OJ':'pending actual user results; main remains v28; risk recheck still positive for cases2/3/5/7/9' ,'mcProfiler_scope':scope,'mcProfiler_comparison':'comparison available; four launch footprints consistent, no exclusive attribution or occupiedwarps claim','mcTracer':'not rerun after repeated prior timeouts; referenced prior raw v049 capture','ISA':'unavailable tool','Roofline':'actual sGPU roofs not calibrated','GPU_settings':'unchanged','main_submission':'exact original v28 preserved','independent_v049_oj_candidate':'preserved'}
+# Counts below distinguish the tested candidate from comparison/control modules.
+count_rows=[];candidate_label='power_'+v.split('_')[0]
+for table in sorted(r.glob('*.csv')):
+ if not any(table.name.startswith(x) for x in ['screen_case','paired_case','paired_all14','paired_risk','archive_native_all14']):continue
+ data=list(csv.DictReader(table.open()));assert data and all(x['status']=='PASS' for x in data)
+ chosen=[x for x in data if x.get('variant')==candidate_label] if 'variant' in data[0] else data
+ count_rows.append({'path':str(table),'experiment_checks_with_controls':len(data),'candidate_checks':len(chosen),'candidate_cases':sorted({int(x['case']) for x in chosen})})
+count_scope={'candidate_label':candidate_label,'candidate_checks':sum(x['candidate_checks'] for x in count_rows),'experiment_checks_with_controls':sum(x['experiment_checks_with_controls'] for x in count_rows),'rows':count_rows}
+manifest['reference_count_scope']=count_scope
+if 'native_correctness' in manifest:manifest['native_correctness']=count_scope
+if 'native_reference_checks' in manifest:manifest['native_reference_checks']=count_scope
 (r/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 for d in ['experiments','hack','rep','submission']:(p/d/v/'.gitattributes').write_text('* -text -eol -diff\n*.patch -diff\n')
 files=[f for d in ['experiments','hack','rep','submission'] for f in (p/d/v).rglob('*') if f.is_file() and f.name!='archive_sha256.json']

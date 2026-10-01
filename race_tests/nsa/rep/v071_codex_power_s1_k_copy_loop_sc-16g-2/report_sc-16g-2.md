@@ -1,5 +1,8 @@
 # codex-power v071：C6 K-copy运行时循环
 
+**计数更正：整组实验（含对照）13次参考检查；精确候选为5次，覆盖官方case [6]。下文整组总数不得解读为候选单独执行次数；原始CSV、正确性结果及延迟结论不变。**
+
+
 ## 1. 上版本遗留问题
 
 当前C6沿用自研v060，约95us，100MT/22ST，max4，shared8192B。v069机器码相同无收益，v070缩小PV数组未降低MT且慢1.94%。观察到K拷贝八次完全展开，本轮检验该阶段的资源/预取取舍。
@@ -18,7 +21,7 @@
 
 ## 5. Benchmark 对比
 
-sc-16g-2，HEADcf6cd28d0，codex-power-v28-base；官方C6 B8,L1024,H1,HQ16,D128,S1,BS32，FP16/causal。原始v000::_run_one_case、完整naive_nsa、seed/输入/容差不变，W10R50。screen120.038us PASS，三版B-I-C-C-I-B x2共12/12 PASS；最终源13次完整C6参考。
+sc-16g-2，HEADcf6cd28d0，codex-power-v28-base；官方C6 B8,L1024,H1,HQ16,D128,S1,BS32，FP16/causal。原始v000::_run_one_case、完整naive_nsa、seed/输入/容差不变，W10R50。screen120.038us PASS，三版B-I-C-C-I-B x2共12/12 PASS；整组实验13次完整C6参考，其中精确候选5次。
 
 |版本|中位数us|范围us|
 |---|---:|---:|

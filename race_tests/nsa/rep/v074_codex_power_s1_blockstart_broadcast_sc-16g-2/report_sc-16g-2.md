@@ -1,5 +1,8 @@
 # codex-power v074：单查询CTA的block_start广播
 
+**计数更正：整组实验（含对照）13次参考检查；精确候选为5次，覆盖官方case [6]。下文整组总数不得解读为候选单独执行次数；原始CSV、正确性结果及延迟结论不变。**
+
+
 ## 1. 上版本遗留问题
 
 v073两查询wave广播使112MT降86，但比单查询68慢8.084%。原单查询自研60/68仍约95us、100MT/22ST、8KBshared。本版单独检验块地址广播，不带入拒绝的查询打包或循环改动。
@@ -18,7 +21,7 @@ v073两查询wave广播使112MT降86，但比单查询68慢8.084%。原单查询
 
 ## 5. Benchmark 对比
 
-sc-16g-2，HEAD2804c78f8，codex-power-v28-base；官方C6形状，原始v000::_run_one_case和完整naive_nsa、seed/输入/容差不变，W10R50。screen97.132us PASS，三版B-I-C-C-I-B x2为12/12 PASS，最终源13次完整C6参考。
+sc-16g-2，HEAD2804c78f8，codex-power-v28-base；官方C6形状，原始v000::_run_one_case和完整naive_nsa、seed/输入/容差不变，W10R50。screen97.132us PASS，三版B-I-C-C-I-B x2为12/12 PASS，整组实验13次完整C6参考，其中精确候选5次。
 
 |版本|中位数us|范围us|
 |---|---:|---:|

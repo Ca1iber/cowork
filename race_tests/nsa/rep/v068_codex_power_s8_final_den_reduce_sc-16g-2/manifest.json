@@ -25,7 +25,7 @@
       "race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/test_tilelang_nsa_fwd_v28.py": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568"
     }
   },
-  "native_correctness": "finalscreen1+target16+all14_168+risk72+archive14=271 full naive_nsa PASS W10/R50;initial debug1 kept separate",
+  "native_correctness": "99 exactcandidate checks across[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];271 total experiment checks includingcontrols;originalnaive_nsa W10R50 PASS",
   "native_source": "/tmp/nsa_power_v068_proven_bounds.py",
   "archive_source": "/root/tilelang-metax/race_tests/nsa/submission/v068_codex_power_s8_final_den_reduce_sc-16g-2/submission.py",
   "entry_prefix_AST": "exact original v28 unchanged",
@@ -349,5 +349,106 @@
   "Roofline": "sGPU attainable roofs uncalibrated,no normalized peak claim",
   "GPU_settings": "unchanged",
   "promotion": "none; preferred v064 pending archive unchanged;root exact v28",
-  "main_submission_hash": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd"
+  "main_submission_hash": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "reference_count_scope": {
+    "version": "v068_codex_power_s8_final_den_reduce_sc-16g-2",
+    "candidate_label": "power_v068",
+    "experiment_total_including_controls": 271,
+    "exact_candidate_total": 99,
+    "candidate_official_cases": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "records": [
+      {
+        "path": "race_tests/nsa/rep/v068_codex_power_s8_final_den_reduce_sc-16g-2/archive_native_all14_sc-16g-2.csv",
+        "sha256": "85316d37b05e4c741b5d645085bedfd38d98b3ed0aec69e76de729ad39ef11fc",
+        "all_variants_checks": 14,
+        "candidate_checks": 14,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "race_tests/nsa/rep/v068_codex_power_s8_final_den_reduce_sc-16g-2/paired_all14_sc-16g-2.csv",
+        "sha256": "1a81f3f5b0b39d6a3b26e8b25fcb8395ea2f3e2599ff241fab4914653cce1c91",
+        "all_variants_checks": 168,
+        "candidate_checks": 56,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "race_tests/nsa/rep/v068_codex_power_s8_final_den_reduce_sc-16g-2/paired_case12_sc-16g-2.csv",
+        "sha256": "2c9686de8e1f52aa5017f2a015e8153e33b480a61a08a06d2bc90cdc32237505",
+        "all_variants_checks": 16,
+        "candidate_checks": 4,
+        "candidate_cases": [
+          12
+        ]
+      },
+      {
+        "path": "race_tests/nsa/rep/v068_codex_power_s8_final_den_reduce_sc-16g-2/paired_risk_sc-16g-2.csv",
+        "sha256": "b86a6055412ccdda21f121b20202cd1456828a5ed8ee38f425c9647c67fc95d7",
+        "all_variants_checks": 72,
+        "candidate_checks": 24,
+        "candidate_cases": [
+          2,
+          4,
+          8,
+          9,
+          11,
+          14
+        ]
+      },
+      {
+        "path": "race_tests/nsa/rep/v068_codex_power_s8_final_den_reduce_sc-16g-2/screen_case12_sc-16g-2.csv",
+        "sha256": "5ae052a835c59d06508d0c1387b11e4b0cbf96503395be04311812dad740c715",
+        "all_variants_checks": 1,
+        "candidate_checks": 1,
+        "candidate_cases": [
+          12
+        ]
+      }
+    ],
+    "interpretation": "count repetitions separately from distinctcase coverage;no correctness or latency result changed"
+  }
 }

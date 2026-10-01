@@ -1,5 +1,8 @@
 # codex-power v072：两个独立查询wave打包CTA
 
+**计数更正：整组实验（含对照）13次参考检查；精确候选为5次，覆盖官方case [6]。下文整组总数不得解读为候选单独执行次数；原始CSV、正确性结果及延迟结论不变。**
+
+
 ## 1. 上版本遗留问题
 
 v071降低MT但C6慢27.08%；当前自研v060/68 C6约95us、100MT/22ST、每CTA64线程单查询，8192CTA。更宽FP16 MMA缺乏当前SDK支持证据。本轮改查询分组，检验CTA调度粒度。
@@ -18,7 +21,7 @@ v071降低MT但C6慢27.08%；当前自研v060/68 C6约95us、100MT/22ST、每CTA
 
 ## 5. Benchmark 对比
 
-sc-16g-2，HEADa92417214，codex-power-v28-base。C6 B8,L1024,H1,HQ16,D128,S1,BS32，FP16/causal。原始v000::_run_one_case和完整naive_nsa、seed/输入/容差不变，W10R50。screen100.884us PASS；B-I-C-C-I-B x2为12/12 PASS，最终源13次完整C6参考。
+sc-16g-2，HEADa92417214，codex-power-v28-base。C6 B8,L1024,H1,HQ16,D128,S1,BS32，FP16/causal。原始v000::_run_one_case和完整naive_nsa、seed/输入/容差不变，W10R50。screen100.884us PASS；B-I-C-C-I-B x2为12/12 PASS，整组实验13次完整C6参考，其中精确候选5次。
 
 |版本|中位数us|范围us|
 |---|---:|---:|

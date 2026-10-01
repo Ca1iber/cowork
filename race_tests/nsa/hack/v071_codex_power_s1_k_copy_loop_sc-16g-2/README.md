@@ -5,3 +5,5 @@ export_codegen.py/run_codegen.sh/run_stage.sh/run_llvm.sh capture normalCPP/host
 run_pair_case6.py/run_pair_stage.sh/analyze_results.py: original naive_nsa via unchangedv000 runner,three-source B-I-C-C-I-B x2,all12samples retained.
 compare_machine_text.py: same-flag ELF.text hashes/size,not ISA decode or timing waiver.
 Rejected target despite lowerMT;13selected native checks,not all14/OJ. No extra profile because clear27percent regression;refer freshv070 C6 profile/metadata identity audit. Installed SDK capability review is read-only;no builtin invoked.
+
+Reference count scope correction: 5 checks from the exact candidate, 13 total with controls; see rep/reference_count_scope.json. Distinct official cases: [6].

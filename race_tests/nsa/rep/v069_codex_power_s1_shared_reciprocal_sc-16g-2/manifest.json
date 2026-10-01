@@ -17,7 +17,7 @@
   },
   "source_sha256": "938513935fb0cf878aa1e0f74e9b55a34a8ea00338cec115f785d2e50de04ff6",
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
-  "native_reference_checks": "13 selected C6 full naive_nsa PASS,W10/R50;no all14 correctness claim",
+  "native_reference_checks": "5 exactcandidate checks across[6];13 total experiment checks includingcontrols;originalnaive_nsa W10R50 PASS",
   "paired": {
     "baseline_v28": {
       "us_values": [
@@ -101,5 +101,35 @@
   },
   "cache": "code objects only,all attention content recomputed",
   "promotion": "none;root v28 and pending64/68 unchanged",
-  "job_state": "known codegen/compiler/native groups terminal;no unowned kills"
+  "job_state": "known codegen/compiler/native groups terminal;no unowned kills",
+  "reference_count_scope": {
+    "version": "v069_codex_power_s1_shared_reciprocal_sc-16g-2",
+    "candidate_label": "power_v069",
+    "experiment_total_including_controls": 13,
+    "exact_candidate_total": 5,
+    "candidate_official_cases": [
+      6
+    ],
+    "records": [
+      {
+        "path": "race_tests/nsa/rep/v069_codex_power_s1_shared_reciprocal_sc-16g-2/paired_case6_sc-16g-2.csv",
+        "sha256": "86751a7a30f447685d0b453f1ba82b2e464b35fdd04c2481fc5554039ddd025a",
+        "all_variants_checks": 12,
+        "candidate_checks": 4,
+        "candidate_cases": [
+          6
+        ]
+      },
+      {
+        "path": "race_tests/nsa/rep/v069_codex_power_s1_shared_reciprocal_sc-16g-2/screen_case6_sc-16g-2.csv",
+        "sha256": "76fe9cc6b5ef768d695609f59bd15d7f812244560ad89ef5e2a5839623f495e4",
+        "all_variants_checks": 1,
+        "candidate_checks": 1,
+        "candidate_cases": [
+          6
+        ]
+      }
+    ],
+    "interpretation": "count repetitions separately from distinctcase coverage;no correctness or latency result changed"
+  }
 }

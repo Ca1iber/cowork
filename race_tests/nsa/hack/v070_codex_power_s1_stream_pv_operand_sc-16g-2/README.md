@@ -11,3 +11,5 @@ run_mcprof.sh/analyze_profile.py/run_profile_evidence.sh execute separate candid
 No all14/OJ extension because target pairedC6 is1.940percent slower and MT100 unchanged. Profile explains failure and supplies fresh baseline for next direction; it does not promote candidate. Root v28 and prior pending64/68 preserved.
 
 export_grad_identity.py: metadata-only C6 gradFalse/True audit,device/host sources equal native archive;no attention execution/timing/correctness claim. Initial prototype source-label miss kept separately in grad_identity_initial.
+
+Reference count scope correction: 5 checks from the exact candidate, 13 total with controls; see rep/reference_count_scope.json. Distinct official cases: [6].

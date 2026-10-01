@@ -12,7 +12,7 @@
   },
   "source_sha256": "6579fb85cded6e02ae7039631a9c33ef289b665cea8080e2cf16e5a098b1efe8",
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
-  "native_reference_checks": "13 selected C6 full naive_nsa PASS,W10/R50;no all14 correctness claim",
+  "native_reference_checks": "5 exactcandidate checks across[6];13 total experiment checks includingcontrols;originalnaive_nsa W10R50 PASS",
   "paired": {
     "baseline_v28": {
       "us_values": [
@@ -112,5 +112,35 @@
   },
   "cache": "code objects only,all attention content recomputed",
   "promotion": "none;root v28 and pending64/68 unchanged",
-  "job_state": "known codegen/compiler/native groups terminal;no unowned kills"
+  "job_state": "known codegen/compiler/native groups terminal;no unowned kills",
+  "reference_count_scope": {
+    "version": "v074_codex_power_s1_blockstart_broadcast_sc-16g-2",
+    "candidate_label": "power_v074",
+    "experiment_total_including_controls": 13,
+    "exact_candidate_total": 5,
+    "candidate_official_cases": [
+      6
+    ],
+    "records": [
+      {
+        "path": "race_tests/nsa/rep/v074_codex_power_s1_blockstart_broadcast_sc-16g-2/paired_case6_sc-16g-2.csv",
+        "sha256": "cd0d8ed42e506997cea7a9f0fd4e75806a3cc35cb679e4b7540b3cb744737ffd",
+        "all_variants_checks": 12,
+        "candidate_checks": 4,
+        "candidate_cases": [
+          6
+        ]
+      },
+      {
+        "path": "race_tests/nsa/rep/v074_codex_power_s1_blockstart_broadcast_sc-16g-2/screen_case6_sc-16g-2.csv",
+        "sha256": "4cfdea3da1edcccad0fa7a61da50b9c9cbe4d2a9ddfd2ab246fae3f7e4496a07",
+        "all_variants_checks": 1,
+        "candidate_checks": 1,
+        "candidate_cases": [
+          6
+        ]
+      }
+    ],
+    "interpretation": "count repetitions separately from distinctcase coverage;no correctness or latency result changed"
+  }
 }
