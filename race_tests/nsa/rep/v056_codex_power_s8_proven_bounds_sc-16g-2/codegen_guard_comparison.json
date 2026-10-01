@@ -1,0 +1,18 @@
+{
+  "parent_cpp_conditions": [
+    "if ((0 <= block_start) && (block_start <= ((int)blockIdx.x))) {",
+    "if ((((((((int)threadIdx.x) >> 3) + block_start) >> 3) + part_1) < 128)) {",
+    "if ((((((((int)threadIdx.x) >> 4) * 4) + block_start) + element) <= ((int)blockIdx.x))) {",
+    "if ((((((int)threadIdx.x) >> 4) + ((block_start + row) >> 2)) < 256)) {"
+  ],
+  "candidate_cpp_conditions": [
+    "if ((0 <= block_start) && (block_start <= ((int)blockIdx.x))) {",
+    "if ((((((((int)threadIdx.x) >> 4) * 4) + block_start) + element) <= ((int)blockIdx.x))) {"
+  ],
+  "removed": "per-K upper bound and per-V-row upper bound padding guards",
+  "preserved": "uniform valid-block branch and per-key causal score mask",
+  "counts": {
+    "parent": 4,
+    "candidate": 2
+  }
+}

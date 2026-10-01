@@ -1,0 +1,23 @@
+--- race_tests/nsa/experiments/v050_codex_power_s8_online_local_sc-16g-2/s8_kernel.py
++++ race_tests/nsa/experiments/v056_codex_power_s8_proven_bounds_sc-16g-2/s8_kernel.py
+@@ -1,16 +1,18 @@
+-# codex-power v050
++# codex-power v056
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+ 
+ @tilelang.jit(out_idx=[], pass_configs={
+     tilelang.PassConfigKey.TL_ENABLE_FAST_MATH: True,
++    tilelang.PassConfigKey.TL_DISABLE_SAFE_MEMORY_ACCESS: True,
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s8_online_local(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s8_proven_bounds(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
++    assert seq_len % block_size == 0
+     scale = (1.0 / dim) ** 0.5 * 1.44269504
+     dtype = T.float16
+     accum_dtype = T.float32

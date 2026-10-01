@@ -1,0 +1,123 @@
+{
+  "status": "pending_external_oj_no_regression",
+  "candidate_version": "v056_codex_power_s8_proven_bounds_sc-16g-2",
+  "candidate_sha256": "14b699e777e456909a0af49521f7fa9ab371b814c6d475e8cf35bdfdc0e8d4f2",
+  "baseline_version": "original NSA v28 commit95e8a78ced12e7dae53172d60a9517b5ced41476",
+  "baseline_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "baseline_scores_from_user": [
+    85,
+    86,
+    84,
+    86,
+    80,
+    76,
+    87,
+    83,
+    81,
+    86,
+    84,
+    78,
+    87,
+    86
+  ],
+  "baseline_sum": 1169,
+  "candidate_scores": null,
+  "candidate_sum": null,
+  "requirements": "each actual official OJ score >= baseline; at least one strictly better; no local latency-to-score projection",
+  "local_other_case_risk": {
+    "reference": "36/36 full native naive_nsa,W10/R50 PASS",
+    "source": "exact archive v056",
+    "all_observations_retained": true,
+    "cases": [
+      {
+        "case": 4,
+        "samples_us": {
+          "baseline_v28": [
+            12.529,
+            12.8,
+            13.251000000000001,
+            12.744
+          ],
+          "parent_v050": [
+            12.585,
+            12.595,
+            13.261000000000001,
+            13.312
+          ],
+          "power_v056": [
+            12.539,
+            12.564,
+            12.553999999999998,
+            13.517
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 12.772,
+          "parent_v050": 12.928,
+          "power_v056": 12.559
+        },
+        "candidate_vs_v28_pct": -1.667710616974638
+      },
+      {
+        "case": 13,
+        "samples_us": {
+          "baseline_v28": [
+            10.952,
+            11.162,
+            11.167,
+            11.438
+          ],
+          "parent_v050": [
+            11.207999999999998,
+            11.213000000000001,
+            11.162,
+            11.233
+          ],
+          "power_v056": [
+            11.254,
+            11.305000000000001,
+            11.254,
+            11.264
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 11.1645,
+          "parent_v050": 11.2105,
+          "power_v056": 11.259
+        },
+        "candidate_vs_v28_pct": 0.846432889963733
+      },
+      {
+        "case": 14,
+        "samples_us": {
+          "baseline_v28": [
+            21.14,
+            20.485,
+            20.383,
+            20.5
+          ],
+          "parent_v050": [
+            20.7,
+            20.521,
+            20.526,
+            19.977999999999998
+          ],
+          "power_v056": [
+            19.809,
+            20.726000000000003,
+            20.439,
+            20.383
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 20.4925,
+          "parent_v050": 20.5235,
+          "power_v056": 20.411
+        },
+        "candidate_vs_v28_pct": -0.39770647797974235
+      }
+    ]
+  },
+  "main_preserved": true,
+  "external_upload": "none"
+}

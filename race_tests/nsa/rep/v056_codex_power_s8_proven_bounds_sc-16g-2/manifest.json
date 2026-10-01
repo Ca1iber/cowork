@@ -1,0 +1,123 @@
+{
+  "version": "v056_codex_power_s8_proven_bounds_sc-16g-2",
+  "status": "inconclusive_pending_external_oj_no_regression",
+  "source_sha256": "14b699e777e456909a0af49521f7fa9ab371b814c6d475e8cf35bdfdc0e8d4f2",
+  "baseline_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "entry_prefix_AST": "exact original v28 unchanged",
+  "compiled_cache": "code object only; no attention tensor content caching",
+  "native_correctness": "screen1+paired_target12+paired_all14_168+risk36+archive14=231 full reference PASS at unchanged W10/R50",
+  "native_source_path": "/tmp/nsa_power_v056_proven_bounds.py",
+  "archive_source": "exact archived file verified 14/14 full native at W10/R50",
+  "case6": {
+    "case": 6,
+    "samples_us": {
+      "baseline_v28": [
+        165.432,
+        165.847,
+        164.797,
+        162.934
+      ],
+      "parent_v050": [
+        158.019,
+        158.756,
+        158.228,
+        160.81400000000002
+      ],
+      "power_v056": [
+        163.292,
+        159.903,
+        163.456,
+        160.005
+      ]
+    },
+    "medians_us": {
+      "baseline_v28": 165.1145,
+      "parent_v050": 158.49200000000002,
+      "power_v056": 161.6485
+    },
+    "candidate_vs_v28_pct": -2.099149378158782,
+    "candidate_vs_parent_pct": 1.9915831713903431
+  },
+  "case12": {
+    "case": 12,
+    "samples_us": {
+      "baseline_v28": [
+        88.66799999999999,
+        88.75,
+        88.468,
+        88.904
+      ],
+      "parent_v050": [
+        92.744,
+        92.51299999999999,
+        92.308,
+        92.48299999999999
+      ],
+      "power_v056": [
+        81.152,
+        82.202,
+        81.408,
+        81.04400000000001
+      ]
+    },
+    "medians_us": {
+      "baseline_v28": 88.709,
+      "parent_v050": 92.49799999999999,
+      "power_v056": 81.28
+    },
+    "candidate_vs_v28_pct": -8.374573042194145,
+    "candidate_vs_parent_pct": -12.12782979091439
+  },
+  "untouched_device_sources": "12/12 byte-identical v28; C6 device byte-identical v049",
+  "positive_other_case_medians": [
+    4,
+    13,
+    14
+  ],
+  "OJ": "pending actual user results; main remains v28; case13 risk recheck+0.846%",
+  "mcProfiler_scope": [
+    {
+      "variant": "power_v056",
+      "sample": 1,
+      "expected_waves": 4096,
+      "observed_waves": 8392.0,
+      "observed_write_bytes": 14849472.0,
+      "consistent_with_single_attention_launch_scope": false,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "power_v056",
+      "sample": 2,
+      "expected_waves": 4096,
+      "observed_waves": 8064.0,
+      "observed_write_bytes": 14668224.0,
+      "consistent_with_single_attention_launch_scope": false,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 1,
+      "expected_waves": 4096,
+      "observed_waves": 7332.0,
+      "observed_write_bytes": 10574240.0,
+      "consistent_with_single_attention_launch_scope": false,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 2,
+      "expected_waves": 4096,
+      "observed_waves": 7476.0,
+      "observed_write_bytes": 9618336.0,
+      "consistent_with_single_attention_launch_scope": false,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    }
+  ],
+  "mcProfiler_comparison": "inconclusive; all four launch footprints inconsistent",
+  "mcTracer": "not rerun after repeated prior timeouts; referenced prior raw v049 capture",
+  "ISA": "unavailable tool",
+  "Roofline": "actual sGPU roofs not calibrated",
+  "GPU_settings": "unchanged",
+  "main_submission": "exact original v28 preserved",
+  "independent_v049_oj_candidate": "preserved"
+}
