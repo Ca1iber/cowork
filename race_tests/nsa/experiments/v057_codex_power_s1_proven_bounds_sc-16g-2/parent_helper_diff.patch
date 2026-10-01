@@ -1,0 +1,23 @@
+--- race_tests/nsa/experiments/v049_codex_power_s1_cache_entry_sc-16g-2/s1_kernel.py
++++ race_tests/nsa/experiments/v057_codex_power_s1_proven_bounds_sc-16g-2/s1_kernel.py
+@@ -1,16 +1,18 @@
+-# codex-power v049
++# codex-power v057
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+ 
+ @tilelang.jit(out_idx=[], pass_configs={
+     tilelang.PassConfigKey.TL_ENABLE_FAST_MATH: True,
++    tilelang.PassConfigKey.TL_DISABLE_SAFE_MEMORY_ACCESS: True,
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_shared_arena(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s1_proven_bounds(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
++    assert seq_len % block_size == 0
+     scale = (1.0 / dim) ** 0.5 * 1.44269504
+     dtype = T.float16
+     accum_dtype = T.float32

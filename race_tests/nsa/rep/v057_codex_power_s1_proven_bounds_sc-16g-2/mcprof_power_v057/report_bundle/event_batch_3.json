@@ -1,0 +1,33 @@
+{
+  "perfList": {
+    "ISU": [
+      [
+        40,
+        "AP_PERF_INST_TRANS_FP32"
+      ],
+      [
+        73,
+        "AP_PERF_BSM_WR_CYCLES"
+      ]
+    ],
+    "L2C": [
+      [
+        47,
+        "perf_dnoc_rdreq_64B"
+      ],
+      [
+        270,
+        "perf_dnoc_wrreq_32B_high"
+      ]
+    ]
+  },
+  "action": "config,disable,read_dump,enable,kernel_collect",
+  "conditions": {
+    "kernelnames": [],
+    "include": false,
+    "is_perkernel": true,
+    "is_multi_device": false,
+    "profile_from_start": true,
+    "counts": 4
+  }
+}

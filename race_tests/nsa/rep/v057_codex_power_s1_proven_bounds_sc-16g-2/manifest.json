@@ -1,0 +1,125 @@
+{
+  "version": "v057_codex_power_s1_proven_bounds_sc-16g-2",
+  "status": "inconclusive_pending_external_oj_no_regression",
+  "source_sha256": "693380934e04f2328a9b2abcdd478889dee8278b2d4fab2b46d001bf435fc514",
+  "baseline_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "entry_prefix_AST": "exact original v28 unchanged",
+  "compiled_cache": "code object only; no attention tensor content caching",
+  "native_correctness": "screen1+paired_target12+paired_all14_168+risk60+archive14=255 full reference PASS at unchanged W10/R50",
+  "native_source_path": "/tmp/nsa_power_v057_proven_bounds.py",
+  "archive_source": "exact archived file verified 14/14 full native at W10/R50",
+  "case6": {
+    "case": 6,
+    "samples_us": {
+      "baseline_v28": [
+        157.317,
+        157.271,
+        157.23999999999998,
+        157.358
+      ],
+      "parent_v056": [
+        150.851,
+        151.37300000000002,
+        151.49599999999998,
+        151.439
+      ],
+      "power_v057": [
+        109.542,
+        110.10000000000001,
+        110.08,
+        109.957
+      ]
+    },
+    "medians_us": {
+      "baseline_v28": 157.29399999999998,
+      "parent_v056": 151.406,
+      "power_v057": 110.01849999999999
+    },
+    "candidate_vs_v28_pct": -30.055501163426445,
+    "candidate_vs_parent_pct": -27.335442452742964
+  },
+  "case12": {
+    "case": 12,
+    "samples_us": {
+      "baseline_v28": [
+        83.13900000000001,
+        83.988,
+        83.635,
+        83.99900000000001
+      ],
+      "parent_v056": [
+        77.256,
+        77.819,
+        77.793,
+        77.814
+      ],
+      "power_v057": [
+        77.138,
+        77.814,
+        77.804,
+        77.773
+      ]
+    },
+    "medians_us": {
+      "baseline_v28": 83.8115,
+      "parent_v056": 77.8035,
+      "power_v057": 77.7885
+    },
+    "candidate_vs_v28_pct": -7.186364639697407,
+    "candidate_vs_parent_pct": -0.01927933833311135
+  },
+  "untouched_device_sources": "12/12 byte-identical v28; C12 device byte-identical v056",
+  "positive_other_case_medians": [
+    4,
+    5,
+    10,
+    13,
+    14
+  ],
+  "OJ": "pending actual user results; main remains v28; risk recheck still positive for cases4/5/10/14",
+  "mcProfiler_scope": [
+    {
+      "variant": "power_v057",
+      "sample": 1,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "power_v057",
+      "sample": 2,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 1,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 2,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    }
+  ],
+  "mcProfiler_comparison": "comparison available; four launch footprints consistent; counters do not establish exclusive cause or occupancy",
+  "mcTracer": "not rerun after repeated prior timeouts; referenced prior raw v049 capture",
+  "ISA": "unavailable tool",
+  "Roofline": "actual sGPU roofs not calibrated",
+  "GPU_settings": "unchanged",
+  "main_submission": "exact original v28 preserved",
+  "independent_v049_oj_candidate": "preserved"
+}
