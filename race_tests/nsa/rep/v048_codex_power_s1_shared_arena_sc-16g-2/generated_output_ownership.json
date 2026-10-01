@@ -1,0 +1,7 @@
+{
+  "device_sha256": "220cda1c85a4e1efdae937d8fbf96bc1ac78503e7396965be433e2e274bd6f69",
+  "generated_store_expression": "*(uint2*)(shared + ((((((int)threadIdx.x) & 15) * 128) + ((((i_4 * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((int)threadIdx.x) & 31) >> 4) * 4))) = *(uint2*)(shared_local_cast + 0);",
+  "all2048_halfword_writers_unique": "PASS",
+  "all2048_coalesced_output_reads": "PASS",
+  "checker_warning": "Preserved. Actual lowered output addressing proves no duplicate writers for64threads; no race-check disabling flag added. Other reuse hazards still require full native reference."
+}
