@@ -1,0 +1,10 @@
+{
+  "remaining_loop_window": [
+    "  #pragma unroll 1",
+    "  for (int selected = 1; selected < 8; ++selected) {",
+    "    int block_start_1 = (Indices[(((((int)blockIdx.y) * 8192) + (((int)blockIdx.x) * 8)) + selected)] * 16);"
+  ],
+  "first_no_rescale_assignment": true,
+  "hint_source": "normal TileLang pragma_unroll_factor annotation,not injected code",
+  "effect": "must verify optimized loop,not assume pragma succeeds"
+}

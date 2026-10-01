@@ -1,0 +1,87 @@
+{
+  "version": "v067_codex_power_s8_first_block_init_sc-16g-2",
+  "status": "rejected_target_incremental_performance",
+  "source_sha256": "3a28e138ac4f74fff705123aeee3708287456ced79fb78b7fb4f148082187b5f",
+  "correctness": "selected C12 screen1+paired16=17 full naive_nsa W10/R50 PASS",
+  "performance": {
+    "baseline_v28": {
+      "us_values": [
+        83.94200000000001,
+        83.62,
+        83.543,
+        83.37899999999999
+      ],
+      "median_us": 83.5815,
+      "min_us": 83.37899999999999,
+      "max_us": 83.94200000000001
+    },
+    "parent_v064": {
+      "us_values": [
+        75.64800000000001,
+        75.663,
+        75.709,
+        75.725
+      ],
+      "median_us": 75.686,
+      "min_us": 75.64800000000001,
+      "max_us": 75.725
+    },
+    "trial_v061": {
+      "us_values": [
+        78.321,
+        78.356,
+        78.321,
+        78.572
+      ],
+      "median_us": 78.3385,
+      "min_us": 78.321,
+      "max_us": 78.572
+    },
+    "power_v067": {
+      "us_values": [
+        76.902,
+        76.70299999999999,
+        76.657,
+        76.657
+      ],
+      "median_us": 76.67999999999999,
+      "min_us": 76.657,
+      "max_us": 76.902
+    },
+    "candidate_vs_v28_pct": -8.257210028535034,
+    "candidate_vs_parent_pct": 1.313320825515918,
+    "correctness": "16/16 PASS;full native naive_nsa,W10/R50",
+    "status": "rejected_target_performance",
+    "candidate_vs_v061_pct": -2.1170944044116236
+  },
+  "peeled_runtime_loop_proof": {
+    "v064_static_MMA": 8,
+    "auto_unrolled_debug_static_MMA": 64,
+    "hinted_final_static_MMA": 16,
+    "remaining_loop_backedge": [
+      "br i1 %exitcond.not, label %for.cond928.preheader, label %for.body479, !dbg !231, !llvm.loop !450"
+    ],
+    "unroll_disable_metadata": true,
+    "IR_bytes": {
+      "v064": 85579,
+      "debug": 297000,
+      "final": 120738
+    },
+    "runtime_work": "same8selected blocks/order,8MMA per valid block;only initial zero-state arithmetic omitted",
+    "resources": "82MT/30ST,max5,stack0/private0,no occupiedwarps claim"
+  },
+  "skipped_gates": {
+    "all14_native": "not run;targetincremental regression",
+    "all14_codegen": "not run;target rejected",
+    "OJ": "not submitted",
+    "mcProfiler": "not run;first-state simplification/actual loop verified but native regresses;counter cannot replace time gate",
+    "mcTracer": "not repeated after prior invalid timeouts",
+    "ISA": "tool unavailable",
+    "Roofline": "actual sGPU roof uncalibrated",
+    "archive_native": "same final source SHA as17full selected checks,no promotion",
+    "debug_reference": "initial auto-unrolled SHA has separate1screenPASS,not counted as finalsource gate"
+  },
+  "main": "exact original v28 preserved",
+  "parent_v060": "preserved",
+  "diagnostic": "initial-state arithmetic omitted and legal loop hint retains remaining7backedge;four-way native regresses,no newprofile"
+}

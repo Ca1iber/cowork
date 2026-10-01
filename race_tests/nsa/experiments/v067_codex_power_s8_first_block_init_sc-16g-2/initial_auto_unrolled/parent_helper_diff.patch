@@ -1,0 +1,83 @@
+--- race_tests/nsa/experiments/v064_codex_power_s8_serial_loop_sc-16g-2/s8_kernel.py
++++ race_tests/nsa/experiments/v067_codex_power_s8_first_block_init_sc-16g-2/s8_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v064
++# codex-power v067
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s8_serial_loop(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s8_first_block_init(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+@@ -67,7 +67,64 @@
+             T.fill(numerator, 0)
+             denominator[0] = 0
+             maximum[0] = -T.infinity(accum_dtype)
+-            for selected in T.serial(selected_blocks):
++            block_start = Indices[batch_id, token, kv_head, 0] * block_size
++            if block_start >= 0 and block_start <= token:
++                T.sync_warp()
++                for part in T.unroll(2):
++                    for element in T.vectorized(8):
++                        pos = part * 512 + lane * 8 + element
++                        qk_fetch[element] = K[batch_id, block_start + pos // 64, kv_head, pos % 64]
++                    for pack in T.unroll(2):
++                        pos = part * 512 + lane * 8 + pack * 4
++                        for element in T.vectorized(4):
++                            shared[qk_slot(pos // 64, pos % 64) + element] = qk_fetch[pack * 4 + element]
++                T.sync_warp()
++                T.fill(scores, 0)
++                for chunk in T.unroll(4):
++                    for element in T.vectorized(4):
++                        k_local[element] = shared[qk_slot(lane % 16, chunk * 16 + (lane // 16) * 4) + element]
++                    T.tvm_mfma('16x16x16f16', 'row', 'row',
++                        'float16x4', 'float16x4', 'float32x4',
++                        k_local.data, 0, q_local.data, chunk, scores.data, 0,
++                        dtype='float32x4')
++                for element in T.unroll(4):
++                    scores[element] = T.if_then_else(token >= block_start + (lane // 16) * 4 + element,
++                        scores[element], -T.infinity(accum_dtype))
++                block_maximum[0] = -T.infinity(accum_dtype)
++                for element in T.unroll(4):
++                    block_maximum[0] = T.max(block_maximum[0], scores[element])
++                block_maximum[0] = T.max(block_maximum[0], T.shfl_xor(block_maximum[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF))
++                block_maximum[0] = T.max(block_maximum[0], T.shfl_xor(block_maximum[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF))
++                maximum[0] = block_maximum[0]
++                for element in T.vectorized(4):
++                    probabilities[element] = T.exp2((scores[element] - maximum[0]) * scale + 8.0)
++                partial_sum[0] = 0
++                for element in T.unroll(4):
++                    partial_sum[0] += probabilities[element].astype(accum_dtype)
++                partial_sum[0] += T.shfl_xor(partial_sum[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF)
++                partial_sum[0] += T.shfl_xor(partial_sum[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF)
++                denominator[0] += partial_sum[0]
++                T.sync_warp()
++                fetch_row = (lane // 16) * 4
++                fetch_col = (lane % 16) * 4
++                for row in T.unroll(4):
++                    for col in T.vectorized(4):
++                        v_fetch[row * 4 + col] = V[batch_id, block_start + fetch_row + row, kv_head, fetch_col + col]
++                for col in T.unroll(4):
++                    for row in T.vectorized(4):
++                        v_column[row] = v_fetch[row * 4 + col]
++                    for row in T.vectorized(4):
++                        shared[v_slot(fetch_row + row, fetch_col + col)] = v_column[row]
++                T.sync_warp()
++                for chunk in T.unroll(4):
++                    for element in T.vectorized(4):
++                        v_operand[chunk * 4 + element] = shared[v_slot((lane // 16) * 4 + element, chunk * 16 + lane % 16)]
++                for chunk in T.unroll(4):
++                    T.tvm_mfma('16x16x16f16', 'row', 'row',
++                        'float16x4', 'float16x4', 'float32x4',
++                        v_operand.data, chunk, probabilities.data, 0, numerator.data, chunk,
++                        dtype='float32x4')
++            for selected in T.serial(1, selected_blocks):
+                 block_start = Indices[batch_id, token, kv_head, selected] * block_size
+                 if block_start >= 0 and block_start <= token:
+                     T.sync_warp()
