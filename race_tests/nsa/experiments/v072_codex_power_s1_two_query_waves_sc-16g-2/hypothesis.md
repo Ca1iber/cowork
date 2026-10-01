@@ -1,0 +1,11 @@
+# v072 pack two independent C6 query waves per CTA
+
+Observed: ownC6 parent68~95us,100MT/22ST,max4,shared8192B,8192singlewaveCTAs. Kcopyloop71 loweredMT94 but slowed+27.079percent;PVconsumer70 unchangedMT slowed1.940percent;inverse69same machine text. Fresh70 C6 counters/capability review show no exclusive resource/bank explanation. SDK only demonstrates16x16x16f16;no evidence for widerFP16 primitive.
+Hypothesis: group two independent64thread query waves per128threadCTA,halve CTA count4096 while preserving8192waves,reduce block scheduling overhead. No claim that this is current bottleneck;compiler divergence/address cost and16KB shared may outweigh it.
+Mechanism: token=2*token_pair+wave_id,shared[2,4096] private query slice,three-axis numerator Fragment with thread=64*wave+head+16*quarter and same local32 slots. All QK/P/PV/copy/order work same ownv060,no input-sharing yet. C12 exactown68,other12 exactoriginalv28 black-box prefix/entry.
+Predictions: launch grid512x8,threads128,shared16384B;8192waves and output33554432Bytes,32MMA perwave runtime attention unchanged. Ideally similar MT/ST and improved fullnativeC6;static maxwarps not occupancy.
+Falsifier: fragment/correctness/import failure,private spills/high registers/shared reduces residency,or no meaningful pairedtarget gain;any other official/OJ regression blocks promotion. No repeated tests to erase unfavorable observations.
+Proof/risk: token bijection0..1023,sharedwave0..4095 versus4096..8191 disjoint,fragment(thread,localindex) bijective128x32,per-wave validbranch and shuffles/sync64 only. No CTA-wide barrier or shared crosswave consumption. Complete expected work percall;codeobjects only cache. Packing may cost extra address arithmetic/dispatch.
+Plan: cardbeforeedit,sourceAST correspondence plus full ownership/bounds proof,normalcodegen/LLVM/resources/static,originalnative C6screen W10R50,pairedtarget,full14/profile/exactarchive aftertarget meaningful. Seven-sectionChinese report and bilingual atomiccommit before next edit. Mainv28 and pending64/68 preserved;no OJ score prediction.
+
+Outcome: 128threads/4096CTA/8192waves ownership valid,13nativeC6PASS;112MT/26ST,16KBshared,paired+6.526percent;reject,no full14/OJ promotion.

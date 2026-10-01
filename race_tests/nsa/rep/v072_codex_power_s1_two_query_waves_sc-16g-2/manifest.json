@@ -1,0 +1,243 @@
+{
+  "version": "v072_codex_power_s1_two_query_waves_sc-16g-2",
+  "status": "rejected_target_regression_higher_MT",
+  "closed_utc": "2026-10-01T19:34:57.173167+00:00",
+  "start": {
+    "utc": "2026-10-01T19:19:34.920737+00:00",
+    "version": "v072_codex_power_s1_two_query_waves_sc-16g-2",
+    "head": "a92417214ee5320afae9ecb9061cbefd32d65c36",
+    "branch": "codex-power-v28-base",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent_v068_sha256": "589d4ca2c5f82f97581cfb3f82eca96ad81c4c49b8624c60326eac0e34b14949"
+  },
+  "source_sha256": "40bb24ef1bc16d022ec910f27b2ce876dd5a7a2b686313c3fff961171c0c9b6f",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "native_reference_checks": "13 selected C6 full naive_nsa PASS,W10/R50;no all14 correctness claim",
+  "paired": {
+    "baseline_v28": {
+      "us_values": [
+        156.54399999999998,
+        156.549,
+        156.662,
+        157.20999999999998
+      ],
+      "median_us": 156.6055,
+      "min_us": 156.54399999999998,
+      "max_us": 157.20999999999998
+    },
+    "parent_v068": {
+      "us_values": [
+        94.971,
+        94.367,
+        95.232,
+        95.068
+      ],
+      "median_us": 95.0195,
+      "min_us": 94.367,
+      "max_us": 95.232
+    },
+    "power_v072": {
+      "us_values": [
+        101.19200000000001,
+        101.248,
+        101.847,
+        101.187
+      ],
+      "median_us": 101.22,
+      "min_us": 101.187,
+      "max_us": 101.847
+    },
+    "candidate_vs_v28_pct": -35.366254697312684,
+    "candidate_vs_parent_pct": 6.525502659980331,
+    "candidate_range_all_below_parent": false,
+    "correctness": "12/12 full native naive_nsa,W10/R50 PASS",
+    "all_samples_retained": true
+  },
+  "codegen": {
+    "source_sha256": "40bb24ef1bc16d022ec910f27b2ce876dd5a7a2b686313c3fff961171c0c9b6f",
+    "static_MMA": 32,
+    "fdiv": 32,
+    "MT": 112,
+    "ST": 26,
+    "stack_bytes": 0,
+    "static_max_warps_peu": 4,
+    "private_allocas": [],
+    "shared_bytes": 16384,
+    "CTA_grid": [
+      512,
+      8
+    ],
+    "threads": 128,
+    "waves": 8192,
+    "caution": "packing halvesCTA not attention work;static maxwarps not occupancy"
+  },
+  "ownership": {
+    "CTA_grid": [
+      512,
+      8
+    ],
+    "threads": 128,
+    "waves_per_CTA": 2,
+    "total_CTA": 4096,
+    "total_waves": 8192,
+    "token_bijection": true,
+    "fragment_pairs": 4096,
+    "fragment_local_per_thread": 32,
+    "Q_output_coordinates_per_CTA": 4096,
+    "K_V_coordinates_per_CTA": 8192,
+    "shared_slices": [
+      [
+        0,
+        4095
+      ],
+      [
+        4096,
+        8191
+      ]
+    ],
+    "shared_bytes": 16384,
+    "all_global_coordinate_sets_unique_and_complete_per_querywave": true,
+    "sync": "warp64 only,shared slices disjoint;no crossquery consumption",
+    "expected_math_work": "each query same32MMA and allsoftmax operations",
+    "input_domain": "officialC6 and original validblock guard",
+    "numerical_scope": "source/order/proof only;full original native reference decisive"
+  },
+  "AST_correspondence": {
+    "fully_restored_AST_exact_parent": true,
+    "changes": [
+      [
+        "# codex-power v060",
+        1
+      ],
+      [
+        "_make_power_s1_output_pair_swap",
+        1
+      ],
+      [
+        "with T.Kernel(seq_len, batch * kv_heads, threads=64) as (token, batch_head):",
+        1
+      ],
+      [
+        "            shared = T.alloc_shared([4096], dtype)",
+        1
+      ],
+      [
+        "numerator = T.alloc_fragment([groups, dim], accum_dtype)",
+        1
+      ],
+      [
+        "numerator: T.Fragment([groups, dim],",
+        1
+      ],
+      [
+        "forward_thread_fn=lambda head, col: head + 16 * ((col % 16) // 4),",
+        1
+      ],
+      [
+        "forward_index_fn=lambda head, col: col % 4 + 4 * (col // 16)),",
+        1
+      ],
+      [
+        "for head, feature in T.Parallel(groups, dim):",
+        1
+      ],
+      [
+        "numerator[head, feature] /= denominator[0]",
+        1
+      ],
+      [
+        "numerator[lane % 16, feature_base + element]",
+        1
+      ],
+      [
+        "shared[",
+        8
+      ]
+    ],
+    "mechanism": "two independent querywaves,replicated fragment and isolatedsharedslice,unchanged math/copywork",
+    "per_wave_mapping_requires_proof": true
+  },
+  "warp_API": {
+    "source_excerpts": {
+      "src/tl_templates/maca/intrin.h": {
+        "sha256": "83e0246a50f91c9e670bd4ec4bdfebc5de1f8f4e35c7088fd71ce094d312c925",
+        "lines": {
+          "29": "TL_DEVICE int get_lane_idx(int warp_size = detail::default_warp_size()) {",
+          "30": "  warp_size = warp_size > 0 ? warp_size : detail::default_warp_size();",
+          "31": "  return detail::linear_thread_idx_in_block() % warp_size;",
+          "32": "}",
+          "33": "",
+          "34": "TL_DEVICE int get_warp_idx_sync(int warp_size = detail::default_warp_size()) {",
+          "35": "  warp_size = warp_size > 0 ? warp_size : detail::default_warp_size();",
+          "36": "  return detail::linear_thread_idx_in_block() / warp_size;",
+          "37": "}",
+          "38": "",
+          "39": "TL_DEVICE int get_warp_idx(int warp_size = detail::default_warp_size()) {",
+          "40": "  warp_size = warp_size > 0 ? warp_size : detail::default_warp_size();",
+          "41": "  return detail::linear_thread_idx_in_block() / warp_size;",
+          "42": "}"
+        }
+      },
+      "tilelang/language/builtin.py": {
+        "sha256": "aa60be6ffa72ca294556e4e6ecf667c7febfcacc66f609b278e9d3b9c49348c9",
+        "lines": {
+          "969": "def shfl_sync(",
+          "970": "    value: int | PrimExpr,",
+          "971": "    srcLane: int | PrimExpr,",
+          "972": "    width: int | PrimExpr = _DEFAULT_SHFL_WIDTH,",
+          "973": "    mask: int | PrimExpr = _FULL_WARP_MASK,",
+          "974": "):",
+          "975": "    \"\"\"Broadcast ``value`` from ``srcLane`` to all lanes in the subgroup of",
+          "976": "    ``width`` lanes (``__shfl_sync`` on CUDA, ``__shfl`` on HIP \u2014 mask ignored",
+          "977": "    on HIP).",
+          "978": "    \"\"\"",
+          "979": "    if _IS_MACA_AVAILABLE:",
+          "980": "        return tir.call_intrin(value.dtype, tir.op.Op.get(\"tl.shfl_sync\"), _as_uint64_mask(mask), value, srcLane, width)",
+          "981": "    return tir.call_intrin(value.dtype, tir.op.Op.get(\"tl.shfl_sync\"), _as_uint32_mask(mask), value, srcLane, width)"
+        }
+      },
+      "src/target/codegen_maca.cc": {
+        "sha256": "864e765d1a32f50b38edbb06c011e7b4814f56fa8f87bc4c33a5ebef9b56a18f",
+        "lines": {
+          "2267": "  } else if (op->op.same_as(tl::shfl_sync())) {",
+          "2268": "    ICHECK_EQ(op->args.size(), 4U)",
+          "2269": "        << \"tl.shfl_sync expects <mask, value, src_lane, width>.\";",
+          "2270": "    os << \"__shfl_sync(\" << PrintExpr(op->args[0]) << \", \"",
+          "2271": "       << PrintExpr(op->args[1]) << \", \" << PrintExpr(op->args[2]) << \", \"",
+          "2272": "       << PrintExpr(op->args[3]) << \")\";"
+        }
+      }
+    },
+    "Maca_get_warp_idx_sync": "plain divide,no broadcast",
+    "candidate_future_API": "normal T.shfl_sync(value,0,width64,mask full64)",
+    "future_uniformity_and_MT_gain": "unproven until compiler/native tests"
+  },
+  "machine_text": {
+    "command_scope": "same mxcc -device-obj O3/lineinfo/use-fast-math C6 resource capture",
+    "sections": {
+      "parent_v060": {
+        ".text": {
+          "bytes": 8448,
+          "sha256": "d2972f80a1d713b8d598e1298cf6422bb78193f26c13334390325bb086d81538"
+        }
+      },
+      "power_v072": {
+        ".text": {
+          "bytes": 9216,
+          "sha256": "bfdebff5af7933a581adfaf084bb6fd0aa3a158ada9bcccbc980326610a92ab3"
+        }
+      }
+    },
+    "limitations": "binary section comparison is not ISA decoding;same CLI flags/normal source export required;not a timing waiver",
+    "text_sections_identical": false
+  },
+  "skipped": {
+    "full14_risk_OJ": "target6.526percent slower,MT112/ST26,shared16KB;not promoted",
+    "mcProfiler_mcTracer": "clear target regression,freshv070 C6 profile referenced,not current72 data",
+    "ISA_decode": "unavailable;ELF section comparison is not disassembly",
+    "roofline": "actual sGPU roofs uncalibrated"
+  },
+  "cache": "code objects only,all attention content recomputed",
+  "promotion": "none;root v28 and pending64/68 unchanged",
+  "job_state": "known codegen/compiler/native groups terminal;no unowned kills"
+}

@@ -1,0 +1,31 @@
+{
+  "CTA_grid": [
+    512,
+    8
+  ],
+  "threads": 128,
+  "waves_per_CTA": 2,
+  "total_CTA": 4096,
+  "total_waves": 8192,
+  "token_bijection": true,
+  "fragment_pairs": 4096,
+  "fragment_local_per_thread": 32,
+  "Q_output_coordinates_per_CTA": 4096,
+  "K_V_coordinates_per_CTA": 8192,
+  "shared_slices": [
+    [
+      0,
+      4095
+    ],
+    [
+      4096,
+      8191
+    ]
+  ],
+  "shared_bytes": 16384,
+  "all_global_coordinate_sets_unique_and_complete_per_querywave": true,
+  "sync": "warp64 only,shared slices disjoint;no crossquery consumption",
+  "expected_math_work": "each query same32MMA and allsoftmax operations",
+  "input_domain": "officialC6 and original validblock guard",
+  "numerical_scope": "source/order/proof only;full original native reference decisive"
+}

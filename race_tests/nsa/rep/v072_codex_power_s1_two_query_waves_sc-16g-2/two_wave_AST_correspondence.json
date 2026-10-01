@@ -1,0 +1,55 @@
+{
+  "fully_restored_AST_exact_parent": true,
+  "changes": [
+    [
+      "# codex-power v060",
+      1
+    ],
+    [
+      "_make_power_s1_output_pair_swap",
+      1
+    ],
+    [
+      "with T.Kernel(seq_len, batch * kv_heads, threads=64) as (token, batch_head):",
+      1
+    ],
+    [
+      "            shared = T.alloc_shared([4096], dtype)",
+      1
+    ],
+    [
+      "numerator = T.alloc_fragment([groups, dim], accum_dtype)",
+      1
+    ],
+    [
+      "numerator: T.Fragment([groups, dim],",
+      1
+    ],
+    [
+      "forward_thread_fn=lambda head, col: head + 16 * ((col % 16) // 4),",
+      1
+    ],
+    [
+      "forward_index_fn=lambda head, col: col % 4 + 4 * (col // 16)),",
+      1
+    ],
+    [
+      "for head, feature in T.Parallel(groups, dim):",
+      1
+    ],
+    [
+      "numerator[head, feature] /= denominator[0]",
+      1
+    ],
+    [
+      "numerator[lane % 16, feature_base + element]",
+      1
+    ],
+    [
+      "shared[",
+      8
+    ]
+  ],
+  "mechanism": "two independent querywaves,replicated fragment and isolatedsharedslice,unchanged math/copywork",
+  "per_wave_mapping_requires_proof": true
+}

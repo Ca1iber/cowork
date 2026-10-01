@@ -1,0 +1,55 @@
+{
+  "source_excerpts": {
+    "src/tl_templates/maca/intrin.h": {
+      "sha256": "83e0246a50f91c9e670bd4ec4bdfebc5de1f8f4e35c7088fd71ce094d312c925",
+      "lines": {
+        "29": "TL_DEVICE int get_lane_idx(int warp_size = detail::default_warp_size()) {",
+        "30": "  warp_size = warp_size > 0 ? warp_size : detail::default_warp_size();",
+        "31": "  return detail::linear_thread_idx_in_block() % warp_size;",
+        "32": "}",
+        "33": "",
+        "34": "TL_DEVICE int get_warp_idx_sync(int warp_size = detail::default_warp_size()) {",
+        "35": "  warp_size = warp_size > 0 ? warp_size : detail::default_warp_size();",
+        "36": "  return detail::linear_thread_idx_in_block() / warp_size;",
+        "37": "}",
+        "38": "",
+        "39": "TL_DEVICE int get_warp_idx(int warp_size = detail::default_warp_size()) {",
+        "40": "  warp_size = warp_size > 0 ? warp_size : detail::default_warp_size();",
+        "41": "  return detail::linear_thread_idx_in_block() / warp_size;",
+        "42": "}"
+      }
+    },
+    "tilelang/language/builtin.py": {
+      "sha256": "aa60be6ffa72ca294556e4e6ecf667c7febfcacc66f609b278e9d3b9c49348c9",
+      "lines": {
+        "969": "def shfl_sync(",
+        "970": "    value: int | PrimExpr,",
+        "971": "    srcLane: int | PrimExpr,",
+        "972": "    width: int | PrimExpr = _DEFAULT_SHFL_WIDTH,",
+        "973": "    mask: int | PrimExpr = _FULL_WARP_MASK,",
+        "974": "):",
+        "975": "    \"\"\"Broadcast ``value`` from ``srcLane`` to all lanes in the subgroup of",
+        "976": "    ``width`` lanes (``__shfl_sync`` on CUDA, ``__shfl`` on HIP \u2014 mask ignored",
+        "977": "    on HIP).",
+        "978": "    \"\"\"",
+        "979": "    if _IS_MACA_AVAILABLE:",
+        "980": "        return tir.call_intrin(value.dtype, tir.op.Op.get(\"tl.shfl_sync\"), _as_uint64_mask(mask), value, srcLane, width)",
+        "981": "    return tir.call_intrin(value.dtype, tir.op.Op.get(\"tl.shfl_sync\"), _as_uint32_mask(mask), value, srcLane, width)"
+      }
+    },
+    "src/target/codegen_maca.cc": {
+      "sha256": "864e765d1a32f50b38edbb06c011e7b4814f56fa8f87bc4c33a5ebef9b56a18f",
+      "lines": {
+        "2267": "  } else if (op->op.same_as(tl::shfl_sync())) {",
+        "2268": "    ICHECK_EQ(op->args.size(), 4U)",
+        "2269": "        << \"tl.shfl_sync expects <mask, value, src_lane, width>.\";",
+        "2270": "    os << \"__shfl_sync(\" << PrintExpr(op->args[0]) << \", \"",
+        "2271": "       << PrintExpr(op->args[1]) << \", \" << PrintExpr(op->args[2]) << \", \"",
+        "2272": "       << PrintExpr(op->args[3]) << \")\";"
+      }
+    }
+  },
+  "Maca_get_warp_idx_sync": "plain divide,no broadcast",
+  "candidate_future_API": "normal T.shfl_sync(value,0,width64,mask full64)",
+  "future_uniformity_and_MT_gain": "unproven until compiler/native tests"
+}
