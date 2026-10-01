@@ -1,0 +1,130 @@
+{
+  "shapes": [
+    {
+      "case": 2,
+      "batch": 1,
+      "seq": 128,
+      "kvheads": 1,
+      "Qheads": 16,
+      "grid": [
+        128,
+        1
+      ],
+      "wave_count": 128,
+      "same1024slot_andoperanddomain": true,
+      "K_Vvalidfull16rows_bounded": true,
+      "Q_outputheads": "headbasekv*16 ..+15 insideHQ"
+    },
+    {
+      "case": 4,
+      "batch": 2,
+      "seq": 512,
+      "kvheads": 1,
+      "Qheads": 16,
+      "grid": [
+        512,
+        2
+      ],
+      "wave_count": 1024,
+      "same1024slot_andoperanddomain": true,
+      "K_Vvalidfull16rows_bounded": true,
+      "Q_outputheads": "headbasekv*16 ..+15 insideHQ"
+    },
+    {
+      "case": 5,
+      "batch": 4,
+      "seq": 1024,
+      "kvheads": 1,
+      "Qheads": 16,
+      "grid": [
+        1024,
+        4
+      ],
+      "wave_count": 4096,
+      "same1024slot_andoperanddomain": true,
+      "K_Vvalidfull16rows_bounded": true,
+      "Q_outputheads": "headbasekv*16 ..+15 insideHQ"
+    },
+    {
+      "case": 7,
+      "batch": 1,
+      "seq": 4096,
+      "kvheads": 1,
+      "Qheads": 16,
+      "grid": [
+        4096,
+        1
+      ],
+      "wave_count": 4096,
+      "same1024slot_andoperanddomain": true,
+      "K_Vvalidfull16rows_bounded": true,
+      "Q_outputheads": "headbasekv*16 ..+15 insideHQ"
+    },
+    {
+      "case": 8,
+      "batch": 2,
+      "seq": 4096,
+      "kvheads": 1,
+      "Qheads": 16,
+      "grid": [
+        4096,
+        2
+      ],
+      "wave_count": 8192,
+      "same1024slot_andoperanddomain": true,
+      "K_Vvalidfull16rows_bounded": true,
+      "Q_outputheads": "headbasekv*16 ..+15 insideHQ"
+    },
+    {
+      "case": 9,
+      "batch": 1,
+      "seq": 8192,
+      "kvheads": 1,
+      "Qheads": 16,
+      "grid": [
+        8192,
+        1
+      ],
+      "wave_count": 8192,
+      "same1024slot_andoperanddomain": true,
+      "K_Vvalidfull16rows_bounded": true,
+      "Q_outputheads": "headbasekv*16 ..+15 insideHQ"
+    },
+    {
+      "case": 13,
+      "batch": 1,
+      "seq": 256,
+      "kvheads": 2,
+      "Qheads": 32,
+      "grid": [
+        256,
+        2
+      ],
+      "wave_count": 512,
+      "same1024slot_andoperanddomain": true,
+      "K_Vvalidfull16rows_bounded": true,
+      "Q_outputheads": "headbasekv*16 ..+15 insideHQ"
+    },
+    {
+      "case": 14,
+      "batch": 2,
+      "seq": 512,
+      "kvheads": 2,
+      "Qheads": 32,
+      "grid": [
+        512,
+        4
+      ],
+      "wave_count": 2048,
+      "same1024slot_andoperanddomain": true,
+      "K_Vvalidfull16rows_bounded": true,
+      "Q_outputheads": "headbasekv*16 ..+15 insideHQ"
+    }
+  ],
+  "immutable_factory_path": "/root/tilelang-metax/race_tests/nsa/experiments/v079_codex_power_s1_case4_dense_sc-16g-2/s1_case4_kernel.py",
+  "factory_sha256": "bb4584c7465185a088e85d43f51baafeffb47971871463f7a173b3158d8defdf",
+  "same_layout_operand_proof_path": "/root/tilelang-metax/race_tests/nsa/rep/v079_codex_power_s1_case4_dense_sc-16g-2/C4_coordinate_bounds_proof.json",
+  "same_proof_sha256": "6141eeb2ffb7c146e3a19c082e94b75bb788126b816a2ef69968128f051bc54b",
+  "lazy_semantics": "compile codeonfirstcall,replacekeythenfulllaunch;onlykeyinclosure;no tensorvalues retained;subsequentoriginalentrydirectkernel",
+  "required": "originalnative pernewshape/ref/tolerance and actualreplacement gate"
+}

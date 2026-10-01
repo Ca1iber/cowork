@@ -1,0 +1,1554 @@
+{
+  "archive_recovery": {
+    "initial_exit": 137,
+    "last_complete_native_case": 12,
+    "cpu_limit_bytes": 34359738368,
+    "oom_counter_before_archive": 6,
+    "oom_counter_observed_after": 8,
+    "cause_scope": "consistent with cgroupOOM during archive window, no isolated victim attribution",
+    "retry": "ONE exact-source existingnative retry for affected13;14 not yet tested; preserve allinitial raw",
+    "source_unchanged": true,
+    "benchmark_function_unchanged": true,
+    "no_gpu_configuration_changes": true
+  },
+  "recovery_memory": {
+    "cases": [
+      {
+        "case": 13,
+        "samples": 37,
+        "peak_sampled_rss_kib": 23948436,
+        "peak_sampled_hwm_kib": 23948452,
+        "peak_sampled_cgroup_usage_bytes": 21460193280,
+        "first_oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 8\n",
+        "last_oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 8\n",
+        "one_second_sampling_not_exact_peak": true
+      },
+      {
+        "case": 14,
+        "samples": 37,
+        "peak_sampled_rss_kib": 23960344,
+        "peak_sampled_hwm_kib": 23960444,
+        "peak_sampled_cgroup_usage_bytes": 21475086336,
+        "first_oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 8\n",
+        "last_oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 8\n",
+        "one_second_sampling_not_exact_peak": true
+      }
+    ],
+    "cgroup_historical_max_at_later_sample": "34359853056",
+    "historical_max_not_initialcase13_window_peak": true
+  },
+  "version": "v080_codex_power_s1_d64_dispatch_sc-16g-2",
+  "status": "inconclusive_no_regression_not_demonstrated_external_oj_pending",
+  "closed_utc": "2026-10-01T23:29:00.105465+00:00",
+  "start": {
+    "utc": "2026-10-01T22:40:10.855754+00:00",
+    "version": "v080_codex_power_s1_d64_dispatch_sc-16g-2",
+    "head": "3cb2003d314e9d3bf9cdbabfe179371728561810",
+    "branch": "codex-power-v28-base",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent79_sha256": "98ac1b75839e8e3ae49d2de3345ce64779211af0c2aebe30751d1593a084a2fb",
+    "factory79_sha256": "bb4584c7465185a088e85d43f51baafeffb47971871463f7a173b3158d8defdf",
+    "native_hash": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568"
+  },
+  "source_sha256": "31a6d042336de68ab75c4be3e1777089324490d639ac3021c90381c268a714a1",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "source_identity": {
+    "candidate_path": "/tmp/nsa_power_v080_dispatch.py",
+    "candidate_sha256": "31a6d042336de68ab75c4be3e1777089324490d639ac3021c90381c268a714a1",
+    "baseline_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "originalprefix_and_entryAST_exact": true,
+    "helper_dependencies": {
+      "/root/tilelang-metax/race_tests/nsa/experiments/v076_codex_power_s1_v_hybrid_pack_sc-16g-2/s1_kernel.py": "93e9208690f430ba3af1fd2f2a58ac4316fc3bf7631737b61953d4efeb574a66",
+      "/root/tilelang-metax/race_tests/nsa/experiments/v077_codex_power_s8_output_pair_sc-16g-2/s8_kernel.py": "6cab13e3b158003e6fc0abceb3bace5579a7816bc0a0836c573e04118dec5895",
+      "/root/tilelang-metax/race_tests/nsa/experiments/v079_codex_power_s1_case4_dense_sc-16g-2/s1_case4_kernel.py": "bb4584c7465185a088e85d43f51baafeffb47971871463f7a173b3158d8defdf"
+    },
+    "all_kernel_bodies": "exactvalidated76/77/79,no math edits",
+    "lazycache": "compiledcode object replacesdispatch entry onfirstcall,tensorargsnot retained"
+  },
+  "native_reference_checks": {
+    "candidate_label": "power_v080",
+    "candidate_checks": 114,
+    "experiment_checks_with_controls": 314,
+    "rows": [
+      {
+        "file": "target_screen_sc-16g-2.csv",
+        "candidate_checks": 28,
+        "experiment_checks_with_controls": 84,
+        "candidate_cases": [
+          2,
+          5,
+          7,
+          8,
+          9,
+          13,
+          14
+        ]
+      },
+      {
+        "file": "formal_all14_sc-16g-2.csv",
+        "candidate_checks": 56,
+        "experiment_checks_with_controls": 168,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "file": "risk_sc-16g-2.csv",
+        "candidate_checks": 16,
+        "experiment_checks_with_controls": 48,
+        "candidate_cases": [
+          4,
+          6,
+          10,
+          11
+        ]
+      },
+      {
+        "file": "archive_native_all14_sc-16g-2.csv",
+        "candidate_checks": 14,
+        "experiment_checks_with_controls": 14,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      }
+    ],
+    "duplicate_policy": "percase CSVs are same invocations as merged CSV; excluded from count"
+  },
+  "screen": {
+    "mode": "selectedtargetscreen7shapes notall14verdict",
+    "candidate_refs": 28,
+    "total_refs_withcontrols": 84,
+    "allraw_retained": true,
+    "cases": [
+      {
+        "case": 2,
+        "samples_us": {
+          "baseline_v28": [
+            "9.466880000",
+            "9.431040000",
+            "9.451520000",
+            "9.451520000"
+          ],
+          "parent_v079": [
+            "9.441280000",
+            "9.461760000",
+            "9.635840000",
+            "9.902080000"
+          ],
+          "power_v080": [
+            "9.021440000",
+            "9.006080000",
+            "9.067520000",
+            "9.026560000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "9.451520000",
+          "parent_v079": "9.548800000",
+          "power_v080": "9.024000000"
+        },
+        "vs_v28_pct": "-4.523293607800650054171180930",
+        "vs_parent_pct": "-5.495978552278820375335120640",
+        "all_candidate_below_parent": true
+      },
+      {
+        "case": 5,
+        "samples_us": {
+          "baseline_v28": [
+            "30.991361000",
+            "31.784959000",
+            "31.452160000",
+            "31.319039000"
+          ],
+          "parent_v079": [
+            "31.001599000",
+            "31.324160000",
+            "31.303680000",
+            "31.349759000"
+          ],
+          "power_v080": [
+            "24.355841000",
+            "25.210879000",
+            "24.591360000",
+            "25.338881000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "31.385599500",
+          "parent_v079": "31.313920000",
+          "power_v080": "24.901119500"
+        },
+        "vs_v28_pct": "-20.66068548411828169794876787",
+        "vs_parent_pct": "-20.47907288515778286461739699",
+        "all_candidate_below_parent": true
+      },
+      {
+        "case": 7,
+        "samples_us": {
+          "baseline_v28": [
+            "31.324160000",
+            "31.339519000",
+            "31.272960000",
+            "31.467521000"
+          ],
+          "parent_v079": [
+            "31.262720000",
+            "31.272960000",
+            "30.694399000",
+            "31.298561000"
+          ],
+          "power_v080": [
+            "25.134079000",
+            "25.200641000",
+            "25.226240000",
+            "24.780800000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "31.331839500",
+          "parent_v079": "31.267840000",
+          "power_v080": "25.167360000"
+        },
+        "vs_v28_pct": "-19.67480875165340994421984065",
+        "vs_parent_pct": "-19.51039790404453905354511217",
+        "all_candidate_below_parent": true
+      },
+      {
+        "case": 8,
+        "samples_us": {
+          "baseline_v28": [
+            "52.218881000",
+            "52.249599000",
+            "52.290559000",
+            "52.439041000"
+          ],
+          "parent_v079": [
+            "52.321281000",
+            "52.505598000",
+            "52.213759000",
+            "52.413440000"
+          ],
+          "power_v080": [
+            "40.176640000",
+            "40.289278000",
+            "40.366082000",
+            "40.320001000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "52.270079000",
+          "parent_v079": "52.367360500",
+          "power_v080": "40.304639500"
+        },
+        "vs_v28_pct": "-22.89156574643784257529054050",
+        "vs_parent_pct": "-23.03480810341777680393114333",
+        "all_candidate_below_parent": true
+      },
+      {
+        "case": 9,
+        "samples_us": {
+          "baseline_v28": [
+            "52.341762000",
+            "52.454400000",
+            "52.392960000",
+            "52.449279000"
+          ],
+          "parent_v079": [
+            "52.474880000",
+            "52.480001000",
+            "52.515841000",
+            "52.433920000"
+          ],
+          "power_v080": [
+            "40.652800000",
+            "40.606718000",
+            "40.688639000",
+            "40.652800000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "52.421119500",
+          "parent_v079": "52.477440500",
+          "power_v080": "40.652800000"
+        },
+        "vs_v28_pct": "-22.44957683515324391345743770",
+        "vs_parent_pct": "-22.53280721646475879478154046",
+        "all_candidate_below_parent": true
+      },
+      {
+        "case": 13,
+        "samples_us": {
+          "baseline_v28": [
+            "11.525120000",
+            "11.371520000",
+            "11.330560000",
+            "11.479040000"
+          ],
+          "parent_v079": [
+            "11.484160000",
+            "11.351039000",
+            "10.675200000",
+            "11.325440000"
+          ],
+          "power_v080": [
+            "10.357760000",
+            "9.804800000",
+            "9.784320000",
+            "9.738240000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "11.425280000",
+          "parent_v079": "11.338239500",
+          "power_v080": "9.794560000"
+        },
+        "vs_v28_pct": "-14.27291059825229666143849429",
+        "vs_parent_pct": "-13.61480766039560198036035489",
+        "all_candidate_below_parent": true
+      },
+      {
+        "case": 14,
+        "samples_us": {
+          "baseline_v28": [
+            "20.357120000",
+            "20.372479000",
+            "20.526080000",
+            "20.152321000"
+          ],
+          "parent_v079": [
+            "20.290561000",
+            "20.305920000",
+            "20.295680000",
+            "19.599360000"
+          ],
+          "power_v080": [
+            "15.825920000",
+            "16.133120000",
+            "15.831040000",
+            "15.631360000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "20.364799500",
+          "parent_v079": "20.293120500",
+          "power_v080": "15.828480000"
+        },
+        "vs_v28_pct": "-22.27529664605831253089430122",
+        "vs_parent_pct": "-22.00075882858922559494977621",
+        "all_candidate_below_parent": true
+      }
+    ]
+  },
+  "formal": {
+    "candidate_refs": 56,
+    "experiment_refs": 168,
+    "percaseprocess": "originalnative body/timing W10R50 unchanged,samecase3sources",
+    "allrawretained": true,
+    "cases": [
+      {
+        "case": 1,
+        "samples_us": {
+          "baseline_v28": [
+            "9.098240000",
+            "8.903680000",
+            "9.446400000",
+            "8.985600000"
+          ],
+          "parent_v079": [
+            "8.985600000",
+            "8.929280000",
+            "8.872960000",
+            "9.815040000"
+          ],
+          "power_v080": [
+            "9.313280000",
+            "8.857600000",
+            "8.929280000",
+            "8.960000000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "9.041920000",
+          "parent_v079": "8.957440000",
+          "power_v080": "8.944640000"
+        },
+        "vs_v28_pct": "-1.075877689694224235560588900",
+        "vs_parent_pct": "-0.1428979708488139468419548400",
+        "ranges": {
+          "baseline_v28": [
+            "8.903680000",
+            "9.446400000"
+          ],
+          "parent_v079": [
+            "8.872960000",
+            "9.815040000"
+          ],
+          "power_v080": [
+            "8.857600000",
+            "9.313280000"
+          ]
+        }
+      },
+      {
+        "case": 2,
+        "samples_us": {
+          "baseline_v28": [
+            "9.128960000",
+            "9.047040000",
+            "9.559040000",
+            "9.088000000"
+          ],
+          "parent_v079": [
+            "9.461760000",
+            "9.088000000",
+            "9.113600000",
+            "9.154560000"
+          ],
+          "power_v080": [
+            "8.673280000",
+            "8.678400000",
+            "8.688640000",
+            "8.678400000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "9.108480000",
+          "parent_v079": "9.134080000",
+          "power_v080": "8.678400000"
+        },
+        "vs_v28_pct": "-4.721753794266441821247892070",
+        "vs_parent_pct": "-4.988789237668161434977578480",
+        "ranges": {
+          "baseline_v28": [
+            "9.047040000",
+            "9.559040000"
+          ],
+          "parent_v079": [
+            "9.088000000",
+            "9.461760000"
+          ],
+          "power_v080": [
+            "8.673280000",
+            "8.688640000"
+          ]
+        }
+      },
+      {
+        "case": 3,
+        "samples_us": {
+          "baseline_v28": [
+            "12.129281000",
+            "11.996160000",
+            "11.996160000",
+            "12.067840000"
+          ],
+          "parent_v079": [
+            "12.037120000",
+            "12.006400000",
+            "12.032000000",
+            "12.021760000"
+          ],
+          "power_v080": [
+            "12.001280000",
+            "12.001280000",
+            "12.067840000",
+            "12.026880000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "12.032000000",
+          "parent_v079": "12.026880000",
+          "power_v080": "12.014080000"
+        },
+        "vs_v28_pct": "-0.1489361702127659574468085100",
+        "vs_parent_pct": "-0.1064282673478075776926351600",
+        "ranges": {
+          "baseline_v28": [
+            "11.996160000",
+            "12.129281000"
+          ],
+          "parent_v079": [
+            "12.006400000",
+            "12.037120000"
+          ],
+          "power_v080": [
+            "12.001280000",
+            "12.067840000"
+          ]
+        }
+      },
+      {
+        "case": 4,
+        "samples_us": {
+          "baseline_v28": [
+            "12.574720000",
+            "12.646400000",
+            "12.620800000",
+            "13.224961000"
+          ],
+          "parent_v079": [
+            "10.895360000",
+            "10.664960000",
+            "10.752000000",
+            "10.782720000"
+          ],
+          "power_v080": [
+            "11.038719000",
+            "10.936320000",
+            "10.823680000",
+            "11.028481000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "12.633600000",
+          "parent_v079": "10.767360000",
+          "power_v080": "10.982400500"
+        },
+        "vs_v28_pct": "-13.06990485688956433637284701",
+        "vs_parent_pct": "1.997151576616737993342843600",
+        "ranges": {
+          "baseline_v28": [
+            "12.574720000",
+            "13.224961000"
+          ],
+          "parent_v079": [
+            "10.664960000",
+            "10.895360000"
+          ],
+          "power_v080": [
+            "10.823680000",
+            "11.038719000"
+          ]
+        }
+      },
+      {
+        "case": 5,
+        "samples_us": {
+          "baseline_v28": [
+            "31.452160000",
+            "31.211519000",
+            "31.559680000",
+            "31.395841000"
+          ],
+          "parent_v079": [
+            "31.185920000",
+            "31.278081000",
+            "31.196160000",
+            "31.191039000"
+          ],
+          "power_v080": [
+            "24.468479000",
+            "24.432640000",
+            "25.052159000",
+            "24.120319000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "31.424000500",
+          "parent_v079": "31.193599500",
+          "power_v080": "24.450559500"
+        },
+        "vs_v28_pct": "-22.19144885769716048725241078",
+        "vs_parent_pct": "-21.61674224226671885044879159",
+        "ranges": {
+          "baseline_v28": [
+            "31.211519000",
+            "31.559680000"
+          ],
+          "parent_v079": [
+            "31.185920000",
+            "31.278081000"
+          ],
+          "power_v080": [
+            "24.120319000",
+            "25.052159000"
+          ]
+        }
+      },
+      {
+        "case": 6,
+        "samples_us": {
+          "baseline_v28": [
+            "157.091837000",
+            "157.501440000",
+            "157.383680000",
+            "157.301760000"
+          ],
+          "parent_v079": [
+            "94.095364000",
+            "94.090242000",
+            "94.269438000",
+            "94.095364000"
+          ],
+          "power_v080": [
+            "94.161921000",
+            "94.248962000",
+            "94.044161000",
+            "94.069757000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "157.342720000",
+          "parent_v079": "94.095364000",
+          "power_v080": "94.115839000"
+        },
+        "vs_v28_pct": "-40.18417947776675018710748105",
+        "vs_parent_pct": "0.021759839305154290066830500",
+        "ranges": {
+          "baseline_v28": [
+            "157.091837000",
+            "157.501440000"
+          ],
+          "parent_v079": [
+            "94.090242000",
+            "94.269438000"
+          ],
+          "power_v080": [
+            "94.044161000",
+            "94.248962000"
+          ]
+        }
+      },
+      {
+        "case": 7,
+        "samples_us": {
+          "baseline_v28": [
+            "31.114240000",
+            "31.257601000",
+            "31.329279000",
+            "31.329279000"
+          ],
+          "parent_v079": [
+            "30.694399000",
+            "31.278081000",
+            "31.375360000",
+            "31.329279000"
+          ],
+          "power_v080": [
+            "25.313280000",
+            "25.313280000",
+            "24.734721000",
+            "25.272319000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "31.293440000",
+          "parent_v079": "31.303680000",
+          "power_v080": "25.292799500"
+        },
+        "vs_v28_pct": "-19.17539426793602748691099476",
+        "vs_parent_pct": "-19.20183345855822701995420347",
+        "ranges": {
+          "baseline_v28": [
+            "31.114240000",
+            "31.329279000"
+          ],
+          "parent_v079": [
+            "30.694399000",
+            "31.375360000"
+          ],
+          "power_v080": [
+            "24.734721000",
+            "25.313280000"
+          ]
+        }
+      },
+      {
+        "case": 8,
+        "samples_us": {
+          "baseline_v28": [
+            "52.280321000",
+            "51.696639000",
+            "51.978240000",
+            "52.300801000"
+          ],
+          "parent_v079": [
+            "52.295680000",
+            "51.921921000",
+            "52.203522000",
+            "51.809282000"
+          ],
+          "power_v080": [
+            "39.751680000",
+            "39.910400000",
+            "40.529919000",
+            "40.299520000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "52.129280500",
+          "parent_v079": "52.062721500",
+          "power_v080": "40.104960000"
+        },
+        "vs_v28_pct": "-23.06634656121908300652643767",
+        "vs_parent_pct": "-22.96799159836467634524253597",
+        "ranges": {
+          "baseline_v28": [
+            "51.696639000",
+            "52.300801000"
+          ],
+          "parent_v079": [
+            "51.809282000",
+            "52.295680000"
+          ],
+          "power_v080": [
+            "39.751680000",
+            "40.529919000"
+          ]
+        }
+      },
+      {
+        "case": 9,
+        "samples_us": {
+          "baseline_v28": [
+            "51.655679000",
+            "53.171201000",
+            "52.362242000",
+            "52.643838000"
+          ],
+          "parent_v079": [
+            "51.819520000",
+            "52.295680000",
+            "51.773438000",
+            "52.326398000"
+          ],
+          "power_v080": [
+            "40.760322000",
+            "40.765438000",
+            "40.765438000",
+            "40.632319000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "52.503040000",
+          "parent_v079": "52.057600000",
+          "power_v080": "40.762880000"
+        },
+        "vs_v28_pct": "-22.36091472036666829196937930",
+        "vs_parent_pct": "-21.69658224735677403491517089",
+        "ranges": {
+          "baseline_v28": [
+            "51.655679000",
+            "53.171201000"
+          ],
+          "parent_v079": [
+            "51.773438000",
+            "52.326398000"
+          ],
+          "power_v080": [
+            "40.632319000",
+            "40.765438000"
+          ]
+        }
+      },
+      {
+        "case": 10,
+        "samples_us": {
+          "baseline_v28": [
+            "12.369920000",
+            "12.508160000",
+            "12.421120000",
+            "12.421120000"
+          ],
+          "parent_v079": [
+            "12.426240000",
+            "12.651520000",
+            "12.436481000",
+            "12.426240000"
+          ],
+          "power_v080": [
+            "12.395520000",
+            "12.456959000",
+            "12.456959000",
+            "12.651520000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "12.421120000",
+          "parent_v079": "12.431360500",
+          "power_v080": "12.456959000"
+        },
+        "vs_v28_pct": "0.288532757110469909315746100",
+        "vs_parent_pct": "0.205918732708298500393420300",
+        "ranges": {
+          "baseline_v28": [
+            "12.369920000",
+            "12.508160000"
+          ],
+          "parent_v079": [
+            "12.426240000",
+            "12.651520000"
+          ],
+          "power_v080": [
+            "12.395520000",
+            "12.651520000"
+          ]
+        }
+      },
+      {
+        "case": 11,
+        "samples_us": {
+          "baseline_v28": [
+            "23.306241000",
+            "23.884799000",
+            "23.321600000",
+            "23.311360000"
+          ],
+          "parent_v079": [
+            "23.280640000",
+            "23.782401000",
+            "23.874559000",
+            "23.157761000"
+          ],
+          "power_v080": [
+            "23.352320000",
+            "23.424001000",
+            "23.818240000",
+            "23.705599000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "23.316480000",
+          "parent_v079": "23.531520500",
+          "power_v080": "23.564800000"
+        },
+        "vs_v28_pct": "1.064997804128238910847606500",
+        "vs_parent_pct": "0.141425200296767903289547300",
+        "ranges": {
+          "baseline_v28": [
+            "23.306241000",
+            "23.884799000"
+          ],
+          "parent_v079": [
+            "23.157761000",
+            "23.874559000"
+          ],
+          "power_v080": [
+            "23.352320000",
+            "23.818240000"
+          ]
+        }
+      },
+      {
+        "case": 12,
+        "samples_us": {
+          "baseline_v28": [
+            "84.336643000",
+            "83.425283000",
+            "83.609600000",
+            "83.681278000"
+          ],
+          "parent_v079": [
+            "72.688642000",
+            "71.971841000",
+            "72.596478000",
+            "72.555518000"
+          ],
+          "power_v080": [
+            "72.509441000",
+            "72.575998000",
+            "72.540159000",
+            "72.601600000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "83.645439000",
+          "parent_v079": "72.575998000",
+          "power_v080": "72.558078500"
+        },
+        "vs_v28_pct": "-13.25518836717444928467647830",
+        "vs_parent_pct": "-0.0246906697721194271417390600",
+        "ranges": {
+          "baseline_v28": [
+            "83.425283000",
+            "84.336643000"
+          ],
+          "parent_v079": [
+            "71.971841000",
+            "72.688642000"
+          ],
+          "power_v080": [
+            "72.509441000",
+            "72.601600000"
+          ]
+        }
+      },
+      {
+        "case": 13,
+        "samples_us": {
+          "baseline_v28": [
+            "11.371520000",
+            "11.304960000",
+            "11.325440000",
+            "11.366400000"
+          ],
+          "parent_v079": [
+            "11.427840000",
+            "11.304960000",
+            "10.772480000",
+            "11.376640000"
+          ],
+          "power_v080": [
+            "9.830400000",
+            "9.932800000",
+            "10.337280000",
+            "9.932800000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "11.345920000",
+          "parent_v079": "11.340800000",
+          "power_v080": "9.932800000"
+        },
+        "vs_v28_pct": "-12.45487364620938628158844765",
+        "vs_parent_pct": "-12.41534988713318284424379233",
+        "ranges": {
+          "baseline_v28": [
+            "11.304960000",
+            "11.371520000"
+          ],
+          "parent_v079": [
+            "10.772480000",
+            "11.427840000"
+          ],
+          "power_v080": [
+            "9.830400000",
+            "10.337280000"
+          ]
+        }
+      },
+      {
+        "case": 14,
+        "samples_us": {
+          "baseline_v28": [
+            "20.157440000",
+            "20.121601000",
+            "20.029440000",
+            "20.003841000"
+          ],
+          "parent_v079": [
+            "20.172801000",
+            "20.147200000",
+            "19.425280000",
+            "20.152321000"
+          ],
+          "power_v080": [
+            "15.856640000",
+            "15.948800000",
+            "15.964160000",
+            "15.892479000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "20.075520500",
+          "parent_v079": "20.149760500",
+          "power_v080": "15.920639500"
+        },
+        "vs_v28_pct": "-20.69625542211969049569598955",
+        "vs_parent_pct": "-20.98844301400009196139080661",
+        "ranges": {
+          "baseline_v28": [
+            "20.003841000",
+            "20.157440000"
+          ],
+          "parent_v079": [
+            "19.425280000",
+            "20.172801000"
+          ],
+          "power_v080": [
+            "15.856640000",
+            "15.964160000"
+          ]
+        }
+      }
+    ]
+  },
+  "risk": {
+    "candidate_refs": 16,
+    "experiment_refs": 48,
+    "selection": "all formal cases positive versus original or parent,one fixed confirmation only",
+    "allrawretained": true,
+    "cases": [
+      {
+        "case": 4,
+        "medians_us": {
+          "baseline_v28": "13.352959500",
+          "parent_v079": "11.409920000",
+          "power_v080": "11.407360000"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "13.317120000",
+            "13.388799000",
+            "13.450240000",
+            "13.224961000"
+          ],
+          "parent_v079": [
+            "11.417600000",
+            "11.397120000",
+            "11.402240000",
+            "11.453440000"
+          ],
+          "power_v080": [
+            "11.555840000",
+            "11.417600000",
+            "11.397120000",
+            "11.397120000"
+          ]
+        },
+        "vs_v28_pct": "-14.57054894834362374872776331",
+        "vs_parent_pct": "-0.0224366165582230199685887400"
+      },
+      {
+        "case": 6,
+        "medians_us": {
+          "baseline_v28": "157.186560500",
+          "parent_v079": "94.451198500",
+          "power_v080": "93.977599000"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "157.158403000",
+            "157.291517000",
+            "157.214718000",
+            "156.789761000"
+          ],
+          "parent_v079": [
+            "94.658556000",
+            "94.095364000",
+            "94.643202000",
+            "94.259195000"
+          ],
+          "power_v080": [
+            "94.115839000",
+            "93.890562000",
+            "93.957119000",
+            "93.998079000"
+          ]
+        },
+        "vs_v28_pct": "-40.21270094525670341899236354",
+        "vs_parent_pct": "-0.5014224356295489463799657300"
+      },
+      {
+        "case": 10,
+        "medians_us": {
+          "baseline_v28": "12.001280500",
+          "parent_v079": "11.724800000",
+          "power_v080": "11.750400000"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "12.288001000",
+            "12.282881000",
+            "11.699200000",
+            "11.719680000"
+          ],
+          "parent_v079": [
+            "11.765760000",
+            "11.709440000",
+            "11.740160000",
+            "11.709440000"
+          ],
+          "power_v080": [
+            "11.724800000",
+            "11.776000000",
+            "11.745280000",
+            "11.755520000"
+          ]
+        },
+        "vs_v28_pct": "-2.090447765136395237158234910",
+        "vs_parent_pct": "0.218340611353711790393013100"
+      },
+      {
+        "case": 11,
+        "medians_us": {
+          "baseline_v28": "23.411200500",
+          "parent_v079": "23.349759500",
+          "power_v080": "23.372799000"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "23.393281000",
+            "23.352320000",
+            "23.429120000",
+            "23.434241000"
+          ],
+          "parent_v079": [
+            "23.352320000",
+            "23.347199000",
+            "23.285761000",
+            "23.398399000"
+          ],
+          "power_v080": [
+            "23.321600000",
+            "23.367679000",
+            "23.408639000",
+            "23.377919000"
+          ]
+        },
+        "vs_v28_pct": "-0.1640304605481466018797284700",
+        "vs_parent_pct": "0.098671251838803735858607000"
+      }
+    ]
+  },
+  "codegen_comparison": [
+    {
+      "case": 1,
+      "exactv28": true,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 2,
+      "exactv28": false,
+      "exactparent079": false,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 3,
+      "exactv28": true,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 4,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 5,
+      "exactv28": false,
+      "exactparent079": false,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 6,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 7,
+      "exactv28": false,
+      "exactparent079": false,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 8,
+      "exactv28": false,
+      "exactparent079": false,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 9,
+      "exactv28": false,
+      "exactparent079": false,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 10,
+      "exactv28": true,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 11,
+      "exactv28": true,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 12,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 13,
+      "exactv28": false,
+      "exactparent079": false,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 14,
+      "exactv28": false,
+      "exactparent079": false,
+      "identitynotperformancewaiver": true
+    }
+  ],
+  "resources": [
+    {
+      "case": 2,
+      "command": [
+        "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "-x",
+        "maca",
+        "-device-obj",
+        "-O3",
+        "-lineinfo",
+        "--offload-arch=xcore1000",
+        "-std=c++17",
+        "-I/root/tilelang-metax/src",
+        "-use-fast-math",
+        "-D__FAST_HALF_CVT__",
+        "-resource-usage",
+        "-o",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/resources/case2.mcbin",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case2_stage1.device.cpp"
+      ],
+      "exit": 0,
+      "raw": " maca info  : Function properties for  native_sparse_attention_kernel \n  0 bytes stack frame \n maca info  : Used  42 MTregisters, 20 STregisters, 0 bytes shared mem  \n maca info  : staticMaxWarps/PEU : 8\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case2_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:6:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/common.h:6:\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:115:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  115 | TL_DEVICE inline void AtomicMax(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:128:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  128 | TL_DEVICE inline float AtomicMaxRet(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:142:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  142 | TL_DEVICE inline void AtomicMin(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:155:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  155 | TL_DEVICE inline float AtomicMinRet(float *address, float val,\n      |           ^\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case2_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:7:\nIn file included from /opt/maca/include/cute/tensor.hpp:956:\nIn file included from /opt/maca/include/cute/algorithm/gemm.hpp:40:\nIn file included from /opt/maca/include/cute/atom/mma_atom.hpp:1060:\nIn file included from /opt/maca/include/cute/atom/mma_traits_sm80.hpp:33:\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:50: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:14: note: initialize the variable 'cc0' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:55: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:19: note: initialize the variable 'cc1' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:60: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:24: note: initialize the variable 'cc2' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:65: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:29: note: initialize the variable 'cc3' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:50: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:14: note: initialize the variable 'cc0' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:55: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:19: note: initialize the variable 'cc1' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:60: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:24: note: initialize the variable 'cc2' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:65: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:29: note: initialize the variable 'cc3' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case2_stage1.device.cpp:10:50: warning: set minimum blocks' number is illegal in Maca and the value will be ignored [-Wmaca-min-blocks-per-multiprocessor]\n   10 | extern \"C\" __global__ void __launch_bounds__(64, 1) native_sparse_attention_kernel(const int* __restrict__ Indices, const half_t* __restrict__ K, half_t* __restrict__ Output, const half_t* __restrict__ Q, const half_t* __restrict__ V) {\n      |                                                  ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case2_stage1.device.cpp:84:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   84 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 32, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case2_stage1.device.cpp:85:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   85 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 16, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case2_stage1.device.cpp:148:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  148 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));\n      |                                                                ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case2_stage1.device.cpp:149:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  149 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));\n      |                                                                ^\n17 warnings generated when compiling for xcore1000.\n"
+    },
+    {
+      "case": 5,
+      "command": [
+        "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "-x",
+        "maca",
+        "-device-obj",
+        "-O3",
+        "-lineinfo",
+        "--offload-arch=xcore1000",
+        "-std=c++17",
+        "-I/root/tilelang-metax/src",
+        "-use-fast-math",
+        "-D__FAST_HALF_CVT__",
+        "-resource-usage",
+        "-o",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/resources/case5.mcbin",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case5_stage1.device.cpp"
+      ],
+      "exit": 0,
+      "raw": " maca info  : Function properties for  native_sparse_attention_kernel \n  0 bytes stack frame \n maca info  : Used  42 MTregisters, 20 STregisters, 0 bytes shared mem  \n maca info  : staticMaxWarps/PEU : 8\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case5_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:6:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/common.h:6:\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:115:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  115 | TL_DEVICE inline void AtomicMax(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:128:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  128 | TL_DEVICE inline float AtomicMaxRet(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:142:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  142 | TL_DEVICE inline void AtomicMin(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:155:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  155 | TL_DEVICE inline float AtomicMinRet(float *address, float val,\n      |           ^\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case5_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:7:\nIn file included from /opt/maca/include/cute/tensor.hpp:956:\nIn file included from /opt/maca/include/cute/algorithm/gemm.hpp:40:\nIn file included from /opt/maca/include/cute/atom/mma_atom.hpp:1060:\nIn file included from /opt/maca/include/cute/atom/mma_traits_sm80.hpp:33:\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:50: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:14: note: initialize the variable 'cc0' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:55: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:19: note: initialize the variable 'cc1' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:60: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:24: note: initialize the variable 'cc2' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:65: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:29: note: initialize the variable 'cc3' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:50: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:14: note: initialize the variable 'cc0' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:55: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:19: note: initialize the variable 'cc1' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:60: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:24: note: initialize the variable 'cc2' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:65: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:29: note: initialize the variable 'cc3' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case5_stage1.device.cpp:10:50: warning: set minimum blocks' number is illegal in Maca and the value will be ignored [-Wmaca-min-blocks-per-multiprocessor]\n   10 | extern \"C\" __global__ void __launch_bounds__(64, 1) native_sparse_attention_kernel(const int* __restrict__ Indices, const half_t* __restrict__ K, half_t* __restrict__ Output, const half_t* __restrict__ Q, const half_t* __restrict__ V) {\n      |                                                  ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case5_stage1.device.cpp:84:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   84 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 32, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case5_stage1.device.cpp:85:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   85 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 16, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case5_stage1.device.cpp:148:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  148 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));\n      |                                                                ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case5_stage1.device.cpp:149:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  149 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));\n      |                                                                ^\n17 warnings generated when compiling for xcore1000.\n"
+    },
+    {
+      "case": 7,
+      "command": [
+        "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "-x",
+        "maca",
+        "-device-obj",
+        "-O3",
+        "-lineinfo",
+        "--offload-arch=xcore1000",
+        "-std=c++17",
+        "-I/root/tilelang-metax/src",
+        "-use-fast-math",
+        "-D__FAST_HALF_CVT__",
+        "-resource-usage",
+        "-o",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/resources/case7.mcbin",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case7_stage1.device.cpp"
+      ],
+      "exit": 0,
+      "raw": " maca info  : Function properties for  native_sparse_attention_kernel \n  0 bytes stack frame \n maca info  : Used  42 MTregisters, 20 STregisters, 0 bytes shared mem  \n maca info  : staticMaxWarps/PEU : 8\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case7_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:6:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/common.h:6:\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:115:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  115 | TL_DEVICE inline void AtomicMax(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:128:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  128 | TL_DEVICE inline float AtomicMaxRet(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:142:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  142 | TL_DEVICE inline void AtomicMin(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:155:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  155 | TL_DEVICE inline float AtomicMinRet(float *address, float val,\n      |           ^\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case7_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:7:\nIn file included from /opt/maca/include/cute/tensor.hpp:956:\nIn file included from /opt/maca/include/cute/algorithm/gemm.hpp:40:\nIn file included from /opt/maca/include/cute/atom/mma_atom.hpp:1060:\nIn file included from /opt/maca/include/cute/atom/mma_traits_sm80.hpp:33:\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:50: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:14: note: initialize the variable 'cc0' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:55: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:19: note: initialize the variable 'cc1' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:60: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:24: note: initialize the variable 'cc2' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:65: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:29: note: initialize the variable 'cc3' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:50: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:14: note: initialize the variable 'cc0' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:55: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:19: note: initialize the variable 'cc1' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:60: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:24: note: initialize the variable 'cc2' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:65: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:29: note: initialize the variable 'cc3' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case7_stage1.device.cpp:10:50: warning: set minimum blocks' number is illegal in Maca and the value will be ignored [-Wmaca-min-blocks-per-multiprocessor]\n   10 | extern \"C\" __global__ void __launch_bounds__(64, 1) native_sparse_attention_kernel(const int* __restrict__ Indices, const half_t* __restrict__ K, half_t* __restrict__ Output, const half_t* __restrict__ Q, const half_t* __restrict__ V) {\n      |                                                  ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case7_stage1.device.cpp:84:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   84 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 32, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case7_stage1.device.cpp:85:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   85 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 16, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case7_stage1.device.cpp:148:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  148 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));\n      |                                                                ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case7_stage1.device.cpp:149:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  149 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));\n      |                                                                ^\n17 warnings generated when compiling for xcore1000.\n"
+    },
+    {
+      "case": 8,
+      "command": [
+        "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "-x",
+        "maca",
+        "-device-obj",
+        "-O3",
+        "-lineinfo",
+        "--offload-arch=xcore1000",
+        "-std=c++17",
+        "-I/root/tilelang-metax/src",
+        "-use-fast-math",
+        "-D__FAST_HALF_CVT__",
+        "-resource-usage",
+        "-o",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/resources/case8.mcbin",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case8_stage1.device.cpp"
+      ],
+      "exit": 0,
+      "raw": " maca info  : Function properties for  native_sparse_attention_kernel \n  0 bytes stack frame \n maca info  : Used  42 MTregisters, 20 STregisters, 0 bytes shared mem  \n maca info  : staticMaxWarps/PEU : 8\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case8_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:6:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/common.h:6:\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:115:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  115 | TL_DEVICE inline void AtomicMax(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:128:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  128 | TL_DEVICE inline float AtomicMaxRet(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:142:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  142 | TL_DEVICE inline void AtomicMin(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:155:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  155 | TL_DEVICE inline float AtomicMinRet(float *address, float val,\n      |           ^\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case8_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:7:\nIn file included from /opt/maca/include/cute/tensor.hpp:956:\nIn file included from /opt/maca/include/cute/algorithm/gemm.hpp:40:\nIn file included from /opt/maca/include/cute/atom/mma_atom.hpp:1060:\nIn file included from /opt/maca/include/cute/atom/mma_traits_sm80.hpp:33:\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:50: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:14: note: initialize the variable 'cc0' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:55: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:19: note: initialize the variable 'cc1' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:60: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:24: note: initialize the variable 'cc2' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:65: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:29: note: initialize the variable 'cc3' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:50: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:14: note: initialize the variable 'cc0' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:55: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:19: note: initialize the variable 'cc1' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:60: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:24: note: initialize the variable 'cc2' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:65: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:29: note: initialize the variable 'cc3' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case8_stage1.device.cpp:10:50: warning: set minimum blocks' number is illegal in Maca and the value will be ignored [-Wmaca-min-blocks-per-multiprocessor]\n   10 | extern \"C\" __global__ void __launch_bounds__(64, 1) native_sparse_attention_kernel(const int* __restrict__ Indices, const half_t* __restrict__ K, half_t* __restrict__ Output, const half_t* __restrict__ Q, const half_t* __restrict__ V) {\n      |                                                  ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case8_stage1.device.cpp:84:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   84 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 32, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case8_stage1.device.cpp:85:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   85 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 16, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case8_stage1.device.cpp:148:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  148 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));\n      |                                                                ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case8_stage1.device.cpp:149:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  149 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));\n      |                                                                ^\n17 warnings generated when compiling for xcore1000.\n"
+    },
+    {
+      "case": 9,
+      "command": [
+        "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "-x",
+        "maca",
+        "-device-obj",
+        "-O3",
+        "-lineinfo",
+        "--offload-arch=xcore1000",
+        "-std=c++17",
+        "-I/root/tilelang-metax/src",
+        "-use-fast-math",
+        "-D__FAST_HALF_CVT__",
+        "-resource-usage",
+        "-o",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/resources/case9.mcbin",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case9_stage1.device.cpp"
+      ],
+      "exit": 0,
+      "raw": " maca info  : Function properties for  native_sparse_attention_kernel \n  0 bytes stack frame \n maca info  : Used  42 MTregisters, 20 STregisters, 0 bytes shared mem  \n maca info  : staticMaxWarps/PEU : 8\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case9_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:6:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/common.h:6:\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:115:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  115 | TL_DEVICE inline void AtomicMax(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:128:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  128 | TL_DEVICE inline float AtomicMaxRet(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:142:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  142 | TL_DEVICE inline void AtomicMin(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:155:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  155 | TL_DEVICE inline float AtomicMinRet(float *address, float val,\n      |           ^\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case9_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:7:\nIn file included from /opt/maca/include/cute/tensor.hpp:956:\nIn file included from /opt/maca/include/cute/algorithm/gemm.hpp:40:\nIn file included from /opt/maca/include/cute/atom/mma_atom.hpp:1060:\nIn file included from /opt/maca/include/cute/atom/mma_traits_sm80.hpp:33:\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:50: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:14: note: initialize the variable 'cc0' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:55: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:19: note: initialize the variable 'cc1' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:60: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:24: note: initialize the variable 'cc2' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:65: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:29: note: initialize the variable 'cc3' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:50: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:14: note: initialize the variable 'cc0' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:55: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:19: note: initialize the variable 'cc1' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:60: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:24: note: initialize the variable 'cc2' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:65: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:29: note: initialize the variable 'cc3' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case9_stage1.device.cpp:10:50: warning: set minimum blocks' number is illegal in Maca and the value will be ignored [-Wmaca-min-blocks-per-multiprocessor]\n   10 | extern \"C\" __global__ void __launch_bounds__(64, 1) native_sparse_attention_kernel(const int* __restrict__ Indices, const half_t* __restrict__ K, half_t* __restrict__ Output, const half_t* __restrict__ Q, const half_t* __restrict__ V) {\n      |                                                  ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case9_stage1.device.cpp:84:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   84 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 32, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case9_stage1.device.cpp:85:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   85 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 16, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case9_stage1.device.cpp:148:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  148 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));\n      |                                                                ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case9_stage1.device.cpp:149:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  149 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));\n      |                                                                ^\n17 warnings generated when compiling for xcore1000.\n"
+    },
+    {
+      "case": 13,
+      "command": [
+        "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "-x",
+        "maca",
+        "-device-obj",
+        "-O3",
+        "-lineinfo",
+        "--offload-arch=xcore1000",
+        "-std=c++17",
+        "-I/root/tilelang-metax/src",
+        "-use-fast-math",
+        "-D__FAST_HALF_CVT__",
+        "-resource-usage",
+        "-o",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/resources/case13.mcbin",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case13_stage1.device.cpp"
+      ],
+      "exit": 0,
+      "raw": " maca info  : Function properties for  native_sparse_attention_kernel \n  0 bytes stack frame \n maca info  : Used  42 MTregisters, 20 STregisters, 0 bytes shared mem  \n maca info  : staticMaxWarps/PEU : 8\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case13_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:6:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/common.h:6:\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:115:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  115 | TL_DEVICE inline void AtomicMax(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:128:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  128 | TL_DEVICE inline float AtomicMaxRet(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:142:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  142 | TL_DEVICE inline void AtomicMin(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:155:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  155 | TL_DEVICE inline float AtomicMinRet(float *address, float val,\n      |           ^\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case13_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:7:\nIn file included from /opt/maca/include/cute/tensor.hpp:956:\nIn file included from /opt/maca/include/cute/algorithm/gemm.hpp:40:\nIn file included from /opt/maca/include/cute/atom/mma_atom.hpp:1060:\nIn file included from /opt/maca/include/cute/atom/mma_traits_sm80.hpp:33:\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:50: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:14: note: initialize the variable 'cc0' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:55: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:19: note: initialize the variable 'cc1' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:60: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:24: note: initialize the variable 'cc2' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:65: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:29: note: initialize the variable 'cc3' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:50: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:14: note: initialize the variable 'cc0' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:55: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:19: note: initialize the variable 'cc1' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:60: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:24: note: initialize the variable 'cc2' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:65: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:29: note: initialize the variable 'cc3' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case13_stage1.device.cpp:10:50: warning: set minimum blocks' number is illegal in Maca and the value will be ignored [-Wmaca-min-blocks-per-multiprocessor]\n   10 | extern \"C\" __global__ void __launch_bounds__(64, 1) native_sparse_attention_kernel(const int* __restrict__ Indices, const half_t* __restrict__ K, half_t* __restrict__ Output, const half_t* __restrict__ Q, const half_t* __restrict__ V) {\n      |                                                  ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case13_stage1.device.cpp:84:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   84 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 32, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case13_stage1.device.cpp:85:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   85 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 16, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case13_stage1.device.cpp:148:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  148 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));\n      |                                                                ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case13_stage1.device.cpp:149:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  149 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));\n      |                                                                ^\n17 warnings generated when compiling for xcore1000.\n"
+    },
+    {
+      "case": 14,
+      "command": [
+        "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "-x",
+        "maca",
+        "-device-obj",
+        "-O3",
+        "-lineinfo",
+        "--offload-arch=xcore1000",
+        "-std=c++17",
+        "-I/root/tilelang-metax/src",
+        "-use-fast-math",
+        "-D__FAST_HALF_CVT__",
+        "-resource-usage",
+        "-o",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/resources/case14.mcbin",
+        "/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case14_stage1.device.cpp"
+      ],
+      "exit": 0,
+      "raw": " maca info  : Function properties for  native_sparse_attention_kernel \n  0 bytes stack frame \n maca info  : Used  42 MTregisters, 20 STregisters, 0 bytes shared mem  \n maca info  : staticMaxWarps/PEU : 8\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case14_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:6:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/common.h:6:\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:115:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  115 | TL_DEVICE inline void AtomicMax(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:128:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  128 | TL_DEVICE inline float AtomicMaxRet(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:142:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  142 | TL_DEVICE inline void AtomicMin(float *address, float val,\n      |           ^\n/root/tilelang-metax/src/tl_templates/maca/atomic.h:155:11: warning: duplicate 'inline' declaration specifier [-Wduplicate-decl-specifier]\n  155 | TL_DEVICE inline float AtomicMinRet(float *address, float val,\n      |           ^\nIn file included from /root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case14_stage1.device.cpp:1:\nIn file included from /root/tilelang-metax/src/tl_templates/maca/gemm.h:7:\nIn file included from /opt/maca/include/cute/tensor.hpp:956:\nIn file included from /opt/maca/include/cute/algorithm/gemm.hpp:40:\nIn file included from /opt/maca/include/cute/atom/mma_atom.hpp:1060:\nIn file included from /opt/maca/include/cute/atom/mma_traits_sm80.hpp:33:\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:50: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:14: note: initialize the variable 'cc0' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:55: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:19: note: initialize the variable 'cc1' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:60: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:24: note: initialize the variable 'cc2' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  334 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:352:65: note: uninitialized use occurs here\n  352 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:334:12: note: remove the 'if' if its condition is always true\n  334 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:321:29: note: initialize the variable 'cc3' to silence this warning\n  321 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc0' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:50: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                  ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:14: note: initialize the variable 'cc0' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |              ^\n      |               = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc1' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:55: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                       ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:19: note: initialize the variable 'cc1' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                   ^\n      |                    = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc2' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:60: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                            ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:24: note: initialize the variable 'cc2' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                        ^\n      |                         = 0.0\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:16: warning: variable 'cc3' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]\n  608 |     } else if (lane_id < 64) {\n      |                ^~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:626:65: note: uninitialized use occurs here\n  626 |                                                 {cc0, cc1, cc2, cc3});\n      |                                                                 ^~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:608:12: note: remove the 'if' if its condition is always true\n  608 |     } else if (lane_id < 64) {\n      |            ^~~~~~~~~~~~~~~~~\n/opt/maca/include/cute/arch/mma_sm80.hpp:595:29: note: initialize the variable 'cc3' to silence this warning\n  595 |     float cc0, cc1, cc2, cc3;\n      |                             ^\n      |                              = 0.0\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case14_stage1.device.cpp:10:50: warning: set minimum blocks' number is illegal in Maca and the value will be ignored [-Wmaca-min-blocks-per-multiprocessor]\n   10 | extern \"C\" __global__ void __launch_bounds__(64, 1) native_sparse_attention_kernel(const int* __restrict__ Indices, const half_t* __restrict__ K, half_t* __restrict__ Output, const half_t* __restrict__ Q, const half_t* __restrict__ V) {\n      |                                                  ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case14_stage1.device.cpp:84:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   84 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 32, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case14_stage1.device.cpp:85:60: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n   85 |     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 16, 64));\n      |                                                            ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case14_stage1.device.cpp:148:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  148 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));\n      |                                                                ^\n/root/tilelang-metax/race_tests/nsa/rep/v080_codex_power_s1_d64_dispatch_sc-16g-2/codegen_formal/power_v080/case14_stage1.device.cpp:149:64: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]\n  149 |   denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));\n      |                                                                ^\n17 warnings generated when compiling for xcore1000.\n"
+    }
+  ],
+  "resource_summary": [
+    {
+      "case": 2,
+      "MT": 42,
+      "ST": 20,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 2048,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 8,
+      "not_measured_occupancy": true
+    },
+    {
+      "case": 5,
+      "MT": 42,
+      "ST": 20,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 2048,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 8,
+      "not_measured_occupancy": true
+    },
+    {
+      "case": 7,
+      "MT": 42,
+      "ST": 20,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 2048,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 8,
+      "not_measured_occupancy": true
+    },
+    {
+      "case": 8,
+      "MT": 42,
+      "ST": 20,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 2048,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 8,
+      "not_measured_occupancy": true
+    },
+    {
+      "case": 9,
+      "MT": 42,
+      "ST": 20,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 2048,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 8,
+      "not_measured_occupancy": true
+    },
+    {
+      "case": 13,
+      "MT": 42,
+      "ST": 20,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 2048,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 8,
+      "not_measured_occupancy": true
+    },
+    {
+      "case": 14,
+      "MT": 42,
+      "ST": 20,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 2048,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 8,
+      "not_measured_occupancy": true
+    }
+  ],
+  "shared_inputs_identity": {
+    "files": {
+      "race_tests/nsa/official_case.json": "85f2c34acd793fb0a45084175acd7bcde48ff5d717a395d370800c30cf4e7036",
+      "race_tests/nsa/reference.py": "e31d5f188923d8696c7ad190b1652d5b3142c004dc96d0604f371c71f179bf32",
+      "race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/test_tilelang_nsa_fwd_v28.py": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568",
+      "race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+      "race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a"
+    },
+    "current_head": "3cb2003d314e9d3bf9cdbabfe179371728561810",
+    "native_body_unchanged": true,
+    "no_shared_file_copies_to_experiments": true
+  },
+  "mcProfiler": [
+    {
+      "variant": "power_v080",
+      "sample": 1,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8113.0,
+      "l2_hit_pct": 47.92,
+      "read_bytes": 18894752.0,
+      "write_bytes": 16777600.0,
+      "mte_pct": 68.24,
+      "mma_pct": 6.78,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "load_latency_cycles": 50.65,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "power_v080",
+      "sample": 2,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8112.0,
+      "l2_hit_pct": 47.94,
+      "read_bytes": 18862240.0,
+      "write_bytes": 16777536.0,
+      "mte_pct": 68.68,
+      "mma_pct": 6.83,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "load_latency_cycles": 50.62,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "parent_v079",
+      "sample": 1,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8113.0,
+      "l2_hit_pct": 48.03,
+      "read_bytes": 18834848.0,
+      "write_bytes": 16777632.0,
+      "mte_pct": 50.78,
+      "mma_pct": 4.92,
+      "shared_nonconflict_pct": 35.89,
+      "conflict_cycles": 6.8,
+      "load_latency_cycles": 102.45,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "parent_v079",
+      "sample": 2,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8112.0,
+      "l2_hit_pct": 48.04,
+      "read_bytes": 18828320.0,
+      "write_bytes": 16777536.0,
+      "mte_pct": 51.14,
+      "mma_pct": 4.96,
+      "shared_nonconflict_pct": 35.86,
+      "conflict_cycles": 6.8,
+      "load_latency_cycles": 102.25,
+      "unavailable_raw": {}
+    }
+  ],
+  "mcProfiler_scope": [
+    {
+      "variant": "power_v080",
+      "sample": 1,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 16777600.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "power_v080",
+      "sample": 2,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 16777536.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v079",
+      "sample": 1,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 16777632.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v079",
+      "sample": 2,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 16777536.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    }
+  ],
+  "cache": "code objects only, key-only first closure replaced by actual JITKernel; all data recomputed",
+  "promotion": "none; archive candidate only; main originalv28 unchanged",
+  "skipped": {
+    "external_OJ": "not submitted; fullscorespending",
+    "mcTracer": "prior timeout124/headeronly, no new timeline",
+    "ISA": "no working decoder; no disassembly claim",
+    "roofline": "actual sGPU roofs uncalibrated"
+  }
+}
