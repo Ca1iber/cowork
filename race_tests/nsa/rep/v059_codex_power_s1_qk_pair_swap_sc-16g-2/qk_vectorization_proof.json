@@ -1,0 +1,10 @@
+{
+  "global_Q_K_uint4_16B_preserved": true,
+  "Q_K_shared_stores_uint2_8B": [
+    "*(uint2*)(shared + (((((((((int)threadIdx.x) & 15) >> 3) * 1024) + (part * 256)) + ((((int)threadIdx.x) >> 4) * 64)) + (((((int)threadIdx.x) & 7) ^ (((part & 1) * 4) + (((int)threadIdx.x) >> 4))) * 8)) + (((pack ^ (part >> 1)) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack * 4));",
+    "*(uint2*)(shared + (((((((((int)threadIdx.x) & 15) >> 3) * 2048) + (part_1 * 256)) + ((((int)threadIdx.x) >> 4) * 64)) + (((((int)threadIdx.x) & 7) ^ (((part_1 & 1) * 4) + (((int)threadIdx.x) >> 4))) * 8)) + (((pack_1 ^ ((part_1 & 3) >> 1)) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack_1 * 4));"
+  ],
+  "Q_K_consumer_uint2_8B": true,
+  "two_debug_forms_retained": true,
+  "interpretation": "C++ lowering proof, not runtime bank or ISA instruction-count claim"
+}

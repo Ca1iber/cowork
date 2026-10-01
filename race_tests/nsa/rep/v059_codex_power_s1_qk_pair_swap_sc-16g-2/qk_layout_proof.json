@@ -1,0 +1,15 @@
+{
+  "Q_K_slot_bijections": [
+    2048,
+    4096
+  ],
+  "all_4half_consumers_and_stores_contiguous_and_8B_aligned": true,
+  "modeled_operand_word_bank_peak_old": 2,
+  "modeled_operand_word_bank_peak_new": 1,
+  "modeled_new_8B_producer_word_bank_peak": 1,
+  "model_assumptions": "32 banks,4B bank word,16-lane phase; hardware operation splitting unverified; not actual bank-conflict or throughput measurement",
+  "global_Q_K_load_width": "16B unchanged by proposed staging",
+  "shared_Q_K_store_width": "two8B stores replace one16B store",
+  "shared_capacity_halves": 4096,
+  "pointer_domain": "same logical Q16x128/K32x128,global/local bounds from v057; new qk_fetch0..7"
+}

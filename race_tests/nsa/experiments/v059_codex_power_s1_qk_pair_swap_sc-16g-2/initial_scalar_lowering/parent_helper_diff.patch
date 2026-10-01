@@ -1,0 +1,60 @@
+--- race_tests/nsa/experiments/v057_codex_power_s1_proven_bounds_sc-16g-2/s1_kernel.py
++++ race_tests/nsa/experiments/v059_codex_power_s1_qk_pair_swap_sc-16g-2/s1_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v057
++# codex-power v059
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_proven_bounds(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s1_qk_pair_swap(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
+     assert seq_len % block_size == 0
+@@ -21,7 +21,7 @@
+     index_shape = [batch, seq_len, kv_heads, selected_blocks]
+ 
+     def qk_slot(row, col, rows):
+-        return (col // 64) * rows * 64 + row * 64 + (((col % 64) // 8) ^ (row % 8)) * 8 + col % 8
++        return (col // 64) * rows * 64 + row * 64 + (((col % 64) // 8) ^ (row % 8)) * 8 + ((col % 8) ^ ((((row // 8) % 2) ^ (col // 64)) * 4))
+     def v_slot(row, col):
+         return ((col // 64) * 64 + (col % 64) // 8 + 8 * (col % 8)) * 32 + ((row // 2) ^ ((col % 64) // 8) ^ (col % 8)) * 2 + row % 2
+     def out_slot(row, col):
+@@ -39,6 +39,7 @@
+             lane = T.KernelLaunchFrame.Current().get_thread_binding() % 64
+             shared = T.alloc_shared([4096], dtype)
+             q_local = T.alloc_local(32, dtype)
++            qk_fetch = T.alloc_local(8, dtype)
+             k_local = T.alloc_local(4, dtype)
+             scores = T.alloc_local(8, accum_dtype)
+             probabilities = T.alloc_local(8, dtype)
+@@ -59,7 +60,11 @@
+                 for part in T.unroll(4):
+                     for element in T.vectorized(8):
+                         pos = part * 512 + lane * 8 + element
+-                        shared[qk_slot(pos // 128, pos % 128, 16)] = Q[batch_id, token, kv_head * groups + pos // 128, pos % 128]
++                        qk_fetch[element] = Q[batch_id, token, kv_head * groups + pos // 128, pos % 128]
++                    for pack in T.unroll(2):
++                        for element in T.vectorized(4):
++                            pos = part * 512 + lane * 8 + pack * 4 + element
++                            shared[qk_slot(pos // 128, pos % 128, 16)] = qk_fetch[pack * 4 + element]
+                 T.sync_warp()
+                 for chunk in T.serial(8):
+                     for element in T.vectorized(4):
+@@ -68,7 +73,11 @@
+                 for part in T.unroll(8):
+                     for element in T.vectorized(8):
+                         pos = part * 512 + lane * 8 + element
+-                        shared[qk_slot(pos // 128, pos % 128, 32)] = K[batch_id, block_start + pos // 128, kv_head, pos % 128]
++                        qk_fetch[element] = K[batch_id, block_start + pos // 128, kv_head, pos % 128]
++                    for pack in T.unroll(2):
++                        for element in T.vectorized(4):
++                            pos = part * 512 + lane * 8 + pack * 4 + element
++                            shared[qk_slot(pos // 128, pos % 128, 32)] = qk_fetch[pack * 4 + element]
+                 T.sync_warp()
+                 T.fill(scores, 0)
+                 for chunk in T.serial(8):
