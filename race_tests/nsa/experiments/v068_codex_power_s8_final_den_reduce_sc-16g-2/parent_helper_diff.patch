@@ -1,0 +1,35 @@
+--- race_tests/nsa/experiments/v064_codex_power_s8_serial_loop_sc-16g-2/s8_kernel.py
++++ race_tests/nsa/experiments/v068_codex_power_s8_final_den_reduce_sc-16g-2/s8_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v064
++# codex-power v068
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s8_serial_loop(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s8_final_den_reduce(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+@@ -108,8 +108,6 @@
+                     partial_sum[0] = 0
+                     for element in T.unroll(4):
+                         partial_sum[0] += probabilities[element].astype(accum_dtype)
+-                    partial_sum[0] += T.shfl_xor(partial_sum[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF)
+-                    partial_sum[0] += T.shfl_xor(partial_sum[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF)
+                     denominator[0] += partial_sum[0]
+                     T.sync_warp()
+                     fetch_row = (lane // 16) * 4
+@@ -131,6 +129,8 @@
+                             'float16x4', 'float16x4', 'float32x4',
+                             v_operand.data, chunk, probabilities.data, 0, numerator.data, chunk,
+                             dtype='float32x4')
++            denominator[0] += T.shfl_xor(denominator[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF)
++            denominator[0] += T.shfl_xor(denominator[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF)
+             for chunk in T.unroll(4):
+                 for element in T.vectorized(4):
+                     numerator[chunk * 4 + element] /= denominator[0]

@@ -1,0 +1,20 @@
+{
+  "scope": "official C12 input construction symbolic prediction,not measured instruction counter",
+  "B": 4,
+  "L": 1024,
+  "selected_blocks": 8,
+  "valid_blocks_per_batch": 7632,
+  "total_valid_blocks": 30528,
+  "CTA_waves": 4096,
+  "denominator_collectives_parent": 61056,
+  "denominator_collectives_candidate": 8192,
+  "collective_count_change_pct": -86.58280922431865,
+  "same_work": [
+    "QK and PV MFMA per valid block",
+    "query caching",
+    "K/V and output addresses",
+    "all score/max/P/numerator operations and masks"
+  ],
+  "nominal_max_valid_8block_den_collective_change": "16 -> 2 per query wave",
+  "roofline": "Attention QK/PV mathematical FLOPs and tensor traffic unchanged; scalar denominator adds/shuffles decrease. Attainable sGPU roofs uncalibrated;no normalized roof claim"
+}

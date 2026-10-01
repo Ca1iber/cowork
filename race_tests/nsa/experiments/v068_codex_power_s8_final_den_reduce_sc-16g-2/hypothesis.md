@@ -1,0 +1,10 @@
+# v068: final-only denominator lane reduction
+
+Observed evidence: current v064 S8 loop uses two full64-mask denominator shuffles per valid selected block,although denominator is consumed only in final normalization. Alpha/max are already reduced/broadcast identically within four lanes for each query head. Loop-group/first-block variants have not justified replacing v064. Own v039 report was paired-block probability/sum staging with different4.5KiB/layout/anchor context; this proposal keeps v0642KiB/bank97%/runtime loop and does not reuse its kernel algorithm.
+Hypothesis: accumulate/scaled partial denominator independently in each quarter lane,and reduce only after all selected blocks. For head-uniform alpha,sum_l(alpha*d_l+local_p_l)=alpha*sum_l d_l+sum_l p_l,so exact real arithmetic is identical. FP32 summation order changes and must be bounded/reference checked,not assumed bit-identical.
+Mechanism: remove only inner partial_sum shfl_xor32/16;keep local half-P sum and denominator*=alpha/add. Add denominator shfl_xor32/16 once after loop/before normalization. Max/QK/P/PV/numerator/layout/masks/sync/order/proven bounds/arena/C6v060 unchanged.
+Predictions: denominator shuffle pairs8->1 when8valid blocks;global bytes/MMA/work/order unchanged,local denominator recurrence differs onlyFP32 reduction order. Resources/time empirical.
+Falsifier: alpha not query-uniform,algebra/range proof fails,full native reference fails,lowering retains inner denominator reductions,formal C12 does not improve v064,or any other official regresses. No tolerance/input/timing changes or OJ/no-regression waiver.
+Risks: FP32 roundoff/error order,invalid-block skipping and full64-mask convergence,loop/data/control resource changes. Complete officialshape/input/seed0/naive_nsa/W10R50;exact3imports,normal primitives,no async/foreign/manual builtins.
+
+Outcome: C12 local -1.960% versus v064 and -11.515% versus exact v28 under full14; final271 full-reference PASS; off-case4/8/11/14 confirmation remains positive, no promotion, main exact v28. See rep same-ID/report_sc-16g-2.md.

@@ -1,0 +1,13 @@
+{
+  "selected_loop_window": [
+    "  #pragma unroll 1",
+    "  for (int selected = 0; selected < 8; ++selected) {",
+    "    int block_start = (Indices[(((((int)blockIdx.y) * 8192) + (((int)blockIdx.x) * 8)) + selected)] * 16);"
+  ],
+  "per_block_partial_sum_shuffles": 0,
+  "post_loop_denominator_shuffles": [
+    "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));",
+    "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));"
+  ],
+  "scope": "C++ structure andnormal legal loop hint;optimized loop/FP32 numericalgate required"
+}

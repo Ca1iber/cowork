@@ -1,0 +1,9 @@
+{
+  "no_per_block_partial_sum_shuffles": true,
+  "post_loop_denominator_shuffles": [
+    "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));",
+    "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));"
+  ],
+  "P_half_and_all_other_math": "unchanged AST except denominator reduction placement",
+  "scope": "C++ proof,numerical/reference and optimized IR still required"
+}

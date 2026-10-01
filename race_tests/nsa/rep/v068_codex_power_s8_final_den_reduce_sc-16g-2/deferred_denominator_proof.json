@@ -1,0 +1,17 @@
+{
+  "exact_real_induction_checks": 2048,
+  "identity": "sum_l(alpha*d_l+p_l)=alpha*sum_l(d_l)+sum_l(p_l),alpha query-head uniform",
+  "lane_head_groups_preserved_by_xor32_16": true,
+  "P_consumed_FP16_range": [
+    0,
+    256
+  ],
+  "local_partial_den_upper": 8192,
+  "global_den_upper": 32768,
+  "arithmetic_model_gamma64": 3.8147118175957395e-06,
+  "model_only": "standard positive FP32 arithmetic model;not a GPU exp/rounding guarantee",
+  "simulated_positive_f32_relative_delta_max": 1.668213656797737e-07,
+  "simulation_scope": "diagnostic only,not native correctness or changed official inputs",
+  "invalid_blocks": "wholewarp same skipped recurrence,final collectives outside guard full64mask",
+  "all_attention_and_numerator_work": "unchanged,only denominator reduction placement"
+}
