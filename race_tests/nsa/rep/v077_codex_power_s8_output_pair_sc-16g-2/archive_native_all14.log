@@ -1,0 +1,51 @@
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+case 1: {'B': 1, 'SEQ_LEN': 64, 'H': 1, 'HQ': 16, 'D': 32, 'S': 1, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0088 ms
+1 0.008842 PASS
+case 2: {'B': 1, 'SEQ_LEN': 128, 'H': 1, 'HQ': 16, 'D': 64, 'S': 1, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0092 ms
+2 0.009196 PASS
+case 3: {'B': 1, 'SEQ_LEN': 256, 'H': 1, 'HQ': 16, 'D': 128, 'S': 1, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0123 ms
+3 0.012324 PASS
+case 4: {'B': 2, 'SEQ_LEN': 512, 'H': 1, 'HQ': 16, 'D': 64, 'S': 1, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0129 ms
+4 0.012877 PASS
+case 5: {'B': 4, 'SEQ_LEN': 1024, 'H': 1, 'HQ': 16, 'D': 64, 'S': 1, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0313 ms
+5 0.031309 PASS
+case 6: {'B': 8, 'SEQ_LEN': 1024, 'H': 1, 'HQ': 16, 'D': 128, 'S': 1, 'block_size': 32, 'is_causal': True}
+  GPU latency: 0.0943 ms
+6 0.094275 PASS
+case 7: {'B': 1, 'SEQ_LEN': 4096, 'H': 1, 'HQ': 16, 'D': 64, 'S': 1, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0313 ms
+7 0.031324 PASS
+case 8: {'B': 2, 'SEQ_LEN': 4096, 'H': 1, 'HQ': 16, 'D': 64, 'S': 1, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0520 ms
+8 0.052014 PASS
+case 9: {'B': 1, 'SEQ_LEN': 8192, 'H': 1, 'HQ': 16, 'D': 64, 'S': 1, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0523 ms
+9 0.052301 PASS
+case 10: {'B': 1, 'SEQ_LEN': 256, 'H': 1, 'HQ': 16, 'D': 64, 'S': 2, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0120 ms
+10 0.011981 PASS
+case 11: {'B': 2, 'SEQ_LEN': 512, 'H': 1, 'HQ': 16, 'D': 64, 'S': 4, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0234 ms
+11 0.023393 PASS
+case 12: {'B': 4, 'SEQ_LEN': 1024, 'H': 1, 'HQ': 16, 'D': 64, 'S': 8, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0721 ms
+12 0.072146 PASS
+case 13: {'B': 1, 'SEQ_LEN': 256, 'H': 2, 'HQ': 32, 'D': 64, 'S': 1, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0108 ms
+13 0.010803 PASS
+case 14: {'B': 2, 'SEQ_LEN': 512, 'H': 2, 'HQ': 32, 'D': 64, 'S': 1, 'block_size': 16, 'is_causal': True}
+  GPU latency: 0.0201 ms
+14 0.020147 PASS

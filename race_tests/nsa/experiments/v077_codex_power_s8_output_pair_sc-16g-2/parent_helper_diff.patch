@@ -1,0 +1,47 @@
+--- race_tests/nsa/experiments/v068_codex_power_s8_final_den_reduce_sc-16g-2/s8_kernel.py
++++ race_tests/nsa/experiments/v077_codex_power_s8_output_pair_sc-16g-2/s8_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v068
++# codex-power v077
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s8_final_den_reduce(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s8_output_pair(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+@@ -22,7 +22,7 @@
+     def qk_slot(row, col):
+         return row * 64 + ((col // 8) ^ (row % 8)) * 8 + (((col // 4) % 2) ^ ((row // 8) % 2) ^ (row % 2)) * 4 + col % 4
+     def out_slot(row, col):
+-        return row * 64 + ((col // 8) ^ (row % 8)) * 8 + col % 8
++        return row * 64 + ((col // 8) ^ (row % 8)) * 8 + (((col // 4) % 2) ^ ((row // 8) % 2)) * 4 + col % 4
+     def v_slot(row, col):
+         return (col // 4 + 16 * (col % 4)) * 16 + ((row // 4) ^ (col // 16) ^ (col % 4)) * 4 + row % 4
+ 
+@@ -52,6 +52,7 @@
+             v_fetch = T.alloc_local(16, dtype)
+             v_column = T.alloc_local(4, dtype)
+             v_operand = T.alloc_local(16, dtype)
++            output_fetch = T.alloc_local(8, dtype)
+             for part in T.unroll(2):
+                 for element in T.vectorized(8):
+                     pos = part * 512 + lane * 8 + element
+@@ -141,7 +142,11 @@
+                     shared[out_slot(lane % 16, feature)] = numerator[chunk * 4 + element]
+             T.sync_warp()
+             for part in T.unroll(2):
++                for pack in T.unroll(2):
++                    pos = part * 512 + lane * 8 + pack * 4
++                    for element in T.vectorized(4):
++                        output_fetch[pack * 4 + element] = shared[out_slot(pos // 64, pos % 64) + element]
+                 for element in T.vectorized(8):
+                     pos = part * 512 + lane * 8 + element
+-                    Output[batch_id, token, kv_head * groups + pos // 64, pos % 64] = shared[out_slot(pos // 64, pos % 64)]
++                    Output[batch_id, token, kv_head * groups + pos // 64, pos % 64] = output_fetch[element]
+     return native_sparse_attention

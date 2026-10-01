@@ -1,0 +1,5 @@
+from pathlib import Path
+import csv,json,statistics
+r=Path('/root/tilelang-metax/race_tests/nsa/rep/v077_codex_power_s8_output_pair_sc-16g-2');rows=list(csv.DictReader((r/'paired_case12_sc-16g-2.csv').open()));assert len(rows)==12 and all(x['case']=='12' and x['status']=='PASS' for x in rows)
+labels=['baseline_v28','parent_v076','power_v077'];vals={k:[float(x['latency_ms'])*1000 for x in rows if x['variant']==k] for k in labels};assert all(len(v)==4 for v in vals.values());s={k:{'us_values':v,'median_us':statistics.median(v),'min_us':min(v),'max_us':max(v)} for k,v in vals.items()}
+s['candidate_vs_v28_pct']=(s['power_v077']['median_us']/s['baseline_v28']['median_us']-1)*100;s['candidate_vs_parent_pct']=(s['power_v077']['median_us']/s['parent_v076']['median_us']-1)*100;s['candidate_range_all_below_parent']=max(vals['power_v077'])<min(vals['parent_v076']);s['candidate_reference_checks']=4;s['experiment_reference_checks']=12;s['all_samples_retained']=True;(r/'paired_summary.json').write_text(json.dumps(s,indent=2)+'\n');print(s)

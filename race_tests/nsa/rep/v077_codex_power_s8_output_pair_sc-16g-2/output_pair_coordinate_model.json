@@ -1,0 +1,22 @@
+{
+  "out_bijection": 1024,
+  "complete_unique_producer_consumer": 1024,
+  "producer4half_8Baligned_contiguous": true,
+  "two8Bgather_restores_original8halforder": true,
+  "output_FP16_bits": "same round-beforestore,copy only",
+  "output_fetch_bounds": [
+    0,
+    7
+  ],
+  "sharedbounds": [
+    0,
+    1023
+  ],
+  "all_input_bounds": "exact68unchanged",
+  "bank_assumption": "32banks4B/16lane8Bphase only,not hardwareguarantee",
+  "model_max_bank_requests": {
+    "old": 2,
+    "new": 1
+  },
+  "required": "normalCPP widths/resources and originalnative"
+}

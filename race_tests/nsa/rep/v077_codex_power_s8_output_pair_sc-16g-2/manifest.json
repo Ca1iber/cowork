@@ -1,0 +1,1084 @@
+{
+  "version": "v077_codex_power_s8_output_pair_sc-16g-2",
+  "status": "inconclusive_no_regression_not_demonstrated_external_oj_pending",
+  "closed_utc": "2026-10-01T21:39:21.536210+00:00",
+  "start": {
+    "utc": "2026-10-01T20:59:10.189190+00:00",
+    "version": "v077_codex_power_s8_output_pair_sc-16g-2",
+    "head": "dc664bf866097ce0720ed630a582a409c30cd40a",
+    "branch": "codex-power-v28-base",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent_v076_sha256": "d24e9391e40ae13191a35e0ee6ab13fe74f74538462eff25c005c0a40084674f"
+  },
+  "source_sha256": "dbaef6b0da5f503742805b07b802168d3f02e5c3aef1e8bffaddd909438d43de",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "native_reference_checks": {
+    "candidate_label": "power_v077",
+    "candidate_checks": 107,
+    "experiment_checks_with_controls": 291,
+    "rows": [
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v077_codex_power_s8_output_pair_sc-16g-2/archive_native_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 14,
+        "candidate_checks": 14,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v077_codex_power_s8_output_pair_sc-16g-2/paired_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 168,
+        "candidate_checks": 56,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v077_codex_power_s8_output_pair_sc-16g-2/paired_case12_sc-16g-2.csv",
+        "experiment_checks_with_controls": 12,
+        "candidate_checks": 4,
+        "candidate_cases": [
+          12
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v077_codex_power_s8_output_pair_sc-16g-2/paired_risk_sc-16g-2.csv",
+        "experiment_checks_with_controls": 96,
+        "candidate_checks": 32,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          10,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v077_codex_power_s8_output_pair_sc-16g-2/screen_case12_sc-16g-2.csv",
+        "experiment_checks_with_controls": 1,
+        "candidate_checks": 1,
+        "candidate_cases": [
+          12
+        ]
+      }
+    ]
+  },
+  "paired": {
+    "baseline_v28": {
+      "us_values": [
+        89.17999999999999,
+        83.14399999999999,
+        83.077,
+        83.17399999999999
+      ],
+      "median_us": 83.15899999999999,
+      "min_us": 83.077,
+      "max_us": 89.17999999999999
+    },
+    "parent_v076": {
+      "us_values": [
+        73.682,
+        73.80000000000001,
+        73.779,
+        73.795
+      ],
+      "median_us": 73.787,
+      "min_us": 73.682,
+      "max_us": 73.80000000000001
+    },
+    "power_v077": {
+      "us_values": [
+        72.294,
+        72.172,
+        72.212,
+        72.248
+      ],
+      "median_us": 72.23,
+      "min_us": 72.172,
+      "max_us": 72.294
+    },
+    "candidate_vs_v28_pct": -13.14229367837515,
+    "candidate_vs_parent_pct": -2.110127800290029,
+    "candidate_range_all_below_parent": true,
+    "candidate_reference_checks": 4,
+    "experiment_reference_checks": 12,
+    "all_samples_retained": true
+  },
+  "codegen": {
+    "source_sha256": "dbaef6b0da5f503742805b07b802168d3f02e5c3aef1e8bffaddd909438d43de",
+    "static_MMA": 8,
+    "MT": 80,
+    "ST": 22,
+    "stack_bytes": 0,
+    "static_max_warps_peu": 6,
+    "private_allocas": [],
+    "shared_bytes": 2048,
+    "threads": 64,
+    "CTA_grid": [
+      1024,
+      4
+    ],
+    "waves": 4096,
+    "runtime_loop": true,
+    "caution": "output bankmodel not exclusive metric;staticmaxnotoccupancy"
+  },
+  "integer_identity": {
+    "restored_helperASTexact68": true,
+    "only_change": "outslot lowcolpair swap andtwo8Bgather",
+    "allattention_math_inputs_softmax_loop": "unchanged",
+    "outputrounding": "same float32tofloat16 beforecopy;no new arithmetic",
+    "extra_local_half_buffer": 8
+  },
+  "V_mapping_bank_model": {
+    "out_bijection": 1024,
+    "complete_unique_producer_consumer": 1024,
+    "producer4half_8Baligned_contiguous": true,
+    "two8Bgather_restores_original8halforder": true,
+    "output_FP16_bits": "same round-beforestore,copy only",
+    "output_fetch_bounds": [
+      0,
+      7
+    ],
+    "sharedbounds": [
+      0,
+      1023
+    ],
+    "all_input_bounds": "exact68unchanged",
+    "bank_assumption": "32banks4B/16lane8Bphase only,not hardwareguarantee",
+    "model_max_bank_requests": {
+      "old": 2,
+      "new": 1
+    },
+    "required": "normalCPP widths/resources and originalnative"
+  },
+  "mcProfiler": [
+    {
+      "variant": "power_v077",
+      "sample": 1,
+      "waves": 4096.0,
+      "achieved_waves_raw": 4055.0,
+      "l2_hit_pct": 87.43,
+      "read_bytes": 9557408.0,
+      "write_bytes": 8388928.0,
+      "mte_pct": 75.39,
+      "mma_pct": 13.0,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "load_latency_cycles": 50.41,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "power_v077",
+      "sample": 2,
+      "waves": 4096.0,
+      "achieved_waves_raw": 4057.0,
+      "l2_hit_pct": 87.43,
+      "read_bytes": 9557152.0,
+      "write_bytes": 8388928.0,
+      "mte_pct": 75.14,
+      "mma_pct": 12.96,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "load_latency_cycles": 50.44,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "parent_v076",
+      "sample": 1,
+      "waves": 4096.0,
+      "achieved_waves_raw": 4056.0,
+      "l2_hit_pct": 87.43,
+      "read_bytes": 9557152.0,
+      "write_bytes": 8388928.0,
+      "mte_pct": 73.63,
+      "mma_pct": 12.72,
+      "shared_nonconflict_pct": 97.29,
+      "conflict_cycles": 0.11,
+      "load_latency_cycles": 49.77,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "parent_v076",
+      "sample": 2,
+      "waves": 4096.0,
+      "achieved_waves_raw": 4055.0,
+      "l2_hit_pct": 87.43,
+      "read_bytes": 9557408.0,
+      "write_bytes": 8388928.0,
+      "mte_pct": 73.93,
+      "mma_pct": 12.77,
+      "shared_nonconflict_pct": 97.29,
+      "conflict_cycles": 0.11,
+      "load_latency_cycles": 49.78,
+      "unavailable_raw": {}
+    }
+  ],
+  "mcProfiler_scope": [
+    {
+      "variant": "power_v077",
+      "sample": 1,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "observed_write_bytes": 8388928.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "power_v077",
+      "sample": 2,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "observed_write_bytes": 8388928.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v076",
+      "sample": 1,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "observed_write_bytes": 8388928.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v076",
+      "sample": 2,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "observed_write_bytes": 8388928.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    }
+  ],
+  "machine_text": {
+    "command_scope": "same mxcc -device-obj O3/lineinfo/use-fast-math C12 resource capture",
+    "sections": {
+      "parent_v068": {
+        ".text": {
+          "bytes": 4864,
+          "sha256": "b35d32cb4e90352c4eefcb7c15cbe5aeca26727d6dd5422c036e87c3294cfa70"
+        }
+      },
+      "power_v077": {
+        ".text": {
+          "bytes": 4864,
+          "sha256": "ddd3e19d3477093cbc8cca9b3cce4d81f5026a7922101fe2a69a60a16332f626"
+        }
+      }
+    },
+    "limitations": "binary section comparison is not ISA decoding;same CLI flags/normal source export required;not a timing waiver",
+    "text_sections_identical": false
+  },
+  "skipped": {
+    "external_OJ": "not submitted,actualscorespending",
+    "mcTracer": "prior124/headeronly failure,no new timeline",
+    "ISA_decode": "unavailable;machine text is not disassembly",
+    "roofline": "actual sGPU roofs uncalibrated"
+  },
+  "cache": "code objects only,all attention content recomputed",
+  "promotion": "none;root v28 and pending64/68 unchanged",
+  "job_state": "known codegen/compiler/native groups terminal;no unowned kills",
+  "full14": {
+    "correctness": "168/168 full native naive_nsa PASS; warmup10/repeat50",
+    "all_observations_retained": true,
+    "positive_medians_are_not_waived_as_noise": true,
+    "cases": [
+      {
+        "case": 1,
+        "samples_us": {
+          "baseline_v28": [
+            9.155,
+            9.288,
+            9.231,
+            9.17
+          ],
+          "parent_v076": [
+            8.713999999999999,
+            8.806,
+            8.796,
+            8.74
+          ],
+          "power_v077": [
+            9.257,
+            8.873000000000001,
+            9.19,
+            8.74
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 9.2005,
+          "parent_v076": 8.768,
+          "power_v077": 9.031500000000001
+        },
+        "candidate_vs_v28_pct": -1.8368566925710428,
+        "candidate_vs_parent_pct": 3.005246350364965
+      },
+      {
+        "case": 2,
+        "samples_us": {
+          "baseline_v28": [
+            9.738,
+            9.6,
+            9.636000000000001,
+            9.533
+          ],
+          "parent_v076": [
+            9.216000000000001,
+            9.594999999999999,
+            9.655999999999999,
+            9.6
+          ],
+          "power_v077": [
+            9.841000000000001,
+            9.559,
+            9.626,
+            9.667
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 9.618,
+          "parent_v076": 9.5975,
+          "power_v077": 9.6465
+        },
+        "candidate_vs_v28_pct": 0.2963194011228909,
+        "candidate_vs_parent_pct": 0.5105496222974626
+      },
+      {
+        "case": 3,
+        "samples_us": {
+          "baseline_v28": [
+            12.657,
+            12.314,
+            12.328999999999999,
+            12.36
+          ],
+          "parent_v076": [
+            12.328999999999999,
+            12.364999999999998,
+            12.375,
+            12.416
+          ],
+          "power_v077": [
+            12.645999999999999,
+            12.431,
+            12.355,
+            12.302999999999999
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 12.3445,
+          "parent_v076": 12.37,
+          "power_v077": 12.393
+        },
+        "candidate_vs_v28_pct": 0.39288752075823385,
+        "candidate_vs_parent_pct": 0.18593371059014707
+      },
+      {
+        "case": 4,
+        "samples_us": {
+          "baseline_v28": [
+            12.882,
+            12.805,
+            12.826,
+            12.902000000000001
+          ],
+          "parent_v076": [
+            13.0,
+            12.79,
+            12.81,
+            12.764
+          ],
+          "power_v077": [
+            13.082,
+            12.831,
+            13.02,
+            12.954
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 12.854,
+          "parent_v076": 12.8,
+          "power_v077": 12.987
+        },
+        "candidate_vs_v28_pct": 1.0346973704683515,
+        "candidate_vs_parent_pct": 1.4609375000000036
+      },
+      {
+        "case": 5,
+        "samples_us": {
+          "baseline_v28": [
+            30.981,
+            31.697999999999997,
+            31.616,
+            31.493
+          ],
+          "parent_v076": [
+            31.635999999999996,
+            31.002,
+            31.538999999999998,
+            31.585
+          ],
+          "power_v077": [
+            31.811,
+            31.206,
+            31.503000000000004,
+            31.606
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 31.554499999999997,
+          "parent_v076": 31.561999999999998,
+          "power_v077": 31.554500000000004
+        },
+        "candidate_vs_v28_pct": 2.220446049250313e-14,
+        "candidate_vs_parent_pct": -0.0237627526772477
+      },
+      {
+        "case": 6,
+        "samples_us": {
+          "baseline_v28": [
+            156.95899999999997,
+            156.815,
+            156.718,
+            156.754
+          ],
+          "parent_v076": [
+            94.116,
+            94.04899999999999,
+            94.029,
+            94.08999999999999
+          ],
+          "power_v077": [
+            94.08500000000001,
+            93.752,
+            94.152,
+            94.336
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 156.78449999999998,
+          "parent_v076": 94.06949999999999,
+          "power_v077": 94.11850000000001
+        },
+        "candidate_vs_v28_pct": -39.969512292350316,
+        "candidate_vs_parent_pct": 0.05208914685421728
+      },
+      {
+        "case": 7,
+        "samples_us": {
+          "baseline_v28": [
+            30.991,
+            31.503000000000004,
+            31.420999999999996,
+            30.966
+          ],
+          "parent_v076": [
+            31.401,
+            30.852999999999998,
+            31.401,
+            31.406000000000002
+          ],
+          "power_v077": [
+            30.971,
+            31.104,
+            30.925,
+            31.212
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 31.205999999999996,
+          "parent_v076": 31.401,
+          "power_v077": 31.0375
+        },
+        "candidate_vs_v28_pct": -0.5399602640517642,
+        "candidate_vs_parent_pct": -1.157606445654591
+      },
+      {
+        "case": 8,
+        "samples_us": {
+          "baseline_v28": [
+            52.403,
+            52.454,
+            51.948,
+            51.922000000000004
+          ],
+          "parent_v076": [
+            52.511,
+            52.076,
+            52.429,
+            52.009
+          ],
+          "power_v077": [
+            52.086,
+            52.019000000000005,
+            52.009,
+            51.922000000000004
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 52.1755,
+          "parent_v076": 52.2525,
+          "power_v077": 52.014
+        },
+        "candidate_vs_v28_pct": -0.3095322517273402,
+        "candidate_vs_parent_pct": -0.4564374910291269
+      },
+      {
+        "case": 9,
+        "samples_us": {
+          "baseline_v28": [
+            52.296,
+            51.916999999999994,
+            51.804,
+            52.040000000000006
+          ],
+          "parent_v076": [
+            52.331999999999994,
+            51.916999999999994,
+            51.958,
+            51.85
+          ],
+          "power_v077": [
+            52.013999999999996,
+            51.916999999999994,
+            51.825,
+            51.927
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 51.9785,
+          "parent_v076": 51.9375,
+          "power_v077": 51.922
+        },
+        "candidate_vs_v28_pct": -0.10869878892234563,
+        "candidate_vs_parent_pct": -0.02984356197353044
+      },
+      {
+        "case": 10,
+        "samples_us": {
+          "baseline_v28": [
+            12.052,
+            12.042,
+            12.032,
+            12.109
+          ],
+          "parent_v076": [
+            11.996,
+            12.022,
+            12.149999999999999,
+            12.252
+          ],
+          "power_v077": [
+            12.047,
+            12.109,
+            12.073,
+            12.073
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 12.047,
+          "parent_v076": 12.085999999999999,
+          "power_v077": 12.073
+        },
+        "candidate_vs_v28_pct": 0.21582136631526083,
+        "candidate_vs_parent_pct": -0.10756246897234423
+      },
+      {
+        "case": 11,
+        "samples_us": {
+          "baseline_v28": [
+            23.511,
+            23.322,
+            23.537,
+            23.409
+          ],
+          "parent_v076": [
+            23.091,
+            23.419,
+            23.46,
+            23.424
+          ],
+          "power_v077": [
+            23.387999999999998,
+            23.485,
+            23.331999999999997,
+            23.387999999999998
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 23.46,
+          "parent_v076": 23.4215,
+          "power_v077": 23.387999999999998
+        },
+        "candidate_vs_v28_pct": -0.3069053708440017,
+        "candidate_vs_parent_pct": -0.1430309758128412
+      },
+      {
+        "case": 12,
+        "samples_us": {
+          "baseline_v28": [
+            83.702,
+            83.635,
+            83.99900000000001,
+            83.804
+          ],
+          "parent_v076": [
+            73.81500000000001,
+            73.86099999999999,
+            72.70400000000001,
+            73.86099999999999
+          ],
+          "power_v077": [
+            72.15100000000001,
+            72.218,
+            72.12,
+            72.074
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 83.753,
+          "parent_v076": 73.838,
+          "power_v077": 72.13550000000001
+        },
+        "candidate_vs_v28_pct": -13.87114491421202,
+        "candidate_vs_parent_pct": -2.3057233402854704
+      },
+      {
+        "case": 13,
+        "samples_us": {
+          "baseline_v28": [
+            10.947000000000001,
+            10.911000000000001,
+            10.757,
+            10.757
+          ],
+          "parent_v076": [
+            11.187000000000001,
+            10.788,
+            10.803,
+            11.197000000000001
+          ],
+          "power_v077": [
+            10.89,
+            11.546000000000001,
+            10.812999999999999,
+            10.767000000000001
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 10.834,
+          "parent_v076": 10.995000000000001,
+          "power_v077": 10.8515
+        },
+        "candidate_vs_v28_pct": 0.1615285213217632,
+        "candidate_vs_parent_pct": -1.3051386994088365
+      },
+      {
+        "case": 14,
+        "samples_us": {
+          "baseline_v28": [
+            20.096,
+            20.049999999999997,
+            20.255,
+            20.152
+          ],
+          "parent_v076": [
+            20.122,
+            20.105999999999998,
+            20.136999999999997,
+            20.096
+          ],
+          "power_v077": [
+            20.198,
+            20.25,
+            20.285,
+            20.157
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 20.124000000000002,
+          "parent_v076": 20.113999999999997,
+          "power_v077": 20.224
+        },
+        "candidate_vs_v28_pct": 0.496919101570259,
+        "candidate_vs_parent_pct": 0.5468827682211463
+      }
+    ]
+  },
+  "risk_confirmation": {
+    "reference": "96/96 full native naive_nsa,W10/R50 PASS",
+    "source": "exact archive v068",
+    "all_observations_retained": true,
+    "cases": [
+      {
+        "case": 1,
+        "samples_us": {
+          "baseline_v28": [
+            8.822,
+            8.786,
+            9.738,
+            8.776000000000002
+          ],
+          "parent_v076": [
+            8.786,
+            8.852,
+            8.806,
+            8.827
+          ],
+          "power_v077": [
+            9.733,
+            9.691999999999998,
+            8.801,
+            9.216000000000001
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 8.803999999999998,
+          "parent_v076": 8.8165,
+          "power_v077": 9.454
+        },
+        "candidate_vs_v28_pct": 7.383007723761947
+      },
+      {
+        "case": 2,
+        "samples_us": {
+          "baseline_v28": [
+            9.452,
+            9.354,
+            9.221,
+            9.37
+          ],
+          "parent_v076": [
+            9.564,
+            9.288,
+            9.196,
+            10.112
+          ],
+          "power_v077": [
+            9.257,
+            9.231,
+            10.116999999999999,
+            9.19
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 9.361999999999998,
+          "parent_v076": 9.426,
+          "power_v077": 9.244
+        },
+        "candidate_vs_v28_pct": -1.2604144413586704
+      },
+      {
+        "case": 3,
+        "samples_us": {
+          "baseline_v28": [
+            12.288,
+            12.406,
+            12.349,
+            12.385
+          ],
+          "parent_v076": [
+            12.334,
+            12.344000000000001,
+            12.267999999999999,
+            12.421
+          ],
+          "power_v077": [
+            12.338999999999999,
+            12.385,
+            14.479000000000001,
+            12.375
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 12.367,
+          "parent_v076": 12.339,
+          "power_v077": 12.379999999999999
+        },
+        "candidate_vs_v28_pct": 0.10511846041885153
+      },
+      {
+        "case": 4,
+        "samples_us": {
+          "baseline_v28": [
+            12.78,
+            12.667,
+            12.79,
+            12.636
+          ],
+          "parent_v076": [
+            12.739,
+            12.645999999999999,
+            12.645999999999999,
+            12.749
+          ],
+          "power_v077": [
+            12.831,
+            13.082,
+            12.605,
+            12.732999999999999
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 12.7235,
+          "parent_v076": 12.692499999999999,
+          "power_v077": 12.782
+        },
+        "candidate_vs_v28_pct": 0.4597791488191172
+      },
+      {
+        "case": 6,
+        "samples_us": {
+          "baseline_v28": [
+            156.385,
+            156.145,
+            156.605,
+            156.411
+          ],
+          "parent_v076": [
+            94.15700000000001,
+            94.454,
+            94.65899999999999,
+            94.034
+          ],
+          "power_v077": [
+            94.269,
+            94.28999999999999,
+            94.341,
+            94.264
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 156.398,
+          "parent_v076": 94.3055,
+          "power_v077": 94.2795
+        },
+        "candidate_vs_v28_pct": -39.718218903055025
+      },
+      {
+        "case": 10,
+        "samples_us": {
+          "baseline_v28": [
+            11.868,
+            11.878,
+            11.843,
+            11.847999999999999
+          ],
+          "parent_v076": [
+            11.847999999999999,
+            11.868,
+            11.817,
+            11.955
+          ],
+          "power_v077": [
+            11.847999999999999,
+            11.884,
+            11.904,
+            11.981
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 11.858,
+          "parent_v076": 11.858,
+          "power_v077": 11.894
+        },
+        "candidate_vs_v28_pct": 0.30359251138472043
+      },
+      {
+        "case": 13,
+        "samples_us": {
+          "baseline_v28": [
+            11.105,
+            10.639,
+            10.701,
+            10.725999999999999
+          ],
+          "parent_v076": [
+            11.254,
+            10.655,
+            10.629,
+            10.619
+          ],
+          "power_v077": [
+            10.583,
+            10.609,
+            10.644,
+            10.624
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 10.7135,
+          "parent_v076": 10.642,
+          "power_v077": 10.6165
+        },
+        "candidate_vs_v28_pct": -0.905399729313483
+      },
+      {
+        "case": 14,
+        "samples_us": {
+          "baseline_v28": [
+            19.630000000000003,
+            19.722,
+            19.681,
+            19.784
+          ],
+          "parent_v076": [
+            19.896,
+            19.697,
+            19.753,
+            19.686
+          ],
+          "power_v077": [
+            19.661,
+            19.651,
+            19.64,
+            19.753
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 19.701500000000003,
+          "parent_v076": 19.725,
+          "power_v077": 19.656
+        },
+        "candidate_vs_v28_pct": -0.23094688221710902
+      }
+    ]
+  },
+  "metadata_retry": {
+    "initial_exit": 137,
+    "cause": "unproven,no beforememorysnapshot",
+    "initial_raw": "initial_export_exit137",
+    "new_mode": "14freshpercase/same3sources,42records",
+    "native_benchmark_changed": false,
+    "memory": {
+      "samples": 613,
+      "peak_owned_rss_kib": 24357388,
+      "oom_before": "oom_kill_disable 0\nunder_oom 0\noom_kill 4\n",
+      "oom_after": "oom_kill_disable 0\nunder_oom 0\noom_kill 4\n",
+      "scope": "ownedPGID,late start,not benchmark modification"
+    }
+  },
+  "sameprocess_source_identity": {
+    "scope": "percase freshprocess/same3sources,42records",
+    "sources": {
+      "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+      "power_v077": "dbaef6b0da5f503742805b07b802168d3f02e5c3aef1e8bffaddd909438d43de",
+      "parent_v076": "d24e9391e40ae13191a35e0ee6ab13fe74f74538462eff25c005c0a40084674f"
+    },
+    "12non_targets_exact_v28": true,
+    "13nonC12_exact76": true,
+    "attention_execution": false,
+    "initial_exit137": "preserved;causeunproven;no formalnative reruns",
+    "performance_gate": "identitynotregression waiver"
+  },
+  "reference_count_scope": {
+    "candidate_label": "power_v077",
+    "candidate_checks": 107,
+    "experiment_checks_with_controls": 291,
+    "rows": [
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v077_codex_power_s8_output_pair_sc-16g-2/archive_native_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 14,
+        "candidate_checks": 14,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v077_codex_power_s8_output_pair_sc-16g-2/paired_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 168,
+        "candidate_checks": 56,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v077_codex_power_s8_output_pair_sc-16g-2/paired_case12_sc-16g-2.csv",
+        "experiment_checks_with_controls": 12,
+        "candidate_checks": 4,
+        "candidate_cases": [
+          12
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v077_codex_power_s8_output_pair_sc-16g-2/paired_risk_sc-16g-2.csv",
+        "experiment_checks_with_controls": 96,
+        "candidate_checks": 32,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          10,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v077_codex_power_s8_output_pair_sc-16g-2/screen_case12_sc-16g-2.csv",
+        "experiment_checks_with_controls": 1,
+        "candidate_checks": 1,
+        "candidate_cases": [
+          12
+        ]
+      }
+    ]
+  }
+}
