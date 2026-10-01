@@ -1,0 +1,26 @@
+--- race_tests/nsa/experiments/v060_codex_power_s1_output_pair_swap_sc-16g-2/s1_kernel.py
++++ race_tests/nsa/experiments/v074_codex_power_s1_blockstart_broadcast_sc-16g-2/s1_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v060
++# codex-power v074
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_output_pair_swap(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s1_blockstart_broadcast(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
+     assert seq_len % block_size == 0
+@@ -55,7 +55,7 @@
+                     forward_thread_fn=lambda head, col: head + 16 * ((col % 16) // 4),
+                     forward_index_fn=lambda head, col: col % 4 + 4 * (col // 16)),
+             })
+-            block_start = Indices[batch_id, token, kv_head, 0] * block_size
++            block_start = T.shfl_sync(Indices[batch_id, token, kv_head, 0] * block_size, 0, width=64, mask=0xFFFFFFFFFFFFFFFF)
+             denominator[0] = 0
+             if block_start >= 0 and block_start <= token:
+                 for part in T.unroll(4):

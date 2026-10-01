@@ -1,0 +1,116 @@
+{
+  "version": "v074_codex_power_s1_blockstart_broadcast_sc-16g-2",
+  "status": "rejected_target_regression_no_MT_benefit",
+  "closed_utc": "2026-10-01T20:01:23.823918+00:00",
+  "start": {
+    "utc": "2026-10-01T19:50:38.392623+00:00",
+    "version": "v074_codex_power_s1_blockstart_broadcast_sc-16g-2",
+    "head": "2804c78f813e1b67e2f0adb1838904b93f937143",
+    "branch": "codex-power-v28-base",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent_v068_sha256": "589d4ca2c5f82f97581cfb3f82eca96ad81c4c49b8624c60326eac0e34b14949"
+  },
+  "source_sha256": "6579fb85cded6e02ae7039631a9c33ef289b665cea8080e2cf16e5a098b1efe8",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "native_reference_checks": "13 selected C6 full naive_nsa PASS,W10/R50;no all14 correctness claim",
+  "paired": {
+    "baseline_v28": {
+      "us_values": [
+        156.856,
+        157.266,
+        156.87699999999998,
+        156.35999999999999
+      ],
+      "median_us": 156.86649999999997,
+      "min_us": 156.35999999999999,
+      "max_us": 157.266
+    },
+    "parent_v068": {
+      "us_values": [
+        95.606,
+        95.406,
+        95.626,
+        95.171
+      ],
+      "median_us": 95.506,
+      "min_us": 95.171,
+      "max_us": 95.626
+    },
+    "power_v074": {
+      "us_values": [
+        97.618,
+        97.58200000000001,
+        97.638,
+        97.56700000000001
+      ],
+      "median_us": 97.6,
+      "min_us": 97.56700000000001,
+      "max_us": 97.638
+    },
+    "candidate_vs_v28_pct": -37.78148935559854,
+    "candidate_vs_parent_pct": 2.1925324063409635,
+    "candidate_range_all_below_parent": false,
+    "correctness": "12/12 full native naive_nsa,W10/R50 PASS",
+    "all_samples_retained": true
+  },
+  "codegen": {
+    "source_sha256": "6579fb85cded6e02ae7039631a9c33ef289b665cea8080e2cf16e5a098b1efe8",
+    "static_MMA": 32,
+    "fdiv": 32,
+    "MT": 100,
+    "ST": 24,
+    "stack_bytes": 0,
+    "static_max_warps_peu": 4,
+    "private_allocas": [],
+    "shared_bytes": 8192,
+    "threads": 64,
+    "CTA_grid": [
+      1024,
+      8
+    ],
+    "waves": 8192,
+    "caution": "allocation effects and staticlimit do not establish actual occupancy or latency"
+  },
+  "integer_identity": {
+    "normalized_full_helper_AST_exact_parent": true,
+    "indices_read_address": "one perquery,same for64lanes",
+    "no_writes_Indices": true,
+    "all64lanes_active_before_validbranch": true,
+    "source_lane0_value_equals_every_original_lane": true,
+    "width": 64,
+    "full64mask": true,
+    "sourcevalues": "original int32 Indices*32 expression,no change",
+    "allbounds_layout_math_and_order": "unchanged",
+    "original_proof_path": "race_tests/nsa/rep/v060_codex_power_s1_output_pair_swap_sc-16g-2/bounded_access_proof.json",
+    "original_proof_sha256": "42c509f3ecc496da5f102f363fed20c80654def83c4a9a477b37fe0d4e1c72a7",
+    "compiler_uniformity_effect": "unproven until codegen/resources/native"
+  },
+  "machine_text": {
+    "command_scope": "same mxcc -device-obj O3/lineinfo/use-fast-math C6 resource capture",
+    "sections": {
+      "parent_v060": {
+        ".text": {
+          "bytes": 8448,
+          "sha256": "d2972f80a1d713b8d598e1298cf6422bb78193f26c13334390325bb086d81538"
+        }
+      },
+      "power_v074": {
+        ".text": {
+          "bytes": 8704,
+          "sha256": "4a73cdd56cedff3bd61c3ad773342e049a245915004120b73218e1c3a5d672dd"
+        }
+      }
+    },
+    "limitations": "binary section comparison is not ISA decoding;same CLI flags/normal source export required;not a timing waiver",
+    "text_sections_identical": false
+  },
+  "skipped": {
+    "full14_risk_OJ": "MT100 unchanged,ST24,target2.193percent slower;not promoted",
+    "mcProfiler_mcTracer": "clear targetregression,fresh70 referenced,not current74 counters",
+    "ISA_decode": "unavailable;ELF section comparison is not disassembly",
+    "roofline": "actual sGPU roofs uncalibrated"
+  },
+  "cache": "code objects only,all attention content recomputed",
+  "promotion": "none;root v28 and pending64/68 unchanged",
+  "job_state": "known codegen/compiler/native groups terminal;no unowned kills"
+}
