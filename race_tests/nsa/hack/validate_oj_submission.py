@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate imports and the TileLang-only MetaX MoE OJ kernel contract."""
+"""Validate imports and the TileLang-only MetaX NSA OJ kernel contract."""
 
 from __future__ import annotations
 
@@ -158,6 +158,29 @@ def validate_generated_code(paths: list[Path]) -> list[str]:
     return errors
 
 
+def validate_nsa_contract(tree: ast.AST) -> list[str]:
+    errors = []
+    expected = sorted(['import tilelang', 'import tilelang.language as T', 'from tilelang.layout import make_swizzled_layout'])
+    imports = sorted(ast.unparse(n) for n in ast.walk(tree) if isinstance(n, (ast.Import, ast.ImportFrom)))
+    if imports != expected:
+        errors.append('NSA requires exactly the three agreed TileLang imports')
+    parents = {child: node for node in ast.walk(tree) for child in ast.iter_child_nodes(node)}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.ClassDef):
+            parent = parents.get(node)
+            inside = False
+            while parent is not None:
+                if isinstance(parent, (ast.FunctionDef, ast.AsyncFunctionDef)) and parent.name == 'run_kernel':
+                    inside = True
+                parent = parents.get(parent)
+            if not inside:
+                errors.append(f'line {node.lineno}: custom class must be defined inside run_kernel')
+        symbol = node.id if isinstance(node, ast.Name) else node.attr if isinstance(node, ast.Attribute) else node.value if isinstance(node, ast.Constant) and isinstance(node.value, str) else ''
+        if '__builtin_mxc_' in symbol.lower():
+            errors.append(f'line {node.lineno}: manual MXMACA compiler builtin access is forbidden')
+    return errors
+
+
 def main() -> int:
     args = parse_args()
     source = args.source.resolve()
@@ -183,6 +206,7 @@ def main() -> int:
         ):
             errors.append(f"line {node.lineno}: dynamic `__import__` is forbidden")
 
+    errors.extend(validate_nsa_contract(tree))
     errors.extend(validate_tilelang_only_surface(tree))
     errors.extend(validate_generated_code(args.generated_code))
 

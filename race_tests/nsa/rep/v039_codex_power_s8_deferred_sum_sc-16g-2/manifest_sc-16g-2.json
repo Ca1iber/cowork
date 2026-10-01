@@ -1,0 +1,58 @@
+{
+  "iteration": "v039_codex_power_s8_deferred_sum_sc-16g-2",
+  "status": "rejected_native_target_screen",
+  "submission_sha256": "f47407ef65bcd9874ac6564cf5f364b8e75aadd4c424593ee7f00a0758c615b7",
+  "native_case12_us": 93.307,
+  "reference": "PASS after normalization fix",
+  "static": "PASS strict NSA contract",
+  "compiler": "72MT30ST stack0 staticMax7",
+  "tracer": {
+    "tool": "mcTracer",
+    "raw_unit": "ns",
+    "matching_launches": 31,
+    "steady_launches": 20,
+    "median_device_us": 90.368,
+    "resources": {
+      "dynamic_shared": 4608,
+      "private_per_thread": 0,
+      "private_total": 0,
+      "registers_per_thread": 72,
+      "static_shared": 0
+    }
+  },
+  "incumbent_mcProfiler": [
+    {
+      "variant": "baseline_v28",
+      "sample": 1,
+      "waves": 4096.0,
+      "achieved_waves_raw": 4056.0,
+      "l2_hit_pct": 91.66,
+      "read_bytes": 9573536.0,
+      "write_bytes": 8388928.0,
+      "mte_pct": 62.8,
+      "mma_pct": 11.08,
+      "shared_nonconflict_pct": 48.43,
+      "conflict_cycles": 2.81,
+      "load_latency_cycles": 62.36,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 2,
+      "waves": 4096.0,
+      "achieved_waves_raw": 4057.0,
+      "l2_hit_pct": 91.66,
+      "read_bytes": 9573600.0,
+      "write_bytes": 8388928.0,
+      "mte_pct": 62.8,
+      "mma_pct": 11.08,
+      "shared_nonconflict_pct": 48.43,
+      "conflict_cycles": 2.82,
+      "load_latency_cycles": 62.08,
+      "unavailable_raw": {}
+    }
+  ],
+  "candidate_mcProfiler": "not run after losing screen",
+  "shared_validator_sha256": "04eaef24dd21833f571d59d5e30c89190650f9e9eaa77094bcf87cecf062a6bf",
+  "goal_complete": false
+}
