@@ -1,0 +1,42 @@
+--- race_tests/nsa/experiments/v060_codex_power_s1_output_pair_swap_sc-16g-2/s1_kernel.py
++++ race_tests/nsa/experiments/v070_codex_power_s1_stream_pv_operand_sc-16g-2/s1_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v060
++# codex-power v070
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_output_pair_swap(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s1_stream_pv_operand(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
+     assert seq_len % block_size == 0
+@@ -47,7 +47,7 @@
+             denominator = T.alloc_local(1, accum_dtype)
+             v_fetch = T.alloc_local(16, dtype)
+             v_column = T.alloc_local(2, dtype)
+-            v_operand = T.alloc_local(16, dtype)
++            v_operand = T.alloc_local(4, dtype)
+             output_fetch = T.alloc_local(8, dtype)
+             numerator = T.alloc_fragment([groups, dim], accum_dtype)
+             T.annotate_layout({
+@@ -126,13 +126,12 @@
+                         for chunk in T.unroll(4):
+                             for pair in T.unroll(2):
+                                 for element in T.vectorized(2):
+-                                    v_operand[chunk * 4 + pair * 2 + element] = shared[v_slot(
++                                    v_operand[pair * 2 + element] = shared[v_slot(
+                                         key_tile * 16 + (lane // 16) * 4 + pair * 2 + element,
+                                         plane * 64 + chunk * 16 + lane % 16)]
+-                        for chunk in T.unroll(4):
+                             T.tvm_mfma('16x16x16f16', 'row', 'row',
+                                 'float16x4', 'float16x4', 'float32x4',
+-                                v_operand.data, chunk, probabilities.data, key_tile,
++                                v_operand.data, 0, probabilities.data, key_tile,
+                                 numerator.data, plane * 4 + chunk, dtype='float32x4')
+             else:
+                 T.fill(numerator, 0)

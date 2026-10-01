@@ -1,0 +1,244 @@
+{
+  "version": "v070_codex_power_s1_stream_pv_operand_sc-16g-2",
+  "status": "rejected_target_regression_unchanged_MT",
+  "closed_utc": "2026-10-01T18:45:59.443266+00:00",
+  "start": {
+    "utc": "2026-10-01T18:20:27.292184+00:00",
+    "version": "v070_codex_power_s1_stream_pv_operand_sc-16g-2",
+    "head": "3c3a9366f59706523c931ab6562e26387f4157e3",
+    "branch": "codex-power-v28-base",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent_v068_sha256": "589d4ca2c5f82f97581cfb3f82eca96ad81c4c49b8624c60326eac0e34b14949"
+  },
+  "source_sha256": "6fd2539426746bc0e4791593471e8af8f3ed80883ec08b8e062a3e51d48e5a01",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "native_reference_checks": "13 selected C6 full naive_nsa PASS,W10/R50;no all14 correctness claim",
+  "paired": {
+    "baseline_v28": {
+      "us_values": [
+        156.50300000000001,
+        156.826,
+        156.472,
+        156.616
+      ],
+      "median_us": 156.5595,
+      "min_us": 156.472,
+      "max_us": 156.826
+    },
+    "parent_v068": {
+      "us_values": [
+        95.212,
+        95.32400000000001,
+        95.33999999999999,
+        95.181
+      ],
+      "median_us": 95.268,
+      "min_us": 95.181,
+      "max_us": 95.33999999999999
+    },
+    "power_v070": {
+      "us_values": [
+        97.096,
+        97.055,
+        97.14200000000001,
+        97.137
+      ],
+      "median_us": 97.1165,
+      "min_us": 97.055,
+      "max_us": 97.14200000000001
+    },
+    "candidate_vs_v28_pct": -37.96831236686372,
+    "candidate_vs_parent_pct": 1.940315740857379,
+    "candidate_range_all_below_parent": false,
+    "correctness": "12/12 full native naive_nsa,W10/R50 PASS",
+    "all_samples_retained": true
+  },
+  "codegen": {
+    "source_sha256": "6fd2539426746bc0e4791593471e8af8f3ed80883ec08b8e062a3e51d48e5a01",
+    "static_MMA": 32,
+    "fdiv": 32,
+    "MT": 100,
+    "ST": 22,
+    "stack_bytes": 0,
+    "static_max_warps_peu": 4,
+    "private_allocas": [],
+    "shared_bytes": 8192,
+    "interpretation": "live range/MT hypothesis requires actual machine/native result,not source array extent;staticlimitnotoccupancy"
+  },
+  "mcProfiler_scope": [
+    {
+      "variant": "power_v070",
+      "sample": 1,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "power_v070",
+      "sample": 2,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v068",
+      "sample": 1,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v068",
+      "sample": 2,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 1,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 2,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    }
+  ],
+  "mcProfiler": [
+    {
+      "variant": "power_v070",
+      "sample": 1,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8116.0,
+      "l2_hit_pct": 64.96,
+      "read_bytes": 37653280.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 51.67,
+      "mma_pct": 10.08,
+      "shared_nonconflict_pct": 75.38,
+      "conflict_cycles": 0.97,
+      "load_latency_cycles": 49.91,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "power_v070",
+      "sample": 2,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8112.0,
+      "l2_hit_pct": 64.96,
+      "read_bytes": 37655584.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 52.42,
+      "mma_pct": 10.23,
+      "shared_nonconflict_pct": 75.38,
+      "conflict_cycles": 0.97,
+      "load_latency_cycles": 50.03,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "parent_v068",
+      "sample": 1,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8114.0,
+      "l2_hit_pct": 64.96,
+      "read_bytes": 37650464.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 52.69,
+      "mma_pct": 10.28,
+      "shared_nonconflict_pct": 75.39,
+      "conflict_cycles": 0.97,
+      "load_latency_cycles": 50.13,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "parent_v068",
+      "sample": 2,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8116.0,
+      "l2_hit_pct": 64.96,
+      "read_bytes": 37646624.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 52.83,
+      "mma_pct": 10.31,
+      "shared_nonconflict_pct": 75.38,
+      "conflict_cycles": 0.97,
+      "load_latency_cycles": 49.94,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 1,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8112.0,
+      "l2_hit_pct": 76.53,
+      "read_bytes": 37840800.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 34.75,
+      "mma_pct": 6.03,
+      "shared_nonconflict_pct": 89.19,
+      "conflict_cycles": 0.36,
+      "load_latency_cycles": 38.25,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 2,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8114.0,
+      "l2_hit_pct": 76.53,
+      "read_bytes": 37822624.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 35.06,
+      "mma_pct": 6.08,
+      "shared_nonconflict_pct": 89.19,
+      "conflict_cycles": 0.36,
+      "load_latency_cycles": 38.19,
+      "unavailable_raw": {}
+    }
+  ],
+  "machine_text": {
+    "command_scope": "same mxcc -device-obj O3/lineinfo/use-fast-math C6 resource capture",
+    "sections": {
+      "parent_v060": {
+        ".text": {
+          "bytes": 8448,
+          "sha256": "d2972f80a1d713b8d598e1298cf6422bb78193f26c13334390325bb086d81538"
+        }
+      },
+      "power_v070": {
+        ".text": {
+          "bytes": 8704,
+          "sha256": "4eea8d02f9edb6e3a1eac2495b439ded37dcab611e41a6c8600a998862a58c18"
+        }
+      }
+    },
+    "limitations": "binary section comparison is not ISA decoding;same CLI flags/normal source export required;not a timing waiver",
+    "text_sections_identical": false
+  },
+  "skipped": {
+    "full14_risk_OJ": "different machine text,unchanged MT,target1.940percent slower;not promoted",
+    "mcTracer": "prior repeated timeout124;no new valid timeline",
+    "ISA_decode": "unavailable;ELF section comparison is not disassembly",
+    "roofline": "actual sGPU roofs uncalibrated"
+  },
+  "cache": "code objects only,all attention content recomputed",
+  "promotion": "none;root v28 and pending64/68 unchanged",
+  "job_state": "known codegen/compiler/native groups terminal;no unowned kills"
+}
