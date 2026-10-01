@@ -1,0 +1,13 @@
+{
+  "outer_serial4_window": [
+    "  maximum[0] = -MACART_INF_F;",
+    "  for (int selected_pair = 0; selected_pair < 4; ++selected_pair) {",
+    "    #pragma unroll"
+  ],
+  "inner_unroll2_window": [
+    "    #pragma unroll",
+    "    for (int within_pair = 0; within_pair < 2; ++within_pair) {",
+    "      int block_start = (Indices[((((((int)blockIdx.y) * 8192) + (((int)blockIdx.x) * 8)) + (selected_pair * 2)) + within_pair)] * 16);"
+  ],
+  "scope": "CPP only; actual optimized backend must retain4-group backedge and16static MMA sites"
+}

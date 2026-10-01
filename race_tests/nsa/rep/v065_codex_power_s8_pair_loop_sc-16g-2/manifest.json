@@ -1,0 +1,96 @@
+{
+  "version": "v065_codex_power_s8_pair_loop_sc-16g-2",
+  "status": "inconclusive_incremental_signal_unresolved",
+  "source_sha256": "f120d2d66df93c1f988158825c99435eb701a691ab5becc1753dfdecba28b06a",
+  "correctness": "selected C12 screen1+initial16+confirmation16=33 full naive_nsa W10/R50 PASS",
+  "performance": {
+    "baseline_v28": {
+      "us_values": [
+        82.872,
+        82.785,
+        83.50200000000001,
+        83.512
+      ],
+      "median_us": 83.18700000000001,
+      "min_us": 82.785,
+      "max_us": 83.512
+    },
+    "parent_v064": {
+      "us_values": [
+        75.054,
+        75.054,
+        75.612,
+        75.832
+      ],
+      "median_us": 75.333,
+      "min_us": 75.054,
+      "max_us": 75.832
+    },
+    "trial_v061": {
+      "us_values": [
+        77.804,
+        78.111,
+        78.316,
+        78.469
+      ],
+      "median_us": 78.21350000000001,
+      "min_us": 77.804,
+      "max_us": 78.469
+    },
+    "power_v065": {
+      "us_values": [
+        75.034,
+        75.151,
+        75.63799999999999,
+        75.044
+      ],
+      "median_us": 75.0975,
+      "min_us": 75.034,
+      "max_us": 75.63799999999999
+    },
+    "candidate_vs_v28_pct": -9.724476180172402,
+    "candidate_vs_parent_pct": -0.3126120027079793,
+    "correctness": "16/16 PASS;full native naive_nsa,W10/R50",
+    "status": "inconclusive_incremental_signal_unresolved",
+    "candidate_vs_v061_pct": -3.983966962225205,
+    "confirmation_summary": "target_confirmation_summary.json"
+  },
+  "actual_partial_expansion_proof": {
+    "variants": {
+      "fully_unrolled_v061": {
+        "static_MMA_sites": 64,
+        "IR_bytes": 282324,
+        "loop_backedges": []
+      },
+      "serial_v064": {
+        "static_MMA_sites": 8,
+        "IR_bytes": 85579,
+        "loop_backedges": [
+          "br i1 %exitcond.not, label %for.cond534.preheader, label %for.body97, !dbg !64, !llvm.loop !295"
+        ]
+      },
+      "pair_v065": {
+        "static_MMA_sites": 16,
+        "IR_bytes": 114372,
+        "loop_backedges": [
+          "br i1 %exitcond.not, label %for.cond543.preheader, label %for.cond98.preheader, !dbg !64, !llvm.loop !297"
+        ]
+      }
+    },
+    "runtime": "same selected0..7 work/order,8MMA per valid block; static sites are not work reduction",
+    "actual_parallelism": "same single-wave CTA"
+  },
+  "skipped_gates": {
+    "all14_native": "not run; no resolved target incremental benefit",
+    "all14_codegen": "not run; target inconclusive",
+    "OJ": "not submitted; target inconclusive",
+    "mcProfiler": "not run; it cannot resolve overlapped native target signal or replace time gate",
+    "mcTracer": "not repeated after historical invalid timeout captures",
+    "ISA": "tool unavailable",
+    "Roofline": "actual sGPU roof uncalibrated",
+    "archive_native": "same source SHA as33 complete selected reference checks,no promotion"
+  },
+  "main": "exact original v28 preserved",
+  "parent_v060": "preserved",
+  "diagnostic": "16static MMA sites+actual4group backedge; two native full runs have overlapped small incremental signal; no new profile"
+}

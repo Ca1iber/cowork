@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "fully_unrolled_v061": {
+      "static_MMA_sites": 64,
+      "IR_bytes": 282324,
+      "loop_backedges": []
+    },
+    "serial_v064": {
+      "static_MMA_sites": 8,
+      "IR_bytes": 85579,
+      "loop_backedges": [
+        "br i1 %exitcond.not, label %for.cond534.preheader, label %for.body97, !dbg !64, !llvm.loop !295"
+      ]
+    },
+    "pair_v065": {
+      "static_MMA_sites": 16,
+      "IR_bytes": 114372,
+      "loop_backedges": [
+        "br i1 %exitcond.not, label %for.cond543.preheader, label %for.cond98.preheader, !dbg !64, !llvm.loop !297"
+      ]
+    }
+  },
+  "runtime": "same selected0..7 work/order,8MMA per valid block; static sites are not work reduction",
+  "actual_parallelism": "same single-wave CTA"
+}
