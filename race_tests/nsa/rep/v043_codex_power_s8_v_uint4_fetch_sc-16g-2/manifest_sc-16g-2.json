@@ -1,0 +1,25 @@
+{
+  "iteration": "v043_codex_power_s8_v_uint4_fetch_sc-16g-2",
+  "status": "rejected_resource_and_target_screen",
+  "submission_sha256": "95d18cdde8d09fb34888a76611b7f24aabf8298e3115ec7b67f78d04a064a302",
+  "native_case12_us": 125.076,
+  "reference": "PASS",
+  "static": "PASS",
+  "compiler": "80MT50ST stack36 max6",
+  "tracer": {
+    "tool": "mcTracer",
+    "raw_unit": "ns",
+    "steady_launches": 20,
+    "median_device_us": 122.24,
+    "resources": {
+      "dynamic_shared": 2048,
+      "private_per_thread": 0,
+      "private_total": 36,
+      "registers_per_thread": 80,
+      "static_shared": 0
+    }
+  },
+  "failure_evidence": "v_fetch_words alloca[8xi32] in addrspace5; zero-stack hypothesis fails",
+  "candidate_mcProfiler": "not run after failing gates",
+  "goal_complete": false
+}

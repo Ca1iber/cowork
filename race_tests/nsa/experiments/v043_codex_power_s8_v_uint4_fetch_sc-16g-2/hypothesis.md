@@ -1,0 +1,7 @@
+# v043 hypothesis / sc-16g-2
+
+Evidence: same-session v04291.0005us vs exact v28 83.5765us,12/12PASS. Profile read/writebytes near identical; candidate MTE~76% vsbase~63%, MMA10.08% vs11.035%, L2hit87.62% vs91.66%. Current V producer4x4 reads4uint2(8B)/lane/block. Memory issue overhead is a hypothesis, not proven roof bottleneck.
+Mechanism: V producer2x8 tile reads2uint4(16B), then4packeduint32 neighbour-xor8 exchanges reconstruct4x4 tile. Keep existing V shared address set/consumer and all attention math/normalizer/output paths. Fetch row=(lane//8)*2, feature=(lane%8)*8; producer row=(lane//16)*4, feature=(lane%8)*8+4*((lane//8)%2). Neighbour pair exchanges the opposite4features to recipient. All64lanes active under uniformvalidblock, explicitfull64mask/width64. No async/manualbuiltin/injection.
+Prediction: V global memory instructions4to2, samebytes; extra4warp exchanges and local4uint32 mayoffsetgain or raiseregisters. Inspect lowering,uint4loads,uint2sharedstores,stack0,resources first. Target beatv28, full14 no regressions if promising.
+Correctness risks: packed-bit reinterpret and row/feature neighbour mapping. CPU all1024cell mapping followed by nativefullreference. Headercodex-power v043/exact3imports. Source/tmp/nsa_power_v043_v_uint4_fetch.py. Shared fallback AST unchanged, no data caching acrosscalls.
+Identity: startc7ea4eba3/mainrepo/codex-power-v28-base/sc-16g-2. Fresh baseline42profile retained bypath/hash; native shapes/timing/W10R50/naive_nsa unchanged. Archive42complete before edits43.
