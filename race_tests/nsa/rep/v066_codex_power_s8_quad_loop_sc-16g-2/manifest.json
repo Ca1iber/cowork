@@ -1,0 +1,102 @@
+{
+  "version": "v066_codex_power_s8_quad_loop_sc-16g-2",
+  "status": "inconclusive_small_increment_and_no_regression_unverified",
+  "source_sha256": "2033a4ac6319f391b505d741970cfcbdb957348c0e6a185bf7591374f5e226a4",
+  "correctness": "selected C12 screen1+initial16+confirmation16+all14168=201 full naive_nsa W10/R50 PASS",
+  "performance": {
+    "baseline_v28": {
+      "us_values": [
+        82.908,
+        83.205,
+        84.173,
+        83.369
+      ],
+      "median_us": 83.287,
+      "min_us": 82.908,
+      "max_us": 84.173
+    },
+    "parent_v064": {
+      "us_values": [
+        75.141,
+        76.07300000000001,
+        75.74,
+        76.221
+      ],
+      "median_us": 75.9065,
+      "min_us": 75.141,
+      "max_us": 76.221
+    },
+    "trial_v061": {
+      "us_values": [
+        77.798,
+        83.077,
+        78.444,
+        77.921
+      ],
+      "median_us": 78.1825,
+      "min_us": 77.798,
+      "max_us": 83.077
+    },
+    "power_v066": {
+      "us_values": [
+        74.824,
+        75.84299999999999,
+        74.87,
+        75.53999999999999
+      ],
+      "median_us": 75.205,
+      "min_us": 74.824,
+      "max_us": 75.84299999999999
+    },
+    "candidate_vs_v28_pct": -9.703795310192476,
+    "candidate_vs_parent_pct": -0.9241632798245192,
+    "correctness": "16/16 PASS;full native naive_nsa,W10/R50",
+    "status": "inconclusive_small_increment_and_no_regression_unverified",
+    "candidate_vs_v061_pct": -3.8083970197934414,
+    "further_evidence": "confirmation and formal_all14 separately retained"
+  },
+  "actual_partial_expansion_proof": {
+    "variants": {
+      "full_v061": {
+        "static_MMA_sites": 64,
+        "IR_bytes": 282324,
+        "loop_branches": []
+      },
+      "serial_v064": {
+        "static_MMA_sites": 8,
+        "IR_bytes": 85579,
+        "loop_branches": [
+          "br i1 %exitcond.not, label %for.cond534.preheader, label %for.body97, !dbg !64, !llvm.loop !295"
+        ]
+      },
+      "pair_v065": {
+        "static_MMA_sites": 16,
+        "IR_bytes": 114372,
+        "loop_branches": [
+          "br i1 %exitcond.not, label %for.cond543.preheader, label %for.cond98.preheader, !dbg !64, !llvm.loop !297"
+        ]
+      },
+      "quad_v066": {
+        "static_MMA_sites": 32,
+        "IR_bytes": 171631,
+        "loop_branches": [
+          "br i1 %cmp95, label %for.cond98.preheader, label %for.cond543.preheader, !dbg !64, !llvm.loop !297"
+        ]
+      }
+    },
+    "runtime_work": "same selected0..7/order,8MMA per valid block;static sites not runtime work reduction",
+    "GPU_parallelism": "same single-wave CTA"
+  },
+  "skipped_gates": {
+    "mcProfiler": "not run;increment shrinks0.924->0.242->0.199% and all14 positive non-target deltas,aggregate counters cannot establish adoption",
+    "risk_native_replay": "not run after all14;small checkpoint not promoted,no favorable-result sampling",
+    "separate_archive_native": "not run;same bytes/SHA already full all14 reference checked,no promotion",
+    "OJ": "not submitted,no global no-regression claim",
+    "mcTracer": "not repeated after prior invalid timeout captures",
+    "ISA": "unavailable tool",
+    "Roofline": "actual sGPU roof uncalibrated"
+  },
+  "main": "exact original v28 preserved",
+  "parent_v060": "preserved",
+  "diagnostic": "32static MMA sites+actual2group backedge; initial/confirmation/all14 increment0.924/0.242/0.199%;positive other medians,no promotion"
+}

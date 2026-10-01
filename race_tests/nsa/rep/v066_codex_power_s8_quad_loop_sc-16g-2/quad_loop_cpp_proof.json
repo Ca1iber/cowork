@@ -1,0 +1,13 @@
+{
+  "outer2_window": [
+    "  maximum[0] = -MACART_INF_F;",
+    "  for (int selected_group = 0; selected_group < 2; ++selected_group) {",
+    "    #pragma unroll"
+  ],
+  "inner4_window": [
+    "    #pragma unroll",
+    "    for (int within_group = 0; within_group < 4; ++within_group) {",
+    "      int block_start = (Indices[((((((int)blockIdx.y) * 8192) + (((int)blockIdx.x) * 8)) + (selected_group * 4)) + within_group)] * 16);"
+  ],
+  "scope": "CPPonly;optimized backend form must be checked"
+}
