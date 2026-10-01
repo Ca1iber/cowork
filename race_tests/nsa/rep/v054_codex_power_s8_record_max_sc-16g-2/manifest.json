@@ -1,0 +1,56 @@
+{
+  "version": "v054_codex_power_s8_record_max_sc-16g-2",
+  "status": "rejected_target_performance",
+  "candidate_sha256": "41bdd9df8d9eca9d4d071df6393630fc4577a50780c3f0c0ce65be2ee1a57416",
+  "baseline_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "parent": "v050_codex_power_s8_online_local_sc-16g-2",
+  "case6_dependency": "race_tests/nsa/experiments/v049_codex_power_s1_cache_entry_sc-16g-2/s1_kernel.py",
+  "correctness": "case12 screen PASS and paired 12/12 full naive_nsa PASS; warmup10/repeat50 unchanged",
+  "benchmark": {
+    "baseline_v28": {
+      "us_values": [
+        88.863,
+        88.049,
+        88.71900000000001,
+        88.499
+      ],
+      "median_us": 88.60900000000001,
+      "min_us": 88.049,
+      "max_us": 88.863
+    },
+    "parent_v050": {
+      "us_values": [
+        91.704,
+        91.003,
+        90.117,
+        187.254
+      ],
+      "median_us": 91.3535,
+      "min_us": 90.117,
+      "max_us": 187.254
+    },
+    "power_v054": {
+      "us_values": [
+        177.63799999999998,
+        94.182,
+        97.96100000000001,
+        95.119
+      ],
+      "median_us": 96.54,
+      "min_us": 94.182,
+      "max_us": 177.63799999999998
+    },
+    "candidate_vs_v28_pct": 8.950558069722025,
+    "candidate_vs_parent_pct": 5.677396049412464,
+    "correctness": "12/12 PASS;full native naive_nsa,W10/R50",
+    "status": "rejected_target_performance"
+  },
+  "full14": "not run; target performance rejected",
+  "OJ": "not submitted; target rejected",
+  "mcProfiler": "not run for candidate after target failure; prior scope-valid v051 baseline available by repository path",
+  "mcTracer": "not run after target failure",
+  "ISA": "tool unavailable",
+  "Roofline": "sGPU calibration unavailable",
+  "main_submission": "exact original v28 preserved",
+  "v049_pending_oj_source": "unchanged"
+}
