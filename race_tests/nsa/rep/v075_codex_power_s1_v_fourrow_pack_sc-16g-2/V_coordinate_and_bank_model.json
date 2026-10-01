@@ -1,0 +1,14 @@
+{
+  "V_slot_bijection": 4096,
+  "producer_coordinates_unique_complete": 4096,
+  "consumer_coordinates_unique_complete": 4096,
+  "4half_contiguous_and_8B_aligned": true,
+  "logical_operand_sequence_and_MMAaccumulator_order": "exact parent",
+  "global_reads_perthread": "16x8B versus8x16B,bytes128 unchanged",
+  "Vshared_stores_perthread": "16x8B versus32x4B,bytes128 unchanged",
+  "Vshared_operandloads_perthread": "16x8B versus32x4B,bytes128 unchanged",
+  "bounds": "same global rows0..31,col0..127,shared0..4095,vfetch0..15,vcolumn0..3,voperand0..15",
+  "bank_assumption": "32banks,4B,16lane phase,8B as2bank words;not verified hardware",
+  "predicted_new_max_requests_perbank_in_phase": 1,
+  "model_scope": "diagnostic only;actualmcProfiler/native decides"
+}

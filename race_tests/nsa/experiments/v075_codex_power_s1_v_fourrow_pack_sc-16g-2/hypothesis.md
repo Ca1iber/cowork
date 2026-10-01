@@ -1,0 +1,12 @@
+# v075 C6 four-row V shared packing
+
+Observed: own60/68 C6~95us,100MT/22ST,max4,8KBshared. Current Vproducer2rowx8col loads2x16B and stores8x4B per16x64tile perthread;PVconsumer uses2x4B shared loads per MFMA. Voperand prefetch is4chunks before4MMA. Stream70 degraded,so retain this prefetched math order. Last broadcasts73/74 did not improve time;only own original60 helper used.
+Hypothesis: producer4rowx4col with4row contiguous shared slot supports8B stores and8B operand loads,reduce V memory instruction count and feed MMA. Additional global instructions/4x4 packing or bank conflicts may outweigh benefit.
+Mechanism: Vslot(row,col)=columnperm(col)*32+((row//4)^(col%8)^((col%64)//16))*4+row%4. Producer4rowsx4cols,localcolumn4half,consumer vector4half fromaligned rowbase. All V coordinates unchanged,MMA/P/accumulation order unchanged,Q/K/output/layout/barriers untouched. C12 own68,other12 originalv28 blackbox prefix/entry.
+Prediction: oldperthreadV global8x16B ->16x8B;sharedstores32x4B ->16x8B;operandloads32x4B ->16x8B,all bytes same. NormalCPP uint2 global/shared expected,staticMMA32. Resource and native target must improve or be justified by actualtime;not just sourcecounts.
+Bank model:32banks/4B/16lanephase assumption only. Newrow swizzle XOR colbits0/4 and1/5 plusbit2 is designed to distribute producer and consumer8B pairs. Earlier zero-conflict models were falsified,so no hardware guarantee before mcProfiler.
+Falsifier: wrongslot/ownership/reference/import,private spills/highregs,packing/global8B overhead causes no stable gain versus68,or any othercase/OJregression. No reruns to erase unfavorable medians.
+Proof/risk:32x128Vslotbijection,4rowpackcontiguous/aligned,64lane producercompleteunique and exactlysame logical consumer/MMAorder. Existing globalvalidblockbounds apply. All contentscomputed everycall,codeobjects onlycache;no async/foreignsource/manualbuiltin.
+Plan: cardbeforeedit,ASTisolated V mechanism,coordinates/bankdiagnostic,bounds,normalCPP/LLVM/resources/static,fullnativeC6screen W10R50,3way pairedtarget,full14/profile/exactarchive aftermeaningfulgain. Count exactcandidate separately fromcontrols. Chinese7report/bilingualatomic4dircommit. Mainv28/pending64/68protected,externalOJpending.
+
+Outcome: exactcandidate5C6refPASS (13experimentwithcontrols);native+1.385percent;profile4consistentfootprints,shared100percent/conflict0vsparent75.38/.97;MT102/ST24;reject overall despitebankmetric improvement.
