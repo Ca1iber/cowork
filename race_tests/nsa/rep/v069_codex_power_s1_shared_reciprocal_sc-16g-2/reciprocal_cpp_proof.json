@@ -1,0 +1,6 @@
+{
+  "one_scalar_float32_reciprocal": true,
+  "all32_numerator_components_multiply_shared_scalar": true,
+  "normalization_window": "inverse_denominator[0] = (0x1p+0f/*1.000000e+00*/ / denominator[0]);\n  #pragma unroll\n  for (int i_3 = 0; i_3 < 32; ++i_3) {\n    numerator[i_3] = (numerator[i_3] * inverse_denominator[0]);\n  }\n  __syncwarp();\n  #pragma unroll\n  for (int chunk_4 = 0; chunk_4 < 8; ++chunk_4) {\n    for (int element_3 = 0; element_3 < 4; ++element_3) {\n      shared_local_cast[element_3] = ((half_t)numerator[((chunk_4 * 4) + ele",
+  "source": "normal TileLang lowering;no source injection"
+}

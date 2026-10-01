@@ -1,0 +1,36 @@
+--- race_tests/nsa/experiments/v060_codex_power_s1_output_pair_swap_sc-16g-2/s1_kernel.py
++++ race_tests/nsa/experiments/v069_codex_power_s1_shared_reciprocal_sc-16g-2/s1_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v060
++# codex-power v069
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_output_pair_swap(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s1_shared_reciprocal(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
+     assert seq_len % block_size == 0
+@@ -45,6 +45,7 @@
+             probabilities = T.alloc_local(8, dtype)
+             maximum = T.alloc_local(1, accum_dtype)
+             denominator = T.alloc_local(1, accum_dtype)
++            inverse_denominator = T.alloc_local(1, accum_dtype)
+             v_fetch = T.alloc_local(16, dtype)
+             v_column = T.alloc_local(2, dtype)
+             v_operand = T.alloc_local(16, dtype)
+@@ -136,8 +137,9 @@
+                                 numerator.data, plane * 4 + chunk, dtype='float32x4')
+             else:
+                 T.fill(numerator, 0)
++            inverse_denominator[0] = T.float32(1.0) / denominator[0]
+             for head, feature in T.Parallel(groups, dim):
+-                numerator[head, feature] /= denominator[0]
++                numerator[head, feature] *= inverse_denominator[0]
+             T.sync_warp()
+             for chunk in T.unroll(8):
+                 feature_base = chunk * 16 + (lane // 16) * 4

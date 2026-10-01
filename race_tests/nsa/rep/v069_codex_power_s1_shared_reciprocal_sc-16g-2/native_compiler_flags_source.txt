@@ -1,0 +1,74 @@
+tilelang/contrib/mxcc.py SHA256 386517b4455b910e0bcbc87c32c0f1d3b7571ea8aa7ce82cb3313e6d6f4bcd1e
+62:        temp_code = os.path.join(kernels_output_dir, f"{file_name}.maca")
+63:        temp_target = os.path.join(kernels_output_dir, f"{file_name}.{target_format}")
+64:
+65:    with open(temp_code, "w") as out_file:
+66:        out_file.write(code)
+67:
+68:    file_target = path_target if path_target else temp_target
+69:    cmd = [get_mxcc_compiler(), "-x", "maca"]
+70:    if target_format == "mcbin":
+71:        cmd.append("-device-obj")
+72:    elif target_format == "mcir":
+73:        cmd.extend(["-emit-llvm", "-maca-device-only"])
+74:    else:
+75:        cmd.append("-fatbin")
+76:    # Always include line info for better profiling and mapping
+77:    cmd += ["-O3", "-lineinfo"]
+78:    if isinstance(arch, list):
+79:        cmd += arch
+80:    elif isinstance(arch, str):
+81:        cmd += [f"--offload-arch={arch}"]
+82:
+83:    if options:
+84:        if isinstance(options, str):
+85:            cmd += [options]
+86:        elif isinstance(options, list):
+87:            cmd += options
+88:        else:
+89:            raise ValueError("options must be str or list of str")
+90:
+91:    cmd += ["-D__FAST_HALF_CVT__"]
+92:    cmd += ["-o", file_target]
+93:    cmd += [temp_code]
+
+tilelang/jit/adapter/libgen.py SHA256 9ba4faf90dff1fe48c77dbd78413b3669aa997f1838f9e4dad5cd750655100b8
+108:                "--shared",
+109:                src.name,
+110:            ]
+111:            command += [
+112:                "-I" + COMPOSABLE_KERNEL_INCLUDE_DIR,
+113:            ]
+114:        elif is_maca_target(target):
+115:            src = tempfile.NamedTemporaryFile(mode="w", suffix=".cpp", delete=False)
+116:            libpath = src.name.replace(".cpp", ".so")
+117:            maca_path = find_maca_path()
+118:            arch = get_maca_arch(maca_path).lower()
+119:
+120:            enable_fast_math = self.pass_configs.get(PassConfigKey.TL_ENABLE_FAST_MATH, False)
+121:
+122:            command = [
+123:                "mxcc",
+124:                "-x",
+125:                "maca",
+126:                "-w",
+127:                "-Wno-error=address-of-temporary",
+128:                "-std=c++17",
+129:                "-fPIC",
+130:                "-D__FAST_HALF_CVT__",
+131:                f"--offload-arch={arch}",
+132:                "--shared",
+133:                src.name,
+134:            ]
+135:            if enable_fast_math:
+136:                command += ["-use-fast-math"]
+137:            command += [
+138:                "-I" + maca_path + "/include",
+139:            ]
+140:        elif is_cpu_target(target):
+141:            from tilelang.contrib.cc import get_cplus_compiler
+142:
+143:            src = tempfile.NamedTemporaryFile(mode="w", suffix=".cpp", delete=False)  # noqa: SIM115
+144:            libpath = src.name.replace(".cpp", ".so")
+145:
+146:            command = [get_cplus_compiler(), "-std=c++17", "-fPIC", "-shared", src.name]
