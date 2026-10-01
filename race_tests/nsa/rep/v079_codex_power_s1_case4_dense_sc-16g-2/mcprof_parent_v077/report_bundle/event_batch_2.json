@@ -1,0 +1,57 @@
+{
+  "perfList": {
+    "ISU": [
+      [
+        89,
+        "AP_PERF_ISU_AP_BUSY"
+      ],
+      [
+        74,
+        "AP_PERF_BSM_ATOMIC_CYCLES"
+      ],
+      [
+        72,
+        "AP_PERF_BSM_RD_CYCLES"
+      ],
+      [
+        101,
+        "AP_PERF_MTE_PI_SEG_SEL_F64"
+      ],
+      [
+        78,
+        "AP_PERF_BSM_CONFLICT_CYCLES"
+      ],
+      [
+        73,
+        "AP_PERF_BSM_WR_CYCLES"
+      ]
+    ],
+    "L2C": [
+      [
+        270,
+        "perf_dnoc_wrreq_32B_high"
+      ],
+      [
+        20,
+        "perf_sector_hit"
+      ],
+      [
+        47,
+        "perf_dnoc_rdreq_64B"
+      ],
+      [
+        46,
+        "perf_dnoc_rdreq_32B"
+      ]
+    ]
+  },
+  "action": "config,disable,read_dump,enable,kernel_collect",
+  "conditions": {
+    "kernelnames": [],
+    "include": false,
+    "is_perkernel": true,
+    "is_multi_device": false,
+    "profile_from_start": true,
+    "counts": 4
+  }
+}

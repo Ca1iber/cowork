@@ -1,0 +1,19 @@
+{
+  "domain": "C4 B2/L512/H1/HQ16/D64/S1/BS16/causalFP16",
+  "all3sharedbijections": 1024,
+  "all_global_copy_operand_fragment_sets": "uniquecomplete16x64",
+  "shared_capacity_halves": 1024,
+  "valid_block_rows": "0..511 full16rows inbounds",
+  "local": "q16,qfetch8,k4,scoreP4,num16,vfetch16,vcol2,vop16,outfetch8",
+  "MMA": {
+    "QK": 4,
+    "PV": 4
+  },
+  "singleblock_math": "globalmax,FP16Pscale256,sumofsameconsumedP,FP32PV/Ndiv",
+  "bank_assumption": "32x4B,32lane4B/16lane8B not guaranteed",
+  "predictedVmax": {
+    "producer": 1,
+    "consumer": 1
+  },
+  "proof_not_native": "originalnaive_nsa/ref/tolerance decides"
+}

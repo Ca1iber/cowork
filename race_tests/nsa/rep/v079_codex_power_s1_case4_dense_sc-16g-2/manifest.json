@@ -1,0 +1,1178 @@
+{
+  "version": "v079_codex_power_s1_case4_dense_sc-16g-2",
+  "status": "inconclusive_no_regression_not_demonstrated_external_oj_pending",
+  "closed_utc": "2026-10-01T22:35:12.126037+00:00",
+  "start": {
+    "utc": "2026-10-01T21:57:32.654839+00:00",
+    "version": "v079_codex_power_s1_case4_dense_sc-16g-2",
+    "head": "ef6c77481acbef24faf73e1e25d2c5b143667f4a",
+    "branch": "codex-power-v28-base",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent77_sha256": "dbaef6b0da5f503742805b07b802168d3f02e5c3aef1e8bffaddd909438d43de",
+    "native_hash": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568"
+  },
+  "source_sha256": "98ac1b75839e8e3ae49d2de3345ce64779211af0c2aebe30751d1593a084a2fb",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "native_reference_checks": {
+    "candidate_label": "power_v079",
+    "candidate_checks": 119,
+    "experiment_checks_with_controls": 327,
+    "rows": [
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v079_codex_power_s1_case4_dense_sc-16g-2/archive_native_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 14,
+        "candidate_checks": 14,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v079_codex_power_s1_case4_dense_sc-16g-2/paired_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 168,
+        "candidate_checks": 56,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v079_codex_power_s1_case4_dense_sc-16g-2/paired_case4_sc-16g-2.csv",
+        "experiment_checks_with_controls": 12,
+        "candidate_checks": 4,
+        "candidate_cases": [
+          4
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v079_codex_power_s1_case4_dense_sc-16g-2/paired_risk_sc-16g-2.csv",
+        "experiment_checks_with_controls": 132,
+        "candidate_checks": 44,
+        "candidate_cases": [
+          1,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v079_codex_power_s1_case4_dense_sc-16g-2/screen_case4_sc-16g-2.csv",
+        "experiment_checks_with_controls": 1,
+        "candidate_checks": 1,
+        "candidate_cases": [
+          4
+        ]
+      }
+    ]
+  },
+  "paired": {
+    "baseline_v28": {
+      "us_values": [
+        12.79,
+        12.769,
+        12.866999999999999,
+        12.575
+      ],
+      "median_us": 12.779499999999999,
+      "min_us": 12.575,
+      "max_us": 12.866999999999999
+    },
+    "parent_v077": {
+      "us_values": [
+        12.815,
+        12.795000000000002,
+        12.723,
+        12.8
+      ],
+      "median_us": 12.797500000000001,
+      "min_us": 12.723,
+      "max_us": 12.815
+    },
+    "power_v079": {
+      "us_values": [
+        10.926,
+        11.013,
+        10.772,
+        11.228
+      ],
+      "median_us": 10.9695,
+      "min_us": 10.772,
+      "max_us": 11.228
+    },
+    "candidate_vs_v28_pct": -14.163308423647237,
+    "candidate_vs_parent_pct": -14.284039851533514,
+    "candidate_range_all_below_parent": true,
+    "correctness": "12/12 full native naive_nsa,W10/R50 PASS",
+    "all_samples_retained": true
+  },
+  "codegen": {
+    "source_sha256": "98ac1b75839e8e3ae49d2de3345ce64779211af0c2aebe30751d1593a084a2fb",
+    "static_MMA": 8,
+    "fdiv": 16,
+    "MT": 42,
+    "ST": 20,
+    "stack_bytes": 0,
+    "static_max_warps_peu": 8,
+    "private_allocas": [],
+    "shared_bytes": 2048,
+    "threads": 64,
+    "CTA_grid": [
+      512,
+      2
+    ],
+    "waves": 1024,
+    "caution": "singleblock native/profilerequired,no staticoccupancy or model-only claim"
+  },
+  "integer_identity": {
+    "parent_own_source": "race_tests/nsa/experiments/v077_codex_power_s8_output_pair_sc-16g-2/s8_kernel.py",
+    "S": 1,
+    "math": "one validblock makes max==blockmax andold numerator/denzero;no online rescale needed",
+    "all_input_coords_and_operand_orders": "require newcomplete proof",
+    "V_slot": "compactcolperm xorrowbit2 preserves4rowpack",
+    "primitive_MMA_expected": 8,
+    "case4dispatch_only": true,
+    "oldteam_algorithm_consulted": false
+  },
+  "V_mapping_bank_model": {
+    "domain": "C4 B2/L512/H1/HQ16/D64/S1/BS16/causalFP16",
+    "all3sharedbijections": 1024,
+    "all_global_copy_operand_fragment_sets": "uniquecomplete16x64",
+    "shared_capacity_halves": 1024,
+    "valid_block_rows": "0..511 full16rows inbounds",
+    "local": "q16,qfetch8,k4,scoreP4,num16,vfetch16,vcol2,vop16,outfetch8",
+    "MMA": {
+      "QK": 4,
+      "PV": 4
+    },
+    "singleblock_math": "globalmax,FP16Pscale256,sumofsameconsumedP,FP32PV/Ndiv",
+    "bank_assumption": "32x4B,32lane4B/16lane8B not guaranteed",
+    "predictedVmax": {
+      "producer": 1,
+      "consumer": 1
+    },
+    "proof_not_native": "originalnaive_nsa/ref/tolerance decides"
+  },
+  "mcProfiler": [
+    {
+      "variant": "power_v079",
+      "sample": 1,
+      "waves": 1024.0,
+      "achieved_waves_raw": 1014.0,
+      "l2_hit_pct": 50.69,
+      "read_bytes": 2356384.0,
+      "write_bytes": 2097472.0,
+      "mte_pct": 37.76,
+      "mma_pct": 3.75,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "load_latency_cycles": 47.89,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "power_v079",
+      "sample": 2,
+      "waves": 1024.0,
+      "achieved_waves_raw": 1014.0,
+      "l2_hit_pct": 50.69,
+      "read_bytes": 2356384.0,
+      "write_bytes": 2097472.0,
+      "mte_pct": 38.12,
+      "mma_pct": 3.79,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "load_latency_cycles": 48.2,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "parent_v077",
+      "sample": 1,
+      "waves": 1024.0,
+      "achieved_waves_raw": 1015.0,
+      "l2_hit_pct": 50.69,
+      "read_bytes": 2356384.0,
+      "write_bytes": 2097472.0,
+      "mte_pct": 32.42,
+      "mma_pct": 3.14,
+      "shared_nonconflict_pct": 35.85,
+      "conflict_cycles": 6.79,
+      "load_latency_cycles": 117.92,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "parent_v077",
+      "sample": 2,
+      "waves": 1024.0,
+      "achieved_waves_raw": 1014.0,
+      "l2_hit_pct": 50.69,
+      "read_bytes": 2356384.0,
+      "write_bytes": 2097472.0,
+      "mte_pct": 31.94,
+      "mma_pct": 3.1,
+      "shared_nonconflict_pct": 35.85,
+      "conflict_cycles": 6.8,
+      "load_latency_cycles": 110.84,
+      "unavailable_raw": {}
+    }
+  ],
+  "mcProfiler_scope": [
+    {
+      "variant": "power_v079",
+      "sample": 1,
+      "expected_waves": 1024,
+      "observed_waves": 1024.0,
+      "observed_write_bytes": 2097472.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "power_v079",
+      "sample": 2,
+      "expected_waves": 1024,
+      "observed_waves": 1024.0,
+      "observed_write_bytes": 2097472.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v077",
+      "sample": 1,
+      "expected_waves": 1024,
+      "observed_waves": 1024.0,
+      "observed_write_bytes": 2097472.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v077",
+      "sample": 2,
+      "expected_waves": 1024,
+      "observed_waves": 1024.0,
+      "observed_write_bytes": 2097472.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    }
+  ],
+  "machine_text": {
+    "command_scope": "same mxcc -device-obj O3/lineinfo/use-fast-math C4 resource capture",
+    "sections": {
+      "baseline_v28": {
+        ".text": {
+          "bytes": 5120,
+          "sha256": "f19181634a2d0dad1b6231e884c78b0aceaaff17512685667e49668652496165"
+        }
+      },
+      "power_v079": {
+        ".text": {
+          "bytes": 4608,
+          "sha256": "e681f669638b512ba456f029ffeac85c0552889ecd95da09552216327c09840a"
+        }
+      }
+    },
+    "limitations": "binary section comparison is not ISA decoding;same CLI flags/normal source export required;not a timing waiver",
+    "text_sections_identical": false
+  },
+  "skipped": {
+    "external_OJ": "not submitted,actualscorespending",
+    "mcTracer": "prior124/headeronly failure,no new timeline",
+    "ISA_decode": "unavailable;machine text is not disassembly",
+    "roofline": "actual sGPU roofs uncalibrated"
+  },
+  "cache": "code objects only,all attention content recomputed",
+  "promotion": "none;root v28 and pending64/68 unchanged",
+  "job_state": "known codegen/compiler/native groups terminal;no unowned kills",
+  "full14": {
+    "correctness": "168/168 full native naive_nsa PASS; warmup10/repeat50",
+    "all_observations_retained": true,
+    "positive_medians_are_not_waived_as_noise": true,
+    "cases": [
+      {
+        "case": 1,
+        "samples_us": {
+          "baseline_v28": [
+            9.016,
+            9.020999999999999,
+            9.042,
+            9.062000000000001
+          ],
+          "parent_v077": [
+            11.684,
+            9.149,
+            9.036999999999999,
+            9.032
+          ],
+          "power_v079": [
+            9.027000000000001,
+            9.103,
+            9.892,
+            9.027000000000001
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 9.0315,
+          "parent_v077": 9.093,
+          "power_v079": 9.065000000000001
+        },
+        "candidate_vs_v28_pct": 0.3709239882633275,
+        "candidate_vs_parent_pct": -0.3079291762894343
+      },
+      {
+        "case": 2,
+        "samples_us": {
+          "baseline_v28": [
+            9.503,
+            9.655999999999999,
+            9.672,
+            9.661
+          ],
+          "parent_v077": [
+            9.672,
+            9.655999999999999,
+            9.277000000000001,
+            9.702
+          ],
+          "power_v079": [
+            9.636000000000001,
+            9.661,
+            9.655999999999999,
+            9.655999999999999
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 9.6585,
+          "parent_v077": 9.664,
+          "power_v079": 9.655999999999999
+        },
+        "candidate_vs_v28_pct": -0.02588393642906084,
+        "candidate_vs_parent_pct": -0.08278145695365113
+      },
+      {
+        "case": 3,
+        "samples_us": {
+          "baseline_v28": [
+            12.585,
+            12.616,
+            12.585,
+            12.559000000000001
+          ],
+          "parent_v077": [
+            12.196,
+            12.667,
+            12.206,
+            12.155
+          ],
+          "power_v079": [
+            12.206,
+            12.175,
+            12.564,
+            12.421
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 12.585,
+          "parent_v077": 12.201,
+          "power_v079": 12.3135
+        },
+        "candidate_vs_v28_pct": -2.1573301549463797,
+        "candidate_vs_parent_pct": 0.9220555692156296
+      },
+      {
+        "case": 4,
+        "samples_us": {
+          "baseline_v28": [
+            12.979,
+            12.626,
+            12.641,
+            12.687000000000001
+          ],
+          "parent_v077": [
+            12.605,
+            12.636,
+            12.559000000000001,
+            12.645999999999999
+          ],
+          "power_v079": [
+            10.911000000000001,
+            10.751999999999999,
+            11.145999999999999,
+            10.777999999999999
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 12.664000000000001,
+          "parent_v077": 12.6205,
+          "power_v079": 10.8445
+        },
+        "candidate_vs_v28_pct": -14.36749842072016,
+        "candidate_vs_parent_pct": -14.072342617170474
+      },
+      {
+        "case": 5,
+        "samples_us": {
+          "baseline_v28": [
+            31.420999999999996,
+            31.437,
+            31.334,
+            31.109
+          ],
+          "parent_v077": [
+            31.109,
+            31.477999999999998,
+            31.37,
+            31.544000000000004
+          ],
+          "power_v079": [
+            31.35,
+            31.468000000000004,
+            31.549,
+            31.508000000000003
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 31.377499999999998,
+          "parent_v077": 31.424,
+          "power_v079": 31.488000000000003
+        },
+        "candidate_vs_v28_pct": 0.35216317424908716,
+        "candidate_vs_parent_pct": 0.20366598778005507
+      },
+      {
+        "case": 6,
+        "samples_us": {
+          "baseline_v28": [
+            156.268,
+            156.6,
+            156.53900000000002,
+            156.15
+          ],
+          "parent_v077": [
+            93.706,
+            93.942,
+            94.21300000000001,
+            94.126
+          ],
+          "power_v079": [
+            94.039,
+            93.86500000000001,
+            94.054,
+            94.034
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 156.4035,
+          "parent_v077": 94.03399999999999,
+          "power_v079": 94.0365
+        },
+        "candidate_vs_v28_pct": -39.875706106321154,
+        "candidate_vs_parent_pct": 0.0026586128421657307
+      },
+      {
+        "case": 7,
+        "samples_us": {
+          "baseline_v28": [
+            31.247,
+            31.299,
+            31.252000000000002,
+            31.278
+          ],
+          "parent_v077": [
+            31.38,
+            31.314,
+            31.247,
+            31.468000000000004
+          ],
+          "power_v079": [
+            31.36,
+            31.273000000000003,
+            31.482999999999997,
+            30.761
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 31.265,
+          "parent_v077": 31.347,
+          "power_v079": 31.3165
+        },
+        "candidate_vs_v28_pct": 0.16472093395170084,
+        "candidate_vs_parent_pct": -0.09729798704820602
+      },
+      {
+        "case": 8,
+        "samples_us": {
+          "baseline_v28": [
+            52.367,
+            52.004000000000005,
+            51.901,
+            51.871
+          ],
+          "parent_v077": [
+            51.886,
+            51.83,
+            51.814,
+            51.912
+          ],
+          "power_v079": [
+            51.88099999999999,
+            51.973,
+            51.978,
+            51.952999999999996
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 51.9525,
+          "parent_v077": 51.858000000000004,
+          "power_v079": 51.962999999999994
+        },
+        "candidate_vs_v28_pct": 0.02021076945284417,
+        "candidate_vs_parent_pct": 0.2024759921323449
+      },
+      {
+        "case": 9,
+        "samples_us": {
+          "baseline_v28": [
+            52.224,
+            52.019000000000005,
+            52.434000000000005,
+            51.983000000000004
+          ],
+          "parent_v077": [
+            52.06,
+            52.06,
+            52.137,
+            52.137
+          ],
+          "power_v079": [
+            52.357,
+            51.958,
+            52.398,
+            52.122
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 52.1215,
+          "parent_v077": 52.0985,
+          "power_v079": 52.2395
+        },
+        "candidate_vs_v28_pct": 0.22639409840470304,
+        "candidate_vs_parent_pct": 0.2706411892856808
+      },
+      {
+        "case": 10,
+        "samples_us": {
+          "baseline_v28": [
+            12.375,
+            11.971,
+            12.022,
+            11.976
+          ],
+          "parent_v077": [
+            11.971,
+            11.986,
+            12.027,
+            11.965
+          ],
+          "power_v079": [
+            11.976,
+            12.022,
+            11.986,
+            12.001
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 11.999,
+          "parent_v077": 11.9785,
+          "power_v079": 11.993500000000001
+        },
+        "candidate_vs_v28_pct": -0.04583715309608438,
+        "candidate_vs_parent_pct": 0.12522436031223716
+      },
+      {
+        "case": 11,
+        "samples_us": {
+          "baseline_v28": [
+            23.357,
+            23.244999999999997,
+            23.281,
+            23.255000000000003
+          ],
+          "parent_v077": [
+            23.306,
+            23.352,
+            23.429,
+            23.537
+          ],
+          "power_v079": [
+            23.434,
+            23.25,
+            23.229,
+            23.296
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 23.268,
+          "parent_v077": 23.3905,
+          "power_v079": 23.273
+        },
+        "candidate_vs_v28_pct": 0.021488739900288323,
+        "candidate_vs_parent_pct": -0.5023406938714392
+      },
+      {
+        "case": 12,
+        "samples_us": {
+          "baseline_v28": [
+            83.348,
+            83.415,
+            83.384,
+            83.164
+          ],
+          "parent_v077": [
+            72.187,
+            72.243,
+            72.238,
+            72.182
+          ],
+          "power_v079": [
+            72.259,
+            72.294,
+            72.19200000000001,
+            71.992
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 83.366,
+          "parent_v077": 72.2125,
+          "power_v079": 72.22550000000001
+        },
+        "candidate_vs_v28_pct": -13.363361562267572,
+        "candidate_vs_parent_pct": 0.018002423403151724
+      },
+      {
+        "case": 13,
+        "samples_us": {
+          "baseline_v28": [
+            10.777999999999999,
+            10.767000000000001,
+            10.721,
+            10.757
+          ],
+          "parent_v077": [
+            12.201,
+            11.207999999999998,
+            11.223,
+            10.747
+          ],
+          "power_v079": [
+            11.94,
+            11.207999999999998,
+            10.793000000000001,
+            10.751999999999999
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 10.762,
+          "parent_v077": 11.215499999999999,
+          "power_v079": 11.000499999999999
+        },
+        "candidate_vs_v28_pct": 2.2161308307006022,
+        "candidate_vs_parent_pct": -1.9169898800766805
+      },
+      {
+        "case": 14,
+        "samples_us": {
+          "baseline_v28": [
+            20.239,
+            20.163,
+            20.168,
+            20.209
+          ],
+          "parent_v077": [
+            20.152,
+            20.347,
+            20.229,
+            20.152
+          ],
+          "power_v079": [
+            20.132,
+            20.096,
+            20.086,
+            20.163
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": 20.188499999999998,
+          "parent_v077": 20.1905,
+          "power_v079": 20.114
+        },
+        "candidate_vs_v28_pct": -0.36902196795203235,
+        "candidate_vs_parent_pct": -0.3788910626284614
+      }
+    ]
+  },
+  "risk_confirmation": {
+    "reference": "132/132 full native naive_nsa,W10/R50 PASS",
+    "source": "exact archive v068",
+    "all_observations_retained": true,
+    "cases": [
+      {
+        "case": 1,
+        "samples_us": {
+          "baseline_v28": [
+            8.76,
+            8.770999999999999,
+            8.770999999999999,
+            10.624
+          ],
+          "parent_v077": [
+            9.124,
+            8.73,
+            8.765,
+            9.974
+          ],
+          "power_v079": [
+            8.827,
+            9.211,
+            8.857999999999999,
+            10.808
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 8.770999999999999,
+          "parent_v077": 8.944500000000001,
+          "power_v079": 9.0345
+        },
+        "candidate_vs_v28_pct": 3.0042184471554156
+      },
+      {
+        "case": 3,
+        "samples_us": {
+          "baseline_v28": [
+            12.406,
+            12.328999999999999,
+            12.334,
+            12.328999999999999
+          ],
+          "parent_v077": [
+            12.344000000000001,
+            12.375,
+            12.349,
+            12.38
+          ],
+          "power_v079": [
+            12.355,
+            12.38,
+            12.364999999999998,
+            12.375
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 12.331499999999998,
+          "parent_v077": 12.362,
+          "power_v079": 12.37
+        },
+        "candidate_vs_v28_pct": 0.3122085715444367
+      },
+      {
+        "case": 5,
+        "samples_us": {
+          "baseline_v28": [
+            31.053,
+            30.863000000000003,
+            31.396,
+            30.996
+          ],
+          "parent_v077": [
+            31.043000000000003,
+            31.058,
+            31.319,
+            31.432000000000002
+          ],
+          "power_v079": [
+            31.067999999999998,
+            31.426999999999996,
+            31.441999999999997,
+            31.401
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 31.0245,
+          "parent_v077": 31.188499999999998,
+          "power_v079": 31.413999999999998
+        },
+        "candidate_vs_v28_pct": 1.2554593949942738
+      },
+      {
+        "case": 6,
+        "samples_us": {
+          "baseline_v28": [
+            157.251,
+            159.442,
+            156.948,
+            156.831
+          ],
+          "parent_v077": [
+            94.356,
+            93.706,
+            94.582,
+            94.49000000000001
+          ],
+          "power_v079": [
+            93.819,
+            93.70100000000001,
+            94.408,
+            94.367
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 157.0995,
+          "parent_v077": 94.423,
+          "power_v079": 94.093
+        },
+        "candidate_vs_v28_pct": -40.106111095197626
+      },
+      {
+        "case": 7,
+        "samples_us": {
+          "baseline_v28": [
+            31.282999999999998,
+            31.38,
+            31.477999999999998,
+            31.267999999999997
+          ],
+          "parent_v077": [
+            31.37,
+            31.222,
+            31.222,
+            31.247
+          ],
+          "power_v079": [
+            31.314,
+            31.217000000000002,
+            31.304,
+            31.267999999999997
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 31.3315,
+          "parent_v077": 31.2345,
+          "power_v079": 31.285999999999998
+        },
+        "candidate_vs_v28_pct": -0.14522126294623794
+      },
+      {
+        "case": 8,
+        "samples_us": {
+          "baseline_v28": [
+            52.147,
+            52.116,
+            52.198,
+            52.116
+          ],
+          "parent_v077": [
+            52.198,
+            52.127,
+            52.187999999999995,
+            52.193000000000005
+          ],
+          "power_v079": [
+            52.147,
+            52.151999999999994,
+            52.214000000000006,
+            52.151999999999994
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 52.1315,
+          "parent_v077": 52.1905,
+          "power_v079": 52.151999999999994
+        },
+        "candidate_vs_v28_pct": 0.03932363350371837
+      },
+      {
+        "case": 9,
+        "samples_us": {
+          "baseline_v28": [
+            52.25,
+            51.676,
+            51.594,
+            52.28
+          ],
+          "parent_v077": [
+            52.234,
+            52.285,
+            51.742999999999995,
+            52.291
+          ],
+          "power_v079": [
+            52.239,
+            52.352000000000004,
+            52.265,
+            52.193000000000005
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 51.963,
+          "parent_v077": 52.2595,
+          "power_v079": 52.251999999999995
+        },
+        "candidate_vs_v28_pct": 0.5561649635317245
+      },
+      {
+        "case": 10,
+        "samples_us": {
+          "baseline_v28": [
+            11.719999999999999,
+            12.431,
+            12.641,
+            12.493
+          ],
+          "parent_v077": [
+            12.579999999999998,
+            12.508000000000001,
+            12.113999999999999,
+            12.482999999999999
+          ],
+          "power_v079": [
+            12.513,
+            12.447,
+            12.436,
+            12.503
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 12.462,
+          "parent_v077": 12.4955,
+          "power_v079": 12.475
+        },
+        "candidate_vs_v28_pct": 0.10431712405714055
+      },
+      {
+        "case": 11,
+        "samples_us": {
+          "baseline_v28": [
+            24.160999999999998,
+            23.331999999999997,
+            23.316,
+            23.951
+          ],
+          "parent_v077": [
+            23.689999999999998,
+            23.116999999999997,
+            23.839,
+            23.916
+          ],
+          "power_v079": [
+            23.916,
+            23.817999999999998,
+            23.844,
+            23.823
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 23.6415,
+          "parent_v077": 23.764499999999998,
+          "power_v079": 23.8335
+        },
+        "candidate_vs_v28_pct": 0.8121312099486078
+      },
+      {
+        "case": 12,
+        "samples_us": {
+          "baseline_v28": [
+            83.89099999999999,
+            83.369,
+            83.348,
+            84.127
+          ],
+          "parent_v077": [
+            72.525,
+            72.70899999999999,
+            72.59100000000001,
+            72.65299999999999
+          ],
+          "power_v079": [
+            72.489,
+            72.535,
+            72.586,
+            72.494
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 83.63,
+          "parent_v077": 72.622,
+          "power_v079": 72.5145
+        },
+        "candidate_vs_v28_pct": -13.291283032404632
+      },
+      {
+        "case": 13,
+        "samples_us": {
+          "baseline_v28": [
+            11.228,
+            11.264,
+            11.284,
+            11.382
+          ],
+          "parent_v077": [
+            11.223,
+            11.254,
+            11.259,
+            11.530000000000001
+          ],
+          "power_v079": [
+            11.377,
+            11.341000000000001,
+            11.341000000000001,
+            11.504999999999999
+          ]
+        },
+        "median_us": {
+          "baseline_v28": 11.274000000000001,
+          "parent_v077": 11.256499999999999,
+          "power_v079": 11.359000000000002
+        },
+        "candidate_vs_v28_pct": 0.7539471350008986
+      }
+    ]
+  },
+  "metadata_retry": {
+    "initial_exit": 137,
+    "cause": "oom4to6 duringmonitoredwindow,not exclusiveattribution",
+    "initial_raw": "initial_export_exit137",
+    "new_mode": "3sequentialsinglemodule/all14each,42records",
+    "incidental_nameerror": "singlemodule_initial_nameerror retained",
+    "native_benchmark_changed": false,
+    "memory": {
+      "samples": 76,
+      "peak_owned_rss_kib": 23165152,
+      "oom_before": "oom_kill_disable 0\nunder_oom 0\noom_kill 6\n",
+      "oom_after": "oom_kill_disable 0\nunder_oom 0\noom_kill 6\n",
+      "scope": "ownedPGID,late start,not benchmark modification"
+    }
+  },
+  "sameprocess_source_identity": {
+    "mode": "three sequential singlemoduleprocesses,all14/source;rawexactcurrent comparisons (no normalization)",
+    "sources": {
+      "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+      "power_v079": "98ac1b75839e8e3ae49d2de3345ce64779211af0c2aebe30751d1593a084a2fb",
+      "parent_v077": "dbaef6b0da5f503742805b07b802168d3f02e5c3aef1e8bffaddd909438d43de"
+    },
+    "11fallbacks_exact_v28": true,
+    "13nonC4_exact77": true,
+    "scope": "metadataonly,noattention/reference/timing",
+    "initial137": "preserved,4to6oomwindow",
+    "performance_waiver": "none"
+  },
+  "reference_count_scope": {
+    "candidate_label": "power_v079",
+    "candidate_checks": 119,
+    "experiment_checks_with_controls": 327,
+    "rows": [
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v079_codex_power_s1_case4_dense_sc-16g-2/archive_native_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 14,
+        "candidate_checks": 14,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v079_codex_power_s1_case4_dense_sc-16g-2/paired_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 168,
+        "candidate_checks": 56,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v079_codex_power_s1_case4_dense_sc-16g-2/paired_case4_sc-16g-2.csv",
+        "experiment_checks_with_controls": 12,
+        "candidate_checks": 4,
+        "candidate_cases": [
+          4
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v079_codex_power_s1_case4_dense_sc-16g-2/paired_risk_sc-16g-2.csv",
+        "experiment_checks_with_controls": 132,
+        "candidate_checks": 44,
+        "candidate_cases": [
+          1,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v079_codex_power_s1_case4_dense_sc-16g-2/screen_case4_sc-16g-2.csv",
+        "experiment_checks_with_controls": 1,
+        "candidate_checks": 1,
+        "candidate_cases": [
+          4
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+# v079 direct singleblock C4 D64 kernel
+
+Observed:77 non-targetC4~12.7us andbalanced78 original-v077 still+.342percent,case1samecallablevariationlarge. Case6/C12 alreadyimproved own76/77. No globalnoregression/OJscores proved. TargetC4 B2,L512,H1,HQ16,D64,S1,BS16.
+Hypothesis: dedicated64thread singlequery directMFMA8 kernel with compact2KB shared,queryregistercache,singleblock softmax,continuous8BVoperandfeed/outputpairswap can improve C4 realnativeover exactv28/77. Memory/hostsubmission may dominate;hypothesis not roof/occupancy claim.
+Mechanism: oneblock QK4MFMA/PV4MFMA,4scores/P and16numerator floats perthread;max/sum full64reductions,FP16P scaled256 consumedbothPV/denominator as own singleblock strategy. No online8block rescale. Everyvalidselectedblockmask/input/outputcoordinate preserved,emptybranch class retained. QK row/colpairswap,outrowbit3swap. Vcompact16x64slot has colPermutation xor rowbit2 and4rowcontiguity,2rowx8col/global16B producer and8Bconsumer.
+Dispatch: only exactC4key added to originalv28 blackboxentry cache. Existing C6 own76/C12 own77source exact,other11 originalv28. No oldteamalgorithmconsulted;owncurrent primitives and freshcoordinate derivation only.
+Prediction:64threads,1024CTAs/waves,shared2048B,MMA8,private0;global V16B/sharedproducer4B/consumer8B/output16B. Bank32x4B,32lane4B/16lane8B phases diagnostic only. IdeallynativeC4faster versus77 andv28;staticlimit not occupancy.
+Falsifier: coordinates/layout/ref/import/precision fail,spills/highreg,or nostableformalnativeC4win versusbothcontrols;anyotherofficial/OJregressionblockspromotion. No reruns to selectgood medians.
+Risks:FP16P rounding as existing ownscale256 strategy/native tolerance1e-2 mustgate;integer swizzles/copy/hostcost may offset. Allinputcontentsprocessed eachcall;codeobjectsonlycache,no async/injection/manualgeneralbuiltin or Torchcompute.
+Plan: cardbeforekernelwrite,completecoord/ownership/bounds/bankproof,normalCPP/LLVM/resource/static,originalnativeC4screen W10R50,3way B-I-C-C-I-B x2 (v28,77,79);full14/profile/archive aftermeaningfultarget. Accurate exactsource counts,Chinese7report/bilingualatomic4dirs. Mainv28/pending64/68/76/77protected,actualOJpending.
+
+Outcome:exact119candidate refs/14cases (327withcontrols),C4full14-14.072percentvs77/-14.367percentv28,42MT/20ST/private0,profile100percent/0conflict. Offcase riskpositive,OJpending,nopromotion. AuxiliaryOOM/debug preserved,singlemoduleexport passed;formalnative unchanged.
