@@ -1,0 +1,39 @@
+{
+  "status": "inconclusive_counter_comparison",
+  "attention_reports_found": 4,
+  "numeric_fields_present": true,
+  "anomalies": [
+    {
+      "variant": "power_v045",
+      "sample": 1,
+      "reasons": [
+        "duty ratio exceeds100; normalization or counter scope unresolved"
+      ]
+    },
+    {
+      "variant": "power_v045",
+      "sample": 2,
+      "reasons": [
+        "duty ratio exceeds100; normalization or counter scope unresolved"
+      ]
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 1,
+      "reasons": [
+        "reported dispatched waves differ from fixed4096 launch and prior exact-baseline captures"
+      ]
+    },
+    {
+      "variant": "baseline_v28",
+      "sample": 2,
+      "reasons": [
+        "reported dispatched waves differ from fixed4096 launch and prior exact-baseline captures"
+      ]
+    }
+  ],
+  "interpretation": "Do not use these samples for bottleneck attribution. Physical-card activity while visible slice idle is observed; interference or counter-scope error is a hypothesis, not established cause. Achieved waves remain raw, not occupancy.",
+  "mctracer_exit": 124,
+  "mctracer_status": "timeout_no_valid_timeline",
+  "paired_native_summary": "paired_summary.json"
+}
