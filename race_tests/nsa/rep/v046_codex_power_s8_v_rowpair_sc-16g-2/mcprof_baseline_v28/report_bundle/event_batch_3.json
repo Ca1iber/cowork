@@ -1,0 +1,33 @@
+{
+  "perfList": {
+    "L2C": [
+      [
+        20,
+        "perf_sector_hit"
+      ],
+      [
+        19,
+        "perf_hit"
+      ]
+    ],
+    "ISU": [
+      [
+        70,
+        "AP_PERF_BSM_READ_INFLIGHT_LEVEL"
+      ],
+      [
+        72,
+        "AP_PERF_BSM_RD_CYCLES"
+      ]
+    ]
+  },
+  "action": "config,disable,read_dump,enable,kernel_collect",
+  "conditions": {
+    "kernelnames": [],
+    "include": false,
+    "is_perkernel": true,
+    "is_multi_device": false,
+    "profile_from_start": true,
+    "counts": 4
+  }
+}
