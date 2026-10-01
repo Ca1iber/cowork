@@ -1,0 +1,8 @@
+# v042 hypothesis / sc-16g-2
+
+Evidence: v041 case12 90.752us PASS,68MT/max7/dynamic2304. Relative v28 ~83.7us still loses. Data shared only2048 plusunused256 warp-reduce workspace; max cache8FP32/thread duplicated four key-lane groups.
+Verified SDK: src/tl_templates/maca/reduce.h AllReduce64,scale16 uses xor32then16 without shared accesses. tilelang/language/builtin.py shfl_xor/shfl_sync are ordinary allowed intrinsics with MACA uint64 masks; defaults only0xffffffff, so explicit0xffffffffffffffff/width64 required.
+Mechanism: distribute8block maxima over4key-lane groups (2FP32/thread); running globalmax receives same reducedmax onall4groups. Only ownergroup computes each block alpha then broadcasts tosame queryhead peers. Express max/sum reductions directly with xor32/xor16 over queryhead-identical lanes. Remove unused workspace; allother math, two-phase percall probability cache and masks retained.
+Prediction: MT<64 ratherthan68, staticMax8 ratherthan7, dynamic2048 ratherthan2304; executed alpha exp128ratherthan512/token. Actual occupancy/roof not assumed. Native12 must beat exact incumbent; localwin then needs full14 paired and external no-regression OJ.
+Falsifier: wrong lane ownership/mask/reference, spills, no intended lowering, or latency does not beat baseline. Warp collectives outside ownergroup conditional and under uniformvalid-block branch only, all64participants active.
+Identity: startb7139795d/mainrepo/codex-power-v28-base/sc-16g-2. Candidate/tmp/nsa_power_v042_lane_normalizer.py, firstline codex-power v042, exact3imports, no async/injection/manual MXC calls. Baseline41fresh valid metrics bypath/hash; native official shape/W10R50/naive_nsa unchanged, othercase fallback AST preserved.
