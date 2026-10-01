@@ -1,0 +1,18 @@
+{
+  "partial4096_unique_slots": "PASS",
+  "all4096_reads_before_inplace_overwrite": "PASS",
+  "output1024_unique_writers_and_reads": "PASS",
+  "stats128_unique_writers": "PASS",
+  "all4CTA_barriers_outside_if_for": "PASS",
+  "CTA_barrier_lines": [
+    65,
+    69,
+    134,
+    143
+  ],
+  "expected_shared_bytes": 8704,
+  "zero_partial_guard": "N=0,Z=0 -> O=0/1=0,stats retains Z0,m-inf;global alpha0 for invalidpartial when anyvalid exists",
+  "merge_formula": "weights=alpha_w*Z_w/sum(alpha*Z),O=sum(weights*FP16(N_w/Z_w))",
+  "numerical_risk": "extra FP16 rounding;full naive_nsa required;not an exact algebra identity afterquantization",
+  "performance_claim": "NONE;CPU ownership/protocol proof only"
+}

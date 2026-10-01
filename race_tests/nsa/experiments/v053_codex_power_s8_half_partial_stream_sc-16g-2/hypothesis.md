@@ -1,0 +1,11 @@
+# v053: normalized FP16 partial outputs with streamed in-place merge
+
+Observed evidence: v0524-wave partial-FP32 kernel passes but153.001us versus v28 83.6555us,88MT/max5/shared16896B. Separating old merge phi saved only2MT. Own v018 already tried32F32+32F16 score pool and failed102MT/132.746us; do not repeat without new cause. Partial-output storage and full merge accumulator remain concrete costs.
+Verified bottleneck:16KiB partial arena and high registers are established resource costs; their exclusive time shares unmeasured.
+Current hypothesis: store per-wave normalized output in FP16, then stream4feature merge chunks. This lowers partial arena to8KiB and avoids a16float merged accumulator. In-place writes are safe when each logical chunk consumes all4same-layout partial inputs before overwriting wave0 positions.
+Proposed mechanism: keep4waves/two selected blocks each, Q/K/V work, online max/den and packed V operands. Compute O_w=N_w/Z_w as FP16; if Z_w=0 store0 using safe denominator1, but retain original m_w/Z_w in stats. Merge weights=(exp2((m_w-M)*scale)*Z_w)/sum, then weighted sum of4normalized partial outputs. One4float merge scratch, serial4feature chunks, same physical layout for partial and final output. Drop only the final CTA fence made unnecessary by non-overlapping same-chunk in-place overwrite;all other4CTA barriers unconditional.
+Predicted metric changes: shared8704B instead16896B,MT below88,no private stack,streamed merged scratch4instead16. More normalization/conversion arithmetic may offset gains. Native end-to-end must beat exactv28, not only slowparent.
+Falsifying result: reference fails due extraFP16 rounding, zero-partial NaN contamination, alias overwrite, malformed barriers,resource reduction fails or paired latency still loses to v28.
+Risks: normalized partial range/rounding, fixed partial layout, alpha normalization, stats of invalid waves, optimizer rehoisting loads. Only code objects cached at import;all attention data work remains inside every scored call. No async/foreign/manual builtin usage. Exact3imports/header and original entrypoint AST preserved.
+
+Fresh original case12 profile requested after3failed directions;capture validity checked. v049 S1 helper unchanged and external gate stillpending;root exact42911561... untouched.

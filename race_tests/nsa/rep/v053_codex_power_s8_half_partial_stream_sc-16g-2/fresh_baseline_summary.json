@@ -1,0 +1,43 @@
+{
+  "status": "inconclusive_counter_capture",
+  "baseline_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "rows": [
+    {
+      "file": "1_native_sparse_attention_kernel.txt.json",
+      "values": {
+        "Dispatched waves": 7328.0,
+        "Achieved waves": 7409.0,
+        "L2C Hit Rate": 56.65,
+        "Global Memory Read bytes": 107005728.0,
+        "Global Memory Write bytes": 10414240.0,
+        "AP MTE Duty ratio": 20.99,
+        "AP MMA Duty ratio": 24.25,
+        "shared memory access efficiency": 85.78,
+        "average conflict cycles per instruction": 0.54,
+        "average latency per load instruction": 75.92
+      },
+      "anomalies": [
+        "waves differ from fixed4096 launch"
+      ]
+    },
+    {
+      "file": "2_native_sparse_attention_kernel.txt.json",
+      "values": {
+        "Dispatched waves": 7688.0,
+        "Achieved waves": 7447.0,
+        "L2C Hit Rate": 57.75,
+        "Global Memory Read bytes": 134952480.0,
+        "Global Memory Write bytes": 10747008.0,
+        "AP MTE Duty ratio": 20.43,
+        "AP MMA Duty ratio": 23.98,
+        "shared memory access efficiency": 85.79,
+        "average conflict cycles per instruction": 0.53,
+        "average latency per load instruction": 74.12
+      },
+      "anomalies": [
+        "waves differ from fixed4096 launch"
+      ]
+    }
+  ],
+  "achieved_waves_interpretation": "raw only, not occupancy"
+}

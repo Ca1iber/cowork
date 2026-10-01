@@ -1,0 +1,19 @@
+{
+  "id": "v053_codex_power_s8_half_partial_stream_sc-16g-2",
+  "status": "rejected_target_performance",
+  "source_sha256": "a9ee80162a19e6cb3efcedc853f6d19fb78fa359f96e12887a9533537e7c017d",
+  "baseline_unchanged": true,
+  "screen_case12": "147.430us PASS",
+  "paired_case12": "12/12 PASS;v28 90.2245us,v052 161.1365us,v053147.510us",
+  "candidate_vs_v28_pct": 63.49217784526373,
+  "candidate_vs_parent_pct": -8.456494959242644,
+  "resources": "8704B shared,68MT/28ST stack0/max7 no private alloca",
+  "representation": "normalized FP16 partial,FP32 stats,4float streamed inplace merge",
+  "ownership_barrier_proof": "PASS all4096reads before overwrite,output1024unique,128stats,4unconditionalCTA barriers",
+  "fresh_baseline_profile": "CAPTURED_BUT_INCONCLUSIVE:wave7328/7688 versus4096 launch",
+  "source_generated_static": "PASS selectedcase12",
+  "all14_external_OJ": "NOT_RUN_TARGET_GATE_FAILED",
+  "candidate_profiler": "NOT_RUN_TARGET_FAILED;newbaseline scope inconsistent",
+  "isa_roofline": "UNAVAILABLE",
+  "v049_gate": "pending;independentsource unchanged"
+}
