@@ -1,0 +1,70 @@
+--- race_tests/nsa/experiments/v061_codex_power_s8_qk_pair_swap_sc-16g-2/s8_kernel.py
++++ race_tests/nsa/experiments/v062_codex_power_s8_qk_vec16_store_sc-16g-2/s8_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v061
++# codex-power v062
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s8_qk_pair_swap(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s8_qk_vec16_store(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+@@ -21,6 +21,8 @@
+     index_shape = [batch, seq_len, kv_heads, selected_blocks]
+     def qk_slot(row, col):
+         return row * 64 + ((col // 8) ^ (row % 8)) * 8 + (((col // 4) % 2) ^ ((row // 8) % 2) ^ (row % 2)) * 4 + col % 4
++    def qk_block_slot(row, col):
++        return row * 64 + ((col // 8) ^ (row % 8)) * 8
+     def out_slot(row, col):
+         return row * 64 + ((col // 8) ^ (row % 8)) * 8 + col % 8
+     def v_slot(row, col):
+@@ -39,6 +41,7 @@
+             shared = T.alloc_shared([1024], dtype)
+             q_local = T.alloc_local(16, dtype)
+             qk_fetch = T.alloc_local(8, dtype)
++            qk_ordered = T.alloc_local(8, dtype)
+             k_local = T.alloc_local(4, dtype)
+             scores = T.alloc_local(4, accum_dtype)
+             probabilities = T.alloc_local(4, dtype)
+@@ -56,10 +59,13 @@
+                 for element in T.vectorized(8):
+                     pos = part * 512 + lane * 8 + element
+                     qk_fetch[element] = Q[batch_id, token, kv_head * groups + pos // 64, pos % 64]
+-                for pack in T.unroll(2):
+-                    pos = part * 512 + lane * 8 + pack * 4
+-                    for element in T.vectorized(4):
+-                        shared[qk_slot(pos // 64, pos % 64) + element] = qk_fetch[pack * 4 + element]
++                pos_base = part * 512 + lane * 8
++                row_base = pos_base // 64
++                flip = ((row_base // 8) % 2) ^ (row_base % 2)
++                for element in T.unroll(8):
++                    qk_ordered[element] = T.Select(flip == 0, qk_fetch[element], qk_fetch[(element + 4) % 8])
++                for element in T.vectorized(8):
++                    shared[qk_block_slot(row_base, pos_base % 64) + element] = qk_ordered[element]
+             T.sync_warp()
+             for chunk in T.unroll(4):
+                 for element in T.vectorized(4):
+@@ -75,10 +81,13 @@
+                         for element in T.vectorized(8):
+                             pos = part * 512 + lane * 8 + element
+                             qk_fetch[element] = K[batch_id, block_start + pos // 64, kv_head, pos % 64]
+-                        for pack in T.unroll(2):
+-                            pos = part * 512 + lane * 8 + pack * 4
+-                            for element in T.vectorized(4):
+-                                shared[qk_slot(pos // 64, pos % 64) + element] = qk_fetch[pack * 4 + element]
++                        pos_base = part * 512 + lane * 8
++                        row_base = pos_base // 64
++                        flip = ((row_base // 8) % 2) ^ (row_base % 2)
++                        for element in T.unroll(8):
++                            qk_ordered[element] = T.Select(flip == 0, qk_fetch[element], qk_fetch[(element + 4) % 8])
++                        for element in T.vectorized(8):
++                            shared[qk_block_slot(row_base, pos_base % 64) + element] = qk_ordered[element]
+                     T.sync_warp()
+                     T.fill(scores, 0)
+                     for chunk in T.unroll(4):

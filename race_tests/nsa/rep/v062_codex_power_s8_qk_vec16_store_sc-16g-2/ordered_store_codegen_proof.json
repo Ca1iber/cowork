@@ -1,0 +1,10 @@
+{
+  "global_uint4_16B_preserved": true,
+  "shared_uint4_16B_stores": [
+    "*(uint4*)(shared + (((part * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8))) = *(uint4*)(qk_ordered + 0);",
+    "*(uint4*)(shared + (((part_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8))) = *(uint4*)(qk_ordered + 0);"
+  ],
+  "source_selection": "ternary T.Select in unroll8; backend still must eliminate private/dynamic indexing",
+  "consumer_map": "same v061 uint2 addresses",
+  "scope": "CPP proof, no ISA/runtime-bank claim"
+}
