@@ -1,0 +1,39 @@
+{
+  "status": "fresh_baseline_counter_gate_PASS",
+  "baseline_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "rows": [
+    {
+      "file": "1_native_sparse_attention_kernel.txt.json",
+      "values": {
+        "Dispatched waves": 4096.0,
+        "Achieved waves": 4058.0,
+        "L2C Hit Rate": 91.66,
+        "Global Memory Read bytes": 9573856.0,
+        "Global Memory Write bytes": 8388928.0,
+        "AP MTE Duty ratio": 62.78,
+        "AP MMA Duty ratio": 11.07,
+        "shared memory access efficiency": 48.43,
+        "average conflict cycles per instruction": 2.82,
+        "average latency per load instruction": 62.36
+      },
+      "anomalies": []
+    },
+    {
+      "file": "2_native_sparse_attention_kernel.txt.json",
+      "values": {
+        "Dispatched waves": 4096.0,
+        "Achieved waves": 4057.0,
+        "L2C Hit Rate": 91.66,
+        "Global Memory Read bytes": 9573536.0,
+        "Global Memory Write bytes": 8388928.0,
+        "AP MTE Duty ratio": 62.9,
+        "AP MMA Duty ratio": 11.1,
+        "shared memory access efficiency": 48.43,
+        "average conflict cycles per instruction": 2.82,
+        "average latency per load instruction": 62.23
+      },
+      "anomalies": []
+    }
+  ],
+  "achieved_waves_interpretation": "raw only, not occupancy"
+}

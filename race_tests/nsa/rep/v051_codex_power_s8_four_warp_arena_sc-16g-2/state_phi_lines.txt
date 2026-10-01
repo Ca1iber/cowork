@@ -1,0 +1,17 @@
+%numerator.sroa.197.0 = phi <4 x float> [ zeroinitializer, %entry ], [ %114, %if.end450.3 ], !dbg !103
+%numerator.sroa.132.0 = phi <4 x float> [ zeroinitializer, %entry ], [ %113, %if.end450.3 ], !dbg !103
+%numerator.sroa.67.0 = phi <4 x float> [ zeroinitializer, %entry ], [ %112, %if.end450.3 ], !dbg !103
+%numerator.sroa.0.0 = phi <4 x float> [ zeroinitializer, %entry ], [ %111, %if.end450.3 ], !dbg !103
+%maximum.sroa.0.1 = phi float [ 0xFFF0000000000000, %entry ], [ %52, %if.end450.3 ], !dbg !103
+%denominator.sroa.0.1 = phi float [ 0.000000e+00, %entry ], [ %add402, %if.end450.3 ], !dbg !103
+%numerator.sroa.197.1 = phi <4 x float> [ %numerator.sroa.197.0, %if.end555 ], [ %210, %if.end450.3.1 ], !dbg !103
+%numerator.sroa.132.1 = phi <4 x float> [ %numerator.sroa.132.0, %if.end555 ], [ %209, %if.end450.3.1 ], !dbg !103
+%numerator.sroa.67.1 = phi <4 x float> [ %numerator.sroa.67.0, %if.end555 ], [ %208, %if.end450.3.1 ], !dbg !103
+%numerator.sroa.0.1 = phi <4 x float> [ %numerator.sroa.0.0, %if.end555 ], [ %207, %if.end450.3.1 ], !dbg !103
+%maximum.sroa.0.1.1 = phi float [ %maximum.sroa.0.1, %if.end555 ], [ %148, %if.end450.3.1 ], !dbg !103
+%denominator.sroa.0.1.1 = phi float [ %denominator.sroa.0.1, %if.end555 ], [ %add402.1, %if.end450.3.1 ], !dbg !103
+%numerator.sroa.197.2 = phi <4 x float> [ %numerator.sroa.197.60.vec.insert1987, %for.cond621.preheader ], [ %numerator.sroa.197.1, %if.end613 ], !dbg !103
+%numerator.sroa.132.2 = phi <4 x float> [ %numerator.sroa.132.44.vec.insert1877, %for.cond621.preheader ], [ %numerator.sroa.132.1, %if.end613 ], !dbg !103
+%numerator.sroa.67.2 = phi <4 x float> [ %numerator.sroa.67.28.vec.insert1767, %for.cond621.preheader ], [ %numerator.sroa.67.1, %if.end613 ], !dbg !103
+%numerator.sroa.0.2 = phi <4 x float> [ %numerator.sroa.0.12.vec.insert1657, %for.cond621.preheader ], [ %numerator.sroa.0.1, %if.end613 ], !dbg !103
+%denominator.sroa.0.3 = phi float [ %add678.3, %for.cond621.preheader ], [ %denominator.sroa.0.1.1, %if.end613 ], !dbg !103

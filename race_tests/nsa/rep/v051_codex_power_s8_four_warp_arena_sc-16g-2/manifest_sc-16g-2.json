@@ -1,0 +1,19 @@
+{
+  "id": "v051_codex_power_s8_four_warp_arena_sc-16g-2",
+  "status": "rejected_target_performance",
+  "source_sha256": "4ebbc05fe836c4eecde856d31bbfc15e7b1d7cf3b7239d833a96c048da9c71d4",
+  "baseline_unchanged": true,
+  "screen_case12": "152.617us PASS",
+  "paired_case12": "12/12 PASS;v28 83.8325us,v050 87.693us,v051 152.668us",
+  "candidate_vs_v28_pct": 82.11075656815672,
+  "resources": "16896B shared,90MT/28ST stack0/max5 no private alloca",
+  "per_warp_shared": "4224B versus legacy6656B",
+  "fresh_baseline_mcProfiler": "two attention reports internally consistent,4096waves;gatePASS",
+  "candidate_profiler": "NOT_RUN_TARGET_FAILED;IR liveness investigation instead",
+  "liveness_evidence": "17 state phi;4 float32x4 old/new numerator phi plus denominator atmerge join;exclusive latency contribution unproven",
+  "mapping_barrier_proof": "PASS;all5 CTA barriers outsideif/for",
+  "source_generated_static": "PASS selectedcase12",
+  "all14_external_OJ": "NOT_RUN_TARGET_GATE_FAILED",
+  "isa_roofline": "UNAVAILABLE",
+  "v049_gate": "still pending;independent source unchanged"
+}

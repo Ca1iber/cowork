@@ -1,0 +1,20 @@
+{
+  "source_sha256": "4ebbc05fe836c4eecde856d31bbfc15e7b1d7cf3b7239d833a96c048da9c71d4",
+  "shared_bytes": 16896,
+  "per_warp_shared_bytes": 4224,
+  "legacy_two_warp_per_warp_shared_bytes": 6656,
+  "MT": 90,
+  "ST": 28,
+  "stack_bytes": 0,
+  "static_max_warps_peu": 5,
+  "private_allocas": [],
+  "state_phi_count": 17,
+  "merge_phi_sample": [
+    "%numerator.sroa.197.2 = phi <4 x float> [ %numerator.sroa.197.60.vec.insert1987, %for.cond621.preheader ], [ %numerator.sroa.197.1, %if.end613 ], !dbg !103",
+    "%numerator.sroa.132.2 = phi <4 x float> [ %numerator.sroa.132.44.vec.insert1877, %for.cond621.preheader ], [ %numerator.sroa.132.1, %if.end613 ], !dbg !103",
+    "%numerator.sroa.67.2 = phi <4 x float> [ %numerator.sroa.67.28.vec.insert1767, %for.cond621.preheader ], [ %numerator.sroa.67.1, %if.end613 ], !dbg !103",
+    "%numerator.sroa.0.2 = phi <4 x float> [ %numerator.sroa.0.12.vec.insert1657, %for.cond621.preheader ], [ %numerator.sroa.0.1, %if.end613 ], !dbg !103",
+    "%denominator.sroa.0.3 = phi float [ %add678.3, %for.cond621.preheader ], [ %denominator.sroa.0.1.1, %if.end613 ], !dbg !103"
+  ],
+  "interpretation": "Merge join retains old local numerator/den in SSA. This is a liveness hypothesis for high registers, not exclusive attribution of all90 registers or latency."
+}

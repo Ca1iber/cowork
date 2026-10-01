@@ -1,0 +1,27 @@
+{
+  "query1024_global_writers": "PASS",
+  "four_disjoint_K_V_zones": "PASS",
+  "selected0..7_once": "PASS",
+  "partial4096_float_writers_and_merge_reads": "PASS",
+  "stats128_unique_writers": "PASS",
+  "output1024_unique_writers": "PASS",
+  "all5_CTA_barriers_outside_if_and_for": "PASS",
+  "CTA_barrier_lines": [
+    60,
+    64,
+    129,
+    137,
+    151
+  ],
+  "shared_alias_bits_equal": true,
+  "expected_shared_bytes": 16896,
+  "arena_phase_order": [
+    "Q produce,CTA fence,Q cache,CTA fence",
+    "independent two-block per-wave K/V",
+    "CTA fence,partial/stats store,CTA fence",
+    "wave0 merge,CTA fence",
+    "wave0 overwrite FP16 output and global store"
+  ],
+  "softmax_merge": "alpha_w=exp2((m_w-M)*scale); sum(alpha_w*N_w)/sum(alpha_w*Z_w)",
+  "performance_claim": "NONE;CPU proofs do not replace native reference or hardware measurement"
+}
