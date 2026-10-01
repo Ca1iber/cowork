@@ -1,0 +1,26 @@
+{
+  "candidate_sha256": "54a63c084c5b77549706ae72d42bc5280f11c7b44441e29640cb4dff0460258a",
+  "private_allocas": [
+    "%v_fetch_local = alloca [16 x %struct.__half], align 2, addrspace(5)"
+  ],
+  "dynamic_private_address_sample": [
+    "%condval_4.sroa.0.0.in = getelementptr inbounds [16 x %struct.__half], ptr addrspace(5) %v_fetch_local, i32 0, i32 %365, !dbg !84",
+    "%condval_4.sroa.0.0.in.1 = getelementptr inbounds [16 x %struct.__half], ptr addrspace(5) %v_fetch_local, i32 0, i32 %idxprom648.pn.in.1, !dbg !84",
+    "%condval_5.sroa.0.0.in.1 = getelementptr inbounds [16 x %struct.__half], ptr addrspace(5) %v_fetch_local, i32 0, i32 %idxprom661.pn.in.1, !dbg !84",
+    "%condval_4.sroa.0.0.in.2 = getelementptr inbounds [16 x %struct.__half], ptr addrspace(5) %v_fetch_local, i32 0, i32 %idxprom648.pn.in.2, !dbg !84"
+  ],
+  "dynamic_private_address_count": 56,
+  "global_v_uint4_load_sites": 1,
+  "source_alias_views": false,
+  "compiler": {
+    "MT": 78,
+    "ST": 50,
+    "stack_bytes": 36,
+    "static_max_warps_peu": 6
+  },
+  "correctness": "FAIL",
+  "mismatched_elements": 2730816,
+  "total_elements": 4194304,
+  "native_latency": null,
+  "baseline_promotion": false
+}
