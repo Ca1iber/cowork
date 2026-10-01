@@ -1,0 +1,8 @@
+# v063: uint32-pair selection for ordered Q/K store
+
+Observed evidence: v061 Q/K mapping improves valid C12 bank metrics but native+0.740% versus v060. v062 half selectors yield optimized144i16+36i64 stores/296select and native87.1835us versus current77.4555us. CPPuint4 did not survive optimized IR.
+Hypothesis: retain the same v061 mapping but select complete32-bit words of two adjacent half values, preserving their raw bits and promoting packed shared stores rather than scalar half stores.
+Mechanism: only global Q/K and shared buffer T.view aliases to uint32, equal bit counts/same DataVar/no allocation. Local fetch4uint32 and ordered4uint32 with fixed unroll4 indices and swap by2 words. Global/shared vector4uint32=16B. No local pointer alias view; no numeric half conversion or dynamic array indexing. Half Q/K consumers unchanged; PV/output/math/masks/sync/proven bounds/arena and exact v060 C6 unchanged.
+Predictions: four word selects instead of eight half selects, original16B producer stores retained in actual IR; resource/private and timing empirical. Shared hardware splitting/bank behavior unproven.
+Falsifier: bit/alias/domain proof fails, lowering still produces half stores/private arrays, full reference fails, formal C12 fails to beat current v060, or another official regresses. Missing OJ never proves no regression.
+Risks: global/shared alias flattening or packed input dtype changes,compiler scalarization/register cost,unexpected allocation. Exact project native/official shapes/seed0/W10R50; three exact imports and normal TileLang primitives,no async/foreign injection/manual backend builtins.

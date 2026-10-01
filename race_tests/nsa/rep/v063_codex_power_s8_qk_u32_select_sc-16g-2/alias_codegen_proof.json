@@ -1,0 +1,10 @@
+{
+  "host_dynamic_shared_bytes": 2048,
+  "global_input_signature": "half_t* K_words/Q_words, internal uint casts; exact original Tensor dtype contract retained",
+  "shared_alias_one_declaration": "uint shared_words with half read/write casts, no additional allocation",
+  "uint4_ordered_stores": [
+    "*(uint4*)(shared_words + (((part * 256) + ((((int)threadIdx.x) >> 3) * 32)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 4))) = *(uint4*)(qk_ordered + 0);",
+    "*(uint4*)(shared_words + (((part_1 * 256) + ((((int)threadIdx.x) >> 3) * 32)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 4))) = *(uint4*)(qk_ordered + 0);"
+  ],
+  "codegen_scope": "C++ proof; optimized IR and native still required"
+}

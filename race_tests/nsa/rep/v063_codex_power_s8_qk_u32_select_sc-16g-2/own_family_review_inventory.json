@@ -1,0 +1,555 @@
+{
+  "scope": "own codex-power hypotheses/reports only, no prior team kernel algorithms",
+  "versions": [
+    {
+      "id": "v001_codex_power_s8_onepass_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v001_codex_power_s8_onepass_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "d72e8ee7bfd77247fbc7959bf51aa2dbb5fff4e264177a371f26704db2488aa8",
+      "title": "# v001: one-pass sparse tile for S=8",
+      "report_path": "race_tests/nsa/rep/v001_codex_power_s8_onepass_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "6289ab0530f69ec80e3cdf453a498a98e9dd3561e3c8f15cf1ce50d68eeb5b1d",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v002_codex_power_s8_group4_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v002_codex_power_s8_group4_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "8bbc52b25d3a291f9125b1cacef427478363ecacabc375402c89dc0063f8cf23",
+      "title": "# v002: two grouped tiles of four selected blocks",
+      "report_path": "race_tests/nsa/rep/v002_codex_power_s8_group4_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "b033e7594c76004e0ce29550ff7802fadab091931f48c190d4b533a56bfc2b48",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v003_codex_power_s8_four_warps_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v003_codex_power_s8_four_warps_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "41b4df125a6f9ccd02924ea35026df8389317b6385a2f41c3523aa962bb82e8b",
+      "title": "# v003: distribute 128-column S8 tile across four 64-thread waves",
+      "report_path": "race_tests/nsa/rep/v003_codex_power_s8_four_warps_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "1df319ba1fcbc27aa2a69a38049df5db963e5e6ddef27195a3830138564547e6",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v005_codex_power_s1_swizzle_kv_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v005_codex_power_s1_swizzle_kv_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "0f673580b2bac0d4d5cfc86f26650d6c1c57d62fa9b005c144358ce535836ca1",
+      "title": "# v005: explicit K/V shared swizzle on the S=1 case6 path",
+      "report_path": "race_tests/nsa/rep/v005_codex_power_s1_swizzle_kv_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "faf2474732f2c5ba82c88612c38c9c391b9ebe7296f234cfb55aa0d27d64af18",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v006_codex_power_s1_direct_output_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v006_codex_power_s1_direct_output_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "f1c2c25d4887d5d59f2cc5ef0f1e75c5c697f3f2fc1b93b6e651f2c7a9bc5ed2",
+      "title": "# v006: direct fragment-to-global output for case6",
+      "report_path": "race_tests/nsa/rep/v006_codex_power_s1_direct_output_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "6a529ed89e6a68ec5f15ef326c75fd576ab72592c61de8b9669b63409a39b3d4",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v007_codex_power_s1_two_waves_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v007_codex_power_s1_two_waves_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "acbece74fba6fa8ceec2359a8dea15da05a0b43c6d2ec71baeb8a48d4025ccb2",
+      "title": "# v007: two-wave case6 QK/PV thread mapping",
+      "report_path": "race_tests/nsa/rep/v007_codex_power_s1_two_waves_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "28682066243b1bb6d20c80b242e77a45f83a45c920e775b6422615fdb24b2404",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v008_codex_power_s8_two_waves_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v008_codex_power_s8_two_waves_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "4f7a8a3a85337272e6a97e3d09742c0697c62d9adfffcf44f7e44e1fa72d0a37",
+      "title": "# v008: two-wave mapping for the original S=8 per-block loop",
+      "report_path": "race_tests/nsa/rep/v008_codex_power_s8_two_waves_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "1f12927319ddd14e37b7289b46d23e30c700a1bd6ec4ed50d327bbb42c8ae134",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v009_codex_power_s8_group2_two_waves_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v009_codex_power_s8_group2_two_waves_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "cedcc6e5d66649814f8afd92811e7dfc2133f8e575b599ba2138e6e9e9074de1",
+      "title": "# v009: two selected blocks per tile, two-wave case12 CTA",
+      "report_path": "race_tests/nsa/rep/v009_codex_power_s8_group2_two_waves_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "f48d68119f22dadab5bebb47f7d75023cfae9791fbf5d0e2211fa52d2d3f2fc0",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v010_codex_power_s8_register_qk_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v010_codex_power_s8_register_qk_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "485477b84dd43791825a27db5700a7d17609557e2b86e08fd735dcd3c8cd5f19",
+      "title": "# v010: register-fed MFMA QK for each 16-token selected block",
+      "report_path": "race_tests/nsa/rep/v010_codex_power_s8_register_qk_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "a1fe0ead8f004981a10f5dc1907424407bcdffca42fdfbfcb59a2116497d357b",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v011_codex_power_s8_register_pv_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v011_codex_power_s8_register_pv_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "33bf2bebfe12c4240b9c312153a470eb9ea4e3e88ba08f25b90cd9f1d5cb819a",
+      "title": "# v011: register-fed MFMA PV on the S=8 case12 path",
+      "report_path": "race_tests/nsa/rep/v011_codex_power_s8_register_pv_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "ef454cd15f53525495fd0e67282690190c783470307b29008ba35d8ff19f0966",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v012_codex_power_s8_direct_output_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v012_codex_power_s8_direct_output_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "72597dfadf317a892c2da14c802420691fe4bb97aef4136d30903f9101b082c9",
+      "title": "# v012: direct output store for the S=8 case12 path",
+      "report_path": "race_tests/nsa/rep/v012_codex_power_s8_direct_output_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "ace38eef888b155618f0669d5f1c53573a65c7d1c0c6f6ebb35079bebb2ed690",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v014_codex_power_s8_wave_split_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v014_codex_power_s8_wave_split_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "f6c59787c06902e8aeb028fc3fb98860c6d4bf1d1d63bbd56fb6a0cf4975bfe8",
+      "title": "# v014: two independent waves over selected blocks, followed by softmax merge",
+      "report_path": "race_tests/nsa/rep/v014_codex_power_s8_wave_split_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "33003b9b81000a3b410e378c0d11c14490fd2c0b6ace28a0706bfab41653cbc8",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v015_codex_power_s8_gather_once_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v015_codex_power_s8_gather_once_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "682ac4a69f5cf78ea49362b81deeb9fc64f6cda059f37bb66a866ac6b7bd6197",
+      "title": "# v015: vectorized dense gather, one softmax, one PV",
+      "report_path": "race_tests/nsa/rep/v015_codex_power_s8_gather_once_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "fde14fa6b2a9c5c002230e277ec21928db5ddcac1708e57b3afc6f45f262c05f",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v016_codex_power_s8_v_bank_partition_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v016_codex_power_s8_v_bank_partition_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "23cb972f626025067ab2d6256ffc9d3f557247c5e5a24fa7c0d01bd35e0bf6fa",
+      "title": "# v016: independent PV V-shared bank partition",
+      "report_path": "race_tests/nsa/rep/v016_codex_power_s8_v_bank_partition_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "c5b42f10a432bc3db407832aee21c41689a6f2bc83eee563b2d2f91696461d0a",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v017_codex_power_s8_k_register_prefetch_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v017_codex_power_s8_k_register_prefetch_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "49e689e642fa2e3d31a9519fc5d1fd0d5d7ea99764dbc545c3834cb974931978",
+      "title": "# v017: explicitly stage four K register chunks before QK MFMA",
+      "report_path": "race_tests/nsa/rep/v017_codex_power_s8_k_register_prefetch_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "855970a7f81a06bad226035ab849f35184c32f74f2d16c97249f9b2dd9bb4b2d",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v018_codex_power_s8_register_score_pool_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v018_codex_power_s8_register_score_pool_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "3fc9fcf92e94e4909b0cf2bedea4874370641a6beeb1b37c2f769f8e4ea279c0",
+      "title": "# v018: register-resident score pool with one softmax and streamed PV",
+      "report_path": "race_tests/nsa/rep/v018_codex_power_s8_register_score_pool_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "8232aaf190c887cde3f7f93dd05f805e8bc80dec185adfbb6eaa8022f2e64f6f",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v019_codex_power_s1_feature_tiles_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v019_codex_power_s1_feature_tiles_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "29636f927e7468e9eea5705373ac647e771a997afe595e39eb0d15962f39f6c1",
+      "title": "# v019: single-wave S1 with sequential 64-feature output tiles",
+      "report_path": "race_tests/nsa/rep/v019_codex_power_s1_feature_tiles_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "04d15f1978a99ec15403fd87085679d408af6942e7967b956a32a4a2deadba94",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v020_codex_power_s1_score_bridge_layout_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v020_codex_power_s1_score_bridge_layout_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "40807ff1ecce59cfac8ea37740dc05e9d57b005f0df068f66197fc2db3c25702",
+      "title": "# v020: case6 shared-score bridge layout only",
+      "report_path": "race_tests/nsa/rep/v020_codex_power_s1_score_bridge_layout_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "05ad2549f106f18472d51c3a069e9f4ff201501dcb4a79845dd1f9b4d7706a58",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v021_codex_power_s1_normalize_scores_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v021_codex_power_s1_normalize_scores_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "0cd9722000b1de1976b0e274563eece80ba7e35a79813ee56b8f876e747f9c8a",
+      "title": "# v021: normalize single-block scores before PV",
+      "report_path": "race_tests/nsa/rep/v021_codex_power_s1_normalize_scores_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "21fa79641ff337f7a8f099225b66199baecb5fb5d6ade5447b134fb33165ad17",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v022_codex_power_s1_past_block_mask_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v022_codex_power_s1_past_block_mask_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "8b39fe21eb8f3131084f97340b301cba350c6c4dca6c522cc17b3e99a5e50728",
+      "title": "# v022: initialize fully past case6 scores without per-element masking",
+      "report_path": "race_tests/nsa/rep/v022_codex_power_s1_past_block_mask_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "1f09003ad7bb2c47e514c370927d02cacdd3856294fcee6a8463d82ce6b34016",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v023_codex_power_s8_cooperative_k_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v023_codex_power_s8_cooperative_k_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "5c9bc5428bdce7a4894dbd61d1c51558d2b39d15f9cdd2fa732c59a5cdc97bf6",
+      "title": "# v023: cooperative vector K staging for case12",
+      "report_path": "race_tests/nsa/rep/v023_codex_power_s8_cooperative_k_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "8154e66dcfefd859aafc1827c3471b39a0f52d3b0b0ff5a74cf33f83d0dc10f5",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v024_codex_power_host_kernel_cache_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v024_codex_power_host_kernel_cache_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "dba671c3a825e35241ca419fd71754646d86f907817475999c3d9669e6850ecd",
+      "title": "# v024: cache compiled kernel objects in the submission wrapper",
+      "report_path": "race_tests/nsa/rep/v024_codex_power_host_kernel_cache_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "313d849315b2cd2abf5e64c92a48cdca3098f431efdd064c18cfebbc141bf0de",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v025_codex_power_s2_s4_register_qk_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v025_codex_power_s2_s4_register_qk_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "cf145c70c33032a066a7a0fe96899880f3ecd7bc1e8e810e1341c35a987b980d",
+      "title": "# v025: reuse register-Q attention for S2/S4",
+      "report_path": "race_tests/nsa/rep/v025_codex_power_s2_s4_register_qk_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "078e6c2c433594184ccd38650341248a2b59094e8b9ab2dddf1c4af0d6cb6d18",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v026_codex_power_multiblock_warp_sync_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v026_codex_power_multiblock_warp_sync_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "08d0e8a70b54ee354dcc86fcf55a7ea36deada23187285896eb3911c57aec470",
+      "title": "# v026: explicit synchronous warp memory boundaries",
+      "report_path": "race_tests/nsa/rep/v026_codex_power_multiblock_warp_sync_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "6c60d573fd3fd4f407f761352e07f15b7ec4913bac6c2d18ffa182d2295a4c72",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v027_codex_power_multiblock_scaled_max_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v027_codex_power_multiblock_scaled_max_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "9b1c8cade6d1363a597e85df31a2901d84ebf26f28d529c53a5a69a496b58d5a",
+      "title": "# v027: retain online max in exp2-scaled score space",
+      "report_path": "race_tests/nsa/rep/v027_codex_power_multiblock_scaled_max_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "2f352382a0df592cd893a93b29c77b395b3de245a359bf8b4e4f711a0a5932d3",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v028_codex_power_adaptive_normalizer_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v028_codex_power_adaptive_normalizer_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "73ef0443d80eb44f2a0c3a82769f215ffdea937fb41a894032b00795eabc890b",
+      "title": "# power v028: adaptive raw-score normalization with FP16 exponent headroom",
+      "report_path": "race_tests/nsa/rep/v028_codex_power_adaptive_normalizer_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "d1022d00c2f176ccbdd19c156a827bdacb57c27dab086e7f1a3ce264c6e8aebc",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v029_codex_power_multiblock_direct_v_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v029_codex_power_multiblock_direct_v_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "0db4f9ed8f3c4b19fa6f638d98a34c35136f42bad69f2f4b8f8e85a512a28468",
+      "title": "# power v029: stream native PV operands directly from global V",
+      "report_path": "race_tests/nsa/rep/v029_codex_power_multiblock_direct_v_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "2840c80d728cd60c04e9e37bb6e7233229568f46170e33400e61ecea571cbb95",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v030_codex_power_v_microtile_transpose_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v030_codex_power_v_microtile_transpose_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "bfb9daf522493303c50832357aae38e1b7b9e60ea22f259cee19f577088eef7b",
+      "title": "# power v030: cooperative4x4 V microtile and vector-native shared layout",
+      "report_path": "race_tests/nsa/rep/v030_codex_power_v_microtile_transpose_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "e4e1391f7a69be7b88f3b8f0cef4dd8bad2b464421746a9f97a01a11d499384f",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v031_codex_power_output_relay_swizzle_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v031_codex_power_output_relay_swizzle_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "32b077d0babce7e4d1e75fb0f8d752e3a2e6db89fd5139894cfb9520f3c8019c",
+      "title": "# power v031: vector-preserving output shared relay swizzle",
+      "report_path": "race_tests/nsa/rep/v031_codex_power_output_relay_swizzle_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "c14e30fc49311822fbff83ebbdd3fac774a4b77585e6eec3552a9b88ae62e0e3",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v032_codex_power_cooperative_q_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v032_codex_power_cooperative_q_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "760d5921e02e1e2aa7484bb5fb579a0cf677a842fab750de23c36ba24b16b098",
+      "title": "# power v032: cooperative Q loading before register reuse",
+      "report_path": "race_tests/nsa/rep/v032_codex_power_cooperative_q_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "1f553ff54448f0583e7106a234f5cc2e2439c38bd86d0a927cc8f1baeb8462fa",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v033_codex_power_s4_checkpoint_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v033_codex_power_s4_checkpoint_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "e8d58291c4cb37f06162607fa4d77dc42e1a5395be4a8d8c0095cb0d35ddfa6c",
+      "title": "# power v033: preserving S4 checkpoint on true NSA v28 branch",
+      "report_path": "race_tests/nsa/rep/v033_codex_power_s4_checkpoint_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "164b1fa98c9e6b6449a3c764b0c80e18313bef8f21bb28f29f6cd5ae311332c2",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v034_codex_power_s8_kpair_prefetch_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v034_codex_power_s8_kpair_prefetch_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "5ddc12c92d2ca0b043823495ed01b8a176587c7fd3a07c24d4a63988576b5a21",
+      "title": "# power v034: pairwise shared K operand prefetch for S8",
+      "report_path": "race_tests/nsa/rep/v034_codex_power_s8_kpair_prefetch_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "24610b24d31d4fa44786be53768a91e93790c2c69011a89bc0389e6c671ec9f4",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v035_codex_power_s1_feature_ctas_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v035_codex_power_s1_feature_ctas_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "89c22fbb0af489651169dd23dd92b8b300b3c9ab416443203801119d11e2429f",
+      "title": "# power v035: adjacent feature CTAs for case6",
+      "report_path": "race_tests/nsa/rep/v035_codex_power_s1_feature_ctas_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "c0b1283d052328a640195d2b7ebbb370b183fc082629a35c5d2a7d8a171b83f7",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v036_codex_power_s1_shared_lifetime_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v036_codex_power_s1_shared_lifetime_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "e0bbc87c7ae005b139cc6e247d3945ea23544280763d1368a6aa6ab478609ace",
+      "title": "# v036 hypothesis / sc-16g-2",
+      "report_path": "race_tests/nsa/rep/v036_codex_power_s1_shared_lifetime_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "1e849727736b7acd7c0b2f2775b199d3ac7b3178b8db534eed93101750cfbe43",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v037_codex_power_s1_pv_vector_layout_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v037_codex_power_s1_pv_vector_layout_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "396f32e58214ebfb153b44ca0e0dab63745d9c1debb104b6193c26fd1f63c1ad",
+      "title": "# v037 hypothesis / sc-16g-2",
+      "report_path": "race_tests/nsa/rep/v037_codex_power_s1_pv_vector_layout_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "c9667deece32d2f77048c25ab39972314d4fe55e2cf276316f01bc3f952a288f",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v038_codex_power_s8_pair_blocks_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v038_codex_power_s8_pair_blocks_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "0ed176a9cc2be6e4b86dfb2021cfd500b19deb895ac14bcf6efb445c75dad504",
+      "title": "# v038 hypothesis / sc-16g-2",
+      "report_path": "race_tests/nsa/rep/v038_codex_power_s8_pair_blocks_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "b33f0928c97f27e4271faf2f95977a87cf765df63c4358ab35dbee303286369b",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v039_codex_power_s8_deferred_sum_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v039_codex_power_s8_deferred_sum_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "732cb279310e3317499d4f89e0aa257b8d4e96e5410cbbafcab662c5a339214c",
+      "title": "# v039 hypothesis / sc-16g-2",
+      "report_path": "race_tests/nsa/rep/v039_codex_power_s8_deferred_sum_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "660ccfa3b48dabf41e5b3dfa0df61d97e7234c3a0aafe5ed254f9185f576f9ee",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v040_codex_power_s8_pv_fence_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v040_codex_power_s8_pv_fence_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "feba985cdef896d398f3383847de71b29cfba5fa90c0fc34f812cf0ebd94a432",
+      "title": "# v040 hypothesis / sc-16g-2",
+      "report_path": "race_tests/nsa/rep/v040_codex_power_s8_pv_fence_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "474e7abce73c90a4d8800cefebaf12beb239ce2ac96645462dc66d3e8700e91d",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v041_codex_power_s8_probability_cache_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v041_codex_power_s8_probability_cache_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "03fdc005ef934136316090d5a3036604782469c240f642259ba987c3a3d80279",
+      "title": "# v041 hypothesis / sc-16g-2",
+      "report_path": "race_tests/nsa/rep/v041_codex_power_s8_probability_cache_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "1c73562ea8d8c18155b8b1c42ee33468e19c709cbb632648a80b976eff1ae623",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v042_codex_power_s8_lane_normalizer_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v042_codex_power_s8_lane_normalizer_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "7c246b2600744acb3123c136b0f18f344c2e4e79c28bc99aa8d36a8def15ead6",
+      "title": "# v042 hypothesis / sc-16g-2",
+      "report_path": "race_tests/nsa/rep/v042_codex_power_s8_lane_normalizer_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "d1842148de067551b936d26eac2a901c7fe9361879ec32cf8432054a5b73965c",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v043_codex_power_s8_v_uint4_fetch_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v043_codex_power_s8_v_uint4_fetch_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "da091f93c5bd14a8b15e27ee3bcaeb071e385441f506eeb4905700eb9780dca8",
+      "title": "# v043 hypothesis / sc-16g-2",
+      "report_path": "race_tests/nsa/rep/v043_codex_power_s8_v_uint4_fetch_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "4ebe3cdc29579b5f942c5e6224e38cf3e5777d1b5041fcf510a51b991d6fbc5c",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v044_codex_power_s8_value_pack_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v044_codex_power_s8_value_pack_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "cf86d653856771a9778978dabbd0eb640d9a6370649ebbd31c5b378cf7260171",
+      "title": "# v044: value-based V packing",
+      "report_path": "race_tests/nsa/rep/v044_codex_power_s8_value_pack_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "67520b626d5d6a8ae3d09836c3cc34003c09993c39f8e53e41bfd17af5313ba1",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v045_codex_power_s8_value_select_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v045_codex_power_s8_value_select_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "b0d19134ebe1c7664dfab0d7685bde36d176dbaf257cd29a4e9666de82bb57c0",
+      "title": "# v045: select scalar bits after fixed-address loads",
+      "report_path": "race_tests/nsa/rep/v045_codex_power_s8_value_select_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "62a8e62d2ee7e743d0f3e4236ef0b9b806dfe196b915fbabf3f7c5a5b5e5d062",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v046_codex_power_s8_v_rowpair_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v046_codex_power_s8_v_rowpair_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "238546a834f39aef41aafa17cd8a2023dc4ac1a4dc24ab9e245901762f2c6b49",
+      "title": "# v046: V row-pair producer without lane exchange",
+      "report_path": "race_tests/nsa/rep/v046_codex_power_s8_v_rowpair_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "79301cca427326f06f9ea6eb20fc957f1992808a19f4d13271c8bd97c58b11cc",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v047_codex_power_s1_v_planes_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v047_codex_power_s1_v_planes_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "0d579f585843e6759ae0480416edb8909eff6bc962bc1340482d22fdc98a66dd",
+      "title": "# v047: independent S1/D128 kernel with64-feature V planes",
+      "report_path": "race_tests/nsa/rep/v047_codex_power_s1_v_planes_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "0f2e2843c911516ccdcdae04e5c9ea856a82c445a4787cc07ed678f6fd2a9418",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v048_codex_power_s1_shared_arena_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v048_codex_power_s1_shared_arena_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "4ed2a1fd5a2b91891acef414c3ab801c4c7a84d3813774ef4125148e1e403b41",
+      "title": "# v048: explicit shared arena for S1/D128",
+      "report_path": "race_tests/nsa/rep/v048_codex_power_s1_shared_arena_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "3dc99f5260134d1eaba6ae5982c7066eaa79f42edeea67da19ecdba17e6ab987",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v049_codex_power_s1_cache_entry_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v049_codex_power_s1_cache_entry_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "b767e92fa069c6f4ccc8af599ed2f26c6f2d4ea2aa18e3989e42ba44c8fda38e",
+      "title": "# v049: use original compiled-code cache without a per-call branch",
+      "report_path": "race_tests/nsa/rep/v049_codex_power_s1_cache_entry_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "8cc57413e1be02dc84b286ed8ff072fa37a77cb935caed6640b819c1c30b55cf",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v050_codex_power_s8_online_local_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v050_codex_power_s8_online_local_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "d3c07c2f50420585c6bd86f60c90954aa2e0e24f06902c0144b595e5f05430c5",
+      "title": "# v050: S8 online softmax using explicit local arrays",
+      "report_path": "race_tests/nsa/rep/v050_codex_power_s8_online_local_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "18eb0f707d3104c4b7d25a86cadca4e100edcdab9d0a79045c760a02be3de56e",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v051_codex_power_s8_four_warp_arena_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v051_codex_power_s8_four_warp_arena_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "f9e25a63c02646df135210ee86e4a1c2d8265bdb708c8301995538787de5bcbd",
+      "title": "# v051: four-warps, one phase-reused arena, independent block subsets",
+      "report_path": "race_tests/nsa/rep/v051_codex_power_s8_four_warp_arena_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "715cf5b8cba0268c581a7b0657998b77724e0e2bc1a94bc485fbe5e8808776ca",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v052_codex_power_s8_merge_lifetime_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v052_codex_power_s8_merge_lifetime_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "ba7ec60141efd105154464e7e554e6f298e850fa98ad3ea4a7a7e4a4d655dcec",
+      "title": "# v052: isolate partial and merged local-state lifetimes",
+      "report_path": "race_tests/nsa/rep/v052_codex_power_s8_merge_lifetime_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "0a09403c266747ef1f8d1557ee994a2715d892839ac44625dd717097571e93fd",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v053_codex_power_s8_half_partial_stream_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v053_codex_power_s8_half_partial_stream_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "a1b9d7b1f5f28c2c02c93e90034e4c47460cb5e39fcaf697a5b2bdd22805d9bb",
+      "title": "# v053: normalized FP16 partial outputs with streamed in-place merge",
+      "report_path": "race_tests/nsa/rep/v053_codex_power_s8_half_partial_stream_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "e3e9d39d3e3f8ff2dd43573f62af74d5c0065ca368f325f36147a02790350732",
+      "status": "see referenced report"
+    },
+    {
+      "id": "v054_codex_power_s8_record_max_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v054_codex_power_s8_record_max_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "b6d13bacb58afe4c0fce3bcdbc177dcf2bd1fa5c82897b1b77e82727ab08b5cc",
+      "title": "# v054: exact record-max guard for online rescaling",
+      "report_path": "race_tests/nsa/rep/v054_codex_power_s8_record_max_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "ef3e9a1135bee7a894d4a11687899aff211b60f09f0d071ee9e470a906d73ee3",
+      "status": "rejected_target_performance"
+    },
+    {
+      "id": "v055_codex_power_s1_four_row_planes_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v055_codex_power_s1_four_row_planes_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "285adb302c432ed58bf4039eca39b398e76cccaf70cf2a99245de096e90c418b",
+      "title": "# v055: case6 four-row V planes",
+      "report_path": "race_tests/nsa/rep/v055_codex_power_s1_four_row_planes_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "c8735d6c8a11a316738a321315de39173d176f88ad271242fbda35e6010009e6",
+      "status": "rejected_incremental_benefit_not_reproduced_and_no_regression_unverified"
+    },
+    {
+      "id": "v056_codex_power_s8_proven_bounds_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v056_codex_power_s8_proven_bounds_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "66085620e11b183fab58f04e0345d64a18ccfab3c949aa132962d04aaea826a0",
+      "title": "# v056: case12 proven bounded accesses",
+      "report_path": "race_tests/nsa/rep/v056_codex_power_s8_proven_bounds_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "31b10c0892f299a73de63ee8cca64666249235d61da7dfd303e5ab281abb0266",
+      "status": "inconclusive_pending_external_oj_no_regression"
+    },
+    {
+      "id": "v057_codex_power_s1_proven_bounds_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v057_codex_power_s1_proven_bounds_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "ec9c25dbbb0edde3c1a33700c19b0561524c1c4887db7adc99f38d5fa909cfb5",
+      "title": "# v057: case6 proven bounded K/V access",
+      "report_path": "race_tests/nsa/rep/v057_codex_power_s1_proven_bounds_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "3eca90a24893951f15a8a91bd16bcd1dc615f19eb76c7284aee8ad9534c842e3",
+      "status": "inconclusive_pending_external_oj_no_regression"
+    },
+    {
+      "id": "v058_codex_power_s1_packed_planes_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v058_codex_power_s1_packed_planes_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "46a1f6ba36d4ec8f09816226c91bae78892e27bb255ee89354de98422dacf508",
+      "title": "# v058: four-row packed V planes after proven-bounds legalization",
+      "report_path": "race_tests/nsa/rep/v058_codex_power_s1_packed_planes_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "582abad00fa1b07296e1229ba9df0f4c3702e644b364cf3a28c9bfe67af9845d",
+      "status": "inconclusive_small_increment_pending_no_regression"
+    },
+    {
+      "id": "v059_codex_power_s1_qk_pair_swap_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v059_codex_power_s1_qk_pair_swap_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "a02048c8620a3f55e4891c97d20df097aaf127116ce9dac06027270023bec697",
+      "title": "# v059: Q/K low-column pair swap",
+      "report_path": "race_tests/nsa/rep/v059_codex_power_s1_qk_pair_swap_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "c8e70da67e58bfee9eefec15a6a791177913518781269eb7457a1a451f833bd0",
+      "status": "inconclusive_pending_external_oj_no_regression"
+    },
+    {
+      "id": "v060_codex_power_s1_output_pair_swap_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v060_codex_power_s1_output_pair_swap_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "8c1b265bdc591d1cac831c897f7c62ce59048618cfe0cc2056dbef1df8719bfa",
+      "title": "# v060: output staging pair swap",
+      "report_path": "race_tests/nsa/rep/v060_codex_power_s1_output_pair_swap_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "91b0f62cf7c7d010681403b3a729d689a4e8bf3e4d93b26e29f1647c92766d01",
+      "status": "inconclusive_pending_external_oj_no_regression"
+    },
+    {
+      "id": "v061_codex_power_s8_qk_pair_swap_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v061_codex_power_s8_qk_pair_swap_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "f40995b367e60bbb2884d146524f4a882cf683fe4d1f6cd37f554471579e3655",
+      "title": "# v061: S8 Q/K pair swap",
+      "report_path": "race_tests/nsa/rep/v061_codex_power_s8_qk_pair_swap_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "b1092222f32b4cadcf113a506790711f92f59293ada7305bf709d51d7b9cad5f",
+      "status": "rejected_target_incremental_performance"
+    },
+    {
+      "id": "v062_codex_power_s8_qk_vec16_store_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v062_codex_power_s8_qk_vec16_store_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "0c8dbb96b02e6b377611b52995749bb07d30d88c824941a57d60637d89f561b8",
+      "title": "# v062: S8 ordered16B shared Q/K store",
+      "report_path": "race_tests/nsa/rep/v062_codex_power_s8_qk_vec16_store_sc-16g-2/report_sc-16g-2.md",
+      "report_sha256": "6a2c7a385ebb4ce96e94911d6909c28f605e72d4a009294f4886f684779d49f5",
+      "status": "rejected_target_performance_and_intended_lowering"
+    },
+    {
+      "id": "v063_codex_power_s8_qk_u32_select_sc-16g-2",
+      "hypothesis_path": "race_tests/nsa/experiments/v063_codex_power_s8_qk_u32_select_sc-16g-2/hypothesis.md",
+      "hypothesis_sha256": "a508cbef3969d4774eec6489a5f07311741f1697d6189e4394104f037f59e850",
+      "title": "# v063: uint32-pair selection for ordered Q/K store",
+      "report_path": null,
+      "report_sha256": null,
+      "status": "see referenced report"
+    }
+  ],
+  "not_permanent_bans": "revisit only when evidence changes configuration or mechanism"
+}

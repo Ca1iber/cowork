@@ -1,0 +1,85 @@
+--- race_tests/nsa/experiments/v062_codex_power_s8_qk_vec16_store_sc-16g-2/s8_kernel.py
++++ race_tests/nsa/experiments/v063_codex_power_s8_qk_u32_select_sc-16g-2/s8_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v062
++# codex-power v063
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s8_qk_vec16_store(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s8_qk_u32_select(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+@@ -34,14 +34,17 @@
+         V: T.Tensor(kv_shape, dtype), Indices: T.Tensor(index_shape, T.int32),
+         Output: T.Tensor(q_shape, dtype),
+     ):
++        Q_words = T.view(Q, [batch, seq_len, query_heads, dim // 2], T.uint32)
++        K_words = T.view(K, [batch, seq_len, kv_heads, dim // 2], T.uint32)
+         with T.Kernel(seq_len, batch * kv_heads, threads=64) as (token, batch_head):
+             batch_id = batch_head // kv_heads
+             kv_head = batch_head % kv_heads
+             lane = T.KernelLaunchFrame.Current().get_thread_binding() % 64
+             shared = T.alloc_shared([1024], dtype)
++            shared_words = T.view(shared, [512], T.uint32)
+             q_local = T.alloc_local(16, dtype)
+-            qk_fetch = T.alloc_local(8, dtype)
+-            qk_ordered = T.alloc_local(8, dtype)
++            qk_fetch = T.alloc_local(4, T.uint32)
++            qk_ordered = T.alloc_local(4, T.uint32)
+             k_local = T.alloc_local(4, dtype)
+             scores = T.alloc_local(4, accum_dtype)
+             probabilities = T.alloc_local(4, dtype)
+@@ -56,16 +59,16 @@
+             v_column = T.alloc_local(4, dtype)
+             v_operand = T.alloc_local(16, dtype)
+             for part in T.unroll(2):
+-                for element in T.vectorized(8):
+-                    pos = part * 512 + lane * 8 + element
+-                    qk_fetch[element] = Q[batch_id, token, kv_head * groups + pos // 64, pos % 64]
++                for element in T.vectorized(4):
++                    pos = part * 512 + lane * 8
++                    qk_fetch[element] = Q_words[batch_id, token, kv_head * groups + pos // 64, (pos % 64) // 2 + element]
+                 pos_base = part * 512 + lane * 8
+                 row_base = pos_base // 64
+                 flip = ((row_base // 8) % 2) ^ (row_base % 2)
+-                for element in T.unroll(8):
+-                    qk_ordered[element] = T.Select(flip == 0, qk_fetch[element], qk_fetch[(element + 4) % 8])
+-                for element in T.vectorized(8):
+-                    shared[qk_block_slot(row_base, pos_base % 64) + element] = qk_ordered[element]
++                for element in T.unroll(4):
++                    qk_ordered[element] = T.Select(flip == 0, qk_fetch[element], qk_fetch[(element + 2) % 4])
++                for element in T.vectorized(4):
++                    shared_words[qk_block_slot(row_base, pos_base % 64) // 2 + element] = qk_ordered[element]
+             T.sync_warp()
+             for chunk in T.unroll(4):
+                 for element in T.vectorized(4):
+@@ -78,16 +81,16 @@
+                 if block_start >= 0 and block_start <= token:
+                     T.sync_warp()
+                     for part in T.unroll(2):
+-                        for element in T.vectorized(8):
+-                            pos = part * 512 + lane * 8 + element
+-                            qk_fetch[element] = K[batch_id, block_start + pos // 64, kv_head, pos % 64]
++                        for element in T.vectorized(4):
++                            pos = part * 512 + lane * 8
++                            qk_fetch[element] = K_words[batch_id, block_start + pos // 64, kv_head, (pos % 64) // 2 + element]
+                         pos_base = part * 512 + lane * 8
+                         row_base = pos_base // 64
+                         flip = ((row_base // 8) % 2) ^ (row_base % 2)
+-                        for element in T.unroll(8):
+-                            qk_ordered[element] = T.Select(flip == 0, qk_fetch[element], qk_fetch[(element + 4) % 8])
+-                        for element in T.vectorized(8):
+-                            shared[qk_block_slot(row_base, pos_base % 64) + element] = qk_ordered[element]
++                        for element in T.unroll(4):
++                            qk_ordered[element] = T.Select(flip == 0, qk_fetch[element], qk_fetch[(element + 2) % 4])
++                        for element in T.vectorized(4):
++                            shared_words[qk_block_slot(row_base, pos_base % 64) // 2 + element] = qk_ordered[element]
+                     T.sync_warp()
+                     T.fill(scores, 0)
+                     for chunk in T.unroll(4):
