@@ -1,0 +1,35 @@
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[11:31:28] /root/tilelang-metax/src/transform/verify_parallel_loop.cc:73: Warning: Data race detected: `shared[head * 128 + T.bitwise_xor(feature // 8, head % 8) * 8 + feature % 8]`is written by multiple threads in loop [head, feature], Example:
+If you believe this is a false positive, pass `PassKey.TL_DISABLE_DATA_RACE_CHECK` to pass key to disable this check.
+  GPU latency: 0.1645 ms
+6 1 baseline_v28 0.16452608108520508
+  GPU latency: 0.1641 ms
+6 2 parent_v049 0.16412160873413087
+  GPU latency: 0.1608 ms
+6 3 power_v055 0.1607833671569824
+  GPU latency: 0.1659 ms
+6 4 power_v055 0.1658572769165039
+  GPU latency: 0.1592 ms
+6 5 parent_v049 0.15917056083679199
+  GPU latency: 0.1681 ms
+6 6 baseline_v28 0.16805376052856447
+  GPU latency: 0.1659 ms
+6 7 baseline_v28 0.16587776184082031
+  GPU latency: 0.1598 ms
+6 8 parent_v049 0.15980544090270996
+  GPU latency: 0.1593 ms
+6 9 power_v055 0.15929344177246094
+  GPU latency: 0.1617 ms
+6 10 power_v055 0.16168447494506835
+  GPU latency: 0.3185 ms
+6 11 parent_v049 0.31847936630249024
+  GPU latency: 0.1646 ms
+6 12 baseline_v28 0.16463872909545899
