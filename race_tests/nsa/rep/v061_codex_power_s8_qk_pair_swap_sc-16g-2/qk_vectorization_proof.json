@@ -1,0 +1,9 @@
+{
+  "global_Q_K_uint4_16B": true,
+  "shared_Q_K_uint2_8B_stores": [
+    "*(uint2*)(shared + ((((part * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack ^ part) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack * 4));",
+    "*(uint2*)(shared + ((((part_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack_1 ^ part_1) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack_1 * 4));"
+  ],
+  "old_output_map_and_uint4_store": "retained separately",
+  "interpretation": "CPP lowering proof; no ISA/dynamic-bank claim"
+}

@@ -1,0 +1,96 @@
+{
+  "version": "v061_codex_power_s8_qk_pair_swap_sc-16g-2",
+  "status": "rejected_target_incremental_performance",
+  "source_sha256": "575e5f11b2a37b3952e7d7ed5f099ef58b9a1d75221fcac752404a74b6b521a9",
+  "correctness": "selected C12 screen1+paired12=13 full naive_nsa W10/R50 PASS",
+  "performance": {
+    "baseline_v28": {
+      "us_values": [
+        83.37400000000001,
+        83.676,
+        83.574,
+        83.62
+      ],
+      "median_us": 83.59700000000001,
+      "min_us": 83.37400000000001,
+      "max_us": 83.676
+    },
+    "parent_v060": {
+      "us_values": [
+        77.783,
+        82.012,
+        77.676,
+        77.844
+      ],
+      "median_us": 77.8135,
+      "min_us": 77.676,
+      "max_us": 82.012
+    },
+    "power_v061": {
+      "us_values": [
+        78.321,
+        78.387,
+        78.39200000000001,
+        78.72999999999999
+      ],
+      "median_us": 78.3895,
+      "min_us": 78.321,
+      "max_us": 78.72999999999999
+    },
+    "candidate_vs_v28_pct": -6.229290524779607,
+    "candidate_vs_parent_pct": 0.7402314508407892,
+    "correctness": "12/12 PASS;full native naive_nsa,W10/R50",
+    "status": "rejected_target_performance"
+  },
+  "scope_checks": [
+    {
+      "variant": "power_v061",
+      "sample": 1,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "observed_write_bytes": 8388928.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "power_v061",
+      "sample": 2,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "observed_write_bytes": 8388928.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v060",
+      "sample": 1,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "observed_write_bytes": 8389024.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v060",
+      "sample": 2,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "observed_write_bytes": 8389024.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    }
+  ],
+  "skipped_gates": {
+    "all14_native": "not run; target incremental performance rejected",
+    "OJ": "not submitted; target rejected",
+    "full14_codegen": "not run; target rejected",
+    "separate_archive_native": "same bytes/SHA as fully reference-checked selected target; no promotion",
+    "mcProfiler": "two-way selected C12 diagnostic only, no acceptance retry",
+    "ISA": "unavailable tool",
+    "Roofline": "actual sGPU roof not calibrated",
+    "mcTracer": "not repeated after prior invalid timeout captures"
+  },
+  "main": "exact original v28 preserved",
+  "parent_v060": "preserved",
+  "diagnostic": "kernel-wide bank metrics improve while target latency regresses; no exclusive cause/occupancy claim"
+}
