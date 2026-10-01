@@ -1,0 +1,55 @@
+--- race_tests/nsa/experiments/v059_codex_power_s1_qk_pair_swap_sc-16g-2/s1_kernel.py
++++ race_tests/nsa/experiments/v060_codex_power_s1_output_pair_swap_sc-16g-2/s1_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v059
++# codex-power v060
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_qk_pair_swap(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s1_output_pair_swap(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
+     assert seq_len % block_size == 0
+@@ -25,7 +25,7 @@
+     def v_slot(row, col):
+         return ((col // 64) * 64 + (col % 64) // 8 + 8 * (col % 8)) * 32 + ((row // 2) ^ ((col % 64) // 8) ^ (col % 8)) * 2 + row % 2
+     def out_slot(row, col):
+-        return row * 128 + ((col // 8) ^ (row % 8)) * 8 + col % 8
++        return qk_slot(row, col, 16)
+ 
+     @T.prim_func
+     def native_sparse_attention(
+@@ -48,6 +48,7 @@
+             v_fetch = T.alloc_local(16, dtype)
+             v_column = T.alloc_local(2, dtype)
+             v_operand = T.alloc_local(16, dtype)
++            output_fetch = T.alloc_local(8, dtype)
+             numerator = T.alloc_fragment([groups, dim], accum_dtype)
+             T.annotate_layout({
+                 numerator: T.Fragment([groups, dim],
+@@ -138,11 +139,17 @@
+             for head, feature in T.Parallel(groups, dim):
+                 numerator[head, feature] /= denominator[0]
+             T.sync_warp()
+-            for head, feature in T.Parallel(groups, dim):
+-                shared[out_slot(head, feature)] = numerator[head, feature]
++            for chunk in T.unroll(8):
++                feature_base = chunk * 16 + (lane // 16) * 4
++                for element in T.vectorized(4):
++                    shared[out_slot(lane % 16, feature_base) + element] = numerator[lane % 16, feature_base + element]
+             T.sync_warp()
+             for part in T.unroll(4):
++                for pack in T.unroll(2):
++                    pos = part * 512 + lane * 8 + pack * 4
++                    for element in T.vectorized(4):
++                        output_fetch[pack * 4 + element] = shared[out_slot(pos // 128, pos % 128) + element]
+                 for element in T.vectorized(8):
+                     pos = part * 512 + lane * 8 + element
+-                    Output[batch_id, token, kv_head * groups + pos // 128, pos % 128] = shared[out_slot(pos // 128, pos % 128)]
++                    Output[batch_id, token, kv_head * groups + pos // 128, pos % 128] = output_fetch[element]
+     return native_sparse_attention

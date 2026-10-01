@@ -1,0 +1,17 @@
+{
+  "output_bijection_and_unique_producer_and_gather": 2048,
+  "same_fragment_values": "thread=head+16*(col%16//4), index=col%4+4*(col//16)",
+  "explicit_producer_all_matches_fragment_owner": true,
+  "four_half_base_plus_element_contiguous_8B_aligned": true,
+  "modeled_producer_bank_peak_old": 2,
+  "modeled_producer_bank_peak_new": 1,
+  "modeled_gather_8B_bank_peak_new": 1,
+  "model_assumptions": "32banks/4B words/16lane phase; actual bank behavior/operation splitting unverified",
+  "local_output_fetch_range": [
+    0,
+    7
+  ],
+  "global_store": "same4x16B/lane, same output logical positions",
+  "normalization_and_rounding": "same F32 values converted once to F16 before global output",
+  "shared_capacity_halves": 4096
+}
