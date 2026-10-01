@@ -1,0 +1,16 @@
+from pathlib import Path
+import json,hashlib,csv,subprocess,datetime
+root=Path('/root/tilelang-metax');p=root/'race_tests/nsa';v='v078_codex_power_non_target_control_sc-16g-2';r=p/'rep'/v
+assert (r/'negative_controls.exit').read_text().strip()=='0';rows=list(csv.DictReader((r/'negative_controls_sc-16g-2.csv').open()));assert len(rows)==128 and all(x['status']=='PASS' for x in rows)
+identity=json.loads((r/'callable_identity.json').read_text());assert identity['baseline_alias_same_function_object'] and identity['candidate_alias_same_function_object']
+assert hashlib.sha256((p/'submission.py').read_bytes()).hexdigest()==identity['sources']['baseline_v28']
+assert hashlib.sha256((p/'submission/v077_codex_power_s8_output_pair_sc-16g-2/submission.py').read_bytes()).hexdigest()==identity['sources']['candidate_v077']
+assert hashlib.sha256((p/'hack/v000_codex_power_baseline_sc-16g-2/test_tilelang_nsa_fwd_v28.py').read_bytes()).hexdigest()==identity['native_hash']
+assert (r/'report_sc-16g-2.md').read_text().count('## ')==7
+ps=subprocess.check_output(['ps','-eo','pid,pgid,comm'],text=True).splitlines();assert not [x for x in ps[1:] if x.split()[0]=='155910' or x.split()[1]=='155910']
+manifest={'version':v,'kind':'diagnostic,no kernel or newcandidate','status':'inconclusive_protocol_variability_non_regression_unproven','closed_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'start':json.loads((r/'start_identity.json').read_text()),'identity':identity,'results':json.loads((r/'negative_controls_summary.json').read_text()),'benchmark':'unchangedv000::_run_one_case W10R50/fullreference,seed/tolerance/allocator unmodified','candidate77_reference_checks':64,'original_reference_checks':64,'total':128,'case_coverage':[1,3,4,10],'scope_limit':'same-callable variability does not waive any previousperformance/OJregression','submission':'references existingexact77/header77 only,no duplicate or newsubmission','GPU_settings':'unchanged','profiler':'notinstrumented;nonew counters/ISA/Roofline','mainv28':'preserved','knownjob':'terminal','promotion':'none'}
+(r/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+for d in ['experiments','hack','rep','submission']:(p/d/v/'.gitattributes').write_text('* -text -eol -diff\n*.patch -diff\n')
+files=[f for d in ['experiments','hack','rep','submission'] for f in (p/d/v).rglob('*') if f.is_file() and f.name!='archive_sha256.json'];index={str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(files)};(r/'archive_sha256.json').write_text(json.dumps(index,indent=2)+'\n');assert all(hashlib.sha256((root/f).read_bytes()).hexdigest()==h for f,h in index.items())
+assert not subprocess.check_output(['git','diff','--cached','--name-only'],text=True).strip();paths=[str((p/d/v).relative_to(root)) for d in ['experiments','hack','rep','submission']];subprocess.run(['git','add','-f']+paths,check=True);staged=subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines();assert len(staged)==len(files)+1 and all(any(f.startswith(x+'/') for x in paths) for f in staged)
+subprocess.run(['git','-c','core.whitespace=-blank-at-eof','diff','--cached','--check'],check=True);print('verified/staged diagnostic',len(staged),'files,no sourcechanges')

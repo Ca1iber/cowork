@@ -1,0 +1,11 @@
+# v078 non-target timing negative controls
+
+Observed: v077 full14 correct107candidate checks,C12-2.306percent vs76 andC6samefast76;non-target1/3/4/10 confirmation stillpositive7.383/.105/.460/.304percent. Sameprocess deviceCPP12fallbacks exactv28,hostprefixASTexactoriginal;identity alone cannot waive runtime/OJregression. Native timing uses CUDAevents around50whole Python run_kernel calls,so submission gaps can contribute.
+Hypothesis: identical-callable A/B negativecontrols with balanced labelposition can reveal order/runtime variability in originalnativeprotocol before new changes. This doesnot prove physicalcause or waive v077 risk;actualOJstillneeded.
+Mechanism: NO kernel/source/timing/warmup/input/reference edits. baselineA/B point to sameoriginalv28 run_kernel Pythonfunction object;candidateA/B samearchived77 function object. Existing _run_one_case called unchanged forcase1/3/4/10,seed/tolerance/W10R50. Four balanced cyclic8call orders repeated4rounds,32checks/case,128total;eachsource64checks.
+Prediction: identicalalias timing differences comparable to crosssource difference support protocol/runtime state contribution;persistentcandidatepenalty with aliasagreement suggests sourcehost objects or implementation investigation. Neitherresult establishes no regression/globalpromotion.
+Falsifier: functionobjectidentity breaks,source/refhashchanges,incorrect output,or datafails expectedcount. Do not rerun to force favorablelabelratios.
+Risks: large statisticalvariation from shortkernel/runtime;not use profiler durations asnative time. No cProfile/instrumentation insideofficial measurements. No GPUsettings change/unownedjobkills. Sources immutable originalv28/exact77;no newcandidateheader or optimizationversion claim.
+Plan: cardbeforedatawrapper,source/functionidentity,one balanced projectnativecontrolrun,allraw/decimals/peralias/source medians retained,accuratecounts,Chinese7diagnosticreport+bilingual scopedcommit. Fourdir matching78:submissionREADME references existingexact77 source (no duplicatefullsource,not a newOJcandidate). Mainv28/prior64/68/76/77unchanged,OJpending.
+
+Outcome:128fullnativePASS/64perexactsource;case1samealiasdiff4.61/6.50percent,combined77-v28-.139percent;case4combined+.342percent. Protocolstatecontribution supported,no regression/OJproof,no codechange/promotion.

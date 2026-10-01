@@ -1,0 +1,1 @@
+Diagnostic only; no new OJ candidate. Uses exact archived v077 source/header at race_tests/nsa/submission/v077_codex_power_s8_output_pair_sc-16g-2/submission.py, SHA dbaef6b0da5f503742805b07b802168d3f02e5c3aef1e8bffaddd909438d43de. Root v28 unchanged.
