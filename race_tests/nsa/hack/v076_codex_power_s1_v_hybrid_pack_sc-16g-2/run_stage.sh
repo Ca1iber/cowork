@@ -1,0 +1,16 @@
+#!/bin/bash
+set -u
+base=/root/tilelang-metax
+id=v076_codex_power_s1_v_hybrid_pack_sc-16g-2
+rep=$base/race_tests/nsa/rep/$id
+cd "$base"
+python race_tests/nsa/hack/validate_oj_submission.py /tmp/nsa_power_v076_proven_bounds.py --generated-code "$rep/codegen/case6.device.cpp" > "$rep/oj_static.log" 2>&1
+result=$?;echo "$result" > "$rep/oj_static.exit"
+if [ "$result" != 0 ];then exit "$result";fi
+/opt/maca/mxgpu_llvm/bin/mxcc -x maca -device-obj -O3 -lineinfo --offload-arch=xcore1000 -std=c++17 -I$base/src -use-fast-math -D__FAST_HALF_CVT__ -resource-usage -o "$rep/case6.mcbin" "$rep/codegen/case6.device.cpp" > "$rep/case6.resource.log" 2>&1
+result=$?;echo "$result" > "$rep/case6.resource.exit"
+if [ "$result" != 0 ];then exit "$result";fi
+export MACA_PATH=/opt/maca PYTHONDONTWRITEBYTECODE=1 PYTHONWARNINGS=ignore PYTHONPATH=$base:$base/race_tests/nsa NSA_VARIANT_SOURCE=/tmp/nsa_power_v076_proven_bounds.py NSA_RESULTS_PATH=$rep/screen_case6_sc-16g-2.csv NSA_CASES=6
+/opt/conda/bin/python -u "$base/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py" > "$rep/screen.log" 2>&1
+result=$?;echo "$result" > "$rep/screen.exit"
+exit "$result"

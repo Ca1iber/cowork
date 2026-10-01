@@ -1,0 +1,404 @@
+{
+  "version": "v076_codex_power_s1_v_hybrid_pack_sc-16g-2",
+  "status": "inconclusive_no_regression_not_demonstrated_external_oj_pending",
+  "closed_utc": "2026-10-01T20:54:52.438472+00:00",
+  "start": {
+    "utc": "2026-10-01T20:25:32.729301+00:00",
+    "version": "v076_codex_power_s1_v_hybrid_pack_sc-16g-2",
+    "head": "358549bf04c37075d879ba3bab83816a11f95b39",
+    "branch": "codex-power-v28-base",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent_v075_sha256": "fca25caae9a7134bd820ba66ebab5b4d91ece3ab7495a037b2e16ed73001b002",
+    "current_v068_sha256": "589d4ca2c5f82f97581cfb3f82eca96ad81c4c49b8624c60326eac0e34b14949"
+  },
+  "source_sha256": "d24e9391e40ae13191a35e0ee6ab13fe74f74538462eff25c005c0a40084674f",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "native_reference_checks": {
+    "candidate_label": "power_v076",
+    "candidate_checks": 115,
+    "experiment_checks_with_controls": 319,
+    "rows": [
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v076_codex_power_s1_v_hybrid_pack_sc-16g-2/archive_native_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 14,
+        "candidate_checks": 14,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v076_codex_power_s1_v_hybrid_pack_sc-16g-2/paired_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 168,
+        "candidate_checks": 56,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v076_codex_power_s1_v_hybrid_pack_sc-16g-2/paired_case6_sc-16g-2.csv",
+        "experiment_checks_with_controls": 16,
+        "candidate_checks": 4,
+        "candidate_cases": [
+          6
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v076_codex_power_s1_v_hybrid_pack_sc-16g-2/paired_risk_sc-16g-2.csv",
+        "experiment_checks_with_controls": 120,
+        "candidate_checks": 40,
+        "candidate_cases": [
+          1,
+          3,
+          4,
+          5,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v076_codex_power_s1_v_hybrid_pack_sc-16g-2/screen_case6_sc-16g-2.csv",
+        "experiment_checks_with_controls": 1,
+        "candidate_checks": 1,
+        "candidate_cases": [
+          6
+        ]
+      }
+    ]
+  },
+  "paired": {
+    "baseline_v28": {
+      "us_values": [
+        156.483,
+        157.312,
+        156.50300000000001,
+        156.518
+      ],
+      "median_us": 156.5105,
+      "min_us": 156.483,
+      "max_us": 157.312
+    },
+    "parent_v068": {
+      "us_values": [
+        95.068,
+        94.93,
+        94.80199999999999,
+        95.186
+      ],
+      "median_us": 94.999,
+      "min_us": 94.80199999999999,
+      "max_us": 95.186
+    },
+    "trial_v075": {
+      "us_values": [
+        95.754,
+        95.959,
+        95.66199999999999,
+        95.785
+      ],
+      "median_us": 95.7695,
+      "min_us": 95.66199999999999,
+      "max_us": 95.959
+    },
+    "power_v076": {
+      "us_values": [
+        93.788,
+        93.793,
+        93.471,
+        93.553
+      ],
+      "median_us": 93.6705,
+      "min_us": 93.471,
+      "max_us": 93.793
+    },
+    "candidate_vs_baseline_v28_pct": -40.150660818283754,
+    "candidate_vs_parent_v068_pct": -1.3984357730081332,
+    "candidate_vs_trial_v075_pct": -2.19172074616657,
+    "correctness": "16/16 full native naive_nsa W10R50 PASS",
+    "all_samples_retained": true,
+    "candidate_range_all_below_current": true
+  },
+  "codegen": {
+    "source_sha256": "d24e9391e40ae13191a35e0ee6ab13fe74f74538462eff25c005c0a40084674f",
+    "static_MMA": 32,
+    "fdiv": 32,
+    "MT": 100,
+    "ST": 22,
+    "stack_bytes": 0,
+    "static_max_warps_peu": 4,
+    "private_allocas": [],
+    "shared_bytes": 8192,
+    "threads": 64,
+    "CTA_grid": [
+      1024,
+      8
+    ],
+    "waves": 8192,
+    "caution": "hybridbank assumption needsactualprofile;staticlimitnotoccupancy"
+  },
+  "integer_identity": {
+    "restoredASTexact75": true,
+    "producer_logicalcoords_global16B": "exact own60 producer",
+    "rotated_rowgroup": "bit0->bit2,otherbits shift",
+    "consumer8B/prefetch/MMAorder": "same75",
+    "allnonVwork": "unchanged",
+    "local_vcolumn": 2
+  },
+  "V_mapping_bank_model": {
+    "slotbijection": 4096,
+    "producer_and_consumer_unique_complete": 4096,
+    "producer2halfcontiguous4Baligned": true,
+    "consumer4halfcontiguous8Baligned": true,
+    "same_MMA_operand_coordinates_and_accumorder": true,
+    "global8x16B": "exactold60producer",
+    "sharedstores32x4B": "oldcount",
+    "sharedoperandloads16x8B": "half oldcount,samebytes",
+    "localbounds": "vfetch0..15,vcolumn0..1,voperand0..15",
+    "globalbounds": "oldvalid32row/128col",
+    "bank_assumption": "32banks4B,32lanephase4B/16lanephase8B,unverified",
+    "predicted_max_requests_per_bank": {
+      "producer4B": 1,
+      "consumer8B": 1
+    },
+    "hardwareclaim": "none,requires actualprofile and native"
+  },
+  "mcProfiler": [
+    {
+      "variant": "power_v076",
+      "sample": 1,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8113.0,
+      "l2_hit_pct": 64.96,
+      "read_bytes": 37650592.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 48.79,
+      "mma_pct": 10.34,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "load_latency_cycles": 47.58,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "power_v076",
+      "sample": 2,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8113.0,
+      "l2_hit_pct": 64.95,
+      "read_bytes": 37660384.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 49.78,
+      "mma_pct": 10.55,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "load_latency_cycles": 47.33,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "parent_v068",
+      "sample": 1,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8112.0,
+      "l2_hit_pct": 64.96,
+      "read_bytes": 37651360.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 52.33,
+      "mma_pct": 10.21,
+      "shared_nonconflict_pct": 75.39,
+      "conflict_cycles": 0.97,
+      "load_latency_cycles": 49.85,
+      "unavailable_raw": {}
+    },
+    {
+      "variant": "parent_v068",
+      "sample": 2,
+      "waves": 8192.0,
+      "achieved_waves_raw": 8112.0,
+      "l2_hit_pct": 64.96,
+      "read_bytes": 37647904.0,
+      "write_bytes": 33554752.0,
+      "mte_pct": 52.6,
+      "mma_pct": 10.26,
+      "shared_nonconflict_pct": 75.39,
+      "conflict_cycles": 0.97,
+      "load_latency_cycles": 50.35,
+      "unavailable_raw": {}
+    }
+  ],
+  "mcProfiler_scope": [
+    {
+      "variant": "power_v076",
+      "sample": 1,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "power_v076",
+      "sample": 2,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v068",
+      "sample": 1,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v068",
+      "sample": 2,
+      "expected_waves": 8192,
+      "observed_waves": 8192.0,
+      "observed_write_bytes": 33554752.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    }
+  ],
+  "machine_text": {
+    "command_scope": "same mxcc -device-obj O3/lineinfo/use-fast-math C6 resource capture",
+    "sections": {
+      "parent_v060": {
+        ".text": {
+          "bytes": 8448,
+          "sha256": "d2972f80a1d713b8d598e1298cf6422bb78193f26c13334390325bb086d81538"
+        }
+      },
+      "power_v076": {
+        ".text": {
+          "bytes": 7936,
+          "sha256": "3f7845a18ab3422e0d9a0412b195035824b1f5426cd5ccf6b4c7dd1438634d64"
+        }
+      }
+    },
+    "limitations": "binary section comparison is not ISA decoding;same CLI flags/normal source export required;not a timing waiver",
+    "text_sections_identical": false
+  },
+  "skipped": {
+    "full14_risk_OJ": "MT100/ST22,C6target1.40percentfaster;offcase9/11/14positive aftersingleconfirmation;not promoted",
+    "mcProfiler_mcTracer": "clear targetregression,fresh70 referenced,not current74 counters",
+    "ISA_decode": "unavailable;ELF section comparison is not disassembly",
+    "roofline": "actual sGPU roofs uncalibrated"
+  },
+  "cache": "code objects only,all attention content recomputed",
+  "promotion": "none;root v28 and pending64/68 unchanged",
+  "job_state": "known codegen/compiler/native groups terminal;no unowned kills",
+  "reference_count_scope": {
+    "candidate_label": "power_v076",
+    "candidate_checks": 115,
+    "experiment_checks_with_controls": 319,
+    "rows": [
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v076_codex_power_s1_v_hybrid_pack_sc-16g-2/archive_native_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 14,
+        "candidate_checks": 14,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v076_codex_power_s1_v_hybrid_pack_sc-16g-2/paired_all14_sc-16g-2.csv",
+        "experiment_checks_with_controls": 168,
+        "candidate_checks": 56,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v076_codex_power_s1_v_hybrid_pack_sc-16g-2/paired_case6_sc-16g-2.csv",
+        "experiment_checks_with_controls": 16,
+        "candidate_checks": 4,
+        "candidate_cases": [
+          6
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v076_codex_power_s1_v_hybrid_pack_sc-16g-2/paired_risk_sc-16g-2.csv",
+        "experiment_checks_with_controls": 120,
+        "candidate_checks": 40,
+        "candidate_cases": [
+          1,
+          3,
+          4,
+          5,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14
+        ]
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v076_codex_power_s1_v_hybrid_pack_sc-16g-2/screen_case6_sc-16g-2.csv",
+        "experiment_checks_with_controls": 1,
+        "candidate_checks": 1,
+        "candidate_cases": [
+          6
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "slotbijection": 4096,
+  "producer_and_consumer_unique_complete": 4096,
+  "producer2halfcontiguous4Baligned": true,
+  "consumer4halfcontiguous8Baligned": true,
+  "same_MMA_operand_coordinates_and_accumorder": true,
+  "global8x16B": "exactold60producer",
+  "sharedstores32x4B": "oldcount",
+  "sharedoperandloads16x8B": "half oldcount,samebytes",
+  "localbounds": "vfetch0..15,vcolumn0..1,voperand0..15",
+  "globalbounds": "oldvalid32row/128col",
+  "bank_assumption": "32banks4B,32lanephase4B/16lanephase8B,unverified",
+  "predicted_max_requests_per_bank": {
+    "producer4B": 1,
+    "consumer8B": 1
+  },
+  "hardwareclaim": "none,requires actualprofile and native"
+}

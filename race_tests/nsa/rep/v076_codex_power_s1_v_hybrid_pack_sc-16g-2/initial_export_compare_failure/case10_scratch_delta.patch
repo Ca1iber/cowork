@@ -1,0 +1,20 @@
+--- historical68_C10
++++ initialcurrent76_C10
+@@ -80,7 +80,7 @@
+       for (int rv = 0; rv < 4; ++rv) {
+         block_max[0] = max(block_max[0], scores[rv]);
+       }
+-      block_max[0] = tl::AllReduce<tl::MaxOp, 64, 16, 0>::run(block_max[0], (&(((float*)buf_dyn_shmem)[1088])));
++      block_max[0] = tl::AllReduce<tl::MaxOp, 64, 16, 0>::run(block_max[0], (&(((float*)buf_dyn_shmem)[1024])));
+       rescale[0] = exp2f(((previous_max[0] * 0x1.7154764ee6c2fp-3f/*1.803369e-01*/) - (block_max[0] * 0x1.7154764ee6c2fp-3f/*1.803369e-01*/)));
+       #pragma unroll
+       for (int i_4 = 0; i_4 < 4; ++i_4) {
+@@ -91,7 +91,7 @@
+       for (int rv_1 = 0; rv_1 < 4; ++rv_1) {
+         block_sum[0] = (block_sum[0] + scores[rv_1]);
+       }
+-      block_sum[0] = tl::AllReduce<tl::SumOp, 64, 16, 0>::run(block_sum[0], (&(((float*)buf_dyn_shmem)[1024])));
++      block_sum[0] = tl::AllReduce<tl::SumOp, 64, 16, 0>::run(block_sum[0], (&(((float*)buf_dyn_shmem)[1088])));
+       denominator[0] = ((denominator[0] * rescale[0]) + block_sum[0]);
+       uint2 __1;
+       float4 v_ = *(float4*)(scores + 0);
