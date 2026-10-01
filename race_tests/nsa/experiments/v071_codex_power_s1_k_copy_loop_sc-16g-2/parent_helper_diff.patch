@@ -1,0 +1,26 @@
+--- race_tests/nsa/experiments/v060_codex_power_s1_output_pair_swap_sc-16g-2/s1_kernel.py
++++ race_tests/nsa/experiments/v071_codex_power_s1_k_copy_loop_sc-16g-2/s1_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v060
++# codex-power v071
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_output_pair_swap(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s1_k_copy_loop(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
+     assert seq_len % block_size == 0
+@@ -71,7 +71,7 @@
+                     for element in T.vectorized(4):
+                         q_local[chunk * 4 + element] = shared[qk_slot(lane % 16, chunk * 16 + (lane // 16) * 4, 16) + element]
+                 T.sync_warp()
+-                for part in T.unroll(8):
++                for part in T.unroll(8, annotations={"pragma_unroll_explicit": False, "pragma_unroll_factor": 1}):
+                     for element in T.vectorized(8):
+                         pos = part * 512 + lane * 8 + element
+                         qk_fetch[element] = K[batch_id, block_start + pos // 128, kv_head, pos % 128]

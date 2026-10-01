@@ -1,0 +1,149 @@
+{
+  "version": "v071_codex_power_s1_k_copy_loop_sc-16g-2",
+  "status": "rejected_target_regression_despite_lower_MT",
+  "closed_utc": "2026-10-01T19:09:22.332281+00:00",
+  "start": {
+    "utc": "2026-10-01T18:48:47.212555+00:00",
+    "version": "v071_codex_power_s1_k_copy_loop_sc-16g-2",
+    "head": "cf6cd28d037001b429fe83e1b4ce542e71d08b21",
+    "branch": "codex-power-v28-base",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent_v068_sha256": "589d4ca2c5f82f97581cfb3f82eca96ad81c4c49b8624c60326eac0e34b14949",
+    "shared_hashes": {
+      "race_tests/nsa/official_case.json": "85f2c34acd793fb0a45084175acd7bcde48ff5d717a395d370800c30cf4e7036",
+      "race_tests/nsa/reference.py": "e31d5f188923d8696c7ad190b1652d5b3142c004dc96d0604f371c71f179bf32",
+      "race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/test_tilelang_nsa_fwd_v28.py": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568"
+    }
+  },
+  "source_sha256": "2ec13cefd6b71b202e82e3e4c28bfac823a2a03779980dc9de84da18a2aa8afe",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "native_reference_checks": "13 selected C6 full naive_nsa PASS,W10/R50;no all14 correctness claim",
+  "paired": {
+    "baseline_v28": {
+      "us_values": [
+        156.339,
+        156.518,
+        156.554,
+        156.447
+      ],
+      "median_us": 156.48250000000002,
+      "min_us": 156.339,
+      "max_us": 156.554
+    },
+    "parent_v068": {
+      "us_values": [
+        95.206,
+        95.36999999999999,
+        95.06299999999999,
+        95.25200000000001
+      ],
+      "median_us": 95.22900000000001,
+      "min_us": 95.06299999999999,
+      "max_us": 95.36999999999999
+    },
+    "power_v071": {
+      "us_values": [
+        121.17999999999999,
+        120.88799999999999,
+        120.776,
+        121.144
+      ],
+      "median_us": 121.01599999999999,
+      "min_us": 120.776,
+      "max_us": 121.17999999999999
+    },
+    "candidate_vs_v28_pct": -22.66483472592783,
+    "candidate_vs_parent_pct": 27.078936038391642,
+    "candidate_range_all_below_parent": false,
+    "correctness": "12/12 full native naive_nsa,W10/R50 PASS",
+    "all_samples_retained": true
+  },
+  "codegen": {
+    "source_sha256": "2ec13cefd6b71b202e82e3e4c28bfac823a2a03779980dc9de84da18a2aa8afe",
+    "static_MMA": 32,
+    "fdiv": 32,
+    "MT": 94,
+    "ST": 24,
+    "stack_bytes": 0,
+    "static_max_warps_peu": 5,
+    "shared_bytes": 8192,
+    "private_allocas": [],
+    "unroll_disable": true,
+    "loop_backedges": [
+      "br i1 %exitcond.not, label %for.cond.cleanup103, label %for.body104, !dbg !89, !llvm.loop !247"
+    ],
+    "caution": "static maximum not achievedoccupancy;runtime loop trades prefetch for register/integer cost"
+  },
+  "loop_proof": {
+    "normalized_full_helper_AST_exact_parent": true,
+    "only_change": "normal loop annotation on Kproducer part0..7",
+    "math_data_addresses_order_pack_and_barriers": "unchanged",
+    "no_source_injection": true
+  },
+  "iteration_proof": {
+    "full_K_elements": 4096,
+    "K_copy_runtime_parts": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "global_half_positions": [
+      0,
+      4095
+    ],
+    "disjoint_destination_groups_each512half": true,
+    "local_fetch_indices": [
+      0,
+      7
+    ],
+    "global_bytes_per_thread_iteration": 16,
+    "shared_pack_bytes": 8,
+    "iteration_order": "same0..7 as unrolled parent",
+    "barrier": "same afterloop,no internal crosspart dependency",
+    "proof_scope": "coordinate and sourceAST only;LLVM packing/resource and unchanged fullnative ref required"
+  },
+  "MMA_capability_review": {
+    "primary_header": "/opt/maca/mxgpu_llvm/lib/clang/19/include/__clang_maca_mma_functions.h",
+    "header_sha256": "c2ec4b9eb55b08c028b7ec16e9e37330807e6a1db0473ef23e2adb22a986ab27",
+    "mctlass_header": "/opt/maca/include/mctlass/arch/maca_mma.h",
+    "mctlass_sha256": "d3903b82908f9c14033f0e16defce78dd5683fd52eaac7b6b447bcd16fba3df1",
+    "documented_F16_shape_found": [
+      "16x16x16f16"
+    ],
+    "shape_16x16x32_matches": "i8 declarations,not a demonstrated FP16 intrinsic",
+    "scope": "read-only installed SDK capability evidence,no manual builtin invocation,not comprehensive compiler rejection proof"
+  },
+  "machine_text": {
+    "command_scope": "same mxcc -device-obj O3/lineinfo/use-fast-math C6 resource capture",
+    "sections": {
+      "parent_v060": {
+        ".text": {
+          "bytes": 8448,
+          "sha256": "d2972f80a1d713b8d598e1298cf6422bb78193f26c13334390325bb086d81538"
+        }
+      },
+      "power_v071": {
+        ".text": {
+          "bytes": 8448,
+          "sha256": "3101f8d6d671d08df89f711b1d89f6bd103d3ee32f992abf3db311138a4619d8"
+        }
+      }
+    },
+    "limitations": "binary section comparison is not ISA decoding;same CLI flags/normal source export required;not a timing waiver",
+    "text_sections_identical": false
+  },
+  "skipped": {
+    "full14_risk_OJ": "target27.079percent slower despite MT100to94;not promoted",
+    "mcProfiler_mcTracer": "no repeated instrumented profile after clear targetregression;freshv070 C6 profile referenced,not current71 data",
+    "ISA_decode": "unavailable;ELF section comparison is not disassembly",
+    "roofline": "actual sGPU roofs uncalibrated"
+  },
+  "cache": "code objects only,all attention content recomputed",
+  "promotion": "none;root v28 and pending64/68 unchanged",
+  "job_state": "known codegen/compiler/native groups terminal;no unowned kills"
+}

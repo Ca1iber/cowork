@@ -1,0 +1,12 @@
+# v071 C6 retain runtime K-copy loop
+
+Observed: HEADcf6cd28d0 closed70; exact mainv28 hash430 preserved. Own currentC6 uses 8 fully unrolled K-copy iterations,each globaluint4->two shareduint2 stores. Resource100MT/22ST,max4,stack0/private0,shared8192B. v069 IR-only normalization change had identical machine text;v070 PV consumer stream changed text but MTunchanged and native+1.940percent. Fresh70 C6 profile gives ownparent52.76MTE/10.295MMA,shared75.385percent,conflict.97;singlecounter does not identify bottleneck.
+Verified cost: static8copy body and100MT allocation. Kproducer contribution to register peak is unproven.
+Hypothesis: retain the K-copy loop0..7 with normal existing TileLang explicitFalse/factor1 unroll annotation,limit early global-load/address live range,reduce MT pressure. Compiler may trade off memory overlap/integer loop overhead;actual native outcome decides.
+Mechanism: only Kproducer loop annotation,all body/statements/order/addresses/packing and stagebarrier unchanged. Qcopy/Qlocalload,QK/P/PV/normalization/output stay exact ownv060;C12 exact ownv068;other12 exactoriginalv28 black-box. No rejected69/70 numerical/consumer edits inherited.
+Predictions: CPP pragmaunroll1,optimizedLLVM real backedge/unroll.disable,global16B and shared8B packing retained;staticKcopy sites8->1 but runtime8 work unchanged. IdeallyMT<100;actual occupancy not inferred from static ceiling.
+Falsifier: optimizedloop disappears,no register benefit/private spill,new instructions outweigh nativebenefit,correctness/import fail,or any otherofficial/OJ case regresses. No retry to erase unfavorable medians.
+Proof/risk: disjoint shared destinations forpart0..7;localfetch8 fully overwritten before each pair store;barrier afterloop unchanged;all index bounds as ownv060. New loop control and loss of prefetch may slow. All attention inputs/content recomputed everycall;codeobjects only cache.
+Plan: cardbeforeedit,full normalizedAST iteration/bounds proof,normalCPP/LLVM/resources/static,originalnative C6screen W10/R50,pairedtarget,full14/profile/exactarchive only aftermeaningfultarget;seven-sectionChinese report,bilingual scopedcommit before next version. Main v28 and pending64/68 unchanged,externalOJpending cannot prove full-case no regression.
+
+Outcome: runtime backedge/unroll.disable preserved,94MT/24ST,max5,private0;C6native+27.079percent,13fullreferencePASS;reject despite lowerMT,no full14/OJ promotion.
