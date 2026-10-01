@@ -1,0 +1,36 @@
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[12:57:16] /root/tilelang-metax/src/transform/verify_parallel_loop.cc:73: Warning: Data race detected: `shared[head * 128 + T.bitwise_xor(feature // 8, head % 8) * 8 + feature % 8]`is written by multiple threads in loop [head, feature], Example:
+If you believe this is a false positive, pass `PassKey.TL_DISABLE_DATA_RACE_CHECK` to pass key to disable this check.
+2026-10-01 12:57:19  [TileLang:tilelang.cache.kernel_cache:WARNING] (kernel_cache.py:322): Found kernel 'native_sparse_attention' in memory cache. For better performance, consider using `@tilelang.jit` instead of direct kernel caching.
+  GPU latency: 0.1713 ms
+6 1 baseline_v28 0.1713203239440918
+  GPU latency: 0.1149 ms
+6 2 parent_v057 0.11489791870117187
+  GPU latency: 0.1139 ms
+6 3 power_v058 0.11385855674743653
+  GPU latency: 0.1142 ms
+6 4 power_v058 0.11418111801147461
+  GPU latency: 0.1313 ms
+6 5 parent_v057 0.13129728317260742
+  GPU latency: 0.1633 ms
+6 6 baseline_v28 0.16331775665283202
+  GPU latency: 0.1644 ms
+6 7 baseline_v28 0.16442880630493165
+  GPU latency: 0.1147 ms
+6 8 parent_v057 0.1146777629852295
+  GPU latency: 0.1140 ms
+6 9 power_v058 0.11403776168823242
+  GPU latency: 0.1142 ms
+6 10 power_v058 0.11417599678039551
+  GPU latency: 0.1149 ms
+6 11 parent_v057 0.11492351531982421
+  GPU latency: 0.1632 ms
+6 12 baseline_v28 0.16322559356689453

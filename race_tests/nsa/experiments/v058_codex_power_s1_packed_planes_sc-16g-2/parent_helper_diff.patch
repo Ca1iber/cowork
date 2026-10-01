@@ -1,0 +1,75 @@
+--- race_tests/nsa/experiments/v057_codex_power_s1_proven_bounds_sc-16g-2/s1_kernel.py
++++ race_tests/nsa/experiments/v058_codex_power_s1_packed_planes_sc-16g-2/s1_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v057
++# codex-power v058
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,7 +9,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_proven_bounds(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s1_packed_planes(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
+     assert seq_len % block_size == 0
+@@ -23,7 +23,7 @@
+     def qk_slot(row, col, rows):
+         return (col // 64) * rows * 64 + row * 64 + (((col % 64) // 8) ^ (row % 8)) * 8 + col % 8
+     def v_slot(row, col):
+-        return ((col // 64) * 64 + (col % 64) // 8 + 8 * (col % 8)) * 32 + ((row // 2) ^ ((col % 64) // 8) ^ (col % 8)) * 2 + row % 2
++        return (row // 16 * 2 + col // 64) * 1024 + ((col % 64) // 4 + 16 * (col % 4)) * 16 + (((row % 16) // 4) ^ ((col % 64) // 16) ^ (col % 4)) * 4 + row % 4
+     def out_slot(row, col):
+         return row * 128 + ((col // 8) ^ (row % 8)) * 8 + col % 8
+ 
+@@ -45,7 +45,7 @@
+             maximum = T.alloc_local(1, accum_dtype)
+             denominator = T.alloc_local(1, accum_dtype)
+             v_fetch = T.alloc_local(16, dtype)
+-            v_column = T.alloc_local(2, dtype)
++            v_column = T.alloc_local(4, dtype)
+             v_operand = T.alloc_local(16, dtype)
+             numerator = T.alloc_fragment([groups, dim], accum_dtype)
+             T.annotate_layout({
+@@ -99,26 +99,25 @@
+                 T.sync_warp()
+                 for key_tile in T.unroll(2):
+                     for plane in T.unroll(2):
+-                        fetch_row = key_tile * 16 + (lane // 8) * 2
+-                        fetch_col = plane * 64 + (lane % 8) * 8
+-                        for row in T.unroll(2):
+-                            for col in T.vectorized(8):
+-                                v_fetch[row * 8 + col] = V[batch_id, block_start + fetch_row + row, kv_head, fetch_col + col]
+-                        for col in T.unroll(8):
+-                            for row in T.vectorized(2):
+-                                v_column[row] = v_fetch[row * 8 + col]
+-                            for row in T.vectorized(2):
++                        fetch_row = key_tile * 16 + (lane // 16) * 4
++                        fetch_col = plane * 64 + (lane % 16) * 4
++                        for row in T.unroll(4):
++                            for col in T.vectorized(4):
++                                v_fetch[row * 4 + col] = V[batch_id, block_start + fetch_row + row, kv_head, fetch_col + col]
++                        for col in T.unroll(4):
++                            for row in T.vectorized(4):
++                                v_column[row] = v_fetch[row * 4 + col]
++                            for row in T.vectorized(4):
+                                 shared[v_slot(fetch_row + row, fetch_col + col)] = v_column[row]
+                 T.sync_warp()
+                 T.fill(numerator, 0)
+                 for key_tile in T.unroll(2):
+                     for plane in T.unroll(2):
+                         for chunk in T.unroll(4):
+-                            for pair in T.unroll(2):
+-                                for element in T.vectorized(2):
+-                                    v_operand[chunk * 4 + pair * 2 + element] = shared[v_slot(
+-                                        key_tile * 16 + (lane // 16) * 4 + pair * 2 + element,
+-                                        plane * 64 + chunk * 16 + lane % 16)]
++                            for element in T.vectorized(4):
++                                v_operand[chunk * 4 + element] = shared[v_slot(
++                                    key_tile * 16 + (lane // 16) * 4 + element,
++                                    plane * 64 + chunk * 16 + lane % 16)]
+                         for chunk in T.unroll(4):
+                             T.tvm_mfma('16x16x16f16', 'row', 'row',
+                                 'float16x4', 'float16x4', 'float32x4',

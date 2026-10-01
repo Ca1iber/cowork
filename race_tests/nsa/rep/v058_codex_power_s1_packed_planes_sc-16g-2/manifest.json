@@ -1,0 +1,123 @@
+{
+  "version": "v058_codex_power_s1_packed_planes_sc-16g-2",
+  "status": "inconclusive_small_increment_pending_no_regression",
+  "source_sha256": "a384a3ef98a51d997ee6d413d3191179f7ffab5e6af475ac76c0632e2263c748",
+  "baseline_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "entry_prefix_AST": "exact original v28 unchanged",
+  "compiled_cache": "code object only; no attention tensor content caching",
+  "native_correctness": "screen1+paired_target12+paired_all14_168+risk36+archive14=231 full reference PASS at unchanged W10/R50",
+  "native_source_path": "/tmp/nsa_power_v058_proven_bounds.py",
+  "archive_source": "exact archived file verified 14/14 full native at W10/R50",
+  "case6": {
+    "case": 6,
+    "samples_us": {
+      "baseline_v28": [
+        163.932,
+        163.738,
+        165.62199999999999,
+        163.441
+      ],
+      "parent_v057": [
+        115.84,
+        112.829,
+        114.975,
+        114.857
+      ],
+      "power_v058": [
+        113.69,
+        114.478,
+        114.176,
+        114.422
+      ]
+    },
+    "medians_us": {
+      "baseline_v28": 163.83499999999998,
+      "parent_v057": 114.916,
+      "power_v058": 114.299
+    },
+    "candidate_vs_v28_pct": -30.235297708059928,
+    "candidate_vs_parent_pct": -0.5369139197326622
+  },
+  "case12": {
+    "case": 12,
+    "samples_us": {
+      "baseline_v28": [
+        87.06,
+        87.368,
+        87.80799999999999,
+        88.238
+      ],
+      "parent_v057": [
+        79.959,
+        80.538,
+        89.057,
+        81.10100000000001
+      ],
+      "power_v058": [
+        80.952,
+        81.31099999999999,
+        80.691,
+        80.06099999999999
+      ]
+    },
+    "medians_us": {
+      "baseline_v28": 87.588,
+      "parent_v057": 80.8195,
+      "power_v058": 80.8215
+    },
+    "candidate_vs_v28_pct": -7.725373338813524,
+    "candidate_vs_parent_pct": 0.0024746503009653864
+  },
+  "untouched_device_sources": "12/12 byte-identical v28; C12 device byte-identical v057",
+  "positive_other_case_medians": [
+    4,
+    9,
+    10
+  ],
+  "OJ": "pending actual user results; main remains v28; risk recheck still positive for case10",
+  "mcProfiler_scope": [
+    {
+      "variant": "power_v058",
+      "sample": 1,
+      "expected_waves": 8192,
+      "observed_waves": 11864.0,
+      "observed_write_bytes": 39905568.0,
+      "consistent_with_single_attention_launch_scope": false,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "power_v058",
+      "sample": 2,
+      "expected_waves": 8192,
+      "observed_waves": 11476.0,
+      "observed_write_bytes": 39120768.0,
+      "consistent_with_single_attention_launch_scope": false,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v057",
+      "sample": 1,
+      "expected_waves": 8192,
+      "observed_waves": 11704.0,
+      "observed_write_bytes": 35780672.0,
+      "consistent_with_single_attention_launch_scope": false,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    },
+    {
+      "variant": "parent_v057",
+      "sample": 2,
+      "expected_waves": 8192,
+      "observed_waves": 11816.0,
+      "observed_write_bytes": 36773984.0,
+      "consistent_with_single_attention_launch_scope": false,
+      "counter_interpretation": "launch footprint consistency is necessary, not an exclusive scope guarantee; achieved waves raw is not occupancy"
+    }
+  ],
+  "mcProfiler_comparison": "inconclusive; all four launch footprints inconsistent",
+  "mcTracer": "not rerun after repeated prior timeouts; referenced prior raw v049 capture",
+  "ISA": "unavailable tool",
+  "Roofline": "actual sGPU roofs not calibrated",
+  "GPU_settings": "unchanged",
+  "main_submission": "exact original v28 preserved",
+  "independent_v049_oj_candidate": "preserved"
+}

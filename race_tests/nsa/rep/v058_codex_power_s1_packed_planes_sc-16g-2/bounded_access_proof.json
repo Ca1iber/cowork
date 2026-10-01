@@ -1,0 +1,30 @@
+{
+  "domain": "official case6 B8,L1024,H1,HQ16,D128,S1,BS32,causalTrue",
+  "uniform_valid_block_branch": "0<=32*index<=token",
+  "in_range_start_max": 992,
+  "last_K_V_row_max": 1023,
+  "valid_token_block_pairs_checked": 16896,
+  "Indices_elements": 8192,
+  "selected_slot": 0,
+  "global_column_range": [
+    0,
+    127
+  ],
+  "Q_output_heads": [
+    0,
+    15
+  ],
+  "Q_output_coordinate_count": 2048,
+  "K_V_coordinate_count": 4096,
+  "all_global_producer_and_operand_coordinates_unique_and_complete": true,
+  "shared_Q_output_bijections": 2048,
+  "shared_K_V_bijections": 4096,
+  "shared_capacity_halves": 4096,
+  "fragment_per_lane_indices": [
+    0,
+    31
+  ],
+  "local_bounds": "q_local0..31; k_local0..3; scores/P0..7; v_fetch/v_operand0..15; v_column0..3; scalars0",
+  "invalid_selected_blocks": "unchanged explicit branch skips Q/K/V reads; output coords always valid",
+  "proof_scope": "exact compiled/cache shape only; actual lowering and full native correctness remain required"
+}
