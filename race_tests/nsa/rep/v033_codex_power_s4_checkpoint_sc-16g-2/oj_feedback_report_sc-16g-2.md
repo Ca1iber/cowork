@@ -48,3 +48,7 @@ rejected。case11和5各升1分不能抵消其他case退化。恢复基线，继
 ## 降分路径生成代码核验
 
 tool-only codegen重新导出精确v28的case3/6/8，并与v033已归档device.cpp比较，三项均byte-identical。未执行GPU工作，非timing结果。这个检查排除了本机lowering生成代码变化，不能证明OJ实际二进制/环境/计时无变化，也不能把退化归为噪声。结论仍为rejected，root保持原v28。
+
+## 回退精确文件全14验证
+
+主submission.py SHA42911561保持不变，完整native naive_nsa/W10R50 全14 PASS，静态检查PASS。case6 156.739us、case12 83.702us。数据见rollback_exact_all14_sc-16g-2.csv，不是外部OJ重测。
