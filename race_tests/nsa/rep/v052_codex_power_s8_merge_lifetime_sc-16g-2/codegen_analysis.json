@@ -1,0 +1,20 @@
+{
+  "source_sha256": "c12dc5293da57e339d1301e0204f270846602cf964780d269e986600e5f62f85",
+  "shared_bytes": 16896,
+  "per_warp_shared_bytes": 4224,
+  "legacy_two_warp_per_warp_shared_bytes": 6656,
+  "MT": 88,
+  "ST": 28,
+  "stack_bytes": 0,
+  "static_max_warps_peu": 5,
+  "private_allocas": [],
+  "state_phi_count": 29,
+  "merge_phi_sample": [
+    "%merged_numerator.sroa.32.0 = phi float [ %add740.31275, %for.cond621.preheader ], [ undef, %if.end613 ]",
+    "%merged_numerator.sroa.22.0 = phi float [ %add736.31274, %for.cond621.preheader ], [ undef, %if.end613 ]",
+    "%merged_numerator.sroa.12.0 = phi float [ %add732.31273, %for.cond621.preheader ], [ undef, %if.end613 ]",
+    "%merged_numerator.sroa.0.0 = phi float [ %add728.31272, %for.cond621.preheader ], [ undef, %if.end613 ]",
+    "%merged_denominator.sroa.0.1 = phi float [ %add678.3, %for.cond621.preheader ], [ undef, %if.end613 ]"
+  ],
+  "interpretation": "Merged state phi uses undef on inactive path; old partial incoming values removed. Resource effect is only2MT and unchanged ceiling5; not evidence that old phi dominated register pressure."
+}
