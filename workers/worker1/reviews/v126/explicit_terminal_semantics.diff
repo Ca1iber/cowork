@@ -1,0 +1,12 @@
+--- prepared_original126
++++ explicit_terminal126
+@@ -175,4 +175,8 @@
+  if f.exists():counter_analyses.append(json.loads(f.read_text()))
+ actual_records=sum(x['actual_records'] for x in counter_analyses);valid_records=sum(x['valid_numeric_scope_records'] for x in counter_analyses)
+ if complete and (len(counter_analyses)!=1 or actual_records!=2 or valid_records!=2):complete=False;failure=failure or 'fixedcountergate incomplete'
+-(r/'stage_result.json').write_text(json.dumps({'UTC':now(),'complete':complete,'failure':failure,'all_jobs':jobs,'new_metadata_resource_IR_native_refs':0,'profile_attention_launch_count':'UNMEASURED; originaldriver/SDKreplay','counter_analyses':counter_analyses,'actual_counter_records':actual_records,'valid_scope_records':valid_records,'cgroup_initial':initial,'cgroup_final':final['cgroup'],'no_retry':True,'old122_latency_and121gate1_preserved':True,'not_HBM_occupancy_exclusive_or_unique_cause':True},indent=2)+chr(10));(r/'final_census.json').write_text(json.dumps(final,indent=2)+chr(10));(r/'stage.exit').write_text(('0' if complete else '1')+chr(10));print('V126_BASELINE_COUNTER_TERMINAL',complete,actual_records,failure,flush=True);lock.close();raise SystemExit(0 if complete else 1)
++(r/'stage_result.json').write_text(json.dumps({'UTC':now(),'complete':complete,'failure':failure,'all_jobs':jobs,'new_metadata_resource_IR_native_refs':0,'profile_attention_launch_count':'UNMEASURED; originaldriver/SDKreplay','counter_analyses':counter_analyses,'actual_counter_records':actual_records,'valid_scope_records':valid_records,'cgroup_initial':initial,'cgroup_final':final['cgroup'],'no_retry':True,'old122_latency_and121gate1_preserved':True,'not_HBM_occupancy_exclusive_or_unique_cause':True},indent=2)+chr(10));(r/'final_census.json').write_text(json.dumps(final,indent=2)+chr(10))
++(r/'stage.exit').write_text(('0' if complete else '1')+chr(10))
++print('V126_BASELINE_COUNTER_TERMINAL',complete,actual_records,failure,flush=True)
++lock.close()
++raise SystemExit(0 if complete else 1)
