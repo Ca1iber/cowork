@@ -1,8 +1,8 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T08:08:04.135460+00:00",
+  "utc": "2026-10-02T08:55:19.958456+00:00",
   "source_branch": "codex-power-v28-base",
-  "last_closed_source_commit": "b072fae5a4aa15fdb707fc21b9ecff019e198582",
+  "last_closed_source_commit": "0d4985d2ddad1b3e6332686b47739d0f99e8ac4e",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
@@ -11,16 +11,15 @@
     12
   ],
   "current": {
-    "version": "v106_worker1_bounded_all14_editor_baseline_sc-16g-2",
-    "phase": "proposal_only_peer_pending",
-    "candidate_source_v104": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
-    "header": "# codex-power v104",
-    "native_spawned": 0,
-    "refs": 0,
-    "new_heavy": 0,
-    "no_active_PID": true,
+    "version": "v107_worker1_phase_aware_terminal_monitor_sc-16g-2",
+    "phase": "peer_reviewed_monitor_only_proposal_waiting_leader",
+    "source_v104_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "new_native": 0,
+    "new_reference": 0,
+    "GPU_test_calls": 0,
+    "controlled_stdlib_checks": 5,
     "oldfailedgates_preserved": true,
-    "no_name_or_tree_whitelist": true
+    "no_activePID": true
   },
   "history": {
     "v101": {
@@ -79,11 +78,21 @@
       "OOM13_unchanged": true,
       "unownedPID213447_not_signalled": true,
       "threshold_not_changed": true
+    },
+    "v106": {
+      "commit": "0d4985d2ddad1b3e6332686b47739d0f99e8ac4e",
+      "exit": 1,
+      "native_processes": 3,
+      "observed_C14_total42": true,
+      "clean_C0_total28": true,
+      "native_exits_all0": true,
+      "OOM13_unchanged": true,
+      "actual_signals_sent": 0
     }
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
   "next": "ownnew diagnostic plan/source-only feasibility + peer thenleader review; no heavyGO yet",
-  "last_closed_version": "v105_worker1_bounded_all14_runtime_diagnostic_sc-16g-2",
-  "last_closed_status": "blocked_admission_unknown_background_no_native"
+  "last_closed_version": "v106_worker1_bounded_all14_editor_baseline_sc-16g-2",
+  "last_closed_status": "failed_monitor_identity_unavailable_terminal_inconclusive"
 }
