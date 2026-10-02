@@ -1,0 +1,132 @@
+{
+  "version": "v211_worker2_c8_bounded_exit_confirmation_subagent2",
+  "UTC": "2026-10-02T13:36:18.084246+00:00",
+  "approval": "one independent original C8 fixed12 only",
+  "review_archive_SHA": "492cc448a0914761a5bbb4aa939e8a7f81ea8309fc6054e5d1efa4e5dd236498",
+  "verified_text_hashes": 17,
+  "plan_before_GO_SHA": "a661d258805d7a24a0daece761916969ba90e02b53ddcec4a744bf9013fb387c",
+  "kernel_SHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+  "kernel_header": "codex-power v210",
+  "helpers": {
+    "run_native_screen.py": "b2803d1c5fd449fbc5a3ab14cb80f4b3d09d5706657ddd451a0b69e6c4b97481",
+    "native_whole_cgroup_utils.py": "80925f3c2e31f4471129d613ed43bff3f7d405f19032a188a158f9580ace0e8e",
+    "native_exec.py": "547e45c040e544366d3a56eeb03fb7b1a24bc5cdeb9d825936909e94d429a4ab"
+  },
+  "actual_diff_reviewed": "phase-aware proc reads, originalPopen terminal first, cumulative1s missing confirmation/50ms, explicitnonempty mismatch immediate fail; all old pressure/unknown/OOM/timeout/priorabort/finiteCSV checks retained",
+  "CPU_controlled_preflight_cases": [
+    {
+      "case": "optional_errors_preserve_realcritical",
+      "pass": true,
+      "phase_errors": [
+        {
+          "phase": "status",
+          "errno": 13,
+          "filename": "/proc/250255/status"
+        },
+        {
+          "phase": "task",
+          "errno": 2,
+          "filename": "/proc/250255/task"
+        }
+      ]
+    },
+    {
+      "case": "explicitnonnull_mismatch_immediate",
+      "pass": true
+    },
+    {
+      "case": "real_Popen_terminal_after_missing",
+      "pass": true,
+      "actualwait": 0,
+      "events": [
+        {
+          "event": "started",
+          "monotonic": 3319735.647388955,
+          "deadline": 3319736.647388955,
+          "metadata": {
+            "pid": 250255,
+            "ppid": 250254,
+            "pgid": 250253,
+            "starttime_ticks": 331973563,
+            "state": "S",
+            "comm": "python",
+            "exe": null,
+            "status": {
+              "VmHWM": "8224 kB",
+              "VmRSS": "8224 kB",
+              "Threads": "1"
+            },
+            "cgroup": [
+              "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "10:misc:/",
+              "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+            ],
+            "thread_children": [],
+            "metadata_errors": [],
+            "critical_complete": true,
+            "RSS_unavailable": false
+          }
+        },
+        {
+          "event": "terminal_confirmed",
+          "elapsed": 0.0031619607470929623,
+          "total_missing_elapsed": 0.0031619607470929623,
+          "actualPopenpoll": 0
+        }
+      ]
+    },
+    {
+      "case": "same_originaltuple_restored",
+      "pass": true
+    },
+    {
+      "case": "alive_unverifiable_timeout_thenwait0_priorabortkept",
+      "pass": true,
+      "actualwait": 0,
+      "priorabort": "CRITICAL_MISSING_CONFIRMATION_1S_EXPIRED",
+      "confirmation_timestamps_synthetic_not_latency": true
+    }
+  ],
+  "CPU_gate_real_exit0": true,
+  "fixed_order": [
+    "baseline_v28",
+    "parent_v084",
+    "power_v210",
+    "power_v210",
+    "parent_v084",
+    "baseline_v28",
+    "baseline_v28",
+    "parent_v084",
+    "power_v210",
+    "power_v210",
+    "parent_v084",
+    "baseline_v28"
+  ],
+  "planned_C_inclusive_refs": [
+    4,
+    12
+  ],
+  "expected_OOM": 3,
+  "admission_GiB": 2,
+  "runtime_stop_GiB": 28,
+  "unknown_RSS_GiB": 1,
+  "normal_interval_seconds": 0.5,
+  "missing_confirmation_cumulative_budget_seconds": 1,
+  "confirmation_interval_seconds": 0.05,
+  "per_job_wall_seconds": 600,
+  "old_v210_guard1_0candidate_2observed_1clean_preserved": true,
+  "no_kernel_copy_or_new_compile_profile": true,
+  "no_old_rows_pooled": true,
+  "next": "same native input/seed/Grad/dtype/fullnaive/W10R50; fixed12 only; preserve allraw/positive/ranges; no automaticfull14 or promotion"
+}
