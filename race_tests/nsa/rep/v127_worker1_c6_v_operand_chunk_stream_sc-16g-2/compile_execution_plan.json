@@ -1,0 +1,152 @@
+{
+  "memory_engineering_budget": {
+    "cgroup_limit_bytes": 34359738368,
+    "new_admission_max_whole_bytes": 5368709120,
+    "additional_import_runtime_budget_not_upperbound_bytes": 24696061952,
+    "reserve_bytes": 4294967296,
+    "runtime_stop_whole_bytes": 30064771072,
+    "unknown_visible_heavy_RSS_bytes": 1073741824,
+    "sample_interval_seconds": 0.5,
+    "per_process_walltime_stop_seconds": 600,
+    "newthreshold_preregistered_before_any_newheavy": true,
+    "all_cgroup_limit_changes_forbidden": true,
+    "baseline_GiB": 5,
+    "additional_GiB": 23,
+    "reserve_GiB": 4,
+    "runtime_whole_GiB": 28
+  },
+  "monitor_repair": {
+    "critical_identity_fields": [
+      "pid",
+      "starttime_ticks",
+      "exe"
+    ],
+    "per_read_phase_errors_with_filename": true,
+    "optional_status_or_thread_error_keeps_read_critical_identity": true,
+    "authoritative_original_Popen_terminal_poll_before_identity_abort": true,
+    "explicit_alive_critical_mismatch_fails_immediately": true,
+    "unavailable_identity_terminal_confirmation_max_seconds": 1.0,
+    "confirmation_within_original600s_and_all_existing_guards": true,
+    "terminal0_cannot_erase_prior_other_abort": true,
+    "no_signal_on_unverified_or_terminal_PID": true,
+    "no_oldgate_repair_or_repeat": true,
+    "per_job_pending_since_initialized": true,
+    "pending_not_reset_on_repeated_unavailable": true,
+    "permissiondenied_independent_fixture": "UNAVAILABLE; notexecuted, no verifiedsignal, boundedpending/strictguards remain"
+  },
+  "recognized_unowned_baseline": {
+    "pid": 213447,
+    "starttime_ticks": 93125003,
+    "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+    "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+  },
+  "expected_oom_before": 13,
+  "failure": "same5double/28whole/unknown1G/OOM13/600/.5/1s/verifiedownership/cooperativeexclusive/sourcehash/anynonzero/Killed; stopfixedprefix/noretry",
+  "version": "v127_worker1_c6_v_operand_chunk_stream_sc-16g-2",
+  "UTC": "2026-10-02T21:01:49.454058+00:00",
+  "phase": "leader_GO_v127_bounded_compile_once",
+  "scope": "onefreshCB13/C127 C6 export2pairs4files ->CPUgeometry/source/generated ->1candidate resource ->firstIR ->CPU observation; no native/profile",
+  "source_labels": [
+    "parent113",
+    "candidate127"
+  ],
+  "official_case": 6,
+  "official_tuple": [
+    8,
+    1024,
+    1,
+    16,
+    128,
+    1,
+    32,
+    true
+  ],
+  "candidate_SHA": "cfeb8e5d18adb3c0d0c887633fc8dea1778ebfdfc100fdc9c9a77544c514515d",
+  "parent_geometry": [
+    1024,
+    8,
+    64,
+    1,
+    1,
+    8192
+  ],
+  "guard_stage_jobs": [
+    {
+      "kind": "metadata_pair"
+    },
+    {
+      "kind": "source_device_audit"
+    },
+    {
+      "kind": "candidate_resource"
+    },
+    {
+      "kind": "candidate_IR"
+    },
+    {
+      "kind": "compiled_observation"
+    }
+  ],
+  "resource_gate": {
+    "stack_equals": 0,
+    "staticshared_recorded": true,
+    "MT_ST_staticmax_record_only_no_decrease_threshold": true,
+    "dynamicshared": "actualhost recorded and fullvectorbounds/nonoverlap checked, no equalitytoestimate"
+  },
+  "actual_safety_gate": [
+    "Num32/P8/Score8/currentC6Voperand4 withsamekey-plane-chunkaccum order",
+    "allproducers/global16B/layout/output/sync literalparent",
+    "actualV4 loadcorrespondingMFMAdefuse/nohoistback life reviewed, no physicalreg claim fromsrcalloc",
+    "record actualMTST/staticmax/stack0/noAS5; resource/no IRbenefit orlatencycan falsify"
+  ],
+  "fullvalid_math": "singlewarp QK16+PV16=32MFMA/query; staticcalls/serialloops actualrecord",
+  "native_not_authorized": true,
+  "no_candidate_edit_duringcompile": true,
+  "manual_leader_math_sync_lifetime_review_required_before_native": true,
+  "candidate_resource_argv": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-device-obj",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-resource-usage",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v127_worker1_c6_v_operand_chunk_stream_sc-16g-2/SDK/candidate127.mcbin",
+    "/root/tilelang-metax/race_tests/nsa/rep/v127_worker1_c6_v_operand_chunk_stream_sc-16g-2/codegen/candidate127/case6.device.cpp"
+  ],
+  "candidate_IR_argv": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-maca-device-only",
+    "-S",
+    "-emit-llvm",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v127_worker1_c6_v_operand_chunk_stream_sc-16g-2/SDK/candidate127.ll",
+    "/root/tilelang-metax/race_tests/nsa/rep/v127_worker1_c6_v_operand_chunk_stream_sc-16g-2/codegen/candidate127/case6.device.cpp"
+  ],
+  "source_revision": "currentC6_Num32_Voperand4_chunkload_MMA_fused_only",
+  "candidate_geometry_prefix": [
+    1024,
+    8,
+    64,
+    1,
+    1
+  ],
+  "source_shared_bytes_estimate": 8192,
+  "candidate_shared_bytes_gate": "actual host recorded; mandatoryactualdisjointregion/bounds proof instead ofequalitytoestimate",
+  "old121_failure": "closed121gate1 andclosed122+48.640835%latency and123raw retained, no oldgate repair"
+}

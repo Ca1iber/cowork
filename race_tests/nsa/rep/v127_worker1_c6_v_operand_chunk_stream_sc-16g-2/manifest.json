@@ -1,0 +1,81 @@
+{
+  "version": "v127_worker1_c6_v_operand_chunk_stream_sc-16g-2",
+  "closedUTC": "2026-10-02T21:15:18.178408+00:00",
+  "status": "compile_initial_admission_refused_no_backend_evidence",
+  "source_reference": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v127_worker1_c6_v_operand_chunk_stream_sc-16g-2/submission.py",
+    "sha256": "cfeb8e5d18adb3c0d0c887633fc8dea1778ebfdfc100fdc9c9a77544c514515d"
+  },
+  "runtime": {
+    "UTC": "2026-10-02T21:06:54.634862+00:00",
+    "complete": false,
+    "failure": "wholeCG exceeds new5GiB admission",
+    "all_jobs": [],
+    "metadata_pairs": 0,
+    "candidate_resource": null,
+    "NSA_attention_calls": 0,
+    "fullrefs": 0,
+    "cgroup_initial": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "5415952384\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 1917100032\nrss 3132047360\nrss_huge 0\nshmem 573440\nmapped_file 52170752\ndirty 40960\nwriteback 0\nswap 746381312\npgpgin 5106001673\npgpgout 5104760333\npgfault 5688439614\npgmajfault 206775\ninactive_anon 2620833792\nactive_anon 547131392\ninactive_file 587956224\nactive_file 1328570368\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1917100032\ntotal_rss 3132047360\ntotal_rss_huge 0\ntotal_shmem 573440\ntotal_mapped_file 52170752\ntotal_dirty 40960\ntotal_writeback 0\ntotal_swap 746381312\ntotal_pgpgin 5106001673\ntotal_pgpgout 5104760333\ntotal_pgfault 5688439614\ntotal_pgmajfault 206775\ntotal_inactive_anon 2620833792\ntotal_active_anon 547131392\ntotal_inactive_file 587956224\ntotal_active_file 1328570368\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 5415952384
+    },
+    "cgroup_final": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "5447663616\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 1917181952\nrss 3163361280\nrss_huge 0\nshmem 573440\nmapped_file 52170752\ndirty 122880\nwriteback 0\nswap 746364928\npgpgin 5106049327\npgpgout 5104800322\npgfault 5688487325\npgmajfault 206777\ninactive_anon 2652069888\nactive_anon 547131392\ninactive_file 588054528\nactive_file 1328570368\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1917181952\ntotal_rss 3163361280\ntotal_rss_huge 0\ntotal_shmem 573440\ntotal_mapped_file 52170752\ntotal_dirty 122880\ntotal_writeback 0\ntotal_swap 746364928\ntotal_pgpgin 5106049327\ntotal_pgpgout 5104800322\ntotal_pgfault 5688487325\ntotal_pgmajfault 206777\ntotal_inactive_anon 2652069888\ntotal_active_anon 547131392\ntotal_inactive_file 588054528\ntotal_active_file 1328570368\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 5447663616
+    },
+    "manual_lifetime_review_required_before_native": true,
+    "no_retry": true
+  },
+  "runtime_final": {
+    "UTC": "2026-10-02T21:10:36.084853+00:00",
+    "actualwhole_first_admission": 5447409664,
+    "old5GiB_cap": 5368709120,
+    "excess": 78700544,
+    "cache_bytes": 1917100032,
+    "rss_bytes": 3163258880,
+    "mapped_file_bytes": 52170752,
+    "swap_bytes": 746381312,
+    "whole_charge_not_equals_sumRSS": true,
+    "baseline_identity_match": true,
+    "baselineNodeRSS_HWM_KiB": {
+      "VmSize": 13683744,
+      "VmHWM": 3611504,
+      "VmRSS": 2675756
+    },
+    "stage1child_spawned": false,
+    "metadata_resource_IR_native_fullrefs": 0,
+    "OOM_initial_final": [
+      13,
+      13
+    ],
+    "all_originalwaits": {
+      "stage.exit": "1",
+      "controller_actual.exit": "1",
+      "supervisor_actual.exit": "1",
+      "launcher_actual.exit": "1"
+    },
+    "all_self_jobs_terminal": true,
+    "no_retry_orcleanup_unknown": true
+  },
+  "refs": {
+    "sourcecfeb_header127_frozen": true,
+    "candidate_fullrefs": 0,
+    "inclusive_fullrefs": 0,
+    "metadata_child_spawned": 0,
+    "metadata_exports_resource_IR_native_profile": 0,
+    "source_prediction_notverified": true
+  },
+  "old5GiB_boundary1_notrelaxed": true,
+  "main_promotion": false,
+  "OJ": null
+}

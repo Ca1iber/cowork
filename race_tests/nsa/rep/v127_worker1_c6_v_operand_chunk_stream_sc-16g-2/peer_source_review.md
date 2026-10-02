@@ -1,0 +1,1 @@
+Actualworker2advice beforeedit: keytile->plane->chunk/peroutputF32order/P8roundedden preserved, loadall4half before correspondingMMA toNumplane4+chunk; noextraP/output/sharedwrite. Voperand4 maynotreduceactualphysicalMT ifhoist; actualIRload-MMAdefuse andstate/lifetime mandatory, MT/ST/stack/ILPMLPcost record. Shared100conf0 notbankhypothesis. Owneradopted nopeeredit/GO.

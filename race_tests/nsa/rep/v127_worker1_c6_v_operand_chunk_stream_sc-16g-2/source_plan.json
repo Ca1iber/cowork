@@ -1,0 +1,30 @@
+{
+  "version": "v127_worker1_c6_v_operand_chunk_stream_sc-16g-2",
+  "UTC": "2026-10-02T20:56:52.547327+00:00",
+  "phase": "hypothesis_wait_peer_before_source",
+  "parent_module_bestCB13_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+  "exact_case6_key": [
+    8,
+    1024,
+    1,
+    16,
+    128,
+    1,
+    32,
+    true
+  ],
+  "current_factory": "_make_power_s1_v_hybrid_pack",
+  "baseline_actual_CPP_SHA": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d",
+  "evidence": "126shared100/conflict0/WG47.4; static100MT22ST/max4/stack0/dyn8192, no measuredoccupancy or bankbottleneck",
+  "hypothesis": "RetainNum32; fuseeach4half VloadwithcorrespondingMFMA ineach key_tile/plane/chunk. Sourcev_operand16to4 mayreduceoperand lifetime; compilerhoist/actualallocation unknown, notspeedguarantee.",
+  "only_change": "localVoperand size/index andfuse4chunkloads/MMA, allproducer/QK/P8roundedden/Num32/sync/global16B/layout/output sameparent",
+  "ordering": "key_tile0..1 ->plane0..1 ->chunk0..3, everyoutputfeature accumulateskey0thenkey1, notplane-first rewrite",
+  "falsifiers": [
+    "IR hoistback/nointendedload-use shortening",
+    "globalwidth/output/barrier/math drift orstack/private spill",
+    "resource no intendedchange ororiginalnative regression; lower outstandingload/ILP can regress"
+  ],
+  "no_old118_copy_or_Num16": true,
+  "other13_CB13_parent18prefix_unchanged": true,
+  "newheavy_attempts": 0
+}
