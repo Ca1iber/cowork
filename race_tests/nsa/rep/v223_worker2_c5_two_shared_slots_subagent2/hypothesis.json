@@ -1,0 +1,26 @@
+{
+  "id": "v223_worker2_c5_two_shared_slots_subagent2",
+  "stage": "SOURCE_READY_PREPARE_ONLY",
+  "hypothesis": "two disjoint shared slots may remove three preoverwrite warp barriers while preserving producer visibility and perquerymath",
+  "only_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "parent": "exactP84 source4c C5; notC3variant/DirectK212",
+  "cost": "shared2KiB\u21924KiB/block and offset/register/admissioncost may regress; global16Bpayload/count unchanged notlatencyproof",
+  "sync_fullvalid": "7\u21924 postQ/postK/postV/postOut",
+  "falsifiers": [
+    "address/value/vector/lifetime/validpath mismatch",
+    "actual barriers not4 or compilerintroducesextra / noAS5/stack failed",
+    "resource or sharedadmissionreversecost recorded",
+    "originalfixednative notfaster/noise iflaterGO"
+  ],
+  "scope": "onlysource+stdlibprepare now; no compile/native/profile",
+  "crosscase": "parent14prefix/exactC5 only, other13device/performanceUNAVAILABLE"
+}

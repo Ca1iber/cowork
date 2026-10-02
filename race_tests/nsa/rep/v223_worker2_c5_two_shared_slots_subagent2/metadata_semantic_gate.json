@@ -1,0 +1,116 @@
+{
+  "gate": 0,
+  "sourceSHA": "0dbec413ce91a7b65e409b1765b24ac9d98df1f79d7bdc800a51b7be52194a7a",
+  "CPP_SHA": "46d593aed704982582b28446829f92d7fba92779ada794cd0e3519246490db76",
+  "IR_SHA": "e9e942999e39102f1667b3dc622de40e9a4d0cf406ef9428f08abb085276e54d",
+  "CPP_diff_only4sharedoffsets_and3deletedprebarriers": true,
+  "actual_phase_events": [
+    {
+      "line": 31,
+      "code": "*(uint2*)(shared + ((((part * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack ^ part) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack * 4));"
+    },
+    {
+      "line": 34,
+      "code": "__syncwarp();"
+    },
+    {
+      "line": 37,
+      "code": "*(uint2*)(q_local + (chunk * 4)) = *(uint2*)(shared + ((((((int)threadIdx.x) & 15) * 64) + ((((chunk * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (((int)threadIdx.x) & 1)) * 4)));"
+    },
+    {
+      "line": 53,
+      "code": "*(uint2*)(shared + (((((part_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack_1 ^ part_1) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4)) + 1024)) = *(uint2*)(qk_fetch + (pack_1 * 4));"
+    },
+    {
+      "line": 56,
+      "code": "__syncwarp();"
+    },
+    {
+      "line": 61,
+      "code": "*(uint2*)(k_local + 0) = *(uint2*)(shared + (((((((int)threadIdx.x) & 15) * 64) + ((((chunk_1 * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (((int)threadIdx.x) & 1)) * 4)) + 1024));"
+    },
+    {
+      "line": 130,
+      "code": "*(uint1*)(shared + ((((((((col & 3) * 16) + ((((int)threadIdx.x) & 7) * 2)) + (col >> 2)) ^ ((((int)threadIdx.x) & 31) >> 4)) * 16) + ((((((int)threadIdx.x) >> 4) ^ ((((int)threadIdx.x) & 7) >> 1)) ^ (col & 3)) * 4)) + (((((int)threadIdx.x) & 15) >> 3) * 2))) = *(uint1*)(v_column + 0);"
+    },
+    {
+      "line": 132,
+      "code": "__syncwarp();"
+    },
+    {
+      "line": 135,
+      "code": "*(uint2*)(v_operand + (chunk_2 * 4)) = *(uint2*)(shared + (((((((((int)threadIdx.x) & 3) * 16) + (chunk_2 * 4)) + ((((int)threadIdx.x) & 15) >> 2)) ^ ((((int)threadIdx.x) & 31) >> 4)) * 16) + ((((((int)threadIdx.x) >> 4) ^ chunk_2) ^ (((int)threadIdx.x) & 3)) * 4)));"
+    },
+    {
+      "line": 166,
+      "code": "*(uint2*)(shared + (((((((int)threadIdx.x) & 15) * 64) + ((((chunk_5 * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + ((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4)) + 1024)) = *(uint2*)(shared_local_cast + 0);"
+    },
+    {
+      "line": 168,
+      "code": "__syncwarp();"
+    },
+    {
+      "line": 173,
+      "code": "*(uint2*)(output_fetch + (pack_2 * 4)) = *(uint2*)(shared + (((((part_2 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + ((pack_2 ^ part_2) * 4)) + 1024));"
+    }
+  ],
+  "actual_postbarriers_lines": [
+    34,
+    56,
+    132,
+    168
+  ],
+  "slot_bounds_half": {
+    "Q": [
+      0,
+      1024
+    ],
+    "K": [
+      1024,
+      2048
+    ],
+    "V": [
+      0,
+      1024
+    ],
+    "Output": [
+      1024,
+      2048
+    ]
+  },
+  "source_slot_values_vectors": "1024each andcompletevectors proof linked slot_value_vector_proof.json",
+  "allglobal16B_math_Num16_guard_literal_preserved": true,
+  "kernel_counts": {
+    "MMA": 8,
+    "warp": 4,
+    "bpermute": 4,
+    "alloca": 0,
+    "AS5": false
+  },
+  "resource_parent": [
+    42,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "resource_candidate": [
+    40,
+    20,
+    8,
+    0,
+    4096
+  ],
+  "compile_truewaits": [
+    0,
+    0,
+    0
+  ],
+  "invalid_uniform_skip_Out1_disjointQ0": true,
+  "native_reference_attention": [
+    0,
+    0,
+    0
+  ],
+  "ISAwidth_occupancy": "UNAVAILABLE"
+}

@@ -1,0 +1,82 @@
+{
+  "records": [
+    {
+      "phase": "Q",
+      "half_bounds": [
+        0,
+        1024
+      ],
+      "values": 1024,
+      "vector_checks": 256,
+      "vectors_preserved": true
+    },
+    {
+      "phase": "K",
+      "half_bounds": [
+        1024,
+        2048
+      ],
+      "values": 1024,
+      "vector_checks": 256,
+      "vectors_preserved": true
+    },
+    {
+      "phase": "V",
+      "half_bounds": [
+        0,
+        1024
+      ],
+      "values": 1024,
+      "vector_checks": 512,
+      "vectors_preserved": true
+    },
+    {
+      "phase": "Out",
+      "half_bounds": [
+        1024,
+        2048
+      ],
+      "values": 1024,
+      "vector_checks": 256,
+      "vectors_preserved": true
+    }
+  ],
+  "totalsharedhalf": 2048,
+  "fourphase_lifetimes": {
+    "valid_path": [
+      {
+        "stage": "Q0write-postQ",
+        "witness": "all Q0 writes visible before Q0 consumer reads"
+      },
+      {
+        "stage": "K1write-postK",
+        "safe_overlap": "Q0reads vs K1writes disjoint",
+        "witness": "all wave threads finished Q0reads before postK; then V0 may reuseQ0"
+      },
+      {
+        "stage": "V0write-postV",
+        "safe_overlap": "K1reads vs V0writes disjoint",
+        "witness": "all wave threads finished K1reads before postV; then Out1 may reuseK1"
+      },
+      {
+        "stage": "Out1write-postOut-gather1",
+        "safe_overlap": "V0reads vs Out1writes disjoint",
+        "witness": "postOut exposes output for crosslane gather; no later shared reuse"
+      }
+    ],
+    "invalid_path": "K/V writes/reads and their syncs skipped uniformly; Q0 postQ retained, Out1 disjoint Q0 and postOut/gather1 retained; Num0/den0 yields originalNaN",
+    "guard": "Indices/token blockvalid uniform across64lanes; no fullCTA barrier or async",
+    "slot_half_ranges": [
+      [
+        0,
+        1024
+      ],
+      [
+        1024,
+        2048
+      ]
+    ],
+    "globaladdresses_vector16B_counts": "sourceinverse exact, compiler verification pending",
+    "proof_limit": "four fullwarp barriers are source intent; actualCPP/IR/lifetimes still required"
+  }
+}

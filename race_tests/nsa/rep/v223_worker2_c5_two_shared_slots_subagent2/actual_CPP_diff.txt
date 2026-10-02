@@ -1,0 +1,59 @@
+--- 
++++ 
+@@ -45,13 +45,12 @@
+   maximum[0] = -MACART_INF_F;
+   int block_start = (Indices[((((int)blockIdx.y) * 1024) + ((int)blockIdx.x))] * 16);
+   if ((0 <= block_start) && (block_start <= ((int)blockIdx.x))) {
+-    __syncwarp();
+     #pragma unroll
+     for (int part_1 = 0; part_1 < 2; ++part_1) {
+       *(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + (((int64_t)part_1) * (int64_t)512)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));
+       #pragma unroll
+       for (int pack_1 = 0; pack_1 < 2; ++pack_1) {
+-        *(uint2*)(shared + ((((part_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack_1 ^ part_1) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack_1 * 4));
++        *(uint2*)(shared + (((((part_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack_1 ^ part_1) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4)) + 1024)) = *(uint2*)(qk_fetch + (pack_1 * 4));
+       }
+     }
+     __syncwarp();
+@@ -59,7 +58,7 @@
+     *(float4*)(scores + 0) = make_float4(broadcast_var_1, broadcast_var_1, broadcast_var_1, broadcast_var_1);
+     #pragma unroll
+     for (int chunk_1 = 0; chunk_1 < 4; ++chunk_1) {
+-      *(uint2*)(k_local + 0) = *(uint2*)(shared + ((((((int)threadIdx.x) & 15) * 64) + ((((chunk_1 * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (((int)threadIdx.x) & 1)) * 4)));
++      *(uint2*)(k_local + 0) = *(uint2*)(shared + (((((((int)threadIdx.x) & 15) * 64) + ((((chunk_1 * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (((int)threadIdx.x) & 1)) * 4)) + 1024));
+       {
+       *(((float32x4*)scores) + 0) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)k_local) + 0),
+                     *(((float16x4*)q_local) + chunk_1),
+@@ -119,7 +118,6 @@
+       partial_sum[0] = (partial_sum[0] + ((float)probabilities[element_2]));
+     }
+     denominator[0] = (denominator[0] + partial_sum[0]);
+-    __syncwarp();
+     #pragma unroll
+     for (int row = 0; row < 2; ++row) {
+       *(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)128)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)row) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));
+@@ -158,7 +156,6 @@
+       __6.w = (v__4.w/v__5.w);
+     *(float4*)(numerator + (chunk_4 * 4)) = __6;
+   }
+-  __syncwarp();
+   #pragma unroll
+   for (int chunk_5 = 0; chunk_5 < 4; ++chunk_5) {
+     uint2 __7;
+@@ -166,14 +163,14 @@
+     ((half2*)(&__7))[0] = __float22half2_rn(((float2*)(&v__6))[0]);
+     ((half2*)(&__7))[1] = __float22half2_rn(((float2*)(&v__6))[1]);
+     *(uint2*)(shared_local_cast + 0) = __7;
+-    *(uint2*)(shared + ((((((int)threadIdx.x) & 15) * 64) + ((((chunk_5 * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + ((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(shared_local_cast + 0);
++    *(uint2*)(shared + (((((((int)threadIdx.x) & 15) * 64) + ((((chunk_5 * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + ((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4)) + 1024)) = *(uint2*)(shared_local_cast + 0);
+   }
+   __syncwarp();
+   #pragma unroll
+   for (int part_2 = 0; part_2 < 2; ++part_2) {
+     #pragma unroll
+     for (int pack_2 = 0; pack_2 < 2; ++pack_2) {
+-      *(uint2*)(output_fetch + (pack_2 * 4)) = *(uint2*)(shared + ((((part_2 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + ((pack_2 ^ part_2) * 4)));
++      *(uint2*)(output_fetch + (pack_2 * 4)) = *(uint2*)(shared + (((((part_2 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + ((pack_2 ^ part_2) * 4)) + 1024));
+     }
+     *(uint4*)(Output + ((((((int)blockIdx.y) * 1048576) + (((int)blockIdx.x) * 1024)) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);
+   }
