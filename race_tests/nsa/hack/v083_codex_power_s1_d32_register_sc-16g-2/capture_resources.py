@@ -1,0 +1,9 @@
+from pathlib import Path
+import subprocess,json,re
+r=Path('/root/tilelang-metax/race_tests/nsa/rep/v083_codex_power_s1_d32_register_sc-16g-2');out=r/'resources';out.mkdir(exist_ok=True);rows=[];summary=[]
+for ci in [1]:
+ for label in ['parent_v081','power_v083']:
+  src=r/('codegen_formal/'+label+'/case'+str(ci)+'_stage1.device.cpp');prefix='case'+str(ci)+'_'+label;dest=out/(prefix+'.mcbin');cmd=['/opt/maca/mxgpu_llvm/bin/mxcc','-x','maca','-device-obj','-O3','-lineinfo','--offload-arch=xcore1000','-std=c++17','-I/root/tilelang-metax/src','-use-fast-math','-D__FAST_HALF_CVT__','-resource-usage','-o',str(dest),str(src)];x=subprocess.run(cmd,capture_output=True,text=True);raw=x.stdout+x.stderr;(out/(prefix+'.log')).write_text(raw);(out/(prefix+'.exit')).write_text(str(x.returncode)+'\n');rows.append({'case':ci,'variant':label,'command':cmd,'exit':x.returncode,'raw':raw});assert x.returncode==0
+  m=re.search(r'Used\s+(\d+) MTregisters,\s*(\d+) STregisters,\s*(\d+) bytes shared mem',raw);w=re.search(r'staticMaxWarps/PEU\s*:\s*(\d+)',raw);stack=re.search(r'(\d+) bytes stack frame',raw);assert m and w and stack
+  host=r/('codegen_formal/'+label+'/case'+str(ci)+'_stage1.host.cpp');s=host.read_text();smem_index=11 if label=='parent_v081' else 10;lines=[l for l in s.splitlines() if '.v_int64)' in l and '['+str(smem_index)+']' in l];assert len(lines)==1;dyn=int(re.search(r'int64_t\)(\d+)',lines[0])[1]);summary.append({'case':ci,'variant':label,'MT':int(m[1]),'ST':int(m[2]),'static_shared_bytes_reported':int(m[3]),'dynamic_shared_bytes_host':dyn,'stack_bytes':int(stack[1]),'static_max_warps_per_PEU':int(w[1]),'not_measured_occupancy':True});print(summary[-1],flush=True)
+(r/'resource_capture.json').write_text(json.dumps(rows,indent=2)+'\n');(r/'resource_summary.json').write_text(json.dumps(summary,indent=2)+'\n')

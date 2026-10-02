@@ -1,0 +1,11 @@
+{
+  "phase": "analysis only,no reference or benchmark retry",
+  "old_assert": "abs(write_bytes-65536)<65536*.001",
+  "observed_waves": 64,
+  "observed_write_bytes": 65856,
+  "over_payload_bytes": 320,
+  "relative_residual_pct": 0.48828125,
+  "cause": "inherited0.1percent bound rejected64KiB payload despite same320byte residual seen on prior profiles",
+  "change": "preprobe requires exact payload+320 and64waves; preserve raw data; not exclusive scope guarantee",
+  "residual_attribution": "unverified,not labeled hardware traffic or instrumentation definitively"
+}

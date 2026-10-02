@@ -1,0 +1,15 @@
+{
+  "new_global_direct": true,
+  "Q_K_and_output_coords_full_unique": 512,
+  "PV_V_coords_full_unique": 512,
+  "MMA_QK": 2,
+  "MMA_PV": 2,
+  "local_vector_offsets": "0/1,4elements each in8extent;q8,num8,Vop8,scoreP4,k4",
+  "valid16rows_inbounds": true,
+  "shared_declared_bytes": 0,
+  "explicit_memory_barriers": 0,
+  "gmem_qk_output_vec": "4halves8B lastdim contiguous; warp may overfetch",
+  "V_loads": "4scalar row loads/lane/chunk,coalesced columns across16lane blocks",
+  "math": "F32QK/globalmax,F16Pscale256,F32sum sameconsumedP,F32PV",
+  "not_native_correctness_proof": true
+}
