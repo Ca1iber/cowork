@@ -1,0 +1,57 @@
+{
+  "scope": "readonlypeeradvisory only; C12ownedworker1, owner+leader decideadoption; no code/plan/GPUchanges",
+  "sourceSHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+  "factory": "_make_power_s8_global_softmax",
+  "CPP_SHA": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13",
+  "evidence": [
+    {
+      "lines": [
+        53,
+        54,
+        59,
+        146,
+        147,
+        151
+      ],
+      "fact": "rawguard precedesmultiply; K/Vbatch65536+rawidx1024 alreadyint32, soC5/C8widthdirectionnotapplicable"
+    },
+    {
+      "lines": [
+        53,
+        146
+      ],
+      "fact": "two8selectedpass rereadsIndices atsameaddresswithsamevalidpredicate"
+    },
+    {
+      "lines": [
+        94,
+        95,
+        97,
+        98
+      ],
+      "fact": "score32 scalarlinearmaxchain then2crosslane shuffles"
+    }
+  ],
+  "hypotheses": [
+    {
+      "mechanism": "constantindexlocal8selectedmetadata read/validateonce, reusedfororiginalQK/PVpasses",
+      "prediction": "actualIRIdxglobalread16\u21928 unlessoldcompileralreadyCSE",
+      "cost_falsifier": "extraindex/validliveness/registerspill orsource/math/invalidchanged ororiginalnative no gain",
+      "boundary": "metadata only; no attentionnumerical content caching, currentparentonly"
+    },
+    {
+      "mechanism": "fourindependent max8score groups thenpairwisecombine beforeoriginalshuffles",
+      "prediction": "actualmaximumdep32\u21928+2; comparesnotnecessarilyfewer",
+      "cost_falsifier": "alreadybalancedIR/extraregs/NaN-specialmaxsemantic/empty/-inf mismatch ororiginalnative no gain",
+      "boundary": "maxfloatingsemantics must beverified; originalroundedPden/PV/hasvalid/invalid unchanged"
+    }
+  ],
+  "no_failedcandidate_references": true,
+  "no_C5_C8_gain_transfer": true,
+  "newimport_compile_native_profile": [
+    0,
+    0,
+    0,
+    0
+  ]
+}
