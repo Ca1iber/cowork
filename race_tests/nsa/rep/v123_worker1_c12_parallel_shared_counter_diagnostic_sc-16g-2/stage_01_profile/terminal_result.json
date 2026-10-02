@@ -1,0 +1,186 @@
+{
+  "index": 1,
+  "spec": {
+    "kind": "profile",
+    "profile_job_index": 1
+  },
+  "pid": 543388,
+  "pgid": 543388,
+  "UTC_terminal": "2026-10-02T18:58:40.043054+00:00",
+  "actual_exit": 0,
+  "stop_reason": null,
+  "cgroup_before": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "4954075136\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 1485144064\nrss 3116515328\nrss_huge 0\nshmem 421888\nmapped_file 52170752\ndirty 40960\nwriteback 0\nswap 750800896\npgpgin 4902402244\npgpgout 4901270082\npgfault 5455084498\npgmajfault 205951\ninactive_anon 2605047808\nactive_anon 547315712\ninactive_file 525119488\nactive_file 959602688\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1485144064\ntotal_rss 3116515328\ntotal_rss_huge 0\ntotal_shmem 421888\ntotal_mapped_file 52170752\ntotal_dirty 40960\ntotal_writeback 0\ntotal_swap 750800896\ntotal_pgpgin 4902402244\ntotal_pgpgout 4901270082\ntotal_pgfault 5455084498\ntotal_pgmajfault 205951\ntotal_inactive_anon 2605047808\ntotal_active_anon 547315712\ntotal_inactive_file 525119488\ntotal_active_file 959602688\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 4954075136
+  },
+  "cgroup_after": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "5011435520\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 1538875392\nrss 3118206976\nrss_huge 0\nshmem 434176\nmapped_file 52170752\ndirty 999424\nwriteback 0\nswap 750608384\npgpgin 4917954599\npgpgout 4916808917\npgfault 5472231142\npgmajfault 205968\ninactive_anon 2606927872\nactive_anon 547237888\ninactive_file 566394880\nactive_file 972046336\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1538875392\ntotal_rss 3118206976\ntotal_rss_huge 0\ntotal_shmem 434176\ntotal_mapped_file 52170752\ntotal_dirty 999424\ntotal_writeback 0\ntotal_swap 750608384\ntotal_pgpgin 4917954599\ntotal_pgpgout 4916808917\ntotal_pgfault 5472231142\ntotal_pgmajfault 205968\ntotal_inactive_anon 2606927872\ntotal_active_anon 547237888\ntotal_inactive_file 566394880\ntotal_active_file 972046336\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 5011435520
+  },
+  "owned_identities": {
+    "543388": {
+      "pid": 543388,
+      "starttime_ticks": 99071081,
+      "exe": "/opt/conda/bin/python3.12",
+      "observed_parent": {
+        "pid": 543387
+      },
+      "first_seen_UTC": "2026-10-02T18:56:04.711856+00:00"
+    },
+    "543390": {
+      "pid": 543390,
+      "starttime_ticks": 99071138,
+      "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler",
+      "observed_parent": {
+        "pid": 543388,
+        "starttime_ticks": 99071081,
+        "exe": "/opt/conda/bin/python3.12"
+      },
+      "first_seen_UTC": "2026-10-02T18:56:05.228795+00:00"
+    },
+    "543399": {
+      "pid": 543399,
+      "starttime_ticks": 99071344,
+      "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler",
+      "observed_parent": {
+        "pid": 543390,
+        "starttime_ticks": 99071138,
+        "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+      },
+      "first_seen_UTC": "2026-10-02T18:56:07.229298+00:00"
+    },
+    "543531": {
+      "pid": 543531,
+      "starttime_ticks": 99071615,
+      "exe": "/usr/bin/dash",
+      "observed_parent": {
+        "pid": 543399,
+        "starttime_ticks": 99071344,
+        "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+      },
+      "first_seen_UTC": "2026-10-02T18:56:10.230385+00:00"
+    },
+    "543532": {
+      "pid": 543532,
+      "starttime_ticks": 99071615,
+      "exe": "/opt/conda/bin/python3.12",
+      "observed_parent": {
+        "pid": 543531,
+        "starttime_ticks": 99071615,
+        "exe": "/usr/bin/dash"
+      },
+      "first_seen_UTC": "2026-10-02T18:56:10.230385+00:00"
+    },
+    "543733": {
+      "pid": 543733,
+      "starttime_ticks": 99074726,
+      "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+      "observed_parent": {
+        "pid": 543532,
+        "starttime_ticks": 99071615,
+        "exe": "/opt/conda/bin/python3.12"
+      },
+      "first_seen_UTC": "2026-10-02T18:56:41.236470+00:00"
+    },
+    "543734": {
+      "pid": 543734,
+      "starttime_ticks": 99074727,
+      "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+      "observed_parent": {
+        "pid": 543733,
+        "starttime_ticks": 99074726,
+        "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+      },
+      "first_seen_UTC": "2026-10-02T18:56:41.236470+00:00"
+    },
+    "543743": {
+      "pid": 543743,
+      "starttime_ticks": 99074901,
+      "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+      "observed_parent": {
+        "pid": 543532,
+        "starttime_ticks": 99071615,
+        "exe": "/opt/conda/bin/python3.12"
+      },
+      "first_seen_UTC": "2026-10-02T18:56:42.736607+00:00"
+    },
+    "543744": {
+      "pid": 543744,
+      "starttime_ticks": 99074901,
+      "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+      "observed_parent": {
+        "pid": 543743,
+        "starttime_ticks": 99074901,
+        "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+      },
+      "first_seen_UTC": "2026-10-02T18:56:42.736607+00:00"
+    },
+    "543752": {
+      "pid": 543752,
+      "starttime_ticks": 99074939,
+      "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+      "observed_parent": {
+        "pid": 543532,
+        "starttime_ticks": 99071615,
+        "exe": "/opt/conda/bin/python3.12"
+      },
+      "first_seen_UTC": "2026-10-02T18:56:43.236775+00:00"
+    },
+    "543918": {
+      "pid": 543918,
+      "starttime_ticks": 99076359,
+      "exe": "/usr/bin/dash",
+      "observed_parent": {
+        "pid": 543399,
+        "starttime_ticks": 99071344,
+        "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+      },
+      "first_seen_UTC": "2026-10-02T18:56:57.236663+00:00"
+    },
+    "543919": {
+      "pid": 543919,
+      "starttime_ticks": 99076359,
+      "exe": "/opt/conda/bin/python3.12",
+      "observed_parent": {
+        "pid": 543918,
+        "starttime_ticks": 99076359,
+        "exe": "/usr/bin/dash"
+      },
+      "first_seen_UTC": "2026-10-02T18:56:57.236663+00:00"
+    },
+    "544308": {
+      "pid": 544308,
+      "starttime_ticks": 99080798,
+      "exe": "/usr/bin/dash",
+      "observed_parent": {
+        "pid": 543399,
+        "starttime_ticks": 99071344,
+        "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+      },
+      "first_seen_UTC": "2026-10-02T18:57:41.742731+00:00"
+    },
+    "544309": {
+      "pid": 544309,
+      "starttime_ticks": 99080798,
+      "exe": "/opt/conda/bin/python3.12",
+      "observed_parent": {
+        "pid": 544308,
+        "starttime_ticks": 99080798,
+        "exe": "/usr/bin/dash"
+      },
+      "first_seen_UTC": "2026-10-02T18:57:41.742731+00:00"
+    }
+  },
+  "NSA_attention_calls": "UNMEASURED profile driver/SDKreplay",
+  "full_reference_checks": 0
+}

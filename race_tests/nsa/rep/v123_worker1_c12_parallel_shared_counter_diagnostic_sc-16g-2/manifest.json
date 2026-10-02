@@ -1,0 +1,1215 @@
+{
+  "version": "v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2",
+  "closedUTC": "2026-10-02T19:14:05.515358+00:00",
+  "status": "finite_raw_profile_completed_shared_regression_observed_no_unique_cause",
+  "runtime": {
+    "UTC": "2026-10-02T19:01:15.856937+00:00",
+    "complete": true,
+    "failure": null,
+    "all_jobs": [
+      {
+        "index": 1,
+        "spec": {
+          "kind": "profile",
+          "profile_job_index": 1
+        },
+        "pid": 543388,
+        "pgid": 543388,
+        "UTC_terminal": "2026-10-02T18:58:40.043054+00:00",
+        "actual_exit": 0,
+        "stop_reason": null,
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4954075136\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1485144064\nrss 3116515328\nrss_huge 0\nshmem 421888\nmapped_file 52170752\ndirty 40960\nwriteback 0\nswap 750800896\npgpgin 4902402244\npgpgout 4901270082\npgfault 5455084498\npgmajfault 205951\ninactive_anon 2605047808\nactive_anon 547315712\ninactive_file 525119488\nactive_file 959602688\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1485144064\ntotal_rss 3116515328\ntotal_rss_huge 0\ntotal_shmem 421888\ntotal_mapped_file 52170752\ntotal_dirty 40960\ntotal_writeback 0\ntotal_swap 750800896\ntotal_pgpgin 4902402244\ntotal_pgpgout 4901270082\ntotal_pgfault 5455084498\ntotal_pgmajfault 205951\ntotal_inactive_anon 2605047808\ntotal_active_anon 547315712\ntotal_inactive_file 525119488\ntotal_active_file 959602688\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4954075136
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "5011435520\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1538875392\nrss 3118206976\nrss_huge 0\nshmem 434176\nmapped_file 52170752\ndirty 999424\nwriteback 0\nswap 750608384\npgpgin 4917954599\npgpgout 4916808917\npgfault 5472231142\npgmajfault 205968\ninactive_anon 2606927872\nactive_anon 547237888\ninactive_file 566394880\nactive_file 972046336\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1538875392\ntotal_rss 3118206976\ntotal_rss_huge 0\ntotal_shmem 434176\ntotal_mapped_file 52170752\ntotal_dirty 999424\ntotal_writeback 0\ntotal_swap 750608384\ntotal_pgpgin 4917954599\ntotal_pgpgout 4916808917\ntotal_pgfault 5472231142\ntotal_pgmajfault 205968\ntotal_inactive_anon 2606927872\ntotal_active_anon 547237888\ntotal_inactive_file 566394880\ntotal_active_file 972046336\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 5011435520
+        },
+        "owned_identities": {
+          "543388": {
+            "pid": 543388,
+            "starttime_ticks": 99071081,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 543387
+            },
+            "first_seen_UTC": "2026-10-02T18:56:04.711856+00:00"
+          },
+          "543390": {
+            "pid": 543390,
+            "starttime_ticks": 99071138,
+            "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler",
+            "observed_parent": {
+              "pid": 543388,
+              "starttime_ticks": 99071081,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T18:56:05.228795+00:00"
+          },
+          "543399": {
+            "pid": 543399,
+            "starttime_ticks": 99071344,
+            "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler",
+            "observed_parent": {
+              "pid": 543390,
+              "starttime_ticks": 99071138,
+              "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+            },
+            "first_seen_UTC": "2026-10-02T18:56:07.229298+00:00"
+          },
+          "543531": {
+            "pid": 543531,
+            "starttime_ticks": 99071615,
+            "exe": "/usr/bin/dash",
+            "observed_parent": {
+              "pid": 543399,
+              "starttime_ticks": 99071344,
+              "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+            },
+            "first_seen_UTC": "2026-10-02T18:56:10.230385+00:00"
+          },
+          "543532": {
+            "pid": 543532,
+            "starttime_ticks": 99071615,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 543531,
+              "starttime_ticks": 99071615,
+              "exe": "/usr/bin/dash"
+            },
+            "first_seen_UTC": "2026-10-02T18:56:10.230385+00:00"
+          },
+          "543733": {
+            "pid": 543733,
+            "starttime_ticks": 99074726,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 543532,
+              "starttime_ticks": 99071615,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T18:56:41.236470+00:00"
+          },
+          "543734": {
+            "pid": 543734,
+            "starttime_ticks": 99074727,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 543733,
+              "starttime_ticks": 99074726,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T18:56:41.236470+00:00"
+          },
+          "543743": {
+            "pid": 543743,
+            "starttime_ticks": 99074901,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 543532,
+              "starttime_ticks": 99071615,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T18:56:42.736607+00:00"
+          },
+          "543744": {
+            "pid": 543744,
+            "starttime_ticks": 99074901,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 543743,
+              "starttime_ticks": 99074901,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T18:56:42.736607+00:00"
+          },
+          "543752": {
+            "pid": 543752,
+            "starttime_ticks": 99074939,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 543532,
+              "starttime_ticks": 99071615,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T18:56:43.236775+00:00"
+          },
+          "543918": {
+            "pid": 543918,
+            "starttime_ticks": 99076359,
+            "exe": "/usr/bin/dash",
+            "observed_parent": {
+              "pid": 543399,
+              "starttime_ticks": 99071344,
+              "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+            },
+            "first_seen_UTC": "2026-10-02T18:56:57.236663+00:00"
+          },
+          "543919": {
+            "pid": 543919,
+            "starttime_ticks": 99076359,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 543918,
+              "starttime_ticks": 99076359,
+              "exe": "/usr/bin/dash"
+            },
+            "first_seen_UTC": "2026-10-02T18:56:57.236663+00:00"
+          },
+          "544308": {
+            "pid": 544308,
+            "starttime_ticks": 99080798,
+            "exe": "/usr/bin/dash",
+            "observed_parent": {
+              "pid": 543399,
+              "starttime_ticks": 99071344,
+              "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+            },
+            "first_seen_UTC": "2026-10-02T18:57:41.742731+00:00"
+          },
+          "544309": {
+            "pid": 544309,
+            "starttime_ticks": 99080798,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 544308,
+              "starttime_ticks": 99080798,
+              "exe": "/usr/bin/dash"
+            },
+            "first_seen_UTC": "2026-10-02T18:57:41.742731+00:00"
+          }
+        },
+        "NSA_attention_calls": "UNMEASURED profile driver/SDKreplay",
+        "full_reference_checks": 0
+      },
+      {
+        "index": 2,
+        "spec": {
+          "kind": "profile",
+          "profile_job_index": 2
+        },
+        "pid": 544740,
+        "pgid": 544740,
+        "UTC_terminal": "2026-10-02T19:01:15.847781+00:00",
+        "actual_exit": 0,
+        "stop_reason": null,
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "5015158784\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1538969600\nrss 3121836032\nrss_huge 0\nshmem 434176\nmapped_file 52170752\ndirty 1093632\nwriteback 0\nswap 750608384\npgpgin 4918025308\npgpgout 4916878719\npgfault 5472301906\npgmajfault 205968\ninactive_anon 2610520064\nactive_anon 547233792\ninactive_file 566513664\nactive_file 972050432\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1538969600\ntotal_rss 3121836032\ntotal_rss_huge 0\ntotal_shmem 434176\ntotal_mapped_file 52170752\ntotal_dirty 1093632\ntotal_writeback 0\ntotal_swap 750608384\ntotal_pgpgin 4918025308\ntotal_pgpgout 4916878719\ntotal_pgfault 5472301906\ntotal_pgmajfault 205968\ntotal_inactive_anon 2610520064\ntotal_active_anon 547233792\ntotal_inactive_file 566513664\ntotal_active_file 972050432\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 5015158784
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "5070077952\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1592713216\nrss 3122286592\nrss_huge 0\nshmem 446464\nmapped_file 52170752\ndirty 921600\nwriteback 0\nswap 750370816\npgpgin 4933576907\npgpgout 4932417083\npgfault 5489450219\npgmajfault 205994\ninactive_anon 2611073024\nactive_anon 547225600\ninactive_file 607842304\nactive_file 984436736\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1592713216\ntotal_rss 3122286592\ntotal_rss_huge 0\ntotal_shmem 446464\ntotal_mapped_file 52170752\ntotal_dirty 921600\ntotal_writeback 0\ntotal_swap 750370816\ntotal_pgpgin 4933576907\ntotal_pgpgout 4932417083\ntotal_pgfault 5489450219\ntotal_pgmajfault 205994\ntotal_inactive_anon 2611073024\ntotal_active_anon 547225600\ntotal_inactive_file 607842304\ntotal_active_file 984436736\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 5070077952
+        },
+        "owned_identities": {
+          "544740": {
+            "pid": 544740,
+            "starttime_ticks": 99086668,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 543387
+            },
+            "first_seen_UTC": "2026-10-02T18:58:40.574473+00:00"
+          },
+          "544741": {
+            "pid": 544741,
+            "starttime_ticks": 99086726,
+            "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler",
+            "observed_parent": {
+              "pid": 544740,
+              "starttime_ticks": 99086668,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T18:58:41.091370+00:00"
+          },
+          "544744": {
+            "pid": 544744,
+            "starttime_ticks": 99086931,
+            "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler",
+            "observed_parent": {
+              "pid": 544741,
+              "starttime_ticks": 99086726,
+              "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+            },
+            "first_seen_UTC": "2026-10-02T18:58:43.091700+00:00"
+          },
+          "544871": {
+            "pid": 544871,
+            "starttime_ticks": 99087206,
+            "exe": "/usr/bin/dash",
+            "observed_parent": {
+              "pid": 544744,
+              "starttime_ticks": 99086931,
+              "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+            },
+            "first_seen_UTC": "2026-10-02T18:58:46.092939+00:00"
+          },
+          "544872": {
+            "pid": 544872,
+            "starttime_ticks": 99087207,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 544871,
+              "starttime_ticks": 99087206,
+              "exe": "/usr/bin/dash"
+            },
+            "first_seen_UTC": "2026-10-02T18:58:46.092939+00:00"
+          },
+          "545076": {
+            "pid": 545076,
+            "starttime_ticks": 99090373,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 544872,
+              "starttime_ticks": 99087207,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T18:59:17.599569+00:00"
+          },
+          "545077": {
+            "pid": 545077,
+            "starttime_ticks": 99090374,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 545076,
+              "starttime_ticks": 99090373,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T18:59:17.599569+00:00"
+          },
+          "545086": {
+            "pid": 545086,
+            "starttime_ticks": 99090545,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 544872,
+              "starttime_ticks": 99087207,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T18:59:19.099560+00:00"
+          },
+          "545087": {
+            "pid": 545087,
+            "starttime_ticks": 99090546,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 545086,
+              "starttime_ticks": 99090545,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T18:59:19.099560+00:00"
+          },
+          "545094": {
+            "pid": 545094,
+            "starttime_ticks": 99090581,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 544872,
+              "starttime_ticks": 99087207,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T18:59:19.599425+00:00"
+          },
+          "545095": {
+            "pid": 545095,
+            "starttime_ticks": 99090581,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 545094,
+              "starttime_ticks": 99090581,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T18:59:19.599425+00:00"
+          },
+          "545226": {
+            "pid": 545226,
+            "starttime_ticks": 99091947,
+            "exe": "/usr/bin/dash",
+            "observed_parent": {
+              "pid": 544744,
+              "starttime_ticks": 99086931,
+              "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+            },
+            "first_seen_UTC": "2026-10-02T18:59:33.099526+00:00"
+          },
+          "545227": {
+            "pid": 545227,
+            "starttime_ticks": 99091947,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 545226,
+              "starttime_ticks": 99091947,
+              "exe": "/usr/bin/dash"
+            },
+            "first_seen_UTC": "2026-10-02T18:59:33.099526+00:00"
+          },
+          "545570": {
+            "pid": 545570,
+            "starttime_ticks": 99096387,
+            "exe": "/usr/bin/dash",
+            "observed_parent": {
+              "pid": 544744,
+              "starttime_ticks": 99086931,
+              "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+            },
+            "first_seen_UTC": "2026-10-02T19:00:17.605650+00:00"
+          },
+          "545571": {
+            "pid": 545571,
+            "starttime_ticks": 99096387,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 545570,
+              "starttime_ticks": 99096387,
+              "exe": "/usr/bin/dash"
+            },
+            "first_seen_UTC": "2026-10-02T19:00:17.605650+00:00"
+          }
+        },
+        "NSA_attention_calls": "UNMEASURED profile driver/SDKreplay",
+        "full_reference_checks": 0
+      }
+    ],
+    "new_metadata_resource_IR_native_refs": 0,
+    "profile_attention_launch_count": "UNMEASURED; originaldriver/SDKreplay",
+    "counter_analyses": [
+      {
+        "actual_records": 2,
+        "valid_numeric_scope_records": 2,
+        "rows": [
+          {
+            "case": 12,
+            "variant": "parent_v113",
+            "sample": 1,
+            "source_file": "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_1_case12_parent_v113/report_bundle/1_native_sparse_attention_kernel_dumped_result.json",
+            "l2_hit_pct": 87.53814617579037,
+            "read_bytes": 9569440.0,
+            "write_bytes": 8388928.0,
+            "WG_load_cycles": 48.220343183268874,
+            "WG_conflict_cycles": 0.0,
+            "shared_nonconflict_pct": 100.0,
+            "achieved_waves_raw": 4056.0,
+            "dispatched_waves": 4096.0,
+            "MTE_pct": 69.692531037777,
+            "MMA_pct": 13.54231231053923,
+            "unavailable_raw": {},
+            "write_residual_bytes": 320.0,
+            "scope_necessary_not_exclusive": true,
+            "runtime_grid": "UNAVAILABLE unlessactualrawreports providegrid",
+            "wave_contract_only_not_equal_gate": 4096,
+            "Achieved_Dispatched_semantics": "rawvalues recorded independently; no unverified equality formula",
+            "predeclared_scope_met": true
+          },
+          {
+            "case": 12,
+            "variant": "parent_v113",
+            "sample": 2,
+            "source_file": "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_1_case12_parent_v113/report_bundle/2_native_sparse_attention_kernel_dumped_result.json",
+            "l2_hit_pct": 87.53796854516969,
+            "read_bytes": 9569376.0,
+            "write_bytes": 8388928.0,
+            "WG_load_cycles": 48.31358662591155,
+            "WG_conflict_cycles": 0.0,
+            "shared_nonconflict_pct": 100.0,
+            "achieved_waves_raw": 4059.0,
+            "dispatched_waves": 4096.0,
+            "MTE_pct": 69.78156468722507,
+            "MMA_pct": 13.558455822606765,
+            "unavailable_raw": {},
+            "write_residual_bytes": 320.0,
+            "scope_necessary_not_exclusive": true,
+            "runtime_grid": "UNAVAILABLE unlessactualrawreports providegrid",
+            "wave_contract_only_not_equal_gate": 4096,
+            "Achieved_Dispatched_semantics": "rawvalues recorded independently; no unverified equality formula",
+            "predeclared_scope_met": true
+          }
+        ],
+        "errors": [],
+        "raw_metric_context": [
+          {
+            "sample": 1,
+            "group": "Memory Statistics",
+            "name": "L2C Hit Rate",
+            "raw": [
+              {
+                "data": 87.53814617579037,
+                "isError": false,
+                "message": "",
+                "name": "L2C Hit Rate"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Memory Statistics",
+            "name": "Global Memory Read bytes",
+            "raw": [
+              {
+                "data": 9569440.0,
+                "isError": false,
+                "message": "",
+                "name": "Global Memory Read bytes"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Memory Statistics",
+            "name": "Global Memory Write bytes",
+            "raw": [
+              {
+                "data": 8388928.0,
+                "isError": false,
+                "message": "",
+                "name": "Global Memory Write bytes"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Workgroup Memory",
+            "name": "average latency per load instruction",
+            "raw": [
+              {
+                "data": 48.220343183268874,
+                "isError": false,
+                "message": "",
+                "name": "average latency per load instruction"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Workgroup Memory",
+            "name": "average conflict cycles per instruction",
+            "raw": [
+              {
+                "data": 0.0,
+                "isError": false,
+                "message": "",
+                "name": "average conflict cycles per instruction"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Workgroup Memory",
+            "name": "shared memory access efficiency",
+            "raw": [
+              {
+                "data": 100.0,
+                "isError": false,
+                "message": "",
+                "name": "shared memory access efficiency"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Occupancy",
+            "name": "Achieved waves",
+            "raw": [
+              {
+                "data": 4056.0,
+                "isError": false,
+                "message": "",
+                "name": "Achieved waves"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Occupancy",
+            "name": "Dispatched waves",
+            "raw": [
+              {
+                "data": 4096.0,
+                "isError": false,
+                "message": "",
+                "name": "Dispatched waves"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "GPU Throughput Statistics",
+            "name": "AP MTE Duty ratio",
+            "raw": [
+              {
+                "data": 69.692531037777,
+                "isError": false,
+                "message": "",
+                "name": "AP MTE Duty ratio"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "GPU Throughput Statistics",
+            "name": "AP MMA Duty ratio",
+            "raw": [
+              {
+                "data": 13.54231231053923,
+                "isError": false,
+                "message": "",
+                "name": "AP MMA Duty ratio"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Memory Statistics",
+            "name": "L2C Hit Rate",
+            "raw": [
+              {
+                "data": 87.53796854516969,
+                "isError": false,
+                "message": "",
+                "name": "L2C Hit Rate"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Memory Statistics",
+            "name": "Global Memory Read bytes",
+            "raw": [
+              {
+                "data": 9569376.0,
+                "isError": false,
+                "message": "",
+                "name": "Global Memory Read bytes"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Memory Statistics",
+            "name": "Global Memory Write bytes",
+            "raw": [
+              {
+                "data": 8388928.0,
+                "isError": false,
+                "message": "",
+                "name": "Global Memory Write bytes"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Workgroup Memory",
+            "name": "average latency per load instruction",
+            "raw": [
+              {
+                "data": 48.31358662591155,
+                "isError": false,
+                "message": "",
+                "name": "average latency per load instruction"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Workgroup Memory",
+            "name": "average conflict cycles per instruction",
+            "raw": [
+              {
+                "data": 0.0,
+                "isError": false,
+                "message": "",
+                "name": "average conflict cycles per instruction"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Workgroup Memory",
+            "name": "shared memory access efficiency",
+            "raw": [
+              {
+                "data": 100.0,
+                "isError": false,
+                "message": "",
+                "name": "shared memory access efficiency"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Occupancy",
+            "name": "Achieved waves",
+            "raw": [
+              {
+                "data": 4059.0,
+                "isError": false,
+                "message": "",
+                "name": "Achieved waves"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Occupancy",
+            "name": "Dispatched waves",
+            "raw": [
+              {
+                "data": 4096.0,
+                "isError": false,
+                "message": "",
+                "name": "Dispatched waves"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "GPU Throughput Statistics",
+            "name": "AP MTE Duty ratio",
+            "raw": [
+              {
+                "data": 69.78156468722507,
+                "isError": false,
+                "message": "",
+                "name": "AP MTE Duty ratio"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "GPU Throughput Statistics",
+            "name": "AP MMA Duty ratio",
+            "raw": [
+              {
+                "data": 13.558455822606765,
+                "isError": false,
+                "message": "",
+                "name": "AP MMA Duty ratio"
+              }
+            ]
+          }
+        ],
+        "complete": true,
+        "not_native_or_totalGPU_launch_count": true,
+        "primary_values": "perkernel dumped_result data/isError, notformatted value",
+        "formatted_files_corroboration_only": [
+          "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_1_case12_parent_v113/report_bundle/1_native_sparse_attention_kernel.txt.json",
+          "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_1_case12_parent_v113/report_bundle/2_native_sparse_attention_kernel.txt.json"
+        ],
+        "no_reprofile_or_bound_change": true
+      },
+      {
+        "actual_records": 2,
+        "valid_numeric_scope_records": 2,
+        "rows": [
+          {
+            "case": 12,
+            "variant": "candidate_v122",
+            "sample": 1,
+            "source_file": "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_2_case12_candidate_v122/report_bundle/1_native_sparse_attention_kernel_dumped_result.json",
+            "l2_hit_pct": 87.82263350014975,
+            "read_bytes": 9565216.0,
+            "write_bytes": 8388928.0,
+            "WG_load_cycles": 66.31930306857865,
+            "WG_conflict_cycles": 2.745552407589752,
+            "shared_nonconflict_pct": 59.44122093261919,
+            "achieved_waves_raw": 8112.0,
+            "dispatched_waves": 8192.0,
+            "MTE_pct": 63.75199330881305,
+            "MMA_pct": 8.651760522891152,
+            "unavailable_raw": {},
+            "write_residual_bytes": 320.0,
+            "scope_necessary_not_exclusive": true,
+            "runtime_grid": "UNAVAILABLE unlessactualrawreports providegrid",
+            "wave_contract_only_not_equal_gate": 8192,
+            "Achieved_Dispatched_semantics": "rawvalues recorded independently; no unverified equality formula",
+            "predeclared_scope_met": true
+          },
+          {
+            "case": 12,
+            "variant": "candidate_v122",
+            "sample": 2,
+            "source_file": "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_2_case12_candidate_v122/report_bundle/2_native_sparse_attention_kernel_dumped_result.json",
+            "l2_hit_pct": 87.82261235820943,
+            "read_bytes": 9565280.0,
+            "write_bytes": 8388928.0,
+            "WG_load_cycles": 66.01674715205547,
+            "WG_conflict_cycles": 2.7442489851150205,
+            "shared_nonconflict_pct": 59.459980438212604,
+            "achieved_waves_raw": 8112.0,
+            "dispatched_waves": 8192.0,
+            "MTE_pct": 63.98053575605317,
+            "MMA_pct": 8.68860576735299,
+            "unavailable_raw": {},
+            "write_residual_bytes": 320.0,
+            "scope_necessary_not_exclusive": true,
+            "runtime_grid": "UNAVAILABLE unlessactualrawreports providegrid",
+            "wave_contract_only_not_equal_gate": 8192,
+            "Achieved_Dispatched_semantics": "rawvalues recorded independently; no unverified equality formula",
+            "predeclared_scope_met": true
+          }
+        ],
+        "errors": [],
+        "raw_metric_context": [
+          {
+            "sample": 1,
+            "group": "Memory Statistics",
+            "name": "L2C Hit Rate",
+            "raw": [
+              {
+                "data": 87.82263350014975,
+                "isError": false,
+                "message": "",
+                "name": "L2C Hit Rate"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Memory Statistics",
+            "name": "Global Memory Read bytes",
+            "raw": [
+              {
+                "data": 9565216.0,
+                "isError": false,
+                "message": "",
+                "name": "Global Memory Read bytes"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Memory Statistics",
+            "name": "Global Memory Write bytes",
+            "raw": [
+              {
+                "data": 8388928.0,
+                "isError": false,
+                "message": "",
+                "name": "Global Memory Write bytes"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Workgroup Memory",
+            "name": "average latency per load instruction",
+            "raw": [
+              {
+                "data": 66.31930306857865,
+                "isError": false,
+                "message": "",
+                "name": "average latency per load instruction"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Workgroup Memory",
+            "name": "average conflict cycles per instruction",
+            "raw": [
+              {
+                "data": 2.745552407589752,
+                "isError": false,
+                "message": "",
+                "name": "average conflict cycles per instruction"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Workgroup Memory",
+            "name": "shared memory access efficiency",
+            "raw": [
+              {
+                "data": 59.44122093261919,
+                "isError": false,
+                "message": "",
+                "name": "shared memory access efficiency"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Occupancy",
+            "name": "Achieved waves",
+            "raw": [
+              {
+                "data": 8112.0,
+                "isError": false,
+                "message": "",
+                "name": "Achieved waves"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "Occupancy",
+            "name": "Dispatched waves",
+            "raw": [
+              {
+                "data": 8192.0,
+                "isError": false,
+                "message": "",
+                "name": "Dispatched waves"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "GPU Throughput Statistics",
+            "name": "AP MTE Duty ratio",
+            "raw": [
+              {
+                "data": 63.75199330881305,
+                "isError": false,
+                "message": "",
+                "name": "AP MTE Duty ratio"
+              }
+            ]
+          },
+          {
+            "sample": 1,
+            "group": "GPU Throughput Statistics",
+            "name": "AP MMA Duty ratio",
+            "raw": [
+              {
+                "data": 8.651760522891152,
+                "isError": false,
+                "message": "",
+                "name": "AP MMA Duty ratio"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Memory Statistics",
+            "name": "L2C Hit Rate",
+            "raw": [
+              {
+                "data": 87.82261235820943,
+                "isError": false,
+                "message": "",
+                "name": "L2C Hit Rate"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Memory Statistics",
+            "name": "Global Memory Read bytes",
+            "raw": [
+              {
+                "data": 9565280.0,
+                "isError": false,
+                "message": "",
+                "name": "Global Memory Read bytes"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Memory Statistics",
+            "name": "Global Memory Write bytes",
+            "raw": [
+              {
+                "data": 8388928.0,
+                "isError": false,
+                "message": "",
+                "name": "Global Memory Write bytes"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Workgroup Memory",
+            "name": "average latency per load instruction",
+            "raw": [
+              {
+                "data": 66.01674715205547,
+                "isError": false,
+                "message": "",
+                "name": "average latency per load instruction"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Workgroup Memory",
+            "name": "average conflict cycles per instruction",
+            "raw": [
+              {
+                "data": 2.7442489851150205,
+                "isError": false,
+                "message": "",
+                "name": "average conflict cycles per instruction"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Workgroup Memory",
+            "name": "shared memory access efficiency",
+            "raw": [
+              {
+                "data": 59.459980438212604,
+                "isError": false,
+                "message": "",
+                "name": "shared memory access efficiency"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Occupancy",
+            "name": "Achieved waves",
+            "raw": [
+              {
+                "data": 8112.0,
+                "isError": false,
+                "message": "",
+                "name": "Achieved waves"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "Occupancy",
+            "name": "Dispatched waves",
+            "raw": [
+              {
+                "data": 8192.0,
+                "isError": false,
+                "message": "",
+                "name": "Dispatched waves"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "GPU Throughput Statistics",
+            "name": "AP MTE Duty ratio",
+            "raw": [
+              {
+                "data": 63.98053575605317,
+                "isError": false,
+                "message": "",
+                "name": "AP MTE Duty ratio"
+              }
+            ]
+          },
+          {
+            "sample": 2,
+            "group": "GPU Throughput Statistics",
+            "name": "AP MMA Duty ratio",
+            "raw": [
+              {
+                "data": 8.68860576735299,
+                "isError": false,
+                "message": "",
+                "name": "AP MMA Duty ratio"
+              }
+            ]
+          }
+        ],
+        "complete": true,
+        "not_native_or_totalGPU_launch_count": true,
+        "primary_values": "perkernel dumped_result data/isError, notformatted value",
+        "formatted_files_corroboration_only": [
+          "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_2_case12_candidate_v122/report_bundle/1_native_sparse_attention_kernel.txt.json",
+          "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_2_case12_candidate_v122/report_bundle/2_native_sparse_attention_kernel.txt.json"
+        ],
+        "no_reprofile_or_bound_change": true
+      }
+    ],
+    "actual_counter_records": 4,
+    "valid_scope_records": 4,
+    "cgroup_initial": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "4922753024\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 1485144064\nrss 3085344768\nrss_huge 0\nshmem 421888\nmapped_file 52170752\ndirty 40960\nwriteback 0\nswap 750809088\npgpgin 4902359757\npgpgout 4901235206\npgfault 5455042005\npgmajfault 205950\ninactive_anon 2573848576\nactive_anon 547315712\ninactive_file 525115392\nactive_file 959602688\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1485144064\ntotal_rss 3085344768\ntotal_rss_huge 0\ntotal_shmem 421888\ntotal_mapped_file 52170752\ntotal_dirty 40960\ntotal_writeback 0\ntotal_swap 750809088\ntotal_pgpgin 4902359757\ntotal_pgpgout 4901235206\ntotal_pgfault 5455042005\ntotal_pgmajfault 205950\ntotal_inactive_anon 2573848576\ntotal_active_anon 547315712\ntotal_inactive_file 525115392\ntotal_active_file 959602688\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 4922753024
+    },
+    "cgroup_final": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "5070913536\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 1592799232\nrss 3122941952\nrss_huge 0\nshmem 446464\nmapped_file 52170752\ndirty 1003520\nwriteback 0\nswap 750370816\npgpgin 4933611965\npgpgout 4932451960\npgfault 5489485257\npgmajfault 205994\ninactive_anon 2611728384\nactive_anon 547225600\ninactive_file 607940608\nactive_file 984440832\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1592799232\ntotal_rss 3122941952\ntotal_rss_huge 0\ntotal_shmem 446464\ntotal_mapped_file 52170752\ntotal_dirty 1003520\ntotal_writeback 0\ntotal_swap 750370816\ntotal_pgpgin 4933611965\ntotal_pgpgout 4932451960\ntotal_pgfault 5489485257\ntotal_pgmajfault 205994\ntotal_inactive_anon 2611728384\ntotal_active_anon 547225600\ntotal_inactive_file 607940608\ntotal_active_file 984440832\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 5070913536
+    },
+    "no_retry": true,
+    "old122_latency_and121gate1_preserved": true,
+    "not_HBM_occupancy_exclusive_or_unique_cause": true
+  },
+  "runtime_final": {
+    "UTC": "2026-10-02T19:05:13.616871+00:00",
+    "outer_originalwaits": {
+      "stage.exit": "0",
+      "controller_actual.exit": "0",
+      "supervisor_actual.exit": "0",
+      "launcher_actual.exit": "0"
+    },
+    "SDK_originalwaits": [
+      {
+        "UTC": "2026-10-02T18:58:39.407906+00:00",
+        "SDK_pid": 543390,
+        "actual_CLI_waitcode": 0,
+        "report_original_dir": "/opt/mcProfiler-ubuntu18.04/output20261002185609",
+        "fullreference_checks": 0
+      },
+      {
+        "UTC": "2026-10-02T19:01:15.310556+00:00",
+        "SDK_pid": 544741,
+        "actual_CLI_waitcode": 0,
+        "report_original_dir": "/opt/mcProfiler-ubuntu18.04/output20261002185845",
+        "fullreference_checks": 0
+      }
+    ],
+    "sample_count": 622,
+    "observed_wholepeak_bytes": 26346323968,
+    "peak_notupperbound": true,
+    "OOM_values": [
+      13
+    ],
+    "all_self_jobs_terminal": true,
+    "owned_current_live": []
+  },
+  "counters": {
+    "rows": [
+      {
+        "case": 12,
+        "variant": "parent_v113",
+        "sample": 1,
+        "source_file": "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_1_case12_parent_v113/report_bundle/1_native_sparse_attention_kernel_dumped_result.json",
+        "l2_hit_pct": 87.53814617579037,
+        "read_bytes": 9569440.0,
+        "write_bytes": 8388928.0,
+        "WG_load_cycles": 48.220343183268874,
+        "WG_conflict_cycles": 0.0,
+        "shared_nonconflict_pct": 100.0,
+        "achieved_waves_raw": 4056.0,
+        "dispatched_waves": 4096.0,
+        "MTE_pct": 69.692531037777,
+        "MMA_pct": 13.54231231053923,
+        "unavailable_raw": {},
+        "write_residual_bytes": 320.0,
+        "scope_necessary_not_exclusive": true,
+        "runtime_grid": "UNAVAILABLE unlessactualrawreports providegrid",
+        "wave_contract_only_not_equal_gate": 4096,
+        "Achieved_Dispatched_semantics": "rawvalues recorded independently; no unverified equality formula",
+        "predeclared_scope_met": true
+      },
+      {
+        "case": 12,
+        "variant": "parent_v113",
+        "sample": 2,
+        "source_file": "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_1_case12_parent_v113/report_bundle/2_native_sparse_attention_kernel_dumped_result.json",
+        "l2_hit_pct": 87.53796854516969,
+        "read_bytes": 9569376.0,
+        "write_bytes": 8388928.0,
+        "WG_load_cycles": 48.31358662591155,
+        "WG_conflict_cycles": 0.0,
+        "shared_nonconflict_pct": 100.0,
+        "achieved_waves_raw": 4059.0,
+        "dispatched_waves": 4096.0,
+        "MTE_pct": 69.78156468722507,
+        "MMA_pct": 13.558455822606765,
+        "unavailable_raw": {},
+        "write_residual_bytes": 320.0,
+        "scope_necessary_not_exclusive": true,
+        "runtime_grid": "UNAVAILABLE unlessactualrawreports providegrid",
+        "wave_contract_only_not_equal_gate": 4096,
+        "Achieved_Dispatched_semantics": "rawvalues recorded independently; no unverified equality formula",
+        "predeclared_scope_met": true
+      },
+      {
+        "case": 12,
+        "variant": "candidate_v122",
+        "sample": 1,
+        "source_file": "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_2_case12_candidate_v122/report_bundle/1_native_sparse_attention_kernel_dumped_result.json",
+        "l2_hit_pct": 87.82263350014975,
+        "read_bytes": 9565216.0,
+        "write_bytes": 8388928.0,
+        "WG_load_cycles": 66.31930306857865,
+        "WG_conflict_cycles": 2.745552407589752,
+        "shared_nonconflict_pct": 59.44122093261919,
+        "achieved_waves_raw": 8112.0,
+        "dispatched_waves": 8192.0,
+        "MTE_pct": 63.75199330881305,
+        "MMA_pct": 8.651760522891152,
+        "unavailable_raw": {},
+        "write_residual_bytes": 320.0,
+        "scope_necessary_not_exclusive": true,
+        "runtime_grid": "UNAVAILABLE unlessactualrawreports providegrid",
+        "wave_contract_only_not_equal_gate": 8192,
+        "Achieved_Dispatched_semantics": "rawvalues recorded independently; no unverified equality formula",
+        "predeclared_scope_met": true
+      },
+      {
+        "case": 12,
+        "variant": "candidate_v122",
+        "sample": 2,
+        "source_file": "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/profile_2_case12_candidate_v122/report_bundle/2_native_sparse_attention_kernel_dumped_result.json",
+        "l2_hit_pct": 87.82261235820943,
+        "read_bytes": 9565280.0,
+        "write_bytes": 8388928.0,
+        "WG_load_cycles": 66.01674715205547,
+        "WG_conflict_cycles": 2.7442489851150205,
+        "shared_nonconflict_pct": 59.459980438212604,
+        "achieved_waves_raw": 8112.0,
+        "dispatched_waves": 8192.0,
+        "MTE_pct": 63.98053575605317,
+        "MMA_pct": 8.68860576735299,
+        "unavailable_raw": {},
+        "write_residual_bytes": 320.0,
+        "scope_necessary_not_exclusive": true,
+        "runtime_grid": "UNAVAILABLE unlessactualrawreports providegrid",
+        "wave_contract_only_not_equal_gate": 8192,
+        "Achieved_Dispatched_semantics": "rawvalues recorded independently; no unverified equality formula",
+        "predeclared_scope_met": true
+      }
+    ],
+    "4records_not_independentnative_processes": true,
+    "sharedconflict_WGload_difference_observed": true,
+    "Numstride64_contribution_not_unique_cause_proof": true,
+    "GradFalse_profile_vs_GradTrue_native_differentprotocol": true,
+    "no_native_latency_HBM_or_occupancy_claim": true,
+    "old122latencyand121gate1_preserved": true
+  },
+  "reference_counts": {
+    "candidate122_source88_unchanged": true,
+    "fullrefs_candidate": 0,
+    "fullrefs_inclusive": 0,
+    "new_native_metadata_resource_IR": 0,
+    "SDKCLI_actual": 2,
+    "counter_records_captured_numeric_scope4": true,
+    "profileattention": "UNMEASURED original31drivercalls plusSDKreplay, recordsnottotallaunches"
+  },
+  "old122latency_and121gate1_preserved": true,
+  "main_promotion": false,
+  "OJ": null
+}

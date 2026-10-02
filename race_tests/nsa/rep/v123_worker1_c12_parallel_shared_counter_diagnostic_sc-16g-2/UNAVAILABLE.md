@@ -1,0 +1,1 @@
+Runtimegrid rawUMD absent/UNAVAILABLE; hostgeometry remainscontract. ISA/occupancy/HBM/exclusive/Num-only cause notmeasured. No additionalnative/reference/metadata/resource/IR orrecapture; old12248.64% latencyand121gate1 remain. GradFalse originaldriverROI20 input protocol differsfromnativefullnaive GradTrueW10R50.
