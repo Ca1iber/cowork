@@ -1,0 +1,14 @@
+{
+  "case9legalblocks": 512,
+  "tokenrow_upper": 8191,
+  "K_V_half_offset_max": 524287,
+  "byte_offset_max": 1048574,
+  "signedint32_max": 2147483647,
+  "clamp_identity_onvalid": true,
+  "vector16B_aligned_half_start": true,
+  "sourceexpression_inside_original_uniform_guard": "bounded_start = T.min(T.max(block_start, 0), seq_len - block_size); use bounded_start instead of block_start only in K/V tensor row indices",
+  "reason": "IndexLegalizer/BufferFlattener promotes dynamic indices when analyzer intbound may exceed signed32; bounded expression gives explicit0..8176, flattened0..524287",
+  "not_proven_backend_32": "requires actualCPP/IR; cast32alone may be promoted or removed; extra integerclamp cost can regress",
+  "original_guard_and_sentinel": "Indices*16 before original0<=block_start<=token unchanged; boundedonlyinsidevalid branch, invalidneverloads; no newcontract malformedindices",
+  "source_edit_compile": "NOT_AUTHORIZED_NOT_PERFORMED"
+}
