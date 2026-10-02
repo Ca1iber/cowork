@@ -29,7 +29,7 @@
     "all14_nonregression": "UNPROVEN"
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-02T17:00:37.442497+00:00",
+  "updated_at_utc": "2026-10-02T17:19:02.955441+00:00",
   "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
   "worker1": {
     "cases": [
@@ -38,15 +38,16 @@
       11,
       12
     ],
-    "last_closed_version": "v119",
-    "last_closed_source_commit": "ce1c356e293cf54a206806d80f5b622e08dde063",
-    "last_result": "first O3IR and CPU observation actual0; V4 streaming remains in IR; prior MT90 resource gate1 retained",
-    "active_version": "v120",
-    "authorized_scope": "one fixed12 original C6 screen, source118290/header118/W10R50 unchanged",
+    "last_closed_version": "v120",
+    "last_closed_source_commit": "4c934e5aa238597f234a613e2e085f6ad3c593a8",
+    "last_result": "independently verified C6 +11.94145% vs84, 12PASS/C4/1001samples/OOM13; rejected",
+    "active_version": "v121",
+    "authorized_scope": "source-only C12 two warp selected split from best C113; no compile/native yet",
     "approval": "integration/reviews/v120-native-approval.json",
-    "native_GO": true,
-    "active_PID": 509096,
-    "original_SSH_session": 5841
+    "native_GO": false,
+    "active_PID": null,
+    "original_SSH_session": 5841,
+    "runtime_audit": "integration/reviews/v120-native-leader-audit.json"
   },
   "worker2": {
     "cases": [
@@ -61,10 +62,10 @@
       13,
       14
     ],
-    "last_closed_version": "v211",
-    "last_closed_source_commit": "f581f927d21b47950e7e9914e2833f502050d963",
-    "last_result": "reported v212 fixed12 actual0/fullnaive12C4, 43.187 vs40.3275us +7.090695%, bothroundpositive, rejected; rawleaderaudit pending",
-    "active_version": "v212",
+    "last_closed_version": "v214",
+    "last_closed_source_commit": "39ff68e7535126b33e1217639dfaacea283621af",
+    "last_result": "independently verified2rawMCP10numeric;312samples/OOM3; MTE68.6/MMA6.8/shared100/conflict0, own target scoped observations",
+    "active_version": "v215",
     "source_SHA": "66871ec89712c58e3432485fcd63601175c7de0b1f29bfe27f4a586dd5a528e4",
     "actual_resource": [
       48,
@@ -73,7 +74,7 @@
       0,
       2048
     ],
-    "authorized_scope": "one fixed original C8 12 process screen: B-P-C-C-P-B x2",
+    "authorized_scope": "source-only C8 shared Q/K 16B packing from P84; no compile/native yet",
     "native_GO": false,
     "approval": "integration/reviews/v212-native-approval.json",
     "active_PID": null,
@@ -83,7 +84,8 @@
     "SSH_original_session": 30414,
     "last_live_verified": "2026-10-02 PID303655 start333167465 Python3.12 stateS matched",
     "next_version": "v214",
-    "next_scope": "prepare one fresh P84 C8 mcProfiler counts2; no source/codegen/native changes"
+    "next_scope": "prepare one fresh P84 C8 mcProfiler counts2; no source/codegen/native changes",
+    "runtime_audit": "integration/reviews/v214-profile-leader-audit.json"
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
@@ -104,5 +106,5 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-availability.json"
   },
-  "leader_next": "Audit closed C8 rawCSV/runtime; prepare fresh P84 C8 profile; await C6 fixed12 same originalhandle"
+  "leader_next": "Review both actual source-only variants and math/lifetime/packed-address proofs; then finite codegen and original native gates. Existing best-known v113 remains unchanged."
 }
