@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T10:17:22.101706+00:00",
-  "state": "V208_FIXED_C9_NATIVE_RUNNING",
+  "timestamp_utc": "2026-10-02T10:27:15.891074+00:00",
+  "state": "V208_RUNTIME_GUARD_FAILED_CLOSED",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "e61d29b899f32d3ea86681c984076568ff70dcf7",
+  "source_commit": "ccc057b060b706f7c4632ee2a72abc0c8b947913",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v208_worker2_c9_q_register_transpose_subagent2",
-    "state": "FIXED_C9_NATIVE_RUNNING",
+    "state": "FAILED_RUNTIME_GUARD_INCOMPLETE_SCREEN",
     "only_key": [
       1,
       8192,
@@ -101,29 +101,43 @@
       2048
     ],
     "actual_CPP_IR_status": "VERIFIED_SEMANTIC0",
-    "currently_live_owned": "monitor+currentknownancestry",
+    "currently_live_owned": 0,
     "native_actual_refs": {
-      "candidate": 2,
-      "total": 4
+      "candidate": 3,
+      "total": 9
     },
     "native_GO": true,
     "OOM": 3,
-    "native_observerPID": 191041,
-    "native_live": {
-      "stage": "fixed_C9_native_observed",
-      "run": 5,
-      "variant": "parent_v084",
-      "pid": 192113,
-      "observerPID": 191041,
-      "sample_count": 49,
-      "utc": "2026-10-02T10:17:21.654459+00:00",
-      "usage_bytes": 22095335424,
-      "oom": 3
-    },
+    "native_observerPID": null,
+    "native_live": "ALLKNOWN_OWNED_TERMINAL",
     "native_planned_refs": {
       "candidate": 4,
       "total": 12
-    }
+    },
+    "native_actual_jobs_started": 10,
+    "native_clean_completed": 9,
+    "job10_stop": "UNOWNED_VISIBLE_HEAVY_THRESHOLD",
+    "job10_actual_wait": -15,
+    "job10_ref": 0,
+    "unknown_PID_hit": 193423,
+    "unknown_RSS_KiB": 1515972,
+    "unknown_not_operated": true,
+    "remaining_jobs11_12": "NOT_STARTED",
+    "complete12_verdict": "UNAVAILABLE",
+    "partial_C_samples_us": [
+      41.59,
+      41.078,
+      41.298
+    ],
+    "partial_P_samples_us": [
+      40.284,
+      40.095,
+      40.1
+    ],
+    "partial_allC_gtP": true,
+    "inventory_files": 224,
+    "source_commit": "ccc057b060b706f7c4632ee2a72abc0c8b947913",
+    "no_retry_extra_profile_formal_or_promotion": true
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -533,8 +547,8 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "finish originalfixed12 or stopfirstfailure; noadded sample/profile/formal",
-  "job_pid": 191041,
+  "next_step": "own nextcase/true different mechanism lightweightproposal+peer only; noQtranspose revival",
+  "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
     "no_kernel_edit": true,
