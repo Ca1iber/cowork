@@ -1,5 +1,4 @@
 {
-  "updated_at_utc": "2026-10-02T05:37:54.844058+00:00",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "oj_reference_version": "v084",
   "oj_scores": [
@@ -19,6 +18,9 @@
     88
   ],
   "oj_total": 1204,
+  "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
+  "peer_exchange_actual": "Both workers directly discussed inverse mapping, global vector width, shared-V synchronization and failed-run semantics; own-branch records only",
+  "updated_at_utc": "2026-10-02T05:48:52.367228+00:00",
   "worker1": {
     "cases": [
       6,
@@ -26,40 +28,18 @@
       11,
       12
     ],
-    "stage": "v104 fixedC12 native294206 running,first9jobs0/3C9total/OOM11;provisionalC68.6-69.0us vsP~72us,noformal",
     "active_version": "v104_worker1_s8_global_softmax_sc-16g-2",
-    "communication_head": "bf90238619bccae81e3dfc28b4af938bc5e90d53",
-    "resources_parent_to_candidate": {
-      "MT": [
-        80,
-        98
-      ],
-      "ST": [
-        22,
-        32
-      ],
-      "static_max_warps": [
-        6,
-        4
-      ],
-      "dynamic_shared_bytes": [
-        2048,
-        2048
-      ],
-      "stack_bytes": [
-        0,
-        0
-      ]
-    },
-    "resource_interpretation": "Increased register resource pressure accompanies slowdown; static warp limit is not measured occupancy or sole cause.",
+    "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
     "last_closed_source_commit": "805ca04d159974d096d17733cad92b8ae742fa33",
-    "last_closed_status": "v101 failed_runtime_OOM_screen_inconclusive; original137 retained",
-    "raw_vs_parent_pct": -4.55959,
-    "not_completed_optimization_verdict": true,
-    "observed_v102_candidate_refs": 4,
-    "observed_v102_total_refs": 12,
-    "v102_candidate_vs_parent_pct": 9.071843,
-    "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07"
+    "stage": "same-source fixed full14 formal running; not all14 verdict",
+    "master_pid": 300011,
+    "last_reported_completed_jobs": 2,
+    "last_reported_candidate_refs": 0,
+    "last_reported_inclusive_refs": 2,
+    "oom_kill": 11,
+    "selected_screen_candidate_us": 68.941,
+    "selected_screen_parent_us": 72.2685,
+    "selected_screen_delta_pct": -4.604357
   },
   "worker2": {
     "cases": [
@@ -74,21 +54,13 @@
       13,
       14
     ],
-    "stage": "v202 failed job10 beforeCSV/ref,3C9total retained,OOM1->3;read-only memory diagnostic planning",
-    "communication_head": "b43e38331ea6d420006a9db2e509cfc70944d49e",
-    "baseline_plan": "After native gate, fixed all14 B28-P84-P84-B28, 56 fullrefs, no candidate kernel; fixed profiler12 samples cases5/8/9 two sources",
-    "active_version": "v202",
-    "completed_v200_refs_observed": 56,
-    "planned_v200_refs": 56,
-    "new_candidate_refs": 0,
-    "oom_kill": 1,
+    "active_version": "v203 diagnostic",
     "last_closed_source_commit": "c993479f0dedb9a878915fb1d26087b3d0411110",
-    "candidate_sha256": "ed46e5cd8732e463ff9cefd2e21035c9ca4426132001fe5d6c02c67c97b722a2",
-    "observed_candidate_refs": 2,
-    "observed_total_refs": 6,
-    "last_closed_status": "v201 rejected +10.437418% case5 vs84; all12native0/allC>allP"
+    "communication_head": "f120141f9ebdf9b335e4f400d96fa42ef18b57ca",
+    "stage": "once-only import memory diagnostic approved; execution checkpoint pending",
+    "oom_kill": 3,
+    "prior_v202": "run10 -9 and OOM1->3; 3C/9inclusive refs; incomplete screen retained"
   },
-  "leader_next": "Review completed fixedcase12 result before full14; review safe memoryadmission diagnostic plan before further worker2 heavyjobs",
-  "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
-  "peer_exchange_actual": "Both workers directly discussed inverse mapping, global vector width, shared-V synchronization and failed-run semantics; own-branch records only"
+  "leader_next": "Monitor actual gates; review formal non-target risks and once-only memory diagnostic; no main promotion",
+  "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration"
 }

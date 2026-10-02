@@ -1,0 +1,17 @@
+{
+  "reviewed_at_utc": "2026-10-02T05:48:52.367228+00:00",
+  "proposal_commit": "f120141f9ebdf9b335e4f400d96fa42ef18b57ca",
+  "proposal_path": "workers/worker2/proposals/v203_memory_diagnostic/plan.md",
+  "decision": "GO once-only isolated import observation as proposed",
+  "source_head_unchanged": "c993479f0dedb9a878915fb1d26087b3d0411110",
+  "reference_calls": 0,
+  "attention_calls": 0,
+  "native_compiler_profile_autostart": false,
+  "observer": "python -S stdlib, 0.5s JSONL disk samples, <=300s/600samples",
+  "admission": "nonblocking cooperative heavy lock; whole usage <=2GiB; no unrelated visible PID RSS>1GiB; recheck immediately before/after",
+  "stop": "whole usage >=28GiB, OOM increment, new unowned heavy/known concurrent heavy, failure or timeout",
+  "termination": "only own verified PID+starttime+exe and actually observed owned ancestry; actual wait/returncode",
+  "no_retry": true,
+  "no_unknown_process_signals_cleanup_or_limit_gpu_changes": true,
+  "interpretation": "Success documents only this admitted import; does not identify v202 root cause, guarantee future jobs, or revive v202 gates. Preserve sampling/namespace/shared-RSS limits."
+}
