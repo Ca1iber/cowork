@@ -1,0 +1,78 @@
+{
+  "reviewed_at_utc": "2026-10-02T09:22:26.086165+00:00",
+  "version": "v207_worker2_c9_parent_profile_subagent2",
+  "verdict": "limited parent-only diagnostic usable; exclusive runtime grid proof unavailable",
+  "source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "leader_inspected": "both raw dumped_result files plus formatted reports and worker audit",
+  "raw_sha256": [
+    "5756a794cbbf6682cd453396977d3f8d4612542a5fed8a50c0d8e4a2c8d9998f",
+    "77f02746a2ae9b3e8583992af6ec017ba230ce798ee4fad1429a332f1398095d"
+  ],
+  "all10_numeric_no_error": [
+    true,
+    true
+  ],
+  "achieved_dispatched_waves": [
+    8192,
+    8192
+  ],
+  "output_payload_bytes": 16777216,
+  "write_residual_bytes": [
+    320,
+    320
+  ],
+  "unchanged_residual_limit_bytes": [
+    0,
+    512
+  ],
+  "WG_load_cycles": [
+    50.348257882254465,
+    50.078517368861604
+  ],
+  "WG_conflict_cycles": [
+    0,
+    0
+  ],
+  "shared_nonconflict_pct": [
+    100,
+    100
+  ],
+  "MTE_duty_pct": [
+    68.78885119360127,
+    71.4424039304798
+  ],
+  "MMA_duty_pct": [
+    6.857455570701684,
+    7.121984192446584
+  ],
+  "L2_hit_pct": [
+    47.31742315676189,
+    47.37971890663912
+  ],
+  "global_read_bytes": [
+    19312320,
+    19273280
+  ],
+  "CLI_returncode": 0,
+  "OOM_before_after": [
+    3,
+    3
+  ],
+  "observed_driver_processes": 3,
+  "kernel_launch_count": "UNAVAILABLE",
+  "runtime_grid": "UNAVAILABLE_umd_data_empty",
+  "source_host_grid": [
+    8192,
+    1
+  ],
+  "aggregate_waves_not_target_scope": 261522,
+  "old_v200_write_residual576_failure_preserved": true,
+  "limitations": [
+    "WG latency is shared memory, not DRAM",
+    "Global Read is not calibrated HBM traffic",
+    "waves do not establish occupancy",
+    "duty metrics alone do not prove a bottleneck",
+    "profile driver differs from native inputs/Grad flag; no correctness or native timing claim"
+  ],
+  "next": "Close diagnostic; owner proposes one distinct C9 kernel mechanism and peer reviews; no automatic recapture or new heavy job."
+}
