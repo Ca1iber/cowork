@@ -20,7 +20,7 @@
   "specific_negative": [
     "8packeduint32shfl perlane/additional2KiB/query logicallaneexchange+pack/select/extract ALU",
     "qLocal/send/recv liveness canraiseMT/ST/spill orlowerstaticmax",
-    "newQtwo16Bvectorperlane changesaddresses/coalescing: eachpass1KiBpayload spread2KiB withholes; hypothetical32/64/128line intersectionsdouble, cachemayreuse secondpass butnotproved"
+    "Qglobal eachpass1KiBpayload spread2KiBholes;64lane-wholewave32/64/128Bline model2x, subgroup8/16 with64/128Bline can4x/8x; logicalminimumline intersections notactualtransactions andsecondpasscachemayreuse"
   ],
   "newQ_address": "head=lane%16,quarter=lane//16; eachpart0/1 reads8half atQ[batch,token,kvhead*16+head,quarter*16+part*8+e]",
   "inplace_transpose": "raw x[q,c,e]=Q(head,16q+4c+e). Stagebit0 peerxor16 andbit1 peerxor32: keepcells withcbit==qbit; otherwise receivespeer cell(c xor bit). All4uint32recv collect beforewrites. finalxprime[q,c,e]=Q(head,16c+4q+e)",
@@ -49,5 +49,7 @@
     0,
     0
   ],
-  "candidate_created": false
+  "candidate_created": false,
+  "source_only_GO": true,
+  "heavy_GO": false
 }
