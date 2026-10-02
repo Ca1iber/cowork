@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T05:39:16.631251+00:00",
-  "state": "WAITING_V203_MEMORY_DIAGNOSTIC_REVIEW",
+  "timestamp_utc": "2026-10-02T06:10:13.836233+00:00",
+  "state": "V203_CLOSED_SINGLE_IMPORT_OBSERVATION",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "c993479f0dedb9a878915fb1d26087b3d0411110",
+  "source_commit": "9eebae913786797e769b77d8f2731754828789ed",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -239,7 +239,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leaderreview/GO required beforeexactlyoneimport; currentreadonlyplanning/std-S snapshots only.",
+  "next_step": "Newsinglecase8 synchronousV-load scheduling proposal+peer/leaderreview; noautomaticheavy/native.",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
@@ -253,5 +253,60 @@
     "peer_review": "workers/worker2/reviews/v203_peer_advisory.json",
     "planned_afterGO": "oneimport+0.5s observer<=300s/600samples/admission2GiB/abort28GiB/cooperativelock;nootherkill/retry/settingschange",
     "guard_thresholds_engineering_not_guarantees": true
+  },
+  "diagnostic_v203": {
+    "status": "single_import_observed_exit0_not_rootcause_proof",
+    "result": {
+      "id": "v203_worker2_whole_cgroup_import_subagent2",
+      "mode": "oneimport-only",
+      "attention_calls": 0,
+      "full_reference_count": 0,
+      "native_calls": 0,
+      "import_attempted": true,
+      "no_retry": true,
+      "admitted": true,
+      "import_pid": 112532,
+      "import_starttime_ticks": 329227714,
+      "import_pgid": 112532,
+      "oom_before": 3,
+      "samples": 67,
+      "import_returncode": 0,
+      "status": "single_import_observed_exit0_not_rootcause_proof",
+      "oom_after": 3,
+      "diagnostic_gate": 0,
+      "elapsed_seconds": 34.26640550233424,
+      "owned_termination_actions": [],
+      "observer_heavy_roots": [],
+      "benchmark_changed": false,
+      "no_other_process_kill_or_cleanup": true,
+      "no_automatic_followup": true
+    },
+    "observed_wholepeak": {
+      "utc": "2026-10-02T05:54:04.846919+00:00",
+      "whole_usage": 21680566272,
+      "import_rss": 23669243904,
+      "import_hwm_kib": 23114496,
+      "visible_rss_sum": 24642367488,
+      "usage_minus_visible_rss_sum": -2961801216,
+      "oom": 3,
+      "observer_rss": 19505152,
+      "missing_pid_count": 0
+    },
+    "import_RSSmax": 23669243904,
+    "import_HWMkib": 23114584,
+    "samples_sha": "2f42c44e67a0f2341da55bdb4109c535311a806167aef9c1bbe2f4abfa73567c",
+    "reference_attention_native": [
+      0,
+      0,
+      0
+    ],
+    "manifest_path": "race_tests/nsa/rep/v203_worker2_whole_cgroup_import_subagent2/manifest.json",
+    "all_owned_jobs_terminal": true,
+    "codebundle": {
+      "path": "/tmp/nsa_worker2_code_9eebae913786.bundle",
+      "size": 162864,
+      "sha256": "26c2cba70066e3087b52c623410b0b8eef061c9c74aa35e95848411c9aa03cb8",
+      "prerequisite": "c993479f0dedb9a878915fb1d26087b3d0411110"
+    }
   }
 }

@@ -1,0 +1,58 @@
+{
+  "timestamp_utc": "2026-10-02T06:10:13.836906+00:00",
+  "source_commit": "9eebae913786797e769b77d8f2731754828789ed",
+  "observation": {
+    "result": {
+      "id": "v203_worker2_whole_cgroup_import_subagent2",
+      "mode": "oneimport-only",
+      "attention_calls": 0,
+      "full_reference_count": 0,
+      "native_calls": 0,
+      "import_attempted": true,
+      "no_retry": true,
+      "admitted": true,
+      "import_pid": 112532,
+      "import_starttime_ticks": 329227714,
+      "import_pgid": 112532,
+      "oom_before": 3,
+      "samples": 67,
+      "import_returncode": 0,
+      "status": "single_import_observed_exit0_not_rootcause_proof",
+      "oom_after": 3,
+      "diagnostic_gate": 0,
+      "elapsed_seconds": 34.26640550233424,
+      "owned_termination_actions": [],
+      "observer_heavy_roots": [],
+      "benchmark_changed": false,
+      "no_other_process_kill_or_cleanup": true,
+      "no_automatic_followup": true
+    },
+    "sample_count": 67,
+    "samples_sha256": "2f42c44e67a0f2341da55bdb4109c535311a806167aef9c1bbe2f4abfa73567c",
+    "observed_whole_cgroup_peak": {
+      "utc": "2026-10-02T05:54:04.846919+00:00",
+      "whole_usage": 21680566272,
+      "import_rss": 23669243904,
+      "import_hwm_kib": 23114496,
+      "visible_rss_sum": 24642367488,
+      "usage_minus_visible_rss_sum": -2961801216,
+      "oom": 3,
+      "observer_rss": 19505152,
+      "missing_pid_count": 0
+    },
+    "max_import_rss_bytes": 23669243904,
+    "max_import_hwm_kib": 23114584,
+    "max_observer_rss_bytes": 19505152,
+    "max_positive_accounting_gap": 1400528896,
+    "OOM_values": [
+      3
+    ],
+    "observed_owned_PIDs": [
+      112532
+    ],
+    "observation_not_peakguarantee_or_rootcause": true
+  },
+  "lesson": "singleadmittedimport0 is notv202cause/futurenoOOMguarantee;PIDRSSsum/gap differ fromcgroupaccounting;cooperativelock boundsobservedconcurrency only",
+  "nopeerchanges": true,
+  "noadditionalheavy": true
+}
