@@ -1,0 +1,23 @@
+{
+  "timestamp_utc": "2026-10-02T03:24:40.780823+00:00",
+  "scope": "peer feedback only; no edit/execution authorization; worker2 edits only own cases/files",
+  "peer": "worker1",
+  "peer_observations": {
+    "v100": "case12 candidate+1.793216%; MT80->98/ST22->32/staticmax6->4; nonconflict100/conflict0 does not prove speed; closed rejected",
+    "v101": "case10 direct Q/K8B mapping; MT82->70/ST24->30/max5->7; raw4candidate refs PASS but process137/OOM10->11, screen inconclusive, not formalpassed"
+  },
+  "worker2_review": {
+    "bijection": "row=lane%16,col=chunk*16+(lane//16)*4+e; inverse lane=row+16*((col%16)//4),chunk=col//16,e=col%4;1024 elements cover16x64",
+    "global_tradeoff": "direct8B chunk touches16 rows each32B; not equivalent transaction pattern to packed16B producer",
+    "sync_lifetime": "after removing K writes, prior V reads must be completed before next V overwrite by retained full64sync; one-query64thread valid branch must be uniform",
+    "bounds": "K direct loads remain under0<=block_start<=t; L256 divisibleBS16 implies selected16row block bounds, sentinel skipped beforeloads",
+    "resource_limits": "maxwarp estimate not measured occupancy; MTdecrease with STincrease does not prove throughput",
+    "runtime_gate": "12PASSrows establish4candidate refs/timings only; exit137 retained, destructor cause unproven"
+  },
+  "worker1_preliminary_review_of_output_idea": {
+    "mapping": "MFMA output row=lane%16,col=chunk16+quarter4+e bijection valid",
+    "tradeoff": "two contiguous16B stores per lane may become four strided8B stores; same bytes may increase store instruction/sector requests; removing shared/barriers not automatically profitable",
+    "recommendation_only": "wait current12profile/resource evidence, record reverse predictions, one-case dispatch first, fixedscreen and retain all positive deltas"
+  },
+  "worker2_stage": "v200 diagnostic; no kernel edit/no mechanism approved"
+}

@@ -1,6 +1,6 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T03:16:53.553965+00:00",
+  "timestamp_utc": "2026-10-02T03:24:40.781259+00:00",
   "state": "V200_NATIVE_COMPLETE_PROFILE_RUNNING",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
@@ -78,7 +78,13 @@
       "distro": "ubuntu18.04"
     },
     "mxcc": "/opt/maca/mxgpu_llvm/bin/mxcc",
-    "mcTracer": null,
+    "mcTracer": {
+      "path": "/opt/maca/bin/mcTracer",
+      "version": "3.7.1.5-ef9e10e",
+      "help_exit": 0,
+      "not_in_PATH": true,
+      "trace_not_yet_collected": true
+    },
     "mx_smi": "2.3.1",
     "MACA": "3.7.1.5",
     "KMD": "3.8.30",
@@ -154,5 +160,6 @@
     "baseline_v28_cases": 14,
     "parent_v084_cases": 14,
     "both_exit": 0
-  }
+  },
+  "peer_feedback_path": "workers/worker2/lessons/peer_worker1_review_v200.json"
 }
