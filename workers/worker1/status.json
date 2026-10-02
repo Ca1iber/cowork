@@ -1,8 +1,8 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T08:55:19.958456+00:00",
+  "utc": "2026-10-02T09:18:07.585692+00:00",
   "source_branch": "codex-power-v28-base",
-  "last_closed_source_commit": "0d4985d2ddad1b3e6332686b47739d0f99e8ac4e",
+  "last_closed_source_commit": "ab34f0aa8800b9c6a8d9b14abe35bd27e543f980",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
@@ -11,15 +11,15 @@
     12
   ],
   "current": {
-    "version": "v107_worker1_phase_aware_terminal_monitor_sc-16g-2",
-    "phase": "peer_reviewed_monitor_only_proposal_waiting_leader",
-    "source_v104_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
-    "new_native": 0,
-    "new_reference": 0,
-    "GPU_test_calls": 0,
-    "controlled_stdlib_checks": 5,
-    "oldfailedgates_preserved": true,
-    "no_activePID": true
+    "version": "v108_worker1_reallocated_memory_budget_all14_sc-16g-2",
+    "phase": "budget_proposal_peer_pending",
+    "same_source_v104_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "candidate_header104": true,
+    "newnative": 0,
+    "newrefs": 0,
+    "oldgates_preserved": true,
+    "no_activePID": true,
+    "no_peer_code_or_plan_edit": true
   },
   "history": {
     "v101": {
@@ -88,11 +88,22 @@
       "native_exits_all0": true,
       "OOM13_unchanged": true,
       "actual_signals_sent": 0
+    },
+    "v107": {
+      "commit": "ab34f0aa8800b9c6a8d9b14abe35bd27e543f980",
+      "gate": 1,
+      "native_processes": 3,
+      "native_all0_clean14_each": true,
+      "observed_and_clean_C14_total42": true,
+      "job4_admission_whole": 3223244800,
+      "original3GiB_boundary": 3221225472,
+      "OOM13_unchanged": true,
+      "no_retry": true
     }
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
   "next": "ownnew diagnostic plan/source-only feasibility + peer thenleader review; no heavyGO yet",
-  "last_closed_version": "v106_worker1_bounded_all14_editor_baseline_sc-16g-2",
-  "last_closed_status": "failed_monitor_identity_unavailable_terminal_inconclusive"
+  "last_closed_version": "v107_worker1_phase_aware_terminal_monitor_sc-16g-2",
+  "last_closed_status": "stopped_fixed_protocol_admission_baseline_drift_inconclusive"
 }
