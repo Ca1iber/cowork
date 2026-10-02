@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T13:15:55.675469+00:00",
-  "state": "V210_CLOSED_OBSERVATION_FAILURE_BEFORE_CANDIDATE",
+  "timestamp_utc": "2026-10-02T13:36:20.286931+00:00",
+  "state": "V211_MONITOR_ONLY_PREPARED_WAIT_REVIEW",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -20,127 +20,45 @@
     14
   ],
   "current": {
-    "version": "v210_worker2_c8_serial_query_pair_subagent2",
-    "state": "V210_CLOSED_OBSERVATION_FAILURE_BEFORE_CANDIDATE",
-    "only_key": [
-      2,
-      4096,
-      1,
-      16,
-      64,
-      1,
-      16,
-      true
-    ],
-    "source_base_commit": "d4df40603a5f2093786e2385e417fff742aa04fc",
-    "parent_sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
-    "mechanism": "serial2 independent query/CTA64;buffersreuse,no KVcontentcache",
-    "parent_grid": [
-      4096,
-      2
-    ],
-    "proposed_grid": [
-      2048,
-      2
-    ],
-    "proposedwaves": 4096,
-    "logicalqueries": 8192,
-    "planned_extra_boundary_sync": 1,
-    "proof_stdlib_exit": 0,
+    "version": "v211_worker2_c8_bounded_exit_confirmation_subagent2",
+    "state": "V211_MONITOR_ONLY_PREPARED_WAIT_REVIEW",
+    "algorithm_sourceSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+    "source_header210_unchanged": true,
+    "new_kernel_copy_metadata_IR_profile": false,
+    "original_v210_guard1_preserved": true,
+    "actual_controlled5_preflightwait": 0,
+    "actual_sourceprefix_preflightwait": 0,
     "peer_advisory_received": true,
-    "candidate_created": true,
-    "kernel_or_heavy_GO": false,
+    "critical_missing_cumulative_budget_seconds": 1.0,
+    "confirmation_poll_seconds": 0.05,
+    "normal_poll_seconds": 0.5,
+    "controllerSHA": "b2803d1c5fd449fbc5a3ab14cb80f4b3d09d5706657ddd451a0b69e6c4b97481",
+    "utilsSHA": "80925f3c2e31f4471129d613ed43bff3f7d405f19032a188a158f9580ace0e8e",
+    "fixed_order": [
+      "B28",
+      "P84",
+      "C210",
+      "C210",
+      "P84",
+      "B28",
+      "B28",
+      "P84",
+      "C210",
+      "C210",
+      "P84",
+      "B28"
+    ],
+    "planned_C_totalrefs": [
+      4,
+      12
+    ],
+    "actual_native_C_totalrefs": [
+      0,
+      0
+    ],
+    "new_heavy_GO": false,
     "current_live_heavy": 0,
-    "active_PIDs": [],
-    "candidate_path": "/tmp/nsa_worker2_v210_c8_serial_query_pair.py",
-    "candidateSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
-    "factory": "_make_worker2_c8_serial_query_pair",
-    "source_static_exit": 0,
-    "strict_source_exit": 0,
-    "prefix14_AST_equal": true,
-    "inverse_grid_loop_token_guard_boundary_wholefactory_AST_equal": true,
-    "perquery_core_AST_identical": true,
-    "allocs_outside_serial2": true,
-    "source_sync_sites": 8,
-    "planned_executed_syncs_pair": 15,
-    "kernel_GO": "source-only executed",
-    "heavy_GO": "once metadata+candidateSDK complete",
-    "metadata_actualwait": 0,
-    "metadata_exports": 2,
-    "generated_validator_exits": [
-      0,
-      0
-    ],
-    "SDK_resource_IR_exits": [
-      0,
-      0
-    ],
-    "backend_actualwait": 0,
-    "metadata_semantic_actualwait": 0,
-    "semantic_gate": 0,
-    "parent_resource_IR_reused": true,
-    "resource_parent_candidate": [
-      [
-        42,
-        20,
-        8,
-        0
-      ],
-      [
-        56,
-        28,
-        8,
-        0
-      ]
-    ],
-    "IR_fullvalid_MMA_sync_shfl": [
-      16,
-      15,
-      8
-    ],
-    "IR_counts_static_sites_with_valid_predicates": true,
-    "actual_address_checks": 2097152,
-    "native_prepared_stdlib_actualwait": 0,
-    "native_execution_GO": "unique attempted andstopped, no furtherGO",
-    "native_processes_references": [
-      0,
-      0
-    ],
-    "other13_source_changed": false,
-    "other13_generated_device": "UNAVAILABLE_not_exported",
-    "source_same_not_nonreg_guarantee": true,
-    "native_guardfix2_actualpreflightwait": 0,
-    "native_controllerSHA": "b9d3cec1e6991640af8e35ec079e9acabf83d2b790b9243c859c08c4e2a8a1b8",
-    "native_utilsSHA": "eaf7eb6e9488e7a75820874b68d2497492b92af44815b26bc7bc59ba9925d3e7",
-    "expected_OOM": 3,
-    "critical_tuple_requires_exe_and_start": true,
-    "current_tuple_whitelist_and_verified_ancestry": true,
-    "terminal_pressure_unknown_descendant_finite_csv_guards": true,
-    "old_prepared_and_rev01_preserved": true,
-    "native_originalcontroller_actualwait": 1,
-    "native_run1run2_actualwait": [
-      0,
-      0
-    ],
-    "observed_candidate_total_refs": [
-      0,
-      2
-    ],
-    "clean_candidate_total_refs": [
-      0,
-      1
-    ],
-    "native_processes_completed": 2,
-    "candidate_processes_started": 0,
-    "native_status": "failed_observation_critical_identity_selected_screen_incomplete",
-    "candidate_correctness_speed": "UNAVAILABLE",
-    "OOM_before_after": [
-      3,
-      3
-    ],
-    "signals": [],
-    "archiveSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
-    "source_commit": "efec1b8569d4fca3bc8d1934a435a417007e0e17"
+    "active_PIDs": []
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -825,7 +743,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Independent v211 monitor-only plan, samef98/header210; no newsource/metadata/profile/native untilreview",
+  "next_step": "Leader actual v211 plan/helper review before single newfixedscreen; no extra source/compiler/profile",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",

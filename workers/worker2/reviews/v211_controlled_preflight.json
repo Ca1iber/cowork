@@ -1,0 +1,97 @@
+{
+  "preflight_cases": [
+    {
+      "case": "optional_errors_preserve_realcritical",
+      "pass": true,
+      "phase_errors": [
+        {
+          "phase": "status",
+          "errno": 13,
+          "filename": "/proc/250255/status"
+        },
+        {
+          "phase": "task",
+          "errno": 2,
+          "filename": "/proc/250255/task"
+        }
+      ]
+    },
+    {
+      "case": "explicitnonnull_mismatch_immediate",
+      "pass": true
+    },
+    {
+      "case": "real_Popen_terminal_after_missing",
+      "pass": true,
+      "actualwait": 0,
+      "events": [
+        {
+          "event": "started",
+          "monotonic": 3319735.647388955,
+          "deadline": 3319736.647388955,
+          "metadata": {
+            "pid": 250255,
+            "ppid": 250254,
+            "pgid": 250253,
+            "starttime_ticks": 331973563,
+            "state": "S",
+            "comm": "python",
+            "exe": null,
+            "status": {
+              "VmHWM": "8224 kB",
+              "VmRSS": "8224 kB",
+              "Threads": "1"
+            },
+            "cgroup": [
+              "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "10:misc:/",
+              "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+              "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+            ],
+            "thread_children": [],
+            "metadata_errors": [],
+            "critical_complete": true,
+            "RSS_unavailable": false
+          }
+        },
+        {
+          "event": "terminal_confirmed",
+          "elapsed": 0.0031619607470929623,
+          "total_missing_elapsed": 0.0031619607470929623,
+          "actualPopenpoll": 0
+        }
+      ]
+    },
+    {
+      "case": "same_originaltuple_restored",
+      "pass": true
+    },
+    {
+      "case": "alive_unverifiable_timeout_thenwait0_priorabortkept",
+      "pass": true,
+      "actualwait": 0,
+      "priorabort": "CRITICAL_MISSING_CONFIRMATION_1S_EXPIRED",
+      "confirmation_timestamps_synthetic_not_latency": true
+    }
+  ],
+  "all_pass": true,
+  "actual_processes": "two real Python-S stdlib children, no signal sent",
+  "metadata_error_injection_only": true,
+  "no_fabricated_nativeCSV_or_latency": true,
+  "GPU_attention_fullreference_native": [
+    0,
+    0,
+    0,
+    0
+  ]
+}
