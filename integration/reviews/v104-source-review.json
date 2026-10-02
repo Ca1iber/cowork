@@ -1,0 +1,26 @@
+{
+  "reviewed_at_utc": "2026-10-02T05:52:08.760833+00:00",
+  "scope": "Leader readonly exact archive and actual new C12 source; no GPU or source edits",
+  "archive_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+  "actual_header": "# codex-power v104",
+  "observations": [
+    "raw_index range and causal block guard precede block_start multiplication",
+    "indices selection and has_valid branch are uniform within the per-query 64-lane group",
+    "maximum/shfl_xor offsets16/32 combine the 4 score-owning lanes of each query head",
+    "denominator sums the same rounded/scaled F16 probabilities consumed by PV",
+    "exp2 maximum is256; <=128 selected score positions => denominator<=32768",
+    "shared phase reuse has warp synchronization before producers overwrite consumed shared content",
+    "empty-selection denominator0 final behavior preserved, not generalized beyond original reference"
+  ],
+  "optimized_IR_sha256": "de3bcdfdac453609d68d33a9250f835720ffdc48661f03df20d69b1712b79277",
+  "IR_static_MMA_sites": 64,
+  "IR_loop_metadata": 0,
+  "IR_alloca": 0,
+  "IR_private_addrspace5": 0,
+  "limitations": [
+    "Not decoded ISA or actual occupancy",
+    "Not proof of all14 non-regression or OJ gain",
+    "Full14 runtime and later paired profiling remain pending"
+  ],
+  "worker1_communication_head": "3047cb505036edbc5dd31cf8ac61c90b9288769a"
+}
