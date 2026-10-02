@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T07:07:43.263393+00:00",
-  "state": "V205_SCOPE_CORRECTED_PENDING_REVIEW",
+  "timestamp_utc": "2026-10-02T07:14:14.924314+00:00",
+  "state": "V205_SOURCE_STATIC0_PENDING_METADATA_REVIEW",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -23,7 +23,7 @@
     "version": "v205_worker2_c5_num8_output_reuse_subagent2",
     "state": "PROPOSAL_ONLY",
     "case": 5,
-    "candidate_source_created": false,
+    "candidate_source_created": true,
     "new_attention_reference_native": [
       0,
       0,
@@ -48,7 +48,25 @@
       1024,
       4
     ],
-    "scope_correction_record": "reviews/v205_scope_correction.json"
+    "scope_correction_record": "reviews/v205_scope_correction.json",
+    "candidate_path": "/tmp/nsa_worker2_v205_c5_num8_output_reuse.py",
+    "sourceSHA": "cc0fcfdd97df2d009b3d100c3947caed257a2f45c095b266ca8d93b231b69d0a",
+    "source_static_validator_exit": 0,
+    "source_go": true,
+    "metadata_go": false,
+    "native_go": false,
+    "factory": "_make_worker2_c5_num8_output_reuse",
+    "Num_float32_elements": 8,
+    "Voperand_half_elements": 16,
+    "source_sync_sites": 7,
+    "new_import_compile_attention_native": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "actual_CPP_IR_resource": "UNAVAILABLE_not_run",
+    "hard_falsifier_MT_greater_or_equal": 42
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -185,7 +203,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "leader review own exactproposal; no kernel or heavy run yet",
+  "next_step": "leader review exactcc0fcf candidate and sourceAST/key/math/guard/sync before boundedmetadata",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",

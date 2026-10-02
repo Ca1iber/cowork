@@ -1,0 +1,55 @@
+{
+  "candidate_path": "/tmp/nsa_worker2_v205_c5_num8_output_reuse.py",
+  "candidate_sha256": "cc0fcfdd97df2d009b3d100c3947caed257a2f45c095b266ca8d93b231b69d0a",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "factory_name": "_make_worker2_c5_num8_output_reuse",
+  "dispatch_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "official_case_number": 5,
+  "prefix_14_AST_nodes_equal": true,
+  "additional_nodes_only": [
+    "_make_worker2_c5_num8_output_reuse",
+    "C5installer"
+  ],
+  "source_sync_sites": 7,
+  "Num_float32_elements": 8,
+  "Voperand_float16_elements": 16,
+  "group_count": 2,
+  "PV_per_group": 2,
+  "PV_guard": "block_start >= 0 and block_start <= token",
+  "Vreads_before_original_preoutput_warp": true,
+  "preoutput_warp_after_den_same_shfl_before_groupPV": true,
+  "den_AST_unchanged": [
+    "denominator[0] += T.shfl_xor(denominator[0], 32, width=64, mask=18446744073709551615)",
+    "denominator[0] += T.shfl_xor(denominator[0], 16, width=64, mask=18446744073709551615)"
+  ],
+  "group_source": "for group in T.unroll(2):\n    T.fill(numerator, 0)\n    if block_start >= 0 and block_start <= token:\n        for chunk in T.unroll(2):\n            T.tvm_mfma('16x16x16f16', 'row', 'row',\n                'float16x4', 'float16x4', 'float32x4',\n                v_operand.data, group * 2 + chunk, probabilities.data, 0,\n                numerator.data, chunk, dtype='float32x4')\n    for chunk in T.unroll(2):\n        for element in T.vectorized(4):\n            numerator[chunk * 4 + element] /= denominator[0]\n    for chunk in T.unroll(2):\n        for element in T.vectorized(4):\n            feature = (group * 2 + chunk) * 16 + (lane // 16) * 4 + element\n            shared[out_slot(lane % 16, feature)] = numerator[chunk * 4 + element]\n",
+  "original_global_gather_AST_unchanged": true,
+  "valid_QKPdenVbody_unchanged_except_originalPV_removed": true,
+  "selected_loop_unwrapped_exact_single_slot0": true,
+  "planned_global_QKV_Output_vector_bytes": 16,
+  "planned_shared_output_vector_bytes": 8,
+  "actual_CPP_IR_unavailable_sourceonly": true,
+  "new_import_compile_attention_native": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "valid_QKPdenV_body_AST_verified_identical_without_oldPV": true,
+  "MMA_AST_equal_except_input_chunk_group_mapping": true,
+  "division_AST_equal_except_two_chunks": true,
+  "output_gather_AST_verified_identical": true,
+  "uniform_valid_guards_identical": true,
+  "source_SHA_unchanged_after_audit": "cc0fcfdd97df2d009b3d100c3947caed257a2f45c095b266ca8d93b231b69d0a",
+  "shared_output_store_AST_equal_except_grouped_globalfeature": true,
+  "F16_shared_dtype_implicit_cast_from_F32_same": true
+}
