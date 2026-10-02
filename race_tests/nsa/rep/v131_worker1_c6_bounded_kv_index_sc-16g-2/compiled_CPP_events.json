@@ -1,0 +1,74 @@
+[
+  {
+    "line": 17,
+    "text": "  half_t probabilities[8];"
+  },
+  {
+    "line": 18,
+    "text": "  float numerator[32];"
+  },
+  {
+    "line": 36,
+    "text": "    __syncwarp();"
+  },
+  {
+    "line": 40,
+    "text": "    __syncwarp();"
+  },
+  {
+    "line": 49,
+    "text": "    __syncwarp();"
+  },
+  {
+    "line": 117,
+    "text": "      *(uint2*)(probabilities + (key_tile_2 * 4)) = __1;"
+  },
+  {
+    "line": 121,
+    "text": "      denominator[0] = (denominator[0] + ((float)probabilities[element_2]));"
+  },
+  {
+    "line": 125,
+    "text": "    __syncwarp();"
+  },
+  {
+    "line": 143,
+    "text": "    __syncwarp();"
+  },
+  {
+    "line": 147,
+    "text": "      *(float4*)(numerator + (i_1 * 4)) = make_float4(broadcast_var_3, broadcast_var_3, broadcast_var_3, broadcast_var_3);"
+  },
+  {
+    "line": 160,
+    "text": "      *(((float32x4*)numerator) + ((plane_1 * 4) + chunk_3)) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)v_operand) + chunk_3),"
+  },
+  {
+    "line": 161,
+    "text": "                    *(((float16x4*)probabilities) + key_tile_4),"
+  },
+  {
+    "line": 162,
+    "text": "                    *(((float32x4*)numerator) + ((plane_1 * 4) + chunk_3)));"
+  },
+  {
+    "line": 171,
+    "text": "      *(float4*)(numerator + (i_2 * 4)) = make_float4(broadcast_var_4, broadcast_var_4, broadcast_var_4, broadcast_var_4);"
+  },
+  {
+    "line": 176,
+    "text": "    numerator[i_3] = (numerator[i_3] / denominator[0]);"
+  },
+  {
+    "line": 178,
+    "text": "  __syncwarp();"
+  },
+  {
+    "line": 182,
+    "text": "      shared_local_cast[element_3] = ((half_t)numerator[((chunk_4 * 4) + element_3)]);"
+  },
+  {
+    "line": 186,
+    "text": "  __syncwarp();"
+  }
+]

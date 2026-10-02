@@ -1,0 +1,20 @@
+--- parentf186
++++ candidatee74
+@@ -40,7 +40,7 @@
+     __syncwarp();
+     #pragma unroll
+     for (int part_1 = 0; part_1 < 8; ++part_1) {
+-      *(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int64_t)((int)blockIdx.y)) * (int64_t)131072) + (((int64_t)part_1) * (int64_t)512)) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));
++      *(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int)blockIdx.y) * 131072) + (part_1 * 512)) + (min(block_start, 992) * 128)) + (((int)threadIdx.x) * 8)));
+       #pragma unroll
+       for (int pack_1 = 0; pack_1 < 2; ++pack_1) {
+         *(uint2*)(shared + (((((((((int)threadIdx.x) & 15) >> 3) * 2048) + (part_1 * 256)) + ((((int)threadIdx.x) >> 4) * 64)) + (((((int)threadIdx.x) & 7) ^ (((part_1 & 1) * 4) + (((int)threadIdx.x) >> 4))) * 8)) + (((pack_1 ^ ((part_1 & 3) >> 1)) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack_1 * 4));
+@@ -129,7 +129,7 @@
+       for (int plane = 0; plane < 2; ++plane) {
+         #pragma unroll
+         for (int row = 0; row < 2; ++row) {
+-          *(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((((int64_t)((int)blockIdx.y)) * (int64_t)131072) + (((int64_t)key_tile_3) * (int64_t)2048)) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)256)) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)row) * (int64_t)128)) + (((int64_t)plane) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));
++          *(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((((int)blockIdx.y) * 131072) + (key_tile_3 * 2048)) + ((((int)threadIdx.x) >> 3) * 256)) + (min(block_start, 992) * 128)) + (row * 128)) + (plane * 64)) + ((((int)threadIdx.x) & 7) * 8)));
+         }
+         #pragma unroll
+         for (int col = 0; col < 8; ++col) {

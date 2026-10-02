@@ -1,0 +1,141 @@
+{
+  "records": [
+    {
+      "variant": "parent113",
+      "case": 6,
+      "hook_count": 1,
+      "source": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+        "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+      },
+      "kernel_type": "tilelang.jit.kernel.JITKernel",
+      "args_metadata": [
+        {
+          "shape": [
+            8,
+            1024,
+            16,
+            128
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            1,
+            128
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            1,
+            128
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            1,
+            1
+          ],
+          "dtype": "torch.int32",
+          "grad": false
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            16,
+            128
+          ],
+          "dtype": "torch.float16",
+          "grad": false
+        }
+      ],
+      "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v131_worker1_c6_bounded_kv_index_sc-16g-2/codegen/parent113/case6.device.cpp",
+      "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v131_worker1_c6_bounded_kv_index_sc-16g-2/codegen/parent113/case6.host.cpp",
+      "device_SHA": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d",
+      "host_SHA": "b138df6c88a6de13e8dedff593135b2a7c1355be0f0dfa225b07227ec44dd2d8",
+      "actual_NSA_attention_calls": 0
+    },
+    {
+      "variant": "candidate131",
+      "case": 6,
+      "hook_count": 1,
+      "source": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v131_worker1_c6_bounded_kv_index_sc-16g-2/submission.py",
+        "sha256": "ccc53385ebe87ce3fdd7cb9b76a861c6aaf04780e6893b2b19b53fd95803daaa"
+      },
+      "kernel_type": "tilelang.jit.kernel.JITKernel",
+      "args_metadata": [
+        {
+          "shape": [
+            8,
+            1024,
+            16,
+            128
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            1,
+            128
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            1,
+            128
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            1,
+            1
+          ],
+          "dtype": "torch.int32",
+          "grad": false
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            16,
+            128
+          ],
+          "dtype": "torch.float16",
+          "grad": false
+        }
+      ],
+      "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v131_worker1_c6_bounded_kv_index_sc-16g-2/codegen/candidate131/case6.device.cpp",
+      "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v131_worker1_c6_bounded_kv_index_sc-16g-2/codegen/candidate131/case6.host.cpp",
+      "device_SHA": "e74e12c513366d79bff96c4acc49b132a5ea43a09abdc88bf0296707ec6414cc",
+      "host_SHA": "b138df6c88a6de13e8dedff593135b2a7c1355be0f0dfa225b07227ec44dd2d8",
+      "actual_NSA_attention_calls": 0
+    }
+  ],
+  "NSA_attention_calls": 0,
+  "fullrefs": 0,
+  "context_emptyallocations_not0GPUclaim": true
+}

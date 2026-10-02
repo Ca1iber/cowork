@@ -1,0 +1,19 @@
+--- v128_worker1_c6_v4_independent_budget_diagnostic_sc-16g-2/export_metadata_pair.py
++++ v131_worker1_c6_bounded_kv_index_sc-16g-2/export_metadata_pair.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,hashlib,importlib.util
+-b=Path('/root/tilelang-metax/race_tests/nsa');r=b/'rep/v128_worker1_c6_v4_independent_budget_diagnostic_sc-16g-2';m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());assert p['phase']=='leader_GO_v128_bounded_compile_once'
++b=Path('/root/tilelang-metax/race_tests/nsa');r=b/'rep/v131_worker1_c6_bounded_kv_index_sc-16g-2';m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());assert p['phase']=='leader_GO_v131_bounded_compile_once'
+ for x in m['sources'].values():assert hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256']
+ import tilelang
+ from tilelang.jit.kernel import JITKernel
+@@ -14,7 +14,7 @@
+ JITKernel.__call__=export_only
+ try:
+  c=json.loads((b/'official_case.json').read_text())[5]
+- for label in ['parent113','candidate127']:
++ for label in ['parent113','candidate131']:
+   active=label;count=0;source=Path(m['sources'][label]['path']);spec=importlib.util.spec_from_file_location('metadata_'+label,source);mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod);q=torch.empty((c['B'],c['SEQ_LEN'],c['HQ'],c['D']),dtype=torch.float16,device='cuda',requires_grad=True);k=torch.empty((c['B'],c['SEQ_LEN'],c['H'],c['D']),dtype=torch.float16,device='cuda',requires_grad=True);v=torch.empty(k.shape,dtype=torch.float16,device='cuda',requires_grad=True);idx=torch.empty((c['B'],c['SEQ_LEN'],c['H'],c['S']),dtype=torch.int32,device='cuda');out=torch.empty(q.shape,dtype=torch.float16,device='cuda');mod.run_kernel(q,k,v,idx,out,c['B'],c['SEQ_LEN'],c['H'],c['HQ'],c['D'],c['S'],c['block_size'],int(c['is_causal']));assert count==1;(r/'metadata_pair.json').write_text(json.dumps({'records':records,'NSA_attention_calls':0,'fullrefs':0,'context_emptyallocations_not0GPUclaim':True},indent=2)+chr(10));print('METADATA_SOURCE_ONLY_EXPORT',label,flush=True)
+ finally:JITKernel.__call__=original
+ assert len(records)==2

@@ -1,0 +1,43 @@
+{
+  "version": "v131_worker1_c6_bounded_kv_index_sc-16g-2",
+  "UTC": "2026-10-02T22:42:23.325280+00:00",
+  "phase": "compile_TEXT_proposal_only_no_GO",
+  "source_parent": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+    "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+  },
+  "candidate": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v131_worker1_c6_bounded_kv_index_sc-16g-2/submission.py",
+    "sha256": "ccc53385ebe87ce3fdd7cb9b76a861c6aaf04780e6893b2b19b53fd95803daaa"
+  },
+  "stages": [
+    "onefreshCB13_andC131_C6compileexport2pairs4files_0NSA",
+    "CPUactualhost/source/device_scope;parentCPPf186_match reusepriorresource",
+    "candidate1SDKresource",
+    "firstcandidateO3IR1",
+    "CPUactual32MMA/noalloca_AS5/math/sync/width/i32_defuse_observation_thenleadermanualreview"
+  ],
+  "guards_same128": true,
+  "memory_engineering_budget": {
+    "cgroup_limit_bytes": 34359738368,
+    "new_admission_max_whole_bytes": 6442450944,
+    "additional_import_runtime_budget_not_upperbound_bytes": 23622320128,
+    "reserve_bytes": 4294967296,
+    "runtime_stop_whole_bytes": 30064771072,
+    "unknown_visible_heavy_RSS_bytes": 1073741824,
+    "sample_interval_seconds": 0.5,
+    "per_process_walltime_stop_seconds": 600,
+    "newthreshold_preregistered_before_any_newheavy": true,
+    "all_cgroup_limit_changes_forbidden": true,
+    "baseline_GiB": 6,
+    "additional_GiB": 22,
+    "reserve_GiB": 4,
+    "runtime_whole_GiB": 28
+  },
+  "OOM_expected": 13,
+  "candidate_resource_stop": "stack0/hostsame64threads-dyn8192/global16B/no source/math/sync drift;MTSTstaticmaxallrecord_not_speedgate",
+  "IR_prediction": "trace batch131072+boundedrow128+keytile/plane offsets scaled i32 then lateGEP64;remaining64/compilereliminatedclamp/no reduction are falsifiers to retain",
+  "parent_resource_reference": "117C6f186SDK5d100MT22ST/max4/stack0,identity onlyreuse iffreshparentCPPbytesmatch",
+  "no_GPU_compile_native_profile_or_sourceedit_untilseparateGO": true,
+  "no_new_framework_or_adjustedinputs": true
+}

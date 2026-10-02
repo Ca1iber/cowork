@@ -1,0 +1,1 @@
+Originalnative/fullreference/W10R50/OJ/profile/trace unavailable notrun in131. actualCPP twoK/V indexexpr int64->i32 withmin992,98MT22ST/max4 onlycompiledresource facts; exactIRKVdefuse manualreview pending, ISA/physicalallocation/runtimeoccupancy/gainunknown. No automatic134native or133full14, no extraSDK/source edits.

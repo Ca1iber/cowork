@@ -1,0 +1,2449 @@
+{
+  "resource": {
+    "case": 6,
+    "source_SHA": "e74e12c513366d79bff96c4acc49b132a5ea43a09abdc88bf0296707ec6414cc",
+    "MT": 98,
+    "ST": 22,
+    "staticmax": 4,
+    "stack": 0,
+    "staticshared": 0,
+    "dynamicshared": 8192,
+    "occupancy": "NOT_MEASURED",
+    "MT_decrease_not_gate": true,
+    "attention_fullrefs": 0
+  },
+  "IR_SHA": "dc1456ae1830d131dbc326f411c0af79f8dcd855d75a9da89c78d7822b5821d2",
+  "actual_static_MMA_count": 32,
+  "MMA_call_lines": [
+    {
+      "line": 493,
+      "text": "  %82 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload, <4 x half> %21, <4 x float> zeroinitializer), !dbg !99"
+    },
+    {
+      "line": 496,
+      "text": "  %83 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1, <4 x half> %21, <4 x float> zeroinitializer), !dbg !99"
+    },
+    {
+      "line": 498,
+      "text": "  %84 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1972, <4 x half> %22, <4 x float> %82), !dbg !99"
+    },
+    {
+      "line": 501,
+      "text": "  %85 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.1, <4 x half> %22, <4 x float> %83), !dbg !99"
+    },
+    {
+      "line": 503,
+      "text": "  %86 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2, <4 x half> %23, <4 x float> %84), !dbg !99"
+    },
+    {
+      "line": 506,
+      "text": "  %87 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.2, <4 x half> %23, <4 x float> %85), !dbg !99"
+    },
+    {
+      "line": 508,
+      "text": "  %88 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3, <4 x half> %24, <4 x float> %86), !dbg !99"
+    },
+    {
+      "line": 511,
+      "text": "  %89 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.3, <4 x half> %24, <4 x float> %87), !dbg !99"
+    },
+    {
+      "line": 517,
+      "text": "  %93 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.4, <4 x half> %27, <4 x float> %88), !dbg !99"
+    },
+    {
+      "line": 520,
+      "text": "  %94 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.4, <4 x half> %27, <4 x float> %89), !dbg !99"
+    },
+    {
+      "line": 523,
+      "text": "  %96 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.5, <4 x half> %28, <4 x float> %93), !dbg !99"
+    },
+    {
+      "line": 526,
+      "text": "  %97 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.5, <4 x half> %28, <4 x float> %94), !dbg !99"
+    },
+    {
+      "line": 529,
+      "text": "  %99 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.6, <4 x half> %29, <4 x float> %96), !dbg !99"
+    },
+    {
+      "line": 532,
+      "text": "  %100 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.6, <4 x half> %29, <4 x float> %97), !dbg !99"
+    },
+    {
+      "line": 535,
+      "text": "  %102 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.7, <4 x half> %30, <4 x float> %99), !dbg !99"
+    },
+    {
+      "line": 538,
+      "text": "  %103 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.7, <4 x half> %30, <4 x float> %100), !dbg !99"
+    },
+    {
+      "line": 1182,
+      "text": "  %208 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %201, <4 x half> %142, <4 x float> zeroinitializer), !dbg !241"
+    },
+    {
+      "line": 1183,
+      "text": "  %209 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %203, <4 x half> %142, <4 x float> zeroinitializer), !dbg !241"
+    },
+    {
+      "line": 1184,
+      "text": "  %210 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %205, <4 x half> %142, <4 x float> zeroinitializer), !dbg !241"
+    },
+    {
+      "line": 1185,
+      "text": "  %211 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %207, <4 x half> %142, <4 x float> zeroinitializer), !dbg !241"
+    },
+    {
+      "line": 1206,
+      "text": "  %220 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %213, <4 x half> %142, <4 x float> zeroinitializer), !dbg !241"
+    },
+    {
+      "line": 1207,
+      "text": "  %221 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %215, <4 x half> %142, <4 x float> zeroinitializer), !dbg !241"
+    },
+    {
+      "line": 1208,
+      "text": "  %222 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %217, <4 x half> %142, <4 x float> zeroinitializer), !dbg !241"
+    },
+    {
+      "line": 1209,
+      "text": "  %223 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %219, <4 x half> %142, <4 x float> zeroinitializer), !dbg !241"
+    },
+    {
+      "line": 1227,
+      "text": "  %228 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %224, <4 x half> %158, <4 x float> %208), !dbg !241"
+    },
+    {
+      "line": 1228,
+      "text": "  %229 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %225, <4 x half> %158, <4 x float> %209), !dbg !241"
+    },
+    {
+      "line": 1229,
+      "text": "  %230 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %226, <4 x half> %158, <4 x float> %210), !dbg !241"
+    },
+    {
+      "line": 1230,
+      "text": "  %231 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %227, <4 x half> %158, <4 x float> %211), !dbg !241"
+    },
+    {
+      "line": 1239,
+      "text": "  %236 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %232, <4 x half> %158, <4 x float> %220), !dbg !241"
+    },
+    {
+      "line": 1240,
+      "text": "  %237 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %233, <4 x half> %158, <4 x float> %221), !dbg !241"
+    },
+    {
+      "line": 1241,
+      "text": "  %238 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %234, <4 x half> %158, <4 x float> %222), !dbg !241"
+    },
+    {
+      "line": 1242,
+      "text": "  %239 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %235, <4 x half> %158, <4 x float> %223), !dbg !241"
+    }
+  ],
+  "fullvalid_dynamic_model": "C6singlewarp32MMA source model; recordactualIRcall/loops, notruntimecount",
+  "alloca_opcode_lines": [],
+  "AS5_lines": [],
+  "mechanical_gate": true,
+  "actual_math_sync_lifetime_review": "PENDING leader review of actual CPP/IR currentC6 Num32/parentP8den/originalV16/key-plane-chunkmath; K/Vboundedbatch-row-keyplane i32defuse thenlateGEP64/allproducer-sync-output widths; nohoist/physreg assumption; no automaticnative",
+  "no_physical_liveness_occupancy_or_latency_claim": true,
+  "fullrefs": 0,
+  "index_arithmetic_events": [
+    {
+      "line": 185,
+      "text": "  %mul = shl nsw i32 %0, 10, !dbg !46"
+    },
+    {
+      "line": 187,
+      "text": "  %add = add nuw nsw i32 %mul, %1, !dbg !50"
+    },
+    {
+      "line": 188,
+      "text": "  %idxprom = zext nneg i32 %add to i64, !dbg !51"
+    },
+    {
+      "line": 189,
+      "text": "  %arrayidx = getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %idxprom, !dbg !51"
+    },
+    {
+      "line": 191,
+      "text": "  %mul7 = shl nsw i32 %2, 5, !dbg !52"
+    },
+    {
+      "line": 199,
+      "text": "  %.pre1949 = shl nuw nsw i32 %.pre, 6"
+    },
+    {
+      "line": 208,
+      "text": "  %.pre1958 = shl nuw nsw i32 %.pre1956, 3, !dbg !57"
+    },
+    {
+      "line": 209,
+      "text": "  %.pre1959 = shl nuw nsw i32 %.pre1957, 4, !dbg !57"
+    },
+    {
+      "line": 210,
+      "text": "  %.pre1960 = add nuw nsw i32 %.pre1951, 2, !dbg !58"
+    },
+    {
+      "line": 212,
+      "text": "  %.pre1962 = shl nuw nsw i32 %.pre1961, 4, !dbg !57"
+    },
+    {
+      "line": 213,
+      "text": "  %.pre1963 = add nuw nsw i32 %.pre1951, 4, !dbg !58"
+    },
+    {
+      "line": 215,
+      "text": "  %.pre1965 = shl nuw nsw i32 %.pre1964, 4, !dbg !57"
+    },
+    {
+      "line": 216,
+      "text": "  %.pre1966 = add nuw nsw i32 %.pre1951, 6, !dbg !58"
+    },
+    {
+      "line": 218,
+      "text": "  %.pre1968 = shl nuw nsw i32 %.pre1967, 4, !dbg !57"
+    },
+    {
+      "line": 220,
+      "text": "  %.pre1970 = shl nuw nsw i32 %.pre1956, 3, !dbg !57"
+    },
+    {
+      "line": 222,
+      "text": "  %.pre1972 = shl nuw nsw i32 %.pre, 7"
+    },
+    {
+      "line": 224,
+      "text": "  %.pre1975 = shl nuw nsw i32 %.pre, 2"
+    },
+    {
+      "line": 227,
+      "text": "  %.pre1979 = shl nsw i32 %0, 21"
+    },
+    {
+      "line": 228,
+      "text": "  %.pre1980 = shl nsw i32 %1, 11"
+    },
+    {
+      "line": 229,
+      "text": "  %.pre1981 = add nuw nsw i32 %.pre1979, %.pre1980"
+    },
+    {
+      "line": 230,
+      "text": "  %.pre1982 = shl nuw nsw i32 %.pre, 3"
+    },
+    {
+      "line": 231,
+      "text": "  %.pre1983 = add nuw nsw i32 %.pre1981, %.pre1982"
+    },
+    {
+      "line": 232,
+      "text": "  %.pre1984 = zext nneg i32 %.pre1983 to i64, !dbg !60"
+    },
+    {
+      "line": 234,
+      "text": "  %.pre1987 = shl nuw nsw i32 %.pre1986, 4, !dbg !61"
+    },
+    {
+      "line": 235,
+      "text": "  %.pre1988 = shl nuw nsw i32 %.pre1978, 3, !dbg !61"
+    },
+    {
+      "line": 236,
+      "text": "  %.pre1989 = shl nuw nsw i32 %.pre1978, 3, !dbg !61"
+    },
+    {
+      "line": 238,
+      "text": "  %.pre1991 = add nuw nsw i32 %.pre1953, 4"
+    },
+    {
+      "line": 240,
+      "text": "  %.pre1993 = shl nuw nsw i32 %.pre1992, 4, !dbg !61"
+    },
+    {
+      "line": 241,
+      "text": "  %.pre1994 = add nuw nsw i64 %.pre1984, 512, !dbg !62"
+    },
+    {
+      "line": 242,
+      "text": "  %.pre1996 = add nuw nsw i64 %.pre1984, 1024, !dbg !62"
+    },
+    {
+      "line": 243,
+      "text": "  %.pre1998 = add nuw nsw i64 %.pre1984, 1536, !dbg !62"
+    },
+    {
+      "line": 247,
+      "text": "  %mul13 = shl nsw i32 %0, 21"
+    },
+    {
+      "line": 248,
+      "text": "  %mul15 = shl nsw i32 %1, 11"
+    },
+    {
+      "line": 249,
+      "text": "  %add16 = add nuw nsw i32 %mul13, %mul15"
+    },
+    {
+      "line": 251,
+      "text": "  %mul20 = shl nuw nsw i32 %3, 3"
+    },
+    {
+      "line": 252,
+      "text": "  %add18 = add nuw nsw i32 %add16, %mul20"
+    },
+    {
+      "line": 253,
+      "text": "  %4 = shl nuw nsw i32 %3, 7"
+    },
+    {
+      "line": 255,
+      "text": "  %5 = shl nuw nsw i32 %3, 2"
+    },
+    {
+      "line": 261,
+      "text": "  %6 = zext nneg i32 %add18 to i64, !dbg !64"
+    },
+    {
+      "line": 262,
+      "text": "  %add.ptr = getelementptr inbounds %struct.__half, ptr addrspace(4) %Q.coerce, i64 %6, !dbg !65"
+    },
+    {
+      "line": 264,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr, i64 8, !dbg !66"
+    },
+    {
+      "line": 267,
+      "text": "  %7 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %mul37, !dbg !67"
+    },
+    {
+      "line": 268,
+      "text": "  %8 = getelementptr inbounds %struct.__half, ptr addrspace(3) %7, i32 %mul32, !dbg !67"
+    },
+    {
+      "line": 269,
+      "text": "  %.idx941 = shl nuw nsw i32 %xor, 4, !dbg !67"
+    },
+    {
+      "line": 270,
+      "text": "  %9 = getelementptr inbounds i8, ptr addrspace(3) %8, i32 %.idx941, !dbg !67"
+    },
+    {
+      "line": 271,
+      "text": "  %add.ptr57.idx = shl nuw nsw i32 %shr52, 3, !dbg !67"
+    },
+    {
+      "line": 272,
+      "text": "  %add.ptr57 = getelementptr inbounds i8, ptr addrspace(3) %9, i32 %add.ptr57.idx, !dbg !67"
+    },
+    {
+      "line": 274,
+      "text": "  %xor53.1 = shl nuw nsw i32 %shr52, 3, !dbg !67"
+    },
+    {
+      "line": 276,
+      "text": "  %add.ptr57.1 = getelementptr inbounds i8, ptr addrspace(3) %9, i32 %add.ptr57.idx.1, !dbg !67"
+    },
+    {
+      "line": 278,
+      "text": "  %10 = add nuw nsw i64 %6, 512, !dbg !69"
+    },
+    {
+      "line": 279,
+      "text": "  %add.ptr.1 = getelementptr inbounds %struct.__half, ptr addrspace(4) %Q.coerce, i64 %10, !dbg !65"
+    },
+    {
+      "line": 281,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr.1, i64 8, !dbg !66"
+    },
+    {
+      "line": 283,
+      "text": "  %add45.1 = add nuw nsw i32 %shr44, 4"
+    },
+    {
+      "line": 285,
+      "text": "  %11 = getelementptr inbounds i8, ptr addrspace(3) %8, i32 512, !dbg !67"
+    },
+    {
+      "line": 286,
+      "text": "  %.idx941.1958 = shl nuw nsw i32 %xor.1, 4, !dbg !67"
+    },
+    {
+      "line": 287,
+      "text": "  %12 = getelementptr inbounds i8, ptr addrspace(3) %11, i32 %.idx941.1958, !dbg !67"
+    },
+    {
+      "line": 288,
+      "text": "  %add.ptr57.1960 = getelementptr inbounds i8, ptr addrspace(3) %12, i32 %add.ptr57.idx, !dbg !67"
+    },
+    {
+      "line": 290,
+      "text": "  %add.ptr57.1.1 = getelementptr inbounds i8, ptr addrspace(3) %12, i32 %add.ptr57.idx.1, !dbg !67"
+    },
+    {
+      "line": 292,
+      "text": "  %13 = add nuw nsw i64 %6, 1024, !dbg !69"
+    },
+    {
+      "line": 293,
+      "text": "  %add.ptr.2 = getelementptr inbounds %struct.__half, ptr addrspace(4) %Q.coerce, i64 %13, !dbg !65"
+    },
+    {
+      "line": 295,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr.2.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr.2, i64 8, !dbg !66"
+    },
+    {
+      "line": 297,
+      "text": "  %14 = getelementptr inbounds i8, ptr addrspace(3) %8, i32 1024, !dbg !67"
+    },
+    {
+      "line": 298,
+      "text": "  %15 = getelementptr inbounds i8, ptr addrspace(3) %14, i32 %.idx941, !dbg !67"
+    },
+    {
+      "line": 299,
+      "text": "  %add.ptr57.2 = getelementptr inbounds i8, ptr addrspace(3) %15, i32 %add.ptr57.idx.1, !dbg !67"
+    },
+    {
+      "line": 301,
+      "text": "  %add.ptr57.1.2 = getelementptr inbounds i8, ptr addrspace(3) %15, i32 %add.ptr57.idx, !dbg !67"
+    },
+    {
+      "line": 303,
+      "text": "  %16 = add nuw nsw i64 %6, 1536, !dbg !69"
+    },
+    {
+      "line": 304,
+      "text": "  %add.ptr.3 = getelementptr inbounds %struct.__half, ptr addrspace(4) %Q.coerce, i64 %16, !dbg !65"
+    },
+    {
+      "line": 306,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr.3.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr.3, i64 8, !dbg !66"
+    },
+    {
+      "line": 308,
+      "text": "  %17 = getelementptr inbounds i8, ptr addrspace(3) %8, i32 1536, !dbg !67"
+    },
+    {
+      "line": 309,
+      "text": "  %18 = getelementptr inbounds i8, ptr addrspace(3) %17, i32 %.idx941.1958, !dbg !67"
+    },
+    {
+      "line": 310,
+      "text": "  %add.ptr57.3 = getelementptr inbounds i8, ptr addrspace(3) %18, i32 %add.ptr57.idx.1, !dbg !67"
+    },
+    {
+      "line": 312,
+      "text": "  %add.ptr57.1.3 = getelementptr inbounds i8, ptr addrspace(3) %18, i32 %add.ptr57.idx, !dbg !67"
+    },
+    {
+      "line": 317,
+      "text": "  %and68 = shl nuw nsw i32 %3, 6"
+    },
+    {
+      "line": 323,
+      "text": "  %19 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %mul69, !dbg !79"
+    },
+    {
+      "line": 324,
+      "text": "  %.idx942 = shl nuw nsw i32 %xor87, 3, !dbg !79"
+    },
+    {
+      "line": 325,
+      "text": "  %20 = getelementptr inbounds i8, ptr addrspace(3) %19, i32 %.idx942, !dbg !79"
+    },
+    {
+      "line": 326,
+      "text": "  %add.ptr93.idx = shl nuw nsw i32 %xor78, 4, !dbg !79"
+    },
+    {
+      "line": 327,
+      "text": "  %add.ptr93 = getelementptr inbounds i8, ptr addrspace(3) %20, i32 %add.ptr93.idx, !dbg !79"
+    },
+    {
+      "line": 329,
+      "text": "  %add75.1 = add nuw nsw i32 %shr74, 2, !dbg !81"
+    },
+    {
+      "line": 331,
+      "text": "  %add.ptr93.idx.1 = shl nuw nsw i32 %xor78.1, 4, !dbg !79"
+    },
+    {
+      "line": 332,
+      "text": "  %add.ptr93.1 = getelementptr inbounds i8, ptr addrspace(3) %20, i32 %add.ptr93.idx.1, !dbg !79"
+    },
+    {
+      "line": 334,
+      "text": "  %add75.2 = add nuw nsw i32 %shr74, 4, !dbg !81"
+    },
+    {
+      "line": 336,
+      "text": "  %add.ptr93.idx.2 = shl nuw nsw i32 %xor78.2, 4, !dbg !79"
+    },
+    {
+      "line": 337,
+      "text": "  %add.ptr93.2 = getelementptr inbounds i8, ptr addrspace(3) %20, i32 %add.ptr93.idx.2, !dbg !79"
+    },
+    {
+      "line": 339,
+      "text": "  %add75.3 = add nuw nsw i32 %shr74, 6, !dbg !81"
+    },
+    {
+      "line": 341,
+      "text": "  %add.ptr93.idx.3 = shl nuw nsw i32 %xor78.3, 4, !dbg !79"
+    },
+    {
+      "line": 342,
+      "text": "  %add.ptr93.3 = getelementptr inbounds i8, ptr addrspace(3) %20, i32 %add.ptr93.idx.3, !dbg !79"
+    },
+    {
+      "line": 345,
+      "text": "  %25 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add70.4, !dbg !79"
+    },
+    {
+      "line": 346,
+      "text": "  %xor89.4 = shl nuw nsw i32 %xor87, 3, !dbg !79"
+    },
+    {
+      "line": 348,
+      "text": "  %26 = getelementptr inbounds i8, ptr addrspace(3) %25, i32 %.idx942.4, !dbg !79"
+    },
+    {
+      "line": 349,
+      "text": "  %add.ptr93.4 = getelementptr inbounds i8, ptr addrspace(3) %26, i32 %add.ptr93.idx, !dbg !79"
+    },
+    {
+      "line": 351,
+      "text": "  %add.ptr93.5 = getelementptr inbounds i8, ptr addrspace(3) %26, i32 %add.ptr93.idx.1, !dbg !79"
+    },
+    {
+      "line": 353,
+      "text": "  %add.ptr93.6 = getelementptr inbounds i8, ptr addrspace(3) %26, i32 %add.ptr93.idx.2, !dbg !79"
+    },
+    {
+      "line": 355,
+      "text": "  %add.ptr93.7 = getelementptr inbounds i8, ptr addrspace(3) %26, i32 %add.ptr93.idx.3, !dbg !79"
+    },
+    {
+      "line": 360,
+      "text": "  %mul106 = shl nsw i32 %0, 17"
+    },
+    {
+      "line": 361,
+      "text": "  %cond.i.i = tail call noundef range(i32 0, 993) i32 @llvm.smin.i32(i32 %mul7, i32 992)"
+    },
+    {
+      "line": 362,
+      "text": "  %mul110 = shl nuw nsw i32 %cond.i.i, 7"
+    },
+    {
+      "line": 364,
+      "text": "  %add108 = add nuw nsw i32 %add111, %mul110"
+    },
+    {
+      "line": 366,
+      "text": "  %32 = zext nneg i32 %add108 to i64, !dbg !88"
+    },
+    {
+      "line": 367,
+      "text": "  %add.ptr116 = getelementptr inbounds %struct.__half, ptr addrspace(4) %K.coerce, i64 %32, !dbg !89"
+    },
+    {
+      "line": 369,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr116.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr116, i64 8, !dbg !90"
+    },
+    {
+      "line": 371,
+      "text": "  %33 = shl nuw nsw i32 %31, 9, !dbg !91"
+    },
+    {
+      "line": 372,
+      "text": "  %34 = getelementptr inbounds i8, ptr addrspace(3) @shared, i32 %33, !dbg !91"
+    },
+    {
+      "line": 373,
+      "text": "  %35 = getelementptr inbounds %struct.__half, ptr addrspace(3) %34, i32 %mul37, !dbg !91"
+    },
+    {
+      "line": 374,
+      "text": "  %36 = getelementptr inbounds i8, ptr addrspace(3) %35, i32 %.idx941, !dbg !91"
+    },
+    {
+      "line": 375,
+      "text": "  %add.ptr157 = getelementptr inbounds i8, ptr addrspace(3) %36, i32 %add.ptr57.idx, !dbg !91"
+    },
+    {
+      "line": 377,
+      "text": "  %add.ptr157.1 = getelementptr inbounds i8, ptr addrspace(3) %36, i32 %add.ptr57.idx.1, !dbg !91"
+    },
+    {
+      "line": 379,
+      "text": "  %37 = getelementptr inbounds %struct.__half, ptr addrspace(4) %K.coerce, i64 %32, !dbg !89"
+    },
+    {
+      "line": 380,
+      "text": "  %add.ptr116.1 = getelementptr inbounds i8, ptr addrspace(4) %37, i64 1024, !dbg !89"
+    },
+    {
+      "line": 382,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr116.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %37, i64 1032, !dbg !90"
+    },
+    {
+      "line": 384,
+      "text": "  %38 = shl nuw nsw i32 %31, 9, !dbg !91"
+    },
+    {
+      "line": 386,
+      "text": "  %40 = getelementptr inbounds i8, ptr addrspace(3) @shared, i32 %39, !dbg !91"
+    },
+    {
+      "line": 387,
+      "text": "  %41 = getelementptr inbounds %struct.__half, ptr addrspace(3) %40, i32 %mul37, !dbg !91"
+    },
+    {
+      "line": 388,
+      "text": "  %42 = getelementptr inbounds i8, ptr addrspace(3) %41, i32 %.idx941.1958, !dbg !91"
+    },
+    {
+      "line": 389,
+      "text": "  %add.ptr157.1969 = getelementptr inbounds i8, ptr addrspace(3) %42, i32 %add.ptr57.idx, !dbg !91"
+    },
+    {
+      "line": 391,
+      "text": "  %add.ptr157.1.1 = getelementptr inbounds i8, ptr addrspace(3) %42, i32 %add.ptr57.idx.1, !dbg !91"
+    },
+    {
+      "line": 393,
+      "text": "  %43 = getelementptr inbounds %struct.__half, ptr addrspace(4) %K.coerce, i64 %32, !dbg !89"
+    },
+    {
+      "line": 394,
+      "text": "  %add.ptr116.2 = getelementptr inbounds i8, ptr addrspace(4) %43, i64 2048, !dbg !89"
+    },
+    {
+      "line": 396,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr116.2.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %43, i64 2056, !dbg !90"
+    },
+    {
+      "line": 399,
+      "text": "  %44 = shl nuw nsw i32 %31, 9, !dbg !91"
+    },
+    {
+      "line": 401,
+      "text": "  %46 = getelementptr inbounds i8, ptr addrspace(3) @shared, i32 %45, !dbg !91"
+    },
+    {
+      "line": 402,
+      "text": "  %47 = getelementptr inbounds %struct.__half, ptr addrspace(3) %46, i32 %mul37, !dbg !91"
+    },
+    {
+      "line": 403,
+      "text": "  %48 = getelementptr inbounds i8, ptr addrspace(3) %47, i32 %.idx941, !dbg !91"
+    },
+    {
+      "line": 404,
+      "text": "  %49 = shl nuw nsw i32 %shr148867.2, 3, !dbg !91"
+    },
+    {
+      "line": 406,
+      "text": "  %add.ptr157.2 = getelementptr inbounds i8, ptr addrspace(3) %48, i32 %add.ptr157.idx.2, !dbg !91"
+    },
+    {
+      "line": 408,
+      "text": "  %add.ptr157.idx.1.2 = shl nuw nsw i32 %shr148867.2, 3, !dbg !91"
+    },
+    {
+      "line": 409,
+      "text": "  %add.ptr157.1.2 = getelementptr inbounds i8, ptr addrspace(3) %48, i32 %add.ptr157.idx.1.2, !dbg !91"
+    },
+    {
+      "line": 411,
+      "text": "  %50 = getelementptr inbounds %struct.__half, ptr addrspace(4) %K.coerce, i64 %32, !dbg !89"
+    },
+    {
+      "line": 412,
+      "text": "  %add.ptr116.3 = getelementptr inbounds i8, ptr addrspace(4) %50, i64 3072, !dbg !89"
+    },
+    {
+      "line": 414,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr116.3.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %50, i64 3080, !dbg !90"
+    },
+    {
+      "line": 416,
+      "text": "  %51 = shl nuw nsw i32 %31, 9, !dbg !91"
+    },
+    {
+      "line": 418,
+      "text": "  %53 = getelementptr inbounds i8, ptr addrspace(3) @shared, i32 %52, !dbg !91"
+    },
+    {
+      "line": 419,
+      "text": "  %54 = getelementptr inbounds %struct.__half, ptr addrspace(3) %53, i32 %mul37, !dbg !91"
+    },
+    {
+      "line": 420,
+      "text": "  %55 = getelementptr inbounds i8, ptr addrspace(3) %54, i32 %.idx941.1958, !dbg !91"
+    },
+    {
+      "line": 421,
+      "text": "  %add.ptr157.3 = getelementptr inbounds i8, ptr addrspace(3) %55, i32 %add.ptr157.idx.2, !dbg !91"
+    },
+    {
+      "line": 423,
+      "text": "  %add.ptr157.1.3 = getelementptr inbounds i8, ptr addrspace(3) %55, i32 %add.ptr157.idx.1.2, !dbg !91"
+    },
+    {
+      "line": 425,
+      "text": "  %56 = getelementptr inbounds %struct.__half, ptr addrspace(4) %K.coerce, i64 %32, !dbg !89"
+    },
+    {
+      "line": 426,
+      "text": "  %add.ptr116.4 = getelementptr inbounds i8, ptr addrspace(4) %56, i64 4096, !dbg !89"
+    },
+    {
+      "line": 428,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr116.4.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %56, i64 4104, !dbg !90"
+    },
+    {
+      "line": 431,
+      "text": "  %58 = shl nuw nsw i32 %31, 9, !dbg !91"
+    },
+    {
+      "line": 433,
+      "text": "  %60 = getelementptr inbounds i8, ptr addrspace(3) @shared, i32 %59, !dbg !91"
+    },
+    {
+      "line": 434,
+      "text": "  %61 = getelementptr inbounds %struct.__half, ptr addrspace(3) %60, i32 %mul37, !dbg !91"
+    },
+    {
+      "line": 435,
+      "text": "  %62 = getelementptr inbounds i8, ptr addrspace(3) %61, i32 %.idx941, !dbg !91"
+    },
+    {
+      "line": 436,
+      "text": "  %add.ptr157.idx.4 = shl nuw nsw i32 %57, 3, !dbg !91"
+    },
+    {
+      "line": 437,
+      "text": "  %add.ptr157.4 = getelementptr inbounds i8, ptr addrspace(3) %62, i32 %add.ptr157.idx.4, !dbg !91"
+    },
+    {
+      "line": 439,
+      "text": "  %xor153.1.4 = shl nuw nsw i32 %57, 3, !dbg !91"
+    },
+    {
+      "line": 441,
+      "text": "  %add.ptr157.1.4 = getelementptr inbounds i8, ptr addrspace(3) %62, i32 %add.ptr157.idx.1.4, !dbg !91"
+    },
+    {
+      "line": 443,
+      "text": "  %63 = getelementptr inbounds %struct.__half, ptr addrspace(4) %K.coerce, i64 %32, !dbg !89"
+    },
+    {
+      "line": 444,
+      "text": "  %add.ptr116.5 = getelementptr inbounds i8, ptr addrspace(4) %63, i64 5120, !dbg !89"
+    },
+    {
+      "line": 446,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr116.5.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %63, i64 5128, !dbg !90"
+    },
+    {
+      "line": 448,
+      "text": "  %64 = shl nuw nsw i32 %31, 9, !dbg !91"
+    },
+    {
+      "line": 450,
+      "text": "  %66 = getelementptr inbounds i8, ptr addrspace(3) @shared, i32 %65, !dbg !91"
+    },
+    {
+      "line": 451,
+      "text": "  %67 = getelementptr inbounds %struct.__half, ptr addrspace(3) %66, i32 %mul37, !dbg !91"
+    },
+    {
+      "line": 452,
+      "text": "  %68 = getelementptr inbounds i8, ptr addrspace(3) %67, i32 %.idx941.1958, !dbg !91"
+    },
+    {
+      "line": 453,
+      "text": "  %add.ptr157.5 = getelementptr inbounds i8, ptr addrspace(3) %68, i32 %add.ptr157.idx.4, !dbg !91"
+    },
+    {
+      "line": 455,
+      "text": "  %add.ptr157.1.5 = getelementptr inbounds i8, ptr addrspace(3) %68, i32 %add.ptr157.idx.1.4, !dbg !91"
+    },
+    {
+      "line": 457,
+      "text": "  %69 = getelementptr inbounds %struct.__half, ptr addrspace(4) %K.coerce, i64 %32, !dbg !89"
+    },
+    {
+      "line": 458,
+      "text": "  %add.ptr116.6 = getelementptr inbounds i8, ptr addrspace(4) %69, i64 6144, !dbg !89"
+    },
+    {
+      "line": 460,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr116.6.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %69, i64 6152, !dbg !90"
+    },
+    {
+      "line": 463,
+      "text": "  %70 = shl nuw nsw i32 %31, 9, !dbg !91"
+    },
+    {
+      "line": 465,
+      "text": "  %72 = getelementptr inbounds i8, ptr addrspace(3) @shared, i32 %71, !dbg !91"
+    },
+    {
+      "line": 466,
+      "text": "  %73 = getelementptr inbounds %struct.__half, ptr addrspace(3) %72, i32 %mul37, !dbg !91"
+    },
+    {
+      "line": 467,
+      "text": "  %74 = getelementptr inbounds i8, ptr addrspace(3) %73, i32 %.idx941, !dbg !91"
+    },
+    {
+      "line": 468,
+      "text": "  %75 = shl nuw nsw i32 %shr148867.6, 3, !dbg !91"
+    },
+    {
+      "line": 470,
+      "text": "  %add.ptr157.6 = getelementptr inbounds i8, ptr addrspace(3) %74, i32 %add.ptr157.idx.6, !dbg !91"
+    },
+    {
+      "line": 472,
+      "text": "  %add.ptr157.idx.1.6 = shl nuw nsw i32 %shr148867.6, 3, !dbg !91"
+    },
+    {
+      "line": 473,
+      "text": "  %add.ptr157.1.6 = getelementptr inbounds i8, ptr addrspace(3) %74, i32 %add.ptr157.idx.1.6, !dbg !91"
+    },
+    {
+      "line": 475,
+      "text": "  %76 = getelementptr inbounds %struct.__half, ptr addrspace(4) %K.coerce, i64 %32, !dbg !89"
+    },
+    {
+      "line": 476,
+      "text": "  %add.ptr116.7 = getelementptr inbounds i8, ptr addrspace(4) %76, i64 7168, !dbg !89"
+    },
+    {
+      "line": 478,
+      "text": "  %qk_fetch.sroa.26.0.add.ptr116.7.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %76, i64 7176, !dbg !90"
+    },
+    {
+      "line": 480,
+      "text": "  %77 = shl nuw nsw i32 %31, 9, !dbg !91"
+    },
+    {
+      "line": 482,
+      "text": "  %79 = getelementptr inbounds i8, ptr addrspace(3) @shared, i32 %78, !dbg !91"
+    },
+    {
+      "line": 483,
+      "text": "  %80 = getelementptr inbounds %struct.__half, ptr addrspace(3) %79, i32 %mul37, !dbg !91"
+    },
+    {
+      "line": 484,
+      "text": "  %81 = getelementptr inbounds i8, ptr addrspace(3) %80, i32 %.idx941.1958, !dbg !91"
+    },
+    {
+      "line": 485,
+      "text": "  %add.ptr157.7 = getelementptr inbounds i8, ptr addrspace(3) %81, i32 %add.ptr157.idx.6, !dbg !91"
+    },
+    {
+      "line": 487,
+      "text": "  %add.ptr157.1.7 = getelementptr inbounds i8, ptr addrspace(3) %81, i32 %add.ptr157.idx.1.6, !dbg !91"
+    },
+    {
+      "line": 494,
+      "text": "  %add.ptr214.1 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr93, i32 2048, !dbg !100"
+    },
+    {
+      "line": 499,
+      "text": "  %add.ptr214.1.1 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr93.1, i32 2048, !dbg !100"
+    },
+    {
+      "line": 504,
+      "text": "  %add.ptr214.1.2 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr93.2, i32 2048, !dbg !100"
+    },
+    {
+      "line": 509,
+      "text": "  %add.ptr214.1.3 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr93.3, i32 2048, !dbg !100"
+    },
+    {
+      "line": 513,
+      "text": "  %90 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add191.4, !dbg !100"
+    },
+    {
+      "line": 514,
+      "text": "  %91 = getelementptr inbounds i8, ptr addrspace(3) %90, i32 %.idx942.4, !dbg !100"
+    },
+    {
+      "line": 515,
+      "text": "  %92 = getelementptr inbounds i8, ptr addrspace(3) %91, i32 %add.ptr93.idx, !dbg !100"
+    },
+    {
+      "line": 518,
+      "text": "  %add.ptr214.1.4 = getelementptr inbounds i8, ptr addrspace(3) %92, i32 2048, !dbg !100"
+    },
+    {
+      "line": 521,
+      "text": "  %95 = getelementptr inbounds i8, ptr addrspace(3) %91, i32 %add.ptr93.idx.1, !dbg !100"
+    },
+    {
+      "line": 524,
+      "text": "  %add.ptr214.1.5 = getelementptr inbounds i8, ptr addrspace(3) %95, i32 2048, !dbg !100"
+    },
+    {
+      "line": 527,
+      "text": "  %98 = getelementptr inbounds i8, ptr addrspace(3) %91, i32 %add.ptr93.idx.2, !dbg !100"
+    },
+    {
+      "line": 530,
+      "text": "  %add.ptr214.1.6 = getelementptr inbounds i8, ptr addrspace(3) %98, i32 2048, !dbg !100"
+    },
+    {
+      "line": 533,
+      "text": "  %101 = getelementptr inbounds i8, ptr addrspace(3) %91, i32 %add.ptr93.idx.3, !dbg !100"
+    },
+    {
+      "line": 536,
+      "text": "  %add.ptr214.1.7 = getelementptr inbounds i8, ptr addrspace(3) %101, i32 2048, !dbg !100"
+    },
+    {
+      "line": 541,
+      "text": "  %add246 = add nuw nsw i32 %mul7, %mul245"
+    },
+    {
+      "line": 556,
+      "text": "  %add247.1 = add nuw nsw i32 %add246, 16"
+    },
+    {
+      "line": 560,
+      "text": "  %add248.1.1 = add nuw nsw i32 %add246, 17, !dbg !103"
+    },
+    {
+      "line": 564,
+      "text": "  %add248.2.1 = add nuw nsw i32 %add246, 18, !dbg !103"
+    },
+    {
+      "line": 568,
+      "text": "  %add248.3.1 = add nuw nsw i32 %add246, 19, !dbg !103"
+    },
+    {
+      "line": 585,
+      "text": "  %and.i.i = add nsw i32 %116, 64, !dbg !118"
+    },
+    {
+      "line": 588,
+      "text": "  %shl.i.i = shl i32 %cond.i.i869, 2, !dbg !121"
+    },
+    {
+      "line": 597,
+      "text": "  %and.i.i871 = add nsw i32 %123, 64, !dbg !133"
+    },
+    {
+      "line": 600,
+      "text": "  %shl.i.i874 = shl i32 %cond.i.i873, 2, !dbg !136"
+    },
+    {
+      "line": 608,
+      "text": "  %mul319 = fmul contract float %sub, 0x3FC0527DC0000000, !dbg !145"
+    },
+    {
+      "line": 609,
+      "text": "  %mul323 = fmul contract float %sub308, 0x3FC0527DC0000000, !dbg !146"
+    },
+    {
+      "line": 610,
+      "text": "  %mul327 = fmul contract float %sub311, 0x3FC0527DC0000000, !dbg !147"
+    },
+    {
+      "line": 611,
+      "text": "  %mul331 = fmul contract float %sub314, 0x3FC0527DC0000000, !dbg !148"
+    },
+    {
+      "line": 612,
+      "text": "  %add336 = fadd contract float %mul319, 8.000000e+00, !dbg !149"
+    },
+    {
+      "line": 613,
+      "text": "  %add340 = fadd contract float %mul323, 8.000000e+00, !dbg !150"
+    },
+    {
+      "line": 614,
+      "text": "  %add344 = fadd contract float %mul327, 8.000000e+00, !dbg !151"
+    },
+    {
+      "line": 615,
+      "text": "  %add348 = fadd contract float %mul331, 8.000000e+00, !dbg !152"
+    },
+    {
+      "line": 618,
+      "text": "  %add.i.i = fadd contract float %add336, %cond.i.i875, !dbg !153"
+    },
+    {
+      "line": 621,
+      "text": "  %mul.i.i = fmul contract float %cond2.i.i, %127, !dbg !153"
+    },
+    {
+      "line": 624,
+      "text": "  %add.i.i878 = fadd contract float %add340, %cond.i.i877, !dbg !156"
+    },
+    {
+      "line": 627,
+      "text": "  %mul.i.i880 = fmul contract float %cond2.i.i879, %128, !dbg !156"
+    },
+    {
+      "line": 630,
+      "text": "  %add.i.i883 = fadd contract float %add344, %cond.i.i882, !dbg !158"
+    },
+    {
+      "line": 633,
+      "text": "  %mul.i.i885 = fmul contract float %cond2.i.i884, %129, !dbg !158"
+    },
+    {
+      "line": 636,
+      "text": "  %add.i.i888 = fadd contract float %add348, %cond.i.i887, !dbg !160"
+    },
+    {
+      "line": 639,
+      "text": "  %mul.i.i890 = fmul contract float %cond2.i.i889, %130, !dbg !160"
+    },
+    {
+      "line": 664,
+      "text": "  %mul319.1 = fmul contract float %sub.1, 0x3FC0527DC0000000, !dbg !145"
+    },
+    {
+      "line": 665,
+      "text": "  %mul323.1 = fmul contract float %sub308.1, 0x3FC0527DC0000000, !dbg !146"
+    },
+    {
+      "line": 666,
+      "text": "  %mul327.1 = fmul contract float %sub311.1, 0x3FC0527DC0000000, !dbg !147"
+    },
+    {
+      "line": 667,
+      "text": "  %mul331.1 = fmul contract float %sub314.1, 0x3FC0527DC0000000, !dbg !148"
+    },
+    {
+      "line": 668,
+      "text": "  %add336.1 = fadd contract float %mul319.1, 8.000000e+00, !dbg !149"
+    },
+    {
+      "line": 669,
+      "text": "  %add340.1 = fadd contract float %mul323.1, 8.000000e+00, !dbg !150"
+    },
+    {
+      "line": 670,
+      "text": "  %add344.1 = fadd contract float %mul327.1, 8.000000e+00, !dbg !151"
+    },
+    {
+      "line": 671,
+      "text": "  %add348.1 = fadd contract float %mul331.1, 8.000000e+00, !dbg !152"
+    },
+    {
+      "line": 674,
+      "text": "  %add.i.i.1 = fadd contract float %add336.1, %cond.i.i875.1, !dbg !153"
+    },
+    {
+      "line": 677,
+      "text": "  %mul.i.i.1 = fmul contract float %cond2.i.i.1, %143, !dbg !153"
+    },
+    {
+      "line": 680,
+      "text": "  %add.i.i878.1 = fadd contract float %add340.1, %cond.i.i877.1, !dbg !156"
+    },
+    {
+      "line": 683,
+      "text": "  %mul.i.i880.1 = fmul contract float %cond2.i.i879.1, %144, !dbg !156"
+    },
+    {
+      "line": 686,
+      "text": "  %add.i.i883.1 = fadd contract float %add344.1, %cond.i.i882.1, !dbg !158"
+    },
+    {
+      "line": 689,
+      "text": "  %mul.i.i885.1 = fmul contract float %cond2.i.i884.1, %145, !dbg !158"
+    },
+    {
+      "line": 692,
+      "text": "  %add.i.i888.1 = fadd contract float %add348.1, %cond.i.i887.1, !dbg !160"
+    },
+    {
+      "line": 695,
+      "text": "  %mul.i.i890.1 = fmul contract float %cond2.i.i889.1, %146, !dbg !160"
+    },
+    {
+      "line": 717,
+      "text": "  %add386 = fadd contract float %conv.i.i, 0.000000e+00, !dbg !194"
+    },
+    {
+      "line": 719,
+      "text": "  %add386.1 = fadd contract float %add386, %conv.i.i.1, !dbg !194"
+    },
+    {
+      "line": 721,
+      "text": "  %add386.2 = fadd contract float %add386.1, %conv.i.i.2, !dbg !194"
+    },
+    {
+      "line": 723,
+      "text": "  %add386.3 = fadd contract float %add386.2, %conv.i.i.3, !dbg !194"
+    },
+    {
+      "line": 725,
+      "text": "  %add386.4 = fadd contract float %add386.3, %conv.i.i.4, !dbg !194"
+    },
+    {
+      "line": 727,
+      "text": "  %add386.5 = fadd contract float %add386.4, %conv.i.i.5, !dbg !194"
+    },
+    {
+      "line": 729,
+      "text": "  %add386.6 = fadd contract float %add386.5, %conv.i.i.6, !dbg !194"
+    },
+    {
+      "line": 731,
+      "text": "  %add386.7 = fadd contract float %add386.6, %conv.i.i.7, !dbg !194"
+    },
+    {
+      "line": 737,
+      "text": "  %and.i.i893 = add nsw i32 %162, 64, !dbg !202"
+    },
+    {
+      "line": 740,
+      "text": "  %shl.i.i896 = shl i32 %cond.i.i895, 2, !dbg !205"
+    },
+    {
+      "line": 743,
+      "text": "  %add394 = fadd contract float %add386.7, %164, !dbg !208"
+    },
+    {
+      "line": 749,
+      "text": "  %and.i.i898 = add nsw i32 %168, 64, !dbg !216"
+    },
+    {
+      "line": 752,
+      "text": "  %shl.i.i901 = shl i32 %cond.i.i900, 2, !dbg !219"
+    },
+    {
+      "line": 758,
+      "text": "  %171 = shl nuw nsw i32 %3, 5"
+    },
+    {
+      "line": 763,
+      "text": "  %add423 = add nuw nsw i32 %add420, %mul110"
+    },
+    {
+      "line": 766,
+      "text": "  %add472 = add nuw nsw i32 %mul470, %shr74"
+    },
+    {
+      "line": 771,
+      "text": "  %173 = zext nneg i32 %add423 to i64, !dbg !227"
+    },
+    {
+      "line": 773,
+      "text": "  %add.ptr433 = getelementptr inbounds %struct.__half, ptr addrspace(4) %V.coerce, i64 %173, !dbg !228"
+    },
+    {
+      "line": 775,
+      "text": "  %v_fetch.sroa.10.0.add.ptr433.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433, i64 2, !dbg !229"
+    },
+    {
+      "line": 777,
+      "text": "  %v_fetch.sroa.14.0.add.ptr433.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433, i64 4, !dbg !229"
+    },
+    {
+      "line": 779,
+      "text": "  %v_fetch.sroa.18.0.add.ptr433.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433, i64 6, !dbg !229"
+    },
+    {
+      "line": 781,
+      "text": "  %v_fetch.sroa.22.0.add.ptr433.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433, i64 8, !dbg !229"
+    },
+    {
+      "line": 783,
+      "text": "  %v_fetch.sroa.26.0.add.ptr433.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433, i64 10, !dbg !229"
+    },
+    {
+      "line": 785,
+      "text": "  %v_fetch.sroa.30.0.add.ptr433.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433, i64 12, !dbg !229"
+    },
+    {
+      "line": 787,
+      "text": "  %v_fetch.sroa.34.0.add.ptr433.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433, i64 14, !dbg !229"
+    },
+    {
+      "line": 790,
+      "text": "  %add.ptr433.1 = getelementptr inbounds %struct.__half, ptr addrspace(4) %V.coerce, i64 %175, !dbg !228"
+    },
+    {
+      "line": 792,
+      "text": "  %v_fetch.sroa.46.16.add.ptr433.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1, i64 2, !dbg !229"
+    },
+    {
+      "line": 794,
+      "text": "  %v_fetch.sroa.50.16.add.ptr433.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1, i64 4, !dbg !229"
+    },
+    {
+      "line": 796,
+      "text": "  %v_fetch.sroa.54.16.add.ptr433.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1, i64 6, !dbg !229"
+    },
+    {
+      "line": 798,
+      "text": "  %v_fetch.sroa.58.16.add.ptr433.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1, i64 8, !dbg !229"
+    },
+    {
+      "line": 800,
+      "text": "  %v_fetch.sroa.62.16.add.ptr433.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1, i64 10, !dbg !229"
+    },
+    {
+      "line": 802,
+      "text": "  %v_fetch.sroa.66.16.add.ptr433.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1, i64 12, !dbg !229"
+    },
+    {
+      "line": 804,
+      "text": "  %v_fetch.sroa.70.16.add.ptr433.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1, i64 14, !dbg !229"
+    },
+    {
+      "line": 806,
+      "text": "  %176 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add462, !dbg !231"
+    },
+    {
+      "line": 807,
+      "text": "  %add.ptr489.idx = shl nuw nsw i32 %174, 3, !dbg !231"
+    },
+    {
+      "line": 808,
+      "text": "  %add.ptr489 = getelementptr inbounds i8, ptr addrspace(3) %176, i32 %add.ptr489.idx, !dbg !231"
+    },
+    {
+      "line": 809,
+      "text": "  %v_column.sroa.66.0.insert.ext = zext i16 %v_fetch.sroa.38.16.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 810,
+      "text": "  %v_column.sroa.66.0.insert.shift = shl nuw i32 %v_column.sroa.66.0.insert.ext, 16, !dbg !232"
+    },
+    {
+      "line": 811,
+      "text": "  %v_column.sroa.0.0.insert.ext = zext i16 %v_fetch.sroa.0.0.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 814,
+      "text": "  %177 = getelementptr inbounds i8, ptr addrspace(3) %176, i32 512, !dbg !231"
+    },
+    {
+      "line": 815,
+      "text": "  %xor480.1 = shl nuw nsw i32 %174, 3, !dbg !231"
+    },
+    {
+      "line": 817,
+      "text": "  %add.ptr489.1 = getelementptr inbounds i8, ptr addrspace(3) %177, i32 %add.ptr489.idx.1, !dbg !231"
+    },
+    {
+      "line": 818,
+      "text": "  %v_column.sroa.66.0.insert.ext1331 = zext i16 %v_fetch.sroa.46.16.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 819,
+      "text": "  %v_column.sroa.66.0.insert.shift1332 = shl nuw i32 %v_column.sroa.66.0.insert.ext1331, 16, !dbg !232"
+    },
+    {
+      "line": 820,
+      "text": "  %v_column.sroa.0.0.insert.ext1207 = zext i16 %v_fetch.sroa.10.0.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 823,
+      "text": "  %178 = getelementptr inbounds i8, ptr addrspace(3) %176, i32 1024, !dbg !231"
+    },
+    {
+      "line": 824,
+      "text": "  %xor480.2 = shl nuw nsw i32 %174, 3, !dbg !231"
+    },
+    {
+      "line": 826,
+      "text": "  %add.ptr489.2 = getelementptr inbounds i8, ptr addrspace(3) %178, i32 %add.ptr489.idx.2, !dbg !231"
+    },
+    {
+      "line": 827,
+      "text": "  %v_column.sroa.66.0.insert.ext1336 = zext i16 %v_fetch.sroa.50.16.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 828,
+      "text": "  %v_column.sroa.66.0.insert.shift1337 = shl nuw i32 %v_column.sroa.66.0.insert.ext1336, 16, !dbg !232"
+    },
+    {
+      "line": 829,
+      "text": "  %v_column.sroa.0.0.insert.ext1211 = zext i16 %v_fetch.sroa.14.0.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 832,
+      "text": "  %179 = getelementptr inbounds i8, ptr addrspace(3) %176, i32 1536, !dbg !231"
+    },
+    {
+      "line": 833,
+      "text": "  %xor480.3 = shl nuw nsw i32 %174, 3, !dbg !231"
+    },
+    {
+      "line": 835,
+      "text": "  %add.ptr489.3 = getelementptr inbounds i8, ptr addrspace(3) %179, i32 %add.ptr489.idx.3, !dbg !231"
+    },
+    {
+      "line": 836,
+      "text": "  %v_column.sroa.66.0.insert.ext1341 = zext i16 %v_fetch.sroa.54.16.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 837,
+      "text": "  %v_column.sroa.66.0.insert.shift1342 = shl nuw i32 %v_column.sroa.66.0.insert.ext1341, 16, !dbg !232"
+    },
+    {
+      "line": 838,
+      "text": "  %v_column.sroa.0.0.insert.ext1215 = zext i16 %v_fetch.sroa.18.0.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 841,
+      "text": "  %180 = getelementptr inbounds i8, ptr addrspace(3) %176, i32 2048, !dbg !231"
+    },
+    {
+      "line": 842,
+      "text": "  %xor480.4 = shl nuw nsw i32 %174, 3, !dbg !231"
+    },
+    {
+      "line": 844,
+      "text": "  %add.ptr489.4 = getelementptr inbounds i8, ptr addrspace(3) %180, i32 %add.ptr489.idx.4, !dbg !231"
+    },
+    {
+      "line": 845,
+      "text": "  %v_column.sroa.66.0.insert.ext1346 = zext i16 %v_fetch.sroa.58.16.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 846,
+      "text": "  %v_column.sroa.66.0.insert.shift1347 = shl nuw i32 %v_column.sroa.66.0.insert.ext1346, 16, !dbg !232"
+    },
+    {
+      "line": 847,
+      "text": "  %v_column.sroa.0.0.insert.ext1219 = zext i16 %v_fetch.sroa.22.0.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 850,
+      "text": "  %181 = getelementptr inbounds i8, ptr addrspace(3) %176, i32 2560, !dbg !231"
+    },
+    {
+      "line": 851,
+      "text": "  %xor480.5 = shl nuw nsw i32 %174, 3, !dbg !231"
+    },
+    {
+      "line": 853,
+      "text": "  %add.ptr489.5 = getelementptr inbounds i8, ptr addrspace(3) %181, i32 %add.ptr489.idx.5, !dbg !231"
+    },
+    {
+      "line": 854,
+      "text": "  %v_column.sroa.66.0.insert.ext1351 = zext i16 %v_fetch.sroa.62.16.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 855,
+      "text": "  %v_column.sroa.66.0.insert.shift1352 = shl nuw i32 %v_column.sroa.66.0.insert.ext1351, 16, !dbg !232"
+    },
+    {
+      "line": 856,
+      "text": "  %v_column.sroa.0.0.insert.ext1223 = zext i16 %v_fetch.sroa.26.0.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 859,
+      "text": "  %182 = getelementptr inbounds i8, ptr addrspace(3) %176, i32 3072, !dbg !231"
+    },
+    {
+      "line": 860,
+      "text": "  %xor480.6 = shl nuw nsw i32 %174, 3, !dbg !231"
+    },
+    {
+      "line": 862,
+      "text": "  %add.ptr489.6 = getelementptr inbounds i8, ptr addrspace(3) %182, i32 %add.ptr489.idx.6, !dbg !231"
+    },
+    {
+      "line": 863,
+      "text": "  %v_column.sroa.66.0.insert.ext1356 = zext i16 %v_fetch.sroa.66.16.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 864,
+      "text": "  %v_column.sroa.66.0.insert.shift1357 = shl nuw i32 %v_column.sroa.66.0.insert.ext1356, 16, !dbg !232"
+    },
+    {
+      "line": 865,
+      "text": "  %v_column.sroa.0.0.insert.ext1227 = zext i16 %v_fetch.sroa.30.0.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 868,
+      "text": "  %183 = getelementptr inbounds i8, ptr addrspace(3) %176, i32 3584, !dbg !231"
+    },
+    {
+      "line": 869,
+      "text": "  %xor480.7 = shl nuw nsw i32 %174, 3, !dbg !231"
+    },
+    {
+      "line": 871,
+      "text": "  %add.ptr489.7 = getelementptr inbounds i8, ptr addrspace(3) %183, i32 %add.ptr489.idx.7, !dbg !231"
+    },
+    {
+      "line": 872,
+      "text": "  %v_column.sroa.66.0.insert.ext1361 = zext i16 %v_fetch.sroa.70.16.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 873,
+      "text": "  %v_column.sroa.66.0.insert.shift1362 = shl nuw i32 %v_column.sroa.66.0.insert.ext1361, 16, !dbg !232"
+    },
+    {
+      "line": 874,
+      "text": "  %v_column.sroa.0.0.insert.ext1231 = zext i16 %v_fetch.sroa.34.0.copyload to i32, !dbg !232"
+    },
+    {
+      "line": 878,
+      "text": "  %add.ptr433.1989 = getelementptr inbounds %struct.__half, ptr addrspace(4) %V.coerce, i64 %184, !dbg !228"
+    },
+    {
+      "line": 880,
+      "text": "  %v_fetch.sroa.10.0.add.ptr433.1989.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1989, i64 2, !dbg !229"
+    },
+    {
+      "line": 882,
+      "text": "  %v_fetch.sroa.14.0.add.ptr433.1989.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1989, i64 4, !dbg !229"
+    },
+    {
+      "line": 884,
+      "text": "  %v_fetch.sroa.18.0.add.ptr433.1989.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1989, i64 6, !dbg !229"
+    },
+    {
+      "line": 886,
+      "text": "  %v_fetch.sroa.22.0.add.ptr433.1989.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1989, i64 8, !dbg !229"
+    },
+    {
+      "line": 888,
+      "text": "  %v_fetch.sroa.26.0.add.ptr433.1989.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1989, i64 10, !dbg !229"
+    },
+    {
+      "line": 890,
+      "text": "  %v_fetch.sroa.30.0.add.ptr433.1989.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1989, i64 12, !dbg !229"
+    },
+    {
+      "line": 892,
+      "text": "  %v_fetch.sroa.34.0.add.ptr433.1989.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1989, i64 14, !dbg !229"
+    },
+    {
+      "line": 895,
+      "text": "  %add.ptr433.1.1 = getelementptr inbounds %struct.__half, ptr addrspace(4) %V.coerce, i64 %185, !dbg !228"
+    },
+    {
+      "line": 897,
+      "text": "  %v_fetch.sroa.46.16.add.ptr433.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1.1, i64 2, !dbg !229"
+    },
+    {
+      "line": 899,
+      "text": "  %v_fetch.sroa.50.16.add.ptr433.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1.1, i64 4, !dbg !229"
+    },
+    {
+      "line": 901,
+      "text": "  %v_fetch.sroa.54.16.add.ptr433.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1.1, i64 6, !dbg !229"
+    },
+    {
+      "line": 903,
+      "text": "  %v_fetch.sroa.58.16.add.ptr433.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1.1, i64 8, !dbg !229"
+    },
+    {
+      "line": 905,
+      "text": "  %v_fetch.sroa.62.16.add.ptr433.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1.1, i64 10, !dbg !229"
+    },
+    {
+      "line": 907,
+      "text": "  %v_fetch.sroa.66.16.add.ptr433.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1.1, i64 12, !dbg !229"
+    },
+    {
+      "line": 909,
+      "text": "  %v_fetch.sroa.70.16.add.ptr433.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %add.ptr433.1.1, i64 14, !dbg !229"
+    },
+    {
+      "line": 912,
+      "text": "  %187 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %186, !dbg !231"
+    },
+    {
+      "line": 913,
+      "text": "  %add.ptr489.1993 = getelementptr inbounds i8, ptr addrspace(3) %187, i32 %add.ptr489.idx, !dbg !231"
+    },
+    {
+      "line": 914,
+      "text": "  %v_column.sroa.66.0.insert.ext1366 = zext i16 %v_fetch.sroa.38.16.copyload1536 to i32, !dbg !232"
+    },
+    {
+      "line": 915,
+      "text": "  %v_column.sroa.66.0.insert.shift1367 = shl nuw i32 %v_column.sroa.66.0.insert.ext1366, 16, !dbg !232"
+    },
+    {
+      "line": 916,
+      "text": "  %v_column.sroa.0.0.insert.ext1235 = zext i16 %v_fetch.sroa.0.0.copyload1488 to i32, !dbg !232"
+    },
+    {
+      "line": 919,
+      "text": "  %188 = getelementptr inbounds i8, ptr addrspace(3) %187, i32 512, !dbg !231"
+    },
+    {
+      "line": 920,
+      "text": "  %add.ptr489.1.1 = getelementptr inbounds i8, ptr addrspace(3) %188, i32 %add.ptr489.idx.1, !dbg !231"
+    },
+    {
+      "line": 921,
+      "text": "  %v_column.sroa.66.0.insert.ext1371 = zext i16 %v_fetch.sroa.46.16.copyload1539 to i32, !dbg !232"
+    },
+    {
+      "line": 922,
+      "text": "  %v_column.sroa.66.0.insert.shift1372 = shl nuw i32 %v_column.sroa.66.0.insert.ext1371, 16, !dbg !232"
+    },
+    {
+      "line": 923,
+      "text": "  %v_column.sroa.0.0.insert.ext1239 = zext i16 %v_fetch.sroa.10.0.copyload1491 to i32, !dbg !232"
+    },
+    {
+      "line": 926,
+      "text": "  %189 = getelementptr inbounds i8, ptr addrspace(3) %187, i32 1024, !dbg !231"
+    },
+    {
+      "line": 927,
+      "text": "  %add.ptr489.2.1 = getelementptr inbounds i8, ptr addrspace(3) %189, i32 %add.ptr489.idx.2, !dbg !231"
+    },
+    {
+      "line": 928,
+      "text": "  %v_column.sroa.66.0.insert.ext1376 = zext i16 %v_fetch.sroa.50.16.copyload1545 to i32, !dbg !232"
+    },
+    {
+      "line": 929,
+      "text": "  %v_column.sroa.66.0.insert.shift1377 = shl nuw i32 %v_column.sroa.66.0.insert.ext1376, 16, !dbg !232"
+    },
+    {
+      "line": 930,
+      "text": "  %v_column.sroa.0.0.insert.ext1243 = zext i16 %v_fetch.sroa.14.0.copyload1497 to i32, !dbg !232"
+    },
+    {
+      "line": 933,
+      "text": "  %190 = getelementptr inbounds i8, ptr addrspace(3) %187, i32 1536, !dbg !231"
+    },
+    {
+      "line": 934,
+      "text": "  %add.ptr489.3.1 = getelementptr inbounds i8, ptr addrspace(3) %190, i32 %add.ptr489.idx.3, !dbg !231"
+    },
+    {
+      "line": 935,
+      "text": "  %v_column.sroa.66.0.insert.ext1381 = zext i16 %v_fetch.sroa.54.16.copyload1551 to i32, !dbg !232"
+    },
+    {
+      "line": 936,
+      "text": "  %v_column.sroa.66.0.insert.shift1382 = shl nuw i32 %v_column.sroa.66.0.insert.ext1381, 16, !dbg !232"
+    },
+    {
+      "line": 937,
+      "text": "  %v_column.sroa.0.0.insert.ext1247 = zext i16 %v_fetch.sroa.18.0.copyload1503 to i32, !dbg !232"
+    },
+    {
+      "line": 940,
+      "text": "  %191 = getelementptr inbounds i8, ptr addrspace(3) %187, i32 2048, !dbg !231"
+    },
+    {
+      "line": 941,
+      "text": "  %add.ptr489.4.1 = getelementptr inbounds i8, ptr addrspace(3) %191, i32 %add.ptr489.idx.4, !dbg !231"
+    },
+    {
+      "line": 942,
+      "text": "  %v_column.sroa.66.0.insert.ext1386 = zext i16 %v_fetch.sroa.58.16.copyload1557 to i32, !dbg !232"
+    },
+    {
+      "line": 943,
+      "text": "  %v_column.sroa.66.0.insert.shift1387 = shl nuw i32 %v_column.sroa.66.0.insert.ext1386, 16, !dbg !232"
+    },
+    {
+      "line": 944,
+      "text": "  %v_column.sroa.0.0.insert.ext1251 = zext i16 %v_fetch.sroa.22.0.copyload1509 to i32, !dbg !232"
+    },
+    {
+      "line": 947,
+      "text": "  %192 = getelementptr inbounds i8, ptr addrspace(3) %187, i32 2560, !dbg !231"
+    },
+    {
+      "line": 948,
+      "text": "  %add.ptr489.5.1 = getelementptr inbounds i8, ptr addrspace(3) %192, i32 %add.ptr489.idx.5, !dbg !231"
+    },
+    {
+      "line": 949,
+      "text": "  %v_column.sroa.66.0.insert.ext1391 = zext i16 %v_fetch.sroa.62.16.copyload1563 to i32, !dbg !232"
+    },
+    {
+      "line": 950,
+      "text": "  %v_column.sroa.66.0.insert.shift1392 = shl nuw i32 %v_column.sroa.66.0.insert.ext1391, 16, !dbg !232"
+    },
+    {
+      "line": 951,
+      "text": "  %v_column.sroa.0.0.insert.ext1255 = zext i16 %v_fetch.sroa.26.0.copyload1515 to i32, !dbg !232"
+    },
+    {
+      "line": 954,
+      "text": "  %193 = getelementptr inbounds i8, ptr addrspace(3) %187, i32 3072, !dbg !231"
+    },
+    {
+      "line": 955,
+      "text": "  %add.ptr489.6.1 = getelementptr inbounds i8, ptr addrspace(3) %193, i32 %add.ptr489.idx.6, !dbg !231"
+    },
+    {
+      "line": 956,
+      "text": "  %v_column.sroa.66.0.insert.ext1396 = zext i16 %v_fetch.sroa.66.16.copyload1569 to i32, !dbg !232"
+    },
+    {
+      "line": 957,
+      "text": "  %v_column.sroa.66.0.insert.shift1397 = shl nuw i32 %v_column.sroa.66.0.insert.ext1396, 16, !dbg !232"
+    },
+    {
+      "line": 958,
+      "text": "  %v_column.sroa.0.0.insert.ext1259 = zext i16 %v_fetch.sroa.30.0.copyload1521 to i32, !dbg !232"
+    },
+    {
+      "line": 961,
+      "text": "  %194 = getelementptr inbounds i8, ptr addrspace(3) %187, i32 3584, !dbg !231"
+    },
+    {
+      "line": 962,
+      "text": "  %add.ptr489.7.1 = getelementptr inbounds i8, ptr addrspace(3) %194, i32 %add.ptr489.idx.7, !dbg !231"
+    },
+    {
+      "line": 963,
+      "text": "  %v_column.sroa.66.0.insert.ext1401 = zext i16 %v_fetch.sroa.70.16.copyload1575 to i32, !dbg !232"
+    },
+    {
+      "line": 964,
+      "text": "  %v_column.sroa.66.0.insert.shift1402 = shl nuw i32 %v_column.sroa.66.0.insert.ext1401, 16, !dbg !232"
+    },
+    {
+      "line": 965,
+      "text": "  %v_column.sroa.0.0.insert.ext1263 = zext i16 %v_fetch.sroa.34.0.copyload1527 to i32, !dbg !232"
+    },
+    {
+      "line": 968,
+      "text": "  %narrow = add nuw nsw i32 %add472, 2"
+    },
+    {
+      "line": 970,
+      "text": "  %196 = getelementptr inbounds %struct.__half, ptr addrspace(4) %V.coerce, i64 %173, !dbg !228"
+    },
+    {
+      "line": 971,
+      "text": "  %add.ptr433.11000 = getelementptr inbounds i8, ptr addrspace(4) %196, i64 4096, !dbg !228"
+    },
+    {
+      "line": 973,
+      "text": "  %v_fetch.sroa.10.0.add.ptr433.11000.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %196, i64 4098, !dbg !229"
+    },
+    {
+      "line": 975,
+      "text": "  %v_fetch.sroa.14.0.add.ptr433.11000.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %196, i64 4100, !dbg !229"
+    },
+    {
+      "line": 977,
+      "text": "  %v_fetch.sroa.18.0.add.ptr433.11000.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %196, i64 4102, !dbg !229"
+    },
+    {
+      "line": 979,
+      "text": "  %v_fetch.sroa.22.0.add.ptr433.11000.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %196, i64 4104, !dbg !229"
+    },
+    {
+      "line": 981,
+      "text": "  %v_fetch.sroa.26.0.add.ptr433.11000.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %196, i64 4106, !dbg !229"
+    },
+    {
+      "line": 983,
+      "text": "  %v_fetch.sroa.30.0.add.ptr433.11000.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %196, i64 4108, !dbg !229"
+    },
+    {
+      "line": 985,
+      "text": "  %v_fetch.sroa.34.0.add.ptr433.11000.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %196, i64 4110, !dbg !229"
+    },
+    {
+      "line": 987,
+      "text": "  %197 = getelementptr inbounds %struct.__half, ptr addrspace(4) %V.coerce, i64 %173, !dbg !228"
+    },
+    {
+      "line": 988,
+      "text": "  %add.ptr433.1.11001 = getelementptr inbounds i8, ptr addrspace(4) %197, i64 4352, !dbg !228"
+    },
+    {
+      "line": 990,
+      "text": "  %v_fetch.sroa.46.16.add.ptr433.1.11001.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %197, i64 4354, !dbg !229"
+    },
+    {
+      "line": 992,
+      "text": "  %v_fetch.sroa.50.16.add.ptr433.1.11001.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %197, i64 4356, !dbg !229"
+    },
+    {
+      "line": 994,
+      "text": "  %v_fetch.sroa.54.16.add.ptr433.1.11001.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %197, i64 4358, !dbg !229"
+    },
+    {
+      "line": 996,
+      "text": "  %v_fetch.sroa.58.16.add.ptr433.1.11001.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %197, i64 4360, !dbg !229"
+    },
+    {
+      "line": 998,
+      "text": "  %v_fetch.sroa.62.16.add.ptr433.1.11001.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %197, i64 4362, !dbg !229"
+    },
+    {
+      "line": 1000,
+      "text": "  %v_fetch.sroa.66.16.add.ptr433.1.11001.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %197, i64 4364, !dbg !229"
+    },
+    {
+      "line": 1002,
+      "text": "  %v_fetch.sroa.70.16.add.ptr433.1.11001.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %197, i64 4366, !dbg !229"
+    },
+    {
+      "line": 1004,
+      "text": "  %add.ptr489.idx.11007 = shl nuw nsw i32 %195, 3, !dbg !231"
+    },
+    {
+      "line": 1005,
+      "text": "  %add.ptr489.11008 = getelementptr inbounds i8, ptr addrspace(3) %176, i32 %add.ptr489.idx.11007, !dbg !231"
+    },
+    {
+      "line": 1006,
+      "text": "  %v_column.sroa.66.0.insert.ext1406 = zext i16 %v_fetch.sroa.38.16.copyload1537 to i32, !dbg !232"
+    },
+    {
+      "line": 1007,
+      "text": "  %v_column.sroa.66.0.insert.shift1407 = shl nuw i32 %v_column.sroa.66.0.insert.ext1406, 16, !dbg !232"
+    },
+    {
+      "line": 1008,
+      "text": "  %v_column.sroa.0.0.insert.ext1267 = zext i16 %v_fetch.sroa.0.0.copyload1489 to i32, !dbg !232"
+    },
+    {
+      "line": 1011,
+      "text": "  %xor480.1.11013 = shl nuw nsw i32 %195, 3, !dbg !231"
+    },
+    {
+      "line": 1013,
+      "text": "  %add.ptr489.1.11015 = getelementptr inbounds i8, ptr addrspace(3) %177, i32 %add.ptr489.idx.1.11014, !dbg !231"
+    },
+    {
+      "line": 1014,
+      "text": "  %v_column.sroa.66.0.insert.ext1411 = zext i16 %v_fetch.sroa.46.16.copyload1540 to i32, !dbg !232"
+    },
+    {
+      "line": 1015,
+      "text": "  %v_column.sroa.66.0.insert.shift1412 = shl nuw i32 %v_column.sroa.66.0.insert.ext1411, 16, !dbg !232"
+    },
+    {
+      "line": 1016,
+      "text": "  %v_column.sroa.0.0.insert.ext1271 = zext i16 %v_fetch.sroa.10.0.copyload1492 to i32, !dbg !232"
+    },
+    {
+      "line": 1019,
+      "text": "  %xor480.2.11020 = shl nuw nsw i32 %195, 3, !dbg !231"
+    },
+    {
+      "line": 1021,
+      "text": "  %add.ptr489.2.11022 = getelementptr inbounds i8, ptr addrspace(3) %178, i32 %add.ptr489.idx.2.11021, !dbg !231"
+    },
+    {
+      "line": 1022,
+      "text": "  %v_column.sroa.66.0.insert.ext1416 = zext i16 %v_fetch.sroa.50.16.copyload1546 to i32, !dbg !232"
+    },
+    {
+      "line": 1023,
+      "text": "  %v_column.sroa.66.0.insert.shift1417 = shl nuw i32 %v_column.sroa.66.0.insert.ext1416, 16, !dbg !232"
+    },
+    {
+      "line": 1024,
+      "text": "  %v_column.sroa.0.0.insert.ext1275 = zext i16 %v_fetch.sroa.14.0.copyload1498 to i32, !dbg !232"
+    },
+    {
+      "line": 1027,
+      "text": "  %xor480.3.11027 = shl nuw nsw i32 %195, 3, !dbg !231"
+    },
+    {
+      "line": 1029,
+      "text": "  %add.ptr489.3.11029 = getelementptr inbounds i8, ptr addrspace(3) %179, i32 %add.ptr489.idx.3.11028, !dbg !231"
+    },
+    {
+      "line": 1030,
+      "text": "  %v_column.sroa.66.0.insert.ext1421 = zext i16 %v_fetch.sroa.54.16.copyload1552 to i32, !dbg !232"
+    },
+    {
+      "line": 1031,
+      "text": "  %v_column.sroa.66.0.insert.shift1422 = shl nuw i32 %v_column.sroa.66.0.insert.ext1421, 16, !dbg !232"
+    },
+    {
+      "line": 1032,
+      "text": "  %v_column.sroa.0.0.insert.ext1279 = zext i16 %v_fetch.sroa.18.0.copyload1504 to i32, !dbg !232"
+    },
+    {
+      "line": 1035,
+      "text": "  %xor480.4.11034 = shl nuw nsw i32 %195, 3, !dbg !231"
+    },
+    {
+      "line": 1037,
+      "text": "  %add.ptr489.4.11036 = getelementptr inbounds i8, ptr addrspace(3) %180, i32 %add.ptr489.idx.4.11035, !dbg !231"
+    },
+    {
+      "line": 1038,
+      "text": "  %v_column.sroa.66.0.insert.ext1426 = zext i16 %v_fetch.sroa.58.16.copyload1558 to i32, !dbg !232"
+    },
+    {
+      "line": 1039,
+      "text": "  %v_column.sroa.66.0.insert.shift1427 = shl nuw i32 %v_column.sroa.66.0.insert.ext1426, 16, !dbg !232"
+    },
+    {
+      "line": 1040,
+      "text": "  %v_column.sroa.0.0.insert.ext1283 = zext i16 %v_fetch.sroa.22.0.copyload1510 to i32, !dbg !232"
+    },
+    {
+      "line": 1043,
+      "text": "  %xor480.5.11041 = shl nuw nsw i32 %195, 3, !dbg !231"
+    },
+    {
+      "line": 1045,
+      "text": "  %add.ptr489.5.11043 = getelementptr inbounds i8, ptr addrspace(3) %181, i32 %add.ptr489.idx.5.11042, !dbg !231"
+    },
+    {
+      "line": 1046,
+      "text": "  %v_column.sroa.66.0.insert.ext1431 = zext i16 %v_fetch.sroa.62.16.copyload1564 to i32, !dbg !232"
+    },
+    {
+      "line": 1047,
+      "text": "  %v_column.sroa.66.0.insert.shift1432 = shl nuw i32 %v_column.sroa.66.0.insert.ext1431, 16, !dbg !232"
+    },
+    {
+      "line": 1048,
+      "text": "  %v_column.sroa.0.0.insert.ext1287 = zext i16 %v_fetch.sroa.26.0.copyload1516 to i32, !dbg !232"
+    },
+    {
+      "line": 1051,
+      "text": "  %xor480.6.11048 = shl nuw nsw i32 %195, 3, !dbg !231"
+    },
+    {
+      "line": 1053,
+      "text": "  %add.ptr489.6.11050 = getelementptr inbounds i8, ptr addrspace(3) %182, i32 %add.ptr489.idx.6.11049, !dbg !231"
+    },
+    {
+      "line": 1054,
+      "text": "  %v_column.sroa.66.0.insert.ext1436 = zext i16 %v_fetch.sroa.66.16.copyload1570 to i32, !dbg !232"
+    },
+    {
+      "line": 1055,
+      "text": "  %v_column.sroa.66.0.insert.shift1437 = shl nuw i32 %v_column.sroa.66.0.insert.ext1436, 16, !dbg !232"
+    },
+    {
+      "line": 1056,
+      "text": "  %v_column.sroa.0.0.insert.ext1291 = zext i16 %v_fetch.sroa.30.0.copyload1522 to i32, !dbg !232"
+    },
+    {
+      "line": 1059,
+      "text": "  %xor480.7.11055 = shl nuw nsw i32 %195, 3, !dbg !231"
+    },
+    {
+      "line": 1061,
+      "text": "  %add.ptr489.7.11057 = getelementptr inbounds i8, ptr addrspace(3) %183, i32 %add.ptr489.idx.7.11056, !dbg !231"
+    },
+    {
+      "line": 1062,
+      "text": "  %v_column.sroa.66.0.insert.ext1441 = zext i16 %v_fetch.sroa.70.16.copyload1576 to i32, !dbg !232"
+    },
+    {
+      "line": 1063,
+      "text": "  %v_column.sroa.66.0.insert.shift1442 = shl nuw i32 %v_column.sroa.66.0.insert.ext1441, 16, !dbg !232"
+    },
+    {
+      "line": 1064,
+      "text": "  %v_column.sroa.0.0.insert.ext1295 = zext i16 %v_fetch.sroa.34.0.copyload1528 to i32, !dbg !232"
+    },
+    {
+      "line": 1067,
+      "text": "  %198 = getelementptr inbounds %struct.__half, ptr addrspace(4) %V.coerce, i64 %173, !dbg !228"
+    },
+    {
+      "line": 1068,
+      "text": "  %add.ptr433.1989.1 = getelementptr inbounds i8, ptr addrspace(4) %198, i64 4224, !dbg !228"
+    },
+    {
+      "line": 1070,
+      "text": "  %v_fetch.sroa.10.0.add.ptr433.1989.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %198, i64 4226, !dbg !229"
+    },
+    {
+      "line": 1072,
+      "text": "  %v_fetch.sroa.14.0.add.ptr433.1989.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %198, i64 4228, !dbg !229"
+    },
+    {
+      "line": 1074,
+      "text": "  %v_fetch.sroa.18.0.add.ptr433.1989.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %198, i64 4230, !dbg !229"
+    },
+    {
+      "line": 1076,
+      "text": "  %v_fetch.sroa.22.0.add.ptr433.1989.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %198, i64 4232, !dbg !229"
+    },
+    {
+      "line": 1078,
+      "text": "  %v_fetch.sroa.26.0.add.ptr433.1989.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %198, i64 4234, !dbg !229"
+    },
+    {
+      "line": 1080,
+      "text": "  %v_fetch.sroa.30.0.add.ptr433.1989.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %198, i64 4236, !dbg !229"
+    },
+    {
+      "line": 1082,
+      "text": "  %v_fetch.sroa.34.0.add.ptr433.1989.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %198, i64 4238, !dbg !229"
+    },
+    {
+      "line": 1084,
+      "text": "  %199 = getelementptr inbounds %struct.__half, ptr addrspace(4) %V.coerce, i64 %173, !dbg !228"
+    },
+    {
+      "line": 1085,
+      "text": "  %add.ptr433.1.1.1 = getelementptr inbounds i8, ptr addrspace(4) %199, i64 4480, !dbg !228"
+    },
+    {
+      "line": 1087,
+      "text": "  %v_fetch.sroa.46.16.add.ptr433.1.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %199, i64 4482, !dbg !229"
+    },
+    {
+      "line": 1089,
+      "text": "  %v_fetch.sroa.50.16.add.ptr433.1.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %199, i64 4484, !dbg !229"
+    },
+    {
+      "line": 1091,
+      "text": "  %v_fetch.sroa.54.16.add.ptr433.1.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %199, i64 4486, !dbg !229"
+    },
+    {
+      "line": 1093,
+      "text": "  %v_fetch.sroa.58.16.add.ptr433.1.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %199, i64 4488, !dbg !229"
+    },
+    {
+      "line": 1095,
+      "text": "  %v_fetch.sroa.62.16.add.ptr433.1.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %199, i64 4490, !dbg !229"
+    },
+    {
+      "line": 1097,
+      "text": "  %v_fetch.sroa.66.16.add.ptr433.1.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %199, i64 4492, !dbg !229"
+    },
+    {
+      "line": 1099,
+      "text": "  %v_fetch.sroa.70.16.add.ptr433.1.1.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %199, i64 4494, !dbg !229"
+    },
+    {
+      "line": 1101,
+      "text": "  %add.ptr489.1993.1 = getelementptr inbounds i8, ptr addrspace(3) %187, i32 %add.ptr489.idx.11007, !dbg !231"
+    },
+    {
+      "line": 1102,
+      "text": "  %v_column.sroa.66.0.insert.ext1446 = zext i16 %v_fetch.sroa.38.16.copyload1538 to i32, !dbg !232"
+    },
+    {
+      "line": 1103,
+      "text": "  %v_column.sroa.66.0.insert.shift1447 = shl nuw i32 %v_column.sroa.66.0.insert.ext1446, 16, !dbg !232"
+    },
+    {
+      "line": 1104,
+      "text": "  %v_column.sroa.0.0.insert.ext1299 = zext i16 %v_fetch.sroa.0.0.copyload1490 to i32, !dbg !232"
+    },
+    {
+      "line": 1107,
+      "text": "  %add.ptr489.1.1.1 = getelementptr inbounds i8, ptr addrspace(3) %188, i32 %add.ptr489.idx.1.11014, !dbg !231"
+    },
+    {
+      "line": 1108,
+      "text": "  %v_column.sroa.66.0.insert.ext1451 = zext i16 %v_fetch.sroa.46.16.copyload1541 to i32, !dbg !232"
+    },
+    {
+      "line": 1109,
+      "text": "  %v_column.sroa.66.0.insert.shift1452 = shl nuw i32 %v_column.sroa.66.0.insert.ext1451, 16, !dbg !232"
+    },
+    {
+      "line": 1110,
+      "text": "  %v_column.sroa.0.0.insert.ext1303 = zext i16 %v_fetch.sroa.10.0.copyload1493 to i32, !dbg !232"
+    },
+    {
+      "line": 1113,
+      "text": "  %add.ptr489.2.1.1 = getelementptr inbounds i8, ptr addrspace(3) %189, i32 %add.ptr489.idx.2.11021, !dbg !231"
+    },
+    {
+      "line": 1114,
+      "text": "  %v_column.sroa.66.0.insert.ext1456 = zext i16 %v_fetch.sroa.50.16.copyload1547 to i32, !dbg !232"
+    },
+    {
+      "line": 1115,
+      "text": "  %v_column.sroa.66.0.insert.shift1457 = shl nuw i32 %v_column.sroa.66.0.insert.ext1456, 16, !dbg !232"
+    },
+    {
+      "line": 1116,
+      "text": "  %v_column.sroa.0.0.insert.ext1307 = zext i16 %v_fetch.sroa.14.0.copyload1499 to i32, !dbg !232"
+    },
+    {
+      "line": 1119,
+      "text": "  %add.ptr489.3.1.1 = getelementptr inbounds i8, ptr addrspace(3) %190, i32 %add.ptr489.idx.3.11028, !dbg !231"
+    },
+    {
+      "line": 1120,
+      "text": "  %v_column.sroa.66.0.insert.ext1461 = zext i16 %v_fetch.sroa.54.16.copyload1553 to i32, !dbg !232"
+    },
+    {
+      "line": 1121,
+      "text": "  %v_column.sroa.66.0.insert.shift1462 = shl nuw i32 %v_column.sroa.66.0.insert.ext1461, 16, !dbg !232"
+    },
+    {
+      "line": 1122,
+      "text": "  %v_column.sroa.0.0.insert.ext1311 = zext i16 %v_fetch.sroa.18.0.copyload1505 to i32, !dbg !232"
+    },
+    {
+      "line": 1125,
+      "text": "  %add.ptr489.4.1.1 = getelementptr inbounds i8, ptr addrspace(3) %191, i32 %add.ptr489.idx.4.11035, !dbg !231"
+    },
+    {
+      "line": 1126,
+      "text": "  %v_column.sroa.66.0.insert.ext1466 = zext i16 %v_fetch.sroa.58.16.copyload1559 to i32, !dbg !232"
+    },
+    {
+      "line": 1127,
+      "text": "  %v_column.sroa.66.0.insert.shift1467 = shl nuw i32 %v_column.sroa.66.0.insert.ext1466, 16, !dbg !232"
+    },
+    {
+      "line": 1128,
+      "text": "  %v_column.sroa.0.0.insert.ext1315 = zext i16 %v_fetch.sroa.22.0.copyload1511 to i32, !dbg !232"
+    },
+    {
+      "line": 1131,
+      "text": "  %add.ptr489.5.1.1 = getelementptr inbounds i8, ptr addrspace(3) %192, i32 %add.ptr489.idx.5.11042, !dbg !231"
+    },
+    {
+      "line": 1132,
+      "text": "  %v_column.sroa.66.0.insert.ext1471 = zext i16 %v_fetch.sroa.62.16.copyload1565 to i32, !dbg !232"
+    },
+    {
+      "line": 1133,
+      "text": "  %v_column.sroa.66.0.insert.shift1472 = shl nuw i32 %v_column.sroa.66.0.insert.ext1471, 16, !dbg !232"
+    },
+    {
+      "line": 1134,
+      "text": "  %v_column.sroa.0.0.insert.ext1319 = zext i16 %v_fetch.sroa.26.0.copyload1517 to i32, !dbg !232"
+    },
+    {
+      "line": 1137,
+      "text": "  %add.ptr489.6.1.1 = getelementptr inbounds i8, ptr addrspace(3) %193, i32 %add.ptr489.idx.6.11049, !dbg !231"
+    },
+    {
+      "line": 1138,
+      "text": "  %v_column.sroa.66.0.insert.ext1476 = zext i16 %v_fetch.sroa.66.16.copyload1571 to i32, !dbg !232"
+    },
+    {
+      "line": 1139,
+      "text": "  %v_column.sroa.66.0.insert.shift1477 = shl nuw i32 %v_column.sroa.66.0.insert.ext1476, 16, !dbg !232"
+    },
+    {
+      "line": 1140,
+      "text": "  %v_column.sroa.0.0.insert.ext1323 = zext i16 %v_fetch.sroa.30.0.copyload1523 to i32, !dbg !232"
+    },
+    {
+      "line": 1143,
+      "text": "  %add.ptr489.7.1.1 = getelementptr inbounds i8, ptr addrspace(3) %194, i32 %add.ptr489.idx.7.11056, !dbg !231"
+    },
+    {
+      "line": 1144,
+      "text": "  %v_column.sroa.66.0.insert.ext1481 = zext i16 %v_fetch.sroa.70.16.copyload1577 to i32, !dbg !232"
+    },
+    {
+      "line": 1145,
+      "text": "  %v_column.sroa.66.0.insert.shift1482 = shl nuw i32 %v_column.sroa.66.0.insert.ext1481, 16, !dbg !232"
+    },
+    {
+      "line": 1146,
+      "text": "  %v_column.sroa.0.0.insert.ext1327 = zext i16 %v_fetch.sroa.34.0.copyload1529 to i32, !dbg !232"
+    },
+    {
+      "line": 1152,
+      "text": "  %and526 = shl nuw nsw i32 %3, 8"
+    },
+    {
+      "line": 1157,
+      "text": "  %200 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add535, !dbg !239"
+    },
+    {
+      "line": 1158,
+      "text": "  %add.ptr552.idx = shl nuw nsw i32 %xor547, 3, !dbg !239"
+    },
+    {
+      "line": 1159,
+      "text": "  %add.ptr552 = getelementptr inbounds i8, ptr addrspace(3) %200, i32 %add.ptr552.idx, !dbg !239"
+    },
+    {
+      "line": 1163,
+      "text": "  %202 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add535.1, !dbg !239"
+    },
+    {
+      "line": 1164,
+      "text": "  %xor548.1 = shl nuw nsw i32 %xor547, 3, !dbg !239"
+    },
+    {
+      "line": 1166,
+      "text": "  %add.ptr552.1 = getelementptr inbounds i8, ptr addrspace(3) %202, i32 %add.ptr552.idx.1, !dbg !239"
+    },
+    {
+      "line": 1170,
+      "text": "  %204 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add535.2, !dbg !239"
+    },
+    {
+      "line": 1171,
+      "text": "  %xor548.2 = shl nuw nsw i32 %xor547, 3, !dbg !239"
+    },
+    {
+      "line": 1173,
+      "text": "  %add.ptr552.2 = getelementptr inbounds i8, ptr addrspace(3) %204, i32 %add.ptr552.idx.2, !dbg !239"
+    },
+    {
+      "line": 1177,
+      "text": "  %206 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add535.3, !dbg !239"
+    },
+    {
+      "line": 1178,
+      "text": "  %xor548.3 = shl nuw nsw i32 %xor547, 3, !dbg !239"
+    },
+    {
+      "line": 1180,
+      "text": "  %add.ptr552.3 = getelementptr inbounds i8, ptr addrspace(3) %206, i32 %add.ptr552.idx.3, !dbg !239"
+    },
+    {
+      "line": 1188,
+      "text": "  %212 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add535.11059, !dbg !239"
+    },
+    {
+      "line": 1189,
+      "text": "  %add.ptr552.11061 = getelementptr inbounds i8, ptr addrspace(3) %212, i32 %add.ptr552.idx, !dbg !239"
+    },
+    {
+      "line": 1193,
+      "text": "  %214 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add535.1.1, !dbg !239"
+    },
+    {
+      "line": 1194,
+      "text": "  %add.ptr552.1.1 = getelementptr inbounds i8, ptr addrspace(3) %214, i32 %add.ptr552.idx.1, !dbg !239"
+    },
+    {
+      "line": 1198,
+      "text": "  %216 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add535.2.1, !dbg !239"
+    },
+    {
+      "line": 1199,
+      "text": "  %add.ptr552.2.1 = getelementptr inbounds i8, ptr addrspace(3) %216, i32 %add.ptr552.idx.2, !dbg !239"
+    },
+    {
+      "line": 1203,
+      "text": "  %218 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add535.3.1, !dbg !239"
+    },
+    {
+      "line": 1204,
+      "text": "  %add.ptr552.3.1 = getelementptr inbounds i8, ptr addrspace(3) %218, i32 %add.ptr552.idx.3, !dbg !239"
+    },
+    {
+      "line": 1210,
+      "text": "  %add544.1 = add nuw nsw i32 %add472, 2"
+    },
+    {
+      "line": 1212,
+      "text": "  %add.ptr552.idx.11065 = shl nuw nsw i32 %xor547.1, 3, !dbg !239"
+    },
+    {
+      "line": 1213,
+      "text": "  %add.ptr552.11066 = getelementptr inbounds i8, ptr addrspace(3) %200, i32 %add.ptr552.idx.11065, !dbg !239"
+    },
+    {
+      "line": 1215,
+      "text": "  %xor548.1.11069 = shl nuw nsw i32 %xor547.1, 3, !dbg !239"
+    },
+    {
+      "line": 1217,
+      "text": "  %add.ptr552.1.11071 = getelementptr inbounds i8, ptr addrspace(3) %202, i32 %add.ptr552.idx.1.11070, !dbg !239"
+    },
+    {
+      "line": 1219,
+      "text": "  %xor548.2.11075 = shl nuw nsw i32 %xor547.1, 3, !dbg !239"
+    },
+    {
+      "line": 1221,
+      "text": "  %add.ptr552.2.11077 = getelementptr inbounds i8, ptr addrspace(3) %204, i32 %add.ptr552.idx.2.11076, !dbg !239"
+    },
+    {
+      "line": 1223,
+      "text": "  %xor548.3.11081 = shl nuw nsw i32 %xor547.1, 3, !dbg !239"
+    },
+    {
+      "line": 1225,
+      "text": "  %add.ptr552.3.11083 = getelementptr inbounds i8, ptr addrspace(3) %206, i32 %add.ptr552.idx.3.11082, !dbg !239"
+    },
+    {
+      "line": 1231,
+      "text": "  %add.ptr552.11061.1 = getelementptr inbounds i8, ptr addrspace(3) %212, i32 %add.ptr552.idx.11065, !dbg !239"
+    },
+    {
+      "line": 1233,
+      "text": "  %add.ptr552.1.1.1 = getelementptr inbounds i8, ptr addrspace(3) %214, i32 %add.ptr552.idx.1.11070, !dbg !239"
+    },
+    {
+      "line": 1235,
+      "text": "  %add.ptr552.2.1.1 = getelementptr inbounds i8, ptr addrspace(3) %216, i32 %add.ptr552.idx.2.11076, !dbg !239"
+    },
+    {
+      "line": 1237,
+      "text": "  %add.ptr552.3.1.1 = getelementptr inbounds i8, ptr addrspace(3) %218, i32 %add.ptr552.idx.3.11082, !dbg !239"
+    },
+    {
+      "line": 1243,
+      "text": "  %add399 = fadd contract float %add394, %170, !dbg !242"
+    },
+    {
+      "line": 1345,
+      "text": "  %240 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %mul640.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1346,
+      "text": "  %241 = getelementptr inbounds i8, ptr addrspace(3) %240, i32 %.idx948.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1347,
+      "text": "  %add.ptr664 = getelementptr inbounds i8, ptr addrspace(3) %241, i32 %add.ptr664.idx.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1349,
+      "text": "  %add.ptr664.sroa_idx = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664, i32 2, !dbg !256"
+    },
+    {
+      "line": 1351,
+      "text": "  %add.ptr664.sroa_idx1113 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664, i32 4, !dbg !256"
+    },
+    {
+      "line": 1353,
+      "text": "  %add.ptr664.sroa_idx1114 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664, i32 6, !dbg !256"
+    },
+    {
+      "line": 1359,
+      "text": "  %add.ptr664.1 = getelementptr inbounds i8, ptr addrspace(3) %241, i32 %add.ptr664.idx.1.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1361,
+      "text": "  %add.ptr664.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.1, i32 2, !dbg !256"
+    },
+    {
+      "line": 1363,
+      "text": "  %add.ptr664.1.sroa_idx1118 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.1, i32 4, !dbg !256"
+    },
+    {
+      "line": 1365,
+      "text": "  %add.ptr664.1.sroa_idx1119 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.1, i32 6, !dbg !256"
+    },
+    {
+      "line": 1371,
+      "text": "  %add.ptr664.2 = getelementptr inbounds i8, ptr addrspace(3) %241, i32 %add.ptr664.idx.2.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1373,
+      "text": "  %add.ptr664.2.sroa_idx = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.2, i32 2, !dbg !256"
+    },
+    {
+      "line": 1375,
+      "text": "  %add.ptr664.2.sroa_idx1123 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.2, i32 4, !dbg !256"
+    },
+    {
+      "line": 1377,
+      "text": "  %add.ptr664.2.sroa_idx1124 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.2, i32 6, !dbg !256"
+    },
+    {
+      "line": 1383,
+      "text": "  %add.ptr664.3 = getelementptr inbounds i8, ptr addrspace(3) %241, i32 %add.ptr664.idx.3.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1385,
+      "text": "  %add.ptr664.3.sroa_idx = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.3, i32 2, !dbg !256"
+    },
+    {
+      "line": 1387,
+      "text": "  %add.ptr664.3.sroa_idx1128 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.3, i32 4, !dbg !256"
+    },
+    {
+      "line": 1389,
+      "text": "  %add.ptr664.3.sroa_idx1129 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.3, i32 6, !dbg !256"
+    },
+    {
+      "line": 1395,
+      "text": "  %242 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %add641.4.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1396,
+      "text": "  %243 = getelementptr inbounds i8, ptr addrspace(3) %242, i32 %.idx948.4.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1397,
+      "text": "  %add.ptr664.4 = getelementptr inbounds i8, ptr addrspace(3) %243, i32 %add.ptr664.idx.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1399,
+      "text": "  %add.ptr664.4.sroa_idx = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.4, i32 2, !dbg !256"
+    },
+    {
+      "line": 1401,
+      "text": "  %add.ptr664.4.sroa_idx1133 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.4, i32 4, !dbg !256"
+    },
+    {
+      "line": 1403,
+      "text": "  %add.ptr664.4.sroa_idx1134 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.4, i32 6, !dbg !256"
+    },
+    {
+      "line": 1409,
+      "text": "  %add.ptr664.5 = getelementptr inbounds i8, ptr addrspace(3) %243, i32 %add.ptr664.idx.1.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1411,
+      "text": "  %add.ptr664.5.sroa_idx = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.5, i32 2, !dbg !256"
+    },
+    {
+      "line": 1413,
+      "text": "  %add.ptr664.5.sroa_idx1138 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.5, i32 4, !dbg !256"
+    },
+    {
+      "line": 1415,
+      "text": "  %add.ptr664.5.sroa_idx1139 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.5, i32 6, !dbg !256"
+    },
+    {
+      "line": 1421,
+      "text": "  %add.ptr664.6 = getelementptr inbounds i8, ptr addrspace(3) %243, i32 %add.ptr664.idx.2.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1423,
+      "text": "  %add.ptr664.6.sroa_idx = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.6, i32 2, !dbg !256"
+    },
+    {
+      "line": 1425,
+      "text": "  %add.ptr664.6.sroa_idx1143 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.6, i32 4, !dbg !256"
+    },
+    {
+      "line": 1427,
+      "text": "  %add.ptr664.6.sroa_idx1144 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.6, i32 6, !dbg !256"
+    },
+    {
+      "line": 1433,
+      "text": "  %add.ptr664.7 = getelementptr inbounds i8, ptr addrspace(3) %243, i32 %add.ptr664.idx.3.pre-phi, !dbg !57"
+    },
+    {
+      "line": 1435,
+      "text": "  %add.ptr664.7.sroa_idx = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.7, i32 2, !dbg !256"
+    },
+    {
+      "line": 1437,
+      "text": "  %add.ptr664.7.sroa_idx1148 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.7, i32 4, !dbg !256"
+    },
+    {
+      "line": 1439,
+      "text": "  %add.ptr664.7.sroa_idx1149 = getelementptr inbounds i8, ptr addrspace(3) %add.ptr664.7, i32 6, !dbg !256"
+    },
+    {
+      "line": 1444,
+      "text": "  %244 = getelementptr inbounds %struct.__half, ptr addrspace(3) @shared, i32 %mul684.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1445,
+      "text": "  %245 = getelementptr inbounds %struct.__half, ptr addrspace(3) %244, i32 %mul679.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1446,
+      "text": "  %246 = getelementptr inbounds i8, ptr addrspace(3) %245, i32 %.idx950.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1447,
+      "text": "  %add.ptr705 = getelementptr inbounds i8, ptr addrspace(3) %246, i32 %add.ptr705.idx.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1449,
+      "text": "  %add.ptr705.1 = getelementptr inbounds i8, ptr addrspace(3) %246, i32 %add.ptr705.idx.1.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1451,
+      "text": "  %add.ptr726 = getelementptr inbounds %struct.__half, ptr addrspace(1) %Output.coerce, i64 %.pre-phi1985, !dbg !263"
+    },
+    {
+      "line": 1453,
+      "text": "  %output_fetch.sroa.10.0.add.ptr726.sroa_idx = getelementptr inbounds i8, ptr addrspace(1) %add.ptr726, i64 8, !dbg !264"
+    },
+    {
+      "line": 1455,
+      "text": "  %249 = getelementptr inbounds i8, ptr addrspace(3) %245, i32 512, !dbg !61"
+    },
+    {
+      "line": 1456,
+      "text": "  %250 = getelementptr inbounds i8, ptr addrspace(3) %249, i32 %.idx950.11102.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1457,
+      "text": "  %add.ptr705.11104 = getelementptr inbounds i8, ptr addrspace(3) %250, i32 %add.ptr705.idx.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1459,
+      "text": "  %add.ptr705.1.1 = getelementptr inbounds i8, ptr addrspace(3) %250, i32 %add.ptr705.idx.1.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1461,
+      "text": "  %add.ptr726.1 = getelementptr inbounds %struct.__half, ptr addrspace(1) %Output.coerce, i64 %.pre-phi1995, !dbg !263"
+    },
+    {
+      "line": 1463,
+      "text": "  %output_fetch.sroa.10.0.add.ptr726.1.sroa_idx = getelementptr inbounds i8, ptr addrspace(1) %add.ptr726.1, i64 8, !dbg !264"
+    },
+    {
+      "line": 1465,
+      "text": "  %253 = getelementptr inbounds i8, ptr addrspace(3) %245, i32 1024, !dbg !61"
+    },
+    {
+      "line": 1466,
+      "text": "  %254 = getelementptr inbounds i8, ptr addrspace(3) %253, i32 %.idx950.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1467,
+      "text": "  %add.ptr705.2 = getelementptr inbounds i8, ptr addrspace(3) %254, i32 %add.ptr705.idx.1.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1469,
+      "text": "  %add.ptr705.1.2 = getelementptr inbounds i8, ptr addrspace(3) %254, i32 %add.ptr705.idx.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1471,
+      "text": "  %add.ptr726.2 = getelementptr inbounds %struct.__half, ptr addrspace(1) %Output.coerce, i64 %.pre-phi1997, !dbg !263"
+    },
+    {
+      "line": 1473,
+      "text": "  %output_fetch.sroa.10.0.add.ptr726.2.sroa_idx = getelementptr inbounds i8, ptr addrspace(1) %add.ptr726.2, i64 8, !dbg !264"
+    },
+    {
+      "line": 1475,
+      "text": "  %257 = getelementptr inbounds i8, ptr addrspace(3) %245, i32 1536, !dbg !61"
+    },
+    {
+      "line": 1476,
+      "text": "  %258 = getelementptr inbounds i8, ptr addrspace(3) %257, i32 %.idx950.11102.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1477,
+      "text": "  %add.ptr705.3 = getelementptr inbounds i8, ptr addrspace(3) %258, i32 %add.ptr705.idx.1.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1479,
+      "text": "  %add.ptr705.1.3 = getelementptr inbounds i8, ptr addrspace(3) %258, i32 %add.ptr705.idx.pre-phi, !dbg !61"
+    },
+    {
+      "line": 1481,
+      "text": "  %add.ptr726.3 = getelementptr inbounds %struct.__half, ptr addrspace(1) %Output.coerce, i64 %.pre-phi1999, !dbg !263"
+    },
+    {
+      "line": 1483,
+      "text": "  %output_fetch.sroa.10.0.add.ptr726.3.sroa_idx = getelementptr inbounds i8, ptr addrspace(1) %add.ptr726.3, i64 8, !dbg !264"
+    }
+  ],
+  "scaled_i32_prediction": "PENDING manualKV-specificdefuse, no automaticwidth/occupancyclaim"
+}

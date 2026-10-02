@@ -1,0 +1,37 @@
+--- parent_hybrid
++++ C6bound
+@@ -4,7 +4,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_v_hybrid_pack(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_c6_bounded_kv_index(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
+     assert seq_len % block_size == 0
+@@ -53,6 +53,7 @@
+             block_start = Indices[batch_id, token, kv_head, 0] * block_size
+             denominator[0] = 0
+             if block_start >= 0 and block_start <= token:
++                bounded_start = T.min(T.max(block_start, 0), seq_len - block_size)
+                 for part in T.unroll(4):
+                     for element in T.vectorized(8):
+                         pos = part * 512 + lane * 8 + element
+@@ -69,7 +70,7 @@
+                 for part in T.unroll(8):
+                     for element in T.vectorized(8):
+                         pos = part * 512 + lane * 8 + element
+-                        qk_fetch[element] = K[batch_id, block_start + pos // 128, kv_head, pos % 128]
++                        qk_fetch[element] = K[batch_id, bounded_start + pos // 128, kv_head, pos % 128]
+                     for pack in T.unroll(2):
+                         for element in T.vectorized(4):
+                             pos = part * 512 + lane * 8 + pack * 4
+@@ -108,7 +109,7 @@
+                         fetch_col = plane * 64 + (lane % 8) * 8
+                         for row in T.unroll(2):
+                             for col in T.vectorized(8):
+-                                v_fetch[row * 8 + col] = V[batch_id, block_start + fetch_row + row, kv_head, fetch_col + col]
++                                v_fetch[row * 8 + col] = V[batch_id, bounded_start + fetch_row + row, kv_head, fetch_col + col]
+                         for col in T.unroll(8):
+                             for row in T.vectorized(2):
+                                 v_column[row] = v_fetch[row * 8 + col]
