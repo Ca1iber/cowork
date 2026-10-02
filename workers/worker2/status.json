@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T13:36:20.286931+00:00",
-  "state": "V211_MONITOR_ONLY_PREPARED_WAIT_REVIEW",
+  "timestamp_utc": "2026-10-02T14:05:38.119222+00:00",
+  "state": "V211_CLOSED_TARGET_LATENCY_REJECTED",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "efec1b8569d4fca3bc8d1934a435a417007e0e17",
+  "source_commit": "f581f927d21b47950e7e9914e2833f502050d963",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v211_worker2_c8_bounded_exit_confirmation_subagent2",
-    "state": "V211_MONITOR_ONLY_PREPARED_WAIT_REVIEW",
+    "state": "V211_CLOSED_TARGET_LATENCY_REJECTED",
     "algorithm_sourceSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
     "source_header210_unchanged": true,
     "new_kernel_copy_metadata_IR_profile": false,
@@ -56,9 +56,50 @@
       0,
       0
     ],
-    "new_heavy_GO": false,
+    "new_heavy_GO": "unique completed, no furtherGO",
     "current_live_heavy": 0,
-    "active_PIDs": []
+    "active_PIDs": [],
+    "actual_originalcontroller_wait": 0,
+    "actual_nativejobs": 12,
+    "actual_candidate_total_cleanrefs": [
+      4,
+      12
+    ],
+    "native_status": "rejected_target_median_not_faster",
+    "native_medians_us": {
+      "baseline_v28": 51.8755,
+      "parent_v084": 40.340500000000006,
+      "power_v210": 40.8985
+    },
+    "candidate_vs_parent_pct": 1.3832252946790247,
+    "rounds": [
+      {
+        "round": 1,
+        "medians_us": {
+          "baseline_v28": 51.8755,
+          "parent_v084": 40.54,
+          "power_v210": 40.7295
+        },
+        "candidate_vs_parent_pct": 0.4674395658608832
+      },
+      {
+        "round": 2,
+        "medians_us": {
+          "baseline_v28": 51.6735,
+          "parent_v084": 40.340500000000006,
+          "power_v210": 41.054500000000004
+        },
+        "candidate_vs_parent_pct": 1.769933441578564
+      }
+    ],
+    "range_overlap": true,
+    "OOM_before_after": [
+      3,
+      3
+    ],
+    "confirmation_samples": 52,
+    "oldv210guard1_unchanged": true,
+    "not_promoted": true
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -740,10 +781,694 @@
       "no_retry_recompile_profile_full14_promotion": true,
       "next": "separate v211 monitor-only plan and leaderGO required,samef98/header210",
       "utc": "2026-10-02T13:12:27.184168+00:00"
+    },
+    "v211_worker2_c8_bounded_exit_confirmation_subagent2": {
+      "status": "rejected_target_median_not_faster",
+      "diagnostic_version": "v211_worker2_c8_bounded_exit_confirmation_subagent2",
+      "algorithm_sourceSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+      "source_header210_unchanged": true,
+      "new_kernel_copy_metadata_IR_profile": false,
+      "originalPopen_actualwait": 0,
+      "native12_actualwait0_cleanrefs": [
+        4,
+        12
+      ],
+      "OOM_before_after": [
+        3,
+        3
+      ],
+      "samples_us": {
+        "baseline_v28": [
+          51.85,
+          51.901,
+          51.937,
+          51.41
+        ],
+        "parent_v084": [
+          40.099999999999994,
+          40.980000000000004,
+          40.294000000000004,
+          40.387
+        ],
+        "power_v210": [
+          40.827000000000005,
+          40.632000000000005,
+          40.97,
+          41.139
+        ]
+      },
+      "medians_us": {
+        "baseline_v28": 51.8755,
+        "parent_v084": 40.340500000000006,
+        "power_v210": 40.8985
+      },
+      "candidate_vs_parent_pct": 1.3832252946790247,
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": 51.8755,
+            "parent_v084": 40.54,
+            "power_v210": 40.7295
+          },
+          "candidate_vs_parent_pct": 0.4674395658608832
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": 51.6735,
+            "parent_v084": 40.340500000000006,
+            "power_v210": 41.054500000000004
+          },
+          "candidate_vs_parent_pct": 1.769933441578564
+        }
+      ],
+      "range_overlap": true,
+      "native_observed_whole_peak_bytes": 23263543296,
+      "samples": 1001,
+      "confirmation_samples": 52,
+      "critical_confirmation_events": {
+        "1": [
+          {
+            "event": "started",
+            "monotonic": 3320350.391248281,
+            "deadline": 3320351.391248281,
+            "metadata": {
+              "pid": 252985,
+              "ppid": 252984,
+              "pgid": 252985,
+              "starttime_ticks": 332030634,
+              "state": "R",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/252985/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "after_loop_original_terminal",
+            "elapsed": 0.34574654698371887,
+            "total_missing_elapsed": 0.34574654698371887,
+            "actualPopenpoll": 0
+          }
+        ],
+        "2": [
+          {
+            "event": "started",
+            "monotonic": 3320393.254924084,
+            "deadline": 3320394.254924084,
+            "metadata": {
+              "pid": 253280,
+              "ppid": 252984,
+              "pgid": 253280,
+              "starttime_ticks": 332035075,
+              "state": "R",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/253280/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "after_loop_original_terminal",
+            "elapsed": 0.3283976339735091,
+            "total_missing_elapsed": 0.3283976339735091,
+            "actualPopenpoll": 0
+          }
+        ],
+        "3": [
+          {
+            "event": "started",
+            "monotonic": 3320437.092512003,
+            "deadline": 3320438.092512003,
+            "metadata": {
+              "pid": 253567,
+              "ppid": 252984,
+              "pgid": 253567,
+              "starttime_ticks": 332039360,
+              "state": "R",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/253567/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "after_loop_original_terminal",
+            "elapsed": 0.16902677481994033,
+            "total_missing_elapsed": 0.16902677481994033,
+            "actualPopenpoll": 0
+          }
+        ],
+        "4": [
+          {
+            "event": "started",
+            "monotonic": 3320476.667789087,
+            "deadline": 3320477.667789087,
+            "metadata": {
+              "pid": 253885,
+              "ppid": 252984,
+              "pgid": 253885,
+              "starttime_ticks": 332043728,
+              "state": "R",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/253885/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "after_loop_original_terminal",
+            "elapsed": 0.4056464107707143,
+            "total_missing_elapsed": 0.4056464107707143,
+            "actualPopenpoll": 0
+          }
+        ],
+        "5": [
+          {
+            "event": "started",
+            "monotonic": 3320516.500372342,
+            "deadline": 3320517.500372342,
+            "metadata": {
+              "pid": 254116,
+              "ppid": 252984,
+              "pgid": 254116,
+              "starttime_ticks": 332047709,
+              "state": "D",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/254116/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "after_loop_original_terminal",
+            "elapsed": 0.4652343983761966,
+            "total_missing_elapsed": 0.4652343983761966,
+            "actualPopenpoll": 0
+          }
+        ],
+        "6": [
+          {
+            "event": "started",
+            "monotonic": 3320556.90787144,
+            "deadline": 3320557.90787144,
+            "metadata": {
+              "pid": 254375,
+              "ppid": 252984,
+              "pgid": 254375,
+              "starttime_ticks": 332051698,
+              "state": "R",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/254375/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "after_loop_original_terminal",
+            "elapsed": 0.05079773673787713,
+            "total_missing_elapsed": 0.05079773673787713,
+            "actualPopenpoll": 0
+          }
+        ],
+        "7": [
+          {
+            "event": "started",
+            "monotonic": 3320596.364501767,
+            "deadline": 3320597.364501767,
+            "metadata": {
+              "pid": 254610,
+              "ppid": 252984,
+              "pgid": 254610,
+              "starttime_ticks": 332055697,
+              "state": "R",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/254610/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "after_loop_original_terminal",
+            "elapsed": 0.05088934721425176,
+            "total_missing_elapsed": 0.05088934721425176,
+            "actualPopenpoll": 0
+          }
+        ],
+        "8": [
+          {
+            "event": "started",
+            "monotonic": 3320635.275553896,
+            "deadline": 3320636.275553896,
+            "metadata": {
+              "pid": 254848,
+              "ppid": 252984,
+              "pgid": 254848,
+              "starttime_ticks": 332059643,
+              "state": "R",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/254848/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "after_loop_original_terminal",
+            "elapsed": 0.179708621930331,
+            "total_missing_elapsed": 0.179708621930331,
+            "actualPopenpoll": 0
+          }
+        ],
+        "9": [
+          {
+            "event": "started",
+            "monotonic": 3320675.386649158,
+            "deadline": 3320676.386649158,
+            "metadata": {
+              "pid": 255104,
+              "ppid": 252984,
+              "pgid": 255104,
+              "starttime_ticks": 332063547,
+              "state": "R",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/255104/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "terminal_confirmed",
+            "elapsed": 0.2012265813536942,
+            "total_missing_elapsed": 0.2012265813536942,
+            "actualPopenpoll": 0
+          }
+        ],
+        "10": [
+          {
+            "event": "started",
+            "monotonic": 3320716.032747843,
+            "deadline": 3320717.032747843,
+            "metadata": {
+              "pid": 255367,
+              "ppid": 252984,
+              "pgid": 255367,
+              "starttime_ticks": 332067560,
+              "state": "R",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/255367/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "after_loop_original_terminal",
+            "elapsed": 0.15952659910544753,
+            "total_missing_elapsed": 0.15952659910544753,
+            "actualPopenpoll": 0
+          }
+        ],
+        "11": [
+          {
+            "event": "started",
+            "monotonic": 3320754.55309637,
+            "deadline": 3320755.55309637,
+            "metadata": {
+              "pid": 255604,
+              "ppid": 252984,
+              "pgid": 255604,
+              "starttime_ticks": 332071621,
+              "state": "D",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/255604/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "after_loop_original_terminal",
+            "elapsed": 0.4682772089727223,
+            "total_missing_elapsed": 0.4682772089727223,
+            "actualPopenpoll": 0
+          }
+        ],
+        "12": [
+          {
+            "event": "started",
+            "monotonic": 3320794.43652465,
+            "deadline": 3320795.43652465,
+            "metadata": {
+              "pid": 255857,
+              "ppid": 252984,
+              "pgid": 255857,
+              "starttime_ticks": 332075504,
+              "state": "R",
+              "comm": "python",
+              "exe": null,
+              "status": {
+                "Threads": "1"
+              },
+              "cgroup": [
+                "13:devices:/",
+                "12:perf_event:/",
+                "11:hugetlb:/",
+                "10:misc:/",
+                "9:pids:/",
+                "8:blkio:/",
+                "7:freezer:/",
+                "6:memory:/",
+                "5:cpu,cpuacct:/",
+                "4:net_cls,net_prio:/",
+                "3:rdma:/",
+                "2:cpuset:/",
+                "1:name=systemd:/",
+                "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+              ],
+              "thread_children": [],
+              "metadata_errors": [
+                {
+                  "phase": "exe",
+                  "errno": 2,
+                  "filename": "/proc/255857/exe"
+                }
+              ],
+              "critical_complete": false,
+              "RSS_unavailable": true
+            }
+          },
+          {
+            "event": "after_loop_original_terminal",
+            "elapsed": 0.40575437899678946,
+            "total_missing_elapsed": 0.40575437899678946,
+            "actualPopenpoll": 0
+          }
+        ]
+      },
+      "old210_guard1_observed2_clean1_0C_unmodified": true,
+      "no_retest_full14_promotion": true,
+      "caveat": "one completed observation protocol is not allfutureexit/OOM/namespace guarantee;not purekernel latency",
+      "utc": "2026-10-02T13:51:43.531294+00:00"
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader actual v211 plan/helper review before single newfixedscreen; no extra source/compiler/profile",
+  "next_step": "Leader next optimization scope; no repetition/full14/profile/source promotion",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
