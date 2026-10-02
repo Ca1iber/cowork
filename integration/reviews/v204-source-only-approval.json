@@ -1,0 +1,40 @@
+{
+  "reviewed_at_utc": "2026-10-02T06:15:36.487955+00:00",
+  "decision": "Conditional source-only GO for exact stated C8 ordinary V-load early scheduling; no heavy execution approval",
+  "version": "v204",
+  "owner": "worker2",
+  "source_parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "source_branch_base_commit": "9eebae913786797e769b77d8f2731754828789ed",
+  "target_case": 8,
+  "target_shape_key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "preconditions": [
+    "Owner writes own concrete short plan",
+    "Worker1 advisory received and documented",
+    "No unresolved substantial peer objection; changed mechanism requires separate review"
+  ],
+  "allowed": "Direct container candidate source write and stdlib-S static checks only; header codex-power v204; exact v084 parent AST prefix preserved; only C8 override",
+  "mechanism": "Ordinary 16B V global loads move to after existing K post-write warp sync and before QK/softmax, storing only to existing localVfetch. Existing protected shared-V writes remain in their prior phase. Same index legality/causal masks/math/denominator and other13 kernels. No async, added builtin, or packed-query mechanism.",
+  "risks": [
+    "Longer V register lifetime can increase pressure and undo latency benefit",
+    "Source order does not establish compiled or runtime early-read materialization",
+    "One v203 import success cannot guarantee future compile/native memory safety"
+  ],
+  "not_approved_yet": [
+    "heavy imports",
+    "compiler/precompile",
+    "attention or reference calls",
+    "native screen/formal",
+    "GPU profiler",
+    "main/OJ promotion"
+  ],
+  "next_gate": "Owner supplies exact sourceSHA, actual plan/advisory, diff/AST prefix/vector paths; leader reviews bounded metadata run separately"
+}
