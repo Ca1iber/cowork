@@ -29,7 +29,7 @@
     "all14_nonregression": "UNPROVEN"
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-02T22:27:59.862477+00:00",
+  "updated_at_utc": "2026-10-02T22:46:15.765135+00:00",
   "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
   "worker1": {
     "cases": [
@@ -38,21 +38,19 @@
       11,
       12
     ],
-    "last_closed_version": "v130",
-    "last_closed_source_commit": "c6396464b8ea606885596d3b74b324ca6bf8d838",
-    "last_result": "root279scope278hash/16CSV224PASS/56C/2012samples/allwait0/OOM13; C300 no promotion: othercasepositive andC9vsCB13\u2212.164%round1positive/rangeoverlap",
-    "active_version": "v129",
-    "stage": "firstC127 originalC6fixed12 underway afterfull14terminal; worker4jobs checkpoint, noverdict",
-    "authorized_scope": "oneoriginalC6 B28-CB13-C127-C127-CB13-B28x2/4C12/fullnaiveW10R50;6G22estimate4reserve/28/OOM13/allguards;no otherheavy/source/meta/profile/retry",
-    "native_GO": true,
-    "active_PID": 606873,
-    "source_audit": "integration/reviews/v300-integration-source-identity.json",
+    "last_closed_version": "v129",
+    "last_closed_source_commit": "f6c34a93aa6c7167092ddede18073ff958bbed03",
+    "last_result": "12ref PASS/4candidate, C93.834 vsCB13 93.668 +.177222%, bothround positive; rejected no retry;217hash/989samples/OOM13",
+    "active_version": "v132",
+    "stage": "PREP ONLY C301 selectedC8 SC original fixed12 crosscheck; v131 C6 bounded-index source reviewed, compile pending and cannot overlap",
+    "authorized_scope": "source/helper stdlib only; B28-CB13-C301-C301-CB13-B28x2 plan; existing6G22estimate4reserve/28/OOM13 guards",
+    "native_GO": false,
+    "source_audit": "integration/reviews/v131-c6-source-leader-audit.json",
     "candidate_sha256": "cfeb8e5d18adb3c0d0c887633fc8dea1778ebfdfc100fdc9c9a77544c514515d",
     "approval": "integration/reviews/v129-native-approval.json",
-    "runtime_audit": "integration/reviews/v130-all14-leader-audit.json",
-    "active_starttime_ticks": 100315911,
-    "source_SHA": "cfeb8e5d18adb3c0d0c887633fc8dea1778ebfdfc100fdc9c9a77544c514515d",
-    "source_header": "v127 immutable",
+    "runtime_audit": "integration/reviews/v129-c6-native-leader-audit.json",
+    "source_SHA": "ccc53385ebe87ce3fdd7cb9b76a861c6aaf04780e6893b2b19b53fd95803daaa",
+    "source_header": "v131 SOURCE ONLY",
     "compile_GO": false,
     "actual_resource": [
       100,
@@ -62,8 +60,7 @@
       8192
     ],
     "profile_GO": false,
-    "review_correction": "prior126terminaldefect claim camefromdisplaytruncation; originalsourcecorrect, onlyformattingchange",
-    "v129": "prepared nativeC6 scheduling hypothesis, noGO untilfull14terminal"
+    "review_correction": "prior126terminaldefect claim camefromdisplaytruncation; originalsourcecorrect, onlyformattingchange"
   },
   "worker2": {
     "cases": [
@@ -78,9 +75,9 @@
       13,
       14
     ],
-    "last_closed_version": "v229",
-    "last_closed_source_commit": "4cc56c77a9597f63ba7ee9b8bb4667d016010f35",
-    "active_version": "v230",
+    "last_closed_version": "v230",
+    "last_closed_source_commit": "65ac028ed75a9f6a65166b9e98e31a0584f99fb0",
+    "active_version": "v231",
     "source_SHA": "4d90055cb7bde627fb3678739e1e4b1655ccea3732fc671566b589663d4cdbee",
     "source_header": "v230",
     "actual_resource": [
@@ -91,19 +88,15 @@
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "v230 exactC8batch+rowi32/wholeCPP2expr/131072vectors reviewed; firstoriginalfixed12 native underway",
-    "authorized_scope": "oneoriginalC8 B28-P84-C230-C230-P84-B28x2/4C12/fullnaive1e2W10R50;3G/28/OOM3/allguards;no source/meta/IR/profile/retry/autoall14",
-    "native_GO": true,
-    "active_PID": 415423,
-    "active_starttime_ticks": 335151135,
-    "original_owner_PID": 415422,
-    "original_owner_starttime_ticks": 335151132,
-    "approval": "integration/reviews/v230-native-approval.json",
-    "last_result": "independent96hash/97scope/4primary10finite/634samples/twoCLIoriginalwait0/OOM3; sourceunchanged, noHBM/occupancy/solecauseclaim",
-    "runtime_audit": "integration/reviews/v229-profile-leader-audit.json",
+    "stage": "PROFILE GO first fixed P84 C8 then C230 C8, parent wait0/rawgate0 required before candidate; no native/source edits",
+    "authorized_scope": "2 fixed MCProfiler CLI/4planned primary; driver573pos8/tool8b counts2/10metrics; all prior3G28OOM3 guards/no retry",
+    "native_GO": false,
+    "approval": "integration/reviews/v231-c8-profile-approval.json",
+    "last_result": "C8 selectedlocal39.685 vsP84 40.4785 -1.960300%, bothround negative/nonoverlap;12ref PASS4C;233hash1007samples/OOM3",
+    "runtime_audit": "integration/reviews/v230-c8-closed-leader-audit.json",
     "compile_GO": false,
-    "profile_GO": false,
-    "retained_local_gain": "v228 source227515f,4C12fullnaivePASS,C39.803vsP40.3535\u22121.3642%,2roundnegative/nooverlap;152scope151hash/1022samples rootverified"
+    "profile_GO": true,
+    "retained_local_gain": "v230 C8 -1.960300%; SC/full14/OJ unproven"
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
@@ -124,17 +117,25 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-smoke/report.md"
   },
-  "leader_next": "Review originalC6 andC8 fixed12 results; keepbest113 andallfull14 positive records; source300notpromoted.",
+  "leader_next": "Review v132 C8 crossSC helper, preserve all14 nonregression gate; v131 C6 bounded-index source reviewed, compile later without overlap; review v231 counters without HBM/occupancy causality claims.",
   "pending_integration": {
     "version": "v300",
     "path": "/root/tilelang-metax/race_tests/nsa/submission/v300_leader_c9_bounded_index_full14_sc-16g-2/submission.py",
     "source_SHA": "8ffb8bd047cc2ea59694756e4446069909214b994c273a1a1a2346da1af04650",
-    "commit": "60c9538e3a14f2e5390e8bbb6540e0e868b31b65",
+    "commit": "8d307061d923ed3f2b7cc15ebe66206ff85cb5a6",
     "branch": "code/integration-c9-review",
     "CB13other13_AST_preserved": true,
     "full14_correctness_nonregression": "56C224totalPASS butperformance nonregression unproven; no promotion",
     "not_best_promoted": true,
     "result": "integration/reviews/v130-all14-results.md",
     "candidate_status": "archived review draft, frozen notrecommendedreplacement"
+  },
+  "selected_C8_crosscheck": {
+    "version": "v301",
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v301_leader_c8_bounded_index_sc_crosscheck_sc-16g-2/submission.py",
+    "source_SHA": "85192e76d8fee464a8dbfe41d5ec95d3a2a3688e5dc1c29b7803c6ff63253f6d",
+    "status": "source staged directly in SC, native helper preparation only; no promotion",
+    "only_C8_changed": true,
+    "other13_CB13_unchanged": true
   }
 }
