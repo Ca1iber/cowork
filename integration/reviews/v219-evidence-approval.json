@@ -1,0 +1,38 @@
+{
+  "version": "v219",
+  "approval": "one original C3 P84 resourceSDK on exact reusedCPP then one MCPcounts2/10metrics; no source/metadata/IR/native",
+  "UTC": "2026-10-02T18:41:35.719894+00:00",
+  "archive_SHA": "0a9995ac538ee2025883ad15791bc1b0364534e45bc1e5d6b4a7e05ee08892e2",
+  "verified_hashes": 12,
+  "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "CPP_SHA": "814735db527ddf73362721a41d5ffd6fe9d070e2c190d461900b06e9cb6ff671",
+  "geometry": [
+    256,
+    1,
+    64,
+    1,
+    1,
+    4096
+  ],
+  "resource_argv": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-device-obj",
+    "-resource-usage",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v219_worker2_parent_c3_evidence_subagent2/case3_parent.device.mcbin",
+    "/tmp/nsa_worker2_v219_inputs/case3.device.cpp"
+  ],
+  "same_metadata_identity_guards_as214": true,
+  "sourceprofile_gradfalse_native_diff_retained": true,
+  "scope": "raw own target observations; not exclusive/HBM/occupancy",
+  "no_adaptive_repeat_trace_native_newkernel": true
+}
