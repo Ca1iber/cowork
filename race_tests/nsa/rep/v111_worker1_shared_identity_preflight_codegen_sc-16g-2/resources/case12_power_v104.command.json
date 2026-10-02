@@ -1,0 +1,26 @@
+{
+  "command": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-device-obj",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-resource-usage",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v111_worker1_shared_identity_preflight_codegen_sc-16g-2/resources/case12_power_v104.mcbin",
+    "/root/tilelang-metax/race_tests/nsa/rep/v111_worker1_shared_identity_preflight_codegen_sc-16g-2/codegen/power_v104/case12.device.cpp"
+  ],
+  "source": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v104_worker1_s8_global_softmax_sc-16g-2/submission.py",
+    "sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07"
+  },
+  "device_sha256": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13",
+  "NSA_attention_calls": 0,
+  "reference_checks": 0
+}

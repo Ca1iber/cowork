@@ -1,0 +1,98 @@
+{
+  "index": 2,
+  "spec": {
+    "kind": "metadata",
+    "variant": "power_v104"
+  },
+  "pid": 405816,
+  "pgid": 405816,
+  "UTC_terminal": "2026-10-02T10:51:40.201026+00:00",
+  "actual_exit": 0,
+  "stop_reason": null,
+  "cgroup_before": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "3607158784\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 480849920\nrss 2849124352\nrss_huge 0\nshmem 139264\nmapped_file 51089408\ndirty 1044480\nwriteback 0\nswap 801349632\npgpgin 4511822891\npgpgout 4511002445\npgfault 4990401555\npgmajfault 196292\ninactive_anon 2310815744\nactive_anon 568827904\ninactive_file 97566720\nactive_file 383172608\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 480849920\ntotal_rss 2849124352\ntotal_rss_huge 0\ntotal_shmem 139264\ntotal_mapped_file 51089408\ntotal_dirty 1044480\ntotal_writeback 0\ntotal_swap 801349632\ntotal_pgpgin 4511822891\ntotal_pgpgout 4511002445\ntotal_pgfault 4990401555\ntotal_pgmajfault 196292\ntotal_inactive_anon 2310815744\ntotal_active_anon 568827904\ntotal_inactive_file 97566720\ntotal_active_file 383172608\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 3607158784
+  },
+  "cgroup_after": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "3616653312\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 488636416\nrss 2849460224\nrss_huge 0\nshmem 143360\nmapped_file 51089408\ndirty 147456\nwriteback 0\nswap 801054720\npgpgin 4517005410\npgpgout 4516182974\npgfault 4996077760\npgmajfault 196332\ninactive_anon 2311348224\nactive_anon 568827904\ninactive_file 104464384\nactive_file 384049152\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 488636416\ntotal_rss 2849460224\ntotal_rss_huge 0\ntotal_shmem 143360\ntotal_mapped_file 51089408\ntotal_dirty 147456\ntotal_writeback 0\ntotal_swap 801054720\ntotal_pgpgin 4517005410\ntotal_pgpgout 4516182974\ntotal_pgfault 4996077760\ntotal_pgmajfault 196332\ntotal_inactive_anon 2311348224\ntotal_active_anon 568827904\ntotal_inactive_file 104464384\ntotal_active_file 384049152\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 3616653312
+  },
+  "owned_identities": {
+    "405816": {
+      "pid": 405816,
+      "starttime_ticks": 96160797,
+      "exe": "/opt/conda/bin/python3.12",
+      "observed_parent": {
+        "pid": 405273
+      },
+      "first_seen_UTC": "2026-10-02T10:51:01.869318+00:00"
+    },
+    "406030": {
+      "pid": 406030,
+      "starttime_ticks": 96163471,
+      "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+      "observed_parent": {
+        "pid": 405816,
+        "starttime_ticks": 96160797,
+        "exe": "/opt/conda/bin/python3.12"
+      },
+      "first_seen_UTC": "2026-10-02T10:51:28.391860+00:00"
+    },
+    "406031": {
+      "pid": 406031,
+      "starttime_ticks": 96163471,
+      "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+      "observed_parent": {
+        "pid": 406030,
+        "starttime_ticks": 96163471,
+        "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+      },
+      "first_seen_UTC": "2026-10-02T10:51:28.391860+00:00"
+    },
+    "406039": {
+      "pid": 406039,
+      "starttime_ticks": 96163625,
+      "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+      "observed_parent": {
+        "pid": 406030,
+        "starttime_ticks": 96163471,
+        "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+      },
+      "first_seen_UTC": "2026-10-02T10:51:29.895952+00:00"
+    },
+    "406042": {
+      "pid": 406042,
+      "starttime_ticks": 96163650,
+      "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+      "observed_parent": {
+        "pid": 405816,
+        "starttime_ticks": 96160797,
+        "exe": "/opt/conda/bin/python3.12"
+      },
+      "first_seen_UTC": "2026-10-02T10:51:30.391921+00:00"
+    },
+    "406046": {
+      "pid": 406046,
+      "starttime_ticks": 96163674,
+      "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+      "observed_parent": {
+        "pid": 406042,
+        "starttime_ticks": 96163650,
+        "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+      },
+      "first_seen_UTC": "2026-10-02T10:51:30.391921+00:00"
+    }
+  },
+  "NSA_attention_calls": 0,
+  "full_reference_checks": 0
+}
