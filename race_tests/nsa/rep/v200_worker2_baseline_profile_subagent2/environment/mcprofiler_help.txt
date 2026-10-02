@@ -1,0 +1,79 @@
+usage: mcProfiler [-h] [--cmdline CMDLINE] [--kernelname KERNELNAME]
+                  [--casename CASENAME] [--cwd CWD]
+                  [--metrics METRICS [METRICS ...]]
+                  [--headnames HEADNAMES [HEADNAMES ...]]
+                  [--remote_ip REMOTE_IP] [--remote_port REMOTE_PORT]
+                  [--remote_user REMOTE_USER] [--remote_pwd REMOTE_PWD]
+                  [--identity_file IDENTITY_FILE]
+                  [--container_id CONTAINER_ID] [--per-kernel]
+                  [--profile-from-start PROFILE_FROM_START] [--custom]
+                  [--counts COUNTS] [--exclude]
+                  [--kernelnames KERNELNAMES [KERNELNAMES ...]]
+                  [--single-pass] [--multi-device] [--exec_id EXEC_ID]
+                  [--status {init,init_failed,executing,execute_failed,profiling,profiler_failed,done}]
+                  [--items ITEMS [ITEMS ...]] [--output OUTPUT]
+                  [--interval INTERVAL] [--host HOST] [--port PORT]
+                  {show_metrics,perf_exec,version,help}
+
+positional arguments:
+  {show_metrics,perf_exec,version,help}
+                        More help info use "profiler_client help"
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --cmdline CMDLINE     perf_exec necessary, task case command line
+  --kernelname KERNELNAME
+                        perf_exec necessary, task case name
+  --casename CASENAME   perf_exec necessary, task case name
+  --cwd CWD             perf_exec use, task case working directory
+  --metrics METRICS [METRICS ...]
+                        perf_exec use, all metrics will be set without
+                        --metrics
+  --headnames HEADNAMES [HEADNAMES ...]
+                        perf_exec use, metrics will be set in headnames
+  --remote_ip REMOTE_IP
+                        perf_exec use, ip address needed when need execute a
+                        task on remote node
+  --remote_port REMOTE_PORT
+                        perf_exec use, port needed when need execute a task on
+                        remote node, default is 22
+  --remote_user REMOTE_USER
+                        perf_exec use, user name needed when need execute a
+                        task on remote node
+  --remote_pwd REMOTE_PWD
+                        perf_exec use, password needed when need execute a
+                        task on remote node
+  --identity_file IDENTITY_FILE
+                        perf_exec use, identity file needed when need execute
+                        a task on remote node
+  --container_id CONTAINER_ID
+                        perf_exec use, container name or id needed when
+                        execute a task in docker
+  --per-kernel          perf_exec use, every kernel will be performed, but
+                        this may use more time.
+  --profile-from-start PROFILE_FROM_START
+                        perf_exec use, mcProfilerStart and mcProfilerStop will
+                        take effect, --profile-from-start 0 equivalent to
+                        --custom
+  --custom              perf_exec use, mcProfilerStart and mcProfilerStop will
+                        take effect
+  --counts COUNTS       perf_exec use, limit number of kernel perfcounter
+                        data, default is 50, --counts 0 means unlimited.
+  --exclude             perf_exec use, true means exclude target names in
+                        kernelnames, default is false.
+  --kernelnames KERNELNAMES [KERNELNAMES ...]
+                        perf_exec use, list of target kernel names.
+  --single-pass         perf_exec use, inferring global perfcounters with a
+                        limited events set can reduce run time, but requires
+                        sufficiently large case to saturate all accelate
+                        processors.
+  --multi-device        perf_exec use, to perf all devices.
+  --exec_id EXEC_ID     perf_progress / perf_report / perf_wait necessary
+  --status {init,init_failed,executing,execute_failed,profiling,profiler_failed,done}
+                        list_perf necessary
+  --items ITEMS [ITEMS ...]
+                        perf_progress necessary
+  --output OUTPUT       perf_report necessary, full path to export report
+  --interval INTERVAL   perf_report necessary, full path to export report
+  --host HOST           server ip, default is 127.0.0.1
+  --port PORT           port to connect, default is 50123

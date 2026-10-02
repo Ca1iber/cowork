@@ -1,0 +1,13 @@
+{
+  "points": 1024,
+  "unique_points": 1024,
+  "shape": [
+    16,
+    64
+  ],
+  "complete_coverage": true,
+  "coordinate": "head=lane%16;dim=chunk16+(lane//16)4+e",
+  "inverse": "lane=head+16*((dim%16)//4),chunk=dim//16,e=dim%4",
+  "8B_vector_alignment": true,
+  "proposal_only_no_kernel_edit": true
+}

@@ -1,0 +1,11 @@
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+Traceback (most recent call last):
+  File "/tmp/nsa_worker2_environment/import_probe.py", line 2, in <module>
+    import tilelang
+  File "/root/tilelang-metax/tilelang/__init__.py", line 100, in <module>
+    from .env import env as env  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/tilelang-metax/tilelang/env.py", line 41, in <module>
+    assert TL_LIBS and all(os.path.exists(i) for i in TL_LIBS), f"tilelang lib root do not exists: {TL_LIBS}"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: tilelang lib root do not exists: ['/root/tilelang-metax/build/lib', '/root/tilelang-metax/build/tvm']

@@ -1,0 +1,87 @@
+{
+  "id": "v200_worker2_baseline_profile_subagent2",
+  "kind": "diagnostic_no_kernel_edit",
+  "created_utc": "2026-10-02T03:02:16.228157+00:00",
+  "base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+  "branch": "exp/nsa-worker2-s1-from-v084",
+  "sources": {
+    "baseline_v28": {
+      "path": "race_tests/nsa/submission.py",
+      "sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd"
+    },
+    "parent_v084": {
+      "path": "race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+      "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+    }
+  },
+  "native_case_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "native_variant_order": [
+    "baseline_v28",
+    "parent_v084",
+    "parent_v084",
+    "baseline_v28"
+  ],
+  "process_isolation": "one fresh process per official case; variants loaded once and original native _run_one_case called unchanged",
+  "native_full_reference_counts": {
+    "candidate": 0,
+    "baseline_v28": 28,
+    "parent_v084": 28,
+    "total": 56
+  },
+  "environment_gate_reference_counts_separate": {
+    "candidate": 0,
+    "parent_v084": 1,
+    "total": 1
+  },
+  "profile_case_order": [
+    5,
+    8,
+    9
+  ],
+  "profile_variant_order": [
+    "baseline_v28",
+    "parent_v084"
+  ],
+  "profile_samples_per_case_variant": 2,
+  "profile_total_samples": 12,
+  "profile_full_reference_count": 0,
+  "native_semantics": "original seed0 float16 requires_gradTrue; exact naive_nsa with no_grad; original tol; W10R50",
+  "profile_semantics": "existing shared profiling driver uses requires_gradFalse, warmup10 then20 profiler range calls; no correctness reference",
+  "profile_scope": {
+    "5": {
+      "dispatched_waves": 4096,
+      "output_payload_bytes": 8388608
+    },
+    "8": {
+      "dispatched_waves": 8192,
+      "output_payload_bytes": 16777216
+    },
+    "9": {
+      "dispatched_waves": 8192,
+      "output_payload_bytes": 16777216
+    },
+    "unattributed_write_bound_bytes": [
+      0,
+      512
+    ],
+    "scope_limit": "necessary footprint agreement; not proof of exclusive physical GPU use"
+  },
+  "no_new_submission": true,
+  "no_performance_optimization_verdict": true,
+  "oom_before": "oom_kill_disable 0\nunder_oom 0\noom_kill 0\n"
+}
