@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T03:24:40.781259+00:00",
-  "state": "V200_NATIVE_COMPLETE_PROFILE_RUNNING",
+  "timestamp_utc": "2026-10-02T03:29:16.513129+00:00",
+  "state": "V200_PROFILE_RUNNING_RUNTIME_INCIDENT_RETAINED",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
@@ -95,10 +95,12 @@
     "sgpu_vram_mib": 16000,
     "compute_percent": 25,
     "cpu_memory_limit_bytes": 34359738368,
-    "oom_kill": 0
+    "oom_kill": 1
   },
-  "blockers": [],
-  "next_step": "Finish fixed12 profiler samples and6 resource captures; retain 2/source distributions and native50 Python enqueue span caveat; propose one evidence-based mechanism for leader review.",
+  "blockers": [
+    "Profiling clean-process completion not demonstrated due cgroupOOM1 and early Killed in C8orig despite CLI0. Data and incident both retained."
+  ],
+  "next_step": "Finish remaining fixed first profile jobs and6resources; then leader-approved single120s trace. No native/profile retry, no kernel edit.",
   "source_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "environment_evidence_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/environment",
   "import_attempts": [
@@ -148,18 +150,63 @@
   "queued_post_baseline_pid": 4850,
   "active_profile_process": {
     "stage": "mcProfiler",
-    "case": 5,
+    "case": 9,
     "variant": "baseline_v28",
-    "pid": 12789,
-    "timestamp_utc": "2026-10-02T03:16:52.143016+00:00"
+    "pid": 35454,
+    "timestamp_utc": "2026-10-02T03:29:15.347239+00:00"
   },
   "benchmark_summary_path": "workers/worker2/v200_baseline_summary.json",
-  "profile_samples_completed": 0,
+  "profile_samples_completed": 8,
   "profile_samples_planned": 12,
   "static_generated_gate": {
     "baseline_v28_cases": 14,
     "parent_v084_cases": 14,
     "both_exit": 0
   },
-  "peer_feedback_path": "workers/worker2/lessons/peer_worker1_review_v200.json"
+  "peer_feedback_path": "workers/worker2/lessons/peer_worker1_review_v200.json",
+  "profile_jobs": [
+    {
+      "job": "mcprof_case5_baseline_v28",
+      "cli_pid": 12789,
+      "cli_exit": 0,
+      "actual_sample_files": 2
+    },
+    {
+      "job": "mcprof_case5_parent_v084",
+      "cli_pid": 18239,
+      "cli_exit": 0,
+      "actual_sample_files": 2
+    },
+    {
+      "job": "mcprof_case8_baseline_v28",
+      "cli_pid": 24127,
+      "cli_exit": 0,
+      "actual_sample_files": 2
+    },
+    {
+      "job": "mcprof_case8_parent_v084",
+      "cli_pid": 29533,
+      "cli_exit": 0,
+      "actual_sample_files": 2
+    },
+    {
+      "job": "mcprof_case9_baseline_v28",
+      "cli_pid": 35454,
+      "cli_exit": null,
+      "actual_sample_files": 0
+    }
+  ],
+  "queued_trace_orchestrator_pid": 34284,
+  "runtime_incident": {
+    "oom_before": 0,
+    "oom_now": 1,
+    "associated_job": "mcprof_case8_baseline_v28",
+    "raw_Killed_line": 234,
+    "Killed_near_UTC": "03:22:02; before target initialization03:22:07, not after PROFILE_DONE",
+    "specific_victim_component": "UNKNOWN; dmesg Operation not permitted",
+    "outer_CLI_exit": 0,
+    "samples_captured": 2,
+    "clean_process_gate": "NOT DEMONSTRATED",
+    "agent_retries": 0
+  }
 }

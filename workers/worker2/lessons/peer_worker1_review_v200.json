@@ -19,5 +19,13 @@
     "tradeoff": "two contiguous16B stores per lane may become four strided8B stores; same bytes may increase store instruction/sector requests; removing shared/barriers not automatically profitable",
     "recommendation_only": "wait current12profile/resource evidence, record reverse predictions, one-case dispatch first, fixedscreen and retain all positive deltas"
   },
-  "worker2_stage": "v200 diagnostic; no kernel edit/no mechanism approved"
+  "worker2_stage": "v200 diagnostic; no kernel edit/no mechanism approved",
+  "peer_followup_verified_cpp_report": {
+    "guard": "block_start=Indices[token*2+selected]*16 independent of lane; Kload under0<=block_start<=token",
+    "Vsync": "beforewrite line122, writeline132, afterwrite line134, readline137",
+    "outputsync": "beforewrite162, afterwrite172 retained",
+    "peer_commit": "29a45229cdcf",
+    "peer_status": "failed_runtime_OOM_screen_inconclusive; no formal/retry",
+    "worker2_action": "record peer verification as peer-reported; no edits to peer source or plan"
+  }
 }

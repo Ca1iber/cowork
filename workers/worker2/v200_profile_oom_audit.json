@@ -1,0 +1,26 @@
+{
+  "timestamp_utc": "2026-10-02T03:27:54.077770+00:00",
+  "last_recorded_zero": "tool_probe interval through03:20:40 UTC; exact OOM timestamp unavailable",
+  "current_oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 1\n",
+  "associated_raw_log": [
+    {
+      "job": "mcprof_case8_baseline_v28",
+      "line_number": 234,
+      "previous_lines": [
+        "[03:22:02.137][MXS][I]mxkw                16%       84%",
+        "[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.",
+        "[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.",
+        "[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port."
+      ],
+      "line": "Killed",
+      "job_cli_exit": "0",
+      "actual_native_sample_files": 2
+    }
+  ],
+  "dmesg_exit": 1,
+  "dmesg_error": "dmesg: read kernel buffer failed: Operation not permitted\n",
+  "kernel_oom_lines": [],
+  "specific_killed_component_pid": "UNKNOWN unless kernel/tool log identifies it",
+  "clean_process_gate": "NOT DEMONSTRATED despite outer mcProfiler CLI0 and captured samples",
+  "action": "preserve all raw; no profile/native retries; remaining two jobs are first fixed planned executions"
+}
