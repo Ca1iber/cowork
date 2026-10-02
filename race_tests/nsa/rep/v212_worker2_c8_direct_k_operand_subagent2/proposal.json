@@ -1,0 +1,66 @@
+{
+  "stage": "LIGHTWEIGHT_PROPOSAL_ONLY_NO_SOURCE_HEAVY_GO",
+  "version": "v212_worker2_c8_direct_k_operand_subagent2",
+  "source_base_commit": "f581f927d21b47950e7e9914e2833f502050d963",
+  "numerical_parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "only_case": 8,
+  "only_key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "no_rejected_serial_pair_inheritance": true,
+  "mechanism": "Read original MFMA k_local4 directly from globalK forchunk0..3;remove Ksharedproducer+consumer and preK/postK warpsync only;originalsinglequeryCTA64 grid4096x2",
+  "direct_K_coordinate": "K[batch_id,block_start+lane%16,kv_head,chunk*16+(lane//16)*4+element],vectorized4half=8B",
+  "positive_hypothesis": "Remove K2KiBsharedwrite+2KiBread/query and2warp syncs,possiblyreduce resource/preparationcost. ExistingMTE is not exclusiveKstage/bottleneck proof.",
+  "reverse_hypothesis": [
+    "Kglobal2x16B/lane becomes4x8B/lane;logical2KiBsame butinstructioncount doubled/addressdistribution16rowsx32Blogicalrun differs",
+    "assumedrequestline/subgroup models canincrease intersections evenifwhole64/32Bmodel1x;notcalibratedC500sector/HBMtraffic;cachelaterchunkreuse unknown",
+    "directglobal-toMFMA latency/dependency andlowerILP/liveness/MTST/physicalspill mayoffset sharedwork saving"
+  ],
+  "preserve": "Q/sharedQ/layout/Qreload,Num16,Score4/Prob4,originalMFMA8/Pquant256/actualroundedPden/shfl4/PV/divideF32-castF16/globalOutput16B/validcausal/sentinel/multiplyBSbeforeguard allliteralparent",
+  "sync_lifetime": "Removing bothKsyncs requires noKsharedwrite/read remains. KeptpreV fullwarp64sync takesQsharedallread->Vsharedoverwrite protection; Vpost/Outputpre/Outputpost untouched. Fullvalid7->5;invalidQ/Output3 unchanged. S1only no nextselected dependence.",
+  "proof": "direct_K_mapping_proof.json actualstdlibwait0:1024oldsharedproducer-consumervalues exactlydirect;all256blocks/B2bounds;8Balignment/fulltilebijection;requestmodel assumptions separate",
+  "parent_evidence": {
+    "fresh_CPP_path": "/root/tilelang-metax/race_tests/nsa/rep/v210_worker2_c8_serial_query_pair_subagent2/codegen/parent_v084/case8_stage1.device.cpp",
+    "CPP_SHA": "24237e8843b6168692cb751c7e1b35455812d40d5b186420ad12694aa506d4a8",
+    "resource": [
+      42,
+      20,
+      8,
+      0
+    ],
+    "dynamicshared": 2048,
+    "nativeP211_4_us": [
+      40.099999999999994,
+      40.980000000000004,
+      40.294000000000004,
+      40.387
+    ],
+    "nativeP211median_us": 40.340500000000006,
+    "no_old_window_pooling": true,
+    "v200_C8_two_records": "numeric8192waves/write16MiB+448/+384 necessaryscope only,broaderOOM/unclean historyretained,not exclusivebottleneckproof"
+  },
+  "resource_semantic_falsifiers": [
+    "header212/3imports/parent14ASTprefix/onlyC8 required;wrongkey/othercase/sharedpath changed STOP",
+    "actualCPP Kdirect4xuint2 vsold2xuint4+Ksharedstages,correctMFMAlanevalues/vectorbounds;no numericalFPtransport orshuffle",
+    "MMA8/shfl4/fullvalidsync5 materialized andkeptpreV protectsQreader;allprivatebuffers noalloca/AS5/stackspill",
+    "resource stack0/staticmax>=parent8;allMTST/codegencost retained,sourcebuffer allocation notphysicalregister proof",
+    "native onlyseparateGO originalfixedC8B-P-C-C-P-Bx2/4C12ref/W10R50,median>=parentreject/roundpositiveoroverlapinconclusive,noadaptive"
+  ],
+  "cross_case": "other13source unchangedbyfrozenprefix andexactdispatch;currentgenerateddevice/perf UNAVAILABLE untilauthorizedchecks,sourceidentitynotnonregguarantee",
+  "guards": "same2GiBdouble/28/OOM3/unknown1GiB/600s/0.5s/cumulativecriticalmissing1s/50ms/verifiedownership/priorabort/no retry;no unauthorizedGPUchanges",
+  "peer_advisory_received": true,
+  "source_candidate_created": false,
+  "new_import_compile_profile_native": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

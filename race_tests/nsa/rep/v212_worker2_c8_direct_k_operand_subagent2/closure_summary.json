@@ -1,0 +1,83 @@
+{
+  "status": "rejected_target_median_not_faster",
+  "sourceSHA": "66871ec89712c58e3432485fcd63601175c7de0b1f29bfe27f4a586dd5a528e4",
+  "native": {
+    "originalPopen_wait": 0,
+    "jobs": 12,
+    "clean_candidate_fullrefs": 4,
+    "clean_inclusive_fullrefs": 12,
+    "OOM_before_after": [
+      3,
+      3
+    ]
+  },
+  "medians_us": {
+    "baseline_v28": 51.517,
+    "parent_v084": 40.3275,
+    "power_v212": 43.187
+  },
+  "candidate_vs_parent_pct": 7.0906949352179005,
+  "rounds": [
+    {
+      "round": 1,
+      "medians_us": {
+        "baseline_v28": 51.517,
+        "parent_v084": 40.26349999999999,
+        "power_v212": 43.189499999999995
+      },
+      "candidate_vs_parent_pct": 7.267127795646178
+    },
+    {
+      "round": 2,
+      "medians_us": {
+        "baseline_v28": 51.556,
+        "parent_v084": 40.394,
+        "power_v212": 43.187
+      },
+      "candidate_vs_parent_pct": 6.914393226716831
+    }
+  ],
+  "samples_us": {
+    "baseline_v28": [
+      51.517,
+      51.517,
+      51.405,
+      51.707
+    ],
+    "parent_v084": [
+      40.273999999999994,
+      40.253,
+      40.381,
+      40.407
+    ],
+    "power_v212": [
+      42.931,
+      43.448,
+      43.263999999999996,
+      43.11
+    ]
+  },
+  "resources": {
+    "parent": {
+      "MT": 42,
+      "ST": 20,
+      "static_max_warps": 8,
+      "dynamic_shared_bytes": 2048,
+      "stack_bytes": 0
+    },
+    "candidate": {
+      "MT": 48,
+      "ST": 24,
+      "static_max_warps": 8,
+      "dynamic_shared_bytes": 2048,
+      "stack_bytes": 0
+    }
+  },
+  "cross_case_impact": {
+    "source": "parent14ASTprefix; exact C8 installer only, other13 source paths unchanged",
+    "other13_generated_device_code": "UNAVAILABLE_not_exported_in_this_version",
+    "other13_performance": "UNAVAILABLE_not_benchmarked; unchanged source does not prove no regression"
+  },
+  "scope": "selected C8 only; native timing includes original event50 Python enqueue scope, not pure kernel or OJ",
+  "limits": "no actual occupancy/HBM/bank/ISA transaction claim; no full14/profile/promotion; v213 not executed"
+}

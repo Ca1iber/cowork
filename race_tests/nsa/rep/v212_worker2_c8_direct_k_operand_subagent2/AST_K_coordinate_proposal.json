@@ -1,0 +1,10 @@
+{
+  "scope": "AST proposal only, no candidate",
+  "parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "actual_qk_slot_return": "row * 64 + (col // 8 ^ row % 8) * 8 + (col // 4 % 2 ^ row // 8 % 2 ^ row % 2) * 4 + col % 4",
+  "proposed_K_assignment": "k_local[element] = K[batch_id, block_start + lane % 16, kv_head, chunk * 16 + (lane // 16) * 4 + element]",
+  "assignment_AST": "Assign(targets=[Subscript(value=Name(id='k_local', ctx=Load()), slice=Name(id='element', ctx=Load()), ctx=Store())], value=Subscript(value=Name(id='K', ctx=Load()), slice=Tuple(elts=[Name(id='batch_id', ctx=Load()), BinOp(left=Name(id='block_start', ctx=Load()), op=Add(), right=BinOp(left=Name(id='lane', ctx=Load()), op=Mod(), right=Constant(value=16))), Name(id='kv_head', ctx=Load()), BinOp(left=BinOp(left=BinOp(left=Name(id='chunk', ctx=Load()), op=Mult(), right=Constant(value=16)), op=Add(), right=BinOp(left=BinOp(left=Name(id='lane', ctx=Load()), op=FloorDiv(), right=Constant(value=16)), op=Mult(), right=Constant(value=4))), op=Add(), right=Name(id='element', ctx=Load()))], ctx=Load()), ctx=Load()))",
+  "mapping_proof": "direct_K_mapping_proof.json",
+  "retained_preV_sync_protects_Qread_to_Vwrite": true,
+  "no_GPU_kernel_created": true
+}

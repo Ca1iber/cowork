@@ -1,0 +1,42 @@
+{
+  "candidate_path": "/tmp/nsa_worker2_v212_c8_direct_k_operand.py",
+  "candidate_sha256": "66871ec89712c58e3432485fcd63601175c7de0b1f29bfe27f4a586dd5a528e4",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "factory_name": "_make_worker2_c8_direct_k_operand",
+  "dispatch_key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "official_case_number": 8,
+  "prefix_14_AST_nodes_equal": true,
+  "inverse_Kproducer_presync_postsync_and_Kassignment_wholefactory_AST_equal": true,
+  "only_K_stage_changes": true,
+  "Num16_Q_PV_Pden_math_guard_literalunchanged": true,
+  "K_read_source": "k_local[element] = K[batch_id, block_start + lane % 16, kv_head, chunk * 16 + lane // 16 * 4 + element]",
+  "K_vectorized_half_elements": 4,
+  "original_K_global_perlane_vectors": [
+    2,
+    16
+  ],
+  "direct_K_perlane_vectors": [
+    4,
+    8
+  ],
+  "fullvalid_source_sync_sites": 5,
+  "kept_preV_sync_protects_Qsharedread_to_Voverwrite": true,
+  "Qpost_Vpost_Outputpre_Outputpost_unchanged": true,
+  "MMA8_shfl4_expected_not_compiled": true,
+  "exact_import_count": 3,
+  "new_import_compile_profile_native": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

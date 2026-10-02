@@ -1,0 +1,12 @@
+--- 
++++ 
+@@ -8,8 +8,8 @@
+ 
+ extern "C" __global__ void native_sparse_attention_kernel(const int* __restrict__ Indices, const half_t* __restrict__ K, half_t* __restrict__ Output, const half_t* __restrict__ Q, const half_t* __restrict__ V);
+ extern "C" __global__ void __launch_bounds__(64, 1) native_sparse_attention_kernel(const int* __restrict__ Indices, const half_t* __restrict__ K, half_t* __restrict__ Output, const half_t* __restrict__ Q, const half_t* __restrict__ V) {
++  extern __shared__ __align__(1024) half_t shared[];
+   half_t qk_fetch[8];
+-  extern __shared__ __align__(1024) half_t shared[];
+   half_t q_local[16];
+   float numerator[16];
+   float denominator[1];
