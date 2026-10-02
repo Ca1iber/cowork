@@ -1,0 +1,64 @@
+{
+  "version": "v121_worker1_c12_two_warp_selected_partition_sc-16g-2",
+  "UTC": "2026-10-02T17:14:02.785121+00:00",
+  "phase": "leader_authorized_source_only_no_compile_native",
+  "parent_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+  "candidate_header": 121,
+  "exact_case12_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    8,
+    16,
+    true
+  ],
+  "observations": [
+    "OriginalC12 perquery64MMA and one64threadwarp sequential8blocks",
+    "C118 rejectedC6 Num/Vbuffer shrinking cannot predict latency; not sourcebase for this version"
+  ],
+  "hypothesis": "Two64threadwarps partition selected0..3 and4..7; each keepsScore16/P16 and executes32MFMA instead of64 perwarp. Parallel independentK/V work may reduce serialpath, while globalmath64MFMA stays. No verified scheduling bottleneck or MTthreshold.",
+  "falsifiers": [
+    "compiler must show128threads/two64wave/64MFMA fullvalid and unconditionally reachableCTA barriers",
+    "anymapping/missinginitialization/sharedlifetime/math/stack issue blocks native untilreview, no sourcelevel successclaim",
+    "fixedoriginalnaive1e-2 andlatency later decide; morewarps/shared/barriers maycostmore thanparallelism"
+  ],
+  "shared_memory": {
+    "Q_KV_half": 3072,
+    "Q_region": [
+      0,
+      1024
+    ],
+    "warp0_KV_region": [
+      1024,
+      2048
+    ],
+    "warp1_KV_region": [
+      2048,
+      3072
+    ],
+    "partial_Max_float": 32,
+    "partial_Den_float": 32,
+    "warp1_Num_float": 1024,
+    "total_bytes": 10496,
+    "parent_bytes": 2048,
+    "no_float_half_alias_or_hiddenbuffers": true
+  },
+  "dependency_order": [
+    "warp0 Qglobal16B->Qshared; unconditionalCTAbarrier; bothwave Qshared->Qlocal",
+    "eachwarp uniformvalid slots4: privateK write/warpbarrier/read/QKMMA withread-before-nextwrite warpbarrier",
+    "alllane local16scoremax->xor32/16; lane<16 perwarp publish16max; unconditionalCTAbarrier",
+    "sameglobalheadmax frombothpartials; guardedroundedF16P16 withP0invalid; partialDen fromactualP+warp2shfl; lane<16 publish16den; unconditionalCTAbarrier",
+    "eachwarp4selectedPV usingprivateV andoriginalV8B producer, perfeature selectedlocal0..3 order",
+    "onlywarp1 publishall1024F32partialNum; unconditionalCTAbarrier",
+    "warp0 F32Num0+Num1/Den0+Den1 ->divide/cast originalQsharedOut->warpsync->16Bglobalgather/store"
+  ],
+  "numerical_risks": [
+    "FP32 numerator andden groupmerge changes additiongrouping; originalnaive1e-2 necessary",
+    "Pden andPV shareactualF16P multiplied256; nooldonline denominator",
+    "invalidScore=-inf/P=0, rawidxlegal beforemultiply; all-empty globalmax-inf skips exp and Num0/den0 givesoriginalNaN"
+  ],
+  "other13_case_scope": "CB13 18ASTprefix unchanged; no inherited118C6; sourceidentity not performancewaiver; futureall14 actual gate required",
+  "new_gpu_or_import_orcompile_or_native_attempts": 0
+}

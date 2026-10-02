@@ -1,0 +1,306 @@
+{
+  "version": "v121_worker1_c12_two_warp_selected_partition_sc-16g-2",
+  "closedUTC": "2026-10-02T17:50:11.721226+00:00",
+  "status": "failed_codegen_geometry_and_crosswarp_shared_alias_risk_no_native",
+  "source_reference": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v121_worker1_c12_two_warp_selected_partition_sc-16g-2/submission_rev02.py",
+    "sha256": "738b5aaba35f01182383af273e53c7566d72ec279553b3cc93933b24dc09a627"
+  },
+  "old_rev01_unexecuted_source_kept": true,
+  "original_runtime_result": {
+    "UTC": "2026-10-02T17:43:24.299054+00:00",
+    "complete": false,
+    "failure": "childnonzero 1",
+    "all_jobs": [
+      {
+        "index": 1,
+        "spec": {
+          "kind": "metadata_pair"
+        },
+        "pid": 522070,
+        "pgid": 522070,
+        "UTC_terminal": "2026-10-02T17:43:22.974922+00:00",
+        "actual_exit": 0,
+        "stop_reason": null,
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4786954240\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1367334912\nrss 3075235840\nrss_huge 0\nshmem 360448\nmapped_file 52170752\ndirty 40960\nwriteback 0\nswap 754794496\npgpgin 4818853518\npgpgout 4817760236\npgfault 5358447318\npgmajfault 205392\ninactive_anon 2563383296\nactive_anon 547614720\ninactive_file 515776512\nactive_file 851202048\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1367334912\ntotal_rss 3075235840\ntotal_rss_huge 0\ntotal_shmem 360448\ntotal_mapped_file 52170752\ntotal_dirty 40960\ntotal_writeback 0\ntotal_swap 754794496\ntotal_pgpgin 4818853518\ntotal_pgpgout 4817760236\ntotal_pgfault 5358447318\ntotal_pgmajfault 205392\ntotal_inactive_anon 2563383296\ntotal_active_anon 547614720\ntotal_inactive_file 515776512\ntotal_active_file 851202048\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4786954240
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4797485056\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1374552064\nrss 3076009984\nrss_huge 0\nshmem 364544\nmapped_file 52170752\ndirty 372736\nwriteback 0\nswap 754757632\npgpgin 4824084650\npgpgout 4822989411\npgfault 5364210512\npgmajfault 205397\ninactive_anon 2564157440\nactive_anon 547622912\ninactive_file 522899456\nactive_file 851279872\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1374552064\ntotal_rss 3076005888\ntotal_rss_huge 0\ntotal_shmem 364544\ntotal_mapped_file 52170752\ntotal_dirty 372736\ntotal_writeback 0\ntotal_swap 754757632\ntotal_pgpgin 4824084649\ntotal_pgpgout 4822989411\ntotal_pgfault 5364210511\ntotal_pgmajfault 205397\ntotal_inactive_anon 2564157440\ntotal_active_anon 547622912\ntotal_inactive_file 522899456\ntotal_active_file 851279872\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4797485056
+        },
+        "owned_identities": {
+          "522070": {
+            "pid": 522070,
+            "starttime_ticks": 98630813,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 522068
+            },
+            "first_seen_UTC": "2026-10-02T17:42:42.025576+00:00"
+          },
+          "522249": {
+            "pid": 522249,
+            "starttime_ticks": 98633368,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 522070,
+              "starttime_ticks": 98630813,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T17:43:07.547713+00:00"
+          },
+          "522250": {
+            "pid": 522250,
+            "starttime_ticks": 98633369,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 522249,
+              "starttime_ticks": 98633368,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T17:43:07.547713+00:00"
+          },
+          "522261": {
+            "pid": 522261,
+            "starttime_ticks": 98633542,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 522070,
+              "starttime_ticks": 98630813,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T17:43:09.047980+00:00"
+          },
+          "522262": {
+            "pid": 522262,
+            "starttime_ticks": 98633542,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 522261,
+              "starttime_ticks": 98633542,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T17:43:09.047980+00:00"
+          },
+          "522279": {
+            "pid": 522279,
+            "starttime_ticks": 98633770,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 522070,
+              "starttime_ticks": 98630813,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T17:43:11.548083+00:00"
+          },
+          "522280": {
+            "pid": 522280,
+            "starttime_ticks": 98633771,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 522279,
+              "starttime_ticks": 98633770,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T17:43:11.548083+00:00"
+          },
+          "522291": {
+            "pid": 522291,
+            "starttime_ticks": 98633940,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 522070,
+              "starttime_ticks": 98630813,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T17:43:13.048412+00:00"
+          },
+          "522292": {
+            "pid": 522292,
+            "starttime_ticks": 98633940,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 522291,
+              "starttime_ticks": 98633940,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T17:43:13.048412+00:00"
+          }
+        },
+        "NSA_attention_calls": 0,
+        "full_reference_checks": 0
+      },
+      {
+        "index": 2,
+        "spec": {
+          "kind": "source_device_audit"
+        },
+        "pid": 522338,
+        "pgid": 522338,
+        "UTC_terminal": "2026-10-02T17:43:24.290671+00:00",
+        "actual_exit": 1,
+        "stop_reason": "childnonzero 1",
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4797538304\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1374642176\nrss 3076374528\nrss_huge 0\nshmem 364544\nmapped_file 52170752\ndirty 462848\nwriteback 0\nswap 754753536\npgpgin 4824165356\npgpgout 4823070011\npgfault 5364292558\npgmajfault 205398\ninactive_anon 2564517888\nactive_anon 547614720\ninactive_file 522981376\nactive_file 851279872\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1374642176\ntotal_rss 3076374528\ntotal_rss_huge 0\ntotal_shmem 364544\ntotal_mapped_file 52170752\ntotal_dirty 462848\ntotal_writeback 0\ntotal_swap 754753536\ntotal_pgpgin 4824165356\ntotal_pgpgout 4823070011\ntotal_pgfault 5364292558\ntotal_pgmajfault 205398\ntotal_inactive_anon 2564517888\ntotal_active_anon 547614720\ntotal_inactive_file 522981376\ntotal_active_file 851279872\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4797538304
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4798050304\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1374908416\nrss 3076472832\nrss_huge 0\nshmem 364544\nmapped_file 52170752\ndirty 729088\nwriteback 0\nswap 754700288\npgpgin 4824220417\npgpgout 4823124981\npgfault 5364348264\npgmajfault 205404\ninactive_anon 2564661248\nactive_anon 547610624\ninactive_file 522919936\nactive_file 851558400\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1374908416\ntotal_rss 3076472832\ntotal_rss_huge 0\ntotal_shmem 364544\ntotal_mapped_file 52170752\ntotal_dirty 729088\ntotal_writeback 0\ntotal_swap 754700288\ntotal_pgpgin 4824220417\ntotal_pgpgout 4823124981\ntotal_pgfault 5364348264\ntotal_pgmajfault 205404\ntotal_inactive_anon 2564661248\ntotal_active_anon 547610624\ntotal_inactive_file 522919936\ntotal_active_file 851558400\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4798050304
+        },
+        "owned_identities": {
+          "522338": {
+            "pid": 522338,
+            "starttime_ticks": 98634963,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 522068
+            },
+            "first_seen_UTC": "2026-10-02T17:43:23.531217+00:00"
+          }
+        },
+        "NSA_attention_calls": 0,
+        "full_reference_checks": 0
+      }
+    ],
+    "metadata_pairs": 2,
+    "candidate_resource": null,
+    "NSA_attention_calls": 0,
+    "fullrefs": 0,
+    "cgroup_initial": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "4755259392\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 1367334912\nrss 3044024320\nrss_huge 0\nshmem 360448\nmapped_file 52170752\ndirty 40960\nwriteback 0\nswap 754794496\npgpgin 4818805909\npgpgout 4817720247\npgfault 5358399637\npgmajfault 205392\ninactive_anon 2532216832\nactive_anon 547614720\ninactive_file 515772416\nactive_file 851202048\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1367334912\ntotal_rss 3044024320\ntotal_rss_huge 0\ntotal_shmem 360448\ntotal_mapped_file 52170752\ntotal_dirty 40960\ntotal_writeback 0\ntotal_swap 754794496\ntotal_pgpgin 4818805909\ntotal_pgpgout 4817720247\ntotal_pgfault 5358399637\ntotal_pgmajfault 205392\ntotal_inactive_anon 2532216832\ntotal_active_anon 547614720\ntotal_inactive_file 515772416\ntotal_active_file 851202048\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 4755259392
+    },
+    "cgroup_final": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "4797972480\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 1374986240\nrss 3076476928\nrss_huge 0\nshmem 364544\nmapped_file 52170752\ndirty 794624\nwriteback 0\nswap 754700288\npgpgin 4824260377\npgpgout 4823164921\npgfault 5364388203\npgmajfault 205404\ninactive_anon 2564669440\nactive_anon 547610624\ninactive_file 523046912\nactive_file 851558400\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1374986240\ntotal_rss 3076476928\ntotal_rss_huge 0\ntotal_shmem 364544\ntotal_mapped_file 52170752\ntotal_dirty 794624\ntotal_writeback 0\ntotal_swap 754700288\ntotal_pgpgin 4824260377\ntotal_pgpgout 4823164921\ntotal_pgfault 5364388203\ntotal_pgmajfault 205404\ntotal_inactive_anon 2564669440\ntotal_active_anon 547610624\ntotal_inactive_file 523046912\ntotal_active_file 851558400\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 4797972480
+    },
+    "manual_lifetime_review_required_before_native": true,
+    "no_retry": true
+  },
+  "runtime_final": {
+    "UTC": "2026-10-02T17:47:51.688999+00:00",
+    "actual_waits": {
+      "stage.exit": "1",
+      "controller_actual.exit": "1",
+      "supervisor_actual.exit": "1",
+      "launcher_actual.exit": "1"
+    },
+    "actual_stages": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "whole_samples": 87,
+    "observed_wholepeak_bytes": 25617113088,
+    "OOM_values": [
+      13
+    ],
+    "peak_notupperbound": true,
+    "all_self_jobs_terminal": true,
+    "owned_current_live": [],
+    "metadata_pairs": 2,
+    "candidate_resource_IR_native_fullrefs": 0
+  },
+  "reference_counts": {
+    "active_source_rev02_SHA": "738b5aaba35f01182383af273e53c7566d72ec279553b3cc93933b24dc09a627",
+    "header": 121,
+    "original_rev01_be756_notexecuted_and_preserved": true,
+    "metadata2pairs4files": true,
+    "candidate_fullrefs": 0,
+    "inclusive_fullrefs": 0,
+    "NSA_attention_calls": 0,
+    "originalstage2gate1": true,
+    "SDKresource_firstIR_native_profile": "NOT_STARTED"
+  },
+  "actual_shared_alias_risk": {
+    "CPP_SHA": "42c055290859c64a3d50d5f31688c8fec0c1c99265bd68ebe7ccb31bc5017d31",
+    "actual_host_shared_bytes": 10368,
+    "source_logical_shared_sum_bytes": 10496,
+    "actual_Max_Den_alias_float_region": [
+      1536,
+      1568
+    ],
+    "Num_float_region_start": 1568,
+    "exact_evidence": [
+      {
+        "line": 98,
+        "text": "    ((float*)buf_dyn_shmem)[((((((int)threadIdx.x) >> 6) * 16) + (((int)threadIdx.x) & 63)) + 1536)] = maximum[0];"
+      },
+      {
+        "line": 100,
+        "text": "  __syncthreads();"
+      },
+      {
+        "line": 101,
+        "text": "  maximum[0] = max(((float*)buf_dyn_shmem)[((((int)threadIdx.x) & 15) + 1536)], ((float*)buf_dyn_shmem)[((((int)threadIdx.x) & 15) + 1552)]);"
+      },
+      {
+        "line": 144,
+        "text": "    ((float*)buf_dyn_shmem)[((((((int)threadIdx.x) >> 6) * 16) + (((int)threadIdx.x) & 63)) + 1536)] = denominator[0];"
+      },
+      {
+        "line": 146,
+        "text": "  __syncthreads();"
+      },
+      {
+        "line": 186,
+        "text": "      *(float4*)(((float*)buf_dyn_shmem) + (((((((int)threadIdx.x) & 15) * 64) + (chunk_4 * 16)) + (((((int)threadIdx.x) & 63) >> 4) * 4)) + 1568)) = *(float4*)(numerator + (chunk_4 * 4));"
+      },
+      {
+        "line": 189,
+        "text": "  __syncthreads();"
+      },
+      {
+        "line": 191,
+        "text": "    denominator[0] = (((float*)buf_dyn_shmem)[((((int)threadIdx.x) & 15) + 1536)] + ((float*)buf_dyn_shmem)[((((int)threadIdx.x) & 15) + 1552)]);"
+      }
+    ],
+    "crosswarp_read_before_overwrite_risk": "Fastwarp Denwrite144 can overwriteMax before otherwarp Maxread101; CTA146 isafterwrite andcannotprotectpreviousread. Source distinctbuffers/CTA4 notenough whenallocator aliases.",
+    "no_measured_runtime_corruption_or_causal_performance_claim": true,
+    "oldgeometry_gate1_not_relaxed": true,
+    "new_resource_IR_native_attempts": 0,
+    "source738_unchanged": true
+  },
+  "geometry_actual10368_not_expected10496_gate1_retained": true,
+  "no_resource_IR_native_recovery": true,
+  "main_promotion": false,
+  "OJ": null
+}

@@ -1,0 +1,19 @@
+     dtype='float32x4')
+            for chunk in T.unroll(4):
+                for element in T.vectorized(4):
+                    numerator[chunk * 4 + element] /= denominator[0]
+            T.sync_warp()
+            for chunk in T.unroll(4):
+                for element in T.vectorized(4):
+                    feature = chunk * 16 + (lane // 16) * 4 + element
+                    shared[out_slot(lane % 16, feature)] = numerator[chunk * 4 + element]
+            T.sync_warp()
+            for part in T.unroll(2):
+                for pack in T.unroll(2):
+                    pos = part * 512 + lane * 8 + pack * 4
+                    for element in T.vectorized(4):
+                        output_fetch[pack * 4 + element] = shared[out_slot(pos // 64, pos % 64) + element]
+                for element in T.vectorized(8):
+                    pos = part * 512 + lane * 8 + element
+                    Output[batch_id, token, kv_head * groups + pos // 64, pos % 64] = output_fetch[element]
+    return native_sparse_attention

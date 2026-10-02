@@ -1,0 +1,13 @@
+flowchart TD
+ Q[warp0 Q16B] --> QB[unconditional CTA barrier]
+ QB --> G0[warp0 selected0..3 QK]
+ QB --> G1[warp1 selected4..7 QK]
+ G0 --> MB[max publish and CTA barrier]
+ G1 --> MB
+ MB --> P[same globalmax and rounded P]
+ P --> DB[partial den publish and CTA barrier]
+ DB --> V0[private V0 PV]
+ DB --> V1[private V1 PV]
+ V0 --> NB[warp1 F32Num publish and CTA barrier]
+ V1 --> NB
+ NB --> O[warp0 Num merge divide F16 16B output]
