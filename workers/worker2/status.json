@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T10:27:15.891074+00:00",
-  "state": "V208_RUNTIME_GUARD_FAILED_CLOSED",
+  "timestamp_utc": "2026-10-02T10:38:45.353904+00:00",
+  "state": "V209_C14_PROPOSAL_READY_REVIEW",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -20,124 +20,44 @@
     14
   ],
   "current": {
-    "version": "v208_worker2_c9_q_register_transpose_subagent2",
-    "state": "FAILED_RUNTIME_GUARD_INCOMPLETE_SCREEN",
+    "version": "v209_worker2_c14_linear_query_grid_subagent2",
+    "state": "ONE_C14_LIGHT_PROPOSAL",
     "only_key": [
-      1,
-      8192,
-      1,
-      16,
+      2,
+      512,
+      2,
+      32,
       64,
       1,
       16,
       true
     ],
-    "source_base_commit": "e61d29b899f32d3ea86681c984076568ff70dcf7",
-    "candidate_created": true,
-    "proof_stdlib_exit": 0,
-    "all1024_Q_coordinate_mapping_proved": true,
-    "planned_removed_Qshared_bytes_perquery": 4096,
-    "planned_logical_shared_reduction_pct": 25,
-    "planned_extra_register_shuffle_bytes_perquery": 2048,
-    "planned_wordshfl_perlane": 8,
-    "globalQ_perlane_addresses_change": true,
-    "line_intersection_models_uncalibrated_and_reverse_cost": true,
-    "Num_float32_kept": 16,
-    "peer_actual_received": true,
-    "leader_GO": false,
-    "candidate_path": "/tmp/nsa_worker2_v208_c9_q_register_transpose.py",
-    "sourceSHA": "46696428569b1cb16eb4aac52d07cefcdc28edc0c223a400937a880ad9a6a264",
-    "source_static_exit": 0,
-    "source_GO": true,
-    "heavy_GO": false,
-    "metadata_GO": true,
-    "Num_float32_elements": 16,
-    "source_sync_sites": 6,
-    "wholefactory_inverse_AST_equal": true,
-    "model_wording_corrected": "wholewave2x/somesubgroups4x8x notrealtransaction",
-    "initial_source_only_snapshot": {
-      "new_import_compile_attention_native": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "CPP_IR_resource_now": "NOT_RUN_sourceonly_snapshot"
-    },
-    "metadata_exit": 0,
-    "SDK_commands": 4,
-    "SDK_exits": [
-      0,
-      0,
-      0,
-      0
+    "source_base_commit": "ccc057b060b706f7c4632ee2a72abc0c8b947913",
+    "parent14_CPP_SHA": "c6957b7274e656c0c03b0ed0959d2c5d322fcb549396cff9eb212fc7e69a7e1a",
+    "old_grid": [
+      512,
+      4
     ],
-    "initial_parser_exit": 1,
-    "readonly_kernel_scope_parser_exit": 0,
-    "Qoperand_symbolic_bits_verified": 16384,
-    "actual_Q_value_count_verified": 1024,
-    "actual_newQ_bpermutes": 8,
-    "original_maxden_bpermutes": 4,
-    "total_kernel_bpermutes": 12,
-    "actual_Num16_MMA8_sync6": true,
-    "MT_parent_candidate": [
-      42,
-      44
-    ],
-    "ST_parent_candidate": [
-      20,
-      26
-    ],
-    "staticmax": [
-      8,
-      8
-    ],
-    "stack": [
-      0,
-      0
-    ],
-    "dynamicshared": [
-      2048,
+    "planned_grid": [
       2048
     ],
-    "actual_CPP_IR_status": "VERIFIED_SEMANTIC0",
-    "currently_live_owned": 0,
-    "native_actual_refs": {
-      "candidate": 3,
-      "total": 9
-    },
-    "native_GO": true,
-    "OOM": 3,
-    "native_observerPID": null,
-    "native_live": "ALLKNOWN_OWNED_TERMINAL",
-    "native_planned_refs": {
-      "candidate": 4,
-      "total": 12
-    },
-    "native_actual_jobs_started": 10,
-    "native_clean_completed": 9,
-    "job10_stop": "UNOWNED_VISIBLE_HEAVY_THRESHOLD",
-    "job10_actual_wait": -15,
-    "job10_ref": 0,
-    "unknown_PID_hit": 193423,
-    "unknown_RSS_KiB": 1515972,
-    "unknown_not_operated": true,
-    "remaining_jobs11_12": "NOT_STARTED",
-    "complete12_verdict": "UNAVAILABLE",
-    "partial_C_samples_us": [
-      41.59,
-      41.078,
-      41.298
-    ],
-    "partial_P_samples_us": [
-      40.284,
-      40.095,
-      40.1
-    ],
-    "partial_allC_gtP": true,
-    "inventory_files": 224,
-    "source_commit": "ccc057b060b706f7c4632ee2a72abc0c8b947913",
-    "no_retry_extra_profile_formal_or_promotion": true
+    "threads": 64,
+    "dynamicshared": 2048,
+    "logicalqueries": 2048,
+    "outputbytes": 4194304,
+    "resource_MT_ST_profile": "UNAVAILABLE_noC14capture",
+    "query_address_bijection_stdlib_exit": 0,
+    "peer_actual_received": true,
+    "candidate_created": false,
+    "leader_GO": false,
+    "unknown193423_not_operated": true,
+    "base_state_once_not_admission_proof": true,
+    "new_import_compile_attention_native": [
+      0,
+      0,
+      0,
+      0
+    ]
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -544,10 +464,130 @@
       "currently_live_owned": 0,
       "inventory_files": 61,
       "source_commit": "e61d29b899f32d3ea86681c984076568ff70dcf7"
+    },
+    "v208": {
+      "version": "v208_worker2_c9_q_register_transpose_subagent2",
+      "state": "FAILED_RUNTIME_GUARD_INCOMPLETE_SCREEN",
+      "only_key": [
+        1,
+        8192,
+        1,
+        16,
+        64,
+        1,
+        16,
+        true
+      ],
+      "source_base_commit": "e61d29b899f32d3ea86681c984076568ff70dcf7",
+      "candidate_created": true,
+      "proof_stdlib_exit": 0,
+      "all1024_Q_coordinate_mapping_proved": true,
+      "planned_removed_Qshared_bytes_perquery": 4096,
+      "planned_logical_shared_reduction_pct": 25,
+      "planned_extra_register_shuffle_bytes_perquery": 2048,
+      "planned_wordshfl_perlane": 8,
+      "globalQ_perlane_addresses_change": true,
+      "line_intersection_models_uncalibrated_and_reverse_cost": true,
+      "Num_float32_kept": 16,
+      "peer_actual_received": true,
+      "leader_GO": false,
+      "candidate_path": "/tmp/nsa_worker2_v208_c9_q_register_transpose.py",
+      "sourceSHA": "46696428569b1cb16eb4aac52d07cefcdc28edc0c223a400937a880ad9a6a264",
+      "source_static_exit": 0,
+      "source_GO": true,
+      "heavy_GO": false,
+      "metadata_GO": true,
+      "Num_float32_elements": 16,
+      "source_sync_sites": 6,
+      "wholefactory_inverse_AST_equal": true,
+      "model_wording_corrected": "wholewave2x/somesubgroups4x8x notrealtransaction",
+      "initial_source_only_snapshot": {
+        "new_import_compile_attention_native": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "CPP_IR_resource_now": "NOT_RUN_sourceonly_snapshot"
+      },
+      "metadata_exit": 0,
+      "SDK_commands": 4,
+      "SDK_exits": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_parser_exit": 1,
+      "readonly_kernel_scope_parser_exit": 0,
+      "Qoperand_symbolic_bits_verified": 16384,
+      "actual_Q_value_count_verified": 1024,
+      "actual_newQ_bpermutes": 8,
+      "original_maxden_bpermutes": 4,
+      "total_kernel_bpermutes": 12,
+      "actual_Num16_MMA8_sync6": true,
+      "MT_parent_candidate": [
+        42,
+        44
+      ],
+      "ST_parent_candidate": [
+        20,
+        26
+      ],
+      "staticmax": [
+        8,
+        8
+      ],
+      "stack": [
+        0,
+        0
+      ],
+      "dynamicshared": [
+        2048,
+        2048
+      ],
+      "actual_CPP_IR_status": "VERIFIED_SEMANTIC0",
+      "currently_live_owned": 0,
+      "native_actual_refs": {
+        "candidate": 3,
+        "total": 9
+      },
+      "native_GO": true,
+      "OOM": 3,
+      "native_observerPID": null,
+      "native_live": "ALLKNOWN_OWNED_TERMINAL",
+      "native_planned_refs": {
+        "candidate": 4,
+        "total": 12
+      },
+      "native_actual_jobs_started": 10,
+      "native_clean_completed": 9,
+      "job10_stop": "UNOWNED_VISIBLE_HEAVY_THRESHOLD",
+      "job10_actual_wait": -15,
+      "job10_ref": 0,
+      "unknown_PID_hit": 193423,
+      "unknown_RSS_KiB": 1515972,
+      "unknown_not_operated": true,
+      "remaining_jobs11_12": "NOT_STARTED",
+      "complete12_verdict": "UNAVAILABLE",
+      "partial_C_samples_us": [
+        41.59,
+        41.078,
+        41.298
+      ],
+      "partial_P_samples_us": [
+        40.284,
+        40.095,
+        40.1
+      ],
+      "partial_allC_gtP": true,
+      "inventory_files": 224,
+      "source_commit": "ccc057b060b706f7c4632ee2a72abc0c8b947913",
+      "no_retry_extra_profile_formal_or_promotion": true
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "own nextcase/true different mechanism lightweightproposal+peer only; noQtranspose revival",
+  "next_step": "leader actualsingleC14launch-layoutplan review before source/heavy",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
