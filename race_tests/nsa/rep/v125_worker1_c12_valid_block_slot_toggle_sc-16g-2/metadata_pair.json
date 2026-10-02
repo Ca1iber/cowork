@@ -1,0 +1,141 @@
+{
+  "records": [
+    {
+      "variant": "parent113",
+      "case": 12,
+      "hook_count": 1,
+      "source": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+        "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+      },
+      "kernel_type": "tilelang.jit.kernel.JITKernel",
+      "args_metadata": [
+        {
+          "shape": [
+            4,
+            1024,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            8
+          ],
+          "dtype": "torch.int32",
+          "grad": false
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": false
+        }
+      ],
+      "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v125_worker1_c12_valid_block_slot_toggle_sc-16g-2/codegen/parent113/case12.device.cpp",
+      "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v125_worker1_c12_valid_block_slot_toggle_sc-16g-2/codegen/parent113/case12.host.cpp",
+      "device_SHA": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13",
+      "host_SHA": "5465bbd453110638b2134febc7fad0fab87b29bf088883823e511ba04675d82e",
+      "actual_NSA_attention_calls": 0
+    },
+    {
+      "variant": "candidate125",
+      "case": 12,
+      "hook_count": 1,
+      "source": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v125_worker1_c12_valid_block_slot_toggle_sc-16g-2/submission.py",
+        "sha256": "b4142c732e025c2bfc52cdc2761bcb077d190c028a5d3cb5fe8b256510335e5b"
+      },
+      "kernel_type": "tilelang.jit.kernel.JITKernel",
+      "args_metadata": [
+        {
+          "shape": [
+            4,
+            1024,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            8
+          ],
+          "dtype": "torch.int32",
+          "grad": false
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": false
+        }
+      ],
+      "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v125_worker1_c12_valid_block_slot_toggle_sc-16g-2/codegen/candidate125/case12.device.cpp",
+      "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v125_worker1_c12_valid_block_slot_toggle_sc-16g-2/codegen/candidate125/case12.host.cpp",
+      "device_SHA": "a96e8374432b4311d4db16a3efcdc544c43dbb0e63bf5651e1c00c091b34e7c9",
+      "host_SHA": "12b9478b4dc3da7040b67563890ad9d1f6457adf78f9def7c8ec8bb6f7ed3d17",
+      "actual_NSA_attention_calls": 0
+    }
+  ],
+  "NSA_attention_calls": 0,
+  "fullrefs": 0,
+  "context_emptyallocations_not0GPUclaim": true
+}

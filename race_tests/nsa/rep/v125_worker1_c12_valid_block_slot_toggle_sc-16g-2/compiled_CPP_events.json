@@ -1,0 +1,66 @@
+[
+  {
+    "line": 16,
+    "text": "  half_t probabilities[32];"
+  },
+  {
+    "line": 21,
+    "text": "  float numerator[16];"
+  },
+  {
+    "line": 35,
+    "text": "  __syncwarp();"
+  },
+  {
+    "line": 49,
+    "text": "    *(uint2*)(probabilities + (i_1 * 4)) = make_uint2(__pack_half2(broadcast_var_1, broadcast_var_1), __pack_half2(broadcast_var_1, broadcast_var_1));"
+  },
+  {
+    "line": 66,
+    "text": "      __syncwarp();"
+  },
+  {
+    "line": 132,
+    "text": "      *(uint2*)(probabilities + (selected_1 * 4)) = __1;"
+  },
+  {
+    "line": 136,
+    "text": "      denominator[0] = (denominator[0] + ((float)probabilities[element_3]));"
+  },
+  {
+    "line": 144,
+    "text": "    *(float4*)(numerator + (i_2 * 4)) = make_float4(broadcast_var_4, broadcast_var_4, broadcast_var_4, broadcast_var_4);"
+  },
+  {
+    "line": 161,
+    "text": "      __syncwarp();"
+  },
+  {
+    "line": 169,
+    "text": "      *(((float32x4*)numerator) + chunk_3) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)v_operand) + chunk_3),"
+  },
+  {
+    "line": 170,
+    "text": "                    *(((float16x4*)probabilities) + selected_2),"
+  },
+  {
+    "line": 171,
+    "text": "                    *(((float32x4*)numerator) + chunk_3));"
+  },
+  {
+    "line": 180,
+    "text": "      float4 v__4 = *(float4*)(numerator + (chunk_4 * 4));"
+  },
+  {
+    "line": 186,
+    "text": "    *(float4*)(numerator + (chunk_4 * 4)) = __6;"
+  },
+  {
+    "line": 191,
+    "text": "    float4 v__6 = *(float4*)(numerator + (chunk_5 * 4));"
+  },
+  {
+    "line": 197,
+    "text": "  __syncwarp();"
+  }
+]

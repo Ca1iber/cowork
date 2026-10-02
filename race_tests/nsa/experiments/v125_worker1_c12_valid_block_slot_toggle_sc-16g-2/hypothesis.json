@@ -1,0 +1,13 @@
+{
+  "version": "v125_worker1_c12_valid_block_slot_toggle_sc-16g-2",
+  "UTC": "2026-10-02T19:53:54.866740+00:00",
+  "phase": "source_only_no_compile_GO",
+  "parent_bestCB13_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+  "hypothesis": "Singlewarp64 two1024half slots pingpong byVALIDconsumer count can avoidpreoverwrite barriers because nextproducer usesopposite lastreadslot; postproducer(n+1) ensuresreads(n) finished beforeslot reused(n+2).",
+  "math_and_global_unchanged": true,
+  "barriers_fullvalid_source_model": "35to18 (Q1+K8+V8+Out1)",
+  "shared_source_bytes": "2048to4096 cost plusstate/addressALU/STMT unknown",
+  "falsifier": "anyinvalidtoggles/nonuniformpredicate/readwritehazard oractualcodegenfailure blocksnative; originalfullnaive/latency laterdecide, no speedpromise",
+  "noasync_pipeline_foreign_or_generalbuiltin": true,
+  "other13_CB13_source_preserved": true
+}
