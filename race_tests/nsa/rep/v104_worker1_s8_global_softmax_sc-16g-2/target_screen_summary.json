@@ -1,0 +1,62 @@
+{
+  "scope": "C12 selectedscreen only",
+  "source_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+  "candidate_full_reference_checks": 4,
+  "control_inclusive_checks": 12,
+  "all_native_terminal_zero": true,
+  "OOM_before": 11,
+  "OOM_after": 11,
+  "latency": {
+    "samples_us": {
+      "baseline_v28": [
+        "83.292000",
+        "83.067000",
+        "82.739000",
+        "83.466000"
+      ],
+      "parent_v084": [
+        "71.951000",
+        "72.653000",
+        "72.581000",
+        "71.956000"
+      ],
+      "power_v104": [
+        "68.859000",
+        "68.644000",
+        "69.023000",
+        "69.560000"
+      ]
+    },
+    "medians_us": {
+      "baseline_v28": "83.179500",
+      "parent_v084": "72.268500",
+      "power_v104": "68.941000"
+    },
+    "vs_parent_pct": "-4.604357361782796100652428100",
+    "ranges_overlap": false,
+    "rounds": [
+      {
+        "round": 1,
+        "medians_us": {
+          "baseline_v28": "83.179500",
+          "parent_v084": "72.302000",
+          "power_v104": "68.751500"
+        },
+        "vs_parent_pct": "-4.910652540731929960443694500"
+      },
+      {
+        "round": 2,
+        "medians_us": {
+          "baseline_v28": "83.102500",
+          "parent_v084": "72.268500",
+          "power_v104": "69.291500"
+        },
+        "vs_parent_pct": "-4.119360440579228847976642660"
+      }
+    ],
+    "any_round_positive": false,
+    "diagnostic_conclusion": "fixedsample lower/separated; full14 and OJ unverified",
+    "new_protocol_not_directly_comparable_to_old_v101_absolute_us": true
+  },
+  "not_no_regression_or_OJ_verdict": true
+}

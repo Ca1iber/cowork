@@ -1,0 +1,418 @@
+{
+  "failed_job": {
+    "index": 141,
+    "case": 12,
+    "variant": "power_v104",
+    "pid": 338622,
+    "pgid": 338622,
+    "utc_terminal": "2026-10-02T07:17:54.905231+00:00",
+    "native_exit": -9,
+    "cgroup_before": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "3360706560\n",
+      "memory.max_usage_in_bytes": "34359869440\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+      "memory.failcnt": "2966691\n",
+      "oom_kill": 11
+    },
+    "cgroup_after": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "2369683456\n",
+      "memory.max_usage_in_bytes": "34359869440\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "oom_kill": 13
+    },
+    "csv": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/formal/job_141_case12_power_v104/native_case12.csv",
+    "log": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/formal/job_141_case12_power_v104/native.log",
+    "observed_PASS_records": 0,
+    "records": [],
+    "samples": 15,
+    "stop_reason": "OOM counter increment during native job",
+    "source_hashes_after": {
+      "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+      "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+      "power_v104": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07"
+    }
+  },
+  "samples": [
+    {
+      "utc": "2026-10-02T07:17:23.136639+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 3732,
+      "native_HWM_KiB": 3732,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 10740,
+            "VmHWM": 3732,
+            "VmRSS": 3732
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 3821568,
+      "whole_cgroup_bytes": 3362635776,
+      "whole_minus_selected_RSS_sum_bytes": 3358814208,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:25.138443+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 716668,
+      "native_HWM_KiB": 716668,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 7449052,
+            "VmHWM": 716668,
+            "VmRSS": 716668
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 733868032,
+      "whole_cgroup_bytes": 3738730496,
+      "whole_minus_selected_RSS_sum_bytes": 3004862464,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:27.140282+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 2483248,
+      "native_HWM_KiB": 2483248,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 8930760,
+            "VmHWM": 2483248,
+            "VmRSS": 2483248
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 2542845952,
+      "whole_cgroup_bytes": 5260005376,
+      "whole_minus_selected_RSS_sum_bytes": 2717159424,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:29.142320+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 3929848,
+      "native_HWM_KiB": 3929848,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 10145736,
+            "VmHWM": 3929848,
+            "VmRSS": 3929848
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 4024164352,
+      "whole_cgroup_bytes": 6447808512,
+      "whole_minus_selected_RSS_sum_bytes": 2423644160,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:31.144198+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 6161680,
+      "native_HWM_KiB": 6161680,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 12121412,
+            "VmHWM": 6161680,
+            "VmRSS": 6161680
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 6309560320,
+      "whole_cgroup_bytes": 9631064064,
+      "whole_minus_selected_RSS_sum_bytes": 3321503744,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:33.146293+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 8382268,
+      "native_HWM_KiB": 8382268,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 14139116,
+            "VmHWM": 8382268,
+            "VmRSS": 8382268
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 8583442432,
+      "whole_cgroup_bytes": 13025406976,
+      "whole_minus_selected_RSS_sum_bytes": 4441964544,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:35.148426+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 10722436,
+      "native_HWM_KiB": 10722436,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 16280376,
+            "VmHWM": 10722436,
+            "VmRSS": 10722436
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 10979774464,
+      "whole_cgroup_bytes": 17325654016,
+      "whole_minus_selected_RSS_sum_bytes": 6345879552,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:37.150554+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 12971560,
+      "native_HWM_KiB": 12971560,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 18300440,
+            "VmHWM": 12971560,
+            "VmRSS": 12971560
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 13282877440,
+      "whole_cgroup_bytes": 21449412608,
+      "whole_minus_selected_RSS_sum_bytes": 8166535168,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:39.152634+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 15152992,
+      "native_HWM_KiB": 15152992,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 20227756,
+            "VmHWM": 15152992,
+            "VmRSS": 15152992
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 15516663808,
+      "whole_cgroup_bytes": 25572200448,
+      "whole_minus_selected_RSS_sum_bytes": 10055536640,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:41.154552+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 17126968,
+      "native_HWM_KiB": 17126968,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 21949024,
+            "VmHWM": 17126968,
+            "VmRSS": 17126968
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 17538015232,
+      "whole_cgroup_bytes": 29374787584,
+      "whole_minus_selected_RSS_sum_bytes": 11836772352,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:43.156534+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 18990608,
+      "native_HWM_KiB": 18990608,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 23589948,
+            "VmHWM": 18990608,
+            "VmRSS": 18990608
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 19446382592,
+      "whole_cgroup_bytes": 33033101312,
+      "whole_minus_selected_RSS_sum_bytes": 13586718720,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:45.158557+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 19765120,
+      "native_HWM_KiB": 19765120,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 24266032,
+            "VmHWM": 19765120,
+            "VmRSS": 19765120
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 20239482880,
+      "whole_cgroup_bytes": 34359607296,
+      "whole_minus_selected_RSS_sum_bytes": 14120124416,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:47.161163+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 20052880,
+      "native_HWM_KiB": 20052880,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 24856960,
+            "VmHWM": 20052880,
+            "VmRSS": 20052880
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 20534149120,
+      "whole_cgroup_bytes": 34359726080,
+      "whole_minus_selected_RSS_sum_bytes": 13825576960,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:49.163211+00:00",
+      "native_state": "R",
+      "native_RSS_KiB": 20134220,
+      "native_HWM_KiB": 20150956,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "R",
+          "comm": "python",
+          "memory_kib": {
+            "VmSize": 25547916,
+            "VmHWM": 20150956,
+            "VmRSS": 20134220
+          }
+        }
+      ],
+      "selected_RSS_sum_bytes": 20617441280,
+      "whole_cgroup_bytes": 34359480320,
+      "whole_minus_selected_RSS_sum_bytes": 13742039040,
+      "OOM": 11,
+      "difference_not_attributed_or_unique_memory": true
+    },
+    {
+      "utc": "2026-10-02T07:17:51.192383+00:00",
+      "native_state": "Z",
+      "native_RSS_KiB": null,
+      "native_HWM_KiB": null,
+      "selected_processes": [
+        {
+          "pid": 338622,
+          "ppid": 300011,
+          "pgid": 338622,
+          "state": "Z",
+          "comm": "python",
+          "memory_kib": {}
+        }
+      ],
+      "selected_RSS_sum_bytes": 0,
+      "whole_cgroup_bytes": 34359283712,
+      "whole_minus_selected_RSS_sum_bytes": 34359283712,
+      "OOM": 13,
+      "difference_not_attributed_or_unique_memory": true
+    }
+  ],
+  "observed_sample_count": 15,
+  "whole_peak_observed_bytes": 34359726080,
+  "native_RSS_peak_observed_KiB": 20134220,
+  "OOM_before": 11,
+  "OOM_after": 13,
+  "exact_peak_or_victim_chain_not_proved": true,
+  "sampled_descendants_not_all_cgroup_tasks": true
+}

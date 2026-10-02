@@ -1,0 +1,28 @@
+{
+  "command": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-device-obj",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-resource-usage",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/resources/candidate_case12.mcbin",
+    "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/codegen_precompile/power_v104/case12_stage1.device.cpp"
+  ],
+  "device_sha256": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13",
+  "MT": 68,
+  "ST": 44,
+  "static_shared_bytes": 0,
+  "dynamic_shared_bytes": 2048,
+  "stack_bytes": 0,
+  "static_max_warps": 7,
+  "not_measured_occupancy": true,
+  "resource_gate_pass": true
+}

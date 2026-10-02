@@ -1,0 +1,32 @@
+{
+  "attention_calls": 0,
+  "reference_checks": 0,
+  "native_launches": 0,
+  "metadata_launches": 0,
+  "lightweight_metadata_newline_probe": {
+    "first_probe_assertion": "count(double-backslash-n)>0 was false; no source changed, no heavy process started",
+    "actual_followup": "12 single-backslash-n and 0 double; AST parsed, script SHA unchanged"
+  },
+  "helper_sources": {
+    "/root/tilelang-metax/race_tests/nsa/hack/v104_worker1_s8_global_softmax_sc-16g-2/run_fixed_risk.py": "172e597e973fb5c43b9f1c617f8aa565d5abb330aca36fda12a25973a32db43d",
+    "/root/tilelang-metax/race_tests/nsa/hack/v104_worker1_s8_global_softmax_sc-16g-2/run_metadata_all14.py": "c6959d28c5475e0e55a883510c9b063bbbe4c3c5159a3ff8c922664fdf76520f",
+    "/root/tilelang-metax/race_tests/nsa/hack/v104_worker1_s8_global_softmax_sc-16g-2/analyze_fixed_risk.py": "81728cd1c66add3493165aa3e90b337d70061ddee40aa6fee989a86144b2a0e4",
+    "/root/tilelang-metax/race_tests/nsa/hack/v104_worker1_s8_global_softmax_sc-16g-2/run_paired_profile.py": "7a521d77e71cdf03666ee97bd2f36050c2bca111e0d1fc1293459c8196dc797c"
+  },
+  "all_prepared_only_not_run": true,
+  "profile_report_path_parser_before_any_execution": {
+    "old": "  verify();reportdirs=re.findall(r'^\\[info\\] output path is: (.+)$',logpath.read_text(errors='replace'),re.M);reportdir=Path(reportdirs[-1]) if reportdirs else None",
+    "new": "  verify();reportdirs=[line.partition('[info] output path is: ')[2].strip() for line in logpath.read_text(errors='replace').splitlines() if line.startswith('[info] output path is: ')];reportdir=Path(reportdirs[-1]) if reportdirs else None",
+    "reason": "avoid transported regex escaping ambiguity; literal prefix per existing actualmcProfiler log",
+    "attention_calls": 0,
+    "reference_checks": 0,
+    "profile_launches": 0
+  },
+  "automatic_approval_rejection": {
+    "action": "one long PTY write of finish_report helper",
+    "reason": "terminal input and permission details too large to review safely",
+    "executed": false,
+    "native_or_metadata_launched": 0,
+    "fallback": "short direct container writes; no kernel change or native restart"
+  }
+}

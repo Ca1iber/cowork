@@ -1,0 +1,2140 @@
+{
+  "version": "v104_worker1_s8_global_softmax_sc-16g-2",
+  "status": "failed_runtime_OOM_formal_incomplete",
+  "closed_UTC": "2026-10-02T07:29:48.779578+00:00",
+  "candidate_source_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+  "parent_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "main_source_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "source_identity": {
+    "candidate_path": "/tmp/nsa_power_v104_global_softmax.py",
+    "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "parent_AST_prefix_exact": true,
+    "dispatch_cases": [
+      12
+    ],
+    "other13keys_math_exact_parent": true,
+    "score_slots": 32,
+    "P_slots": 32,
+    "Num_slots": 16,
+    "has_valid_uniform_indices_only": true,
+    "premultiply_raw_index_guard": true,
+    "full_selected_unroll_requested": 8,
+    "global_widths_preserved": {
+      "Q": 16,
+      "K": 16,
+      "V": 8,
+      "Output": 16
+    }
+  },
+  "native_reference_counts": {
+    "selected_C12_screen_candidate_full_refs": 4,
+    "selected_C12_screen_inclusive_full_refs": 12,
+    "formal_prefix_candidate_full_refs": 46,
+    "formal_prefix_inclusive_full_refs": 140,
+    "candidate_total_full_refs": 50,
+    "inclusive_total_full_refs": 152,
+    "failed_job141_full_refs": 0,
+    "formal_terminal_jobs": 141,
+    "formal_planned_jobs": 168,
+    "formal_not_full14": true,
+    "C13_C14_not_run": true,
+    "risk_metadata_all14_paired_profile_finalresources_refs": 0,
+    "canonical_perjob_CSV_only_counted_once": true,
+    "candidate_per_case": {
+      "1": 4,
+      "2": 4,
+      "3": 4,
+      "4": 4,
+      "5": 4,
+      "6": 4,
+      "7": 4,
+      "8": 4,
+      "9": 4,
+      "10": 4,
+      "11": 4,
+      "12": 6,
+      "13": 0,
+      "14": 0
+    },
+    "inclusive_variant_totals": {
+      "baseline_v28": 51,
+      "parent_v084": 51,
+      "power_v104": 50
+    }
+  },
+  "screen": {
+    "scope": "C12 selectedscreen only",
+    "source_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "candidate_full_reference_checks": 4,
+    "control_inclusive_checks": 12,
+    "all_native_terminal_zero": true,
+    "OOM_before": 11,
+    "OOM_after": 11,
+    "latency": {
+      "samples_us": {
+        "baseline_v28": [
+          "83.292000",
+          "83.067000",
+          "82.739000",
+          "83.466000"
+        ],
+        "parent_v084": [
+          "71.951000",
+          "72.653000",
+          "72.581000",
+          "71.956000"
+        ],
+        "power_v104": [
+          "68.859000",
+          "68.644000",
+          "69.023000",
+          "69.560000"
+        ]
+      },
+      "medians_us": {
+        "baseline_v28": "83.179500",
+        "parent_v084": "72.268500",
+        "power_v104": "68.941000"
+      },
+      "vs_parent_pct": "-4.604357361782796100652428100",
+      "ranges_overlap": false,
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "83.179500",
+            "parent_v084": "72.302000",
+            "power_v104": "68.751500"
+          },
+          "vs_parent_pct": "-4.910652540731929960443694500"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "83.102500",
+            "parent_v084": "72.268500",
+            "power_v104": "69.291500"
+          },
+          "vs_parent_pct": "-4.119360440579228847976642660"
+        }
+      ],
+      "any_round_positive": false,
+      "diagnostic_conclusion": "fixedsample lower/separated; full14 and OJ unverified",
+      "new_protocol_not_directly_comparable_to_old_v101_absolute_us": true
+    },
+    "not_no_regression_or_OJ_verdict": true
+  },
+  "formal_prefix": {
+    "status": "failed_runtime_OOM_formal_prefix_inconclusive",
+    "source_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "candidate_formal_refs": 46,
+    "inclusive_formal_refs": 140,
+    "terminal_jobs": 141,
+    "planned_jobs": 168,
+    "OOM_before": 11,
+    "OOM_after": 13,
+    "failed_job": {
+      "index": 141,
+      "case": 12,
+      "variant": "power_v104",
+      "pid": 338622,
+      "pgid": 338622,
+      "utc_terminal": "2026-10-02T07:17:54.905231+00:00",
+      "native_exit": -9,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "3360706560\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2966691\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2369683456\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "oom_kill": 13
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/formal/job_141_case12_power_v104/native_case12.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/formal/job_141_case12_power_v104/native.log",
+      "observed_PASS_records": 0,
+      "records": [],
+      "samples": 15,
+      "stop_reason": "OOM counter increment during native job",
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "power_v104": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07"
+      }
+    },
+    "cases": [
+      {
+        "case": 1,
+        "scope": "complete_fixed12",
+        "native_jobs_terminal": 12,
+        "actual_ref_counts": {
+          "baseline_v28": 4,
+          "parent_v084": 4,
+          "power_v104": 4
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "11.802000",
+            "8.515000",
+            "8.858000",
+            "11.290000"
+          ],
+          "parent_v084": [
+            "8.817000",
+            "8.407000",
+            "9.994000",
+            "10.670000"
+          ],
+          "power_v104": [
+            "8.228000",
+            "8.694000",
+            "8.463000",
+            "8.525000"
+          ]
+        },
+        "no_missing_sample_imputed": true,
+        "medians_us": {
+          "baseline_v28": "10.074000",
+          "parent_v084": "9.405500",
+          "power_v104": "8.494000"
+        },
+        "vs_parent_pct": "-9.691138163840306203816915630",
+        "vs_v28_pct": "-15.68393885249156243795910264",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "10.158500",
+              "parent_v084": "8.612000",
+              "power_v104": "8.461000"
+            },
+            "vs_parent_pct": "-1.753367394333488156061309800",
+            "vs_v28_pct": "-16.71014421420485307870256435"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "10.074000",
+              "parent_v084": "10.332000",
+              "power_v104": "8.494000"
+            },
+            "vs_parent_pct": "-17.78939217963608207510646535",
+            "vs_v28_pct": "-15.68393885249156243795910264"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "8.515000",
+            "11.802000"
+          ],
+          "parent_v084": [
+            "8.407000",
+            "10.670000"
+          ],
+          "power_v104": [
+            "8.228000",
+            "8.694000"
+          ]
+        },
+        "ranges_overlap_parent": true
+      },
+      {
+        "case": 2,
+        "scope": "complete_fixed12",
+        "native_jobs_terminal": 12,
+        "actual_ref_counts": {
+          "baseline_v28": 4,
+          "parent_v084": 4,
+          "power_v104": 4
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "9.472000",
+            "9.600000",
+            "9.093000",
+            "9.400000"
+          ],
+          "parent_v084": [
+            "9.672000",
+            "9.001000",
+            "8.689000",
+            "9.728000"
+          ],
+          "power_v104": [
+            "10.813000",
+            "8.771000",
+            "8.929000",
+            "9.068000"
+          ]
+        },
+        "no_missing_sample_imputed": true,
+        "medians_us": {
+          "baseline_v28": "9.436000",
+          "parent_v084": "9.336500",
+          "power_v104": "8.998500"
+        },
+        "vs_parent_pct": "-3.620200289187597065281422370",
+        "vs_v28_pct": "-4.636498516320474777448071220",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "9.536000",
+              "parent_v084": "9.336500",
+              "power_v104": "9.792000"
+            },
+            "vs_parent_pct": "4.878701869008729181170674200",
+            "vs_v28_pct": "2.684563758389261744966443000"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "9.246500",
+              "parent_v084": "9.208500",
+              "power_v104": "8.998500"
+            },
+            "vs_parent_pct": "-2.280501710376282782212086660",
+            "vs_v28_pct": "-2.682095928189044503325582650"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "9.093000",
+            "9.600000"
+          ],
+          "parent_v084": [
+            "8.689000",
+            "9.728000"
+          ],
+          "power_v104": [
+            "8.771000",
+            "10.813000"
+          ]
+        },
+        "ranges_overlap_parent": true
+      },
+      {
+        "case": 3,
+        "scope": "complete_fixed12",
+        "native_jobs_terminal": 12,
+        "actual_ref_counts": {
+          "baseline_v28": 4,
+          "parent_v084": 4,
+          "power_v104": 4
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "11.960000",
+            "11.991000",
+            "12.032000",
+            "12.042000"
+          ],
+          "parent_v084": [
+            "10.685000",
+            "10.086000",
+            "10.117000",
+            "10.132000"
+          ],
+          "power_v104": [
+            "10.911000",
+            "10.824000",
+            "10.163000",
+            "10.127000"
+          ]
+        },
+        "no_missing_sample_imputed": true,
+        "medians_us": {
+          "baseline_v28": "12.011500",
+          "parent_v084": "10.124500",
+          "power_v104": "10.493500"
+        },
+        "vs_parent_pct": "3.644624425897575188898217200",
+        "vs_v28_pct": "-12.63788869000541148066436332",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "11.975500",
+              "parent_v084": "10.385500",
+              "power_v104": "10.867500"
+            },
+            "vs_parent_pct": "4.641086129700062587261085200",
+            "vs_v28_pct": "-9.252223289215481608283578970"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "12.037000",
+              "parent_v084": "10.124500",
+              "power_v104": "10.145000"
+            },
+            "vs_parent_pct": "0.202479134772087510494345400",
+            "vs_v28_pct": "-15.71820220985295339370274985"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "11.960000",
+            "12.042000"
+          ],
+          "parent_v084": [
+            "10.086000",
+            "10.685000"
+          ],
+          "power_v104": [
+            "10.127000",
+            "10.911000"
+          ]
+        },
+        "ranges_overlap_parent": true
+      },
+      {
+        "case": 4,
+        "scope": "complete_fixed12",
+        "native_jobs_terminal": 12,
+        "actual_ref_counts": {
+          "baseline_v28": 4,
+          "parent_v084": 4,
+          "power_v104": 4
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "12.549000",
+            "12.472000",
+            "12.564000",
+            "12.524000"
+          ],
+          "parent_v084": [
+            "10.783000",
+            "11.443000",
+            "11.535000",
+            "10.778000"
+          ],
+          "power_v104": [
+            "11.520000",
+            "11.505000",
+            "11.494000",
+            "11.325000"
+          ]
+        },
+        "no_missing_sample_imputed": true,
+        "medians_us": {
+          "baseline_v28": "12.536500",
+          "parent_v084": "11.113000",
+          "power_v104": "11.499500"
+        },
+        "vs_parent_pct": "3.477908755511563034284171700",
+        "vs_v28_pct": "-8.271846209069517010329836880",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "12.510500",
+              "parent_v084": "11.113000",
+              "power_v104": "11.512500"
+            },
+            "vs_parent_pct": "3.594888868892288310987132200",
+            "vs_v28_pct": "-7.977299068782222932736501340"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "12.544000",
+              "parent_v084": "11.156500",
+              "power_v104": "11.409500"
+            },
+            "vs_parent_pct": "2.267736297225832474342311700",
+            "vs_v28_pct": "-9.044164540816326530612244900"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "12.472000",
+            "12.564000"
+          ],
+          "parent_v084": [
+            "10.778000",
+            "11.535000"
+          ],
+          "power_v104": [
+            "11.325000",
+            "11.520000"
+          ]
+        },
+        "ranges_overlap_parent": true
+      },
+      {
+        "case": 5,
+        "scope": "complete_fixed12",
+        "native_jobs_terminal": 12,
+        "actual_ref_counts": {
+          "baseline_v28": 4,
+          "parent_v084": 4,
+          "power_v104": 4
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "30.751000",
+            "31.099000",
+            "31.089000",
+            "35.308000"
+          ],
+          "parent_v084": [
+            "24.530000",
+            "24.745000",
+            "24.694000",
+            "24.724000"
+          ],
+          "power_v104": [
+            "24.433000",
+            "24.484000",
+            "24.786000",
+            "24.863000"
+          ]
+        },
+        "no_missing_sample_imputed": true,
+        "medians_us": {
+          "baseline_v28": "31.094000",
+          "parent_v084": "24.709000",
+          "power_v104": "24.635000"
+        },
+        "vs_parent_pct": "-0.2994860172406815330446396100",
+        "vs_v28_pct": "-20.77249630153727407216826397",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "30.925000",
+              "parent_v084": "24.637500",
+              "power_v104": "24.458500"
+            },
+            "vs_parent_pct": "-0.7265347539320142059868087300",
+            "vs_v28_pct": "-20.91026677445432497978981407"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "33.198500",
+              "parent_v084": "24.709000",
+              "power_v104": "24.824500"
+            },
+            "vs_parent_pct": "0.467441013395928609008863200",
+            "vs_v28_pct": "-25.22403120622919710227871741"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "30.751000",
+            "35.308000"
+          ],
+          "parent_v084": [
+            "24.530000",
+            "24.745000"
+          ],
+          "power_v104": [
+            "24.433000",
+            "24.863000"
+          ]
+        },
+        "ranges_overlap_parent": true
+      },
+      {
+        "case": 6,
+        "scope": "complete_fixed12",
+        "native_jobs_terminal": 12,
+        "actual_ref_counts": {
+          "baseline_v28": 4,
+          "parent_v084": 4,
+          "power_v104": 4
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "156.385000",
+            "156.488000",
+            "156.549000",
+            "156.621000"
+          ],
+          "parent_v084": [
+            "93.501000",
+            "93.343000",
+            "93.420000",
+            "93.517000"
+          ],
+          "power_v104": [
+            "93.307000",
+            "93.471000",
+            "93.107000",
+            "93.420000"
+          ]
+        },
+        "no_missing_sample_imputed": true,
+        "medians_us": {
+          "baseline_v28": "156.518500",
+          "parent_v084": "93.460500",
+          "power_v104": "93.363500"
+        },
+        "vs_parent_pct": "-0.1037871614211351319541410500",
+        "vs_v28_pct": "-40.34986279577174583196235589",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "156.436500",
+              "parent_v084": "93.422000",
+              "power_v104": "93.389000"
+            },
+            "vs_parent_pct": "-0.0353235854509644409239793600",
+            "vs_v28_pct": "-40.30229518047258791905981021"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "156.585000",
+              "parent_v084": "93.468500",
+              "power_v104": "93.263500"
+            },
+            "vs_parent_pct": "-0.2193252272155859995613495500",
+            "vs_v28_pct": "-40.43905865823674042852125044"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "156.385000",
+            "156.621000"
+          ],
+          "parent_v084": [
+            "93.343000",
+            "93.517000"
+          ],
+          "power_v104": [
+            "93.107000",
+            "93.471000"
+          ]
+        },
+        "ranges_overlap_parent": true
+      },
+      {
+        "case": 7,
+        "scope": "complete_fixed12",
+        "native_jobs_terminal": 12,
+        "actual_ref_counts": {
+          "baseline_v28": 4,
+          "parent_v084": 4,
+          "power_v104": 4
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "31.150000",
+            "30.771000",
+            "31.416000",
+            "31.334000"
+          ],
+          "parent_v084": [
+            "24.561000",
+            "25.395000",
+            "24.858000",
+            "25.216000"
+          ],
+          "power_v104": [
+            "24.632000",
+            "25.180000",
+            "25.196000",
+            "25.160000"
+          ]
+        },
+        "no_missing_sample_imputed": true,
+        "medians_us": {
+          "baseline_v28": "31.242000",
+          "parent_v084": "25.037000",
+          "power_v104": "25.170000"
+        },
+        "vs_parent_pct": "0.531213803570715341294883600",
+        "vs_v28_pct": "-19.43537545611676589206836950",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "30.960500",
+              "parent_v084": "24.978000",
+              "power_v104": "24.906000"
+            },
+            "vs_parent_pct": "-0.2882536632236368003843382200",
+            "vs_v28_pct": "-19.55556273315999418614040471"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "31.375000",
+              "parent_v084": "25.037000",
+              "power_v104": "25.178000"
+            },
+            "vs_parent_pct": "0.563166513559931301673523200",
+            "vs_v28_pct": "-19.75139442231075697211155378"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "30.771000",
+            "31.416000"
+          ],
+          "parent_v084": [
+            "24.561000",
+            "25.395000"
+          ],
+          "power_v104": [
+            "24.632000",
+            "25.196000"
+          ]
+        },
+        "ranges_overlap_parent": true
+      },
+      {
+        "case": 8,
+        "scope": "complete_fixed12",
+        "native_jobs_terminal": 12,
+        "actual_ref_counts": {
+          "baseline_v28": 4,
+          "parent_v084": 4,
+          "power_v104": 4
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "52.506000",
+            "51.410000",
+            "51.533000",
+            "52.321000"
+          ],
+          "parent_v084": [
+            "40.750000",
+            "41.400000",
+            "40.335000",
+            "40.745000"
+          ],
+          "power_v104": [
+            "40.494000",
+            "41.272000",
+            "40.100000",
+            "41.513000"
+          ]
+        },
+        "no_missing_sample_imputed": true,
+        "medians_us": {
+          "baseline_v28": "51.927000",
+          "parent_v084": "40.747500",
+          "power_v104": "40.883000"
+        },
+        "vs_parent_pct": "0.332535738388858212160255200",
+        "vs_v28_pct": "-21.26831898626918558745931789",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "51.958000",
+              "parent_v084": "41.075000",
+              "power_v104": "40.883000"
+            },
+            "vs_parent_pct": "-0.4674376141205112598904443100",
+            "vs_v28_pct": "-21.31529312136725817006043343"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "51.927000",
+              "parent_v084": "40.540000",
+              "power_v104": "40.806500"
+            },
+            "vs_parent_pct": "0.657375431672422298963986200",
+            "vs_v28_pct": "-21.41564118859167677701388488"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "51.410000",
+            "52.506000"
+          ],
+          "parent_v084": [
+            "40.335000",
+            "41.400000"
+          ],
+          "power_v104": [
+            "40.100000",
+            "41.513000"
+          ]
+        },
+        "ranges_overlap_parent": true
+      },
+      {
+        "case": 9,
+        "scope": "complete_fixed12",
+        "native_jobs_terminal": 12,
+        "actual_ref_counts": {
+          "baseline_v28": 4,
+          "parent_v084": 4,
+          "power_v104": 4
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "52.214000",
+            "52.224000",
+            "52.250000",
+            "51.804000"
+          ],
+          "parent_v084": [
+            "41.231000",
+            "40.745000",
+            "40.059000",
+            "40.387000"
+          ],
+          "power_v104": [
+            "40.863000",
+            "40.858000",
+            "39.936000",
+            "39.854000"
+          ]
+        },
+        "no_missing_sample_imputed": true,
+        "medians_us": {
+          "baseline_v28": "52.219000",
+          "parent_v084": "40.566000",
+          "power_v104": "40.397000"
+        },
+        "vs_parent_pct": "-0.4166050387023615835921707800",
+        "vs_v28_pct": "-22.63926923150577376050862713",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "52.219000",
+              "parent_v084": "40.988000",
+              "power_v104": "40.860500"
+            },
+            "vs_parent_pct": "-0.3110666536547282131355518700",
+            "vs_v28_pct": "-21.75166127271682720848733220"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "52.027000",
+              "parent_v084": "40.223000",
+              "power_v104": "39.895000"
+            },
+            "vs_parent_pct": "-0.8154538448151555080426621600",
+            "vs_v28_pct": "-23.31866146423972168297230284"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "51.804000",
+            "52.250000"
+          ],
+          "parent_v084": [
+            "40.059000",
+            "41.231000"
+          ],
+          "power_v104": [
+            "39.854000",
+            "40.863000"
+          ]
+        },
+        "ranges_overlap_parent": true
+      },
+      {
+        "case": 10,
+        "scope": "complete_fixed12",
+        "native_jobs_terminal": 12,
+        "actual_ref_counts": {
+          "baseline_v28": 4,
+          "parent_v084": 4,
+          "power_v104": 4
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "11.781000",
+            "11.305000",
+            "11.412000",
+            "11.412000"
+          ],
+          "parent_v084": [
+            "10.363000",
+            "10.363000",
+            "10.010000",
+            "10.317000"
+          ],
+          "power_v104": [
+            "11.546000",
+            "10.388000",
+            "10.732000",
+            "10.332000"
+          ]
+        },
+        "no_missing_sample_imputed": true,
+        "medians_us": {
+          "baseline_v28": "11.412000",
+          "parent_v084": "10.340000",
+          "power_v104": "10.560000"
+        },
+        "vs_parent_pct": "2.127659574468085106382978700",
+        "vs_v28_pct": "-7.465825446898002103049421660",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "11.543000",
+              "parent_v084": "10.363000",
+              "power_v104": "10.967000"
+            },
+            "vs_parent_pct": "5.828428061372189520409147900",
+            "vs_v28_pct": "-4.990037252014207744953651560"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "11.412000",
+              "parent_v084": "10.163500",
+              "power_v104": "10.532000"
+            },
+            "vs_parent_pct": "3.625719486397402469621685400",
+            "vs_v28_pct": "-7.711181212758499824745881530"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "11.305000",
+            "11.781000"
+          ],
+          "parent_v084": [
+            "10.010000",
+            "10.363000"
+          ],
+          "power_v104": [
+            "10.332000",
+            "11.546000"
+          ]
+        },
+        "ranges_overlap_parent": true
+      },
+      {
+        "case": 11,
+        "scope": "complete_fixed12",
+        "native_jobs_terminal": 12,
+        "actual_ref_counts": {
+          "baseline_v28": 4,
+          "parent_v084": 4,
+          "power_v104": 4
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "22.902000",
+            "22.799000",
+            "22.794000",
+            "22.871000"
+          ],
+          "parent_v084": [
+            "18.883000",
+            "18.893000",
+            "18.908000",
+            "18.898000"
+          ],
+          "power_v104": [
+            "18.913000",
+            "18.949000",
+            "18.867000",
+            "18.831000"
+          ]
+        },
+        "no_missing_sample_imputed": true,
+        "medians_us": {
+          "baseline_v28": "22.835000",
+          "parent_v084": "18.895500",
+          "power_v104": "18.890000"
+        },
+        "vs_parent_pct": "-0.0291074594480167235585192200",
+        "vs_v28_pct": "-17.27611123275673308517626451",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "22.850500",
+              "parent_v084": "18.888000",
+              "power_v104": "18.931000"
+            },
+            "vs_parent_pct": "0.227657772130453197797543400",
+            "vs_v28_pct": "-17.15279753178267433972998403"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "22.832500",
+              "parent_v084": "18.903000",
+              "power_v104": "18.849000"
+            },
+            "vs_parent_pct": "-0.2856689414378670052372639300",
+            "vs_v28_pct": "-17.44662213949414212197525457"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "22.794000",
+            "22.902000"
+          ],
+          "parent_v084": [
+            "18.883000",
+            "18.908000"
+          ],
+          "power_v104": [
+            "18.831000",
+            "18.949000"
+          ]
+        },
+        "ranges_overlap_parent": true
+      },
+      {
+        "case": 12,
+        "scope": "partial_failed_prefix",
+        "native_jobs_terminal": 9,
+        "actual_ref_counts": {
+          "baseline_v28": 3,
+          "parent_v084": 3,
+          "power_v104": 2
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "82.714000",
+            "86.021000",
+            "82.929000"
+          ],
+          "parent_v084": [
+            "72.084000",
+            "71.711000",
+            "71.767000"
+          ],
+          "power_v104": [
+            "68.659000",
+            "68.408000"
+          ]
+        },
+        "no_missing_sample_imputed": true
+      },
+      {
+        "case": 13,
+        "scope": "UNAVAILABLE_not_run",
+        "native_jobs_terminal": 0,
+        "actual_ref_counts": {
+          "baseline_v28": 0,
+          "parent_v084": 0,
+          "power_v104": 0
+        },
+        "samples_us": {
+          "baseline_v28": [],
+          "parent_v084": [],
+          "power_v104": []
+        },
+        "no_missing_sample_imputed": true
+      },
+      {
+        "case": 14,
+        "scope": "UNAVAILABLE_not_run",
+        "native_jobs_terminal": 0,
+        "actual_ref_counts": {
+          "baseline_v28": 0,
+          "parent_v084": 0,
+          "power_v104": 0
+        },
+        "samples_us": {
+          "baseline_v28": [],
+          "parent_v084": [],
+          "power_v104": []
+        },
+        "no_missing_sample_imputed": true
+      }
+    ],
+    "allrawretained": true,
+    "risk_metadata_profile_not_started": true
+  },
+  "runtime_final": {
+    "UTC": "2026-10-02T07:22:26.583900+00:00",
+    "status": "failed_runtime_OOM_formal_incomplete",
+    "all_self_started_jobs_terminal": true,
+    "self_owned_PID_metadata_remaining": [],
+    "self_live_non_zombie_jobs": [],
+    "formal_master": 300011,
+    "formal_master_terminal": true,
+    "formal_exit": 1,
+    "native_failed_PID": 338622,
+    "native_failed_exit": -9,
+    "formal_full_rows": 140,
+    "formal_candidate_full_rows": 46,
+    "formal_job141_reference_count": 0,
+    "OOM_before": 11,
+    "OOM_after": 13,
+    "post_stages_not_started": {
+      "risk": true,
+      "metadata_all14": true,
+      "paired_profile": true
+    },
+    "no_retry_or_resume": true,
+    "old_v101_exit137_unchanged": true
+  },
+  "failure_memory_forensics": {
+    "failed_job": {
+      "index": 141,
+      "case": 12,
+      "variant": "power_v104",
+      "pid": 338622,
+      "pgid": 338622,
+      "utc_terminal": "2026-10-02T07:17:54.905231+00:00",
+      "native_exit": -9,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "3360706560\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2966691\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2369683456\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "oom_kill": 13
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/formal/job_141_case12_power_v104/native_case12.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/formal/job_141_case12_power_v104/native.log",
+      "observed_PASS_records": 0,
+      "records": [],
+      "samples": 15,
+      "stop_reason": "OOM counter increment during native job",
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "power_v104": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07"
+      }
+    },
+    "samples": [
+      {
+        "utc": "2026-10-02T07:17:23.136639+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 3732,
+        "native_HWM_KiB": 3732,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 10740,
+              "VmHWM": 3732,
+              "VmRSS": 3732
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 3821568,
+        "whole_cgroup_bytes": 3362635776,
+        "whole_minus_selected_RSS_sum_bytes": 3358814208,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:25.138443+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 716668,
+        "native_HWM_KiB": 716668,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 7449052,
+              "VmHWM": 716668,
+              "VmRSS": 716668
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 733868032,
+        "whole_cgroup_bytes": 3738730496,
+        "whole_minus_selected_RSS_sum_bytes": 3004862464,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:27.140282+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 2483248,
+        "native_HWM_KiB": 2483248,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 8930760,
+              "VmHWM": 2483248,
+              "VmRSS": 2483248
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 2542845952,
+        "whole_cgroup_bytes": 5260005376,
+        "whole_minus_selected_RSS_sum_bytes": 2717159424,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:29.142320+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 3929848,
+        "native_HWM_KiB": 3929848,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 10145736,
+              "VmHWM": 3929848,
+              "VmRSS": 3929848
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 4024164352,
+        "whole_cgroup_bytes": 6447808512,
+        "whole_minus_selected_RSS_sum_bytes": 2423644160,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:31.144198+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 6161680,
+        "native_HWM_KiB": 6161680,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 12121412,
+              "VmHWM": 6161680,
+              "VmRSS": 6161680
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 6309560320,
+        "whole_cgroup_bytes": 9631064064,
+        "whole_minus_selected_RSS_sum_bytes": 3321503744,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:33.146293+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 8382268,
+        "native_HWM_KiB": 8382268,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 14139116,
+              "VmHWM": 8382268,
+              "VmRSS": 8382268
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 8583442432,
+        "whole_cgroup_bytes": 13025406976,
+        "whole_minus_selected_RSS_sum_bytes": 4441964544,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:35.148426+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 10722436,
+        "native_HWM_KiB": 10722436,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 16280376,
+              "VmHWM": 10722436,
+              "VmRSS": 10722436
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 10979774464,
+        "whole_cgroup_bytes": 17325654016,
+        "whole_minus_selected_RSS_sum_bytes": 6345879552,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:37.150554+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 12971560,
+        "native_HWM_KiB": 12971560,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 18300440,
+              "VmHWM": 12971560,
+              "VmRSS": 12971560
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 13282877440,
+        "whole_cgroup_bytes": 21449412608,
+        "whole_minus_selected_RSS_sum_bytes": 8166535168,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:39.152634+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 15152992,
+        "native_HWM_KiB": 15152992,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 20227756,
+              "VmHWM": 15152992,
+              "VmRSS": 15152992
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 15516663808,
+        "whole_cgroup_bytes": 25572200448,
+        "whole_minus_selected_RSS_sum_bytes": 10055536640,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:41.154552+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 17126968,
+        "native_HWM_KiB": 17126968,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 21949024,
+              "VmHWM": 17126968,
+              "VmRSS": 17126968
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 17538015232,
+        "whole_cgroup_bytes": 29374787584,
+        "whole_minus_selected_RSS_sum_bytes": 11836772352,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:43.156534+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 18990608,
+        "native_HWM_KiB": 18990608,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 23589948,
+              "VmHWM": 18990608,
+              "VmRSS": 18990608
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 19446382592,
+        "whole_cgroup_bytes": 33033101312,
+        "whole_minus_selected_RSS_sum_bytes": 13586718720,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:45.158557+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 19765120,
+        "native_HWM_KiB": 19765120,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 24266032,
+              "VmHWM": 19765120,
+              "VmRSS": 19765120
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 20239482880,
+        "whole_cgroup_bytes": 34359607296,
+        "whole_minus_selected_RSS_sum_bytes": 14120124416,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:47.161163+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 20052880,
+        "native_HWM_KiB": 20052880,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 24856960,
+              "VmHWM": 20052880,
+              "VmRSS": 20052880
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 20534149120,
+        "whole_cgroup_bytes": 34359726080,
+        "whole_minus_selected_RSS_sum_bytes": 13825576960,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:49.163211+00:00",
+        "native_state": "R",
+        "native_RSS_KiB": 20134220,
+        "native_HWM_KiB": 20150956,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "R",
+            "comm": "python",
+            "memory_kib": {
+              "VmSize": 25547916,
+              "VmHWM": 20150956,
+              "VmRSS": 20134220
+            }
+          }
+        ],
+        "selected_RSS_sum_bytes": 20617441280,
+        "whole_cgroup_bytes": 34359480320,
+        "whole_minus_selected_RSS_sum_bytes": 13742039040,
+        "OOM": 11,
+        "difference_not_attributed_or_unique_memory": true
+      },
+      {
+        "utc": "2026-10-02T07:17:51.192383+00:00",
+        "native_state": "Z",
+        "native_RSS_KiB": null,
+        "native_HWM_KiB": null,
+        "selected_processes": [
+          {
+            "pid": 338622,
+            "ppid": 300011,
+            "pgid": 338622,
+            "state": "Z",
+            "comm": "python",
+            "memory_kib": {}
+          }
+        ],
+        "selected_RSS_sum_bytes": 0,
+        "whole_cgroup_bytes": 34359283712,
+        "whole_minus_selected_RSS_sum_bytes": 34359283712,
+        "OOM": 13,
+        "difference_not_attributed_or_unique_memory": true
+      }
+    ],
+    "observed_sample_count": 15,
+    "whole_peak_observed_bytes": 34359726080,
+    "native_RSS_peak_observed_KiB": 20134220,
+    "OOM_before": 11,
+    "OOM_after": 13,
+    "exact_peak_or_victim_chain_not_proved": true,
+    "sampled_descendants_not_all_cgroup_tasks": true
+  },
+  "readonly_current_census": "formal_failure_readonly_PID_census.json",
+  "compiler_resource_only": {
+    "command": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-device-obj",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-resource-usage",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/resources/candidate_case12.mcbin",
+      "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/codegen_precompile/power_v104/case12_stage1.device.cpp"
+    ],
+    "device_sha256": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13",
+    "MT": 68,
+    "ST": 44,
+    "static_shared_bytes": 0,
+    "dynamic_shared_bytes": 2048,
+    "stack_bytes": 0,
+    "static_max_warps": 7,
+    "not_measured_occupancy": true,
+    "resource_gate_pass": true
+  },
+  "optimized_IR_only": {
+    "IR_path": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/codegen_optimized/power_v104.ll",
+    "IR_sha256": "de3bcdfdac453609d68d33a9250f835720ffdc48661f03df20d69b1712b79277",
+    "kernel_MMA_static_call_sites": 64,
+    "expected_QK_sites": 32,
+    "expected_PV_sites": 32,
+    "kernel_loop_metadata_sites": [],
+    "kernel_alloca_instructions": [],
+    "kernel_private_addrspace5_sites": [],
+    "Score_P_data_offsets_after_O3": "buffer indexing eliminated into scalar/vector SSA;8selections expanded;no runtime selector loop/localbuffer indexing survives",
+    "compiler_capture_attention_reference_checks": 0,
+    "stack_resource_bytes": 0,
+    "proof_limit": "optimized compiler IR plus resource,not decoded machine ISA or runtime occupancy;conditional invalidslots can skip MMAs",
+    "gate_pass": true
+  },
+  "source_safety_codegen_gate": {
+    "source_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "device_sha256": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13",
+    "buffers": [
+      32,
+      32,
+      16
+    ],
+    "global_widths": {
+      "Q": 16,
+      "K": 16,
+      "V": 8,
+      "Output": 16
+    },
+    "Score_P_initialization_verified": true,
+    "uniform_hasvalid_for_empty": true,
+    "premultiply_guard_before_globalread": true,
+    "Num_initialization_after_softmax_verified": true,
+    "QK_to_V_and_V_to_nextwrite_output_sync_preserved": true,
+    "CPP_lines_for_review": [
+      {
+        "line": 35,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 36,
+        "text": "for (int chunk = 0; chunk < 4; ++chunk) {"
+      },
+      {
+        "line": 37,
+        "text": "*(uint2*)(q_local + (chunk * 4)) = *(uint2*)(shared + ((((((int)threadIdx.x) & 15) * 64) + ((((chunk * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (((int)threadIdx.x) & 1)) * 4)));"
+      },
+      {
+        "line": 38,
+        "text": "}"
+      },
+      {
+        "line": 39,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 40,
+        "text": "for (int i = 0; i < 8; ++i) {"
+      },
+      {
+        "line": 41,
+        "text": "float broadcast_var = -MACART_INF_F;"
+      },
+      {
+        "line": 42,
+        "text": "*(float4*)(scores + (i * 4)) = make_float4(broadcast_var, broadcast_var, broadcast_var, broadcast_var);"
+      },
+      {
+        "line": 43,
+        "text": "}"
+      },
+      {
+        "line": 44,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 45,
+        "text": "for (int i_1 = 0; i_1 < 8; ++i_1) {"
+      },
+      {
+        "line": 46,
+        "text": "half_t broadcast_var_1 = half_t(0x0p+0f/*0.000000e+00*/);"
+      },
+      {
+        "line": 47,
+        "text": "*(uint2*)(probabilities + (i_1 * 4)) = make_uint2(__pack_half2(broadcast_var_1, broadcast_var_1), __pack_half2(broadcast_var_1, broadcast_var_1));"
+      },
+      {
+        "line": 48,
+        "text": "}"
+      },
+      {
+        "line": 49,
+        "text": "has_valid[0] = 0;"
+      },
+      {
+        "line": 50,
+        "text": "denominator[0] = 0x0p+0f/*0.000000e+00*/;"
+      },
+      {
+        "line": 51,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 52,
+        "text": "for (int selected = 0; selected < 8; ++selected) {"
+      },
+      {
+        "line": 53,
+        "text": "int raw_index = Indices[(((((int)blockIdx.y) * 8192) + (((int)blockIdx.x) * 8)) + selected)];"
+      },
+      {
+        "line": 54,
+        "text": "if (((0 <= raw_index) && (raw_index < 64)) && (raw_index <= (((int)blockIdx.x) >> 4))) {"
+      },
+      {
+        "line": 55,
+        "text": "has_valid[0] = 1;"
+      },
+      {
+        "line": 90,
+        "text": "}"
+      },
+      {
+        "line": 91,
+        "text": "if (has_valid[0]) {"
+      },
+      {
+        "line": 92,
+        "text": "maximum[0] = -MACART_INF_F;"
+      },
+      {
+        "line": 93,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 94,
+        "text": "for (int element_2 = 0; element_2 < 32; ++element_2) {"
+      },
+      {
+        "line": 95,
+        "text": "maximum[0] = max(maximum[0], scores[element_2]);"
+      },
+      {
+        "line": 96,
+        "text": "}"
+      },
+      {
+        "line": 97,
+        "text": "maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 32, 64));"
+      },
+      {
+        "line": 98,
+        "text": "maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 16, 64));"
+      },
+      {
+        "line": 99,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 100,
+        "text": "for (int selected_1 = 0; selected_1 < 8; ++selected_1) {"
+      },
+      {
+        "line": 101,
+        "text": "float broadcast_var_2 = 0x1.7154764ee6c2fp-3f/*1.803369e-01*/;"
+      },
+      {
+        "line": 102,
+        "text": "float broadcast_var_3 = 0x1p+3f/*8.000000e+00*/;"
+      },
+      {
+        "line": 103,
+        "text": "uint2 __1;"
+      },
+      {
+        "line": 104,
+        "text": "float4 __2;"
+      },
+      {
+        "line": 105,
+        "text": "float4 __3;"
+      },
+      {
+        "line": 106,
+        "text": "float4 __4;"
+      },
+      {
+        "line": 107,
+        "text": "float4 __5;"
+      },
+      {
+        "line": 108,
+        "text": "float4 v_ = *(float4*)(scores + (selected_1 * 4));"
+      },
+      {
+        "line": 109,
+        "text": "float4 v__1 = make_float4(maximum[0], maximum[0], maximum[0], maximum[0]);"
+      },
+      {
+        "line": 110,
+        "text": "__5.x = (v_.x-v__1.x);"
+      },
+      {
+        "line": 111,
+        "text": "__5.y = (v_.y-v__1.y);"
+      },
+      {
+        "line": 112,
+        "text": "__5.z = (v_.z-v__1.z);"
+      },
+      {
+        "line": 113,
+        "text": "__5.w = (v_.w-v__1.w);"
+      },
+      {
+        "line": 114,
+        "text": "float4 v__2 = make_float4(broadcast_var_2, broadcast_var_2, broadcast_var_2, broadcast_var_2);"
+      },
+      {
+        "line": 115,
+        "text": "__4.x = (__5.x*v__2.x);"
+      },
+      {
+        "line": 116,
+        "text": "__4.y = (__5.y*v__2.y);"
+      },
+      {
+        "line": 117,
+        "text": "__4.z = (__5.z*v__2.z);"
+      },
+      {
+        "line": 118,
+        "text": "__4.w = (__5.w*v__2.w);"
+      },
+      {
+        "line": 119,
+        "text": "float4 v__3 = make_float4(broadcast_var_3, broadcast_var_3, broadcast_var_3, broadcast_var_3);"
+      },
+      {
+        "line": 120,
+        "text": "__3.x = (__4.x+v__3.x);"
+      },
+      {
+        "line": 121,
+        "text": "__3.y = (__4.y+v__3.y);"
+      },
+      {
+        "line": 122,
+        "text": "__3.z = (__4.z+v__3.z);"
+      },
+      {
+        "line": 123,
+        "text": "__3.w = (__4.w+v__3.w);"
+      },
+      {
+        "line": 124,
+        "text": "__2.x = exp2f(__3.x);"
+      },
+      {
+        "line": 125,
+        "text": "__2.y = exp2f(__3.y);"
+      },
+      {
+        "line": 126,
+        "text": "__2.z = exp2f(__3.z);"
+      },
+      {
+        "line": 127,
+        "text": "__2.w = exp2f(__3.w);"
+      },
+      {
+        "line": 128,
+        "text": "((half2*)(&__1))[0] = __float22half2_rn(((float2*)(&__2))[0]);"
+      },
+      {
+        "line": 129,
+        "text": "((half2*)(&__1))[1] = __float22half2_rn(((float2*)(&__2))[1]);"
+      },
+      {
+        "line": 130,
+        "text": "*(uint2*)(probabilities + (selected_1 * 4)) = __1;"
+      },
+      {
+        "line": 131,
+        "text": "}"
+      },
+      {
+        "line": 132,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 133,
+        "text": "for (int element_3 = 0; element_3 < 32; ++element_3) {"
+      },
+      {
+        "line": 134,
+        "text": "denominator[0] = (denominator[0] + ((float)probabilities[element_3]));"
+      },
+      {
+        "line": 135,
+        "text": "}"
+      },
+      {
+        "line": 136,
+        "text": "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));"
+      },
+      {
+        "line": 137,
+        "text": "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));"
+      },
+      {
+        "line": 138,
+        "text": "}"
+      },
+      {
+        "line": 139,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 140,
+        "text": "for (int i_2 = 0; i_2 < 4; ++i_2) {"
+      },
+      {
+        "line": 141,
+        "text": "float broadcast_var_4 = 0x0p+0f/*0.000000e+00*/;"
+      },
+      {
+        "line": 142,
+        "text": "*(float4*)(numerator + (i_2 * 4)) = make_float4(broadcast_var_4, broadcast_var_4, broadcast_var_4, broadcast_var_4);"
+      },
+      {
+        "line": 143,
+        "text": "}"
+      },
+      {
+        "line": 144,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 145,
+        "text": "for (int selected_2 = 0; selected_2 < 8; ++selected_2) {"
+      },
+      {
+        "line": 145,
+        "text": "for (int selected_2 = 0; selected_2 < 8; ++selected_2) {"
+      },
+      {
+        "line": 146,
+        "text": "int raw_index_1 = Indices[(((((int)blockIdx.y) * 8192) + (((int)blockIdx.x) * 8)) + selected_2)];"
+      },
+      {
+        "line": 147,
+        "text": "if (((0 <= raw_index_1) && (raw_index_1 < 64)) && (raw_index_1 <= (((int)blockIdx.x) >> 4))) {"
+      },
+      {
+        "line": 148,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 149,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 150,
+        "text": "for (int row = 0; row < 4; ++row) {"
+      },
+      {
+        "line": 151,
+        "text": "*(uint2*)(v_fetch + (row * 4)) = *(uint2*)(V + (((((((int)blockIdx.y) * 65536) + (raw_index_1 * 1024)) + ((((int)threadIdx.x) >> 4) * 256)) + (row * 64)) + ((((int)threadIdx.x) & 15) * 4)));"
+      },
+      {
+        "line": 152,
+        "text": "}"
+      },
+      {
+        "line": 153,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 154,
+        "text": "for (int col = 0; col < 4; ++col) {"
+      },
+      {
+        "line": 155,
+        "text": "for (int row_1 = 0; row_1 < 4; ++row_1) {"
+      },
+      {
+        "line": 156,
+        "text": "v_column[row_1] = v_fetch[((row_1 * 4) + col)];"
+      },
+      {
+        "line": 157,
+        "text": "}"
+      },
+      {
+        "line": 158,
+        "text": "*(uint2*)(shared + (((col * 256) + ((((int)threadIdx.x) & 15) * 16)) + ((((((int)threadIdx.x) >> 4) ^ ((((int)threadIdx.x) & 15) >> 2)) ^ col) * 4))) = *(uint2*)(v_column + 0);"
+      },
+      {
+        "line": 159,
+        "text": "}"
+      },
+      {
+        "line": 160,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 161,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 162,
+        "text": "for (int chunk_2 = 0; chunk_2 < 4; ++chunk_2) {"
+      },
+      {
+        "line": 163,
+        "text": "*(uint2*)(v_operand + (chunk_2 * 4)) = *(uint2*)(shared + (((((((int)threadIdx.x) & 3) * 256) + (chunk_2 * 64)) + (((((int)threadIdx.x) & 15) >> 2) * 16)) + ((((((int)threadIdx.x) >> 4) ^ chunk_2) ^ (((int)threadIdx.x) & 3)) * 4)));"
+      },
+      {
+        "line": 164,
+        "text": "}"
+      },
+      {
+        "line": 165,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 166,
+        "text": "for (int chunk_3 = 0; chunk_3 < 4; ++chunk_3) {"
+      },
+      {
+        "line": 167,
+        "text": "{"
+      },
+      {
+        "line": 168,
+        "text": "*(((float32x4*)numerator) + chunk_3) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)v_operand) + chunk_3),"
+      },
+      {
+        "line": 169,
+        "text": "*(((float16x4*)probabilities) + selected_2),"
+      },
+      {
+        "line": 170,
+        "text": "*(((float32x4*)numerator) + chunk_3));"
+      },
+      {
+        "line": 175,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 176,
+        "text": "for (int chunk_4 = 0; chunk_4 < 4; ++chunk_4) {"
+      },
+      {
+        "line": 177,
+        "text": "float4 __6;"
+      },
+      {
+        "line": 178,
+        "text": "float4 v__4 = *(float4*)(numerator + (chunk_4 * 4));"
+      },
+      {
+        "line": 179,
+        "text": "float4 v__5 = make_float4(denominator[0], denominator[0], denominator[0], denominator[0]);"
+      },
+      {
+        "line": 180,
+        "text": "__6.x = (v__4.x/v__5.x);"
+      },
+      {
+        "line": 181,
+        "text": "__6.y = (v__4.y/v__5.y);"
+      },
+      {
+        "line": 182,
+        "text": "__6.z = (v__4.z/v__5.z);"
+      },
+      {
+        "line": 183,
+        "text": "__6.w = (v__4.w/v__5.w);"
+      },
+      {
+        "line": 184,
+        "text": "*(float4*)(numerator + (chunk_4 * 4)) = __6;"
+      },
+      {
+        "line": 185,
+        "text": "}"
+      },
+      {
+        "line": 186,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 187,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 188,
+        "text": "for (int chunk_5 = 0; chunk_5 < 4; ++chunk_5) {"
+      },
+      {
+        "line": 189,
+        "text": "uint2 __7;"
+      },
+      {
+        "line": 190,
+        "text": "float4 v__6 = *(float4*)(numerator + (chunk_5 * 4));"
+      },
+      {
+        "line": 191,
+        "text": "((half2*)(&__7))[0] = __float22half2_rn(((float2*)(&v__6))[0]);"
+      },
+      {
+        "line": 192,
+        "text": "((half2*)(&__7))[1] = __float22half2_rn(((float2*)(&v__6))[1]);"
+      },
+      {
+        "line": 193,
+        "text": "*(uint2*)(shared_local_cast + 0) = __7;"
+      },
+      {
+        "line": 194,
+        "text": "*(uint2*)(shared + ((((((int)threadIdx.x) & 15) * 64) + ((((chunk_5 * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + ((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(shared_local_cast + 0);"
+      },
+      {
+        "line": 195,
+        "text": "}"
+      },
+      {
+        "line": 196,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 197,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 198,
+        "text": "for (int part_2 = 0; part_2 < 2; ++part_2) {"
+      },
+      {
+        "line": 199,
+        "text": "#pragma unroll"
+      },
+      {
+        "line": 200,
+        "text": "for (int pack_2 = 0; pack_2 < 2; ++pack_2) {"
+      },
+      {
+        "line": 201,
+        "text": "*(uint2*)(output_fetch + (pack_2 * 4)) = *(uint2*)(shared + ((((part_2 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + ((pack_2 ^ part_2) * 4)));"
+      },
+      {
+        "line": 202,
+        "text": "}"
+      },
+      {
+        "line": 203,
+        "text": "*(uint4*)(Output + ((((((int)blockIdx.y) * 1048576) + (((int)blockIdx.x) * 1024)) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+      },
+      {
+        "line": 204,
+        "text": "}"
+      },
+      {
+        "line": 205,
+        "text": "}"
+      }
+    ],
+    "gate_pass": true,
+    "reference_checks": 0
+  },
+  "post_pipeline_blocked": {
+    "reason": "originalfixedformal stoppedOOM; no postgate executed",
+    "risk": {
+      "planned_only": true,
+      "started": false
+    },
+    "metadata_all14": {
+      "planned42_only": true,
+      "started": false
+    },
+    "paired_mcProfiler": {
+      "planned4counters_only": true,
+      "started": false
+    },
+    "final_resource_recompile": {
+      "planned_only": true,
+      "started": false
+    },
+    "prepared_fullsuccess_helpers_not_executed": [
+      "analyze_formal_all14.py",
+      "finish_report.py",
+      "close_version.py"
+    ],
+    "no_failure_gate_overwritten": true
+  },
+  "all_positive_delta_and_outlier_retained": true,
+  "old_v101_exit137_preserved": true,
+  "all14_completed": false,
+  "no_regression_demonstrated": false,
+  "OOM_cause_verified": false,
+  "OJ": null,
+  "main_promotion": false
+}

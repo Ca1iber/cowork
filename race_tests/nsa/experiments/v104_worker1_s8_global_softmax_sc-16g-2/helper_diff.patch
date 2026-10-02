@@ -1,0 +1,128 @@
+--- parent84 S8factory
++++ s8_global_softmax_kernel.py
+@@ -4,9 +4,9 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s8_output_pair(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s8_global_softmax(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+-    assert groups == 16 and dim == 64 and selected_blocks in (2, 4, 8) and block_size == 16 and is_causal
++    assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+     scale = (1.0 / dim) ** 0.5 * 1.44269504
+     dtype = T.float16
+@@ -35,19 +35,16 @@
+             q_local = T.alloc_local(16, dtype)
+             qk_fetch = T.alloc_local(8, dtype)
+             k_local = T.alloc_local(4, dtype)
+-            scores = T.alloc_local(4, accum_dtype)
+-            probabilities = T.alloc_local(4, dtype)
++            scores = T.alloc_local(32, accum_dtype)
++            probabilities = T.alloc_local(32, dtype)
+             numerator = T.alloc_local(16, accum_dtype)
+             maximum = T.alloc_local(1, accum_dtype)
+-            new_maximum = T.alloc_local(1, accum_dtype)
+-            block_maximum = T.alloc_local(1, accum_dtype)
+-            rescale = T.alloc_local(1, accum_dtype)
+             denominator = T.alloc_local(1, accum_dtype)
+-            partial_sum = T.alloc_local(1, accum_dtype)
+             v_fetch = T.alloc_local(16, dtype)
+             v_column = T.alloc_local(4, dtype)
+             v_operand = T.alloc_local(16, dtype)
+             output_fetch = T.alloc_local(8, dtype)
++            has_valid = T.alloc_local(1, T.int32)
+             for part in T.unroll(2):
+                 for element in T.vectorized(8):
+                     pos = part * 512 + lane * 8 + element
+@@ -60,12 +57,15 @@
+             for chunk in T.unroll(4):
+                 for element in T.vectorized(4):
+                     q_local[chunk * 4 + element] = shared[qk_slot(lane % 16, chunk * 16 + (lane // 16) * 4) + element]
+-            T.fill(numerator, 0)
++            T.fill(scores, -T.infinity(accum_dtype))
++            T.fill(probabilities, 0)
++            has_valid[0] = 0
+             denominator[0] = 0
+-            maximum[0] = -T.infinity(accum_dtype)
+-            for selected in T.unroll(selected_blocks, annotations={"pragma_unroll_explicit": False, "pragma_unroll_factor": 1}):
+-                block_start = Indices[batch_id, token, kv_head, selected] * block_size
+-                if block_start >= 0 and block_start <= token:
++            for selected in T.unroll(8):
++                raw_index = Indices[batch_id, token, kv_head, selected]
++                if raw_index >= 0 and raw_index < seq_len // block_size and raw_index <= token // block_size:
++                    block_start = raw_index * block_size
++                    has_valid[0] = 1
+                     T.sync_warp()
+                     for part in T.unroll(2):
+                         for element in T.vectorized(8):
+@@ -76,35 +76,36 @@
+                             for element in T.vectorized(4):
+                                 shared[qk_slot(pos // 64, pos % 64) + element] = qk_fetch[pack * 4 + element]
+                     T.sync_warp()
+-                    T.fill(scores, 0)
++                    for element in T.unroll(4):
++                        scores[selected * 4 + element] = 0
+                     for chunk in T.unroll(4):
+                         for element in T.vectorized(4):
+                             k_local[element] = shared[qk_slot(lane % 16, chunk * 16 + (lane // 16) * 4) + element]
+                         T.tvm_mfma('16x16x16f16', 'row', 'row',
+                             'float16x4', 'float16x4', 'float32x4',
+-                            k_local.data, 0, q_local.data, chunk, scores.data, 0,
++                            k_local.data, 0, q_local.data, chunk, scores.data, selected,
+                             dtype='float32x4')
+                     for element in T.unroll(4):
+-                        scores[element] = T.if_then_else(token >= block_start + (lane // 16) * 4 + element,
+-                            scores[element], -T.infinity(accum_dtype))
+-                    block_maximum[0] = -T.infinity(accum_dtype)
+-                    for element in T.unroll(4):
+-                        block_maximum[0] = T.max(block_maximum[0], scores[element])
+-                    block_maximum[0] = T.max(block_maximum[0], T.shfl_xor(block_maximum[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF))
+-                    block_maximum[0] = T.max(block_maximum[0], T.shfl_xor(block_maximum[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF))
+-                    new_maximum[0] = T.max(maximum[0], block_maximum[0])
+-                    rescale[0] = T.exp2((maximum[0] - new_maximum[0]) * scale)
+-                    for chunk in T.unroll(4):
+-                        for element in T.vectorized(4):
+-                            numerator[chunk * 4 + element] *= rescale[0]
+-                    denominator[0] *= rescale[0]
+-                    maximum[0] = new_maximum[0]
++                        scores[selected * 4 + element] = T.if_then_else(token >= block_start + (lane // 16) * 4 + element,
++                            scores[selected * 4 + element], -T.infinity(accum_dtype))
++            if has_valid[0]:
++                maximum[0] = -T.infinity(accum_dtype)
++                for element in T.unroll(32):
++                    maximum[0] = T.max(maximum[0], scores[element])
++                maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF))
++                maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF))
++                for selected in T.unroll(8):
+                     for element in T.vectorized(4):
+-                        probabilities[element] = T.exp2((scores[element] - maximum[0]) * scale + 8.0)
+-                    partial_sum[0] = 0
+-                    for element in T.unroll(4):
+-                        partial_sum[0] += probabilities[element].astype(accum_dtype)
+-                    denominator[0] += partial_sum[0]
++                        probabilities[selected * 4 + element] = T.exp2((scores[selected * 4 + element] - maximum[0]) * scale + 8.0)
++                for element in T.unroll(32):
++                    denominator[0] += probabilities[element].astype(accum_dtype)
++                denominator[0] += T.shfl_xor(denominator[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF)
++                denominator[0] += T.shfl_xor(denominator[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF)
++            T.fill(numerator, 0)
++            for selected in T.unroll(8):
++                raw_index = Indices[batch_id, token, kv_head, selected]
++                if raw_index >= 0 and raw_index < seq_len // block_size and raw_index <= token // block_size:
++                    block_start = raw_index * block_size
+                     T.sync_warp()
+                     fetch_row = (lane // 16) * 4
+                     fetch_col = (lane % 16) * 4
+@@ -123,10 +124,8 @@
+                     for chunk in T.unroll(4):
+                         T.tvm_mfma('16x16x16f16', 'row', 'row',
+                             'float16x4', 'float16x4', 'float32x4',
+-                            v_operand.data, chunk, probabilities.data, 0, numerator.data, chunk,
++                            v_operand.data, chunk, probabilities.data, selected, numerator.data, chunk,
+                             dtype='float32x4')
+-            denominator[0] += T.shfl_xor(denominator[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF)
+-            denominator[0] += T.shfl_xor(denominator[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF)
+             for chunk in T.unroll(4):
+                 for element in T.vectorized(4):
+                     numerator[chunk * 4 + element] /= denominator[0]

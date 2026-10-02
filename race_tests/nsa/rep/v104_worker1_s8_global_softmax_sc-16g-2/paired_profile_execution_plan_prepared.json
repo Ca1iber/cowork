@@ -1,0 +1,45 @@
+{
+  "prepared_only_not_launched": true,
+  "case": 12,
+  "jobs": [
+    {
+      "variant": "parent_v084",
+      "case": 12,
+      "counter_samples": 2
+    },
+    {
+      "variant": "power_v104",
+      "case": 12,
+      "counter_samples": 2
+    }
+  ],
+  "metrics": [
+    "L2C Hit Rate",
+    "Global Memory Read bytes",
+    "Global Memory Write bytes",
+    "AP MTE Duty ratio",
+    "AP MMA Duty ratio",
+    "shared memory access efficiency",
+    "average conflict cycles per instruction",
+    "average latency per load instruction",
+    "Achieved waves",
+    "Dispatched waves"
+  ],
+  "CLI_counts": 2,
+  "expected_counter_samples": 4,
+  "predeclared_scope": {
+    "dispatched_waves": 4096,
+    "output_payload_bytes": 8388608,
+    "unattributed_write_residual_allowed": [
+      0,
+      512
+    ],
+    "necessary_not_exclusive": true
+  },
+  "original_native_reference_checks": 0,
+  "profile_driver_not_native_benchmark": true,
+  "profile_inputs_requires_grad": false,
+  "counter_driver_calls": "firstcall then10warm then20profile; actualtool replays retained,not fullreference count",
+  "serial_after_formal_risk_metadata": true,
+  "stop_no_retry_on_any_runtime_or_counter_failure": true
+}

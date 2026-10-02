@@ -1,0 +1,14 @@
+{
+  "logical_score_entries": 2048,
+  "query_heads": 16,
+  "keys_per_head": 128,
+  "local_score_slots_per_lane": 32,
+  "score_and_P_vector_offsets": "selected0..7 -> four scalar elements selected*4..+3",
+  "xor32_then16_head_reduction_groups": "lanes head,head+16,head+32,head+48;selectedkeys128 complete",
+  "coverage_bijection": true,
+  "invalid_slots_require_explicit_initialization": true,
+  "selected_unroll_required_for_constant_offset_codegen": true,
+  "reference_checks": 0,
+  "candidate_edited": false,
+  "proof_limit": "logical coverage only;actualcodegen/stack/numerical tolerance still gates"
+}

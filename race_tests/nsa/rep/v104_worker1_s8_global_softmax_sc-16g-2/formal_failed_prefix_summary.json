@@ -1,0 +1,934 @@
+{
+  "status": "failed_runtime_OOM_formal_prefix_inconclusive",
+  "source_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+  "candidate_formal_refs": 46,
+  "inclusive_formal_refs": 140,
+  "terminal_jobs": 141,
+  "planned_jobs": 168,
+  "OOM_before": 11,
+  "OOM_after": 13,
+  "failed_job": {
+    "index": 141,
+    "case": 12,
+    "variant": "power_v104",
+    "pid": 338622,
+    "pgid": 338622,
+    "utc_terminal": "2026-10-02T07:17:54.905231+00:00",
+    "native_exit": -9,
+    "cgroup_before": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "3360706560\n",
+      "memory.max_usage_in_bytes": "34359869440\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+      "memory.failcnt": "2966691\n",
+      "oom_kill": 11
+    },
+    "cgroup_after": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "2369683456\n",
+      "memory.max_usage_in_bytes": "34359869440\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "oom_kill": 13
+    },
+    "csv": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/formal/job_141_case12_power_v104/native_case12.csv",
+    "log": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/formal/job_141_case12_power_v104/native.log",
+    "observed_PASS_records": 0,
+    "records": [],
+    "samples": 15,
+    "stop_reason": "OOM counter increment during native job",
+    "source_hashes_after": {
+      "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+      "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+      "power_v104": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07"
+    }
+  },
+  "cases": [
+    {
+      "case": 1,
+      "scope": "complete_fixed12",
+      "native_jobs_terminal": 12,
+      "actual_ref_counts": {
+        "baseline_v28": 4,
+        "parent_v084": 4,
+        "power_v104": 4
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "11.802000",
+          "8.515000",
+          "8.858000",
+          "11.290000"
+        ],
+        "parent_v084": [
+          "8.817000",
+          "8.407000",
+          "9.994000",
+          "10.670000"
+        ],
+        "power_v104": [
+          "8.228000",
+          "8.694000",
+          "8.463000",
+          "8.525000"
+        ]
+      },
+      "no_missing_sample_imputed": true,
+      "medians_us": {
+        "baseline_v28": "10.074000",
+        "parent_v084": "9.405500",
+        "power_v104": "8.494000"
+      },
+      "vs_parent_pct": "-9.691138163840306203816915630",
+      "vs_v28_pct": "-15.68393885249156243795910264",
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "10.158500",
+            "parent_v084": "8.612000",
+            "power_v104": "8.461000"
+          },
+          "vs_parent_pct": "-1.753367394333488156061309800",
+          "vs_v28_pct": "-16.71014421420485307870256435"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "10.074000",
+            "parent_v084": "10.332000",
+            "power_v104": "8.494000"
+          },
+          "vs_parent_pct": "-17.78939217963608207510646535",
+          "vs_v28_pct": "-15.68393885249156243795910264"
+        }
+      ],
+      "ranges_us": {
+        "baseline_v28": [
+          "8.515000",
+          "11.802000"
+        ],
+        "parent_v084": [
+          "8.407000",
+          "10.670000"
+        ],
+        "power_v104": [
+          "8.228000",
+          "8.694000"
+        ]
+      },
+      "ranges_overlap_parent": true
+    },
+    {
+      "case": 2,
+      "scope": "complete_fixed12",
+      "native_jobs_terminal": 12,
+      "actual_ref_counts": {
+        "baseline_v28": 4,
+        "parent_v084": 4,
+        "power_v104": 4
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "9.472000",
+          "9.600000",
+          "9.093000",
+          "9.400000"
+        ],
+        "parent_v084": [
+          "9.672000",
+          "9.001000",
+          "8.689000",
+          "9.728000"
+        ],
+        "power_v104": [
+          "10.813000",
+          "8.771000",
+          "8.929000",
+          "9.068000"
+        ]
+      },
+      "no_missing_sample_imputed": true,
+      "medians_us": {
+        "baseline_v28": "9.436000",
+        "parent_v084": "9.336500",
+        "power_v104": "8.998500"
+      },
+      "vs_parent_pct": "-3.620200289187597065281422370",
+      "vs_v28_pct": "-4.636498516320474777448071220",
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "9.536000",
+            "parent_v084": "9.336500",
+            "power_v104": "9.792000"
+          },
+          "vs_parent_pct": "4.878701869008729181170674200",
+          "vs_v28_pct": "2.684563758389261744966443000"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "9.246500",
+            "parent_v084": "9.208500",
+            "power_v104": "8.998500"
+          },
+          "vs_parent_pct": "-2.280501710376282782212086660",
+          "vs_v28_pct": "-2.682095928189044503325582650"
+        }
+      ],
+      "ranges_us": {
+        "baseline_v28": [
+          "9.093000",
+          "9.600000"
+        ],
+        "parent_v084": [
+          "8.689000",
+          "9.728000"
+        ],
+        "power_v104": [
+          "8.771000",
+          "10.813000"
+        ]
+      },
+      "ranges_overlap_parent": true
+    },
+    {
+      "case": 3,
+      "scope": "complete_fixed12",
+      "native_jobs_terminal": 12,
+      "actual_ref_counts": {
+        "baseline_v28": 4,
+        "parent_v084": 4,
+        "power_v104": 4
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "11.960000",
+          "11.991000",
+          "12.032000",
+          "12.042000"
+        ],
+        "parent_v084": [
+          "10.685000",
+          "10.086000",
+          "10.117000",
+          "10.132000"
+        ],
+        "power_v104": [
+          "10.911000",
+          "10.824000",
+          "10.163000",
+          "10.127000"
+        ]
+      },
+      "no_missing_sample_imputed": true,
+      "medians_us": {
+        "baseline_v28": "12.011500",
+        "parent_v084": "10.124500",
+        "power_v104": "10.493500"
+      },
+      "vs_parent_pct": "3.644624425897575188898217200",
+      "vs_v28_pct": "-12.63788869000541148066436332",
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "11.975500",
+            "parent_v084": "10.385500",
+            "power_v104": "10.867500"
+          },
+          "vs_parent_pct": "4.641086129700062587261085200",
+          "vs_v28_pct": "-9.252223289215481608283578970"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "12.037000",
+            "parent_v084": "10.124500",
+            "power_v104": "10.145000"
+          },
+          "vs_parent_pct": "0.202479134772087510494345400",
+          "vs_v28_pct": "-15.71820220985295339370274985"
+        }
+      ],
+      "ranges_us": {
+        "baseline_v28": [
+          "11.960000",
+          "12.042000"
+        ],
+        "parent_v084": [
+          "10.086000",
+          "10.685000"
+        ],
+        "power_v104": [
+          "10.127000",
+          "10.911000"
+        ]
+      },
+      "ranges_overlap_parent": true
+    },
+    {
+      "case": 4,
+      "scope": "complete_fixed12",
+      "native_jobs_terminal": 12,
+      "actual_ref_counts": {
+        "baseline_v28": 4,
+        "parent_v084": 4,
+        "power_v104": 4
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "12.549000",
+          "12.472000",
+          "12.564000",
+          "12.524000"
+        ],
+        "parent_v084": [
+          "10.783000",
+          "11.443000",
+          "11.535000",
+          "10.778000"
+        ],
+        "power_v104": [
+          "11.520000",
+          "11.505000",
+          "11.494000",
+          "11.325000"
+        ]
+      },
+      "no_missing_sample_imputed": true,
+      "medians_us": {
+        "baseline_v28": "12.536500",
+        "parent_v084": "11.113000",
+        "power_v104": "11.499500"
+      },
+      "vs_parent_pct": "3.477908755511563034284171700",
+      "vs_v28_pct": "-8.271846209069517010329836880",
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "12.510500",
+            "parent_v084": "11.113000",
+            "power_v104": "11.512500"
+          },
+          "vs_parent_pct": "3.594888868892288310987132200",
+          "vs_v28_pct": "-7.977299068782222932736501340"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "12.544000",
+            "parent_v084": "11.156500",
+            "power_v104": "11.409500"
+          },
+          "vs_parent_pct": "2.267736297225832474342311700",
+          "vs_v28_pct": "-9.044164540816326530612244900"
+        }
+      ],
+      "ranges_us": {
+        "baseline_v28": [
+          "12.472000",
+          "12.564000"
+        ],
+        "parent_v084": [
+          "10.778000",
+          "11.535000"
+        ],
+        "power_v104": [
+          "11.325000",
+          "11.520000"
+        ]
+      },
+      "ranges_overlap_parent": true
+    },
+    {
+      "case": 5,
+      "scope": "complete_fixed12",
+      "native_jobs_terminal": 12,
+      "actual_ref_counts": {
+        "baseline_v28": 4,
+        "parent_v084": 4,
+        "power_v104": 4
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "30.751000",
+          "31.099000",
+          "31.089000",
+          "35.308000"
+        ],
+        "parent_v084": [
+          "24.530000",
+          "24.745000",
+          "24.694000",
+          "24.724000"
+        ],
+        "power_v104": [
+          "24.433000",
+          "24.484000",
+          "24.786000",
+          "24.863000"
+        ]
+      },
+      "no_missing_sample_imputed": true,
+      "medians_us": {
+        "baseline_v28": "31.094000",
+        "parent_v084": "24.709000",
+        "power_v104": "24.635000"
+      },
+      "vs_parent_pct": "-0.2994860172406815330446396100",
+      "vs_v28_pct": "-20.77249630153727407216826397",
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "30.925000",
+            "parent_v084": "24.637500",
+            "power_v104": "24.458500"
+          },
+          "vs_parent_pct": "-0.7265347539320142059868087300",
+          "vs_v28_pct": "-20.91026677445432497978981407"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "33.198500",
+            "parent_v084": "24.709000",
+            "power_v104": "24.824500"
+          },
+          "vs_parent_pct": "0.467441013395928609008863200",
+          "vs_v28_pct": "-25.22403120622919710227871741"
+        }
+      ],
+      "ranges_us": {
+        "baseline_v28": [
+          "30.751000",
+          "35.308000"
+        ],
+        "parent_v084": [
+          "24.530000",
+          "24.745000"
+        ],
+        "power_v104": [
+          "24.433000",
+          "24.863000"
+        ]
+      },
+      "ranges_overlap_parent": true
+    },
+    {
+      "case": 6,
+      "scope": "complete_fixed12",
+      "native_jobs_terminal": 12,
+      "actual_ref_counts": {
+        "baseline_v28": 4,
+        "parent_v084": 4,
+        "power_v104": 4
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "156.385000",
+          "156.488000",
+          "156.549000",
+          "156.621000"
+        ],
+        "parent_v084": [
+          "93.501000",
+          "93.343000",
+          "93.420000",
+          "93.517000"
+        ],
+        "power_v104": [
+          "93.307000",
+          "93.471000",
+          "93.107000",
+          "93.420000"
+        ]
+      },
+      "no_missing_sample_imputed": true,
+      "medians_us": {
+        "baseline_v28": "156.518500",
+        "parent_v084": "93.460500",
+        "power_v104": "93.363500"
+      },
+      "vs_parent_pct": "-0.1037871614211351319541410500",
+      "vs_v28_pct": "-40.34986279577174583196235589",
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "156.436500",
+            "parent_v084": "93.422000",
+            "power_v104": "93.389000"
+          },
+          "vs_parent_pct": "-0.0353235854509644409239793600",
+          "vs_v28_pct": "-40.30229518047258791905981021"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "156.585000",
+            "parent_v084": "93.468500",
+            "power_v104": "93.263500"
+          },
+          "vs_parent_pct": "-0.2193252272155859995613495500",
+          "vs_v28_pct": "-40.43905865823674042852125044"
+        }
+      ],
+      "ranges_us": {
+        "baseline_v28": [
+          "156.385000",
+          "156.621000"
+        ],
+        "parent_v084": [
+          "93.343000",
+          "93.517000"
+        ],
+        "power_v104": [
+          "93.107000",
+          "93.471000"
+        ]
+      },
+      "ranges_overlap_parent": true
+    },
+    {
+      "case": 7,
+      "scope": "complete_fixed12",
+      "native_jobs_terminal": 12,
+      "actual_ref_counts": {
+        "baseline_v28": 4,
+        "parent_v084": 4,
+        "power_v104": 4
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "31.150000",
+          "30.771000",
+          "31.416000",
+          "31.334000"
+        ],
+        "parent_v084": [
+          "24.561000",
+          "25.395000",
+          "24.858000",
+          "25.216000"
+        ],
+        "power_v104": [
+          "24.632000",
+          "25.180000",
+          "25.196000",
+          "25.160000"
+        ]
+      },
+      "no_missing_sample_imputed": true,
+      "medians_us": {
+        "baseline_v28": "31.242000",
+        "parent_v084": "25.037000",
+        "power_v104": "25.170000"
+      },
+      "vs_parent_pct": "0.531213803570715341294883600",
+      "vs_v28_pct": "-19.43537545611676589206836950",
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "30.960500",
+            "parent_v084": "24.978000",
+            "power_v104": "24.906000"
+          },
+          "vs_parent_pct": "-0.2882536632236368003843382200",
+          "vs_v28_pct": "-19.55556273315999418614040471"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "31.375000",
+            "parent_v084": "25.037000",
+            "power_v104": "25.178000"
+          },
+          "vs_parent_pct": "0.563166513559931301673523200",
+          "vs_v28_pct": "-19.75139442231075697211155378"
+        }
+      ],
+      "ranges_us": {
+        "baseline_v28": [
+          "30.771000",
+          "31.416000"
+        ],
+        "parent_v084": [
+          "24.561000",
+          "25.395000"
+        ],
+        "power_v104": [
+          "24.632000",
+          "25.196000"
+        ]
+      },
+      "ranges_overlap_parent": true
+    },
+    {
+      "case": 8,
+      "scope": "complete_fixed12",
+      "native_jobs_terminal": 12,
+      "actual_ref_counts": {
+        "baseline_v28": 4,
+        "parent_v084": 4,
+        "power_v104": 4
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "52.506000",
+          "51.410000",
+          "51.533000",
+          "52.321000"
+        ],
+        "parent_v084": [
+          "40.750000",
+          "41.400000",
+          "40.335000",
+          "40.745000"
+        ],
+        "power_v104": [
+          "40.494000",
+          "41.272000",
+          "40.100000",
+          "41.513000"
+        ]
+      },
+      "no_missing_sample_imputed": true,
+      "medians_us": {
+        "baseline_v28": "51.927000",
+        "parent_v084": "40.747500",
+        "power_v104": "40.883000"
+      },
+      "vs_parent_pct": "0.332535738388858212160255200",
+      "vs_v28_pct": "-21.26831898626918558745931789",
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "51.958000",
+            "parent_v084": "41.075000",
+            "power_v104": "40.883000"
+          },
+          "vs_parent_pct": "-0.4674376141205112598904443100",
+          "vs_v28_pct": "-21.31529312136725817006043343"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "51.927000",
+            "parent_v084": "40.540000",
+            "power_v104": "40.806500"
+          },
+          "vs_parent_pct": "0.657375431672422298963986200",
+          "vs_v28_pct": "-21.41564118859167677701388488"
+        }
+      ],
+      "ranges_us": {
+        "baseline_v28": [
+          "51.410000",
+          "52.506000"
+        ],
+        "parent_v084": [
+          "40.335000",
+          "41.400000"
+        ],
+        "power_v104": [
+          "40.100000",
+          "41.513000"
+        ]
+      },
+      "ranges_overlap_parent": true
+    },
+    {
+      "case": 9,
+      "scope": "complete_fixed12",
+      "native_jobs_terminal": 12,
+      "actual_ref_counts": {
+        "baseline_v28": 4,
+        "parent_v084": 4,
+        "power_v104": 4
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "52.214000",
+          "52.224000",
+          "52.250000",
+          "51.804000"
+        ],
+        "parent_v084": [
+          "41.231000",
+          "40.745000",
+          "40.059000",
+          "40.387000"
+        ],
+        "power_v104": [
+          "40.863000",
+          "40.858000",
+          "39.936000",
+          "39.854000"
+        ]
+      },
+      "no_missing_sample_imputed": true,
+      "medians_us": {
+        "baseline_v28": "52.219000",
+        "parent_v084": "40.566000",
+        "power_v104": "40.397000"
+      },
+      "vs_parent_pct": "-0.4166050387023615835921707800",
+      "vs_v28_pct": "-22.63926923150577376050862713",
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "52.219000",
+            "parent_v084": "40.988000",
+            "power_v104": "40.860500"
+          },
+          "vs_parent_pct": "-0.3110666536547282131355518700",
+          "vs_v28_pct": "-21.75166127271682720848733220"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "52.027000",
+            "parent_v084": "40.223000",
+            "power_v104": "39.895000"
+          },
+          "vs_parent_pct": "-0.8154538448151555080426621600",
+          "vs_v28_pct": "-23.31866146423972168297230284"
+        }
+      ],
+      "ranges_us": {
+        "baseline_v28": [
+          "51.804000",
+          "52.250000"
+        ],
+        "parent_v084": [
+          "40.059000",
+          "41.231000"
+        ],
+        "power_v104": [
+          "39.854000",
+          "40.863000"
+        ]
+      },
+      "ranges_overlap_parent": true
+    },
+    {
+      "case": 10,
+      "scope": "complete_fixed12",
+      "native_jobs_terminal": 12,
+      "actual_ref_counts": {
+        "baseline_v28": 4,
+        "parent_v084": 4,
+        "power_v104": 4
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "11.781000",
+          "11.305000",
+          "11.412000",
+          "11.412000"
+        ],
+        "parent_v084": [
+          "10.363000",
+          "10.363000",
+          "10.010000",
+          "10.317000"
+        ],
+        "power_v104": [
+          "11.546000",
+          "10.388000",
+          "10.732000",
+          "10.332000"
+        ]
+      },
+      "no_missing_sample_imputed": true,
+      "medians_us": {
+        "baseline_v28": "11.412000",
+        "parent_v084": "10.340000",
+        "power_v104": "10.560000"
+      },
+      "vs_parent_pct": "2.127659574468085106382978700",
+      "vs_v28_pct": "-7.465825446898002103049421660",
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "11.543000",
+            "parent_v084": "10.363000",
+            "power_v104": "10.967000"
+          },
+          "vs_parent_pct": "5.828428061372189520409147900",
+          "vs_v28_pct": "-4.990037252014207744953651560"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "11.412000",
+            "parent_v084": "10.163500",
+            "power_v104": "10.532000"
+          },
+          "vs_parent_pct": "3.625719486397402469621685400",
+          "vs_v28_pct": "-7.711181212758499824745881530"
+        }
+      ],
+      "ranges_us": {
+        "baseline_v28": [
+          "11.305000",
+          "11.781000"
+        ],
+        "parent_v084": [
+          "10.010000",
+          "10.363000"
+        ],
+        "power_v104": [
+          "10.332000",
+          "11.546000"
+        ]
+      },
+      "ranges_overlap_parent": true
+    },
+    {
+      "case": 11,
+      "scope": "complete_fixed12",
+      "native_jobs_terminal": 12,
+      "actual_ref_counts": {
+        "baseline_v28": 4,
+        "parent_v084": 4,
+        "power_v104": 4
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "22.902000",
+          "22.799000",
+          "22.794000",
+          "22.871000"
+        ],
+        "parent_v084": [
+          "18.883000",
+          "18.893000",
+          "18.908000",
+          "18.898000"
+        ],
+        "power_v104": [
+          "18.913000",
+          "18.949000",
+          "18.867000",
+          "18.831000"
+        ]
+      },
+      "no_missing_sample_imputed": true,
+      "medians_us": {
+        "baseline_v28": "22.835000",
+        "parent_v084": "18.895500",
+        "power_v104": "18.890000"
+      },
+      "vs_parent_pct": "-0.0291074594480167235585192200",
+      "vs_v28_pct": "-17.27611123275673308517626451",
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": "22.850500",
+            "parent_v084": "18.888000",
+            "power_v104": "18.931000"
+          },
+          "vs_parent_pct": "0.227657772130453197797543400",
+          "vs_v28_pct": "-17.15279753178267433972998403"
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": "22.832500",
+            "parent_v084": "18.903000",
+            "power_v104": "18.849000"
+          },
+          "vs_parent_pct": "-0.2856689414378670052372639300",
+          "vs_v28_pct": "-17.44662213949414212197525457"
+        }
+      ],
+      "ranges_us": {
+        "baseline_v28": [
+          "22.794000",
+          "22.902000"
+        ],
+        "parent_v084": [
+          "18.883000",
+          "18.908000"
+        ],
+        "power_v104": [
+          "18.831000",
+          "18.949000"
+        ]
+      },
+      "ranges_overlap_parent": true
+    },
+    {
+      "case": 12,
+      "scope": "partial_failed_prefix",
+      "native_jobs_terminal": 9,
+      "actual_ref_counts": {
+        "baseline_v28": 3,
+        "parent_v084": 3,
+        "power_v104": 2
+      },
+      "samples_us": {
+        "baseline_v28": [
+          "82.714000",
+          "86.021000",
+          "82.929000"
+        ],
+        "parent_v084": [
+          "72.084000",
+          "71.711000",
+          "71.767000"
+        ],
+        "power_v104": [
+          "68.659000",
+          "68.408000"
+        ]
+      },
+      "no_missing_sample_imputed": true
+    },
+    {
+      "case": 13,
+      "scope": "UNAVAILABLE_not_run",
+      "native_jobs_terminal": 0,
+      "actual_ref_counts": {
+        "baseline_v28": 0,
+        "parent_v084": 0,
+        "power_v104": 0
+      },
+      "samples_us": {
+        "baseline_v28": [],
+        "parent_v084": [],
+        "power_v104": []
+      },
+      "no_missing_sample_imputed": true
+    },
+    {
+      "case": 14,
+      "scope": "UNAVAILABLE_not_run",
+      "native_jobs_terminal": 0,
+      "actual_ref_counts": {
+        "baseline_v28": 0,
+        "parent_v084": 0,
+        "power_v104": 0
+      },
+      "samples_us": {
+        "baseline_v28": [],
+        "parent_v084": [],
+        "power_v104": []
+      },
+      "no_missing_sample_imputed": true
+    }
+  ],
+  "allrawretained": true,
+  "risk_metadata_profile_not_started": true
+}

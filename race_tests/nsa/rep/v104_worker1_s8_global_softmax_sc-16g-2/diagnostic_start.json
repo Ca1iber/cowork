@@ -1,0 +1,52 @@
+{
+  "utc": "2026-10-02T05:28:09.205956+00:00",
+  "master_pid": 294206,
+  "sources": {
+    "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "power_v104": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07"
+  },
+  "cgroup_before": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "3030343680\n",
+    "memory.max_usage_in_bytes": "34359869440\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+    "memory.failcnt": "2963204\n",
+    "oom_kill": 11
+  },
+  "protocol": {
+    "phase": "leader_GO_fixed_once",
+    "case": 12,
+    "order": [
+      "baseline_v28",
+      "parent_v084",
+      "power_v104",
+      "power_v104",
+      "parent_v084",
+      "baseline_v28",
+      "baseline_v28",
+      "parent_v084",
+      "power_v104",
+      "power_v104",
+      "parent_v084",
+      "baseline_v28"
+    ],
+    "warmup": 10,
+    "repeat": 50,
+    "original_reference_inputs_tolerance": true,
+    "no_postexport": true,
+    "candidate_refs_planned": 4,
+    "total_refs_planned": 12,
+    "monitor_period2s": true,
+    "stop_on": [
+      "nonzero",
+      "OOMincrement",
+      "innerKilled",
+      "hashchange",
+      "CSVerror"
+    ],
+    "no_adaptive_retry": true,
+    "no_automatic_formal": true
+  },
+  "no_metadata_in_native_job": true
+}
