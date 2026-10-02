@@ -1,0 +1,46 @@
+{
+  "UTC": "2026-10-02T14:52:47.306911+00:00",
+  "user_request": "Check Cycle Trace availability and possible NSA use",
+  "sc16g2": "NoCycleTrace executable found in PATH/common installation dirs; mcProfiler/mcTracer present",
+  "subagent2": {
+    "SDK_tool_root": "/opt/maca-20260921",
+    "tools": {
+      "cycle-trace": {
+        "SHA": "7e42e9326617cf5b252d8604a97c6effd483c67d4eecbc33235d38886a5877f7",
+        "role": "offline parser input.data AP --pure --json --mma_type FP16"
+      },
+      "cycle-trace-ng": {
+        "SHA": "421cd53f968b500cd83b7d3e78da6c0a23dd193d23566c740ab3b359d97a648b",
+        "help_exit": 0,
+        "features_from_help": [
+          "ISA type/PC",
+          "isu_starve_type",
+          "wave/token filter",
+          "pftrace/json",
+          "onlysample/onlyparse",
+          "MXC500/MXC700"
+        ]
+      },
+      "cycle-trace-sampler": {
+        "SHA": "caa426fb112aa8fce5ec61d5411de0eb06bd0e55ae4b11818088bcd958f03150",
+        "help_not_supported_as_help": true,
+        "actual_probe_exit": 255,
+        "printed_cmdline": "--help",
+        "observed_error": "mxc_vendor_get_queue_xpid ERROR; Aborted by exception",
+        "no_NSA_target_or_valid_trace_capture": true
+      }
+    },
+    "PATH_points_to_defaultSDK": "/opt/maca-3.7.1",
+    "sampler_runtime_ldd": "/opt/maca/lib/libmxc-runtime64.so.1 -> /opt/maca-3.7.1/lib/libmxc-runtime64.so.1.3.0",
+    "newSDK_runtime_library_absent": true,
+    "global_SDK_not_changed": true
+  },
+  "official_primary_sources": [
+    "https://developer.metax-tech.com/api/client/document/preview/发布说明/MXMACA_发布说明/曦云C500系列/latest/split_files/新增特性及变更.html",
+    "https://developer.metax-tech.com/forum/t/profilinggong-ju-zi-xun/223/"
+  ],
+  "capture_verdict": "UNPROVEN; ng help runs, no valid NSA trace collected yet; helpererror not rootcauseproof",
+  "next": "bounded targetapplication/driver-queue compatibility check on worker2; do not claim trace or alter benchmark/globalSDK",
+  "worker2_readonly_compatibility_and_bounded_ownedtarget_plan_requested": true,
+  "no_new_Trace_GPU_GO": true
+}
