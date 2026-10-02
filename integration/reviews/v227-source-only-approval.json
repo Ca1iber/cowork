@@ -1,0 +1,53 @@
+{
+  "version": "v227",
+  "owner": "worker2",
+  "scope": "source+stdlib compile preparation after peer advisory; noheavy",
+  "parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "case": 9,
+  "key": [
+    1,
+    8192,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "observed": "exactC9 CPP85b2 Q/Output32bit; dynamicK/Vindex intermediate64bit; freshMTE~68.6%, shared100/conflict0",
+  "bottleneck": "UNPROVEN",
+  "mechanism": "withinoriginalvalidguard bounded_start=min(max(block_start,0),seq_len-block_size); K/Vrowindices only",
+  "valid_bounds": {
+    "idx": [
+      0,
+      511
+    ],
+    "block_start": [
+      0,
+      8176
+    ],
+    "row": [
+      0,
+      8191
+    ],
+    "flat_half_offset": [
+      0,
+      524287
+    ]
+  },
+  "preserved": [
+    "Indices*16/validguard/causalmask/invalidbehavior",
+    "Q/Output/layout/global16B/7sync/Num16/Pden/MMAorder",
+    "other13parent14AST"
+  ],
+  "prediction": "K/Vscaledindex arithmetic i32, final64bitdevicepointer normal",
+  "falsifiers": [
+    "compiler remains original64 arithmetic",
+    "extra clamp/minmax/register cost",
+    "math/address/vectoralignment change",
+    "originalnative regressions ornoise"
+  ],
+  "guards": "3Gbase25Gestimate4reserve/28runtime/OOM3/600/.5/1s50ms/ownership/Popen/priorabort/cooplock/no retry",
+  "compile_native_profile_GO": false,
+  "source_header": "v227 planned"
+}
