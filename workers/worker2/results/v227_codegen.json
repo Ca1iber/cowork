@@ -1,0 +1,53 @@
+{
+  "gate": 0,
+  "sourceSHA": "515f9246eb8f103d7be5df1e8029f38e8b1a44922400ace64316fb47b1cb7fa7",
+  "CPP_SHA": "69546bf5e317e3cc38f8840a4e8354226b35f0fda52f88054687ceb7a3eba178",
+  "IR_SHA": "1f5047afaf7ec3b1f8c3ffa3cbd5dc3911f0de6a2db89194c432321cb5a4647f",
+  "actualCPP_only2globalKVrowexprs_changed": true,
+  "allmath_guard_mask_layout_globalvector16B_Num16_sync_literal_preserved": true,
+  "originallegaladdressvectors": 131072,
+  "scaled_index_i32_prediction": true,
+  "actual_index_SSA": [
+    "%cond.i.i = tail call noundef range(i32 0, 8177) i32 @llvm.smin.i32(i32 %mul93, i32 8176)",
+    "%mul103 = shl nuw nsw i32 %cond.i.i, 6",
+    "%add104 = add nuw nsw i32 %mul103, %mul8",
+    "%13 = zext nneg i32 %add104 to i64, !dbg !73",
+    "%add345 = add nuw nsw i32 %add342, %mul103",
+    "%55 = zext nneg i32 %add345 to i64, !dbg !183"
+  ],
+  "additional_clamp_instruction": "llvm.smin.i32(block_start,8176) retained; lowermax removedinsideguard",
+  "late_GEP64_normal_notfailure": true,
+  "resource_parent": [
+    42,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "resource_candidate": [
+    40,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "kernel_counts": {
+    "MMA": 8,
+    "warp": 7,
+    "bpermute": 4,
+    "alloca": 0,
+    "AS5": false
+  },
+  "compile_originalwaits": [
+    0,
+    0,
+    0
+  ],
+  "native_correctness_latency": "UNAVAILABLE_pending",
+  "ISA_or_bottleneck_claim": false,
+  "attention_native_reference": [
+    0,
+    0,
+    0
+  ]
+}
