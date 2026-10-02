@@ -1,0 +1,90 @@
+{
+  "version": "v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2",
+  "UTC": "2026-10-02T14:05:28.462409+00:00",
+  "approval": "once finite exact parent C6/C10 metadata/resource/profile evidence only",
+  "plan_before_GO_SHA": "78fce150d39226d936a8cf0eee6e408ff7a85b3f5d6b37d72586e91f4262c232",
+  "corrected_manifest_SHA": "a13f6a16321a60b5911bd3882c7817f59705d5eb92a21693798c7f9a7f15aa12",
+  "review_archives_SHA": [
+    "b5b3702aceb26b0a9c54b24a3989048e707dce1eb4d8d7a808ed8556f4cf1c31",
+    "b585bbe3b438ddf1f57d9d6b271f559f0b3f01eb021ebd10cd9fcfe4d38c6004"
+  ],
+  "verified_text_hash_counts": [
+    22,
+    6
+  ],
+  "stages": [
+    {
+      "kind": "metadata",
+      "variant": "parent_v084"
+    },
+    {
+      "kind": "metadata",
+      "variant": "power_v113"
+    },
+    {
+      "kind": "audit_codegen"
+    },
+    {
+      "kind": "resource",
+      "variant": "parent_v084",
+      "case": 6
+    },
+    {
+      "kind": "profile",
+      "profile_job_index": 1
+    },
+    {
+      "kind": "resource",
+      "variant": "parent_v084",
+      "case": 10
+    },
+    {
+      "kind": "profile",
+      "profile_job_index": 2
+    }
+  ],
+  "expected_case_waves_payload": {
+    "6": [
+      8192,
+      33554432
+    ],
+    "10": [
+      256,
+      524288
+    ]
+  },
+  "corrected_controller_SHA": "553f9c205497b9ebb68b13e7fb519a106dab177b9789d43dd8537d0999cef33e",
+  "sources": {
+    "parent_v084": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+      "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+    },
+    "power_v113": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+      "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+    }
+  },
+  "shared_original6files_and_parent_CPP_SHA_verified": true,
+  "raw_gate": "both waves exact;tenunique numeric/nonbool/finite/isErrorFalse;payload residual0..512, necessary notexclusive;NA/anyscope failure stops prefix",
+  "profile_contract": "unchanged original GradFalse/seed0/initial1/warm10/region20, not nativeGradTrue/fullnaive/W10R50; total hardwareattention launches UNMEASURED",
+  "fullreference_checks": 0,
+  "no_newkernel_or_extra_nativebench_IR_ISA": true,
+  "budget_GiB": [
+    5,
+    23,
+    4
+  ],
+  "runtime_stop_GiB": 28,
+  "expected_OOM": 13,
+  "unknown_RSS_GiB": 1,
+  "original_guard_function_AST_unchanged_except4to5text": true,
+  "launcher_argv": [
+    "/opt/conda/bin/python",
+    "-S",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/launch_evidence.py",
+    "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2"
+  ],
+  "old_positive_latencies_and_prior_failures_preserved": true,
+  "no_retry_or_metrics_bounds_widening_or_auto_nextstage": "fixed7 only; anyguard/nonzero stops remaining; actualwait preserved"
+}

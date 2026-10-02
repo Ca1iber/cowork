@@ -21,7 +21,7 @@
   "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
   "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration",
   "schema": 2,
-  "updated_at_utc": "2026-10-02T13:38:04.177005+00:00",
+  "updated_at_utc": "2026-10-02T14:15:13.797557+00:00",
   "canonical_main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "historical_snapshot": "integration/reviews/leader-status-before-v114-screen.json",
   "worker1": {
@@ -32,7 +32,7 @@
       12
     ],
     "active_version": "v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2",
-    "stage": "exactC6/C10 parent plan/helper preparation; one write autoreview deadline unexecuted; smaller safe preparation continues",
+    "stage": "116 two source metadata complete 4pairs/8files identity; CPUhost parser stage3 failed1; no resource/MCCLI started; isolated readonly recovery pending",
     "source_commit": "4dd526b98849eebace4149faa4d5a442b7263068",
     "candidate_version": "v113",
     "candidate_sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
@@ -85,7 +85,11 @@
       9,
       10,
       14
-    ]
+    ],
+    "new_metadata_pairs_reported": 4,
+    "new_resource_commands_reported": 0,
+    "new_MC_CLI_reported": 0,
+    "new_counter_records_reported": 0
   },
   "worker2": {
     "cases": [
@@ -100,9 +104,9 @@
       13,
       14
     ],
-    "active_version": "v211_worker2_c8_bounded_exit_confirmation_subagent2",
-    "stage": "phase-aware monitor actualdiff/5 controlledCPUcases independently passed; fixed original C8 once12 approved",
-    "source_commit": "efec1b8569d4fca3bc8d1934a435a417007e0e17",
+    "active_version": "v212proposal",
+    "stage": "211 onceC8 complete4C12/PASS;serialpair slower1.383%,rejected; new DirectK source-only proposal requested",
+    "source_commit": "f581f927d21b47950e7e9914e2833f502050d963",
     "candidate_sha256": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
     "reported_metadata_wait": 0,
     "reported_backend_wait": 0,
@@ -127,12 +131,12 @@
       3
     ],
     "new_refs": 0,
-    "native_GO": true,
+    "native_GO": false,
     "independent_compile_audit": "integration/reviews/v210-compiled-semantic-leader-audit.json",
     "communication_head": "e039e750b124ba22baeaadb960a1c5233e941aa2",
     "active_PID": null,
-    "current_observed_clean_refs": 0,
-    "current_observed_candidate_refs": 0,
+    "current_observed_clean_refs": 12,
+    "current_observed_candidate_refs": 4,
     "planned_refs_candidate_inclusive": [
       4,
       12
@@ -142,7 +146,8 @@
     "OOM_before_after": [
       3,
       3
-    ]
+    ],
+    "C8_serialpair_delta_vs84_pct": 1.3832250467894414
   },
   "retained_candidate_gain": {
     "case": 12,
