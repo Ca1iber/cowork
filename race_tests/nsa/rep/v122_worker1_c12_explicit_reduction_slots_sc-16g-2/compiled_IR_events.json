@@ -1,0 +1,1650 @@
+[
+  {
+    "line": 187,
+    "text": "  br i1 %cmp, label %for.cond.preheader, label %entry.if.end_crit_edge, !dbg !48"
+  },
+  {
+    "line": 218,
+    "text": "  %6 = getelementptr inbounds i8, ptr addrspace(3) @buf_dyn_shmem, i32 %.idx, !dbg !52"
+  },
+  {
+    "line": 219,
+    "text": "  %7 = getelementptr inbounds %struct.__half, ptr addrspace(3) %6, i32 %4, !dbg !52"
+  },
+  {
+    "line": 220,
+    "text": "  store i64 %qk_fetch.sroa.0.0.copyload, ptr addrspace(3) %7, align 8, !dbg !53"
+  },
+  {
+    "line": 223,
+    "text": "  %8 = getelementptr inbounds i8, ptr addrspace(3) @buf_dyn_shmem, i32 %.idx.1, !dbg !52"
+  },
+  {
+    "line": 224,
+    "text": "  %9 = getelementptr inbounds %struct.__half, ptr addrspace(3) %8, i32 %4, !dbg !52"
+  },
+  {
+    "line": 225,
+    "text": "  store i64 %qk_fetch.sroa.22.0.copyload, ptr addrspace(3) %9, align 8, !dbg !53"
+  },
+  {
+    "line": 231,
+    "text": "  %add.ptr45.11130 = getelementptr inbounds i8, ptr addrspace(3) %9, i32 1024, !dbg !52"
+  },
+  {
+    "line": 232,
+    "text": "  store i64 %qk_fetch.sroa.0.0.copyload1903, ptr addrspace(3) %add.ptr45.11130, align 8, !dbg !53"
+  },
+  {
+    "line": 233,
+    "text": "  %add.ptr45.1.1 = getelementptr inbounds i8, ptr addrspace(3) %7, i32 1024, !dbg !52"
+  },
+  {
+    "line": 234,
+    "text": "  store i64 %qk_fetch.sroa.22.0.copyload1912, ptr addrspace(3) %add.ptr45.1.1, align 8, !dbg !53"
+  },
+  {
+    "line": 238,
+    "text": "  %shr190.pre-phi = phi i32 [ %.pre1940, %entry.if.end_crit_edge ], [ %shr40, %for.cond.preheader ]"
+  },
+  {
+    "line": 239,
+    "text": "  %mul185.pre-phi = phi i32 [ %.pre1939, %entry.if.end_crit_edge ], [ %mul35, %for.cond.preheader ]"
+  },
+  {
+    "line": 240,
+    "text": "  %mul177.pre-phi = phi i32 [ %.pre1937, %entry.if.end_crit_edge ], [ %mul28, %for.cond.preheader ]"
+  },
+  {
+    "line": 241,
+    "text": "  %and154.pre-phi = phi i32 [ %.pre1936, %entry.if.end_crit_edge ], [ %and, %for.cond.preheader ]"
+  },
+  {
+    "line": 242,
+    "text": "  %.pre-phi = phi i32 [ %.pre1933, %entry.if.end_crit_edge ], [ %2, %for.cond.preheader ]"
+  },
+  {
+    "line": 243,
+    "text": "  %and70.pre-phi = phi i32 [ %.pre1932, %entry.if.end_crit_edge ], [ %and39, %for.cond.preheader ]"
+  },
+  {
+    "line": 245,
+    "text": "  tail call void @llvm.mxc.barrier(), !dbg !61"
+  },
+  {
+    "line": 261,
+    "text": "  %add.ptr79 = getelementptr inbounds %struct.__half, ptr addrspace(3) @buf_dyn_shmem, i32 %add77, !dbg !67"
+  },
+  {
+    "line": 262,
+    "text": "  %12 = load <4 x half>, ptr addrspace(3) %add.ptr79, align 8, !dbg !68"
+  },
+  {
+    "line": 268,
+    "text": "  %add.ptr79.1 = getelementptr inbounds %struct.__half, ptr addrspace(3) @buf_dyn_shmem, i32 %add77.1, !dbg !67"
+  },
+  {
+    "line": 269,
+    "text": "  %13 = load <4 x half>, ptr addrspace(3) %add.ptr79.1, align 8, !dbg !68"
+  },
+  {
+    "line": 275,
+    "text": "  %add.ptr79.2 = getelementptr inbounds %struct.__half, ptr addrspace(3) @buf_dyn_shmem, i32 %add77.2, !dbg !67"
+  },
+  {
+    "line": 276,
+    "text": "  %14 = load <4 x half>, ptr addrspace(3) %add.ptr79.2, align 8, !dbg !68"
+  },
+  {
+    "line": 282,
+    "text": "  %add.ptr79.3 = getelementptr inbounds %struct.__half, ptr addrspace(3) @buf_dyn_shmem, i32 %add77.3, !dbg !67"
+  },
+  {
+    "line": 283,
+    "text": "  %15 = load <4 x half>, ptr addrspace(3) %add.ptr79.3, align 8, !dbg !68"
+  },
+  {
+    "line": 309,
+    "text": "  br i1 %or.cond1083, label %if.end294, label %if.then142, !dbg !72"
+  },
+  {
+    "line": 313,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !78"
+  },
+  {
+    "line": 323,
+    "text": "  %24 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %18, !dbg !83"
+  },
+  {
+    "line": 325,
+    "text": "  %gep = getelementptr inbounds i8, ptr addrspace(3) %24, i32 %gep.idx, !dbg !83"
+  },
+  {
+    "line": 326,
+    "text": "  store i64 %qk_fetch.sroa.0.0.copyload1902, ptr addrspace(3) %gep, align 8, !dbg !84"
+  },
+  {
+    "line": 329,
+    "text": "  %gep.1 = getelementptr inbounds i8, ptr addrspace(3) %24, i32 %gep.idx.1, !dbg !83"
+  },
+  {
+    "line": 330,
+    "text": "  store i64 %qk_fetch.sroa.22.0.copyload1911, ptr addrspace(3) %gep.1, align 8, !dbg !84"
+  },
+  {
+    "line": 336,
+    "text": "  %26 = getelementptr inbounds i8, ptr addrspace(3) %24, i32 1024, !dbg !83"
+  },
+  {
+    "line": 337,
+    "text": "  %gep.11135 = getelementptr inbounds i8, ptr addrspace(3) %26, i32 %gep.idx.1, !dbg !83"
+  },
+  {
+    "line": 338,
+    "text": "  store i64 %qk_fetch.sroa.0.0.copyload1904, ptr addrspace(3) %gep.11135, align 8, !dbg !84"
+  },
+  {
+    "line": 339,
+    "text": "  %gep.1.1 = getelementptr inbounds i8, ptr addrspace(3) %26, i32 %gep.idx, !dbg !83"
+  },
+  {
+    "line": 340,
+    "text": "  store i64 %qk_fetch.sroa.22.0.copyload1913, ptr addrspace(3) %gep.1.1, align 8, !dbg !84"
+  },
+  {
+    "line": 342,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !89"
+  },
+  {
+    "line": 346,
+    "text": "  %gep1098 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246, !dbg !93"
+  },
+  {
+    "line": 347,
+    "text": "  %k_local.sroa.0.0.copyload = load <4 x half>, ptr addrspace(3) %gep1098, align 8, !dbg !94"
+  },
+  {
+    "line": 348,
+    "text": "  %27 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload, <4 x half> %12, <4 x float> zeroinitializer), !dbg !95"
+  },
+  {
+    "line": 351,
+    "text": "  %gep1098.1 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.1, !dbg !93"
+  },
+  {
+    "line": 352,
+    "text": "  %k_local.sroa.0.0.copyload.1 = load <4 x half>, ptr addrspace(3) %gep1098.1, align 8, !dbg !94"
+  },
+  {
+    "line": 353,
+    "text": "  %28 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1, <4 x half> %13, <4 x float> %27), !dbg !95"
+  },
+  {
+    "line": 356,
+    "text": "  %gep1098.2 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.2, !dbg !93"
+  },
+  {
+    "line": 357,
+    "text": "  %k_local.sroa.0.0.copyload.2 = load <4 x half>, ptr addrspace(3) %gep1098.2, align 8, !dbg !94"
+  },
+  {
+    "line": 358,
+    "text": "  %29 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2, <4 x half> %14, <4 x float> %28), !dbg !95"
+  },
+  {
+    "line": 361,
+    "text": "  %gep1098.3 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.3, !dbg !93"
+  },
+  {
+    "line": 362,
+    "text": "  %k_local.sroa.0.0.copyload.3 = load <4 x half>, ptr addrspace(3) %gep1098.3, align 8, !dbg !94"
+  },
+  {
+    "line": 363,
+    "text": "  %30 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3, <4 x half> %15, <4 x float> %29), !dbg !95"
+  },
+  {
+    "line": 387,
+    "text": "  %scores.sroa.0.0 = phi <4 x float> [ <float 0xFFF0000000000000, float 0xFFF0000000000000, float 0xFFF0000000000000, float 0xFFF0000000000000>, %if.end ], [ %scores.sroa.0.12.vec.insert2005, %if.then142 ], !dbg !101"
+  },
+  {
+    "line": 394,
+    "text": "  br i1 %or.cond1083.1, label %if.end294.1, label %if.then142.1, !dbg !72"
+  },
+  {
+    "line": 398,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !78"
+  },
+  {
+    "line": 408,
+    "text": "  %39 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %18, !dbg !83"
+  },
+  {
+    "line": 410,
+    "text": "  %gep.11152 = getelementptr inbounds i8, ptr addrspace(3) %39, i32 %gep.idx.11151, !dbg !83"
+  },
+  {
+    "line": 411,
+    "text": "  store i64 %qk_fetch.sroa.0.0.copyload1905, ptr addrspace(3) %gep.11152, align 8, !dbg !84"
+  },
+  {
+    "line": 414,
+    "text": "  %gep.1.11155 = getelementptr inbounds i8, ptr addrspace(3) %39, i32 %gep.idx.1.11154, !dbg !83"
+  },
+  {
+    "line": 415,
+    "text": "  store i64 %qk_fetch.sroa.22.0.copyload1914, ptr addrspace(3) %gep.1.11155, align 8, !dbg !84"
+  },
+  {
+    "line": 421,
+    "text": "  %41 = getelementptr inbounds i8, ptr addrspace(3) %39, i32 1024, !dbg !83"
+  },
+  {
+    "line": 422,
+    "text": "  %gep.11135.1 = getelementptr inbounds i8, ptr addrspace(3) %41, i32 %gep.idx.1.11154, !dbg !83"
+  },
+  {
+    "line": 423,
+    "text": "  store i64 %qk_fetch.sroa.0.0.copyload1906, ptr addrspace(3) %gep.11135.1, align 8, !dbg !84"
+  },
+  {
+    "line": 424,
+    "text": "  %gep.1.1.1 = getelementptr inbounds i8, ptr addrspace(3) %41, i32 %gep.idx.11151, !dbg !83"
+  },
+  {
+    "line": 425,
+    "text": "  store i64 %qk_fetch.sroa.22.0.copyload1915, ptr addrspace(3) %gep.1.1.1, align 8, !dbg !84"
+  },
+  {
+    "line": 427,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !89"
+  },
+  {
+    "line": 431,
+    "text": "  %gep1098.11162 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.11161, !dbg !93"
+  },
+  {
+    "line": 432,
+    "text": "  %k_local.sroa.0.0.copyload.11163 = load <4 x half>, ptr addrspace(3) %gep1098.11162, align 8, !dbg !94"
+  },
+  {
+    "line": 433,
+    "text": "  %42 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.11163, <4 x half> %12, <4 x float> zeroinitializer), !dbg !95"
+  },
+  {
+    "line": 436,
+    "text": "  %gep1098.1.1 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.1.1, !dbg !93"
+  },
+  {
+    "line": 437,
+    "text": "  %k_local.sroa.0.0.copyload.1.1 = load <4 x half>, ptr addrspace(3) %gep1098.1.1, align 8, !dbg !94"
+  },
+  {
+    "line": 438,
+    "text": "  %43 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.1, <4 x half> %13, <4 x float> %42), !dbg !95"
+  },
+  {
+    "line": 441,
+    "text": "  %gep1098.2.1 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.2.1, !dbg !93"
+  },
+  {
+    "line": 442,
+    "text": "  %k_local.sroa.0.0.copyload.2.1 = load <4 x half>, ptr addrspace(3) %gep1098.2.1, align 8, !dbg !94"
+  },
+  {
+    "line": 443,
+    "text": "  %44 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2.1, <4 x half> %14, <4 x float> %43), !dbg !95"
+  },
+  {
+    "line": 446,
+    "text": "  %gep1098.3.1 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.3.1, !dbg !93"
+  },
+  {
+    "line": 447,
+    "text": "  %k_local.sroa.0.0.copyload.3.1 = load <4 x half>, ptr addrspace(3) %gep1098.3.1, align 8, !dbg !94"
+  },
+  {
+    "line": 448,
+    "text": "  %45 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3.1, <4 x half> %15, <4 x float> %44), !dbg !95"
+  },
+  {
+    "line": 472,
+    "text": "  %scores.sroa.23.0 = phi <4 x float> [ <float 0xFFF0000000000000, float 0xFFF0000000000000, float 0xFFF0000000000000, float 0xFFF0000000000000>, %if.end294 ], [ %scores.sroa.23.28.vec.insert2033, %if.then142.1 ], !dbg !101"
+  },
+  {
+    "line": 479,
+    "text": "  br i1 %or.cond1083.2, label %if.end294.2, label %if.then142.2, !dbg !72"
+  },
+  {
+    "line": 483,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !78"
+  },
+  {
+    "line": 493,
+    "text": "  %54 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %18, !dbg !83"
+  },
+  {
+    "line": 495,
+    "text": "  %gep.2 = getelementptr inbounds i8, ptr addrspace(3) %54, i32 %gep.idx.2, !dbg !83"
+  },
+  {
+    "line": 496,
+    "text": "  store i64 %qk_fetch.sroa.0.0.copyload1907, ptr addrspace(3) %gep.2, align 8, !dbg !84"
+  },
+  {
+    "line": 499,
+    "text": "  %gep.1.2 = getelementptr inbounds i8, ptr addrspace(3) %54, i32 %gep.idx.1.2, !dbg !83"
+  },
+  {
+    "line": 500,
+    "text": "  store i64 %qk_fetch.sroa.22.0.copyload1916, ptr addrspace(3) %gep.1.2, align 8, !dbg !84"
+  },
+  {
+    "line": 506,
+    "text": "  %56 = getelementptr inbounds i8, ptr addrspace(3) %54, i32 1024, !dbg !83"
+  },
+  {
+    "line": 507,
+    "text": "  %gep.11135.2 = getelementptr inbounds i8, ptr addrspace(3) %56, i32 %gep.idx.1.2, !dbg !83"
+  },
+  {
+    "line": 508,
+    "text": "  store i64 %qk_fetch.sroa.0.0.copyload1908, ptr addrspace(3) %gep.11135.2, align 8, !dbg !84"
+  },
+  {
+    "line": 509,
+    "text": "  %gep.1.1.2 = getelementptr inbounds i8, ptr addrspace(3) %56, i32 %gep.idx.2, !dbg !83"
+  },
+  {
+    "line": 510,
+    "text": "  store i64 %qk_fetch.sroa.22.0.copyload1917, ptr addrspace(3) %gep.1.1.2, align 8, !dbg !84"
+  },
+  {
+    "line": 512,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !89"
+  },
+  {
+    "line": 516,
+    "text": "  %gep1098.21175 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.21174, !dbg !93"
+  },
+  {
+    "line": 517,
+    "text": "  %k_local.sroa.0.0.copyload.21176 = load <4 x half>, ptr addrspace(3) %gep1098.21175, align 8, !dbg !94"
+  },
+  {
+    "line": 518,
+    "text": "  %57 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.21176, <4 x half> %12, <4 x float> zeroinitializer), !dbg !95"
+  },
+  {
+    "line": 521,
+    "text": "  %gep1098.1.2 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.1.2, !dbg !93"
+  },
+  {
+    "line": 522,
+    "text": "  %k_local.sroa.0.0.copyload.1.2 = load <4 x half>, ptr addrspace(3) %gep1098.1.2, align 8, !dbg !94"
+  },
+  {
+    "line": 523,
+    "text": "  %58 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.2, <4 x half> %13, <4 x float> %57), !dbg !95"
+  },
+  {
+    "line": 526,
+    "text": "  %gep1098.2.2 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.2.2, !dbg !93"
+  },
+  {
+    "line": 527,
+    "text": "  %k_local.sroa.0.0.copyload.2.2 = load <4 x half>, ptr addrspace(3) %gep1098.2.2, align 8, !dbg !94"
+  },
+  {
+    "line": 528,
+    "text": "  %59 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2.2, <4 x half> %14, <4 x float> %58), !dbg !95"
+  },
+  {
+    "line": 531,
+    "text": "  %gep1098.3.2 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.3.2, !dbg !93"
+  },
+  {
+    "line": 532,
+    "text": "  %k_local.sroa.0.0.copyload.3.2 = load <4 x half>, ptr addrspace(3) %gep1098.3.2, align 8, !dbg !94"
+  },
+  {
+    "line": 533,
+    "text": "  %60 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3.2, <4 x half> %15, <4 x float> %59), !dbg !95"
+  },
+  {
+    "line": 557,
+    "text": "  %scores.sroa.44.0 = phi <4 x float> [ <float 0xFFF0000000000000, float 0xFFF0000000000000, float 0xFFF0000000000000, float 0xFFF0000000000000>, %if.end294.1 ], [ %scores.sroa.44.44.vec.insert2062, %if.then142.2 ], !dbg !101"
+  },
+  {
+    "line": 564,
+    "text": "  br i1 %or.cond1083.3, label %if.end294.3, label %if.then142.3, !dbg !72"
+  },
+  {
+    "line": 568,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !78"
+  },
+  {
+    "line": 578,
+    "text": "  %69 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %18, !dbg !83"
+  },
+  {
+    "line": 580,
+    "text": "  %gep.3 = getelementptr inbounds i8, ptr addrspace(3) %69, i32 %gep.idx.3, !dbg !83"
+  },
+  {
+    "line": 581,
+    "text": "  store i64 %qk_fetch.sroa.0.0.copyload1909, ptr addrspace(3) %gep.3, align 8, !dbg !84"
+  },
+  {
+    "line": 584,
+    "text": "  %gep.1.3 = getelementptr inbounds i8, ptr addrspace(3) %69, i32 %gep.idx.1.3, !dbg !83"
+  },
+  {
+    "line": 585,
+    "text": "  store i64 %qk_fetch.sroa.22.0.copyload1918, ptr addrspace(3) %gep.1.3, align 8, !dbg !84"
+  },
+  {
+    "line": 591,
+    "text": "  %71 = getelementptr inbounds i8, ptr addrspace(3) %69, i32 1024, !dbg !83"
+  },
+  {
+    "line": 592,
+    "text": "  %gep.11135.3 = getelementptr inbounds i8, ptr addrspace(3) %71, i32 %gep.idx.1.3, !dbg !83"
+  },
+  {
+    "line": 593,
+    "text": "  store i64 %qk_fetch.sroa.0.0.copyload1910, ptr addrspace(3) %gep.11135.3, align 8, !dbg !84"
+  },
+  {
+    "line": 594,
+    "text": "  %gep.1.1.3 = getelementptr inbounds i8, ptr addrspace(3) %71, i32 %gep.idx.3, !dbg !83"
+  },
+  {
+    "line": 595,
+    "text": "  store i64 %qk_fetch.sroa.22.0.copyload1919, ptr addrspace(3) %gep.1.1.3, align 8, !dbg !84"
+  },
+  {
+    "line": 597,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !89"
+  },
+  {
+    "line": 601,
+    "text": "  %gep1098.31188 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.31187, !dbg !93"
+  },
+  {
+    "line": 602,
+    "text": "  %k_local.sroa.0.0.copyload.31189 = load <4 x half>, ptr addrspace(3) %gep1098.31188, align 8, !dbg !94"
+  },
+  {
+    "line": 603,
+    "text": "  %72 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.31189, <4 x half> %12, <4 x float> zeroinitializer), !dbg !95"
+  },
+  {
+    "line": 606,
+    "text": "  %gep1098.1.3 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.1.3, !dbg !93"
+  },
+  {
+    "line": 607,
+    "text": "  %k_local.sroa.0.0.copyload.1.3 = load <4 x half>, ptr addrspace(3) %gep1098.1.3, align 8, !dbg !94"
+  },
+  {
+    "line": 608,
+    "text": "  %73 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.3, <4 x half> %13, <4 x float> %72), !dbg !95"
+  },
+  {
+    "line": 611,
+    "text": "  %gep1098.2.3 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.2.3, !dbg !93"
+  },
+  {
+    "line": 612,
+    "text": "  %k_local.sroa.0.0.copyload.2.3 = load <4 x half>, ptr addrspace(3) %gep1098.2.3, align 8, !dbg !94"
+  },
+  {
+    "line": 613,
+    "text": "  %74 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2.3, <4 x half> %14, <4 x float> %73), !dbg !95"
+  },
+  {
+    "line": 616,
+    "text": "  %gep1098.3.3 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add246.3.3, !dbg !93"
+  },
+  {
+    "line": 617,
+    "text": "  %k_local.sroa.0.0.copyload.3.3 = load <4 x half>, ptr addrspace(3) %gep1098.3.3, align 8, !dbg !94"
+  },
+  {
+    "line": 618,
+    "text": "  %75 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3.3, <4 x half> %15, <4 x float> %74), !dbg !95"
+  },
+  {
+    "line": 642,
+    "text": "  %scores.sroa.65.0 = phi <4 x float> [ %scores.sroa.65.60.vec.insert2091, %if.then142.3 ], [ <float 0xFFF0000000000000, float 0xFFF0000000000000, float 0xFFF0000000000000, float 0xFFF0000000000000>, %if.end294.2 ], !dbg !101"
+  },
+  {
+    "line": 643,
+    "text": "  %80 = phi float [ %condval.0.3.3, %if.then142.3 ], [ 0xFFF0000000000000, %if.end294.2 ], !dbg !103"
+  },
+  {
+    "line": 644,
+    "text": "  %81 = phi float [ %condval.0.2.3, %if.then142.3 ], [ 0xFFF0000000000000, %if.end294.2 ], !dbg !103"
+  },
+  {
+    "line": 645,
+    "text": "  %82 = phi float [ %condval.0.1.3, %if.then142.3 ], [ 0xFFF0000000000000, %if.end294.2 ], !dbg !103"
+  },
+  {
+    "line": 646,
+    "text": "  %83 = phi float [ %spec.select1979, %if.then142.3 ], [ 0xFFF0000000000000, %if.end294.2 ], !dbg !103"
+  },
+  {
+    "line": 699,
+    "text": "  br i1 %cmp325, label %if.then326, label %if.end294.3.if.end337_crit_edge, !dbg !140"
+  },
+  {
+    "line": 710,
+    "text": "  %arrayidx336 = getelementptr inbounds float, ptr addrspace(3) @buf_dyn_shmem, i32 %add334"
+  },
+  {
+    "line": 713,
+    "text": "  store float %113, ptr addrspace(3) %arrayidx336, align 4, !dbg !145, !tbaa !146"
+  },
+  {
+    "line": 717,
+    "text": "  %and339.pre-phi = phi i32 [ %.pre1941, %if.end294.3.if.end337_crit_edge ], [ %and332, %if.then326 ], !dbg !141"
+  },
+  {
+    "line": 719,
+    "text": "  tail call void @llvm.mxc.barrier(), !dbg !152"
+  },
+  {
+    "line": 722,
+    "text": "  %arrayidx342 = getelementptr inbounds float, ptr addrspace(3) @buf_dyn_shmem, i32 %add340, !dbg !155"
+  },
+  {
+    "line": 723,
+    "text": "  %114 = load float, ptr addrspace(3) %arrayidx342, align 4, !dbg !155, !tbaa !146"
+  },
+  {
+    "line": 725,
+    "text": "  %arrayidx347 = getelementptr inbounds float, ptr addrspace(3) @buf_dyn_shmem, i32 %add345, !dbg !157"
+  },
+  {
+    "line": 726,
+    "text": "  %115 = load float, ptr addrspace(3) %arrayidx347, align 4, !dbg !157, !tbaa !146"
+  },
+  {
+    "line": 729,
+    "text": "  br i1 %cmp353, label %if.end442, label %for.body358.preheader, !dbg !161"
+  },
+  {
+    "line": 774,
+    "text": "  %122 = fptrunc float %mul.i.i to half, !dbg !184"
+  },
+  {
+    "line": 778,
+    "text": "  %124 = fptrunc float %mul.i.i1046 to half, !dbg !197"
+  },
+  {
+    "line": 782,
+    "text": "  %126 = fptrunc float %mul.i.i1051 to half, !dbg !199"
+  },
+  {
+    "line": 786,
+    "text": "  %128 = fptrunc float %mul.i.i1056 to half, !dbg !208"
+  },
+  {
+    "line": 834,
+    "text": "  %138 = fptrunc float %mul.i.i.1 to half, !dbg !184"
+  },
+  {
+    "line": 838,
+    "text": "  %140 = fptrunc float %mul.i.i1046.1 to half, !dbg !197"
+  },
+  {
+    "line": 842,
+    "text": "  %142 = fptrunc float %mul.i.i1051.1 to half, !dbg !199"
+  },
+  {
+    "line": 846,
+    "text": "  %144 = fptrunc float %mul.i.i1056.1 to half, !dbg !208"
+  },
+  {
+    "line": 894,
+    "text": "  %154 = fptrunc float %mul.i.i.2 to half, !dbg !184"
+  },
+  {
+    "line": 898,
+    "text": "  %156 = fptrunc float %mul.i.i1046.2 to half, !dbg !197"
+  },
+  {
+    "line": 902,
+    "text": "  %158 = fptrunc float %mul.i.i1051.2 to half, !dbg !199"
+  },
+  {
+    "line": 906,
+    "text": "  %160 = fptrunc float %mul.i.i1056.2 to half, !dbg !208"
+  },
+  {
+    "line": 954,
+    "text": "  %170 = fptrunc float %mul.i.i.3 to half, !dbg !184"
+  },
+  {
+    "line": 958,
+    "text": "  %172 = fptrunc float %mul.i.i1046.3 to half, !dbg !197"
+  },
+  {
+    "line": 962,
+    "text": "  %174 = fptrunc float %mul.i.i1051.3 to half, !dbg !199"
+  },
+  {
+    "line": 966,
+    "text": "  %176 = fptrunc float %mul.i.i1056.3 to half, !dbg !208"
+  },
+  {
+    "line": 975,
+    "text": "  %bc1976 = phi <4 x half> [ zeroinitializer, %if.end337 ], [ %180, %for.body358.preheader ], !dbg !101"
+  },
+  {
+    "line": 976,
+    "text": "  %bc1972 = phi <4 x half> [ zeroinitializer, %if.end337 ], [ %164, %for.body358.preheader ], !dbg !101"
+  },
+  {
+    "line": 977,
+    "text": "  %bc1968 = phi <4 x half> [ zeroinitializer, %if.end337 ], [ %148, %for.body358.preheader ], !dbg !101"
+  },
+  {
+    "line": 978,
+    "text": "  %bc1964 = phi <4 x half> [ zeroinitializer, %if.end337 ], [ %132, %for.body358.preheader ], !dbg !101"
+  },
+  {
+    "line": 1049,
+    "text": "  br i1 %cmp325, label %if.then469, label %if.end480, !dbg !245"
+  },
+  {
+    "line": 1053,
+    "text": "  %208 = getelementptr inbounds float, ptr addrspace(3) @buf_dyn_shmem, i32 %mul473"
+  },
+  {
+    "line": 1054,
+    "text": "  %209 = getelementptr inbounds float, ptr addrspace(3) %208, i32 %and339.pre-phi"
+  },
+  {
+    "line": 1055,
+    "text": "  %arrayidx479 = getelementptr inbounds i8, ptr addrspace(3) %209, i32 6272"
+  },
+  {
+    "line": 1058,
+    "text": "  store float %add464, ptr addrspace(3) %arrayidx479, align 4, !dbg !247, !tbaa !146"
+  },
+  {
+    "line": 1063,
+    "text": "  tail call void @llvm.mxc.barrier(), !dbg !252"
+  },
+  {
+    "line": 1082,
+    "text": "  br i1 %or.cond1084, label %if.end646, label %if.then517, !dbg !256"
+  },
+  {
+    "line": 1086,
+    "text": "  %gep1116 = getelementptr inbounds float, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 6400), i32 %add671, !dbg !258"
+  },
+  {
+    "line": 1087,
+    "text": "  store <4 x float> %numerator.sroa.0.3, ptr addrspace(3) %gep1116, align 16, !dbg !259"
+  },
+  {
+    "line": 1090,
+    "text": "  %gep1116.1 = getelementptr inbounds float, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 6400), i32 %add671.1, !dbg !258"
+  },
+  {
+    "line": 1091,
+    "text": "  store <4 x float> %numerator.sroa.35.3, ptr addrspace(3) %gep1116.1, align 16, !dbg !259"
+  },
+  {
+    "line": 1094,
+    "text": "  %gep1116.2 = getelementptr inbounds float, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 6400), i32 %add671.2, !dbg !258"
+  },
+  {
+    "line": 1095,
+    "text": "  store <4 x float> %numerator.sroa.68.3, ptr addrspace(3) %gep1116.2, align 16, !dbg !259"
+  },
+  {
+    "line": 1098,
+    "text": "  %gep1116.3 = getelementptr inbounds float, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 6400), i32 %add671.3, !dbg !258"
+  },
+  {
+    "line": 1099,
+    "text": "  store <4 x float> %numerator.sroa.101.3, ptr addrspace(3) %gep1116.3, align 16, !dbg !259"
+  },
+  {
+    "line": 1104,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !266"
+  },
+  {
+    "line": 1125,
+    "text": "  %227 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1127,
+    "text": "  %gep1110 = getelementptr inbounds i8, ptr addrspace(3) %227, i32 %gep1110.idx, !dbg !272"
+  },
+  {
+    "line": 1137,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert, ptr addrspace(3) %gep1110, align 8, !dbg !273"
+  },
+  {
+    "line": 1139,
+    "text": "  %228 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2560), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1142,
+    "text": "  %gep1110.1 = getelementptr inbounds i8, ptr addrspace(3) %228, i32 %gep1110.idx.1, !dbg !272"
+  },
+  {
+    "line": 1152,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1259, ptr addrspace(3) %gep1110.1, align 8, !dbg !273"
+  },
+  {
+    "line": 1154,
+    "text": "  %231 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 3072), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1157,
+    "text": "  %gep1110.2 = getelementptr inbounds i8, ptr addrspace(3) %231, i32 %gep1110.idx.2, !dbg !272"
+  },
+  {
+    "line": 1167,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1263, ptr addrspace(3) %gep1110.2, align 8, !dbg !273"
+  },
+  {
+    "line": 1170,
+    "text": "  %234 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 3584), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1173,
+    "text": "  %gep1110.3 = getelementptr inbounds i8, ptr addrspace(3) %234, i32 %gep1110.idx.3, !dbg !272"
+  },
+  {
+    "line": 1181,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1267, ptr addrspace(3) %gep1110.3, align 8, !dbg !273"
+  },
+  {
+    "line": 1183,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !278"
+  },
+  {
+    "line": 1186,
+    "text": "  %237 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607, !dbg !281"
+  },
+  {
+    "line": 1188,
+    "text": "  %gep1112 = getelementptr inbounds i8, ptr addrspace(3) %237, i32 %gep1112.idx, !dbg !281"
+  },
+  {
+    "line": 1189,
+    "text": "  %238 = load <4 x half>, ptr addrspace(3) %gep1112, align 8, !dbg !282"
+  },
+  {
+    "line": 1192,
+    "text": "  %239 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.1, !dbg !281"
+  },
+  {
+    "line": 1195,
+    "text": "  %gep1112.1 = getelementptr inbounds i8, ptr addrspace(3) %239, i32 %gep1112.idx.1, !dbg !281"
+  },
+  {
+    "line": 1196,
+    "text": "  %240 = load <4 x half>, ptr addrspace(3) %gep1112.1, align 8, !dbg !282"
+  },
+  {
+    "line": 1199,
+    "text": "  %241 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.2, !dbg !281"
+  },
+  {
+    "line": 1202,
+    "text": "  %gep1112.2 = getelementptr inbounds i8, ptr addrspace(3) %241, i32 %gep1112.idx.2, !dbg !281"
+  },
+  {
+    "line": 1203,
+    "text": "  %242 = load <4 x half>, ptr addrspace(3) %gep1112.2, align 8, !dbg !282"
+  },
+  {
+    "line": 1206,
+    "text": "  %243 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.3, !dbg !281"
+  },
+  {
+    "line": 1209,
+    "text": "  %gep1112.3 = getelementptr inbounds i8, ptr addrspace(3) %243, i32 %gep1112.idx.3, !dbg !281"
+  },
+  {
+    "line": 1210,
+    "text": "  %244 = load <4 x half>, ptr addrspace(3) %gep1112.3, align 8, !dbg !282"
+  },
+  {
+    "line": 1211,
+    "text": "  %245 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %238, <4 x half> %bc1964, <4 x float> zeroinitializer), !dbg !283"
+  },
+  {
+    "line": 1212,
+    "text": "  %246 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %240, <4 x half> %bc1964, <4 x float> zeroinitializer), !dbg !283"
+  },
+  {
+    "line": 1213,
+    "text": "  %247 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %242, <4 x half> %bc1964, <4 x float> zeroinitializer), !dbg !283"
+  },
+  {
+    "line": 1214,
+    "text": "  %248 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %244, <4 x half> %bc1964, <4 x float> zeroinitializer), !dbg !283"
+  },
+  {
+    "line": 1218,
+    "text": "  %numerator.sroa.101.0 = phi <4 x float> [ zeroinitializer, %if.end480 ], [ %248, %if.then517 ], !dbg !101"
+  },
+  {
+    "line": 1219,
+    "text": "  %numerator.sroa.68.0 = phi <4 x float> [ zeroinitializer, %if.end480 ], [ %247, %if.then517 ], !dbg !101"
+  },
+  {
+    "line": 1220,
+    "text": "  %numerator.sroa.35.0 = phi <4 x float> [ zeroinitializer, %if.end480 ], [ %246, %if.then517 ], !dbg !101"
+  },
+  {
+    "line": 1221,
+    "text": "  %numerator.sroa.0.0 = phi <4 x float> [ zeroinitializer, %if.end480 ], [ %245, %if.then517 ], !dbg !101"
+  },
+  {
+    "line": 1226,
+    "text": "  br i1 %or.cond1084.1, label %if.end646.1, label %if.then517.1, !dbg !256"
+  },
+  {
+    "line": 1230,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !266"
+  },
+  {
+    "line": 1251,
+    "text": "  %262 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1253,
+    "text": "  %gep1110.11214 = getelementptr inbounds i8, ptr addrspace(3) %262, i32 %gep1110.idx.11213, !dbg !272"
+  },
+  {
+    "line": 1263,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1271, ptr addrspace(3) %gep1110.11214, align 8, !dbg !273"
+  },
+  {
+    "line": 1265,
+    "text": "  %263 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2560), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1268,
+    "text": "  %gep1110.1.1 = getelementptr inbounds i8, ptr addrspace(3) %263, i32 %gep1110.idx.1.1, !dbg !272"
+  },
+  {
+    "line": 1278,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1275, ptr addrspace(3) %gep1110.1.1, align 8, !dbg !273"
+  },
+  {
+    "line": 1280,
+    "text": "  %266 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 3072), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1283,
+    "text": "  %gep1110.2.1 = getelementptr inbounds i8, ptr addrspace(3) %266, i32 %gep1110.idx.2.1, !dbg !272"
+  },
+  {
+    "line": 1293,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1279, ptr addrspace(3) %gep1110.2.1, align 8, !dbg !273"
+  },
+  {
+    "line": 1296,
+    "text": "  %269 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 3584), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1299,
+    "text": "  %gep1110.3.1 = getelementptr inbounds i8, ptr addrspace(3) %269, i32 %gep1110.idx.3.1, !dbg !272"
+  },
+  {
+    "line": 1307,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1283, ptr addrspace(3) %gep1110.3.1, align 8, !dbg !273"
+  },
+  {
+    "line": 1309,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !278"
+  },
+  {
+    "line": 1312,
+    "text": "  %272 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.11216, !dbg !281"
+  },
+  {
+    "line": 1314,
+    "text": "  %gep1112.11218 = getelementptr inbounds i8, ptr addrspace(3) %272, i32 %gep1112.idx.11217, !dbg !281"
+  },
+  {
+    "line": 1315,
+    "text": "  %273 = load <4 x half>, ptr addrspace(3) %gep1112.11218, align 8, !dbg !282"
+  },
+  {
+    "line": 1318,
+    "text": "  %274 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.1.1, !dbg !281"
+  },
+  {
+    "line": 1321,
+    "text": "  %gep1112.1.1 = getelementptr inbounds i8, ptr addrspace(3) %274, i32 %gep1112.idx.1.1, !dbg !281"
+  },
+  {
+    "line": 1322,
+    "text": "  %275 = load <4 x half>, ptr addrspace(3) %gep1112.1.1, align 8, !dbg !282"
+  },
+  {
+    "line": 1325,
+    "text": "  %276 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.2.1, !dbg !281"
+  },
+  {
+    "line": 1328,
+    "text": "  %gep1112.2.1 = getelementptr inbounds i8, ptr addrspace(3) %276, i32 %gep1112.idx.2.1, !dbg !281"
+  },
+  {
+    "line": 1329,
+    "text": "  %277 = load <4 x half>, ptr addrspace(3) %gep1112.2.1, align 8, !dbg !282"
+  },
+  {
+    "line": 1332,
+    "text": "  %278 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.3.1, !dbg !281"
+  },
+  {
+    "line": 1335,
+    "text": "  %gep1112.3.1 = getelementptr inbounds i8, ptr addrspace(3) %278, i32 %gep1112.idx.3.1, !dbg !281"
+  },
+  {
+    "line": 1336,
+    "text": "  %279 = load <4 x half>, ptr addrspace(3) %gep1112.3.1, align 8, !dbg !282"
+  },
+  {
+    "line": 1337,
+    "text": "  %280 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %273, <4 x half> %bc1968, <4 x float> %numerator.sroa.0.0), !dbg !283"
+  },
+  {
+    "line": 1338,
+    "text": "  %281 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %275, <4 x half> %bc1968, <4 x float> %numerator.sroa.35.0), !dbg !283"
+  },
+  {
+    "line": 1339,
+    "text": "  %282 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %277, <4 x half> %bc1968, <4 x float> %numerator.sroa.68.0), !dbg !283"
+  },
+  {
+    "line": 1340,
+    "text": "  %283 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %279, <4 x half> %bc1968, <4 x float> %numerator.sroa.101.0), !dbg !283"
+  },
+  {
+    "line": 1344,
+    "text": "  %numerator.sroa.101.1 = phi <4 x float> [ %numerator.sroa.101.0, %if.end646 ], [ %283, %if.then517.1 ], !dbg !101"
+  },
+  {
+    "line": 1345,
+    "text": "  %numerator.sroa.68.1 = phi <4 x float> [ %numerator.sroa.68.0, %if.end646 ], [ %282, %if.then517.1 ], !dbg !101"
+  },
+  {
+    "line": 1346,
+    "text": "  %numerator.sroa.35.1 = phi <4 x float> [ %numerator.sroa.35.0, %if.end646 ], [ %281, %if.then517.1 ], !dbg !101"
+  },
+  {
+    "line": 1347,
+    "text": "  %numerator.sroa.0.1 = phi <4 x float> [ %numerator.sroa.0.0, %if.end646 ], [ %280, %if.then517.1 ], !dbg !101"
+  },
+  {
+    "line": 1352,
+    "text": "  br i1 %or.cond1084.2, label %if.end646.2, label %if.then517.2, !dbg !256"
+  },
+  {
+    "line": 1356,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !266"
+  },
+  {
+    "line": 1377,
+    "text": "  %297 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1379,
+    "text": "  %gep1110.21227 = getelementptr inbounds i8, ptr addrspace(3) %297, i32 %gep1110.idx.21226, !dbg !272"
+  },
+  {
+    "line": 1389,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1287, ptr addrspace(3) %gep1110.21227, align 8, !dbg !273"
+  },
+  {
+    "line": 1391,
+    "text": "  %298 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2560), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1394,
+    "text": "  %gep1110.1.2 = getelementptr inbounds i8, ptr addrspace(3) %298, i32 %gep1110.idx.1.2, !dbg !272"
+  },
+  {
+    "line": 1404,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1291, ptr addrspace(3) %gep1110.1.2, align 8, !dbg !273"
+  },
+  {
+    "line": 1406,
+    "text": "  %301 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 3072), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1409,
+    "text": "  %gep1110.2.2 = getelementptr inbounds i8, ptr addrspace(3) %301, i32 %gep1110.idx.2.2, !dbg !272"
+  },
+  {
+    "line": 1419,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1295, ptr addrspace(3) %gep1110.2.2, align 8, !dbg !273"
+  },
+  {
+    "line": 1422,
+    "text": "  %304 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 3584), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1425,
+    "text": "  %gep1110.3.2 = getelementptr inbounds i8, ptr addrspace(3) %304, i32 %gep1110.idx.3.2, !dbg !272"
+  },
+  {
+    "line": 1433,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1299, ptr addrspace(3) %gep1110.3.2, align 8, !dbg !273"
+  },
+  {
+    "line": 1435,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !278"
+  },
+  {
+    "line": 1438,
+    "text": "  %307 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.21229, !dbg !281"
+  },
+  {
+    "line": 1440,
+    "text": "  %gep1112.21231 = getelementptr inbounds i8, ptr addrspace(3) %307, i32 %gep1112.idx.21230, !dbg !281"
+  },
+  {
+    "line": 1441,
+    "text": "  %308 = load <4 x half>, ptr addrspace(3) %gep1112.21231, align 8, !dbg !282"
+  },
+  {
+    "line": 1444,
+    "text": "  %309 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.1.2, !dbg !281"
+  },
+  {
+    "line": 1447,
+    "text": "  %gep1112.1.2 = getelementptr inbounds i8, ptr addrspace(3) %309, i32 %gep1112.idx.1.2, !dbg !281"
+  },
+  {
+    "line": 1448,
+    "text": "  %310 = load <4 x half>, ptr addrspace(3) %gep1112.1.2, align 8, !dbg !282"
+  },
+  {
+    "line": 1451,
+    "text": "  %311 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.2.2, !dbg !281"
+  },
+  {
+    "line": 1454,
+    "text": "  %gep1112.2.2 = getelementptr inbounds i8, ptr addrspace(3) %311, i32 %gep1112.idx.2.2, !dbg !281"
+  },
+  {
+    "line": 1455,
+    "text": "  %312 = load <4 x half>, ptr addrspace(3) %gep1112.2.2, align 8, !dbg !282"
+  },
+  {
+    "line": 1458,
+    "text": "  %313 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.3.2, !dbg !281"
+  },
+  {
+    "line": 1461,
+    "text": "  %gep1112.3.2 = getelementptr inbounds i8, ptr addrspace(3) %313, i32 %gep1112.idx.3.2, !dbg !281"
+  },
+  {
+    "line": 1462,
+    "text": "  %314 = load <4 x half>, ptr addrspace(3) %gep1112.3.2, align 8, !dbg !282"
+  },
+  {
+    "line": 1463,
+    "text": "  %315 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %308, <4 x half> %bc1972, <4 x float> %numerator.sroa.0.1), !dbg !283"
+  },
+  {
+    "line": 1464,
+    "text": "  %316 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %310, <4 x half> %bc1972, <4 x float> %numerator.sroa.35.1), !dbg !283"
+  },
+  {
+    "line": 1465,
+    "text": "  %317 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %312, <4 x half> %bc1972, <4 x float> %numerator.sroa.68.1), !dbg !283"
+  },
+  {
+    "line": 1466,
+    "text": "  %318 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %314, <4 x half> %bc1972, <4 x float> %numerator.sroa.101.1), !dbg !283"
+  },
+  {
+    "line": 1470,
+    "text": "  %numerator.sroa.101.2 = phi <4 x float> [ %numerator.sroa.101.1, %if.end646.1 ], [ %318, %if.then517.2 ], !dbg !101"
+  },
+  {
+    "line": 1471,
+    "text": "  %numerator.sroa.68.2 = phi <4 x float> [ %numerator.sroa.68.1, %if.end646.1 ], [ %317, %if.then517.2 ], !dbg !101"
+  },
+  {
+    "line": 1472,
+    "text": "  %numerator.sroa.35.2 = phi <4 x float> [ %numerator.sroa.35.1, %if.end646.1 ], [ %316, %if.then517.2 ], !dbg !101"
+  },
+  {
+    "line": 1473,
+    "text": "  %numerator.sroa.0.2 = phi <4 x float> [ %numerator.sroa.0.1, %if.end646.1 ], [ %315, %if.then517.2 ], !dbg !101"
+  },
+  {
+    "line": 1478,
+    "text": "  br i1 %or.cond1084.3, label %if.end646.3, label %if.then517.3, !dbg !256"
+  },
+  {
+    "line": 1482,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !266"
+  },
+  {
+    "line": 1503,
+    "text": "  %332 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1505,
+    "text": "  %gep1110.31240 = getelementptr inbounds i8, ptr addrspace(3) %332, i32 %gep1110.idx.31239, !dbg !272"
+  },
+  {
+    "line": 1515,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1303, ptr addrspace(3) %gep1110.31240, align 8, !dbg !273"
+  },
+  {
+    "line": 1517,
+    "text": "  %333 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2560), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1520,
+    "text": "  %gep1110.1.3 = getelementptr inbounds i8, ptr addrspace(3) %333, i32 %gep1110.idx.1.3, !dbg !272"
+  },
+  {
+    "line": 1530,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1307, ptr addrspace(3) %gep1110.1.3, align 8, !dbg !273"
+  },
+  {
+    "line": 1532,
+    "text": "  %336 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 3072), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1535,
+    "text": "  %gep1110.2.3 = getelementptr inbounds i8, ptr addrspace(3) %336, i32 %gep1110.idx.2.3, !dbg !272"
+  },
+  {
+    "line": 1545,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1311, ptr addrspace(3) %gep1110.2.3, align 8, !dbg !273"
+  },
+  {
+    "line": 1548,
+    "text": "  %339 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 3584), i32 %211, !dbg !272"
+  },
+  {
+    "line": 1551,
+    "text": "  %gep1110.3.3 = getelementptr inbounds i8, ptr addrspace(3) %339, i32 %gep1110.idx.3.3, !dbg !272"
+  },
+  {
+    "line": 1559,
+    "text": "  store i64 %v_column.sroa.0.0.insert.insert1315, ptr addrspace(3) %gep1110.3.3, align 8, !dbg !273"
+  },
+  {
+    "line": 1561,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !278"
+  },
+  {
+    "line": 1564,
+    "text": "  %342 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.31242, !dbg !281"
+  },
+  {
+    "line": 1566,
+    "text": "  %gep1112.31244 = getelementptr inbounds i8, ptr addrspace(3) %342, i32 %gep1112.idx.31243, !dbg !281"
+  },
+  {
+    "line": 1567,
+    "text": "  %343 = load <4 x half>, ptr addrspace(3) %gep1112.31244, align 8, !dbg !282"
+  },
+  {
+    "line": 1570,
+    "text": "  %344 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.1.3, !dbg !281"
+  },
+  {
+    "line": 1573,
+    "text": "  %gep1112.1.3 = getelementptr inbounds i8, ptr addrspace(3) %344, i32 %gep1112.idx.1.3, !dbg !281"
+  },
+  {
+    "line": 1574,
+    "text": "  %345 = load <4 x half>, ptr addrspace(3) %gep1112.1.3, align 8, !dbg !282"
+  },
+  {
+    "line": 1577,
+    "text": "  %346 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.2.3, !dbg !281"
+  },
+  {
+    "line": 1580,
+    "text": "  %gep1112.2.3 = getelementptr inbounds i8, ptr addrspace(3) %346, i32 %gep1112.idx.2.3, !dbg !281"
+  },
+  {
+    "line": 1581,
+    "text": "  %347 = load <4 x half>, ptr addrspace(3) %gep1112.2.3, align 8, !dbg !282"
+  },
+  {
+    "line": 1584,
+    "text": "  %348 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 2048), i32 %add607.3.3, !dbg !281"
+  },
+  {
+    "line": 1587,
+    "text": "  %gep1112.3.3 = getelementptr inbounds i8, ptr addrspace(3) %348, i32 %gep1112.idx.3.3, !dbg !281"
+  },
+  {
+    "line": 1588,
+    "text": "  %349 = load <4 x half>, ptr addrspace(3) %gep1112.3.3, align 8, !dbg !282"
+  },
+  {
+    "line": 1589,
+    "text": "  %350 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %343, <4 x half> %bc1976, <4 x float> %numerator.sroa.0.2), !dbg !283"
+  },
+  {
+    "line": 1590,
+    "text": "  %351 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %345, <4 x half> %bc1976, <4 x float> %numerator.sroa.35.2), !dbg !283"
+  },
+  {
+    "line": 1591,
+    "text": "  %352 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %347, <4 x half> %bc1976, <4 x float> %numerator.sroa.68.2), !dbg !283"
+  },
+  {
+    "line": 1592,
+    "text": "  %353 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %349, <4 x half> %bc1976, <4 x float> %numerator.sroa.101.2), !dbg !283"
+  },
+  {
+    "line": 1596,
+    "text": "  %numerator.sroa.101.3 = phi <4 x float> [ %numerator.sroa.101.2, %if.end646.2 ], [ %353, %if.then517.3 ], !dbg !101"
+  },
+  {
+    "line": 1597,
+    "text": "  %numerator.sroa.68.3 = phi <4 x float> [ %numerator.sroa.68.2, %if.end646.2 ], [ %352, %if.then517.3 ], !dbg !101"
+  },
+  {
+    "line": 1598,
+    "text": "  %numerator.sroa.35.3 = phi <4 x float> [ %numerator.sroa.35.2, %if.end646.2 ], [ %351, %if.then517.3 ], !dbg !101"
+  },
+  {
+    "line": 1599,
+    "text": "  %numerator.sroa.0.3 = phi <4 x float> [ %numerator.sroa.0.2, %if.end646.2 ], [ %350, %if.then517.3 ], !dbg !101"
+  },
+  {
+    "line": 1602,
+    "text": "  br i1 %cmp652, label %for.cond654.preheader, label %if.end678, !dbg !286"
+  },
+  {
+    "line": 1606,
+    "text": "  tail call void @llvm.mxc.barrier(), !dbg !287"
+  },
+  {
+    "line": 1608,
+    "text": "  br i1 %cmp, label %if.then682, label %if.end875, !dbg !289"
+  },
+  {
+    "line": 1612,
+    "text": "  %arrayidx687 = getelementptr inbounds float, ptr addrspace(3) @buf_dyn_shmem, i32 %add685, !dbg !291"
+  },
+  {
+    "line": 1613,
+    "text": "  %354 = load float, ptr addrspace(3) %arrayidx687, align 4, !dbg !291, !tbaa !146"
+  },
+  {
+    "line": 1615,
+    "text": "  %arrayidx692 = getelementptr inbounds float, ptr addrspace(3) @buf_dyn_shmem, i32 %add690, !dbg !293"
+  },
+  {
+    "line": 1616,
+    "text": "  %355 = load float, ptr addrspace(3) %arrayidx692, align 4, !dbg !293, !tbaa !146"
+  },
+  {
+    "line": 1622,
+    "text": "  %356 = getelementptr inbounds float, ptr addrspace(3) @buf_dyn_shmem, i32 %add712, !dbg !296"
+  },
+  {
+    "line": 1623,
+    "text": "  %add.ptr715 = getelementptr inbounds i8, ptr addrspace(3) %356, i32 6400, !dbg !296"
+  },
+  {
+    "line": 1624,
+    "text": "  %v__5.sroa.0.0.copyload = load float, ptr addrspace(3) %add.ptr715, align 16, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1625,
+    "text": "  %v__5.sroa.4.0.add.ptr715.sroa_idx = getelementptr inbounds i8, ptr addrspace(3) %356, i32 6404, !dbg !297"
+  },
+  {
+    "line": 1626,
+    "text": "  %v__5.sroa.4.0.copyload = load float, ptr addrspace(3) %v__5.sroa.4.0.add.ptr715.sroa_idx, align 4, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1627,
+    "text": "  %v__5.sroa.5.0.add.ptr715.sroa_idx = getelementptr inbounds i8, ptr addrspace(3) %356, i32 6408, !dbg !297"
+  },
+  {
+    "line": 1628,
+    "text": "  %v__5.sroa.5.0.copyload = load float, ptr addrspace(3) %v__5.sroa.5.0.add.ptr715.sroa_idx, align 8, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1629,
+    "text": "  %v__5.sroa.6.0.add.ptr715.sroa_idx = getelementptr inbounds i8, ptr addrspace(3) %356, i32 6412, !dbg !297"
+  },
+  {
+    "line": 1630,
+    "text": "  %v__5.sroa.6.0.copyload = load float, ptr addrspace(3) %v__5.sroa.6.0.add.ptr715.sroa_idx, align 4, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1641,
+    "text": "  %357 = getelementptr inbounds float, ptr addrspace(3) @buf_dyn_shmem, i32 %add712.1, !dbg !296"
+  },
+  {
+    "line": 1642,
+    "text": "  %add.ptr715.1 = getelementptr inbounds i8, ptr addrspace(3) %357, i32 6400, !dbg !296"
+  },
+  {
+    "line": 1643,
+    "text": "  %v__5.sroa.0.0.copyload.1 = load float, ptr addrspace(3) %add.ptr715.1, align 16, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1644,
+    "text": "  %v__5.sroa.4.0.add.ptr715.sroa_idx.1 = getelementptr inbounds i8, ptr addrspace(3) %357, i32 6404, !dbg !297"
+  },
+  {
+    "line": 1645,
+    "text": "  %v__5.sroa.4.0.copyload.1 = load float, ptr addrspace(3) %v__5.sroa.4.0.add.ptr715.sroa_idx.1, align 4, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1646,
+    "text": "  %v__5.sroa.5.0.add.ptr715.sroa_idx.1 = getelementptr inbounds i8, ptr addrspace(3) %357, i32 6408, !dbg !297"
+  },
+  {
+    "line": 1647,
+    "text": "  %v__5.sroa.5.0.copyload.1 = load float, ptr addrspace(3) %v__5.sroa.5.0.add.ptr715.sroa_idx.1, align 8, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1648,
+    "text": "  %v__5.sroa.6.0.add.ptr715.sroa_idx.1 = getelementptr inbounds i8, ptr addrspace(3) %357, i32 6412, !dbg !297"
+  },
+  {
+    "line": 1649,
+    "text": "  %v__5.sroa.6.0.copyload.1 = load float, ptr addrspace(3) %v__5.sroa.6.0.add.ptr715.sroa_idx.1, align 4, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1660,
+    "text": "  %358 = getelementptr inbounds float, ptr addrspace(3) @buf_dyn_shmem, i32 %add712.2, !dbg !296"
+  },
+  {
+    "line": 1661,
+    "text": "  %add.ptr715.2 = getelementptr inbounds i8, ptr addrspace(3) %358, i32 6400, !dbg !296"
+  },
+  {
+    "line": 1662,
+    "text": "  %v__5.sroa.0.0.copyload.2 = load float, ptr addrspace(3) %add.ptr715.2, align 16, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1663,
+    "text": "  %v__5.sroa.4.0.add.ptr715.sroa_idx.2 = getelementptr inbounds i8, ptr addrspace(3) %358, i32 6404, !dbg !297"
+  },
+  {
+    "line": 1664,
+    "text": "  %v__5.sroa.4.0.copyload.2 = load float, ptr addrspace(3) %v__5.sroa.4.0.add.ptr715.sroa_idx.2, align 4, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1665,
+    "text": "  %v__5.sroa.5.0.add.ptr715.sroa_idx.2 = getelementptr inbounds i8, ptr addrspace(3) %358, i32 6408, !dbg !297"
+  },
+  {
+    "line": 1666,
+    "text": "  %v__5.sroa.5.0.copyload.2 = load float, ptr addrspace(3) %v__5.sroa.5.0.add.ptr715.sroa_idx.2, align 8, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1667,
+    "text": "  %v__5.sroa.6.0.add.ptr715.sroa_idx.2 = getelementptr inbounds i8, ptr addrspace(3) %358, i32 6412, !dbg !297"
+  },
+  {
+    "line": 1668,
+    "text": "  %v__5.sroa.6.0.copyload.2 = load float, ptr addrspace(3) %v__5.sroa.6.0.add.ptr715.sroa_idx.2, align 4, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1679,
+    "text": "  %359 = getelementptr inbounds float, ptr addrspace(3) @buf_dyn_shmem, i32 %add712.3, !dbg !296"
+  },
+  {
+    "line": 1680,
+    "text": "  %add.ptr715.3 = getelementptr inbounds i8, ptr addrspace(3) %359, i32 6400, !dbg !296"
+  },
+  {
+    "line": 1681,
+    "text": "  %v__5.sroa.0.0.copyload.3 = load float, ptr addrspace(3) %add.ptr715.3, align 16, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1682,
+    "text": "  %v__5.sroa.4.0.add.ptr715.sroa_idx.3 = getelementptr inbounds i8, ptr addrspace(3) %359, i32 6404, !dbg !297"
+  },
+  {
+    "line": 1683,
+    "text": "  %v__5.sroa.4.0.copyload.3 = load float, ptr addrspace(3) %v__5.sroa.4.0.add.ptr715.sroa_idx.3, align 4, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1684,
+    "text": "  %v__5.sroa.5.0.add.ptr715.sroa_idx.3 = getelementptr inbounds i8, ptr addrspace(3) %359, i32 6408, !dbg !297"
+  },
+  {
+    "line": 1685,
+    "text": "  %v__5.sroa.5.0.copyload.3 = load float, ptr addrspace(3) %v__5.sroa.5.0.add.ptr715.sroa_idx.3, align 8, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1686,
+    "text": "  %v__5.sroa.6.0.add.ptr715.sroa_idx.3 = getelementptr inbounds i8, ptr addrspace(3) %359, i32 6412, !dbg !297"
+  },
+  {
+    "line": 1687,
+    "text": "  %v__5.sroa.6.0.copyload.3 = load float, ptr addrspace(3) %v__5.sroa.6.0.add.ptr715.sroa_idx.3, align 4, !dbg !297, !tbaa !146"
+  },
+  {
+    "line": 1693,
+    "text": "  %div = fdiv contract float %add718, %add693, !dbg !303"
+  },
+  {
+    "line": 1694,
+    "text": "  %div757 = fdiv contract float %add722, %add693, !dbg !304"
+  },
+  {
+    "line": 1695,
+    "text": "  %div761 = fdiv contract float %add726, %add693, !dbg !305"
+  },
+  {
+    "line": 1696,
+    "text": "  %div765 = fdiv contract float %add730, %add693, !dbg !306"
+  },
+  {
+    "line": 1697,
+    "text": "  %div.1 = fdiv contract float %add718.1, %add693, !dbg !303"
+  },
+  {
+    "line": 1698,
+    "text": "  %div757.1 = fdiv contract float %add722.1, %add693, !dbg !304"
+  },
+  {
+    "line": 1699,
+    "text": "  %div761.1 = fdiv contract float %add726.1, %add693, !dbg !305"
+  },
+  {
+    "line": 1700,
+    "text": "  %div765.1 = fdiv contract float %add730.1, %add693, !dbg !306"
+  },
+  {
+    "line": 1701,
+    "text": "  %div.2 = fdiv contract float %add718.2, %add693, !dbg !303"
+  },
+  {
+    "line": 1702,
+    "text": "  %div757.2 = fdiv contract float %add722.2, %add693, !dbg !304"
+  },
+  {
+    "line": 1703,
+    "text": "  %div761.2 = fdiv contract float %add726.2, %add693, !dbg !305"
+  },
+  {
+    "line": 1704,
+    "text": "  %div765.2 = fdiv contract float %add730.2, %add693, !dbg !306"
+  },
+  {
+    "line": 1705,
+    "text": "  %div.3 = fdiv contract float %add718.3, %add693, !dbg !303"
+  },
+  {
+    "line": 1706,
+    "text": "  %div757.3 = fdiv contract float %add722.3, %add693, !dbg !304"
+  },
+  {
+    "line": 1707,
+    "text": "  %div761.3 = fdiv contract float %add726.3, %add693, !dbg !305"
+  },
+  {
+    "line": 1708,
+    "text": "  %div765.3 = fdiv contract float %add730.3, %add693, !dbg !306"
+  },
+  {
+    "line": 1710,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !310"
+  },
+  {
+    "line": 1716,
+    "text": "  %361 = fptrunc float %div to half, !dbg !312"
+  },
+  {
+    "line": 1720,
+    "text": "  %363 = fptrunc float %div757 to half, !dbg !321"
+  },
+  {
+    "line": 1726,
+    "text": "  %367 = fptrunc float %div761 to half, !dbg !327"
+  },
+  {
+    "line": 1730,
+    "text": "  %369 = fptrunc float %div765 to half, !dbg !336"
+  },
+  {
+    "line": 1748,
+    "text": "  %add.ptr819 = getelementptr inbounds %struct.__half, ptr addrspace(3) @buf_dyn_shmem, i32 %add817, !dbg !346"
+  },
+  {
+    "line": 1749,
+    "text": "  store i64 %__8.sroa.0.0.insert.insert, ptr addrspace(3) %add.ptr819, align 8, !dbg !347"
+  },
+  {
+    "line": 1752,
+    "text": "  %373 = fptrunc float %div.1 to half, !dbg !312"
+  },
+  {
+    "line": 1756,
+    "text": "  %375 = fptrunc float %div757.1 to half, !dbg !321"
+  },
+  {
+    "line": 1762,
+    "text": "  %379 = fptrunc float %div761.1 to half, !dbg !327"
+  },
+  {
+    "line": 1766,
+    "text": "  %381 = fptrunc float %div765.1 to half, !dbg !336"
+  },
+  {
+    "line": 1785,
+    "text": "  %add.ptr819.1 = getelementptr inbounds %struct.__half, ptr addrspace(3) @buf_dyn_shmem, i32 %add817.1, !dbg !346"
+  },
+  {
+    "line": 1786,
+    "text": "  store i64 %__8.sroa.0.0.insert.insert.1, ptr addrspace(3) %add.ptr819.1, align 8, !dbg !347"
+  },
+  {
+    "line": 1789,
+    "text": "  %385 = fptrunc float %div.2 to half, !dbg !312"
+  },
+  {
+    "line": 1793,
+    "text": "  %387 = fptrunc float %div757.2 to half, !dbg !321"
+  },
+  {
+    "line": 1799,
+    "text": "  %391 = fptrunc float %div761.2 to half, !dbg !327"
+  },
+  {
+    "line": 1803,
+    "text": "  %393 = fptrunc float %div765.2 to half, !dbg !336"
+  },
+  {
+    "line": 1822,
+    "text": "  %add.ptr819.2 = getelementptr inbounds %struct.__half, ptr addrspace(3) @buf_dyn_shmem, i32 %add817.2, !dbg !346"
+  },
+  {
+    "line": 1823,
+    "text": "  store i64 %__8.sroa.0.0.insert.insert.2, ptr addrspace(3) %add.ptr819.2, align 8, !dbg !347"
+  },
+  {
+    "line": 1826,
+    "text": "  %397 = fptrunc float %div.3 to half, !dbg !312"
+  },
+  {
+    "line": 1830,
+    "text": "  %399 = fptrunc float %div757.3 to half, !dbg !321"
+  },
+  {
+    "line": 1836,
+    "text": "  %403 = fptrunc float %div761.3 to half, !dbg !327"
+  },
+  {
+    "line": 1840,
+    "text": "  %405 = fptrunc float %div765.3 to half, !dbg !336"
+  },
+  {
+    "line": 1859,
+    "text": "  %add.ptr819.3 = getelementptr inbounds %struct.__half, ptr addrspace(3) @buf_dyn_shmem, i32 %add817.3, !dbg !346"
+  },
+  {
+    "line": 1860,
+    "text": "  store i64 %__8.sroa.0.0.insert.insert.3, ptr addrspace(3) %add.ptr819.3, align 8, !dbg !347"
+  },
+  {
+    "line": 1862,
+    "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !352"
+  },
+  {
+    "line": 1868,
+    "text": "  %409 = zext nneg i32 %and154.pre-phi to i64, !dbg !354"
+  },
+  {
+    "line": 1870,
+    "text": "  %add.ptr849 = getelementptr inbounds %struct.__half, ptr addrspace(3) @buf_dyn_shmem, i32 %410, !dbg !355"
+  },
+  {
+    "line": 1871,
+    "text": "  %411 = load i64, ptr addrspace(3) %add.ptr849, align 16, !dbg !356"
+  },
+  {
+    "line": 1872,
+    "text": "  %add.ptr849.1 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 8), i32 %410, !dbg !355"
+  },
+  {
+    "line": 1873,
+    "text": "  %412 = load i64, ptr addrspace(3) %add.ptr849.1, align 8, !dbg !356"
+  },
+  {
+    "line": 1881,
+    "text": "  %add.ptr849.11253 = getelementptr inbounds %struct.__half, ptr addrspace(3) getelementptr inbounds (i8, ptr addrspace(3) @buf_dyn_shmem, i32 8), i32 %415, !dbg !355"
+  },
+  {
+    "line": 1882,
+    "text": "  %416 = load i64, ptr addrspace(3) %add.ptr849.11253, align 8, !dbg !356"
+  },
+  {
+    "line": 1883,
+    "text": "  %add.ptr849.1.1 = getelementptr inbounds %struct.__half, ptr addrspace(3) @buf_dyn_shmem, i32 %415, !dbg !355"
+  },
+  {
+    "line": 1884,
+    "text": "  %417 = load i64, ptr addrspace(3) %add.ptr849.1.1, align 16, !dbg !356"
+  }
+]

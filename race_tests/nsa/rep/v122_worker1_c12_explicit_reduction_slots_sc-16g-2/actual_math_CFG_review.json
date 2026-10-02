@@ -1,0 +1,154 @@
+{
+  "IR_SHA": "78829f1930b60e264789a5bf84c66221b7e1b1c48ef1a13282610bef0fd6c1d4",
+  "CPP_SHA": "4dbc8b0ac4f5c3724ad85524a817df5e1c22b2ae614afcb9c9ed2cfc38b6d4d0",
+  "CTAblockbarrier_lines": [
+    245,
+    719,
+    1063,
+    1606
+  ],
+  "roundedP_same_den_PV": "bc1964/bc1968 etc halfPHI fpext979..1025 usedPV1211..1592; sameactualFP16 values",
+  "Num_CGF_order": "IR textualNumstores1087..1099 blockfor.cond654.preheader predecessorif.end646.3; lastPV1589..1592 ->1595..1602 selectwarp1->storeblock->1604..1608 commonCTA ->warp0 Denload/Numjoin1631..; textlineorder isnotexecutionorder",
+  "MaxDen_Numactualdisjoint_regions_from_checker": {
+    "MaxW": {
+      "min_index": 1536,
+      "max_index": 1567,
+      "unique_elements": 32
+    },
+    "MaxR": {
+      "min_index": 1536,
+      "max_index": 1567,
+      "unique_elements": 32
+    },
+    "DenW": {
+      "min_index": 1568,
+      "max_index": 1599,
+      "unique_elements": 32
+    },
+    "DenR": {
+      "min_index": 1568,
+      "max_index": 1599,
+      "unique_elements": 32
+    },
+    "NumW": {
+      "min_index": 1600,
+      "max_index": 2623,
+      "unique_elements": 1024
+    },
+    "NumR": {
+      "min_index": 1600,
+      "max_index": 2623,
+      "unique_elements": 1024
+    },
+    "Half": {
+      "min_index": 0,
+      "max_index": 3071,
+      "unique_elements": 3072
+    }
+  },
+  "actual_fixed_source_key4_1024_1_16_64_8_16_true": true,
+  "no_physicaloccupancy_or_latency_or_referenceclaim": true,
+  "manual_leader_review_pending": true,
+  "exact_IR_lines": [
+    {
+      "line": 245,
+      "text": "  tail call void @llvm.mxc.barrier(), !dbg !61"
+    },
+    {
+      "line": 713,
+      "text": "  store float %113, ptr addrspace(3) %arrayidx336, align 4, !dbg !145, !tbaa !146"
+    },
+    {
+      "line": 719,
+      "text": "  tail call void @llvm.mxc.barrier(), !dbg !152"
+    },
+    {
+      "line": 723,
+      "text": "  %114 = load float, ptr addrspace(3) %arrayidx342, align 4, !dbg !155, !tbaa !146"
+    },
+    {
+      "line": 726,
+      "text": "  %115 = load float, ptr addrspace(3) %arrayidx347, align 4, !dbg !157, !tbaa !146"
+    },
+    {
+      "line": 727,
+      "text": "  %116 = tail call contract noundef float @llvm.maxnum.f32(float %114, float %115), !dbg !158"
+    },
+    {
+      "line": 977,
+      "text": "  %bc1968 = phi <4 x half> [ zeroinitializer, %if.end337 ], [ %148, %for.body358.preheader ], !dbg !101"
+    },
+    {
+      "line": 978,
+      "text": "  %bc1964 = phi <4 x half> [ zeroinitializer, %if.end337 ], [ %132, %for.body358.preheader ], !dbg !101"
+    },
+    {
+      "line": 980,
+      "text": "  %conv.i.i = fpext half %181 to float, !dbg !213"
+    },
+    {
+      "line": 1058,
+      "text": "  store float %add464, ptr addrspace(3) %arrayidx479, align 4, !dbg !247, !tbaa !146"
+    },
+    {
+      "line": 1063,
+      "text": "  tail call void @llvm.mxc.barrier(), !dbg !252"
+    },
+    {
+      "line": 1084,
+      "text": "for.cond654.preheader:                            ; preds = %if.end646.3"
+    },
+    {
+      "line": 1087,
+      "text": "  store <4 x float> %numerator.sroa.0.3, ptr addrspace(3) %gep1116, align 16, !dbg !259"
+    },
+    {
+      "line": 1099,
+      "text": "  store <4 x float> %numerator.sroa.101.3, ptr addrspace(3) %gep1116.3, align 16, !dbg !259"
+    },
+    {
+      "line": 1211,
+      "text": "  %245 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %238, <4 x half> %bc1964, <4 x float> zeroinitializer), !dbg !283"
+    },
+    {
+      "line": 1337,
+      "text": "  %280 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %273, <4 x half> %bc1968, <4 x float> %numerator.sroa.0.0), !dbg !283"
+    },
+    {
+      "line": 1589,
+      "text": "  %350 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %343, <4 x half> %bc1976, <4 x float> %numerator.sroa.0.2), !dbg !283"
+    },
+    {
+      "line": 1595,
+      "text": "if.end646.3:                                      ; preds = %if.then517.3, %if.end646.2"
+    },
+    {
+      "line": 1602,
+      "text": "  br i1 %cmp652, label %for.cond654.preheader, label %if.end678, !dbg !286"
+    },
+    {
+      "line": 1606,
+      "text": "  tail call void @llvm.mxc.barrier(), !dbg !287"
+    },
+    {
+      "line": 1608,
+      "text": "  br i1 %cmp, label %if.then682, label %if.end875, !dbg !289"
+    },
+    {
+      "line": 1613,
+      "text": "  %354 = load float, ptr addrspace(3) %arrayidx687, align 4, !dbg !291, !tbaa !146"
+    },
+    {
+      "line": 1616,
+      "text": "  %355 = load float, ptr addrspace(3) %arrayidx692, align 4, !dbg !293, !tbaa !146"
+    },
+    {
+      "line": 1624,
+      "text": "  %v__5.sroa.0.0.copyload = load float, ptr addrspace(3) %add.ptr715, align 16, !dbg !297, !tbaa !146"
+    },
+    {
+      "line": 1631,
+      "text": "  %add718 = fadd contract float %numerator.sroa.0.0.vec.extract, %v__5.sroa.0.0.copyload, !dbg !298"
+    }
+  ]
+}

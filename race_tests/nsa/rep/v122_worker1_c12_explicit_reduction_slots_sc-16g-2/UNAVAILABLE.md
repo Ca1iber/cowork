@@ -1,0 +1,1 @@
+All14candidate correctness/performance/OJ/MC/CycleTrace NOT_PLANNED_OR_NOT_RUN in122; onlyC12 originalfullnaive4C12inclusive. ISA/finaltransaction width and runtimeoccupancy UNKNOWN. Compile/resource and native separate; old121 failedgate1 notrestored. Additionalshared/twowaves/CTA/regroup confounded costs; no singlecause claim.

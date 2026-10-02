@@ -1,0 +1,141 @@
+{
+  "records": [
+    {
+      "variant": "parent113",
+      "case": 12,
+      "hook_count": 1,
+      "source": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+        "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+      },
+      "kernel_type": "tilelang.jit.kernel.JITKernel",
+      "args_metadata": [
+        {
+          "shape": [
+            4,
+            1024,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            8
+          ],
+          "dtype": "torch.int32",
+          "grad": false
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": false
+        }
+      ],
+      "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/codegen/parent113/case12.device.cpp",
+      "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/codegen/parent113/case12.host.cpp",
+      "device_SHA": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13",
+      "host_SHA": "5465bbd453110638b2134febc7fad0fab87b29bf088883823e511ba04675d82e",
+      "actual_NSA_attention_calls": 0
+    },
+    {
+      "variant": "candidate122",
+      "case": 12,
+      "hook_count": 1,
+      "source": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/submission.py",
+        "sha256": "88bd3007df4a5173fec5de7c0471ac4d8462e1f44269c1c2ee2fae9cd60aca01"
+      },
+      "kernel_type": "tilelang.jit.kernel.JITKernel",
+      "args_metadata": [
+        {
+          "shape": [
+            4,
+            1024,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": true
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            1,
+            8
+          ],
+          "dtype": "torch.int32",
+          "grad": false
+        },
+        {
+          "shape": [
+            4,
+            1024,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "grad": false
+        }
+      ],
+      "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/codegen/candidate122/case12.device.cpp",
+      "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/codegen/candidate122/case12.host.cpp",
+      "device_SHA": "4dbc8b0ac4f5c3724ad85524a817df5e1c22b2ae614afcb9c9ed2cfc38b6d4d0",
+      "host_SHA": "7713434af2094965a6573bc11fd2873cf4a332a379f326d604de3f72258cdf2f",
+      "actual_NSA_attention_calls": 0
+    }
+  ],
+  "NSA_attention_calls": 0,
+  "fullrefs": 0,
+  "context_emptyallocations_not0GPUclaim": true
+}

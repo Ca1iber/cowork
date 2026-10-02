@@ -1,0 +1,48 @@
+--- closed121/rev02.py
++++ 122/candidate.py
+@@ -1,4 +1,4 @@
+-# codex-power v121
++# codex-power v122
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -1490,8 +1490,7 @@
+             warp_id = T.KernelLaunchFrame.Current().get_thread_binding() // 64
+             kv_offset = 1024 + warp_id * 1024
+             shared = T.alloc_shared([3072], dtype)
+-            partial_maximum = T.alloc_shared([32], accum_dtype)
+-            partial_denominator = T.alloc_shared([32], accum_dtype)
++            reduction_values = T.alloc_shared([64], accum_dtype)
+             partial_numerator = T.alloc_shared([1024], accum_dtype)
+             q_local = T.alloc_local(16, dtype)
+             qk_fetch = T.alloc_local(8, dtype)
+@@ -1553,9 +1552,9 @@
+             maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF))
+             maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF))
+             if lane < 16:
+-                partial_maximum[warp_id * 16 + lane] = maximum[0]
++                reduction_values[warp_id * 16 + lane] = maximum[0]
+             T.sync_threads()
+-            maximum[0] = T.max(partial_maximum[lane % 16], partial_maximum[16 + lane % 16])
++            maximum[0] = T.max(reduction_values[lane % 16], reduction_values[16 + lane % 16])
+             if maximum[0] > -T.infinity(accum_dtype):
+                 for selected in T.unroll(4):
+                     for element in T.vectorized(4):
+@@ -1565,7 +1564,7 @@
+             denominator[0] += T.shfl_xor(denominator[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF)
+             denominator[0] += T.shfl_xor(denominator[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF)
+             if lane < 16:
+-                partial_denominator[warp_id * 16 + lane] = denominator[0]
++                reduction_values[32 + warp_id * 16 + lane] = denominator[0]
+             T.sync_threads()
+             T.fill(numerator, 0)
+             for selected in T.unroll(4):
+@@ -1599,7 +1598,7 @@
+                         partial_numerator[(lane % 16) * 64 + feature] = numerator[chunk * 4 + element]
+             T.sync_threads()
+             if warp_id == 0:
+-                denominator[0] = partial_denominator[lane % 16] + partial_denominator[16 + lane % 16]
++                denominator[0] = reduction_values[32 + lane % 16] + reduction_values[48 + lane % 16]
+                 for chunk in T.unroll(4):
+                     for element in T.vectorized(4):
+                         feature = chunk * 16 + (lane // 16) * 4 + element
