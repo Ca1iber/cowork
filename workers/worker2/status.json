@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T09:01:54.105035+00:00",
-  "state": "V207_DIAGNOSTIC_PLAN_READY",
+  "timestamp_utc": "2026-10-02T09:31:49.824590+00:00",
+  "state": "V207_LIMITED_DIAGNOSTIC_CLOSED",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "f7c53a69b83d3bf8ead72101ca2d26a14a3a8032",
+  "source_commit": "e61d29b899f32d3ea86681c984076568ff70dcf7",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v207_worker2_c9_parent_profile_subagent2",
-    "state": "PARENT_C9_DIAGNOSTIC_PROPOSAL",
+    "state": "CLOSED_LIMITED_VALID_PARENT_C9_DIAGNOSTIC",
     "only_key": [
       1,
       8192,
@@ -37,9 +37,9 @@
     "driverSHA": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a",
     "toolSHA": "8b668655748648b40d12c7a4a5e179105f0e31b178a2d15e87b6bcdaa89efa3b",
     "candidate_count": 0,
-    "new_heavy_launched": false,
-    "actual_CLI_invocations": 0,
-    "actual_report_records": 0,
+    "new_heavy_launched": true,
+    "actual_CLI_invocations": 1,
+    "actual_report_records": 2,
     "reference_native_tests": [
       0,
       0
@@ -55,7 +55,31 @@
     ],
     "old_576_scopefailure_kept": true,
     "peer_received": true,
-    "leader_GO": false
+    "leader_GO": true,
+    "actual_CLI_exit": 0,
+    "actual_driver_processes_observed": 3,
+    "successful_driver_markers": 3,
+    "all10numeric_records": 2,
+    "wave_payload_scope_pass_records": 2,
+    "actual_write_residuals": [
+      320,
+      320
+    ],
+    "direct_runtime_grid": "UNAVAILABLE_umd_data_empty",
+    "existing_source_host_contract_grid": [
+      8192,
+      1
+    ],
+    "no_full_exclusive_scope_claim": true,
+    "actual_attention_launch_count": "UNAVAILABLE_not_guessed",
+    "newkernel": 0,
+    "OOM": [
+      3,
+      3
+    ],
+    "currently_live_owned": 0,
+    "inventory_files": 61,
+    "source_commit": "e61d29b899f32d3ea86681c984076568ff70dcf7"
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -403,7 +427,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "leader review exactoneCLIparentC9manifest/peer before anyheavy",
+  "next_step": "own C9 newmemorypreparation mechanism proposal+peer+leaderreview,0newheavy",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
