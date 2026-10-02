@@ -21,7 +21,7 @@
   "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
   "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration",
   "schema": 2,
-  "updated_at_utc": "2026-10-02T12:34:22.675227+00:00",
+  "updated_at_utc": "2026-10-02T12:43:55.186038+00:00",
   "canonical_main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "historical_snapshot": "integration/reviews/leader-status-before-v114-screen.json",
   "worker1": {
@@ -32,7 +32,7 @@
       12
     ],
     "active_version": "v114_worker1_reallocated_baseline_original_C11_screen_sc-16g-2",
-    "stage": "actual review passed; one original C11 fixed12 approved; launch pending",
+    "stage": "original C11 fixed12 running; 9 completed clean PASS observed; job10 verified live",
     "source_commit": "7045d8a31d6e6c76a0b091946b5abfbf2243356a",
     "candidate_version": "v113",
     "candidate_sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
@@ -44,8 +44,13 @@
     ],
     "runtime_stop_GiB": 28,
     "old_v113_zero_native_refusal_preserved": true,
-    "active_PID": "not yet reported; no historical PID reused",
-    "communication_head": "e96b91f3f4ee8d320397c6fc445c0d129985436b"
+    "active_PID": 437645,
+    "communication_head": "e96b91f3f4ee8d320397c6fc445c0d129985436b",
+    "active_PID_scope": "job10 proc stat read; terminal status not inferred",
+    "current_observed_clean_refs": 9,
+    "current_observed_candidate_refs": 3,
+    "launch_plan_GO_sha256": "fd09ed04209ff7ae0226a9a0086cfa000cf863242cae02aaa509ad6be48b5bcd",
+    "native_GO": true
   },
   "worker2": {
     "cases": [
@@ -61,7 +66,7 @@
       14
     ],
     "active_version": "v210_worker2_c8_serial_query_pair_subagent2",
-    "stage": "metadata/backend actual wait0 reported; readonly semantic review in progress",
+    "stage": "compiled semantic archive independently audited; original C8 native plan pending",
     "source_commit": "d4df40603a5f2093786e2385e417fff742aa04fc",
     "candidate_sha256": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
     "reported_metadata_wait": 0,
@@ -88,7 +93,7 @@
     ],
     "new_refs": 0,
     "native_GO": false,
-    "independent_compile_audit": "pending actual raw archive",
+    "independent_compile_audit": "integration/reviews/v210-compiled-semantic-leader-audit.json",
     "communication_head": "2688710a54c197f2c579654dbd69c59370fc16f2"
   },
   "retained_candidate_gain": {
