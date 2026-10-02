@@ -1,0 +1,127 @@
+{
+  "version": "v113_worker1_s4_global_softmax_sc-16g-2",
+  "UTC": "2026-10-02T11:28:37.330142+00:00",
+  "phase": "proposal_pre_kernel_no_heavy_GO",
+  "owned_target": {
+    "case": 11,
+    "key": [
+      2,
+      512,
+      1,
+      16,
+      64,
+      4,
+      16,
+      true
+    ]
+  },
+  "base_source": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v104_worker1_s8_global_softmax_sc-16g-2/submission.py",
+    "sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07"
+  },
+  "parent_C11_actual_resources": {
+    "MT": 80,
+    "ST": 22,
+    "staticmax": 6,
+    "dynamicshared": 2048,
+    "stack": 0,
+    "source": "v111 existingCPP SDK result; parent84 and104 C11 bytes identical"
+  },
+  "mechanism": "all4 QK -> Score16/P16 one global softmax -> all4 PV Num16; preserve other13 exact104 including C12",
+  "falsifiable_prediction": "Eliminate per-valid-block online Num16 rescale and repeated max shuffle; phase-separate Num from QK. Actual compiled offsets/lifetimes and original native median determine outcome, not allocation counts.",
+  "work": {
+    "fullvalid_MMA_perquery": 32,
+    "querygroups": 1024,
+    "nominal_FLOPs": 268435456,
+    "score_exp_perlane": 16,
+    "removed_online_rescale_exp_perlane_fullvalid": 4,
+    "max_shuffles_parent_fullvalid": 8,
+    "max_shuffles_candidate_fullvalid": 2,
+    "den_final_shuffles_both": 2
+  },
+  "numerics": [
+    "globalmax changes F16 rounding; no bit equivalence",
+    "actual P16 = F16(exp2((score-max)*scale+8)); same P16 drives FP32den and PV",
+    "perfeature PV selected0..3 accumulation order preserved; no den perplane",
+    "rawidx>=0 and rawidx<L/BS and rawidx<=token/BS before multiply; official prefix/sentinel contract only, ABI no counts",
+    "invalid scores initialize -inf and probabilities0; no invalid K/V read",
+    "uniform has_valid avoids -inf-minus-inf; empty numerator0/den0 preserves finalNaN",
+    "original naive1e-2, seed0, input/grad/shape contract unchanged"
+  ],
+  "memory_and_sync": [
+    "Q/K global16B, V8B, Output16B; actual qk/out/v_slot layouts unchanged",
+    "shared2KiB: readQ before nextKwrite; QK consume K before next K/Vwrite full64 sync",
+    "each V read before nextVwrite, final Vread before outputwrite, outputwrite before globalgather sync retained",
+    "Score16/P16 explicit unroll4 constant MFMA operand offsets; Num initialized afterQK; do not infer physical liveness from source"
+  ],
+  "metadata_gate": {
+    "attention_calls": 0,
+    "native_refs": 0,
+    "only_case11_parent104_and_candidate": true,
+    "stack_must_equal": 0,
+    "MT_max": 96,
+    "staticmax_min": 5,
+    "ST_increases_retained": true,
+    "dynamicshared_must_equal": 2048,
+    "original_vector_widths_and_sync": true,
+    "actual_constant_MFMA_offsets_required": true,
+    "no_private_dynamic_index_or_spill": true,
+    "reject_before_native_on_failure": true,
+    "bounded_actual_existing_CPP_resource_IR_only": true
+  },
+  "native_screen": {
+    "cases": [
+      11
+    ],
+    "fixed_source_order": [
+      "B28",
+      "C104",
+      "C113",
+      "C113",
+      "C104",
+      "B28",
+      "B28",
+      "C104",
+      "C113",
+      "C113",
+      "C104",
+      "B28"
+    ],
+    "fresh_sourceprocess": true,
+    "planned_candidate_fullrefs": 4,
+    "planned_inclusive_fullrefs": 12,
+    "existing_runner_unchanged": true,
+    "warmup": 10,
+    "repeat": 50,
+    "seed": 0,
+    "tolerance": 0.01,
+    "gradTrue_F16": true,
+    "any_nonzero_OOM_innerKilled_hash_CSV_guard": "stop prefix; no retry",
+    "latency": "median >=104 rejects; ranges overlap or any roundpositive cannot claim stablewin; retain all raw/outliers/positive",
+    "automatic_formal": false
+  },
+  "guards": {
+    "admission_GiB": 4,
+    "additional_engineering_GiB": 24,
+    "reserve_GiB": 4,
+    "runtime_whole_stop_GiB": 28,
+    "OOM_baseline": 13,
+    "unknown_visible_RSS_GiB": 1,
+    "native_timeout_s": 600,
+    "sampler_s": 0.5,
+    "critical_unavailable_max_s": 1,
+    "baseline_exact_tuple": "reuse approved v112 tuple213447/start93125003/exactexe/exactcg; always unowned; no children inheritance or signal",
+    "cooplock": "nonblocking",
+    "identity": "originalPopen authority; priorabort retained; only verified own ancestry signalled",
+    "no_poll_until_admission_or_retry": true
+  },
+  "risks": [
+    "No valid v112 counters: not a measured bottleneck claim",
+    "Score/P longer lifetimes, explicitunroll/code-size/ST/MT may harm latency",
+    "globalmax FP16 rounding changes need originalfullreference",
+    "event50Pythoncalls includes host enqueue; C11 shorter thanC12, gains not transferable",
+    "CPU wholeCG/namespace/0.5s missedpeak risks remain"
+  ],
+  "old_measurements": "v108168 and v10996 separate; C11 positive medians+.796359/.760271 retained; no identity waiver; v112firstCLI failed0counter, no retry",
+  "no_main_or_OJ_promotion": true
+}

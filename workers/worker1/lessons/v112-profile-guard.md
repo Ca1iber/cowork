@@ -1,0 +1,1 @@
+Fixed3CLI stopped in first parentC11 on unknown-heavy RSS. Wrapper-15/controller1/SDKwaitUNAVAILABLE;0counter records. Tool replay observed descendants but total hardware launches not measured. Future S4 hypothesis uses actual online source/resource80/22/max6, not missing counters. Do not reprofile/unilaterally classify unknown owner or waive prior timing positives.
