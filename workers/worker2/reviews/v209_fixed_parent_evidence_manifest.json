@@ -1,0 +1,100 @@
+{
+  "source_path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+  "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "parent_CPP_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case14_stage1.device.cpp",
+  "parent_CPP_SHA": "c6957b7274e656c0c03b0ed0959d2c5d322fcb549396cff9eb212fc7e69a7e1a",
+  "driver_path": "/root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py",
+  "driverSHA": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a",
+  "official_JSON_SHA": "85f2c34acd793fb0a45084175acd7bcde48ff5d717a395d370800c30cf4e7036",
+  "SDK_path": "/opt/maca/mxgpu_llvm/bin/mxcc",
+  "SDK_SHA": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25",
+  "tool_path": "/usr/local/bin/mcProfiler",
+  "toolSHA": "8b668655748648b40d12c7a4a5e179105f0e31b178a2d15e87b6bcdaa89efa3b",
+  "tool_version_evidence": "existing3.8.1.4/575f5a9f6d versionidentifier notfileSHA",
+  "fixed_resource_argv": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-device-obj",
+    "-resource-usage",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/parent_case14.device.mcbin",
+    "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case14_stage1.device.cpp"
+  ],
+  "resource_CWD": "/root/tilelang-metax",
+  "fixed_profiler_argv": [
+    "/usr/local/bin/mcProfiler",
+    "perf_exec",
+    "--cmdline",
+    "env MACA_PATH=/opt/maca PYTHONDONTWRITEBYTECODE=1 PYTHONWARNINGS=ignore PYTHONPATH=/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa NSA_PROFILE_MODE=mctx NSA_VARIANT_SOURCE=/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py /opt/conda/bin/python -u /root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py 14",
+    "--casename",
+    "nsa_worker2_v209_parent84_case14",
+    "--metrics",
+    "L2C Hit Rate",
+    "Global Memory Read bytes",
+    "Global Memory Write bytes",
+    "AP MTE Duty ratio",
+    "AP MMA Duty ratio",
+    "shared memory access efficiency",
+    "average conflict cycles per instruction",
+    "average latency per load instruction",
+    "Achieved waves",
+    "Dispatched waves",
+    "--counts",
+    "2",
+    "--custom",
+    "--per-kernel",
+    "--cwd",
+    "/root/tilelang-metax"
+  ],
+  "profiler_CWD": "/opt/mcProfiler-ubuntu18.04",
+  "fixed_target_argv": [
+    "env",
+    "MACA_PATH=/opt/maca",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONWARNINGS=ignore",
+    "PYTHONPATH=/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa",
+    "NSA_PROFILE_MODE=mctx",
+    "NSA_VARIANT_SOURCE=/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "/opt/conda/bin/python",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py",
+    "14"
+  ],
+  "planned_resource_commands": 1,
+  "planned_profiler_CLI": 1,
+  "planned_report_records": 2,
+  "actual_resource_CLI_report_counts": [
+    0,
+    0,
+    0
+  ],
+  "scope": {
+    "kernel_name": "native_sparse_attention_kernel",
+    "source_contract_grid": [
+      512,
+      4
+    ],
+    "threads": 64,
+    "waves": 2048,
+    "output_payload_bytes": 4194304,
+    "write_residual_range": [
+      0,
+      512
+    ],
+    "runtimegrid_metadata_missing": "UNAVAILABLE_umdempty_norecapture"
+  },
+  "new_kernel_source_count": 0,
+  "new_reference_native_tests": [
+    0,
+    0
+  ],
+  "heavy_launched": false
+}
