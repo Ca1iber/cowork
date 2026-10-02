@@ -1,0 +1,48 @@
+{
+  "reviewed_at_utc": "2026-10-02T05:56:48.809389+00:00",
+  "scope": "Leader stdlib-S readonly real proc identity/terminal record and streaming raw67sample recomputation",
+  "diagnostic_id": "v203_worker2_whole_cgroup_import_subagent2",
+  "actual_observer_pid": 112531,
+  "actual_import_pid": 112532,
+  "import_starttime_ticks": 329227714,
+  "observer_and_import_proc_missing_after_exit": true,
+  "terminal": {
+    "import_attempted_once": true,
+    "admitted": true,
+    "returncode": 0,
+    "diagnostic_gate": 0,
+    "elapsed_seconds": 34.26640550233424,
+    "attention_calls": 0,
+    "reference_calls": 0,
+    "native_calls": 0,
+    "termination_actions": []
+  },
+  "raw_samples_sha256": "2f42c44e67a0f2341da55bdb4109c535311a806167aef9c1bbe2f4abfa73567c",
+  "samples": 67,
+  "OOM_values": [
+    3
+  ],
+  "observed_whole_cgroup_peak_bytes": 21680566272,
+  "peak_time_utc": "2026-10-02T05:54:04.846919+00:00",
+  "import_max_observed_RSS_KiB": 23114496,
+  "import_max_observed_HWM_KiB": 23114584,
+  "observed_owned_identities": [
+    [
+      112532,
+      329227714
+    ]
+  ],
+  "peak_visible_PID_RSS_sum_bytes": 24642367488,
+  "peak_usage_minus_visible_RSS_bytes": -2961801216,
+  "max_usage_minus_visible_RSS_bytes": 1400528896,
+  "observer_script_sha256": "96e7c92f388cb0b9b6741226495b8314a3dc84109a723a146874ff88b26f6e81",
+  "child_script_sha256": "45aa700c71d1b8b437b7c9ff257f0781ad7f1c83aeb8b093fa1dde1cc87c7427",
+  "limits": [
+    "Sampling gives lower bounds; transients and hidden processes may be missed",
+    "Visible PID RSS sums can doublecount shared pages and differ from cgroup accounting",
+    "The arithmetic gap cannot be assigned to another process or component",
+    "One import exit0 does not diagnose v202 OOM cause or assure future native/compiler safety",
+    "Original v202 -9 and OOM1->3 and incomplete3C9inclusive screen remain unchanged"
+  ],
+  "leader_decision": "Close exactly this diagnostic after report/commit; new kernel plan needs peer review and independent leader gate"
+}

@@ -1,0 +1,45 @@
+{
+  "reviewed_at_utc": "2026-10-02T06:25:32.893293+00:00",
+  "decision": "GO once-only bounded C8 parent/candidate metadata; no native/profile autostart",
+  "candidate_sha256": "2a93d74b3cb8df2469ded6f8ad24323a1aaeef17c254e628813efd88eeb7a787",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "actual_read_paths": [
+    "experiments/v204_worker2_c8_early_v_fetch_subagent2/early_v_fetch_kernel.py",
+    "rep/v204_worker2_c8_early_v_fetch_subagent2/source_identity.json",
+    "rep/v204_worker2_c8_early_v_fetch_subagent2/plan.json"
+  ],
+  "actual_review": [
+    "C8 vectorized8 half yields16B Vread; C12 V8B is separate path",
+    "Same block_start>=0 && <=token uniform perquery guard; L4096multiple16 permits full selected16row reads",
+    "Only existing fetch_row/fetch_col/Vreadloop relocated after Kpostsync; sharedVwrite remains after original preVsync",
+    "Seven syncs,64threads,2KiBdynamicshared and original math/denominator retained",
+    "Original parent topAST prefix and reverse-move branch AST equal reported; strict source validator still required before heavy"
+  ],
+  "required_first_gate": "Existing strict source validator0 on same exact SHA",
+  "allowed_heavy_scope": {
+    "isolated_fresh_metadata_process": 1,
+    "factories": [
+      "exact parent84 C8",
+      "exact C204 C8"
+    ],
+    "capture": [
+      "actual deviceCPP/host/toolargs/hash",
+      "MT/ST/staticmax/dynshared/stack resources",
+      "each actual unchanged CPP optimized IR through SDK -maca-device-only -S -emit-llvm -O3"
+    ],
+    "attention_calls": 0,
+    "reference_calls": 0,
+    "native_calls": 0
+  },
+  "admission": "same cooperative heavylock; usage<=2GiB; no unowned visibleRSS>1GiB; immediate pre/post check",
+  "runtime_stops": "usage>=28GiB,OOMincrement,new unowned heavy,nonzero/failure/timeout; verified ownidentity only; no retry",
+  "proof_requirements": "Compare actual parent AND candidate V loads relative to QK MMA in optimized compiler output; source/CPP order alone insufficient. Parent already early is retained falsifier/unknown; no runtime overlap/occupancy claim.",
+  "resource_policy": "All MT/ST/staticmax/dyn/stack retained; stack>0 stops per preregistered falsifier; staticmax not measured occupancy",
+  "not_approved": [
+    "native timing/correctness",
+    "GPU profiling",
+    "full14 or no-reg verdict",
+    "main/OJ promotion"
+  ],
+  "onceguard_and_manifest_before_launch": true
+}
