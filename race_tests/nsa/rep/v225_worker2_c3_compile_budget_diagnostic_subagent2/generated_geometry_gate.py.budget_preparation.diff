@@ -1,0 +1,10 @@
+--- 
++++ 
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,hashlib,re,subprocess
+-root=Path('/root/tilelang-metax');r=root/'race_tests/nsa/rep/v224_worker2_c3_split_qk_dependency_subagent2'
++root=Path('/root/tilelang-metax');r=root/'race_tests/nsa/rep/v225_worker2_c3_compile_budget_diagnostic_subagent2'
+ assert json.loads((r/'metadata_observation/result.json').read_text())['gate']==0
+ rows=json.loads((r/'compiled_metadata_identity.json').read_text());assert len(rows)==2;results=[]
+ for d in rows:

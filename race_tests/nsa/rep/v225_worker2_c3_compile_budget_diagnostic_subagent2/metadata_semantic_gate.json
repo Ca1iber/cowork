@@ -1,0 +1,98 @@
+{
+  "gate": 0,
+  "sourceSHA": "f1ddefd62336158c97c0c0da78d4c771e101e9be41e67ecbf0a6be58947fc917",
+  "header": 224,
+  "newkernel": 0,
+  "candidate_CPP_SHA": "dcc73188ba8cde123019dafbef175a55e549d6cae42f93815127e0189fc480cb",
+  "candidate_IR_SHA": "9a8e4fab9acde3c5786dc2ebe6b23a8218f33480edafa436bcd14bc4d425640f",
+  "actualQKchains": [
+    {
+      "result": "%27",
+      "accumulator": "zeroinitializer"
+    },
+    {
+      "result": "%28",
+      "accumulator": "%27"
+    },
+    {
+      "result": "%29",
+      "accumulator": "%28"
+    },
+    {
+      "result": "%30",
+      "accumulator": "%29"
+    },
+    {
+      "result": "%31",
+      "accumulator": "zeroinitializer"
+    },
+    {
+      "result": "%32",
+      "accumulator": "%31"
+    },
+    {
+      "result": "%33",
+      "accumulator": "%32"
+    },
+    {
+      "result": "%34",
+      "accumulator": "%33"
+    }
+  ],
+  "actualFP32adds": [
+    "%add267 = fadd contract float %scores_second.sroa.0.4.vec.extract, %scores.sroa.0.4.vec.extract1167, !dbg !90",
+    "%add270 = fadd contract float %scores_second.sroa.0.8.vec.extract, %scores.sroa.0.8.vec.extract1178, !dbg !91",
+    "%add273 = fadd contract float %scores_second.sroa.0.12.vec.extract, %scores.sroa.0.12.vec.extract1189, !dbg !92",
+    "%add264 = fadd contract float %scores_second.sroa.0.0.vec.extract, %scores.sroa.0.0.vec.extract1156, !dbg !94"
+  ],
+  "originalcausal_selectconsumesmergedscore": [
+    "%condval.0 = select i1 %cmp287.not, float 0xFFF0000000000000, float %add264, !dbg !94",
+    "%condval.0.1 = select i1 %cmp287.not.1.not, float %add267, float 0xFFF0000000000000, !dbg !94",
+    "%condval.0.2 = select i1 %cmp287.not.2, float 0xFFF0000000000000, float %add270, !dbg !94",
+    "%condval.0.3 = select i1 %cmp287.not.3, float 0xFFF0000000000000, float %add273, !dbg !94"
+  ],
+  "globalQKVOutputlines_exactparent": true,
+  "source_inversewholefactory_exceptregroup": "closed224proofretained",
+  "alllayout_Kchunk0to7_7sync_Num32_ProunddenPV": "actualCPP/source evidence retained; temps renamed by compiler",
+  "kernel_counts": {
+    "MMA": 16,
+    "warp": 7,
+    "bpermute": 4,
+    "alloca": 0,
+    "AS5": false
+  },
+  "resource_parent": [
+    66,
+    20,
+    7,
+    0,
+    4096
+  ],
+  "resource_candidate": [
+    68,
+    20,
+    7,
+    0,
+    4096
+  ],
+  "budget_GiB": [
+    3,
+    25,
+    4
+  ],
+  "runtime_stopGiB": 28,
+  "compile_truewaits": [
+    0,
+    0,
+    0
+  ],
+  "old223_224failures_unchanged": true,
+  "numericalcorrectness_latency": "UNAVAILABLE_originalnaivepending",
+  "no_bit_equivalenceclaim": true,
+  "ISAoccupancy": "UNAVAILABLE",
+  "attention_native_reference": [
+    0,
+    0,
+    0
+  ]
+}
