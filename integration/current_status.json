@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-10-02T03:00:38.619095+00:00",
+  "updated_at_utc": "2026-10-02T03:02:31.857338+00:00",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "oj_reference_version": "v084",
   "oj_scores": [
@@ -28,7 +28,30 @@
     ],
     "stage": "case12 v100 fixed screen rejected: +1.793216% vs v084; selected correctness 4 candidate/12 including controls; resource audit and closure next",
     "active_version": "v100_worker1_s8_pair_iteration_sc-16g-2",
-    "communication_head": "ab012ea110b2a194f689164e7eab97a7d0630c8c"
+    "communication_head": "b4a48045811359132821e040e950c8fff05efb02",
+    "resources_parent_to_candidate": {
+      "MT": [
+        80,
+        98
+      ],
+      "ST": [
+        22,
+        32
+      ],
+      "static_max_warps": [
+        6,
+        4
+      ],
+      "dynamic_shared_bytes": [
+        2048,
+        2048
+      ],
+      "stack_bytes": [
+        0,
+        0
+      ]
+    },
+    "resource_interpretation": "Increased register resource pressure accompanies slowdown; static warp limit is not measured occupancy or sole cause."
   },
   "worker2": {
     "cases": [
@@ -43,8 +66,9 @@
       13,
       14
     ],
-    "stage": "exact base branch and runtime hashes verified; import failed on omitted build/tvm search directory; approved empty-directory recovery",
-    "communication_head": "8655c3701c298d3f03b737bca5ea475b19d8aac7"
+    "stage": "recovery import passed exit0, OOM0; native case5 environment gate PID2647 running",
+    "communication_head": "8655c3701c298d3f03b737bca5ea475b19d8aac7",
+    "baseline_plan": "After native gate, fixed all14 B28-P84-P84-B28, 56 fullrefs, no candidate kernel; fixed profiler12 samples cases5/8/9 two sources"
   },
-  "leader_next": "Review v100 resource/closure and worker2 recovery import/native environment gate"
+  "leader_next": "Review worker1 failed-version closure and worker2 native environment gate before baseline diagnostic"
 }
