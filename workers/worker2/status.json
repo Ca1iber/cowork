@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T13:01:25.233590+00:00",
-  "state": "V210_NATIVE_GUARDFIX2_PREPARED_WAIT_GO",
+  "timestamp_utc": "2026-10-02T13:15:55.675469+00:00",
+  "state": "V210_CLOSED_OBSERVATION_FAILURE_BEFORE_CANDIDATE",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "d4df40603a5f2093786e2385e417fff742aa04fc",
+  "source_commit": "efec1b8569d4fca3bc8d1934a435a417007e0e17",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v210_worker2_c8_serial_query_pair_subagent2",
-    "state": "V210_NATIVE_GUARDFIX2_PREPARED_WAIT_GO",
+    "state": "V210_CLOSED_OBSERVATION_FAILURE_BEFORE_CANDIDATE",
     "only_key": [
       2,
       4096,
@@ -101,7 +101,7 @@
     "IR_counts_static_sites_with_valid_predicates": true,
     "actual_address_checks": 2097152,
     "native_prepared_stdlib_actualwait": 0,
-    "native_execution_GO": false,
+    "native_execution_GO": "unique attempted andstopped, no furtherGO",
     "native_processes_references": [
       0,
       0
@@ -116,7 +116,31 @@
     "critical_tuple_requires_exe_and_start": true,
     "current_tuple_whitelist_and_verified_ancestry": true,
     "terminal_pressure_unknown_descendant_finite_csv_guards": true,
-    "old_prepared_and_rev01_preserved": true
+    "old_prepared_and_rev01_preserved": true,
+    "native_originalcontroller_actualwait": 1,
+    "native_run1run2_actualwait": [
+      0,
+      0
+    ],
+    "observed_candidate_total_refs": [
+      0,
+      2
+    ],
+    "clean_candidate_total_refs": [
+      0,
+      1
+    ],
+    "native_processes_completed": 2,
+    "candidate_processes_started": 0,
+    "native_status": "failed_observation_critical_identity_selected_screen_incomplete",
+    "candidate_correctness_speed": "UNAVAILABLE",
+    "OOM_before_after": [
+      3,
+      3
+    ],
+    "signals": [],
+    "archiveSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+    "source_commit": "efec1b8569d4fca3bc8d1934a435a417007e0e17"
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -737,10 +761,71 @@
       "timing": "events50Pythoncalls canincludehostenqueue gaps",
       "effective_roofs_ISA_occupancy": "UNAVAILABLE",
       "utc": "2026-10-02T11:34:12.356362+00:00"
+    },
+    "v210_worker2_c8_serial_query_pair_subagent2": {
+      "closed_status": "failed_observation_critical_identity_selected_screen_incomplete",
+      "sourceSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+      "kernel_header": "codex-power v210",
+      "metadata_exports_generated_backend_semantic_exits": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_candidate_resources": [
+        [
+          42,
+          20,
+          8,
+          0
+        ],
+        [
+          56,
+          28,
+          8,
+          0
+        ]
+      ],
+      "IR_MMA_sync_fullvalid_static_sites": [
+        16,
+        15
+      ],
+      "originalcontroller_Popen_actualwait": 1,
+      "native_run1_run2_actualwait": [
+        0,
+        0
+      ],
+      "native_observed_C_total_refs": [
+        0,
+        2
+      ],
+      "native_clean_C_total_refs": [
+        0,
+        1
+      ],
+      "candidate_not_started": true,
+      "jobs3to12_unstarted": true,
+      "OOM_before_after": [
+        3,
+        3
+      ],
+      "signals": [],
+      "partial_values_us": {
+        "B28": 51.707,
+        "P84": 40.259
+      },
+      "native_observed_whole_peak_bytes": 23195688960,
+      "native_observer_samples": 162,
+      "candidate_correctness_speed_verdict": "UNAVAILABLE_no_candidate_run",
+      "old_guard1_unchanged": true,
+      "shared_main429_unchanged": true,
+      "no_retry_recompile_profile_full14_promotion": true,
+      "next": "separate v211 monitor-only plan and leaderGO required,samef98/header210",
+      "utc": "2026-10-02T13:12:27.184168+00:00"
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader final helper review before unique fixedC8 native12",
+  "next_step": "Independent v211 monitor-only plan, samef98/header210; no newsource/metadata/profile/native untilreview",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
