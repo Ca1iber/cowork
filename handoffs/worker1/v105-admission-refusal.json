@@ -1,0 +1,97 @@
+{
+  "source_commit": "b072fae5a4aa15fdb707fc21b9ecff019e198582",
+  "actual_result": {
+    "UTC": "2026-10-02T07:57:57.838417+00:00",
+    "status": "bounded_all14_stopped_prefix_inconclusive",
+    "runtime_protocol_completed": false,
+    "failure": "unowned visibleRSS exceeds1GiB admission",
+    "planned_native_processes": 12,
+    "terminal_job_records": 0,
+    "spawned_native_processes": 0,
+    "planned_candidate_fullrefs": 56,
+    "planned_inclusive_fullrefs": 168,
+    "observed_complete_reference_PASS_rows_by_variant": {
+      "baseline_v28": 0,
+      "parent_v084": 0,
+      "power_v104": 0
+    },
+    "observed_candidate_fullrefs": 0,
+    "observed_inclusive_fullrefs": 0,
+    "clean_process_accepted_fullrefs_by_variant": {
+      "baseline_v28": 0,
+      "parent_v084": 0,
+      "power_v104": 0
+    },
+    "clean_candidate_fullrefs": 0,
+    "clean_inclusive_fullrefs": 0,
+    "all_jobs": [],
+    "cgroup_initial": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "2936090624\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 90443776\nrss 2640773120\nrss_huge 0\nshmem 0\nmapped_file 44982272\ndirty 16384\nwriteback 0\nswap 867835904\npgpgin 4308063307\npgpgout 4307389668\npgfault 4751800381\npgmajfault 188944\ninactive_anon 691019776\nactive_anon 1977708544\ninactive_file 39096320\nactive_file 51363840\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 90443776\ntotal_rss 2640773120\ntotal_rss_huge 0\ntotal_shmem 0\ntotal_mapped_file 44982272\ntotal_dirty 16384\ntotal_writeback 0\ntotal_swap 867835904\ntotal_pgpgin 4308063307\ntotal_pgpgout 4307389668\ntotal_pgfault 4751800381\ntotal_pgmajfault 188944\ntotal_inactive_anon 691019776\ntotal_active_anon 1977708544\ntotal_inactive_file 39096320\ntotal_active_file 51363840\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 2936090624
+    },
+    "cgroup_final": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "2968489984\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 90529792\nrss 2672975872\nrss_huge 0\nshmem 0\nmapped_file 44982272\ndirty 102400\nwriteback 0\nswap 866582528\npgpgin 4308112073\npgpgout 4307430518\npgfault 4751851015\npgmajfault 189041\ninactive_anon 723267584\nactive_anon 1977724928\ninactive_file 39186432\nactive_file 51363840\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 90529792\ntotal_rss 2672975872\ntotal_rss_huge 0\ntotal_shmem 0\ntotal_mapped_file 44982272\ntotal_dirty 102400\ntotal_writeback 0\ntotal_swap 866582528\ntotal_pgpgin 4308112073\ntotal_pgpgout 4307430518\ntotal_pgfault 4751851015\ntotal_pgmajfault 189041\ntotal_inactive_anon 723267584\ntotal_active_anon 1977724928\ntotal_inactive_file 39186432\ntotal_active_file 51363840\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 2968489984
+    },
+    "owned_live_at_end": [],
+    "no_retry": true,
+    "old_v104_formal_exit1_not_changed": true,
+    "old_v101137_not_changed": true,
+    "candidate_source_v104_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "not_OOM_cause_proof_or_OJ_or_no_regression": true
+  },
+  "refusal_metadata": {
+    "first_census": "/root/tilelang-metax/race_tests/nsa/rep/v105_worker1_bounded_all14_runtime_diagnostic_sc-16g-2/job_01_baseline_v28/admission_first.json",
+    "whole_usage_bytes": 2968227840,
+    "OOM": 13,
+    "unknown_visible_heavy_metadata": [
+      {
+        "pid": 213447,
+        "ppid": 212213,
+        "pgid": 211770,
+        "state": "S",
+        "starttime_ticks": 93125003,
+        "comm": "MainThread",
+        "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+        "memory_KiB": {
+          "VmSize": 13348192,
+          "VmHWM": 3611504,
+          "VmRSS": 2325192
+        },
+        "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n",
+        "all_thread_children": {
+          "213447": [],
+          "213448": [],
+          "213449": [],
+          "213450": [],
+          "213451": [],
+          "213452": [],
+          "213454": [],
+          "213688": [],
+          "213689": []
+        }
+      }
+    ],
+    "known_owned_native_PIDs": [],
+    "native_spawned": 0,
+    "native_refs_observed": 0,
+    "threshold_original_1GiB_unchanged": true,
+    "no_cmdline_env_shm_read_or_signal": true
+  },
+  "source_bundle": {
+    "path": "/tmp/nsa_worker1_source_b072fae5a4aa.bundle",
+    "bytes": 2624128,
+    "sha256": "1967c11c03a065dfa7e28043f5efea82e77549290b7778a93463f3faafcaa090"
+  },
+  "no_unknown_signal": true
+}
