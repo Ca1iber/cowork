@@ -1,0 +1,66 @@
+{
+  "version": "v205_worker2_c5_num8_output_reuse_subagent2",
+  "status": "PROPOSAL_ONLY_NO_SOURCE_OR_HEAVY_GO",
+  "development_parent_commit": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
+  "numerical_parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "only_key": [
+    1,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "parent_factory": "_make_power_s1_case4_dense",
+  "planned_factory": "_make_worker2_c5_num8_output_reuse",
+  "mechanism": "after unchanged QK/P/den/Vshared/Voperand stages, two output groups32features each reuse Num8:clear/PVtwo/divide/cast/store originalslots; final gather unchanged16B",
+  "parent_actual_CPP": "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case5_stage1.device.cpp",
+  "parent_CPP_SHA": "c544b9aee12ff8cc0acf6452367b8bdffc726c33b3d50c1ef6652fd22941582d",
+  "parent_CPP_order_Vlocal_PV_output": true,
+  "resource_parent": {
+    "MT": 42,
+    "ST": 20,
+    "staticmax": 8,
+    "dynamic_shared": 2048,
+    "stack": 0
+  },
+  "changes_required": [
+    "remove original PV4 insidevalid; retain same validflag",
+    "same denominator shfl32 then16 outsidevalid before groupedPV",
+    "each group clearNum8; valid-only PVchunk0/1 or2/3 into local0/1; no invalidVoperand use",
+    "move preoutput fullwarp immediatelyafter allVoperand sharedreads, before first group consumes/stores",
+    "divide/cast eachsamefeature after completePden; preserve outputsharedvector8B",
+    "clear secondgroup onlyafter firstgroup allcast/stores complete; final outputwarp/gather16B unchanged"
+  ],
+  "numerical_requirements": [
+    "perfeature onlysame1PV MMA16keys with initialfloat0",
+    "same actual roundedP4 usedforbothPVandfull4sumden",
+    "invalid branch Num0/Den0 -> NaN exactlyasparent; no zero substitute",
+    "same float32 division/F16 cast and same maskwidth64 full64"
+  ],
+  "proofs": [
+    "output_partition_proof.json",
+    "output_vector_touches.json"
+  ],
+  "peer": "worker1 provided guard/localV lifetime/outputalias/vector/order/resource advisory; own plan only",
+  "risks": [
+    "Voperand16half stilllive acrossbothgroups may limitMT reduction",
+    "two simultaneous PVaccumulators ratherthan4 mayreduceinstructionparallelism",
+    "earlier normalization/sharedstores canchange compiler scheduling",
+    "MTfall/staticmax unchanged doesnotprove faster; C6Num16 +2.69percent peer counterexample"
+  ],
+  "metadata_falsifiers": [
+    "Num8 grouping notmaterialized or MT>=42: no intended register-pressure benefit, stop before native",
+    "stack>0/forbidden/vector/hash/math/sync/invalidVread failure stop",
+    "all Vsharedreads mustdominate first outputoverwrite; no later sharedVreads",
+    "globalQ/K/V/Output original16B addresses/count and sharedoutput8B required in CPP; finalISA widths unavailable"
+  ],
+  "measurement_if_approved": "same exactwrapper immutablefullnaive/seed0/F16/W10R50/tol1e-2; C5 fixedB-P-C-C-P-Bx2 singlefreshsource/4C12total/600s perjob/wholecg0.5s heavylock<=2GiB admission/28GiB stop/OOM/unknownheavy/nonzero/CSVhash stop; no retry/noautoformal",
+  "new_attention_reference_native": [
+    0,
+    0,
+    0
+  ]
+}

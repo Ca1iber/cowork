@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T06:54:58.953437+00:00",
-  "state": "V204_REJECTED_CLOSED",
+  "timestamp_utc": "2026-10-02T07:01:56.742815+00:00",
+  "state": "V205_PROPOSAL_WAITING_LEADER_REVIEW",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -20,64 +20,20 @@
     14
   ],
   "current": {
-    "version": "v204_worker2_c8_early_v_fetch_subagent2",
-    "sourceSHA": "2a93d74b3cb8df2469ded6f8ad24323a1aaeef17c254e628813efd88eeb7a787",
-    "case": 8,
-    "mechanism": "ordinaryVlocalreadbeforeQK/samepreVsharedwrite",
-    "metadata_exit": 0,
-    "backend_four_commands_exit": [
-      0,
+    "version": "v205_worker2_c5_num8_output_reuse_subagent2",
+    "state": "PROPOSAL_ONLY",
+    "case": 5,
+    "candidate_source_created": false,
+    "new_attention_reference_native": [
       0,
       0,
       0
     ],
-    "MT_parent_candidate": [
-      42,
-      44
-    ],
-    "ST": [
-      20,
-      20
-    ],
-    "staticmax": [
-      8,
-      8
-    ],
-    "stack": [
-      0,
-      0
-    ],
-    "dynamicshared": [
-      2048,
-      2048
-    ],
-    "IR_order_materialized": true,
-    "final_ISA_width": "UNAVAILABLE",
-    "native_observer_PID": null,
-    "native_actual_counts": {
-      "candidate": 4,
-      "total": 12
-    },
-    "native_planned_counts": {
-      "candidate": 4,
-      "total": 12
-    },
-    "native_stage": "ALL12_TERMINAL0",
-    "OOM": 3,
-    "no_full14_or_OJ_verdict": true,
-    "state": "REJECTED_CLOSED",
-    "source_commit": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
-    "candidate_median_us": 40.7965,
-    "parent_median_us": 40.4045,
-    "candidate_vs_parent_pct": 0.970188964100549,
-    "round_delta_pct": [
-      1.602769427881534,
-      0.2660594735734989
-    ],
-    "ranges_overlap": true,
-    "formal": false,
-    "candidate_archived_not_promoted": true,
-    "inventory_files": 225
+    "source_commit_base": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
+    "only_stdlib_address_proof_ran": true,
+    "peer_review_received": true,
+    "leader_GO": false,
+    "planned_metadata_falsifier": "MT>=42 or stack/math/vector/sync failure => no native"
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -151,10 +107,70 @@
       "size": 91227,
       "sha256": "eb250d3b19b806e5417bdc670fcfc718106e23d3dd29189e6ee8029e56d1c408",
       "prerequisite": "d1c7891b163f6ce8b0ad7f96292d30ab5b736474"
+    },
+    "v204": {
+      "version": "v204_worker2_c8_early_v_fetch_subagent2",
+      "sourceSHA": "2a93d74b3cb8df2469ded6f8ad24323a1aaeef17c254e628813efd88eeb7a787",
+      "case": 8,
+      "mechanism": "ordinaryVlocalreadbeforeQK/samepreVsharedwrite",
+      "metadata_exit": 0,
+      "backend_four_commands_exit": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "MT_parent_candidate": [
+        42,
+        44
+      ],
+      "ST": [
+        20,
+        20
+      ],
+      "staticmax": [
+        8,
+        8
+      ],
+      "stack": [
+        0,
+        0
+      ],
+      "dynamicshared": [
+        2048,
+        2048
+      ],
+      "IR_order_materialized": true,
+      "final_ISA_width": "UNAVAILABLE",
+      "native_observer_PID": null,
+      "native_actual_counts": {
+        "candidate": 4,
+        "total": 12
+      },
+      "native_planned_counts": {
+        "candidate": 4,
+        "total": 12
+      },
+      "native_stage": "ALL12_TERMINAL0",
+      "OOM": 3,
+      "no_full14_or_OJ_verdict": true,
+      "state": "REJECTED_CLOSED",
+      "source_commit": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
+      "candidate_median_us": 40.7965,
+      "parent_median_us": 40.4045,
+      "candidate_vs_parent_pct": 0.970188964100549,
+      "round_delta_pct": [
+        1.602769427881534,
+        0.2660594735734989
+      ],
+      "ranges_overlap": true,
+      "formal": false,
+      "candidate_archived_not_promoted": true,
+      "inventory_files": 225
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "independent next mechanism proposal/peer/leader review; no extra heavy run",
+  "next_step": "leader review own exactproposal; no kernel or heavy run yet",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
