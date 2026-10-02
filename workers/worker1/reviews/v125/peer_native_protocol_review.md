@@ -1,0 +1,1 @@
+Actualworker2 slotadvisory preserved: validonlyflip/oppositepriorread/postproducerwitness/uniformwarp/Outsafe; originalnative fullnaive andbestcontrol/4C12fixedprotocol distinctfromcompile resources. No peer edit/GO. Runtimecompiled70MT48ST/shared4096 andslotaddress/state costs maycancel reducedbarriers, no speedclaim.

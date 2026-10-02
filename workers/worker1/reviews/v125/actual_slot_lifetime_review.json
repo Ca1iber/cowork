@@ -1,0 +1,367 @@
+{
+  "CPP_SHA": "a96e8374432b4311d4db16a3efcdc544c43dbb0e63bf5651e1c00c091b34e7c9",
+  "IR_SHA": "a5540496e789edcc1020c8809ad181d3c40e482a405b14c33da53d42ecf4e089",
+  "CPP_slot_and_postbar_events": [
+    {
+      "line": 14,
+      "text": "  int next_slot[1];"
+    },
+    {
+      "line": 35,
+      "text": "  __syncwarp();"
+    },
+    {
+      "line": 40,
+      "text": "  next_slot[0] = 1;"
+    },
+    {
+      "line": 55,
+      "text": "    int raw_index = Indices[(((((int)blockIdx.y) * 8192) + (((int)blockIdx.x) * 8)) + selected)];"
+    },
+    {
+      "line": 63,
+      "text": "          *(uint2*)(shared + (((((((int64_t)next_slot[(int64_t)0]) * (int64_t)1024) + (((int64_t)part_1) * (int64_t)512)) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)64)) + (((((int64_t)((int)threadIdx.x)) & (int64_t)7) ^ (((int64_t)((int)threadIdx.x)) >> (int64_t)3)) * (int64_t)8)) + (((((int64_t)pack_1) ^ ((int64_t)part_1)) ^ ((((int64_t)((int)threadIdx.x)) & (int64_t)15) >> (int64_t)3)) * (int64_t)4))) = *(uint2*)(qk_fetch + (pack_1 * 4));"
+    },
+    {
+      "line": 66,
+      "text": "      __syncwarp();"
+    },
+    {
+      "line": 73,
+      "text": "        *(uint2*)(k_local + 0) = *(uint2*)(shared + ((((((int64_t)next_slot[(int64_t)0]) * (int64_t)1024) + ((((int64_t)((int)threadIdx.x)) & (int64_t)15) * (int64_t)64)) + ((((((int64_t)chunk_1) * (int64_t)2) + (((int64_t)((int)threadIdx.x)) >> (int64_t)5)) ^ (((int64_t)((int)threadIdx.x)) & (int64_t)7)) * (int64_t)8)) + (((((((int64_t)((int)threadIdx.x)) & (int64_t)31) >> (int64_t)4) ^ ((((int64_t)((int)threadIdx.x)) & (int64_t)15) >> (int64_t)3)) ^ (((int64_t)((int)threadIdx.x)) & (int64_t)1)) * (int64_t)4)));"
+    },
+    {
+      "line": 90,
+      "text": "      next_slot[0] = (next_slot[0] ^ 1);"
+    },
+    {
+      "line": 148,
+      "text": "    int raw_index_1 = Indices[(((((int)blockIdx.y) * 8192) + (((int)blockIdx.x) * 8)) + selected_2)];"
+    },
+    {
+      "line": 159,
+      "text": "        *(uint2*)(shared + ((((((int64_t)next_slot[(int64_t)0]) * (int64_t)1024) + (((int64_t)col) * (int64_t)256)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)15) * (int64_t)16)) + ((((((int64_t)((int)threadIdx.x)) >> (int64_t)4) ^ ((((int64_t)((int)threadIdx.x)) & (int64_t)15) >> (int64_t)2)) ^ ((int64_t)col)) * (int64_t)4))) = *(uint2*)(v_column + 0);"
+    },
+    {
+      "line": 161,
+      "text": "      __syncwarp();"
+    },
+    {
+      "line": 164,
+      "text": "        *(uint2*)(v_operand + (chunk_2 * 4)) = *(uint2*)(shared + (((((((int64_t)next_slot[(int64_t)0]) * (int64_t)1024) + ((((int64_t)((int)threadIdx.x)) & (int64_t)3) * (int64_t)256)) + (((int64_t)chunk_2) * (int64_t)64)) + (((((int64_t)((int)threadIdx.x)) & (int64_t)15) >> (int64_t)2) * (int64_t)16)) + ((((((int64_t)((int)threadIdx.x)) >> (int64_t)4) ^ ((int64_t)chunk_2)) ^ (((int64_t)((int)threadIdx.x)) & (int64_t)3)) * (int64_t)4)));"
+    },
+    {
+      "line": 174,
+      "text": "      next_slot[0] = (next_slot[0] ^ 1);"
+    },
+    {
+      "line": 195,
+      "text": "    *(uint2*)(shared + ((((((int64_t)next_slot[(int64_t)0]) * (int64_t)1024) + ((((int64_t)((int)threadIdx.x)) & (int64_t)15) * (int64_t)64)) + ((((((int64_t)chunk_5) * (int64_t)2) + (((int64_t)((int)threadIdx.x)) >> (int64_t)5)) ^ (((int64_t)((int)threadIdx.x)) & (int64_t)7)) * (int64_t)8)) + ((((((int64_t)((int)threadIdx.x)) & (int64_t)31) >> (int64_t)4) ^ ((((int64_t)((int)threadIdx.x)) & (int64_t)15) >> (int64_t)3)) * (int64_t)4))) = *(uint2*)(shared_local_cast + 0);"
+    },
+    {
+      "line": 197,
+      "text": "  __syncwarp();"
+    },
+    {
+      "line": 202,
+      "text": "      *(uint2*)(output_fetch + (pack_2 * 4)) = *(uint2*)(shared + (((((((int64_t)next_slot[(int64_t)0]) * (int64_t)1024) + (((int64_t)part_2) * (int64_t)512)) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)64)) + (((((int64_t)((int)threadIdx.x)) & (int64_t)7) ^ (((int64_t)((int)threadIdx.x)) >> (int64_t)3)) * (int64_t)8)) + ((((int64_t)pack_2) ^ ((int64_t)part_2)) * (int64_t)4)));"
+    }
+  ],
+  "IR_slot_Phi_barrier_events": [
+    {
+      "line": 223,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !55"
+    },
+    {
+      "line": 960,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !197"
+    },
+    {
+      "line": 1005,
+      "text": "  %next_slot.sroa.0.1 = phi i32 [ 1, %entry ], [ 0, %for.cond134.preheader ], !dbg !207"
+    },
+    {
+      "line": 1020,
+      "text": "  %.idx.11030 = shl nuw nsw i32 %next_slot.sroa.0.1, 11, !dbg !192"
+    },
+    {
+      "line": 1037,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !197"
+    },
+    {
+      "line": 1039,
+      "text": "  %mul212.1 = shl nuw nsw i32 %next_slot.sroa.0.1, 10"
+    },
+    {
+      "line": 1078,
+      "text": "  %xor289.1 = xor i32 %next_slot.sroa.0.1, 1, !dbg !209"
+    },
+    {
+      "line": 1084,
+      "text": "  %next_slot.sroa.0.1.1 = phi i32 [ %next_slot.sroa.0.1, %if.end291 ], [ %xor289.1, %for.cond134.preheader.1 ], !dbg !207"
+    },
+    {
+      "line": 1099,
+      "text": "  %.idx.2 = shl nuw nsw i32 %next_slot.sroa.0.1.1, 11, !dbg !192"
+    },
+    {
+      "line": 1116,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !197"
+    },
+    {
+      "line": 1118,
+      "text": "  %mul212.2 = shl nuw nsw i32 %next_slot.sroa.0.1.1, 10"
+    },
+    {
+      "line": 1157,
+      "text": "  %xor289.2 = xor i32 %next_slot.sroa.0.1.1, 1, !dbg !209"
+    },
+    {
+      "line": 1163,
+      "text": "  %next_slot.sroa.0.1.2 = phi i32 [ %next_slot.sroa.0.1.1, %if.end291.1 ], [ %xor289.2, %for.cond134.preheader.2 ], !dbg !207"
+    },
+    {
+      "line": 1178,
+      "text": "  %.idx.3 = shl nuw nsw i32 %next_slot.sroa.0.1.2, 11, !dbg !192"
+    },
+    {
+      "line": 1195,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !197"
+    },
+    {
+      "line": 1197,
+      "text": "  %mul212.3 = shl nuw nsw i32 %next_slot.sroa.0.1.2, 10"
+    },
+    {
+      "line": 1236,
+      "text": "  %xor289.3 = xor i32 %next_slot.sroa.0.1.2, 1, !dbg !209"
+    },
+    {
+      "line": 1242,
+      "text": "  %next_slot.sroa.0.1.3 = phi i32 [ %next_slot.sroa.0.1.2, %if.end291.2 ], [ %xor289.3, %for.cond134.preheader.3 ], !dbg !207"
+    },
+    {
+      "line": 1257,
+      "text": "  %.idx.4 = shl nuw nsw i32 %next_slot.sroa.0.1.3, 11, !dbg !192"
+    },
+    {
+      "line": 1274,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !197"
+    },
+    {
+      "line": 1276,
+      "text": "  %mul212.4 = shl nuw nsw i32 %next_slot.sroa.0.1.3, 10"
+    },
+    {
+      "line": 1315,
+      "text": "  %xor289.4 = xor i32 %next_slot.sroa.0.1.3, 1, !dbg !209"
+    },
+    {
+      "line": 1321,
+      "text": "  %next_slot.sroa.0.1.4 = phi i32 [ %next_slot.sroa.0.1.3, %if.end291.3 ], [ %xor289.4, %for.cond134.preheader.4 ], !dbg !207"
+    },
+    {
+      "line": 1336,
+      "text": "  %.idx.5 = shl nuw nsw i32 %next_slot.sroa.0.1.4, 11, !dbg !192"
+    },
+    {
+      "line": 1353,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !197"
+    },
+    {
+      "line": 1355,
+      "text": "  %mul212.5 = shl nuw nsw i32 %next_slot.sroa.0.1.4, 10"
+    },
+    {
+      "line": 1394,
+      "text": "  %xor289.5 = xor i32 %next_slot.sroa.0.1.4, 1, !dbg !209"
+    },
+    {
+      "line": 1400,
+      "text": "  %next_slot.sroa.0.1.5 = phi i32 [ %next_slot.sroa.0.1.4, %if.end291.4 ], [ %xor289.5, %for.cond134.preheader.5 ], !dbg !207"
+    },
+    {
+      "line": 1415,
+      "text": "  %.idx.6 = shl nuw nsw i32 %next_slot.sroa.0.1.5, 11, !dbg !192"
+    },
+    {
+      "line": 1432,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !197"
+    },
+    {
+      "line": 1434,
+      "text": "  %mul212.6 = shl nuw nsw i32 %next_slot.sroa.0.1.5, 10"
+    },
+    {
+      "line": 1473,
+      "text": "  %xor289.6 = xor i32 %next_slot.sroa.0.1.5, 1, !dbg !209"
+    },
+    {
+      "line": 1479,
+      "text": "  %next_slot.sroa.0.1.6 = phi i32 [ %next_slot.sroa.0.1.5, %if.end291.5 ], [ %xor289.6, %for.cond134.preheader.6 ], !dbg !207"
+    },
+    {
+      "line": 1494,
+      "text": "  %.idx.7 = shl nuw nsw i32 %next_slot.sroa.0.1.6, 11, !dbg !192"
+    },
+    {
+      "line": 1511,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !197"
+    },
+    {
+      "line": 1513,
+      "text": "  %mul212.7 = shl nuw nsw i32 %next_slot.sroa.0.1.6, 10"
+    },
+    {
+      "line": 1552,
+      "text": "  %xor289.7 = xor i32 %next_slot.sroa.0.1.6, 1, !dbg !209"
+    },
+    {
+      "line": 1558,
+      "text": "  %next_slot.sroa.0.1.7 = phi i32 [ %next_slot.sroa.0.1.6, %if.end291.6 ], [ %xor289.7, %for.cond134.preheader.7 ], !dbg !207"
+    },
+    {
+      "line": 1605,
+      "text": "  %mul514 = shl nuw nsw i32 %next_slot.sroa.0.1.7, 10"
+    },
+    {
+      "line": 1671,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !224"
+    },
+    {
+      "line": 1704,
+      "text": "  %xor599 = xor i32 %next_slot.sroa.0.1.7, 1, !dbg !230"
+    },
+    {
+      "line": 1712,
+      "text": "  %next_slot.sroa.0.3 = phi i32 [ %next_slot.sroa.0.1.7, %if.end432 ], [ %xor599, %for.cond466.preheader ], !dbg !207"
+    },
+    {
+      "line": 1732,
+      "text": "  %mul514.1 = shl nuw nsw i32 %next_slot.sroa.0.3, 10"
+    },
+    {
+      "line": 1798,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !224"
+    },
+    {
+      "line": 1831,
+      "text": "  %xor599.1 = xor i32 %next_slot.sroa.0.3, 1, !dbg !230"
+    },
+    {
+      "line": 1839,
+      "text": "  %next_slot.sroa.0.3.1 = phi i32 [ %next_slot.sroa.0.3, %if.end601 ], [ %xor599.1, %for.cond466.preheader.1 ], !dbg !207"
+    },
+    {
+      "line": 1859,
+      "text": "  %mul514.2 = shl nuw nsw i32 %next_slot.sroa.0.3.1, 10"
+    },
+    {
+      "line": 1925,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !224"
+    },
+    {
+      "line": 1958,
+      "text": "  %xor599.2 = xor i32 %next_slot.sroa.0.3.1, 1, !dbg !230"
+    },
+    {
+      "line": 1966,
+      "text": "  %next_slot.sroa.0.3.2 = phi i32 [ %next_slot.sroa.0.3.1, %if.end601.1 ], [ %xor599.2, %for.cond466.preheader.2 ], !dbg !207"
+    },
+    {
+      "line": 1986,
+      "text": "  %mul514.3 = shl nuw nsw i32 %next_slot.sroa.0.3.2, 10"
+    },
+    {
+      "line": 2052,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !224"
+    },
+    {
+      "line": 2085,
+      "text": "  %xor599.3 = xor i32 %next_slot.sroa.0.3.2, 1, !dbg !230"
+    },
+    {
+      "line": 2093,
+      "text": "  %next_slot.sroa.0.3.3 = phi i32 [ %next_slot.sroa.0.3.2, %if.end601.2 ], [ %xor599.3, %for.cond466.preheader.3 ], !dbg !207"
+    },
+    {
+      "line": 2113,
+      "text": "  %mul514.4 = shl nuw nsw i32 %next_slot.sroa.0.3.3, 10"
+    },
+    {
+      "line": 2179,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !224"
+    },
+    {
+      "line": 2212,
+      "text": "  %xor599.4 = xor i32 %next_slot.sroa.0.3.3, 1, !dbg !230"
+    },
+    {
+      "line": 2220,
+      "text": "  %next_slot.sroa.0.3.4 = phi i32 [ %next_slot.sroa.0.3.3, %if.end601.3 ], [ %xor599.4, %for.cond466.preheader.4 ], !dbg !207"
+    },
+    {
+      "line": 2240,
+      "text": "  %mul514.5 = shl nuw nsw i32 %next_slot.sroa.0.3.4, 10"
+    },
+    {
+      "line": 2306,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !224"
+    },
+    {
+      "line": 2339,
+      "text": "  %xor599.5 = xor i32 %next_slot.sroa.0.3.4, 1, !dbg !230"
+    },
+    {
+      "line": 2347,
+      "text": "  %next_slot.sroa.0.3.5 = phi i32 [ %next_slot.sroa.0.3.4, %if.end601.4 ], [ %xor599.5, %for.cond466.preheader.5 ], !dbg !207"
+    },
+    {
+      "line": 2367,
+      "text": "  %mul514.6 = shl nuw nsw i32 %next_slot.sroa.0.3.5, 10"
+    },
+    {
+      "line": 2433,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !224"
+    },
+    {
+      "line": 2466,
+      "text": "  %xor599.6 = xor i32 %next_slot.sroa.0.3.5, 1, !dbg !230"
+    },
+    {
+      "line": 2474,
+      "text": "  %next_slot.sroa.0.3.6 = phi i32 [ %next_slot.sroa.0.3.5, %if.end601.5 ], [ %xor599.6, %for.cond466.preheader.6 ], !dbg !207"
+    },
+    {
+      "line": 2494,
+      "text": "  %mul514.7 = shl nuw nsw i32 %next_slot.sroa.0.3.6, 10"
+    },
+    {
+      "line": 2560,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !224"
+    },
+    {
+      "line": 2593,
+      "text": "  %xor599.7 = xor i32 %next_slot.sroa.0.3.6, 1, !dbg !230"
+    },
+    {
+      "line": 2601,
+      "text": "  %next_slot.sroa.0.3.7 = phi i32 [ %next_slot.sroa.0.3.6, %if.end601.6 ], [ %xor599.7, %for.cond466.preheader.7 ], !dbg !207"
+    },
+    {
+      "line": 2634,
+      "text": "  %mul664 = shl nuw nsw i32 %next_slot.sroa.0.3.7, 10"
+    },
+    {
+      "line": 2773,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !272"
+    },
+    {
+      "line": 2775,
+      "text": "  %.idx1001 = shl nuw nsw i32 %next_slot.sroa.0.3.7, 11, !dbg !274"
+    }
+  ],
+  "actual_static_warpbarrier_calls": 18,
+  "source_mask_proof": "256masks/postbar-witness retained; actualcode rootmanualreview pending",
+  "no_native_occupancy_speedclaim": true
+}

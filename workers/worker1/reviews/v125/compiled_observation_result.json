@@ -1,0 +1,282 @@
+{
+  "resource": {
+    "case": 12,
+    "source_SHA": "a96e8374432b4311d4db16a3efcdc544c43dbb0e63bf5651e1c00c091b34e7c9",
+    "MT": 70,
+    "ST": 48,
+    "staticmax": 7,
+    "stack": 0,
+    "staticshared": 0,
+    "dynamicshared": 4096,
+    "occupancy": "NOT_MEASURED",
+    "MT_decrease_not_gate": true,
+    "attention_fullrefs": 0
+  },
+  "IR_SHA": "a5540496e789edcc1020c8809ad181d3c40e482a405b14c33da53d42ecf4e089",
+  "actual_static_MMA_count": 64,
+  "MMA_call_lines": [
+    {
+      "line": 967,
+      "text": "  %207 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload, <4 x half> %9, <4 x float> zeroinitializer), !dbg !201"
+    },
+    {
+      "line": 971,
+      "text": "  %208 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1, <4 x half> %10, <4 x float> %207), !dbg !201"
+    },
+    {
+      "line": 975,
+      "text": "  %209 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2, <4 x half> %11, <4 x float> %208), !dbg !201"
+    },
+    {
+      "line": 979,
+      "text": "  %210 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3, <4 x half> %12, <4 x float> %209), !dbg !201"
+    },
+    {
+      "line": 1045,
+      "text": "  %222 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.11042, <4 x half> %9, <4 x float> zeroinitializer), !dbg !201"
+    },
+    {
+      "line": 1049,
+      "text": "  %223 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.1, <4 x half> %10, <4 x float> %222), !dbg !201"
+    },
+    {
+      "line": 1053,
+      "text": "  %224 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2.1, <4 x half> %11, <4 x float> %223), !dbg !201"
+    },
+    {
+      "line": 1057,
+      "text": "  %225 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3.1, <4 x half> %12, <4 x float> %224), !dbg !201"
+    },
+    {
+      "line": 1124,
+      "text": "  %237 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.21053, <4 x half> %9, <4 x float> zeroinitializer), !dbg !201"
+    },
+    {
+      "line": 1128,
+      "text": "  %238 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.2, <4 x half> %10, <4 x float> %237), !dbg !201"
+    },
+    {
+      "line": 1132,
+      "text": "  %239 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2.2, <4 x half> %11, <4 x float> %238), !dbg !201"
+    },
+    {
+      "line": 1136,
+      "text": "  %240 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3.2, <4 x half> %12, <4 x float> %239), !dbg !201"
+    },
+    {
+      "line": 1203,
+      "text": "  %252 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.31064, <4 x half> %9, <4 x float> zeroinitializer), !dbg !201"
+    },
+    {
+      "line": 1207,
+      "text": "  %253 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.3, <4 x half> %10, <4 x float> %252), !dbg !201"
+    },
+    {
+      "line": 1211,
+      "text": "  %254 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2.3, <4 x half> %11, <4 x float> %253), !dbg !201"
+    },
+    {
+      "line": 1215,
+      "text": "  %255 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3.3, <4 x half> %12, <4 x float> %254), !dbg !201"
+    },
+    {
+      "line": 1282,
+      "text": "  %267 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.4, <4 x half> %9, <4 x float> zeroinitializer), !dbg !201"
+    },
+    {
+      "line": 1286,
+      "text": "  %268 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.4, <4 x half> %10, <4 x float> %267), !dbg !201"
+    },
+    {
+      "line": 1290,
+      "text": "  %269 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2.4, <4 x half> %11, <4 x float> %268), !dbg !201"
+    },
+    {
+      "line": 1294,
+      "text": "  %270 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3.4, <4 x half> %12, <4 x float> %269), !dbg !201"
+    },
+    {
+      "line": 1361,
+      "text": "  %282 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.5, <4 x half> %9, <4 x float> zeroinitializer), !dbg !201"
+    },
+    {
+      "line": 1365,
+      "text": "  %283 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.5, <4 x half> %10, <4 x float> %282), !dbg !201"
+    },
+    {
+      "line": 1369,
+      "text": "  %284 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2.5, <4 x half> %11, <4 x float> %283), !dbg !201"
+    },
+    {
+      "line": 1373,
+      "text": "  %285 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3.5, <4 x half> %12, <4 x float> %284), !dbg !201"
+    },
+    {
+      "line": 1440,
+      "text": "  %297 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.6, <4 x half> %9, <4 x float> zeroinitializer), !dbg !201"
+    },
+    {
+      "line": 1444,
+      "text": "  %298 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.6, <4 x half> %10, <4 x float> %297), !dbg !201"
+    },
+    {
+      "line": 1448,
+      "text": "  %299 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2.6, <4 x half> %11, <4 x float> %298), !dbg !201"
+    },
+    {
+      "line": 1452,
+      "text": "  %300 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3.6, <4 x half> %12, <4 x float> %299), !dbg !201"
+    },
+    {
+      "line": 1519,
+      "text": "  %312 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.7, <4 x half> %9, <4 x float> zeroinitializer), !dbg !201"
+    },
+    {
+      "line": 1523,
+      "text": "  %313 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.1.7, <4 x half> %10, <4 x float> %312), !dbg !201"
+    },
+    {
+      "line": 1527,
+      "text": "  %314 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.2.7, <4 x half> %11, <4 x float> %313), !dbg !201"
+    },
+    {
+      "line": 1531,
+      "text": "  %315 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %k_local.sroa.0.0.copyload.3.7, <4 x half> %12, <4 x float> %314), !dbg !201"
+    },
+    {
+      "line": 1700,
+      "text": "  %364 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %357, <4 x half> %327, <4 x float> zeroinitializer), !dbg !229"
+    },
+    {
+      "line": 1701,
+      "text": "  %365 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %359, <4 x half> %327, <4 x float> zeroinitializer), !dbg !229"
+    },
+    {
+      "line": 1702,
+      "text": "  %366 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %361, <4 x half> %327, <4 x float> zeroinitializer), !dbg !229"
+    },
+    {
+      "line": 1703,
+      "text": "  %367 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %363, <4 x half> %327, <4 x float> zeroinitializer), !dbg !229"
+    },
+    {
+      "line": 1827,
+      "text": "  %395 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %388, <4 x half> %326, <4 x float> %numerator.sroa.0.0), !dbg !229"
+    },
+    {
+      "line": 1828,
+      "text": "  %396 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %390, <4 x half> %326, <4 x float> %numerator.sroa.34.0), !dbg !229"
+    },
+    {
+      "line": 1829,
+      "text": "  %397 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %392, <4 x half> %326, <4 x float> %numerator.sroa.66.0), !dbg !229"
+    },
+    {
+      "line": 1830,
+      "text": "  %398 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %394, <4 x half> %326, <4 x float> %numerator.sroa.98.0), !dbg !229"
+    },
+    {
+      "line": 1954,
+      "text": "  %426 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %419, <4 x half> %325, <4 x float> %numerator.sroa.0.1), !dbg !229"
+    },
+    {
+      "line": 1955,
+      "text": "  %427 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %421, <4 x half> %325, <4 x float> %numerator.sroa.34.1), !dbg !229"
+    },
+    {
+      "line": 1956,
+      "text": "  %428 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %423, <4 x half> %325, <4 x float> %numerator.sroa.66.1), !dbg !229"
+    },
+    {
+      "line": 1957,
+      "text": "  %429 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %425, <4 x half> %325, <4 x float> %numerator.sroa.98.1), !dbg !229"
+    },
+    {
+      "line": 2081,
+      "text": "  %457 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %450, <4 x half> %324, <4 x float> %numerator.sroa.0.2), !dbg !229"
+    },
+    {
+      "line": 2082,
+      "text": "  %458 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %452, <4 x half> %324, <4 x float> %numerator.sroa.34.2), !dbg !229"
+    },
+    {
+      "line": 2083,
+      "text": "  %459 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %454, <4 x half> %324, <4 x float> %numerator.sroa.66.2), !dbg !229"
+    },
+    {
+      "line": 2084,
+      "text": "  %460 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %456, <4 x half> %324, <4 x float> %numerator.sroa.98.2), !dbg !229"
+    },
+    {
+      "line": 2208,
+      "text": "  %488 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %481, <4 x half> %323, <4 x float> %numerator.sroa.0.3), !dbg !229"
+    },
+    {
+      "line": 2209,
+      "text": "  %489 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %483, <4 x half> %323, <4 x float> %numerator.sroa.34.3), !dbg !229"
+    },
+    {
+      "line": 2210,
+      "text": "  %490 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %485, <4 x half> %323, <4 x float> %numerator.sroa.66.3), !dbg !229"
+    },
+    {
+      "line": 2211,
+      "text": "  %491 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %487, <4 x half> %323, <4 x float> %numerator.sroa.98.3), !dbg !229"
+    },
+    {
+      "line": 2335,
+      "text": "  %519 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %512, <4 x half> %322, <4 x float> %numerator.sroa.0.4), !dbg !229"
+    },
+    {
+      "line": 2336,
+      "text": "  %520 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %514, <4 x half> %322, <4 x float> %numerator.sroa.34.4), !dbg !229"
+    },
+    {
+      "line": 2337,
+      "text": "  %521 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %516, <4 x half> %322, <4 x float> %numerator.sroa.66.4), !dbg !229"
+    },
+    {
+      "line": 2338,
+      "text": "  %522 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %518, <4 x half> %322, <4 x float> %numerator.sroa.98.4), !dbg !229"
+    },
+    {
+      "line": 2462,
+      "text": "  %550 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %543, <4 x half> %321, <4 x float> %numerator.sroa.0.5), !dbg !229"
+    },
+    {
+      "line": 2463,
+      "text": "  %551 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %545, <4 x half> %321, <4 x float> %numerator.sroa.34.5), !dbg !229"
+    },
+    {
+      "line": 2464,
+      "text": "  %552 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %547, <4 x half> %321, <4 x float> %numerator.sroa.66.5), !dbg !229"
+    },
+    {
+      "line": 2465,
+      "text": "  %553 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %549, <4 x half> %321, <4 x float> %numerator.sroa.98.5), !dbg !229"
+    },
+    {
+      "line": 2589,
+      "text": "  %581 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %574, <4 x half> %320, <4 x float> %numerator.sroa.0.6), !dbg !229"
+    },
+    {
+      "line": 2590,
+      "text": "  %582 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %576, <4 x half> %320, <4 x float> %numerator.sroa.34.6), !dbg !229"
+    },
+    {
+      "line": 2591,
+      "text": "  %583 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %578, <4 x half> %320, <4 x float> %numerator.sroa.66.6), !dbg !229"
+    },
+    {
+      "line": 2592,
+      "text": "  %584 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %580, <4 x half> %320, <4 x float> %numerator.sroa.98.6), !dbg !229"
+    }
+  ],
+  "fullvalid_dynamic_model": "singlewarp64MMA source model; recordactualIRcall/loops, notruntimecount",
+  "alloca_opcode_lines": [],
+  "AS5_lines": [],
+  "mechanical_gate": true,
+  "actual_math_sync_lifetime_review": "PENDING leader review of actual CPP/IR Q0/two-slotVALIDtoggle/postbar-witness/K->V->Out andsameparentglobalmax/P32denPV/Num16; no automaticnative",
+  "no_physical_liveness_occupancy_or_latency_claim": true,
+  "fullrefs": 0
+}
