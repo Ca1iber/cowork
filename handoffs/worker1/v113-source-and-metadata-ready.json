@@ -1,0 +1,190 @@
+{
+  "source_identity": {
+    "UTC": "2026-10-02T11:33:38.231184+00:00",
+    "path": "/root/tilelang-metax/race_tests/nsa/experiments/v113_worker1_s4_global_softmax_sc-16g-2/candidate.py",
+    "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+    "base": "/root/tilelang-metax/race_tests/nsa/submission/v104_worker1_s8_global_softmax_sc-16g-2/submission.py",
+    "base_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "header": "# codex-power v113",
+    "target_case": 11,
+    "newkernel_import_compile_native": 0,
+    "syntax_checked_via_stdlib_compile_only": true
+  },
+  "source_validation": {
+    "source_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+    "base_AST_nodes_preserved": 16,
+    "extra_AST_nodes": 2,
+    "other13keys_includingC12_preserved": true,
+    "exact3imports": [
+      "import tilelang",
+      "import tilelang.language as T",
+      "from tilelang.layout import make_swizzled_layout"
+    ],
+    "MFMA_normal_only": true,
+    "S4_only_specialization": true,
+    "constant_offset_in_source_not_compiler_proof": true,
+    "newSDK_attention_refs": 0
+  },
+  "source_proof": {
+    "qk_slot_bijection1024": true,
+    "out_slot_bijection1024": true,
+    "v_slot_bijection1024": true,
+    "QK_Output_shared4half_vectors_contiguous_aligned_in2KiB": true,
+    "Score_P_1024_head_key_coverage": true,
+    "official_rawidx_sentinel_cases_checked": 16896,
+    "invalid_negative_huge_indices_rejected_before_multiply": true,
+    "source_only_not_compiler_or_native": true,
+    "fullvalid_score_exps_perlane": 16,
+    "fullvalid_MMA_perquery": 32,
+    "source_fullvalid_warp_sync_executions": 19,
+    "global_index_read_twice_in_source": "QK and PV separately; compiler/load count unknown, possible extra work",
+    "F16_globalmax_quantization": "changes rounded P relative online; sameactualP16 drives den and PV; max256/64keys implies den<=16384 for finitefullvalidscores, not correctness proof",
+    "sync_lifetimes": [
+      "initial Qwrite -> Qread sync",
+      "each nextKwrite guarded pre-sync protects previous sharedread, postKwrite beforeKread",
+      "firstVwrite guarded pre-sync protects lastKread",
+      "each nextVwrite pre-sync protects priorVread; postVwrite beforeVread",
+      "finalVread -> Outputwrite sync",
+      "Outputwrite -> globalgather sync"
+    ]
+  },
+  "metadata_plan": {
+    "version": "v113_worker1_s4_global_softmax_sc-16g-2",
+    "UTC": "2026-10-02T11:39:10.109807+00:00",
+    "phase": "metadata_proposal_no_heavy_GO",
+    "scope": "official C11 only, 2freshsource metadata2pairs4files, CPUcodegen audit, 2existingCPP resourceSDK, 1candidateoptimizedIR SDK, CPUcompiledgate; 0NSA/fullrefs",
+    "guard_stage_jobs": [
+      {
+        "kind": "metadata",
+        "variant": "power_v104"
+      },
+      {
+        "kind": "metadata",
+        "variant": "power_v113"
+      },
+      {
+        "kind": "audit_codegen"
+      },
+      {
+        "kind": "resource",
+        "variant": "power_v104",
+        "case": 11
+      },
+      {
+        "kind": "resource",
+        "variant": "power_v113",
+        "case": 11
+      },
+      {
+        "kind": "optimized_IR"
+      },
+      {
+        "kind": "compiled_gate"
+      }
+    ],
+    "memory_engineering_budget": {
+      "cgroup_limit_bytes": 34359738368,
+      "new_admission_max_whole_bytes": 4294967296,
+      "additional_import_runtime_budget_not_upperbound_bytes": 25769803776,
+      "reserve_bytes": 4294967296,
+      "runtime_stop_whole_bytes": 30064771072,
+      "unknown_visible_heavy_RSS_bytes": 1073741824,
+      "sample_interval_seconds": 0.5,
+      "per_process_walltime_stop_seconds": 600,
+      "newthreshold_preregistered_before_any_newheavy": true,
+      "all_cgroup_limit_changes_forbidden": true
+    },
+    "expected_oom_before": 13,
+    "metadata_gate": {
+      "attention_calls": 0,
+      "native_refs": 0,
+      "only_case11_parent104_and_candidate": true,
+      "stack_must_equal": 0,
+      "MT_max": 96,
+      "staticmax_min": 5,
+      "ST_increases_retained": true,
+      "dynamicshared_must_equal": 2048,
+      "original_vector_widths_and_sync": true,
+      "actual_constant_MFMA_offsets_required": true,
+      "no_private_dynamic_index_or_spill": true,
+      "reject_before_native_on_failure": true,
+      "bounded_actual_existing_CPP_resource_IR_only": true
+    },
+    "any_nonzero_innerKilled_OOM_unknown_pressure_identity_hash": "stop prefix no retry",
+    "native_not_authorized": true,
+    "no_new_profiler_or_all14_or_algorithm_edit": true,
+    "runtime_grid_and_finalISA": "UNAVAILABLE; no MCTracer/ISA needed to pad finite plan",
+    "originalCUDAempty_inputs_shape_only": "exactofficialC11, GradTrue/F16/I32; interceptedJITKernel.__call__ no launch, does not inspect index contents; context/allocations mayGPU activity",
+    "sourceonly_validator_initial_failure": "wrongexpectedimports preserved; helperonlyrecovery actualwait0 sourceunchanged",
+    "candidate_IR_command": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-maca-device-only",
+      "-S",
+      "-emit-llvm",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/optimized_IR/case11_power_v113.ll",
+      "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/codegen/power_v113/case11.device.cpp"
+    ],
+    "resource_commands": {
+      "power_v104": [
+        "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "-x",
+        "maca",
+        "-device-obj",
+        "-O3",
+        "-lineinfo",
+        "--offload-arch=xcore1000",
+        "-std=c++17",
+        "-I/root/tilelang-metax/src",
+        "-use-fast-math",
+        "-D__FAST_HALF_CVT__",
+        "-resource-usage",
+        "-o",
+        "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/resources/case11_power_v104.mcbin",
+        "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/codegen/power_v104/case11.device.cpp"
+      ],
+      "power_v113": [
+        "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "-x",
+        "maca",
+        "-device-obj",
+        "-O3",
+        "-lineinfo",
+        "--offload-arch=xcore1000",
+        "-std=c++17",
+        "-I/root/tilelang-metax/src",
+        "-use-fast-math",
+        "-D__FAST_HALF_CVT__",
+        "-resource-usage",
+        "-o",
+        "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/resources/case11_power_v113.mcbin",
+        "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/codegen/power_v113/case11.device.cpp"
+      ]
+    }
+  },
+  "metadata_ready": {
+    "phase": "actualhelpersready_noheavy",
+    "hashes": {
+      "metadata_execution_plan.json": "d0ca149cf3529a2f009d666a9452e35455d9608ee6dbf95f43b2b267fdf9503c",
+      "metadata_source_manifest.json": "e0eca3e9d0f05b83da37525921c14945f037774aa6999229735f85e5f0d5333b",
+      "source_numeric_index_sync_proof.json": "40fa5a8f830f984adb486f8f33f2c4e2b67b40d37d577f824e1a6be26dc295fa",
+      "source_delta.patch": "255451001a75efef37425f6332522a53adc209e5baf20980e6b5b6068aa4bcc1",
+      "peer_phase_review.md": "b2f603b67d57eedc0239bc99d80065b3bd9d3c5de7d3b235b764f20ba91aac29",
+      "peer_metadata_review.md": "11929e19231bb84a200a8e083adec1a2a26359ebe0338d6b7ea620710ad29eb7"
+    },
+    "kernel_source_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+    "syntax_only_compile_allhelpers": true,
+    "import_GPU_native_count": 0
+  },
+  "native_not_authorized": true,
+  "metadata_peer_actual": "Worker2 actual limited-metadata advisory, suggestions only: P104/C113 each fresh export1pair, preserve real Popen waits and both admission checks; supervisor0 alone not twoexport proof. Candidate first O3IR must show32actualMMA(QK16/PV16), constant selectedoffsets/noAS5/stack; CPP pragma is not final proof. Preserve candidate vsparent actual MT/ST/staticmax increases/decreases. Other13byteidentity cannot waive positive latency, resource gate is engineering earlystop. 0attention is not0GPU context. All actual paths/source/factory SHA frommanifest every stage, anyfailure/unknownpressure stops prefix. Initialvalidatorwrongimport expectation retained; no overwrite. Worker2 did not edit this plan/code or authorize execution.\n"
+}
