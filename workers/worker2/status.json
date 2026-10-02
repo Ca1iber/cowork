@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T11:44:59.896736+00:00",
-  "state": "V210_C8_LIGHTWEIGHT_PROPOSAL_WAIT_REVIEW",
+  "timestamp_utc": "2026-10-02T12:07:47.359698+00:00",
+  "state": "V210_SOURCE_ONLY_COMPLETE_METADATA_PLAN_WAIT_REVIEW",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v210_worker2_c8_serial_query_pair_subagent2",
-    "state": "V210_C8_LIGHTWEIGHT_PROPOSAL_WAIT_REVIEW",
+    "state": "V210_SOURCE_ONLY_COMPLETE_METADATA_PLAN_WAIT_REVIEW",
     "only_key": [
       2,
       4096,
@@ -48,7 +48,7 @@
     "planned_extra_boundary_sync": 1,
     "proof_stdlib_exit": 0,
     "peer_advisory_received": true,
-    "candidate_created": false,
+    "candidate_created": true,
     "kernel_or_heavy_GO": false,
     "new_import_compile_profile_native": [
       0,
@@ -57,7 +57,20 @@
       0
     ],
     "current_live_heavy": 0,
-    "active_PIDs": []
+    "active_PIDs": [],
+    "candidate_path": "/tmp/nsa_worker2_v210_c8_serial_query_pair.py",
+    "candidateSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+    "factory": "_make_worker2_c8_serial_query_pair",
+    "source_static_exit": 0,
+    "strict_source_exit": 0,
+    "prefix14_AST_equal": true,
+    "inverse_grid_loop_token_guard_boundary_wholefactory_AST_equal": true,
+    "perquery_core_AST_identical": true,
+    "allocs_outside_serial2": true,
+    "source_sync_sites": 8,
+    "planned_executed_syncs_pair": 15,
+    "kernel_GO": "source-only executed",
+    "heavy_GO": false
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -681,7 +694,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader review own v210 proposal/peer/proof before source edit or heavy",
+  "next_step": "Leader review actualsource f98e and boundedmetadata eab5 before import/compiler",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",

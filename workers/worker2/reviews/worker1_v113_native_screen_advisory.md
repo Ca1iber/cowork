@@ -1,0 +1,3 @@
+# Advisory only
+
+Fixed B28-C104-C113-C113-C104-B28 twice and identical fresh-source original native contract provide a new controlled comparison. Do not pool older screen/formal points. Exact C11 CSV PASS/shape, actualwait0, noabort/OOM/hash must all hold for clean1ref; partial observed is separate. Event50Pythoncalls may include host enqueue gaps; source identity does not remove temperature/cache/import-context limits. Keep ST42 cost and all highpoints/roundpositives/rangeoverlap; MT60/max8 does not prove speed. Old metadata/controller1 remains with independentCPUrecovery0, no gate rewriting or adaptive repeat. Explicit onceguard and actual launcher/supervisor/child waits remain required. No peer plan edited.
