@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T05:30:01.661190+00:00",
-  "state": "V202_CLOSED_RUNTIME_OOM_INCONCLUSIVE",
+  "timestamp_utc": "2026-10-02T05:39:16.631251+00:00",
+  "state": "WAITING_V203_MEMORY_DIAGNOSTIC_REVIEW",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -239,6 +239,19 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Waitleaderreview for specificOOMdiagnostic ornewmechanism; no blindrepeat/successgate/full14.",
-  "job_pid": null
+  "next_step": "Leaderreview/GO required beforeexactlyoneimport; currentreadonlyplanning/std-S snapshots only.",
+  "job_pid": null,
+  "proposed_diagnostic": {
+    "version": "v203",
+    "no_kernel_edit": true,
+    "attention_runs": 0,
+    "native_runs": 0,
+    "heavy_import_runs": 0,
+    "proposal": "workers/worker2/proposals/v203_memory_diagnostic/plan.md",
+    "snapshot": "workers/worker2/proposals/v203_memory_diagnostic/stdlib_readonly_snapshot.json",
+    "arithmetic_gap": "workers/worker2/proposals/v203_memory_diagnostic/historical_accounting_gap.json",
+    "peer_review": "workers/worker2/reviews/v203_peer_advisory.json",
+    "planned_afterGO": "oneimport+0.5s observer<=300s/600samples/admission2GiB/abort28GiB/cooperativelock;nootherkill/retry/settingschange",
+    "guard_thresholds_engineering_not_guarantees": true
+  }
 }

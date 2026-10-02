@@ -1,0 +1,1256 @@
+{
+  "timestamp_utc": "2026-10-02T05:33:33.394694+00:00",
+  "observer_pid": 107184,
+  "observer_mode": "/opt/conda/bin/python -S standardlibrary only; no foreigncmdline/env/marker contents",
+  "visible_processes": [
+    {
+      "pid": 1,
+      "ppid": 0,
+      "pgid": 1,
+      "starttime_ticks": 328001001,
+      "state": "S",
+      "comm": "entrypoint.sh",
+      "exe": "/usr/bin/bash",
+      "status": {
+        "VmHWM": "3408 kB",
+        "VmRSS": "3180 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 1,
+          "children": [
+            8,
+            3793,
+            3692
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 8,
+      "ppid": 1,
+      "pgid": 1,
+      "starttime_ticks": 328001023,
+      "state": "S",
+      "comm": "bash",
+      "exe": "/usr/bin/bash",
+      "status": {
+        "VmHWM": "3556 kB",
+        "VmRSS": "3428 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 8,
+          "children": [
+            93,
+            107177
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 93,
+      "ppid": 8,
+      "pgid": 1,
+      "starttime_ticks": 328001322,
+      "state": "S",
+      "comm": "supervisord",
+      "exe": "/usr/bin/python3.12",
+      "status": {
+        "VmHWM": "28604 kB",
+        "VmRSS": "12140 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 93,
+          "children": [
+            101,
+            102
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 101,
+      "ppid": 93,
+      "pgid": 101,
+      "starttime_ticks": 328001437,
+      "state": "S",
+      "comm": "bash",
+      "exe": "/usr/bin/bash",
+      "status": {
+        "VmHWM": "3812 kB",
+        "VmRSS": "3516 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 101,
+          "children": [
+            133
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 102,
+      "ppid": 93,
+      "pgid": 102,
+      "starttime_ticks": 328001437,
+      "state": "S",
+      "comm": "sshd",
+      "exe": "/usr/sbin/sshd",
+      "status": {
+        "VmHWM": "8060 kB",
+        "VmRSS": "7128 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 102,
+          "children": [
+            1370,
+            7203
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 133,
+      "ppid": 101,
+      "pgid": 101,
+      "starttime_ticks": 328001844,
+      "state": "S",
+      "comm": "jupyter-lab",
+      "exe": "/opt/conda/bin/python3.12",
+      "status": {
+        "VmHWM": "109812 kB",
+        "VmRSS": "19860 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    },
+    {
+      "pid": 1370,
+      "ppid": 102,
+      "pgid": 1370,
+      "starttime_ticks": 328108188,
+      "state": "S",
+      "comm": "sshd",
+      "exe": "/usr/sbin/sshd",
+      "status": {
+        "VmHWM": "24952 kB",
+        "VmRSS": "7908 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 1370,
+          "children": [
+            1372
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 1372,
+      "ppid": 1370,
+      "pgid": 1372,
+      "starttime_ticks": 328108199,
+      "state": "S",
+      "comm": "bash",
+      "exe": "/usr/bin/bash",
+      "status": {
+        "VmHWM": "8344 kB",
+        "VmRSS": "4332 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 1372,
+          "children": [
+            107184
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 3692,
+      "ppid": 1,
+      "pgid": 3692,
+      "starttime_ticks": 328218104,
+      "state": "S",
+      "comm": "code-07f806f999",
+      "exe": "/root/.vscode-server/code-07f806f999227108933c2e30515b26eecc1fda74",
+      "status": {
+        "VmHWM": "21996 kB",
+        "VmRSS": "1860 kB",
+        "Threads": "4"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 3695,
+          "children": [
+            3813
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 3793,
+      "ppid": 1,
+      "pgid": 3586,
+      "starttime_ticks": 328219973,
+      "state": "S",
+      "comm": "sh",
+      "exe": "/usr/bin/dash",
+      "status": {
+        "VmHWM": "1032 kB",
+        "VmRSS": "940 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 3793,
+          "children": [
+            3797
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 3797,
+      "ppid": 3793,
+      "pgid": 3586,
+      "starttime_ticks": 328219973,
+      "state": "S",
+      "comm": "MainThread",
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "status": {
+        "VmHWM": "320408 kB",
+        "VmRSS": "35532 kB",
+        "Threads": "11"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 3797,
+          "children": [
+            4137,
+            7248,
+            7260
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 3813,
+      "ppid": 3692,
+      "pgid": 3692,
+      "starttime_ticks": 328220043,
+      "state": "S",
+      "comm": "sh",
+      "exe": "/usr/bin/dash",
+      "status": {
+        "VmHWM": "1132 kB",
+        "VmRSS": "1036 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 3813,
+          "children": [
+            3818
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 3818,
+      "ppid": 3813,
+      "pgid": 3692,
+      "starttime_ticks": 328220043,
+      "state": "S",
+      "comm": "MainThread",
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "status": {
+        "VmHWM": "126596 kB",
+        "VmRSS": "16452 kB",
+        "Threads": "11"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 3818,
+          "children": [
+            4182
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 4137,
+      "ppid": 3797,
+      "pgid": 3586,
+      "starttime_ticks": 328220246,
+      "state": "S",
+      "comm": "MainThread",
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "status": {
+        "VmHWM": "80432 kB",
+        "VmRSS": "21976 kB",
+        "Threads": "13"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 4137,
+          "children": [
+            7744,
+            14722
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 4182,
+      "ppid": 3818,
+      "pgid": 3692,
+      "starttime_ticks": 328220305,
+      "state": "S",
+      "comm": "MainThread",
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "status": {
+        "VmHWM": "169800 kB",
+        "VmRSS": "82492 kB",
+        "Threads": "11"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 4182,
+          "children": [
+            4203,
+            7330
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 4203,
+      "ppid": 4182,
+      "pgid": 3692,
+      "starttime_ticks": 328220498,
+      "state": "S",
+      "comm": "copilot-runtime",
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node_modules/@github/copilot-sdk-linux-x64/prebuilds/linux-x64/copilot-runtime",
+      "status": {
+        "VmHWM": "48088 kB",
+        "VmRSS": "18096 kB",
+        "Threads": "10"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    },
+    {
+      "pid": 7203,
+      "ppid": 102,
+      "pgid": 7203,
+      "starttime_ticks": 328261471,
+      "state": "S",
+      "comm": "sshd",
+      "exe": "/usr/sbin/sshd",
+      "status": {
+        "VmHWM": "24860 kB",
+        "VmRSS": "7892 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 7203,
+          "children": [
+            7205
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 7205,
+      "ppid": 7203,
+      "pgid": 7205,
+      "starttime_ticks": 328261486,
+      "state": "S",
+      "comm": "sh",
+      "exe": "/usr/bin/dash",
+      "status": {
+        "VmHWM": "2052 kB",
+        "VmRSS": "1904 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 7205,
+          "children": [
+            7223,
+            106463
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 7223,
+      "ppid": 7205,
+      "pgid": 7205,
+      "starttime_ticks": 328261490,
+      "state": "S",
+      "comm": "code-07f806f999",
+      "exe": "/root/.vscode-server/code-07f806f999227108933c2e30515b26eecc1fda74",
+      "status": {
+        "VmHWM": "24452 kB",
+        "VmRSS": "7060 kB",
+        "Threads": "4"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    },
+    {
+      "pid": 7248,
+      "ppid": 3797,
+      "pgid": 3586,
+      "starttime_ticks": 328261530,
+      "state": "S",
+      "comm": "MainThread",
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "status": {
+        "VmHWM": "662420 kB",
+        "VmRSS": "222208 kB",
+        "Threads": "15"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": [
+        {
+          "tid": 7248,
+          "children": [
+            7556,
+            8155
+          ]
+        }
+      ]
+    },
+    {
+      "pid": 7260,
+      "ppid": 3797,
+      "pgid": 3586,
+      "starttime_ticks": 328261560,
+      "state": "S",
+      "comm": "MainThread",
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "status": {
+        "VmHWM": "81444 kB",
+        "VmRSS": "29016 kB",
+        "Threads": "13"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    },
+    {
+      "pid": 7330,
+      "ppid": 4182,
+      "pgid": 3692,
+      "starttime_ticks": 328261712,
+      "state": "S",
+      "comm": "MainThread",
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "status": {
+        "VmHWM": "79344 kB",
+        "VmRSS": "33920 kB",
+        "Threads": "13"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    },
+    {
+      "pid": 7556,
+      "ppid": 7248,
+      "pgid": 3586,
+      "starttime_ticks": 328262622,
+      "state": "S",
+      "comm": "pet",
+      "exe": "/root/.vscode-server/extensions/ms-python.vscode-python-envs-1.38.0-linux-x64/python-env-tools/bin/pet",
+      "status": {
+        "VmHWM": "6308 kB",
+        "VmRSS": "4 kB",
+        "Threads": "4"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    },
+    {
+      "pid": 7744,
+      "ppid": 4137,
+      "pgid": 7744,
+      "starttime_ticks": 328262775,
+      "state": "S",
+      "comm": "bash",
+      "exe": "/usr/bin/bash",
+      "status": {
+        "VmHWM": "8320 kB",
+        "VmRSS": "3516 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    },
+    {
+      "pid": 8155,
+      "ppid": 7248,
+      "pgid": 3586,
+      "starttime_ticks": 328263323,
+      "state": "S",
+      "comm": "MainThread",
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "status": {
+        "VmHWM": "840404 kB",
+        "VmRSS": "300984 kB",
+        "Threads": "9"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    },
+    {
+      "pid": 14722,
+      "ppid": 4137,
+      "pgid": 14722,
+      "starttime_ticks": 328286998,
+      "state": "S",
+      "comm": "bash",
+      "exe": "/usr/bin/bash",
+      "status": {
+        "VmHWM": "8280 kB",
+        "VmRSS": "3536 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    },
+    {
+      "pid": 106463,
+      "ppid": 7205,
+      "pgid": 7205,
+      "starttime_ticks": 329089502,
+      "state": "S",
+      "comm": "sleep",
+      "exe": "/usr/bin/sleep",
+      "status": {
+        "VmHWM": "1116 kB",
+        "VmRSS": "1116 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    },
+    {
+      "pid": 107177,
+      "ppid": 8,
+      "pgid": 1,
+      "starttime_ticks": 329106986,
+      "state": "S",
+      "comm": "sleep",
+      "exe": "/usr/bin/sleep",
+      "status": {
+        "VmHWM": "1072 kB",
+        "VmRSS": "1072 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    },
+    {
+      "pid": 107184,
+      "ppid": 1372,
+      "pgid": 107184,
+      "starttime_ticks": 329107020,
+      "state": "R",
+      "comm": "python",
+      "exe": "/opt/conda/bin/python3.12",
+      "status": {
+        "VmHWM": "16068 kB",
+        "VmRSS": "16068 kB",
+        "Threads": "1"
+      },
+      "cgroup": [
+        "13:devices:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "12:perf_event:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "11:hugetlb:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "10:misc:/",
+        "9:pids:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "8:blkio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "7:freezer:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "6:memory:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "5:cpu,cpuacct:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "4:net_cls,net_prio:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "3:rdma:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "2:cpuset:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "1:name=systemd:/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope",
+        "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+      ],
+      "thread_children": []
+    }
+  ],
+  "cgroup": {
+    "memory.usage_in_bytes": "845402112\n",
+    "memory.max_usage_in_bytes": "34359742464\n",
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 3\n",
+    "memory.stat": "cache 87298048\nrss 609185792\nrss_huge 0\nshmem 4096\nmapped_file 55742464\ndirty 0\nwriteback 0\nswap 1050206208\npgpgin 340513571\npgpgout 340329340\npgfault 385549039\npgmajfault 207723\ninactive_anon 632692736\nactive_anon 34512896\ninactive_file 52105216\nactive_file 35213312\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 87298048\ntotal_rss 609185792\ntotal_rss_huge 0\ntotal_shmem 4096\ntotal_mapped_file 55742464\ntotal_dirty 0\ntotal_writeback 0\ntotal_swap 1050206208\ntotal_pgpgin 340513571\ntotal_pgpgout 340329340\ntotal_pgfault 385549039\ntotal_pgmajfault 207723\ntotal_inactive_anon 632692736\ntotal_active_anon 34512896\ntotal_inactive_file 52105216\ntotal_active_file 35213312\ntotal_unevictable 0\n",
+    "memory.failcnt": "1333766\n",
+    "memory.memsw.usage_in_bytes": "1895608320\n",
+    "memory.memsw.limit_in_bytes": "68719476736\n"
+  },
+  "known_launcher_owned_PIDs": [
+    87784,
+    92796,
+    92797,
+    93945,
+    95169,
+    96232,
+    97225,
+    98315,
+    99304,
+    100322,
+    101305,
+    102320
+  ],
+  "historical_failed_PID102320": {
+    "exit": -9,
+    "oom_before": 1,
+    "oom_after": 3,
+    "memory_samples": [
+      {
+        "utc": "2026-10-02T05:20:14.217063+00:00",
+        "VmSize": "7092 kB",
+        "VmHWM": "4 kB",
+        "VmRSS": "4 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "1525358592",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:16.217479+00:00",
+        "VmSize": "7027484 kB",
+        "VmHWM": "508260 kB",
+        "VmRSS": "508260 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "1738076160",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:18.218158+00:00",
+        "VmSize": "8779212 kB",
+        "VmHWM": "2298396 kB",
+        "VmRSS": "2298396 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "3267751936",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:20.218872+00:00",
+        "VmSize": "9893864 kB",
+        "VmHWM": "3663560 kB",
+        "VmRSS": "3663560 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "4545490944",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:22.219588+00:00",
+        "VmSize": "11583820 kB",
+        "VmHWM": "5582668 kB",
+        "VmRSS": "5582668 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "7023362048",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:24.220368+00:00",
+        "VmSize": "13571656 kB",
+        "VmHWM": "7777020 kB",
+        "VmRSS": "7777020 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "10479443968",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:26.221049+00:00",
+        "VmSize": "15341076 kB",
+        "VmHWM": "9727352 kB",
+        "VmRSS": "9727352 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "13698002944",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:28.221803+00:00",
+        "VmSize": "17448100 kB",
+        "VmHWM": "12013920 kB",
+        "VmRSS": "12013920 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "17917698048",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:30.222444+00:00",
+        "VmSize": "19264220 kB",
+        "VmHWM": "14073360 kB",
+        "VmRSS": "14073360 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "21750652928",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:32.257432+00:00",
+        "VmSize": "21068588 kB",
+        "VmHWM": "16104432 kB",
+        "VmRSS": "16104432 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "25686568960",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:34.258043+00:00",
+        "VmSize": "22823328 kB",
+        "VmHWM": "18020356 kB",
+        "VmRSS": "18020356 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "29442949120",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:36.258634+00:00",
+        "VmSize": "24140732 kB",
+        "VmHWM": "19604680 kB",
+        "VmRSS": "19604680 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "32606789632",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:38.259246+00:00",
+        "VmSize": "25114236 kB",
+        "VmHWM": "20759588 kB",
+        "VmRSS": "20759588 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "34359619584",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:40.259970+00:00",
+        "VmSize": "25597672 kB",
+        "VmHWM": "20924172 kB",
+        "VmRSS": "20802008 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "34359726080",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:42.261013+00:00",
+        "VmSize": "26497704 kB",
+        "VmHWM": "20924172 kB",
+        "VmRSS": "20267680 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "34359689216",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:44.356185+00:00",
+        "VmSize": "27235664 kB",
+        "VmHWM": "20924172 kB",
+        "VmRSS": "19996296 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "34359644160",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:46.357101+00:00",
+        "VmSize": "27235664 kB",
+        "VmHWM": "20924172 kB",
+        "VmRSS": "19516984 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "34359595008",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:48.357901+00:00",
+        "VmSize": "27235664 kB",
+        "VmHWM": "20924172 kB",
+        "VmRSS": "18909300 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "34359607296",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:50.358705+00:00",
+        "VmSize": "27235664 kB",
+        "VmHWM": "20924172 kB",
+        "VmRSS": "18374044 kB",
+        "direct_children": "",
+        "cgroup_usage_bytes": "34359578624",
+        "oom_kill": 1
+      },
+      {
+        "utc": "2026-10-02T05:20:52.430228+00:00",
+        "direct_children": "",
+        "cgroup_usage_bytes": "34359513088",
+        "oom_kill": 3
+      },
+      {
+        "utc": "2026-10-02T05:20:54.471571+00:00",
+        "direct_children": "",
+        "cgroup_usage_bytes": "17620267008",
+        "oom_kill": 3
+      }
+    ],
+    "log": "only Loading tilelanglibs, noCSV/ref"
+  },
+  "historical_marker_PID102519": {
+    "owner": "UNKNOWN; dead; no content read or cleanup",
+    "known_marker_time": "2026-10-02T05:20:21.383473+00:00"
+  },
+  "limit": "snapshot cannot reconstruct missingpastprocesses; transient/thread-fork/daemon can be missed; PIDsreused use starttime"
+}
