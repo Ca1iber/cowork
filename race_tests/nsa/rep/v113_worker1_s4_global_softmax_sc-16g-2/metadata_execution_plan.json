@@ -1,0 +1,125 @@
+{
+  "version": "v113_worker1_s4_global_softmax_sc-16g-2",
+  "UTC": "2026-10-02T11:39:10.109807+00:00",
+  "phase": "leader_GO_metadata_resources_once",
+  "scope": "official C11 only, 2freshsource metadata2pairs4files, CPUcodegen audit, 2existingCPP resourceSDK, 1candidateoptimizedIR SDK, CPUcompiledgate; 0NSA/fullrefs",
+  "guard_stage_jobs": [
+    {
+      "kind": "metadata",
+      "variant": "power_v104"
+    },
+    {
+      "kind": "metadata",
+      "variant": "power_v113"
+    },
+    {
+      "kind": "audit_codegen"
+    },
+    {
+      "kind": "resource",
+      "variant": "power_v104",
+      "case": 11
+    },
+    {
+      "kind": "resource",
+      "variant": "power_v113",
+      "case": 11
+    },
+    {
+      "kind": "optimized_IR"
+    },
+    {
+      "kind": "compiled_gate"
+    }
+  ],
+  "memory_engineering_budget": {
+    "cgroup_limit_bytes": 34359738368,
+    "new_admission_max_whole_bytes": 4294967296,
+    "additional_import_runtime_budget_not_upperbound_bytes": 25769803776,
+    "reserve_bytes": 4294967296,
+    "runtime_stop_whole_bytes": 30064771072,
+    "unknown_visible_heavy_RSS_bytes": 1073741824,
+    "sample_interval_seconds": 0.5,
+    "per_process_walltime_stop_seconds": 600,
+    "newthreshold_preregistered_before_any_newheavy": true,
+    "all_cgroup_limit_changes_forbidden": true
+  },
+  "expected_oom_before": 13,
+  "metadata_gate": {
+    "attention_calls": 0,
+    "native_refs": 0,
+    "only_case11_parent104_and_candidate": true,
+    "stack_must_equal": 0,
+    "MT_max": 96,
+    "staticmax_min": 5,
+    "ST_increases_retained": true,
+    "dynamicshared_must_equal": 2048,
+    "original_vector_widths_and_sync": true,
+    "actual_constant_MFMA_offsets_required": true,
+    "no_private_dynamic_index_or_spill": true,
+    "reject_before_native_on_failure": true,
+    "bounded_actual_existing_CPP_resource_IR_only": true
+  },
+  "any_nonzero_innerKilled_OOM_unknown_pressure_identity_hash": "stop prefix no retry",
+  "native_not_authorized": true,
+  "no_new_profiler_or_all14_or_algorithm_edit": true,
+  "runtime_grid_and_finalISA": "UNAVAILABLE; no MCTracer/ISA needed to pad finite plan",
+  "originalCUDAempty_inputs_shape_only": "exactofficialC11, GradTrue/F16/I32; interceptedJITKernel.__call__ no launch, does not inspect index contents; context/allocations mayGPU activity",
+  "sourceonly_validator_initial_failure": "wrongexpectedimports preserved; helperonlyrecovery actualwait0 sourceunchanged",
+  "candidate_IR_command": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-maca-device-only",
+    "-S",
+    "-emit-llvm",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/optimized_IR/case11_power_v113.ll",
+    "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/codegen/power_v113/case11.device.cpp"
+  ],
+  "resource_commands": {
+    "power_v104": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-device-obj",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-resource-usage",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/resources/case11_power_v104.mcbin",
+      "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/codegen/power_v104/case11.device.cpp"
+    ],
+    "power_v113": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-device-obj",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-resource-usage",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/resources/case11_power_v113.mcbin",
+      "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/codegen/power_v113/case11.device.cpp"
+    ]
+  },
+  "leader_GO_UTC": "2026-10-02T11:50:19.720331+00:00",
+  "leader_authorization": "Explicit once limited7stages P104/C113 C11 export2pairs4files,CPUaudit,2SDKresource,candidateO3IR,compiledgate; unchanged4/28/13/unknown/600/1s/ownership/no retry; native/full14/profile not authorized"
+}

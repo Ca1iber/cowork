@@ -1,0 +1,76 @@
+{
+  "variant": "power_v113",
+  "source": {
+    "path": "/root/tilelang-metax/race_tests/nsa/experiments/v113_worker1_s4_global_softmax_sc-16g-2/candidate.py",
+    "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+  },
+  "records": [
+    {
+      "case": 11,
+      "variant": "power_v113",
+      "source_sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+      "kernel_type": "tilelang.jit.kernel.JITKernel",
+      "hook_count_in_case": 1,
+      "argument_metadata": [
+        {
+          "shape": [
+            2,
+            512,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            2,
+            512,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            2,
+            512,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            2,
+            512,
+            1,
+            4
+          ],
+          "dtype": "torch.int32",
+          "requires_grad": false
+        },
+        {
+          "shape": [
+            2,
+            512,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": false
+        }
+      ],
+      "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/codegen/power_v113/case11.device.cpp",
+      "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/codegen/power_v113/case11.host.cpp",
+      "device_sha256": "355eb7fc910885a833c3e1cf8337c9e832a7ad44f68c8a1c16dfa80f72dd2813",
+      "host_sha256": "3b55508059ed02641430ca0c51374675a8a5df270aae48fc79e74d2482acc181",
+      "actual_NSA_launch_after_hook": false
+    }
+  ],
+  "NSA_attention_calls": 0,
+  "full_reference_checks": 0,
+  "GPUcontext_tensorallocations_not_zeroGPU_claim": true
+}

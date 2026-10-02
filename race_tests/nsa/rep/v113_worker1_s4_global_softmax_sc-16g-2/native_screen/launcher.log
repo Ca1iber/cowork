@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/root/tilelang-metax/race_tests/nsa/hack/v113_worker1_s4_global_softmax_sc-16g-2/launch_native_screen.py", line 5, in <module>
+    for k,x in list(m['sources'].items())+list(m['tools'].items())+ [('document',m['shared_identity_document']),('parentCPP',m['existing_parent_C11_device'])]:assert Path(x['path']).is_file() and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256'],k
+                                                                                                                             ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'existing_parent_C11_device'

@@ -1,0 +1,201 @@
+{
+  "version": "v113_worker1_s4_global_softmax_sc-16g-2",
+  "UTC": "2026-10-02T11:59:30.955145+00:00",
+  "phase": "native_proposal_pending_compiledgate_and_leader_GO",
+  "selected_cases": [
+    11
+  ],
+  "jobs": [
+    {
+      "index": 1,
+      "round": 1,
+      "variant": "baseline_v28",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 2,
+      "round": 1,
+      "variant": "power_v104",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 3,
+      "round": 1,
+      "variant": "power_v113",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 4,
+      "round": 1,
+      "variant": "power_v113",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 5,
+      "round": 1,
+      "variant": "power_v104",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 6,
+      "round": 1,
+      "variant": "baseline_v28",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 7,
+      "round": 2,
+      "variant": "baseline_v28",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 8,
+      "round": 2,
+      "variant": "power_v104",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 9,
+      "round": 2,
+      "variant": "power_v113",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 10,
+      "round": 2,
+      "variant": "power_v113",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 11,
+      "round": 2,
+      "variant": "power_v104",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 12,
+      "round": 2,
+      "variant": "baseline_v28",
+      "NSA_CASES": "11",
+      "case_order": [
+        11
+      ],
+      "planned_full_refs": 1
+    }
+  ],
+  "planned_native_processes": 12,
+  "planned_candidate_fullrefs": 4,
+  "planned_inclusive_fullrefs": 12,
+  "native_original": {
+    "case_seed_reset_each_call": 0,
+    "full_naive": true,
+    "warmup": 10,
+    "repeat": 50,
+    "atol": 0.01,
+    "rtol": 0.01,
+    "F16_requires_grad": true,
+    "no_post_export_or_metadata": true,
+    "wrapper_sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+    "case_runner_sha256": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568"
+  },
+  "memory_engineering_budget": {
+    "cgroup_limit_bytes": 34359738368,
+    "new_admission_max_whole_bytes": 4294967296,
+    "additional_import_runtime_budget_not_upperbound_bytes": 25769803776,
+    "reserve_bytes": 4294967296,
+    "runtime_stop_whole_bytes": 30064771072,
+    "unknown_visible_heavy_RSS_bytes": 1073741824,
+    "sample_interval_seconds": 0.5,
+    "per_process_walltime_stop_seconds": 600,
+    "newthreshold_preregistered_before_any_newheavy": true,
+    "all_cgroup_limit_changes_forbidden": true
+  },
+  "monitor_repair": {
+    "critical_identity_fields": [
+      "pid",
+      "starttime_ticks",
+      "exe"
+    ],
+    "per_read_phase_errors_with_filename": true,
+    "optional_status_or_thread_error_keeps_read_critical_identity": true,
+    "authoritative_original_Popen_terminal_poll_before_identity_abort": true,
+    "explicit_alive_critical_mismatch_fails_immediately": true,
+    "unavailable_identity_terminal_confirmation_max_seconds": 1.0,
+    "confirmation_within_original600s_and_all_existing_guards": true,
+    "terminal0_cannot_erase_prior_other_abort": true,
+    "no_signal_on_unverified_or_terminal_PID": true,
+    "no_oldgate_repair_or_repeat": true,
+    "per_job_pending_since_initialized": true,
+    "pending_not_reset_on_repeated_unavailable": true,
+    "permissiondenied_independent_fixture": "UNAVAILABLE; notexecuted, no verifiedsignal, boundedpending/strictguards remain"
+  },
+  "expected_oom_before": 13,
+  "handshake_budget_seconds": 5,
+  "recognized_unowned_baseline": {
+    "pid": 213447,
+    "starttime_ticks": 93125003,
+    "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+    "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+  },
+  "hypothesis": "onlyC11 sourcecb30 from104; fixedsinglecase screen after separately reviewed CPUopcodegate",
+  "performance": {
+    "primary": "C113 vs C104 medians per oncefixed12",
+    "thirdcontrol": "original28",
+    "median_ge_control": "reject",
+    "any_range_overlap_or_round_positive": "inconclusive, no stablewin",
+    "keep_all_raw_positive_outlier": true,
+    "no_adaptive_retries_or_automatic_formal": true
+  },
+  "scope": "newsourceC11 accuracy/performance screen only; notall14/no-reg/OJ and no0GPU claim",
+  "runtime_abort": "same4GiB doubleadmission,28GiBwhole,unknown1GiB,OOM13increment,600s,baselineexacttuple,identity1s,sourcehash,innerKilled,CSV or nonzero stops fixedprefix without replay",
+  "partial_counts": "observed PASS rows separately from cleanterminal rows, never pad via plan or mergedCSV",
+  "initial_failures": "wrongimports validator and missedrep supervisor startup and attribute-allocation CPUgate1 kept independently; no compiler/export repeated",
+  "prior_v108_168_and_v109_96": "notcombined with newscreen; alloldpositive deltas retained",
+  "no_native_GO_yet": true,
+  "compiled_gate_readonly_recovery_originalwait": 0,
+  "sourcecb30_after_recovery_same": true
+}

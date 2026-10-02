@@ -1,0 +1,23 @@
+{
+  "qk_slot_bijection1024": true,
+  "out_slot_bijection1024": true,
+  "v_slot_bijection1024": true,
+  "QK_Output_shared4half_vectors_contiguous_aligned_in2KiB": true,
+  "Score_P_1024_head_key_coverage": true,
+  "official_rawidx_sentinel_cases_checked": 16896,
+  "invalid_negative_huge_indices_rejected_before_multiply": true,
+  "source_only_not_compiler_or_native": true,
+  "fullvalid_score_exps_perlane": 16,
+  "fullvalid_MMA_perquery": 32,
+  "source_fullvalid_warp_sync_executions": 19,
+  "global_index_read_twice_in_source": "QK and PV separately; compiler/load count unknown, possible extra work",
+  "F16_globalmax_quantization": "changes rounded P relative online; sameactualP16 drives den and PV; max256/64keys implies den<=16384 for finitefullvalidscores, not correctness proof",
+  "sync_lifetimes": [
+    "initial Qwrite -> Qread sync",
+    "each nextKwrite guarded pre-sync protects previous sharedread, postKwrite beforeKread",
+    "firstVwrite guarded pre-sync protects lastKread",
+    "each nextVwrite pre-sync protects priorVread; postVwrite beforeVread",
+    "finalVread -> Outputwrite sync",
+    "Outputwrite -> globalgather sync"
+  ]
+}

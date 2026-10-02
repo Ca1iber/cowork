@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/root/tilelang-metax/race_tests/nsa/hack/v113_worker1_s4_global_softmax_sc-16g-2/supervise_controller.py", line 3, in <module>
+    r=Path(sys.argv[1]);m=json.loads((r/'metadata_source_manifest.json').read_text());plan=json.loads((r/'metadata_execution_plan.json').read_text());assert plan['phase']=='leader_GO_metadata_resources_once';shared=m['shared_identity_document'];doc=Path(shared['path']);assert doc.is_file() and hashlib.sha256(doc.read_bytes()).hexdigest()==shared['sha256'];inputs=json.loads(doc.read_text())['files'];assert len(inputs)==6
+           ~~~~~~~~^^^
+IndexError: list index out of range
