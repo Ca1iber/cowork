@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T12:45:12.261665+00:00",
-  "state": "V210_METADATA_COMPLETE_NATIVE_PREPARED_WAIT_GO",
+  "timestamp_utc": "2026-10-02T13:01:25.233590+00:00",
+  "state": "V210_NATIVE_GUARDFIX2_PREPARED_WAIT_GO",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v210_worker2_c8_serial_query_pair_subagent2",
-    "state": "V210_METADATA_COMPLETE_NATIVE_PREPARED_WAIT_GO",
+    "state": "V210_NATIVE_GUARDFIX2_PREPARED_WAIT_GO",
     "only_key": [
       2,
       4096,
@@ -108,7 +108,15 @@
     ],
     "other13_source_changed": false,
     "other13_generated_device": "UNAVAILABLE_not_exported",
-    "source_same_not_nonreg_guarantee": true
+    "source_same_not_nonreg_guarantee": true,
+    "native_guardfix2_actualpreflightwait": 0,
+    "native_controllerSHA": "b9d3cec1e6991640af8e35ec079e9acabf83d2b790b9243c859c08c4e2a8a1b8",
+    "native_utilsSHA": "eaf7eb6e9488e7a75820874b68d2497492b92af44815b26bc7bc59ba9925d3e7",
+    "expected_OOM": 3,
+    "critical_tuple_requires_exe_and_start": true,
+    "current_tuple_whitelist_and_verified_ancestry": true,
+    "terminal_pressure_unknown_descendant_finite_csv_guards": true,
+    "old_prepared_and_rev01_preserved": true
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -732,7 +740,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader review prepared native archive; no startup before explicitGO",
+  "next_step": "Leader final helper review before unique fixedC8 native12",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
