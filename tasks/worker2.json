@@ -1,0 +1,63 @@
+{
+  "common_base_version": "v084_codex_power_s1_d32_d128_pair_sc-16g-2",
+  "common_base_commit": "PENDING_CHECKPOINT_CLOSE",
+  "candidate_parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "original_v28_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "leader_owns": [
+    "tasks/*",
+    "README.md",
+    "protocol.md",
+    "evidence/*",
+    "integration/*"
+  ],
+  "benchmark": "native naive_nsa; original seed0, dtype/shape/input generation, tolerance, warmup10/repeat50; same-machine originalv28/parentv084/candidate paired comparison",
+  "prohibited": [
+    "container apply_patch",
+    "worktrees",
+    "async copy",
+    "foreign C/C++/LLVM injection",
+    "manual general compiler builtins",
+    "changing reference/native runner/shared shapes/timing",
+    "non-target kernel changes",
+    "claiming OJ score changes from local latency"
+  ],
+  "shared_submission_policy": "main submission.py stays original v28 until leader reviews integration; workers use standalone candidates",
+  "started_at_utc": "2026-10-02T02:48:28.349056+00:00",
+  "worker": "worker2",
+  "assigned_cases": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    13,
+    14
+  ],
+  "machine": "subagent2",
+  "code_branch": "exp/nsa-worker2-s1-from-v084",
+  "communication_branch": "worker2",
+  "version_range": [
+    200,
+    299
+  ],
+  "priority_cases": [
+    5,
+    9,
+    8
+  ],
+  "state": "PREPARING_WAITING_FOR_BASE_GO",
+  "workspace": "/root/tilelang-metax",
+  "requirements": [
+    "profile exact parent on this machine before new mechanism",
+    "write falsifiable hypothesis before edit",
+    "target screen through official exposed selection only",
+    "full14 native correctness on exact archived SHA before merge proposal",
+    "preserve all non-target latency regressions/outliers",
+    "static OJ source and generated-code validation",
+    "close four NSA directories/report/bilingual commit before next version",
+    "publish status and mergeable patch at checkpoints; do not merge or promote main independently"
+  ]
+}
