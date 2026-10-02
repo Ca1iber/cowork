@@ -1,9 +1,8 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T03:57:35.025181+00:00",
-  "machine": "sc-16g-2",
+  "utc": "2026-10-02T04:32:54.859148+00:00",
   "source_branch": "codex-power-v28-base",
-  "source_commit": "694b2e0650d4f203b41c946effe9f7d56350795d",
+  "last_closed_source_commit": "694b2e0650d4f203b41c946effe9f7d56350795d",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
@@ -11,102 +10,77 @@
     11,
     12
   ],
-  "last_closed_version": "v102_worker1_native_process_isolation_sc-16g-2",
-  "last_closed_status": "diagnostic_runtime_completed_source_v101_latency_rejected",
-  "candidate_source_sha256": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2",
-  "parent_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "current": {
+    "version": "v103_worker1_s1_d128_operand_lifetimes_sc-16g-2",
+    "case": 6,
+    "phase": "one fixed native screen running",
+    "source_sha256": "2a56f48e011d50cb0de4401d851161fd9d314cf03327f4f399e10389cfc5e7e0",
+    "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "master_pid": 277023,
+    "active_native_pid": 278961,
+    "active_job_index": 8,
+    "completed_terminal_jobs": 7,
+    "actual_candidate_ref_records": 2,
+    "actual_total_ref_records": 7,
+    "planned_candidate_refs": 4,
+    "planned_total_refs": 12,
+    "metadata_attention_and_reference_calls": 0,
+    "resources": {
+      "command": [
+        "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "-x",
+        "maca",
+        "-device-obj",
+        "-O3",
+        "-lineinfo",
+        "--offload-arch=xcore1000",
+        "-std=c++17",
+        "-I/root/tilelang-metax/src",
+        "-use-fast-math",
+        "-D__FAST_HALF_CVT__",
+        "-resource-usage",
+        "-o",
+        "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/resources/candidate_case6.mcbin",
+        "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/codegen_precompile/power_v103/case6_stage1.device.cpp"
+      ],
+      "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/codegen_precompile/power_v103/case6_stage1.device.cpp",
+      "device_sha256": "61f9773fc256f4bfc81f427760cfc9f7512988d7961ebcca231d0f97455e10a3",
+      "host_sha256": "b138df6c88a6de13e8dedff593135b2a7c1355be0f0dfa225b07227ec44dd2d8",
+      "MT": 90,
+      "ST": 24,
+      "static_shared_bytes": 0,
+      "dynamic_shared_bytes": 8192,
+      "stack_bytes": 0,
+      "static_max_warps": 5,
+      "not_measured_occupancy": true,
+      "actual_num16": true,
+      "resource_gate_pass": true
+    },
+    "global16B_actual": true,
+    "num16_actual": true,
+    "OOM_baseline": 11,
+    "initial_static_argument_failure": "sourcefilename typo,initialstatic/stage1 retained;manifest-only validator recovery0,no metadata rerun",
+    "no_adaptive_retries": true,
+    "no_automatic_formal": true
+  },
+  "history": {
+    "v101": {
+      "commit": "29a45229cdcf9b1b3535402b68dd5cbfd782ec38",
+      "screen_exit": 137,
+      "OOM_final": 11,
+      "status": "failed_runtime_OOM_screen_inconclusive"
+    },
+    "v102": {
+      "commit": "694b2e0650d4f203b41c946effe9f7d56350795d",
+      "runtime12_terminal0": true,
+      "candidate_refs": 4,
+      "total_refs": 12,
+      "source101_latency_vs84_pct": 9.071842927264614,
+      "latency_rejected": true,
+      "no_cause_claim": true
+    }
+  },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
-  "phase": "fresh parent84 case6 evidence only; no new kernel",
-  "active_job_pid": 262527,
-  "all_owned_jobs_terminal": false,
-  "case_and_screen_exit": 137,
-  "OOM_start": 10,
-  "OOM_final": 11,
-  "observed_full_reference_PASS_records": {
-    "candidate": 4,
-    "including_controls": 12,
-    "case": 10,
-    "scope": "emitted records, overall screen failed"
-  },
-  "failed_screen_raw": {
-    "status": "failed_runtime_OOM_screen_inconclusive",
-    "process_exit": 137,
-    "screen_exit": 137,
-    "screen_gate": "failed; not rewritten",
-    "candidate_PASS_records": 4,
-    "control_inclusive_PASS_records": 12,
-    "record_scope": "CSV observations from failed process; not a successful screen or full14 verdict",
-    "case": 10,
-    "medians_us": {
-      "baseline_v28": "13.660160000",
-      "parent_v084": "12.352000000",
-      "power_v101": "11.788799500"
-    },
-    "samples_us": {
-      "baseline_v28": [
-        "11.816961000",
-        "14.028800000",
-        "13.829120000",
-        "13.491200000"
-      ],
-      "parent_v084": [
-        "11.719680000",
-        "13.081599000",
-        "12.984320000",
-        "10.752000000"
-      ],
-      "power_v101": [
-        "12.062720000",
-        "11.514879000",
-        "13.736960000",
-        "11.473920000"
-      ]
-    },
-    "vs_parent_pct": "-4.559589540155440414507772020",
-    "vs_v28_pct": "-13.69940396012931034482758621",
-    "samples_overlap": true,
-    "OOM_start": 10,
-    "OOM_after": 11,
-    "no_retry": true,
-    "failure_component": "after CSV and metadata files emitted; exact cleanup/export/destructor component unknown"
-  },
-  "full14": false,
-  "OJ_v101": null,
-  "automatic_approval_rejection": "passgate write rejected and not executed;137 unchanged",
-  "retries": {
-    "native": 0,
-    "metadata": 0
-  },
-  "peer_lessons": "workers/worker1/lessons/v100-v101.md",
-  "peer_review_received": true,
-  "ownership": "no edits to worker2 source or plan; advice only",
-  "next": "C6 currentprofile/resources/operand lifetimes,peerreview thenleaderreview beforeedit",
-  "transport": "leader relay, no credentials copied",
-  "active_version": "v103_worker1_s1_d128_operand_lifetimes_sc-16g-2",
-  "active_target": [
-    6
-  ],
-  "v102_planned_reference_calls": {
-    "candidate_source_v101": 4,
-    "all_sources": 12
-  },
-  "v102_OOM_baseline": 11,
-  "active_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
-  "active_candidate_edited": false,
-  "v102_result": {
-    "actual_candidate_source_v101_refs": 4,
-    "actual_all_refs": 12,
-    "all12_native_terminal_zero": true,
-    "OOM_before": 11,
-    "OOM_after": 11,
-    "median_candidate_us": 12.2215,
-    "median_parent_us": 11.205,
-    "vs_parent_pct": 9.071842927264614,
-    "rounds_vs_parent_pct": [
-      9.62070504239179,
-      6.763675559148478
-    ],
-    "latency_rejected": true,
-    "rootcause_unproven": true
-  }
+  "ownership": "ownsource/cases only;peer advice not code/plan edits",
+  "next": "fixed12 actual results review; no formal without leader"
 }

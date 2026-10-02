@@ -1,0 +1,237 @@
+{
+  "status": {
+    "worker": "worker1",
+    "utc": "2026-10-02T04:32:54.859148+00:00",
+    "source_branch": "codex-power-v28-base",
+    "last_closed_source_commit": "694b2e0650d4f203b41c946effe9f7d56350795d",
+    "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+    "owned_cases": [
+      6,
+      10,
+      11,
+      12
+    ],
+    "current": {
+      "version": "v103_worker1_s1_d128_operand_lifetimes_sc-16g-2",
+      "case": 6,
+      "phase": "one fixed native screen running",
+      "source_sha256": "2a56f48e011d50cb0de4401d851161fd9d314cf03327f4f399e10389cfc5e7e0",
+      "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+      "master_pid": 277023,
+      "active_native_pid": 278961,
+      "active_job_index": 8,
+      "completed_terminal_jobs": 7,
+      "actual_candidate_ref_records": 2,
+      "actual_total_ref_records": 7,
+      "planned_candidate_refs": 4,
+      "planned_total_refs": 12,
+      "metadata_attention_and_reference_calls": 0,
+      "resources": {
+        "command": [
+          "/opt/maca/mxgpu_llvm/bin/mxcc",
+          "-x",
+          "maca",
+          "-device-obj",
+          "-O3",
+          "-lineinfo",
+          "--offload-arch=xcore1000",
+          "-std=c++17",
+          "-I/root/tilelang-metax/src",
+          "-use-fast-math",
+          "-D__FAST_HALF_CVT__",
+          "-resource-usage",
+          "-o",
+          "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/resources/candidate_case6.mcbin",
+          "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/codegen_precompile/power_v103/case6_stage1.device.cpp"
+        ],
+        "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/codegen_precompile/power_v103/case6_stage1.device.cpp",
+        "device_sha256": "61f9773fc256f4bfc81f427760cfc9f7512988d7961ebcca231d0f97455e10a3",
+        "host_sha256": "b138df6c88a6de13e8dedff593135b2a7c1355be0f0dfa225b07227ec44dd2d8",
+        "MT": 90,
+        "ST": 24,
+        "static_shared_bytes": 0,
+        "dynamic_shared_bytes": 8192,
+        "stack_bytes": 0,
+        "static_max_warps": 5,
+        "not_measured_occupancy": true,
+        "actual_num16": true,
+        "resource_gate_pass": true
+      },
+      "global16B_actual": true,
+      "num16_actual": true,
+      "OOM_baseline": 11,
+      "initial_static_argument_failure": "sourcefilename typo,initialstatic/stage1 retained;manifest-only validator recovery0,no metadata rerun",
+      "no_adaptive_retries": true,
+      "no_automatic_formal": true
+    },
+    "history": {
+      "v101": {
+        "commit": "29a45229cdcf9b1b3535402b68dd5cbfd782ec38",
+        "screen_exit": 137,
+        "OOM_final": 11,
+        "status": "failed_runtime_OOM_screen_inconclusive"
+      },
+      "v102": {
+        "commit": "694b2e0650d4f203b41c946effe9f7d56350795d",
+        "runtime12_terminal0": true,
+        "candidate_refs": 4,
+        "total_refs": 12,
+        "source101_latency_vs84_pct": 9.071842927264614,
+        "latency_rejected": true,
+        "no_cause_claim": true
+      }
+    },
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "ownership": "ownsource/cases only;peer advice not code/plan edits",
+    "next": "fixed12 actual results review; no formal without leader"
+  },
+  "source_identity": {
+    "candidate_path": "/tmp/nsa_power_v103_pv_plane.py",
+    "candidate_sha256": "2a56f48e011d50cb0de4401d851161fd9d314cf03327f4f399e10389cfc5e7e0",
+    "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "parent_AST_prefix_exact": true,
+    "dispatch_cases": [
+      6
+    ],
+    "other13keys_math_exact_parent": true,
+    "global_QKV_staging_prefix_preserved_except_Numshape": true,
+    "final_global16B_gather_store_tail_exact": true,
+    "denominator_and_P8_unchanged": true,
+    "new_Numerator_fragment_shape": [
+      16,
+      64
+    ],
+    "metadata_resource_required_not_assumed": true
+  },
+  "alias_vector_proof": {
+    "parent_source": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "V_plane_regions": [
+      [
+        0,
+        2048
+      ],
+      [
+        2048,
+        4096
+      ]
+    ],
+    "output_regions": [
+      [
+        0,
+        1024
+      ],
+      [
+        1024,
+        2048
+      ]
+    ],
+    "V_vectors_checked": 1024,
+    "V_all_4half_vector_touches_in_plane_region": true,
+    "output_all_4half_vector_touches_in_consumed_Vplane0": true,
+    "all_output_lower_upper_distinct_and_complete": true,
+    "relative_8B_alignment": true,
+    "early_output_vs_future_Vplane1_disjoint": true,
+    "firstplane_before_write_full64sync_required": true,
+    "final_globalgather_full64sync_required": true,
+    "reference_checks": 0,
+    "proof_limit": "static address/alias coverage; no kernel edited,no GPUrace/numerical/performance verdict"
+  },
+  "actual_codegen_mechanism": {
+    "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/codegen_precompile/power_v103/case6_stage1.device.cpp",
+    "device_sha256": "61f9773fc256f4bfc81f427760cfc9f7512988d7961ebcca231d0f97455e10a3",
+    "selected_CPP_lines": [
+      {
+        "line": 21,
+        "text": "float numerator[16];"
+      },
+      {
+        "line": 30,
+        "text": "*(uint4*)(qk_fetch + 0) = *(uint4*)(Q + ((((((int)blockIdx.y) * 2097152) + (((int)blockIdx.x) * 2048)) + (part * 512)) + (((int)threadIdx.x) * 8)));"
+      },
+      {
+        "line": 36,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 40,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 43,
+        "text": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int64_t)((int)blockIdx.y)) * (int64_t)131072) + (((int64_t)part_1) * (int64_t)512)) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));"
+      },
+      {
+        "line": 49,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 57,
+        "text": "for (int key_tile = 0; key_tile < 2; ++key_tile) {"
+      },
+      {
+        "line": 67,
+        "text": "for (int key_tile_1 = 0; key_tile_1 < 2; ++key_tile_1) {"
+      },
+      {
+        "line": 87,
+        "text": "for (int key_tile_2 = 0; key_tile_2 < 2; ++key_tile_2) {"
+      },
+      {
+        "line": 125,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 127,
+        "text": "for (int key_tile_3 = 0; key_tile_3 < 2; ++key_tile_3) {"
+      },
+      {
+        "line": 129,
+        "text": "for (int plane = 0; plane < 2; ++plane) {"
+      },
+      {
+        "line": 132,
+        "text": "*(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((((int64_t)((int)blockIdx.y)) * (int64_t)131072) + (((int64_t)key_tile_3) * (int64_t)2048)) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)256)) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)row) * (int64_t)128)) + (((int64_t)plane) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));"
+      },
+      {
+        "line": 143,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 146,
+        "text": "for (int plane_1 = 0; plane_1 < 2; ++plane_1) {"
+      },
+      {
+        "line": 150,
+        "text": "*(float4*)(numerator + (i_1 * 4)) = make_float4(broadcast_var_3, broadcast_var_3, broadcast_var_3, broadcast_var_3);"
+      },
+      {
+        "line": 154,
+        "text": "for (int key_tile_4 = 0; key_tile_4 < 2; ++key_tile_4) {"
+      },
+      {
+        "line": 173,
+        "text": "if (plane_1 == 0) {"
+      },
+      {
+        "line": 174,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 184,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 191,
+        "text": "*(uint4*)(Output + ((((((int)blockIdx.y) * 2097152) + (((int)blockIdx.x) * 2048)) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+      }
+    ],
+    "actual_Num16": true,
+    "global_QKV16B_preserved": true,
+    "global_output16B_preserved": true,
+    "static_sync_occurrences": 7,
+    "register_resource_separately_measured": true,
+    "not_dynamic_lifetime_occupancy_or_latency_proof": true
+  },
+  "peer_review": "# worker2\u76f4\u63a5\u673a\u5236\u5ba1\u9605\n\n\u5efa\u8bae\u4e0d\u662f\u5ba1\u6279\uff1a\u5df2\u6838\u9a8c\u771f\u5b9eqk_slot panel/\u6240\u67094half vector touchset\uff0coutput lower0..1024/upper1024..2048\uff0cfuture Vplane1 2048..4096\u4e0d\u4ea4\u3002\u8981\u6c42\u5148plane0\u4e24\u4e2akeytile\u8bfb\u5b8cfull64 sync\uff0clower cast/store\u5b8c\u6210\u624dclearNum\uff0c\u6700\u7ec8globalreader\u524dsync\uff1b\u6240\u6709\u65e7K/V\u4fdd\u62a4\u4fdd\u7559\u3002\u539fden\u5df2\u5728V\u524d\uff0c\u4e0d\u79fb\u52a8\uff1bP8\u672c\u6765resident\uff0c\u4e0d\u65b0\u589eP\u5b58\u50a8\u3002perfeature FP32 key0/key1\u987a\u5e8f\u4e0eden/F16\u8f6c\u6362\u4e0d\u53d8\u3002\u68c0\u67e5compiler\u662f\u5426\u5b9e\u9645num16\u4e14MT\u964d\u4f4e\uff0c\u4e0d\u80fd\u7528sourcealloc\u6216staticmax\u5f53\u5b9e\u6d4boccupancy\u3002\n\nworker1\u5df2\u7eb3\u5165\u81ea\u8eab\u5047\u8bbe\uff0c\u5c1a\u65e0candidate edit\uff0c\u5f85leader GO\u3002\u6ca1\u6709\u7f16\u8f91\u5bf9\u65b9source\u6216plan\u3002\n"
+}
