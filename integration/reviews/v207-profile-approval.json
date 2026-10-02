@@ -1,0 +1,69 @@
+{
+  "reviewed_at_utc": "2026-10-02T09:05:38.609875+00:00",
+  "decision": "GO once independently named v207 parent84-only C9 mcProfiler diagnostic",
+  "owner": "worker2",
+  "actual_review": [
+    "proposal.json",
+    "peer_review.json",
+    "fixed_profile_manifest.json"
+  ],
+  "source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "driver_sha256": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a",
+  "tool_sha256": "8b668655748648b40d12c7a4a5e179105f0e31b178a2d15e87b6bcdaa89efa3b",
+  "tool_version_identifier": "3.8.1.4/hash575f5a9f6d separate fromfileSHA",
+  "scope": {
+    "case": 9,
+    "shape_key": [
+      1,
+      8192,
+      1,
+      16,
+      64,
+      1,
+      16,
+      true
+    ],
+    "mcProfiler_CLI_calls": 1,
+    "counts": 2,
+    "planned_report_records": 2,
+    "metrics_count": 10,
+    "parent_only": true,
+    "reference_calls": 0,
+    "native_benchmark_calls": 0,
+    "new_kernel_sources": 0
+  },
+  "actual_command": "Use exactfixed_profiler_argv frommanifest:perf_exec/custom/per-kernel/counts2/all10metrics/cwd andunchangedmctxdriver9",
+  "driver_limit": "GradFalse/F16/seed0/initial1+warm10+region20=31 successfulsingle-drivercalls;inputindex generation differs fromnative;toolreplaycounts mustbeobserved,not W10R50 equivalent",
+  "initial_scope_gates": {
+    "kernel": "native_sparse_attention_kernel",
+    "grid": [
+      8192,
+      1
+    ],
+    "waves": 8192,
+    "output_payload_bytes": 16777216,
+    "write_residual_bytes": [
+      0,
+      512
+    ],
+    "all10_metrics_numeric_required": true,
+    "CLI0_and_no_innerKilled_NA_OOM_required": true
+  },
+  "old_scope576_failure_not_changed": true,
+  "memory_runtime": "2GiBdoubleadmission/lock/0.5swholeCG+PID+threadchildren/28GiB-OOM-unknown1GiB-300s-nonzero-innerKilled stop;no retry/resample;onlyverifiedownidentity+observedancestry signals,originalPopen actualterminal priority",
+  "trace_beforelaunch": "fixedargv/source/driver/toolSHA/onceguard/ownerPID saved",
+  "counter_interpretation": [
+    "GlobalRead counter not automaticallyHBM",
+    "WGloadlatency isworkgroupshared,notDRAM",
+    "staticwarp andachievedwaves not actualoccupancy",
+    "scope waves/writepayload necessarynotexclusive"
+  ],
+  "report": "Everyactualdriverreplay/CLI/PID/reportrecord andallraw metrics retained;NA/scopefail/partialfailure closed without thresholdwidening",
+  "not_approved": [
+    "trace/ISA/calibration",
+    "native correctness/benchmark",
+    "newkernel/optimization",
+    "main/OJ promotion"
+  ],
+  "next": "ActualPID/CLIexit/innerstatus andtwo raw scopedreports thenmechanismproposal"
+}

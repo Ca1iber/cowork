@@ -1,0 +1,44 @@
+{
+  "reviewed_at_utc": "2026-10-02T07:45:43.587545+00:00",
+  "decision": "GO source-only v206 correctedofficialC5 Vshared ownership experiment",
+  "owner": "worker2",
+  "numerical_parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "source_base_commit": "ff293bcf8c4cbf734e7b7fa41cce020f04cbb10f",
+  "case5_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "Num_float32_elements": 16,
+  "mechanism": "Original perlane global2uint4Vfetch unchanged; four packeduint32 xor8 width64/fullmask shuffles exchange opposite4cols of2rows, reconstruct4row4col producer, sourceVshared8x4B->4x8B withsame2KiB payload andoriginalv_slotconsumer",
+  "source_requirements": [
+    "parent14ASTprefix andonlyC5installer/header206",
+    "bitreinterpret uint16/zeroextenduint32/shiftOR/shfl/split/float16 reinterpret only;no FPtointeger numericcast",
+    "fullyunrolled constantlocalindices/selects;no lane branch enclosing shuffle",
+    "original Num16/QKPden/PV/math/globalOutput/7sync retained"
+  ],
+  "proofs_reviewed": "Owner1024 coordinate byte-equivalence/bijection,256aligned4half vectors,16bit bitpack algebra/corners andprimaryAPI/peer evidence recorded; compiler/runtime remains unverified",
+  "bank_models_not_calibrated": true,
+  "risks": [
+    "4extra packedshuffles/ALU can outweigh fewer stores",
+    "MT/ST growth",
+    "8Bstore splitphases andbankconflicts under somehypothetical models"
+  ],
+  "retained_falsifiers": [
+    "stack>0/staticmax<8 stop",
+    "four8B Vstores/four32bitxor8 notmaterialized stop",
+    "invalidbitcast/globaladdress/math/sync/guard/private/sourcehash failure stop"
+  ],
+  "allowed": "Direct source write andstdlib/static/existing sourcevalidator only",
+  "not_approved": [
+    "imports/compiler",
+    "attention/reference/native",
+    "profile/formal/main/OJ"
+  ],
+  "next": "Owner exactsourceSHA/actualbody/AST/coordinatebitvector evidence, separate boundedmetadata review"
+}
