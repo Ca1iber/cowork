@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T06:44:06.160321+00:00",
-  "state": "V204_C8_FIXED_NATIVE_RUNNING",
+  "timestamp_utc": "2026-10-02T06:54:58.953437+00:00",
+  "state": "V204_REJECTED_CLOSED",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "9eebae913786797e769b77d8f2731754828789ed",
+  "source_commit": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -53,28 +53,31 @@
     ],
     "IR_order_materialized": true,
     "final_ISA_width": "UNAVAILABLE",
-    "native_observer_PID": 127818,
+    "native_observer_PID": null,
     "native_actual_counts": {
-      "candidate": 0,
-      "total": 0
+      "candidate": 4,
+      "total": 12
     },
     "native_planned_counts": {
       "candidate": 4,
       "total": 12
     },
-    "native_stage": {
-      "stage": "fixed_C8_native_observed",
-      "run": 2,
-      "variant": "parent_v084",
-      "pid": 128111,
-      "observerPID": 127818,
-      "sample_count": 21,
-      "utc": "2026-10-02T06:44:06.033490+00:00",
-      "usage_bytes": 8974196736,
-      "oom": 3
-    },
+    "native_stage": "ALL12_TERMINAL0",
     "OOM": 3,
-    "no_full14_or_OJ_verdict": true
+    "no_full14_or_OJ_verdict": true,
+    "state": "REJECTED_CLOSED",
+    "source_commit": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
+    "candidate_median_us": 40.7965,
+    "parent_median_us": 40.4045,
+    "candidate_vs_parent_pct": 0.970188964100549,
+    "round_delta_pct": [
+      1.602769427881534,
+      0.2660594735734989
+    ],
+    "ranges_overlap": true,
+    "formal": false,
+    "candidate_archived_not_promoted": true,
+    "inventory_files": 225
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -151,8 +154,8 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "finish unique fixed case8 native sequence or preserve first failed prefix; no automatic formal",
-  "job_pid": 127818,
+  "next_step": "independent next mechanism proposal/peer/leader review; no extra heavy run",
+  "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
     "no_kernel_edit": true,
