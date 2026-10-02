@@ -29,7 +29,7 @@
     "all14_nonregression": "UNPROVEN"
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-02T18:08:27.564363+00:00",
+  "updated_at_utc": "2026-10-02T18:27:05.668903+00:00",
   "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
   "worker1": {
     "cases": [
@@ -42,13 +42,13 @@
     "last_closed_source_commit": "37ee8fa89c82f11734034c5b91e9167d297e6fa0",
     "last_result": "metadata2pairs0; actual Max/Den alias race, geometrygate1; no native",
     "active_version": "v122",
-    "stage": "bounded compile GO issued, original handler start pending report",
-    "authorized_scope": "single64float reductionbuffer Max0..31/Den32..63 from CB13+C121 algorithm",
-    "native_GO": false,
+    "stage": "actualcodegen disjointness/math/CFG independently verified; nativeGO issued",
+    "authorized_scope": "one original C12 fixed12 versus best CB13",
+    "native_GO": true,
     "active_PID": null,
     "source_audit": "integration/reviews/v121-actual-shared-alias-review.json",
     "candidate_sha256": "88bd3007df4a5173fec5de7c0471ac4d8462e1f44269c1c2ee2fae9cd60aca01",
-    "approval": "integration/reviews/v122-compile-approval.json"
+    "approval": "integration/reviews/v122-native-approval.json"
   },
   "worker2": {
     "cases": [
@@ -63,9 +63,9 @@
       13,
       14
     ],
-    "last_closed_version": "v217",
-    "last_closed_source_commit": "0474849e26010bf3e80aa8737577069485a7ba35",
-    "active_version": "v218",
+    "last_closed_version": "v218",
+    "last_closed_source_commit": "b2454a0dea75749f85aebb009db1c7c9fb1eea55",
+    "active_version": "v219",
     "source_SHA": "21332fbff1793eda669c5d37533b02a183685e85061393265596b19fdb313d52",
     "source_header": "v217",
     "actual_resource": [
@@ -76,14 +76,16 @@
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "unique original C8 fixed12 running",
-    "authorized_scope": "reuse217 immutable source; one fixed B-P-C-C-P-B x2; no source/metadata/resource/IR/profile",
-    "native_GO": true,
-    "active_PID": 329419,
-    "active_starttime_ticks": 333620619,
+    "stage": "C3 incumbent profile and reused resource actualhelpers preparation",
+    "authorized_scope": "one original C3 MCP counts2 and SDK resource on exact reused source-exportedCPP; no native/source/metadata/IR",
+    "native_GO": false,
+    "active_PID": null,
+    "active_starttime_ticks": null,
     "original_owner_PID": 329418,
     "original_owner_starttime_ticks": 333620616,
-    "approval": "integration/reviews/v218-native-approval.json"
+    "approval": "integration/reviews/v218-native-approval.json",
+    "last_result": "independent12PASS/C4/1005samples/OOM3, +1.236020% vs84, bothroundpositive rejected",
+    "runtime_audit": "integration/reviews/v218-native-leader-audit.json"
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
@@ -104,5 +106,5 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-availability.json"
   },
-  "leader_next": "Review C12 single64floatbuffer source/actual compile plan and C8 independent math+runtime prep; keep exact best-known v113 unchanged"
+  "leader_next": "Wait same C12 native handle and review C3 actual profile/resource plan; best known v113 remains unchanged"
 }
