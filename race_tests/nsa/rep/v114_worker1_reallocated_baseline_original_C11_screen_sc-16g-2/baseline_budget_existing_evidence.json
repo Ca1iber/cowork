@@ -1,0 +1,55 @@
+{
+  "version": "v114_worker1_reallocated_baseline_original_C11_screen_sc-16g-2",
+  "evidence_from_existing_sample_only": "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/native_screen/job_01_baseline_v28/admission_first.json",
+  "sample_UTC": "2026-10-02T12:17:20.932170+00:00",
+  "wholeCG_bytes": 4314877952,
+  "old_4GiB_boundary": 4294967296,
+  "old_excess_bytes": 19910656,
+  "OOM": 13,
+  "exact_baseline_tuple": {
+    "pid": 213447,
+    "starttime_ticks": 93125003,
+    "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+    "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+  },
+  "baseline_metadata": {
+    "pid": 213447,
+    "memory_KiB": {
+      "VmSize": 13496004,
+      "VmHWM": 3611504,
+      "VmRSS": 2483964
+    },
+    "all_thread_children": {
+      "213447": [],
+      "213448": [],
+      "213449": [],
+      "213450": [],
+      "213451": [],
+      "213452": [],
+      "213454": [],
+      "213688": [],
+      "213689": []
+    },
+    "phase_errors": [],
+    "ppid": 212213,
+    "pgid": 211770,
+    "state": "S",
+    "starttime_ticks": 93125003,
+    "comm": "MainThread",
+    "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+    "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n",
+    "critical_identity_available": true
+  },
+  "unknown_visible_heavy_over1GiB": [],
+  "cgroup_raw_accounting": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "4314877952\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 889442304\nrss 3128922112\nrss_huge 0\nshmem 167936\nmapped_file 51163136\ndirty 57344\nwriteback 0\nswap 793710592\npgpgin 4544593201\npgpgout 4543604438\npgfault 5034174241\npgmajfault 197079\ninactive_anon 2591854592\nactive_anon 568438784\ninactive_file 454410240\nactive_file 434855936\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 889442304\ntotal_rss 3128922112\ntotal_rss_huge 0\ntotal_shmem 167936\ntotal_mapped_file 51163136\ntotal_dirty 57344\ntotal_writeback 0\ntotal_swap 793710592\ntotal_pgpgin 4544593201\ntotal_pgpgout 4543604438\ntotal_pgfault 5034174241\ntotal_pgmajfault 197079\ntotal_inactive_anon 2591854592\ntotal_active_anon 568438784\ntotal_inactive_file 454410240\ntotal_active_file 434855936\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 4314877952
+  },
+  "no_cmdline_environment_signal_cleanup_or_new_census": true,
+  "not_OOMcause_or_peakupperbound": true
+}

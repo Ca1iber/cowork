@@ -1,0 +1,97 @@
+{
+  "index": 5,
+  "round": 1,
+  "variant": "power_v104",
+  "native_pid": 436228,
+  "native_pgid": 436228,
+  "UTC_terminal": "2026-10-02T12:39:43.567702+00:00",
+  "GO_sent": true,
+  "native_exit": 0,
+  "stop_reason": null,
+  "clean_process_accepted": true,
+  "observed_complete_reference_PASS_rows": 1,
+  "rawCSVrows": [
+    {
+      "case": "11",
+      "B": "2",
+      "SEQ_LEN": "512",
+      "H": "1",
+      "HQ": "16",
+      "D": "64",
+      "S": "4",
+      "block_size": "16",
+      "latency_ms": "0.019354",
+      "status": "PASS"
+    }
+  ],
+  "verifiedCSVrows": [
+    {
+      "case": "11",
+      "B": "2",
+      "SEQ_LEN": "512",
+      "H": "1",
+      "HQ": "16",
+      "D": "64",
+      "S": "4",
+      "block_size": "16",
+      "latency_ms": "0.019354",
+      "status": "PASS"
+    }
+  ],
+  "auditerrors": [],
+  "clean_process_accepted_reference_rows": 1,
+  "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v114_worker1_reallocated_baseline_original_C11_screen_sc-16g-2/native_screen/job_05_power_v104/native_case11.csv",
+  "log": "/root/tilelang-metax/race_tests/nsa/rep/v114_worker1_reallocated_baseline_original_C11_screen_sc-16g-2/native_screen/job_05_power_v104/native.log",
+  "memory_samples": 80,
+  "owned_identities": {
+    "436228": {
+      "pid": 436228,
+      "starttime_ticks": 96809297,
+      "exe": "/opt/conda/bin/python3.12",
+      "observed_parent": {
+        "pid": 434990
+      },
+      "first_seen_UTC": "2026-10-02T12:39:06.662752+00:00"
+    },
+    "436411": {
+      "pid": 436411,
+      "starttime_ticks": 96811957,
+      "exe": "/usr/bin/dash",
+      "observed_parent": {
+        "pid": 436228,
+        "starttime_ticks": 96809297,
+        "exe": "/opt/conda/bin/python3.12"
+      },
+      "first_seen_UTC": "2026-10-02T12:39:33.185515+00:00"
+    },
+    "436412": {
+      "pid": 436412,
+      "starttime_ticks": 96811957,
+      "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+      "observed_parent": {
+        "pid": 436411,
+        "starttime_ticks": 96811957,
+        "exe": "/usr/bin/dash"
+      },
+      "first_seen_UTC": "2026-10-02T12:39:33.185515+00:00"
+    }
+  },
+  "cgroup_before": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "4153192448\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 924286976\nrss 2941636608\nrss_huge 0\nshmem 184320\nmapped_file 51163136\ndirty 802816\nwriteback 0\nswap 790466560\npgpgin 4572724476\npgpgout 4571772749\npgfault 5067480948\npgmajfault 201742\ninactive_anon 2405752832\nactive_anon 568332288\ninactive_file 503005184\nactive_file 421085184\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 924286976\ntotal_rss 2941636608\ntotal_rss_huge 0\ntotal_shmem 184320\ntotal_mapped_file 51163136\ntotal_dirty 802816\ntotal_writeback 0\ntotal_swap 790466560\ntotal_pgpgin 4572724476\ntotal_pgpgout 4571772749\ntotal_pgfault 5067480948\ntotal_pgmajfault 201742\ntotal_inactive_anon 2405752832\ntotal_active_anon 568332288\ntotal_inactive_file 503005184\ntotal_active_file 421085184\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 4153192448
+  },
+  "cgroup_after": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "4160049152\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 930181120\nrss 2941853696\nrss_huge 0\nshmem 188416\nmapped_file 51163136\ndirty 794624\nwriteback 0\nswap 790409216\npgpgin 4578016651\npgpgout 4577063429\npgfault 5073305042\npgmajfault 201765\ninactive_anon 2405978112\nactive_anon 568332288\ninactive_file 508784640\nactive_file 421179392\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 930181120\ntotal_rss 2941853696\ntotal_rss_huge 0\ntotal_shmem 188416\ntotal_mapped_file 51163136\ntotal_dirty 794624\ntotal_writeback 0\ntotal_swap 790409216\ntotal_pgpgin 4578016651\ntotal_pgpgout 4577063429\ntotal_pgfault 5073305042\ntotal_pgmajfault 201765\ntotal_inactive_anon 2405978112\ntotal_active_anon 568332288\ntotal_inactive_file 508784640\ntotal_active_file 421179392\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 4160049152
+  }
+}
