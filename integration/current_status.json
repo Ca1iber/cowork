@@ -1,5 +1,4 @@
 {
-  "updated_at_utc": "2026-10-02T03:37:31.412841+00:00",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "oj_reference_version": "v084",
   "oj_scores": [
@@ -19,6 +18,9 @@
     88
   ],
   "oj_total": 1204,
+  "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
+  "peer_exchange_actual": "Both workers directly discussed inverse mapping, global vector width, shared-V synchronization and failed-run semantics; own-branch records only",
+  "updated_at_utc": "2026-10-02T05:48:52.367228+00:00",
   "worker1": {
     "cases": [
       6,
@@ -26,36 +28,18 @@
       11,
       12
     ],
-    "stage": "v102 once-only immutable-candidate runtime diagnostic approved; launcher preparation",
-    "active_version": "v102_worker1_native_process_isolation_sc-16g-2",
-    "communication_head": "99cc194de015e0d8156c484a34236c9255533637",
-    "resources_parent_to_candidate": {
-      "MT": [
-        80,
-        98
-      ],
-      "ST": [
-        22,
-        32
-      ],
-      "static_max_warps": [
-        6,
-        4
-      ],
-      "dynamic_shared_bytes": [
-        2048,
-        2048
-      ],
-      "stack_bytes": [
-        0,
-        0
-      ]
-    },
-    "resource_interpretation": "Increased register resource pressure accompanies slowdown; static warp limit is not measured occupancy or sole cause.",
-    "last_closed_source_commit": "29a45229cdcf9b1b3535402b68dd5cbfd782ec38",
-    "last_closed_status": "v101 failed_runtime_OOM_screen_inconclusive; original137 retained",
-    "raw_vs_parent_pct": -4.55959,
-    "not_completed_optimization_verdict": true
+    "active_version": "v104_worker1_s8_global_softmax_sc-16g-2",
+    "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "last_closed_source_commit": "805ca04d159974d096d17733cad92b8ae742fa33",
+    "stage": "same-source fixed full14 formal running; not all14 verdict",
+    "master_pid": 300011,
+    "last_reported_completed_jobs": 2,
+    "last_reported_candidate_refs": 0,
+    "last_reported_inclusive_refs": 2,
+    "oom_kill": 11,
+    "selected_screen_candidate_us": 68.941,
+    "selected_screen_parent_us": 72.2685,
+    "selected_screen_delta_pct": -4.604357
   },
   "worker2": {
     "cases": [
@@ -70,16 +54,13 @@
       13,
       14
     ],
-    "stage": "native56 complete; profiler12 records but2 unavailable/1 scopefail, analysis1/post1 preserved; standalone resources approved, trace skipped",
-    "communication_head": "a952d6fe589a7de2aae1e10572c25a93e5e22b08",
-    "baseline_plan": "After native gate, fixed all14 B28-P84-P84-B28, 56 fullrefs, no candidate kernel; fixed profiler12 samples cases5/8/9 two sources",
-    "active_version": "v200_worker2_baseline_profile_subagent2",
-    "completed_v200_refs_observed": 56,
-    "planned_v200_refs": 56,
-    "new_candidate_refs": 0,
-    "oom_kill": 1
+    "active_version": "v203 diagnostic",
+    "last_closed_source_commit": "c993479f0dedb9a878915fb1d26087b3d0411110",
+    "communication_head": "f120141f9ebdf9b335e4f400d96fa42ef18b57ca",
+    "stage": "once-only import memory diagnostic approved; execution checkpoint pending",
+    "oom_kill": 3,
+    "prior_v202": "run10 -9 and OOM1->3; 3C/9inclusive refs; incomplete screen retained"
   },
-  "leader_next": "Review v102 actual terminal/runtime and latency separately; close v200 partial evidence then review C5-specific new hypothesis",
-  "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
-  "peer_exchange_actual": "Both workers directly discussed inverse mapping, global vector width, shared-V synchronization and failed-run semantics; own-branch records only"
+  "leader_next": "Monitor actual gates; review formal non-target risks and once-only memory diagnostic; no main promotion",
+  "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration"
 }

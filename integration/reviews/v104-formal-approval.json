@@ -1,0 +1,43 @@
+{
+  "reviewed_at_utc": "2026-10-02T05:48:52.367228+00:00",
+  "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+  "decision": "GO same-source fixed all14 native formal; no promotion",
+  "selected_screen": {
+    "jobs": 12,
+    "all_native_exit0": true,
+    "candidate_full_references": 4,
+    "inclusive_full_references": 12,
+    "oom_before": 11,
+    "oom_after": 11,
+    "candidate_median_us": 68.941,
+    "parent84_median_us": 72.2685,
+    "original28_median_us": 83.1795,
+    "candidate_vs_parent_pct": -4.604357,
+    "all_candidate_below_all_parent": true
+  },
+  "formal": {
+    "master_pid": 300011,
+    "pgid": 300011,
+    "leader_readonly_observation": {
+      "alive": true,
+      "state": "S",
+      "starttime_ticks": 94324836,
+      "oom_kill": 11
+    },
+    "worker_checkpoint": {
+      "completed_jobs": 2,
+      "inclusive_full_references": 2,
+      "candidate_full_references": 0,
+      "current_job": 3,
+      "current_case": 1,
+      "current_child_pid": 300568
+    },
+    "planned_jobs": 168,
+    "planned_candidate_full_references": 56,
+    "order_each_case": "B28-P84-C104-C104-P84-B28 x2",
+    "native": "original runner, seed/tolerance/reference/W10R50 unchanged, fresh process per job, no metadata post-export",
+    "once_only": true,
+    "abnormal_exit_policy": "stop and retain prefix; no retry to replace failed or adverse evidence"
+  },
+  "followup": "Preserve every positive delta vs either control and all outliers; separately preregistered once-only risk confirmation after formal. Standalone metadata actual14 source/code validation and paired C12 mcProfiler count2 each afterward, serial; waves4096, output8MiB plus predeclared0..512B residual. Missing/failing evidence stays unavailable or failed. No main/OJ promotion yet."
+}
