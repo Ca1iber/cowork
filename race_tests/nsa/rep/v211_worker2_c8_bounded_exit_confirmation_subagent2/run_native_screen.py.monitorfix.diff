@@ -1,0 +1,70 @@
+--- closedv210/run_native_screen.py
++++ v211/run_native_screen.py
+@@ -8,8 +8,8 @@
+ sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+ runner=Path(nplan['runner']);assert sha(runner)==nplan['runnerSHA']
+ for p,s in sources.values():assert sha(p)==s
+-assert json.loads((r/'metadata_semantic_gate.json').read_text())['semantic_gate']==0
+-assert (r/'metadata_observation/diagnostic.exit').read_text().strip()=='0' and (r/'backend_observation/diagnostic.exit').read_text().strip()=='0'
++assert json.loads((root/'race_tests/nsa/rep/v210_worker2_c8_serial_query_pair_subagent2/metadata_semantic_gate.json').read_text())['semantic_gate']==0
++assert (root/'race_tests/nsa/rep/v210_worker2_c8_serial_query_pair_subagent2/metadata_observation/diagnostic.exit').read_text().strip()=='0' and (root/'race_tests/nsa/rep/v210_worker2_c8_serial_query_pair_subagent2/backend_observation/diagnostic.exit').read_text().strip()=='0'
+ expected_shared=json.loads((root/'race_tests/nsa/rep/v203_worker2_whole_cgroup_import_subagent2/shared_inputs_final.json').read_text())
+ assert all(sha(root/p)==q for p,q in expected_shared.items())
+ with (r/'native_screen_once.guard').open('x') as f:f.write(datetime.datetime.now(datetime.timezone.utc).isoformat()+'\n')
+@@ -56,13 +56,27 @@
+    post_current={q['pid']:q for q in post['visible_pids']}
+    if proc.poll() is not None or not U.identity_equal(d,post_current.get(proc.pid)):raise RuntimeError('PRE_RELEASE_OWNED_IDENTITY_OR_EXIT')
+    proc.stdin.write(b'GO\n');proc.stdin.flush();proc.stdin.close();job['released_native']=True
+-   deadline=time.monotonic()+nplan['max_job_seconds'];samples=0
++   deadline=time.monotonic()+nplan['max_job_seconds'];samples=0;pending_start=None;pending_deadline=None;missing_elapsed=0.0
+    with stem.with_suffix('.samples.jsonl').open('w') as stream:
+     while proc.poll() is None:
+      snap=U.snapshot('native_observation');current={q['pid']:q for q in snap['visible_pids']}
+-     critical_reason=None
+-     if proc.poll() is None and not U.identity_equal(owned[proc.pid],current.get(proc.pid)):
+-      critical_reason='OWNED_MAIN_CRITICAL_IDENTITY_MISSING_OR_MISMATCH'
++     critical_reason=None;confirmation_mode=False
++     actual_poll=proc.poll()
++     state='terminal' if actual_poll is not None else U.identity_state(owned[proc.pid],current.get(proc.pid))
++     now=time.monotonic()
++     if state=='mismatch':critical_reason='OWNED_MAIN_EXPLICIT_CRITICAL_TUPLE_CHANGE'
++     elif state=='missing':
++      if pending_start is None:
++       pending_start=now;pending_deadline=now+max(0.0,1.0-missing_elapsed)
++       job.setdefault('critical_confirmation_events',[]).append({'event':'started','monotonic':now,'deadline':pending_deadline,'metadata':current.get(proc.pid)})
++      confirmation_mode=True
++      if now>=pending_deadline:critical_reason='CRITICAL_MISSING_CONFIRMATION_1S_EXPIRED'
++     elif pending_start is not None:
++      missing_elapsed+=now-pending_start
++      job.setdefault('critical_confirmation_events',[]).append({'event':'terminal_confirmed' if state=='terminal' else 'original_tuple_restored','elapsed':now-pending_start,'total_missing_elapsed':missing_elapsed,'actualPopenpoll':actual_poll})
++      if missing_elapsed>1.0:critical_reason='CRITICAL_CONFIRMATION_TOTAL_BUDGET_EXCEEDED'
++      pending_start=None;pending_deadline=None
++     snap['originalPopen_poll']=actual_poll;snap['critical_identity_state']=state;snap['critical_confirmation_mode']=confirmation_mode
+      changed=True
+      while changed:
+       changed=False
+@@ -83,7 +97,14 @@
+      elif any(x.strip()=='Killed' for x in logpath.read_text().splitlines()):reason='INNER_KILLED'
+      elif time.monotonic()>=deadline:reason='JOB600S_TIMEOUT'
+      if reason:break
+-     time.sleep(nplan['period_seconds'])
++     if actual_poll is not None:break
++     delay=min(0.05,max(0.0,pending_deadline-time.monotonic())) if confirmation_mode else nplan['period_seconds']
++     time.sleep(delay)
++   if pending_start is not None:
++    elapsed=time.monotonic()-pending_start;missing_elapsed+=elapsed
++    job.setdefault('critical_confirmation_events',[]).append({'event':'after_loop_original_terminal' if proc.poll() is not None else 'after_loop_unresolved','elapsed':elapsed,'total_missing_elapsed':missing_elapsed,'actualPopenpoll':proc.poll()})
++    if missing_elapsed>1.0 and reason is None:reason='CRITICAL_CONFIRMATION_TOTAL_BUDGET_EXCEEDED'
++   job['critical_missing_total_seconds']=missing_elapsed
+    job['samples']=samples
+    if reason:raise RuntimeError(reason)
+    code=proc.wait();log.close();job['exit']=code
+@@ -97,7 +118,7 @@
+   job['owned_termination_actions']=actions
+   final=U.snapshot('after_native_exit');stem.with_suffix('.post_exit.json').write_text(json.dumps(final)+'\n');job['oom_after']=final['oom_kill']
+   terminal_current={q['pid']:q for q in final['visible_pids']}
+-  descendants=[q for pid,q in terminal_current.items() if pid in owned and (proc is None or pid!=proc.pid) and q['state']!='Z']
++  descendants=[q for pid,q in terminal_current.items() if pid in owned and (proc is None or pid!=proc.pid) and q.get('state')!='Z']
+   job['terminal_observed_owned_descendants']=[{'pid':q['pid'],'starttime_ticks':q['starttime_ticks'],'exe':q['exe'],'current_tuple_verified':U.identity_equal(owned[q['pid']],q)} for q in descendants]
+   terminal_reason=None
+   if final['oom_kill']!=expected_OOM:terminal_reason='TERMINAL_EXPECTED_OOM_MISMATCH'
