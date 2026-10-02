@@ -21,7 +21,7 @@
   "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
   "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration",
   "schema": 2,
-  "updated_at_utc": "2026-10-02T14:59:42.114109+00:00",
+  "updated_at_utc": "2026-10-02T15:13:40.123939+00:00",
   "canonical_main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "historical_snapshot": "integration/reviews/leader-status-before-v114-screen.json",
   "worker1": {
@@ -32,8 +32,8 @@
       12
     ],
     "active_version": "v117_worker1_reused_C6_C10_parent_resource_profile_sc-16g-2",
-    "stage": "only4 firstresource/MCCLI approved and unique originalPopen477171 launched;32frozen deps, old116 gate1 retained",
-    "source_commit": "4dd526b98849eebace4149faa4d5a442b7263068",
+    "stage": "117 C6firstresource100MT/22ST/max4/dyn8K/stack0;MC SDK0/2numeric butAchieved8114/8116 gate1; C10notstarted; close117/newC6 source-onlyproofrequested",
+    "source_commit": "9857129dd38acfd43bd42dbe9fabfd0306375dfc",
     "candidate_version": "v113",
     "candidate_sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
     "new_refs": 0,
@@ -44,12 +44,12 @@
     ],
     "runtime_stop_GiB": 28,
     "old_v113_zero_native_refusal_preserved": true,
-    "active_PID": 477171,
+    "active_PID": null,
     "communication_head": "7839a3eb09d5ecef8027f660c9267c399df5b009",
     "current_observed_clean_refs": 168,
     "current_observed_candidate_refs": 56,
     "launch_plan_GO_sha256": "fbd963330f3025a2335cb82c731264bed35e089759eed2cdf9315e3b3fbe6cfc",
-    "native_GO": "profile/resource only,not benchmark",
+    "native_GO": false,
     "new_candidate_median_us": 18.025,
     "comparison_v104_median_us": 19.377,
     "C11_delta_vs104_pct": -6.977344274139444,
@@ -88,9 +88,18 @@
     ],
     "new_metadata_pairs_reported": 4,
     "new_resource_commands_reported": 0,
-    "new_MC_CLI_reported": 0,
-    "new_counter_records_reported": 0,
-    "active_PID_scope": "launcher originalPopen;worker SSH5841 held until realwait"
+    "new_MC_CLI_reported": 1,
+    "new_counter_records_reported": 2,
+    "active_PID_scope": "launcher originalPopen;worker SSH5841 held until realwait",
+    "C6_resource_actual": {
+      "MT": 100,
+      "ST": 22,
+      "static_max_warps": 4,
+      "dynamic_shared_bytes": 8192,
+      "stack_bytes": 0
+    },
+    "C6_profile_raw_gate": "1;Achieved8114/8116 vs8192, all raw retained, not cleanexclusive",
+    "valid_scope_counter_records": 0
   },
   "worker2": {
     "cases": [
@@ -163,7 +172,7 @@
   },
   "all14_nonregression": "UNPROVEN;6positive case medians and9positive round cases preserved",
   "OJ_new_versions": "UNAVAILABLE",
-  "leader_next": "Review exact C6/C10 diagnostics and independent C8 observation repair; retain C11/C12 gains and all non-target positive evidence; promote only after full scope requirement satisfied.",
+  "leader_next": "Review C6 output-half lifetime proof and C8 DirectK proposal; worker2 CycleTrace ownedtarget capability plan pending; retain C11/C12 and non-target positive evidence.",
   "best_known_packaging": {
     "path": "/root/tilelang-metax/race_tests/nsa/submission/leader_best_known_v113/submission.py",
     "source_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
