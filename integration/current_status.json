@@ -20,7 +20,7 @@
   "oj_total": 1204,
   "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
   "peer_exchange_actual": "Both workers directly discussed inverse mapping, global vector width, shared-V synchronization and failed-run semantics; own-branch records only",
-  "updated_at_utc": "2026-10-02T09:58:01.625704+00:00",
+  "updated_at_utc": "2026-10-02T10:01:25.703978+00:00",
   "worker1": {
     "cases": [
       6,
@@ -29,7 +29,7 @@
       12
     ],
     "active_version": "v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2",
-    "stage": "actualcontroller/plan/peer reviewed; oncefixed8riskprotocol approved; launchpending",
+    "stage": "v109 actualmaster388657/native388664 verifiedlive;fixedrisk batch running",
     "last_closed_source_commit": "bdadf18ed069e06e2c30468d002cc0d5e97d2793",
     "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
     "completed_native_processes": 12,
@@ -58,7 +58,13 @@
     "OJ": "UNAVAILABLE",
     "new_native_metadata_profile_GO": "v109 fixednativeonly",
     "main_submission_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
-    "communication_head": "b273529f552cd51575598b9a188d73e81b4ed167"
+    "communication_head": "b273529f552cd51575598b9a188d73e81b4ed167",
+    "master_pid": 388657,
+    "master_starttime_ticks": 95845437,
+    "active_native_pid": 388664,
+    "active_native_starttime_ticks": 95845493,
+    "freeze_plan_sha256": "450c909752afdb190e0f2cd64398a007b326cbc2affc4622b840b5d07b20de8d",
+    "freeze_manifest_sha256": "b5deeb1bc4cfa95698bd3e34d4e74fe683d6ba7a153b53c275da170bf2a8670b"
   },
   "worker2": {
     "cases": [
@@ -74,7 +80,7 @@
       14
     ],
     "active_version": "v208_worker2_c9_q_register_transpose_subagent2",
-    "stage": "actual proposal/peer/coordinate proof reviewed; source-only implementation approved",
+    "stage": "actualsource and bounded plan reviewed;metadataonce approved;launchpending",
     "last_closed_source_commit": "e61d29b899f32d3ea86681c984076568ff70dcf7",
     "parent_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
     "actual_cli_returncode": 0,
@@ -88,8 +94,9 @@
     ],
     "oom_kill": 3,
     "profile_scope_verdict": "limited necessary numeric/waves/payload scope passes; exclusive runtime grid unavailable",
-    "new_heavy_GO": false,
-    "communication_head": "42efe0320ef538b6a441da5bddb64ea932335a33"
+    "new_heavy_GO": "v208 metadataonly",
+    "communication_head": "497965586bda7e46ca6ac4dc02030fe418f6e278",
+    "candidate_sha256": "46696428569b1cb16eb4aac52d07cefcdc28edc0c223a400937a880ad9a6a264"
   },
   "leader_next": "Audit v108 closure, review fixed risk proposal and worker2 own C9 new mechanism; keep nonregression and all failed-gate evidence intact.",
   "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration"
