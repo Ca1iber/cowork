@@ -1,9 +1,9 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T03:34:00.307555+00:00",
+  "utc": "2026-10-02T03:57:35.025181+00:00",
   "machine": "sc-16g-2",
   "source_branch": "codex-power-v28-base",
-  "source_commit": "29a45229cdcf9b1b3535402b68dd5cbfd782ec38",
+  "source_commit": "694b2e0650d4f203b41c946effe9f7d56350795d",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
@@ -11,14 +11,14 @@
     11,
     12
   ],
-  "last_closed_version": "v101_worker1_s2_fixed_selection_sc-16g-2",
-  "last_closed_status": "failed_runtime_OOM_screen_inconclusive",
+  "last_closed_version": "v102_worker1_native_process_isolation_sc-16g-2",
+  "last_closed_status": "diagnostic_runtime_completed_source_v101_latency_rejected",
   "candidate_source_sha256": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2",
   "parent_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
-  "phase": "v102 diagnostic plan ready; peerreview incorporated; awaiting leaderGO",
-  "active_job_pid": null,
-  "all_owned_jobs_terminal": true,
+  "phase": "fresh parent84 case6 evidence only; no new kernel",
+  "active_job_pid": 262527,
+  "all_owned_jobs_terminal": false,
   "case_and_screen_exit": 137,
   "OOM_start": 10,
   "OOM_final": 11,
@@ -80,16 +80,33 @@
   "peer_lessons": "workers/worker1/lessons/v100-v101.md",
   "peer_review_received": true,
   "ownership": "no edits to worker2 source or plan; advice only",
-  "next": "leaderreview fixed single-source nativeprocess isolation protocol,no kernel edits",
+  "next": "C6 currentprofile/resources/operand lifetimes,peerreview thenleaderreview beforeedit",
   "transport": "leader relay, no credentials copied",
-  "active_version": "v102_worker1_native_process_isolation_sc-16g-2",
+  "active_version": "v103_worker1_s1_d128_operand_lifetimes_sc-16g-2",
   "active_target": [
-    10
+    6
   ],
-  "native_started": false,
   "v102_planned_reference_calls": {
     "candidate_source_v101": 4,
     "all_sources": 12
   },
-  "v102_OOM_baseline": 11
+  "v102_OOM_baseline": 11,
+  "active_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "active_candidate_edited": false,
+  "v102_result": {
+    "actual_candidate_source_v101_refs": 4,
+    "actual_all_refs": 12,
+    "all12_native_terminal_zero": true,
+    "OOM_before": 11,
+    "OOM_after": 11,
+    "median_candidate_us": 12.2215,
+    "median_parent_us": 11.205,
+    "vs_parent_pct": 9.071842927264614,
+    "rounds_vs_parent_pct": [
+      9.62070504239179,
+      6.763675559148478
+    ],
+    "latency_rejected": true,
+    "rootcause_unproven": true
+  }
 }
