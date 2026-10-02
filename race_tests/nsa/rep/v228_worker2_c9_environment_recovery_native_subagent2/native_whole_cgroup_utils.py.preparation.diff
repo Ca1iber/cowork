@@ -1,0 +1,10 @@
+--- 
++++ 
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import os,sys,json,time,datetime,subprocess,fcntl,signal,re,hashlib
+-root=Path('/root/tilelang-metax');v='v227_worker2_c9_bounded_kv_index_subagent2';r=root/'race_tests/nsa/rep'/v;h=root/'race_tests/nsa/hack'/v
++root=Path('/root/tilelang-metax');v='v228_worker2_c9_environment_recovery_native_subagent2';r=root/'race_tests/nsa/rep'/v;h=root/'race_tests/nsa/hack'/v
+ plan=json.loads((r/'native_runtime_plan.json').read_text());cgroot=Path('/sys/fs/cgroup/memory')
+ def info(pid):
+  p=Path('/proc')/str(pid)
