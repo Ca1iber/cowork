@@ -1,0 +1,11 @@
+--- 
++++ 
+@@ -12,7 +12,7 @@
+   q=dst/f'{i}_native_sparse_attention_kernel_dumped_result.json';d=json.loads(q.read_text());vals={};errors=[]
+   for name,group in groups.items():
+    a=[z for z in d[group] if z['name']==name];assert len(a)==1;z=a[0];val=z['data'];vals[name]=val
+-   if isinstance(val,bool) or not isinstance(val,(int,float)) or not math.isfinite(val) or z.get('isError'):errors.append(z)
++   if isinstance(val,bool) or not isinstance(val,(int,float)) or not math.isfinite(val) or z.get('isError') is not False:errors.append(z)
+   residual=vals['Global Memory Write bytes']-16777216 if not errors else None;passed=not errors and 0<=residual<=512;ok=ok and passed
+   records.append({'record':i,'rawSHA':sha(q),'metrics':vals,'errors':errors,'residual':residual,'finite_noerror_payload_pass':passed,'AchDisp_no_equalitygate':True})
+  cli=int((r/(stage+'_CLI_actualwait.exit')).read_text());ok=ok and cli==0 and not any(x.strip()=='Killed' for x in text.splitlines());gate={'stage':stage,'CLIwait':cli,'records':records,'gate':0 if ok else 1};(r/(stage+'_primary_raw_gate.json')).write_text(json.dumps(gate,indent=2)+'\n');return gate
