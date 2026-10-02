@@ -1,0 +1,67 @@
+{
+  "version": "v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2",
+  "UTC": "2026-10-02T15:26:28.532435+00:00",
+  "phase": "principle_symbolproof_only_no_source_compile_run_GO",
+  "target_case": 6,
+  "official_key": [
+    8,
+    1024,
+    1,
+    16,
+    128,
+    1,
+    32,
+    true
+  ],
+  "source_parent": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+    "SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+  },
+  "scope": "dedicatedC6factory+exacttuple only, fullCB13prefix/allother13 inclC11/C12 kept; no sharedfactory edit",
+  "actual_current_C6": {
+    "device_SHA": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d",
+    "Num_F32": 32,
+    "Voperand_half": 16,
+    "Voperand_already_D64slice_not_full_D128": true,
+    "Num_init_afterVstage_not_beforeQK": true,
+    "MT": 100,
+    "ST": 22,
+    "staticmax": 4,
+    "dynamicshared": 8192,
+    "stack": 0,
+    "measuredoccupancy": "UNKNOWN"
+  },
+  "mechanism": "plane-first D64x2; Num16F32 reusesaftercomplete divide/cast/shared output forplane0; Voperand4half loadonechunk immediatelyMFMA, shortensVlocalstorage vs currentcached16",
+  "falsifiable_prediction": "Actualcompiled Num16/V4 andMT<90/staticmax>=5/stack0/dyn8192 andsamepacked16B; fixedoriginalnative mustbeatparent. Sourceallocs/numericalregistercounts alone notphysicalproof orspeedclaim",
+  "old_counter_scope": "117MC2allnumeric butstrictAchievedWavegatefailed; rawnotcleanexclusivebottleneck evidence, no counterreplay",
+  "prior_own_Num16_attempt": "103Num16withV16 preserved +2.691786% rejected; thisnewV4stream mechanism maystilllose. Do notrepeatunchangedimplementation orclaimregistercutguaranteesgain",
+  "math": [
+    "QK8scores/P8actualF16/FP32den/max/causal/index/masks unchanged",
+    "everyfeaturePV still keytile0then1 andnormal16x16x16f16 MFMA; F32zero/accum/divide andF16cast same",
+    "currentvalidpredicate remainsuniform; all-invalidNum0/den0 yieldsoriginalNaN, notforcedzero",
+    "Numprivateclear onlyafter currentplane fulldivide/cast/stores, no stalevalues"
+  ],
+  "shared_lifetimes": [
+    "sameVglobalproducer16B/all4096half stage thenpostsync; noextra shared",
+    "actualV0[0,2048),V1[2048,4096)half; readallV0forbothkeytiles beforefull64sync andlowerOutput[0,1024) overwritesV0",
+    "futureV1vectors do notintersectlower/upper Output[0,2048), vectorends verified",
+    "upperOutput[1024,2048) afterV1PV; finalfull64sync beforeoriginalpacked16Bglobalgather",
+    "alloriginalQ/K/Vproducerand sync protected; do not usewrongrow128linear layout"
+  ],
+  "risks": [
+    "Vstream4 canreduce memorylevelparallelism/prefetch and increase load-to-MMA dependency; cachedV16 mayhavebetterlatencyhiding",
+    "plane-first exposes4insteadof8independentPVaccumulators, oldNum16latencylosscounterexample retained",
+    "compiler mayhoistloads and materializeV16 SSA despitealloc4; needactualCPP/resource/lifetime evidence",
+    "ST/code-size/extraindex costs ornewbarriers canoffsetMTcut; no barriercountreductionassumption",
+    "no newcandidatecode/compile/native; metadata/nativeresource plan awaitsseparateGO"
+  ],
+  "symbolproof_path": "/root/tilelang-metax/race_tests/nsa/rep/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/actual_layout_vector_alias_proof.json",
+  "source_and_benchmark_and_inputs_cache_unchanged_now": true,
+  "native_and_metadata_not_authorized": true,
+  "no_mainpromotion_orOJclaim": true,
+  "peer_adopted_remaining_actual_checks": [
+    "allactualV0reads/MMA/divide/cast/store completebeforeNumclear",
+    "actualV1only readvectorregion disjoint andfinalsync/gather proof",
+    "actualphysicalV4/Num16/resource/ILP notsourcepromise"
+  ]
+}

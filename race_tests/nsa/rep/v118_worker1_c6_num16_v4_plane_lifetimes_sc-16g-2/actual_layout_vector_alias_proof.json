@@ -1,0 +1,40 @@
+{
+  "actual_parent_source_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+  "actual_layout_AST": [
+    "def qk_slot(row, col, rows):\n    return col // 64 * rows * 64 + row * 64 + (col % 64 // 8 ^ row % 8) * 8 + (col // 4 % 2 ^ row // 8 % 2 ^ col // 64) * 4 + col % 4",
+    "def v_slot(row, col):\n    return (col // 64 * 64 + col % 64 // 8 + 8 * (col % 8)) * 32 + (row // 4 % 2 * 4 + row // 8 ^ col % 8 ^ col % 64 // 16) * 4 + row % 4",
+    "def out_slot(row, col):\n    return qk_slot(row, col, 16)"
+  ],
+  "scope": "C6 official B8/L1024/H1/HQ16/D128/S1/BS32 only, no candidate code or GPU",
+  "V_plane_half_regions": [
+    [
+      0,
+      2048
+    ],
+    [
+      2048,
+      4096
+    ]
+  ],
+  "Output_D64_half_regions": [
+    [
+      0,
+      1024
+    ],
+    [
+      1024,
+      2048
+    ]
+  ],
+  "earlylower_and_upper_output_both_inside_V0_disjoint_futureV1": true,
+  "V4half_vectors_checked": 1024,
+  "all_vector_elements_notjustfirst_address_bounded": true,
+  "V_read_points_2048_perplane_covered_exactlyonce": true,
+  "Output_store_points_1024_perplane_disjoint_union2048": true,
+  "final_global_producer_4passes8half16B_preserved": "same originalpart512+lane8 coordinate/gather, all2048 outputs",
+  "Num16clear_after_plane_divide_cast_store_then_reuse": true,
+  "PV_perfeature_key_order": "0then1 unchanged; plane/chunk operations for otherfeatures independent",
+  "sync": "allV0reads bothkeytiles ->full64 sync ->lower output overwrite V0; V1read vectors completely in[2048,4096) disjoint; final64sync afterupperOwrites beforeglobalgather. EarlierQ/K/V producers and theirsync unchanged.",
+  "source_guard": "uniform currentvalidpredicate andemptyall0/den0 NaN retained; QK/P8/roundedPden not moved",
+  "no_extra_shared_or_resultcache_or_inputchange": true
+}

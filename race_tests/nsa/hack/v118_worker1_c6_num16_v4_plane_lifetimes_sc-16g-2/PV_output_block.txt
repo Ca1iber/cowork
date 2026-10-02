@@ -1,0 +1,23 @@
+            for plane in T.unroll(2):
+                T.fill(numerator, 0)
+                if block_start >= 0 and block_start <= token:
+                    for key_tile in T.unroll(2):
+                        for chunk in T.unroll(4):
+                            for element in T.vectorized(4):
+                                v_operand[element] = shared[v_slot(
+                                    key_tile * 16 + (lane // 16) * 4,
+                                    plane * 64 + chunk * 16 + lane % 16) + element]
+                            T.tvm_mfma('16x16x16f16', 'row', 'row',
+                                'float16x4', 'float16x4', 'float32x4',
+                                v_operand.data, 0, probabilities.data, key_tile,
+                                numerator.data, chunk, dtype='float32x4')
+                for chunk in T.unroll(4):
+                    for element in T.vectorized(4):
+                        numerator[chunk * 4 + element] /= denominator[0]
+                if plane == 0:
+                    T.sync_warp()
+                for chunk in T.unroll(4):
+                    feature_base = plane * 64 + chunk * 16 + (lane // 16) * 4
+                    for element in T.vectorized(4):
+                        shared[out_slot(lane % 16, feature_base) + element] = numerator[chunk * 4 + element]
+            T.sync_warp()

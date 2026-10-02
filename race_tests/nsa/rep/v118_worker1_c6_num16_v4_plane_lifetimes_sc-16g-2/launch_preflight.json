@@ -1,0 +1,197 @@
+{
+  "phase": "leader_GO_v118_frozen_once",
+  "supervisor_argv": [
+    "/opt/conda/bin/python",
+    "-S",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/supervise_controller.py",
+    "/root/tilelang-metax/race_tests/nsa/rep/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2"
+  ],
+  "launcher_argv": [
+    "/opt/conda/bin/python",
+    "-S",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/launch_evidence.py",
+    "/root/tilelang-metax/race_tests/nsa/rep/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2"
+  ],
+  "manifest_SHA": "8ff8fbda667147a659a4418ec1a416fd127567b5aebb4dc33887c46452c3fe07",
+  "plan_SHA": "ee1565f49d122f0364d63a67c05eeda6a6464e569a0fc49a6e21cc53f4983346",
+  "actual_interface_keys": {
+    "launch_evidence.py": {
+      "manifest": [
+        "parent_C6_device",
+        "parent_C6_resource",
+        "shared_identity_document",
+        "sources",
+        "tools"
+      ],
+      "plan": [
+        "phase"
+      ]
+    },
+    "supervise_controller.py": {
+      "manifest": [
+        "shared_identity_document",
+        "sources",
+        "tools"
+      ],
+      "plan": [
+        "phase"
+      ]
+    },
+    "run_evidence_stage.py": {
+      "manifest": [
+        "cooperative_heavy_lock",
+        "recognized_unowned_baseline",
+        "sources",
+        "tools"
+      ],
+      "plan": [
+        "guard_stage_jobs",
+        "memory_engineering_budget",
+        "phase"
+      ]
+    },
+    "export_metadata_pair.py": {
+      "manifest": [
+        "sources"
+      ],
+      "plan": [
+        "phase"
+      ]
+    },
+    "audit_source_device.py": {
+      "manifest": [
+        "parent_C6_device",
+        "parent_C6_resource",
+        "sources",
+        "tools"
+      ],
+      "plan": []
+    },
+    "capture_candidate_SDK.py": {
+      "manifest": [
+        "tools"
+      ],
+      "plan": []
+    },
+    "gate_compiled.py": {
+      "manifest": [],
+      "plan": []
+    }
+  },
+  "17dependencies_existsSHA_syntaxonly": [
+    "parent113",
+    "candidate118",
+    "python",
+    "compiler",
+    "validator",
+    "metadata_export",
+    "codegen_audit",
+    "SDK_capture",
+    "compiled_gate",
+    "evidence_stage",
+    "native_gate",
+    "process_monitor",
+    "supervisor",
+    "launcher",
+    "shared_doc",
+    "parentCPP",
+    "parentresource"
+  ],
+  "candidate290_frozen_no_actualcompile": true,
+  "phase_only_change": {
+    "before_SHA": "dff95379a24a16ac93a75daf5898650a3b0b409f19e52ff0b7930e9902a15d31",
+    "after_SHA": "ee1565f49d122f0364d63a67c05eeda6a6464e569a0fc49a6e21cc53f4983346",
+    "keys": [
+      "phase"
+    ]
+  },
+  "17dependencies_verified": [
+    {
+      "label": "parent113",
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+      "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+    },
+    {
+      "label": "candidate118",
+      "path": "/root/tilelang-metax/race_tests/nsa/experiments/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/candidate.py",
+      "sha256": "290ac7d13d219d161d14833fcfa777df6ae809982708bb6a95f1a4172a3acf2e"
+    },
+    {
+      "label": "python",
+      "path": "/opt/conda/bin/python",
+      "sha256": "0e4dbf3236310955eaeee14323756b54961e1d0dc12c680c441f50839a67eee0"
+    },
+    {
+      "label": "compiler",
+      "path": "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "sha256": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25"
+    },
+    {
+      "label": "validator",
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/validate_oj_submission.py",
+      "sha256": "04eaef24dd21833f571d59d5e30c89190650f9e9eaa77094bcf87cecf062a6bf"
+    },
+    {
+      "label": "metadata_export",
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/export_metadata_pair.py",
+      "sha256": "596ff1ca5290ab3df52a18b035fc0a4a3e51087fd436e6d223a79b637b51ea2a"
+    },
+    {
+      "label": "codegen_audit",
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/audit_source_device.py",
+      "sha256": "a83f7051ef2a03aaf3756f6f8b4dcb0dd216730091fadeb0f53b0feac59e2ce0"
+    },
+    {
+      "label": "SDK_capture",
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/capture_candidate_SDK.py",
+      "sha256": "b301c7676dd17eb475e29a5e99afc4de0317b791cf03da15b36b5f87fd8e81cd"
+    },
+    {
+      "label": "compiled_gate",
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/gate_compiled.py",
+      "sha256": "1cc9b9d385a37d50d07296f8b089778eea530ad96907ea1a39a74c69430c0081"
+    },
+    {
+      "label": "evidence_stage",
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/run_evidence_stage.py",
+      "sha256": "1850ca525316ef54a1633fb7ad37a6e72f1b6ed6cb967fa97aea66ebcf296a25"
+    },
+    {
+      "label": "native_gate",
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/owned_native_gate.py",
+      "sha256": "906d210a50da3773973a3ca34b8f770d83cf9cecce26581d499e6db695c36f31"
+    },
+    {
+      "label": "process_monitor",
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/process_monitor.py",
+      "sha256": "95253d2f451c24688e64c4413fff96c03cc1131180fc800a5c8a120f885117d3"
+    },
+    {
+      "label": "supervisor",
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/supervise_controller.py",
+      "sha256": "1d0bee54eb2b8616c1db5c57820bb35afd1631b6385eee13b6338451b9fb110b"
+    },
+    {
+      "label": "launcher",
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/launch_evidence.py",
+      "sha256": "1d99f8d23fa017caa6dc9afad83d80296ae0ccefd01aadcdd67fa39739bd22c0"
+    },
+    {
+      "label": "shared_doc",
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/shared_inputs_identity.json",
+      "sha256": "69ea3fdea7f639083ecdd65a62365a55c11e27088a99b9a590e498d2e87c312e"
+    },
+    {
+      "label": "parentCPP",
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/parent_v084/case6.device.cpp",
+      "sha256": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d"
+    },
+    {
+      "label": "parentresource",
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v117_worker1_reused_C6_C10_parent_resource_profile_sc-16g-2/resources/case6_parent_v084.json",
+      "sha256": "d97e726a729c06668f149ae62e5d0bb55fdbf9c069c111c900317cb72a45ddf1"
+    }
+  ]
+}

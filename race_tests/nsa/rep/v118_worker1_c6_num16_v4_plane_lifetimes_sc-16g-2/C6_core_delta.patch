@@ -1,0 +1,72 @@
+--- actualparentC6core
++++ dedicated118C6Num16V4core
+@@ -4,7 +4,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_v_hybrid_pack(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_c6_num16_v4(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
+     assert seq_len % block_size == 0
+@@ -42,14 +42,9 @@
+             denominator = T.alloc_local(1, accum_dtype)
+             v_fetch = T.alloc_local(16, dtype)
+             v_column = T.alloc_local(2, dtype)
+-            v_operand = T.alloc_local(16, dtype)
++            v_operand = T.alloc_local(4, dtype)
+             output_fetch = T.alloc_local(8, dtype)
+-            numerator = T.alloc_fragment([groups, dim], accum_dtype)
+-            T.annotate_layout({
+-                numerator: T.Fragment([groups, dim],
+-                    forward_thread_fn=lambda head, col: head + 16 * ((col % 16) // 4),
+-                    forward_index_fn=lambda head, col: col % 4 + 4 * (col // 16)),
+-            })
++            numerator = T.alloc_local(16, accum_dtype)
+             block_start = Indices[batch_id, token, kv_head, 0] * block_size
+             denominator[0] = 0
+             if block_start >= 0 and block_start <= token:
+@@ -115,28 +110,28 @@
+                             for row in T.vectorized(2):
+                                 shared[v_slot(fetch_row + row, fetch_col + col)] = v_column[row]
+                 T.sync_warp()
++            for plane in T.unroll(2):
+                 T.fill(numerator, 0)
+-                for key_tile in T.unroll(2):
+-                    for plane in T.unroll(2):
++                if block_start >= 0 and block_start <= token:
++                    for key_tile in T.unroll(2):
+                         for chunk in T.unroll(4):
+                             for element in T.vectorized(4):
+-                                v_operand[chunk * 4 + element] = shared[v_slot(
++                                v_operand[element] = shared[v_slot(
+                                     key_tile * 16 + (lane // 16) * 4,
+                                     plane * 64 + chunk * 16 + lane % 16) + element]
+-                        for chunk in T.unroll(4):
+                             T.tvm_mfma('16x16x16f16', 'row', 'row',
+                                 'float16x4', 'float16x4', 'float32x4',
+-                                v_operand.data, chunk, probabilities.data, key_tile,
+-                                numerator.data, plane * 4 + chunk, dtype='float32x4')
+-            else:
+-                T.fill(numerator, 0)
+-            for head, feature in T.Parallel(groups, dim):
+-                numerator[head, feature] /= denominator[0]
+-            T.sync_warp()
+-            for chunk in T.unroll(8):
+-                feature_base = chunk * 16 + (lane // 16) * 4
+-                for element in T.vectorized(4):
+-                    shared[out_slot(lane % 16, feature_base) + element] = numerator[lane % 16, feature_base + element]
++                                v_operand.data, 0, probabilities.data, key_tile,
++                                numerator.data, chunk, dtype='float32x4')
++                for chunk in T.unroll(4):
++                    for element in T.vectorized(4):
++                        numerator[chunk * 4 + element] /= denominator[0]
++                if plane == 0:
++                    T.sync_warp()
++                for chunk in T.unroll(4):
++                    feature_base = plane * 64 + chunk * 16 + (lane // 16) * 4
++                    for element in T.vectorized(4):
++                        shared[out_slot(lane % 16, feature_base) + element] = numerator[chunk * 4 + element]
+             T.sync_warp()
+             for part in T.unroll(4):
+                 for pack in T.unroll(2):
