@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T08:45:26.245141+00:00",
-  "state": "V206_REJECTED_CLOSED",
+  "timestamp_utc": "2026-10-02T09:01:54.105035+00:00",
+  "state": "V207_DIAGNOSTIC_PLAN_READY",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -20,11 +20,11 @@
     14
   ],
   "current": {
-    "version": "v206_worker2_c5_v_shared4row_subagent2",
-    "state": "REJECTED_CLOSED",
+    "version": "v207_worker2_c9_parent_profile_subagent2",
+    "state": "PARENT_C9_DIAGNOSTIC_PROPOSAL",
     "only_key": [
-      4,
-      1024,
+      1,
+      8192,
       1,
       16,
       64,
@@ -32,112 +32,30 @@
       16,
       true
     ],
-    "source_base_commit": "ff293bcf8c4cbf734e7b7fa41cce020f04cbb10f",
-    "candidate_created": true,
-    "Num_float32_elements": 16,
-    "perlane_globalV_design_unchanged": true,
-    "proposed_Vshared_stores_bytes": [
-      4,
-      8
-    ],
-    "proposed_Vshared_stores_count": [
-      8,
-      4
-    ],
-    "extra_register_shuffle_words_perlane": 4,
-    "bit_coordinate_proof_stdlib_exit": 0,
-    "uncalibrated_bank_models": 16,
-    "peer_review_received": true,
-    "source_go": true,
-    "heavy_go": false,
-    "new_import_compile_attention_native": [
-      0,
-      0,
+    "source_base_commit": "f7c53a69b83d3bf8ead72101ca2d26a14a3a8032",
+    "parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "driverSHA": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a",
+    "toolSHA": "8b668655748648b40d12c7a4a5e179105f0e31b178a2d15e87b6bcdaa89efa3b",
+    "candidate_count": 0,
+    "new_heavy_launched": false,
+    "actual_CLI_invocations": 0,
+    "actual_report_records": 0,
+    "reference_native_tests": [
       0,
       0
     ],
-    "candidate_path": "/tmp/nsa_worker2_v206_c5_v_shared4row.py",
-    "sourceSHA": "d1a58e61691db44287bd25e6b2aca80eaef2a173c925d3921d64a0645671b626",
-    "factory": "_make_worker2_c5_v_shared4row",
-    "source_static_exit": 0,
-    "whole_factory_inverse_AST_equal": true,
-    "source_sync_sites": 7,
-    "source_fullwarp_shfl_xor_delta": 8,
-    "actualCPP_IR": "UNAVAILABLE_not_run",
-    "metadata_exit": 0,
-    "SDK_actual_count": 4,
-    "SDK_exits": [
-      0,
-      0,
-      0,
-      0
+    "planned_oneCLI_report_records": 2,
+    "strict_waves_payload_residual": [
+      8192,
+      16777216,
+      [
+        0,
+        512
+      ]
     ],
-    "semantic_audit_exit": 0,
-    "prior_parser_exits": [
-      1,
-      1,
-      1
-    ],
-    "prior_trunc_analysis_wrong_corrected": true,
-    "MT_parent_candidate": [
-      42,
-      46
-    ],
-    "ST_parent_candidate": [
-      20,
-      20
-    ],
-    "staticmax": [
-      8,
-      8
-    ],
-    "stack": [
-      0,
-      0
-    ],
-    "dynamicshared": [
-      2048,
-      2048
-    ],
-    "actual_IR_shared_V_store_counts": [
-      8,
-      4
-    ],
-    "actual_IR_shared_V_store_bytes": [
-      4,
-      8
-    ],
-    "uint32_bpermute_new_count": 4,
-    "final_ISA_width": "UNAVAILABLE",
-    "native_go": true,
-    "native_observerPID": null,
-    "native_live": "ALL12_TERMINAL0",
-    "accepted_refs": {
-      "candidate": 4,
-      "total": 12
-    },
-    "planned_refs": {
-      "candidate": 4,
-      "total": 12
-    },
-    "OOM": 3,
-    "native_jobs_actual": 12,
-    "candidate_median_us": 26.089,
-    "parent_median_us": 24.6785,
-    "candidate_vs_parent_pct": 5.7155013473266125,
-    "round_deltas_pct": [
-      5.563648134660526,
-      16.09901471840407
-    ],
-    "ranges_overlap": false,
-    "allC_greater_than_allP": true,
-    "highpoints_us_retained": {
-      "candidate": 31.416,
-      "baseline": 46.72
-    },
-    "inventory_files": 259,
-    "source_commit": "f7c53a69b83d3bf8ead72101ca2d26a14a3a8032",
-    "no_formal_profile_repeat_or_promotion": true
+    "old_576_scopefailure_kept": true,
+    "peer_received": true,
+    "leader_GO": false
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -346,10 +264,146 @@
       "inventory_files": 95,
       "all_owned_PID_terminal": true,
       "no_correctness_or_performance_verdict": true
+    },
+    "v206": {
+      "version": "v206_worker2_c5_v_shared4row_subagent2",
+      "state": "REJECTED_CLOSED",
+      "only_key": [
+        4,
+        1024,
+        1,
+        16,
+        64,
+        1,
+        16,
+        true
+      ],
+      "source_base_commit": "ff293bcf8c4cbf734e7b7fa41cce020f04cbb10f",
+      "candidate_created": true,
+      "Num_float32_elements": 16,
+      "perlane_globalV_design_unchanged": true,
+      "proposed_Vshared_stores_bytes": [
+        4,
+        8
+      ],
+      "proposed_Vshared_stores_count": [
+        8,
+        4
+      ],
+      "extra_register_shuffle_words_perlane": 4,
+      "bit_coordinate_proof_stdlib_exit": 0,
+      "uncalibrated_bank_models": 16,
+      "peer_review_received": true,
+      "source_go": true,
+      "heavy_go": false,
+      "candidate_path": "/tmp/nsa_worker2_v206_c5_v_shared4row.py",
+      "sourceSHA": "d1a58e61691db44287bd25e6b2aca80eaef2a173c925d3921d64a0645671b626",
+      "factory": "_make_worker2_c5_v_shared4row",
+      "source_static_exit": 0,
+      "whole_factory_inverse_AST_equal": true,
+      "source_sync_sites": 7,
+      "source_fullwarp_shfl_xor_delta": 8,
+      "metadata_exit": 0,
+      "SDK_actual_count": 4,
+      "SDK_exits": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "semantic_audit_exit": 0,
+      "prior_parser_exits": [
+        1,
+        1,
+        1
+      ],
+      "prior_trunc_analysis_wrong_corrected": true,
+      "MT_parent_candidate": [
+        42,
+        46
+      ],
+      "ST_parent_candidate": [
+        20,
+        20
+      ],
+      "staticmax": [
+        8,
+        8
+      ],
+      "stack": [
+        0,
+        0
+      ],
+      "dynamicshared": [
+        2048,
+        2048
+      ],
+      "actual_IR_shared_V_store_counts": [
+        8,
+        4
+      ],
+      "actual_IR_shared_V_store_bytes": [
+        4,
+        8
+      ],
+      "uint32_bpermute_new_count": 4,
+      "final_ISA_width": "UNAVAILABLE",
+      "native_go": true,
+      "native_observerPID": null,
+      "native_live": "ALL12_TERMINAL0",
+      "accepted_refs": {
+        "candidate": 4,
+        "total": 12
+      },
+      "planned_refs": {
+        "candidate": 4,
+        "total": 12
+      },
+      "OOM": 3,
+      "native_jobs_actual": 12,
+      "candidate_median_us": 26.089,
+      "parent_median_us": 24.6785,
+      "candidate_vs_parent_pct": 5.7155013473266125,
+      "round_deltas_pct": [
+        5.563648134660526,
+        16.09901471840407
+      ],
+      "ranges_overlap": false,
+      "allC_greater_than_allP": true,
+      "highpoints_us_retained": {
+        "candidate": 31.416,
+        "baseline": 46.72
+      },
+      "inventory_files": 259,
+      "source_commit": "f7c53a69b83d3bf8ead72101ca2d26a14a3a8032",
+      "no_formal_profile_repeat_or_promotion": true,
+      "initial_source_only_snapshot": {
+        "phase": "SOURCE_STATIC_BEFORE_METADATA_NATIVE",
+        "fields": {
+          "actualCPP_IR": "UNAVAILABLE_not_run",
+          "new_import_compile_attention_native": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "actual_CPP_IR_status": "VERIFIED_SEMANTIC_EXIT0",
+      "completed_workload": {
+        "metadata_factories": 2,
+        "SDK_commands": 4,
+        "native_jobs": 12,
+        "accepted_fullrefs": {
+          "candidate": 4,
+          "total": 12
+        }
+      },
+      "currently_live_process_count": 0
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "case9newmechanism/limitedparentprofile proposalreview; noextraheavy",
+  "next_step": "leader review exactoneCLIparentC9manifest/peer before anyheavy",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
