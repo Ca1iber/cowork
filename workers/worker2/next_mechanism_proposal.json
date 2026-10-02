@@ -1,7 +1,7 @@
 {
-  "version": "v205_worker2_c5_num8_output_reuse_subagent2",
-  "status": "PROPOSAL_ONLY_NO_SOURCE_OR_HEAVY_GO",
-  "development_parent_commit": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
+  "version": "v206_worker2_c5_v_shared4row_subagent2",
+  "status": "PROPOSAL_ONLY_NO_CANDIDATE_HEAVY",
+  "development_parent_commit": "ff293bcf8c4cbf734e7b7fa41cce020f04cbb10f",
   "numerical_parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
   "only_key": [
     4,
@@ -13,102 +13,61 @@
     16,
     true
   ],
-  "parent_factory": "_make_power_s1_case4_dense",
-  "planned_factory": "_make_worker2_c5_num8_output_reuse",
-  "mechanism": "after unchanged QK/P/den/Vshared/Voperand stages, two output groups32features each reuse Num8:clear/PVtwo/divide/cast/store originalslots; final gather unchanged16B",
-  "parent_actual_CPP": "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case5_stage1.device.cpp",
-  "parent_CPP_SHA": "c544b9aee12ff8cc0acf6452367b8bdffc726c33b3d50c1ef6652fd22941582d",
-  "parent_CPP_order_Vlocal_PV_output": true,
-  "resource_parent": {
-    "MT": 42,
-    "ST": 20,
-    "staticmax": 8,
-    "dynamic_shared": 2048,
-    "stack": 0
-  },
-  "changes_required": [
-    "remove original PV4 insidevalid; retain same validflag",
-    "same denominator shfl32 then16 outsidevalid before groupedPV",
-    "each group clearNum8; valid-only PVchunk0/1 or2/3 into local0/1; no invalidVoperand use",
-    "move preoutput fullwarp immediatelyafter allVoperand sharedreads, before first group consumes/stores",
-    "divide/cast eachsamefeature after completePden; preserve outputsharedvector8B",
-    "clear secondgroup onlyafter firstgroup allcast/stores complete; final outputwarp/gather16B unchanged"
+  "official_case_number": 5,
+  "expected_grid": [
+    1024,
+    4
   ],
-  "numerical_requirements": [
-    "perfeature onlysame1PV MMA16keys with initialfloat0",
-    "same actual roundedP4 usedforbothPVandfull4sumden",
-    "invalid branch Num0/Den0 -> NaN exactlyasparent; no zero substitute",
-    "same float32 division/F16 cast and same maskwidth64 full64"
+  "expected_threads": 64,
+  "expected_dynamic_shared": 2048,
+  "Num_float32_elements": 16,
+  "mechanism": "Vshared producer ownership2row8col\u21924row4col by four packeduint32xor8 shuffles; perlane global16Bfetch unchanged; sharedstore8x4B\u21924x8B",
+  "global_fetch": "retain originalfetch_row=(lane//8)*2,fetch_col=(lane%8)*8,2rows\u00d7vectorized8half; no producer_lane permutation andno extra globalread",
+  "exchange": "half=(lane//8)%2; peer=lane^8. Send opposite4columns of2rows as4uint32; keep own desired4cols; reconstruct4rows\u00d74cols. Explicit fulluint64mask/width64/xor8 atall4sites insideoriginal uniformvalidblock branch",
+  "bits": "T.reinterpret(uint16,half) then zeroextenduint32/shift16/or; uint32shfl; split uint16\u2192T.reinterpret(float16). Never numeric float16\u2192integer conversion",
+  "index_strategy": "fully unroll2rows2pairs and4cols; use if_then_else tochoose constantoldfetch lower/upper4 offsets, avoiding lane-dependentlocalarray indexing",
+  "preserved": [
+    "exactparentprefix/other13dispatch",
+    "QK/P/fullroundedPden/PV accumulation order/Num16/outputmath",
+    "oldpreVsync andpostVproducer-consumer sync/all7warpsync",
+    "same sharedv_slot layout andallVconsumer8Bloads",
+    "oldglobalQ/K/V/Output16B perlaneaddressesandcount/noearlyload/noNum8/no2queryCTA"
   ],
   "proofs": [
-    "output_partition_proof.json",
-    "output_vector_touches.json"
+    "ownership_proof.json",
+    "shared_vector_touches.json",
+    "shuffle_word_coordinates.json",
+    "bank_hypotheses.json",
+    "primary_API_sources.json"
   ],
-  "peer": "worker1 provided guard/localV lifetime/outputalias/vector/order/resource advisory; own plan only",
-  "risks": [
-    "Voperand16half stilllive acrossbothgroups may limitMT reduction",
-    "two simultaneous PVaccumulators ratherthan4 mayreduceinstructionparallelism",
-    "earlier normalization/sharedstores canchange compiler scheduling",
-    "MTfall/staticmax unchanged doesnotprove faster; C6Num16 +2.69percent peer counterexample"
+  "parent_evidence": "validv200case5 parent4c profiles2samples WGnonconf100/conf0,WGload50.86/51.03cycles,MTE66.99/65.43,MMA6.66/6.50; parentCPP8uint1 Vstores/lane,42MT20ST/max8/stack0. No dominant bottleneck proved",
+  "bank_risk": "uncalibrated32/64bank,word4B,issue subgroup8/16/32/64 models: some32bank\u226532subgroup cases proposed multiplicity doubles; othermodels same. Not realbankconflict orlatency. Do not tune threshold to pass model",
+  "predicted_positive": "half sharedstore sourceinstruction count withsame2KiB/query payload may reduceissue overhead",
+  "predicted_negative": [
+    "4extra uint32shuffle plus pack/select/extract ALU may outweigh4fewer sharedstoreinstructions",
+    "recv4uint32/fetchlive/vcol4 canincreaseMT/ST",
+    "8B sharedstore maybe splitwordphases so storecount reduction maynotreduce backend work",
+    "bankconflict possible perhypotheticalgranularity; no physicalbankmapping known"
   ],
+  "source_static_gate": "derive exactonlyC5tuple fromofficial JSON; prefix14AST andallmath/globalfetch/consumer/sync AST verified,normalTileLangprimitives/noextraimports/foreign/async/manualbuiltin",
   "metadata_falsifiers": [
-    "Num8 grouping notmaterialized or MT>=42: no intended register-pressure benefit, stop before native",
-    "stack>0/forbidden/vector/hash/math/sync/invalidVread failure stop",
-    "all Vsharedreads mustdominate first outputoverwrite; no later sharedVreads",
-    "globalQ/K/V/Output original16B addresses/count and sharedoutput8B required in CPP; finalISA widths unavailable"
+    "stack>0 or staticmax<8 stop before native; MT/ST allreported noresourcewinclaim",
+    "actualCPP/optimizedIR notfour8B sharedVstores ornotfour32bitpackedxor8shuffles/materialization fails =>stop",
+    "packedpath must bitcast/intops only, nofptoui/fptosi orFP16 numeric valuecast fortransport",
+    "lane-dependentbranch mustnot enclose shuffle; fullwarp64 maskandwidth exact; globalvalidpredicate sameuniform",
+    "actualperlane globalVuint4addresses/count unchanged,all1024shared coordinates matcholdconsumer,7sync/Num16/eightMMA preserved",
+    "dynamicprivate/stack/laneindexedspill/sourcehash/forbidden/index/bounds/bitpattern failure stop"
   ],
-  "measurement_if_approved": "same exactwrapper immutablefullnaive/seed0/F16/W10R50/tol1e-2; C5 fixedB-P-C-C-P-Bx2 singlefreshsource/4C12total/600s perjob/wholecg0.5s heavylock<=2GiB admission/28GiB stop/OOM/unknownheavy/nonzero/CSVhash stop; no retry/noautoformal",
-  "new_attention_reference_native": [
+  "future_metadata_if_GO": "sameparent+C206 exactC5 factories/freshprocess/JITKernel callguard/0attentionrefnative; twoCPP/hoststrictvalidators thenfirstresource+O3IR commands/sameflags; wholecglockdoubleadmission<=2GiB/unownedRSS<=1GiB/0.5s/28GiBstop/OOM/unknownheavy/nonzero/300stimeout/ownPIDverified/no retry",
+  "future_native_only_separate_leader_GO": "singleuniqueC5B28-P84-C206-C206-P84-B28x2/4C12inclusive fullrefs/exactrun_variant+naive/W10R50/seed0/F16/1e-2; eachfreshproc samewholecg guard/600s; anyfailureprefixstop/noadaptive/noformalauto; median>=parentreject,overlaporpositive-roundinconclusive",
+  "peer_advisory_received": true,
+  "new_import_compile_attention_native": [
+    0,
     0,
     0,
     0
   ],
-  "actual_parent_dispatch_binding_source": "((4, 1024, 1, 16, 64, 1, 16, True), _make_power_s1_case4_dense)",
-  "scope_correction": {
-    "initial_written_key_was_official_case7": true,
-    "initial_snapshot": "initial_proposal_wrong_case7_key.json",
-    "candidate_source_or_heavy_never_executed": true,
-    "first_scope_lookup_exit": 1,
-    "first_error": "direct literal call lookup missed parent loop binding; factoryNone assertion",
-    "recovery_reads_actual_parent_loop_binding": true,
-    "new_attention_reference_native": [
-      0,
-      0,
-      0
-    ]
-  },
-  "actual_case5": {
-    "B": 4,
-    "SEQ_LEN": 1024,
-    "H": 1,
-    "HQ": 16,
-    "D": 64,
-    "S": 1,
-    "block_size": 16,
-    "is_causal": true
-  },
-  "actual_parent_host": "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case5_stage1.host.cpp",
-  "parent_hostSHA": "e2e8e4665e5750edaf19426c4ff12dd6409d74cee46cc4174e057cdac02367db",
-  "actual_grid": [
-    1024,
-    4
-  ],
-  "thread_block": [
-    64,
-    1,
-    1
-  ],
-  "dynamicshared_host": 2048,
-  "expected_full_waves": 4096,
-  "output_payload_bytes": 8388608,
-  "L1024_valid_aligned_V_max_row": 1023,
-  "invalid_negative_or_SEQ_LEN_sentinel_guard_no_Vread_design": "same0<=block_start<=token; sentinel1024*16>maxToken1023",
-  "per_query_partition_proof_independent_of_B_L": true,
-  "scope_hard_gates": [
-    "build target tuple from official_case.json entry5; appendonlyexactC5key",
-    "static appendeddispatch ASTequals(4,1024,1,16,64,1,16,True); original14topASTprefix unchangedother13",
-    "metadata actualfactoryobject identity at exactC5key, hostgrid[1024,4]/threads64/dyn2048/output8MiB",
-    "native NSA_CASES=5 immutablecorrectedcandidateSHA; noC7replacement",
-    "wrongkeyinitial0candidate0heavy recorded"
-  ]
+  "extra_logical_register_shuffle_payload_bytes_per_query": 1024,
+  "shuffle_payload_not_HBM_or_sharedtraffic": true,
+  "peer_actual_advice": "half0 retains rows0/1 low4 and sends high4;half1 retains rows2/3 high4 and sendslow4; xor8/full64 guard uniform; actual uint32 bitreturn/four8B vectorization andconstant-offsetIR required; nofptoui alone not completebitproof"
 }

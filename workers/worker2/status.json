@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T07:26:03.834796+00:00",
-  "state": "V205_REJECTED_RESOURCE_CLOSED",
+  "timestamp_utc": "2026-10-02T07:42:11.682441+00:00",
+  "state": "V206_PROPOSAL_PENDING_LEADER_REVIEW",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -20,20 +20,8 @@
     14
   ],
   "current": {
-    "version": "v205_worker2_c5_num8_output_reuse_subagent2",
-    "state": "REJECTED_PRE_NATIVE_MT_FALSIFIER",
-    "case": 5,
-    "candidate_source_created": true,
-    "new_attention_reference_native": [
-      0,
-      0,
-      0
-    ],
-    "source_commit_base": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
-    "only_stdlib_address_proof_ran": true,
-    "peer_review_received": true,
-    "leader_GO": false,
-    "planned_metadata_falsifier": "MT>=42 or stack/math/vector/sync failure => no native",
+    "version": "v206_worker2_c5_v_shared4row_subagent2",
+    "state": "PROPOSAL_ONLY",
     "only_key": [
       4,
       1024,
@@ -44,55 +32,30 @@
       16,
       true
     ],
-    "actual_parent_grid": [
-      1024,
+    "source_base_commit": "ff293bcf8c4cbf734e7b7fa41cce020f04cbb10f",
+    "candidate_created": false,
+    "Num_float32_elements": 16,
+    "perlane_globalV_design_unchanged": true,
+    "proposed_Vshared_stores_bytes": [
+      4,
+      8
+    ],
+    "proposed_Vshared_stores_count": [
+      8,
       4
     ],
-    "scope_correction_record": "reviews/v205_scope_correction.json",
-    "candidate_path": "/tmp/nsa_worker2_v205_c5_num8_output_reuse.py",
-    "sourceSHA": "cc0fcfdd97df2d009b3d100c3947caed257a2f45c095b266ca8d93b231b69d0a",
-    "source_static_validator_exit": 0,
-    "source_go": true,
-    "metadata_go": false,
-    "native_go": false,
-    "factory": "_make_worker2_c5_num8_output_reuse",
-    "Num_float32_elements": 8,
-    "Voperand_half_elements": 16,
-    "source_sync_sites": 7,
+    "extra_register_shuffle_words_perlane": 4,
+    "bit_coordinate_proof_stdlib_exit": 0,
+    "uncalibrated_bank_models": 16,
+    "peer_review_received": true,
+    "source_go": false,
+    "heavy_go": false,
     "new_import_compile_attention_native": [
       0,
       0,
       0,
       0
-    ],
-    "actual_CPP_IR_resource": "UNAVAILABLE_not_run",
-    "hard_falsifier_MT_greater_or_equal": 42,
-    "source_commit": "ff293bcf8c4cbf734e7b7fa41cce020f04cbb10f",
-    "metadata_exit": 0,
-    "SDK_commands_actual": 3,
-    "SDK_actual_exits": [
-      0,
-      0,
-      0
-    ],
-    "backend_helper_exit": 1,
-    "MT_parent_candidate": [
-      42,
-      46
-    ],
-    "ST_parent_candidate": [
-      20,
-      22
-    ],
-    "candidate_IR": "SKIPPED_MT_GATE",
-    "native_actual_counts": {
-      "candidate": 0,
-      "total": 0
-    },
-    "OOM": 3,
-    "inventory_files": 95,
-    "all_owned_PID_terminal": true,
-    "no_correctness_or_performance_verdict": true
+    ]
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -226,10 +189,85 @@
       "formal": false,
       "candidate_archived_not_promoted": true,
       "inventory_files": 225
+    },
+    "v205": {
+      "version": "v205_worker2_c5_num8_output_reuse_subagent2",
+      "state": "REJECTED_PRE_NATIVE_MT_FALSIFIER",
+      "case": 5,
+      "candidate_source_created": true,
+      "new_attention_reference_native": [
+        0,
+        0,
+        0
+      ],
+      "source_commit_base": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
+      "only_stdlib_address_proof_ran": true,
+      "peer_review_received": true,
+      "leader_GO": false,
+      "planned_metadata_falsifier": "MT>=42 or stack/math/vector/sync failure => no native",
+      "only_key": [
+        4,
+        1024,
+        1,
+        16,
+        64,
+        1,
+        16,
+        true
+      ],
+      "actual_parent_grid": [
+        1024,
+        4
+      ],
+      "scope_correction_record": "reviews/v205_scope_correction.json",
+      "candidate_path": "/tmp/nsa_worker2_v205_c5_num8_output_reuse.py",
+      "sourceSHA": "cc0fcfdd97df2d009b3d100c3947caed257a2f45c095b266ca8d93b231b69d0a",
+      "source_static_validator_exit": 0,
+      "source_go": true,
+      "metadata_go": false,
+      "native_go": false,
+      "factory": "_make_worker2_c5_num8_output_reuse",
+      "Num_float32_elements": 8,
+      "Voperand_half_elements": 16,
+      "source_sync_sites": 7,
+      "new_import_compile_attention_native": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "actual_CPP_IR_resource": "UNAVAILABLE_not_run",
+      "hard_falsifier_MT_greater_or_equal": 42,
+      "source_commit": "ff293bcf8c4cbf734e7b7fa41cce020f04cbb10f",
+      "metadata_exit": 0,
+      "SDK_commands_actual": 3,
+      "SDK_actual_exits": [
+        0,
+        0,
+        0
+      ],
+      "backend_helper_exit": 1,
+      "MT_parent_candidate": [
+        42,
+        46
+      ],
+      "ST_parent_candidate": [
+        20,
+        22
+      ],
+      "candidate_IR": "SKIPPED_MT_GATE",
+      "native_actual_counts": {
+        "candidate": 0,
+        "total": 0
+      },
+      "OOM": 3,
+      "inventory_files": 95,
+      "all_owned_PID_terminal": true,
+      "no_correctness_or_performance_verdict": true
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "newC5Vownership proposal/stdlibproof/peer/leader review; noNum8retry",
+  "next_step": "own singleVownership proposalreview beforecandidate/heavy; noNum8reuse",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",

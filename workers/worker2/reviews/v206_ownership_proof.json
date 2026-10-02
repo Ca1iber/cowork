@@ -1,0 +1,44 @@
+{
+  "official_case_number": 5,
+  "only_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "expected_grid": [
+    1024,
+    4
+  ],
+  "producer_global_fetch_design_unchanged_perlane": true,
+  "ownership": "half=(lane//8)%2;peer=lane^8;rowquad=(lane//16)*4;colbase=(lane%8)*8+half*4",
+  "packed_exchange": "four uint32 shfl_xor(delta8,width64,fulluint64mask); each sends opposite column half2rows4cols",
+  "all_1024_shared_half_elements_exact_once": true,
+  "new_vectors": 256,
+  "new_shared_vector_bytes": 8,
+  "parent_vectors": 512,
+  "parent_shared_vector_bytes": 4,
+  "same_shared_payload_bytes": 2048,
+  "coordinate_equality_proved1024": true,
+  "all8B_vectors_contiguous4half_bounds_alignment": true,
+  "bitpack_algebra": "a,b in uint16; w=uint32(a)|(uint32(b)<<16); low16=a/high16=b, reinterpreted FP16, not numeric cast",
+  "corner_bit_patterns_checked": 64,
+  "max_valid_L1024_Vrow": 1023,
+  "guard": "same uniform0<=block_start<=token; all4shuffles executed bywholewarp insidevalid only",
+  "Num_float32_elements_kept": 16,
+  "MMA_math_QKPden_Vconsumer_output_design_unchanged": true,
+  "wave64_lane^8_stays_samequery": true,
+  "bank_models_uncalibrated": true,
+  "candidate_created": false,
+  "new_import_compile_attention_native": [
+    0,
+    0,
+    0,
+    0
+  ]
+}
