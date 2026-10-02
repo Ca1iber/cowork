@@ -1,0 +1,92 @@
+{
+  "argv": [
+    "/opt/conda/bin/python",
+    "-S",
+    "/root/tilelang-metax/race_tests/nsa/hack/v209_worker2_c14_linear_query_grid_subagent2/run_native_screen.py"
+  ],
+  "fixed_six_inputs": [
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+      "sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+      "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/reference.py",
+      "sha256": "e31d5f188923d8696c7ad190b1652d5b3142c004dc96d0604f371c71f179bf32"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/official_case.json",
+      "sha256": "85f2c34acd793fb0a45084175acd7bcde48ff5d717a395d370800c30cf4e7036"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py",
+      "sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/test_tilelang_nsa_fwd_v28.py",
+      "sha256": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568"
+    }
+  ],
+  "candidateSHA": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
+  "tools_helpers": [
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v209_worker2_c14_linear_query_grid_subagent2/run_native_screen.py",
+      "sha256": "6769e2db63da6d3489db050942e58f4619f555ab020f4871be8156c5ce6db7de"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v209_worker2_c14_linear_query_grid_subagent2/native_exec.py",
+      "sha256": "547e45c040e544366d3a56eeb03fb7b1a24bc5cdeb9d825936909e94d429a4ab"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v209_worker2_c14_linear_query_grid_subagent2/native_whole_cgroup_utils.py",
+      "sha256": "73485132387467c3b1c75988838b72868cc0f87efdf0ffb48485e37181494262"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/native_screen_plan.json",
+      "sha256": "39a6de008f8062d02c2de12858e19ae85e01980cc441fb7f73a9a018cca0ce21"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/native_runtime_plan.json",
+      "sha256": "1cefa3aa1bab53465a88ec806fcd5344390ee864c62d8acf854c947603b1ea99"
+    },
+    {
+      "path": "/opt/conda/bin/python3.12",
+      "sha256": "0e4dbf3236310955eaeee14323756b54961e1d0dc12c680c441f50839a67eee0"
+    }
+  ],
+  "perjob_launcher_argv": [
+    "/opt/conda/bin/python",
+    "-S",
+    "/root/tilelang-metax/race_tests/nsa/hack/v209_worker2_c14_linear_query_grid_subagent2/native_exec.py"
+  ],
+  "perjob_native_argv": [
+    "/opt/conda/bin/python",
+    "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+  ],
+  "NSA_CASES": "14",
+  "onceguard": "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/native_screen_once.guard",
+  "fixed12order": [
+    "baseline_v28",
+    "parent_v084",
+    "power_v209",
+    "power_v209",
+    "parent_v084",
+    "baseline_v28",
+    "baseline_v28",
+    "parent_v084",
+    "power_v209",
+    "power_v209",
+    "parent_v084",
+    "baseline_v28"
+  ],
+  "planned_C_totalrefs": [
+    4,
+    12
+  ],
+  "metadata_initial_gate1_preserved": true,
+  "no_auto_full14_profile_main_OJ": true,
+  "observerPID": 212847
+}

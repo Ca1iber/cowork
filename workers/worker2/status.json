@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T11:19:21.241866+00:00",
-  "state": "METADATA_COMPLETE_NATIVE_PROPOSAL",
+  "timestamp_utc": "2026-10-02T11:24:21.251027+00:00",
+  "state": "FIXED_C14_NATIVE_SCREEN_RUNNING",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v209_worker2_c14_linear_query_grid_subagent2",
-    "state": "METADATA_COMPLETE_NATIVE_PROPOSAL",
+    "state": "FIXED_C14_NATIVE_SCREEN_RUNNING",
     "only_key": [
       2,
       512,
@@ -153,8 +153,11 @@
       0,
       0
     ],
-    "active_PIDs": [],
-    "current_live_heavy": 0,
+    "active_PIDs": [
+      212847,
+      213131
+    ],
+    "current_live_heavy": 1,
     "candidate_path": "/tmp/nsa_worker2_v209_c14_linear_query_grid.py",
     "candidateSHA": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
     "factory": "_make_worker2_c14_linear_query_grid",
@@ -215,10 +218,45 @@
         2048
       ]
     ],
-    "native_execution_GO": false,
+    "native_execution_GO": "once fixed12 executing",
     "full_reference_native_counts": [
       0,
       0
+    ],
+    "native_observerPID": 212847,
+    "native_live": {
+      "stage": "fixed_C14_native_observed",
+      "run": 2,
+      "variant": "parent_v084",
+      "pid": 213131,
+      "observerPID": 212847,
+      "sample_count": 9,
+      "utc": "2026-10-02T11:24:21.229262+00:00",
+      "usage_bytes": 3476209664,
+      "oom": 3
+    },
+    "native_real_completed_jobs": 1,
+    "native_clean_candidate_total": [
+      0,
+      1
+    ],
+    "fixed_order": [
+      "B",
+      "P",
+      "C",
+      "C",
+      "P",
+      "B",
+      "B",
+      "P",
+      "C",
+      "C",
+      "P",
+      "B"
+    ],
+    "planned_not_completed_C_total": [
+      4,
+      12
     ]
   },
   "history": {
@@ -749,7 +787,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader review one fixedC14 native12 screen plan; no automatic execution",
+  "next_step": "Wait same once fixed12 terminal; no adaptive samples or full14/profile",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
