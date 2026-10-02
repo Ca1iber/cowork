@@ -1,0 +1,1 @@
+Riskdiagnostic only; no sourcecopy. Candidate ../v104_worker1_s8_global_softmax_sc-16g-2/submission.py SHA27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07/header104. Cases4,7,8,9,10,11,12,13; planned32C96inclusive, notall14. Native notstarted.

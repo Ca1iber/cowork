@@ -1,0 +1,4616 @@
+{
+  "version": "v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2",
+  "status": "fixed_risk_completed_C12_improved_C11_positive_no_regression_not_demonstrated",
+  "closed_UTC": "2026-10-02T10:13:07.476122+00:00",
+  "candidate_source_v104_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+  "source_manifest": {
+    "version": "v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2",
+    "sources": {
+      "baseline_v28": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+        "sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd"
+      },
+      "parent_v084": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+        "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+      },
+      "power_v104": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v104_worker1_s8_global_softmax_sc-16g-2/submission.py",
+        "sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07"
+      }
+    },
+    "candidate_label": "power_v104",
+    "case": [
+      4,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "wrapper_path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py",
+    "wrapper_sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+    "validator_path": "/root/tilelang-metax/race_tests/nsa/hack/validate_oj_submission.py",
+    "tools": {
+      "python": {
+        "path": "/opt/conda/bin/python",
+        "sha256": "0e4dbf3236310955eaeee14323756b54961e1d0dc12c680c441f50839a67eee0"
+      },
+      "compiler": {
+        "path": "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "sha256": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25"
+      },
+      "validator": {
+        "path": "/root/tilelang-metax/race_tests/nsa/hack/validate_oj_submission.py",
+        "sha256": "04eaef24dd21833f571d59d5e30c89190650f9e9eaa77094bcf87cecf062a6bf"
+      },
+      "metadata": {
+        "path": "/root/tilelang-metax/race_tests/nsa/hack/v104_worker1_s8_global_softmax_sc-16g-2/precompile_metadata.py",
+        "sha256": "ad0f682fbeac9f5f0ab74854b6154e9b0304517d20484fcba1aaa3c7858480b3"
+      },
+      "resources": {
+        "path": "/root/tilelang-metax/race_tests/nsa/hack/v104_worker1_s8_global_softmax_sc-16g-2/capture_metadata_resources.py",
+        "sha256": "649ff098def9a83753b4814248eb6f62a5c1ab10c41d66825164bceb7bbd802e"
+      },
+      "stage": {
+        "path": "/root/tilelang-metax/race_tests/nsa/hack/v104_worker1_s8_global_softmax_sc-16g-2/run_precompile_stage.py",
+        "sha256": "cc31ab98cb66a7caf7ddd5a1de1d7e3ea7543c6ca88358716f602c149e8750ad"
+      },
+      "native_stage": {
+        "path": "/root/tilelang-metax/race_tests/nsa/hack/v104_worker1_s8_global_softmax_sc-16g-2/run_fixed_screen.py",
+        "sha256": "3084ada5eb91698309923cdf138dcfe78318c88d6ce3e2a078a9969ff1d9e870"
+      },
+      "formal_stage": {
+        "path": "/root/tilelang-metax/race_tests/nsa/hack/v104_worker1_s8_global_softmax_sc-16g-2/run_formal_all14.py",
+        "sha256": "ae47da1aac8f77df4dba1a236caea0260a8de98472cb936bcb1baf5c383d6b1d"
+      },
+      "bounded_controller": {
+        "path": "/root/tilelang-metax/race_tests/nsa/hack/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/run_bounded_all14.py",
+        "sha256": "35170b4b57fadd58bb0597ea94dc9a26044ae88b580dfd104ea304c4577f7c09"
+      },
+      "native_gate": {
+        "path": "/root/tilelang-metax/race_tests/nsa/hack/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/owned_native_gate.py",
+        "sha256": "906d210a50da3773973a3ca34b8f770d83cf9cecce26581d499e6db695c36f31"
+      },
+      "process_monitor": {
+        "path": "/root/tilelang-metax/race_tests/nsa/hack/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/process_monitor.py",
+        "sha256": "95253d2f451c24688e64c4413fff96c03cc1131180fc800a5c8a120f885117d3"
+      }
+    },
+    "stage": "leader_GO_fixed_once_risk8",
+    "candidate_source_version": "v104",
+    "cooperative_heavy_lock": "/tmp/nsa_sc-16g-2_cooperative_heavy.lock",
+    "recognized_unowned_baseline": {
+      "pid": 213447,
+      "starttime_ticks": 93125003,
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+    }
+  },
+  "actual_result": {
+    "UTC": "2026-10-02T10:09:09.753213+00:00",
+    "status": "fixed_subset_risk_protocol_completed",
+    "runtime_protocol_completed": true,
+    "failure": null,
+    "planned_native_processes": 12,
+    "terminal_job_records": 12,
+    "spawned_native_processes": 12,
+    "planned_candidate_fullrefs": 32,
+    "planned_inclusive_fullrefs": 96,
+    "observed_complete_reference_PASS_rows_by_variant": {
+      "baseline_v28": 32,
+      "parent_v084": 32,
+      "power_v104": 32
+    },
+    "observed_candidate_fullrefs": 32,
+    "observed_inclusive_fullrefs": 96,
+    "clean_process_accepted_fullrefs_by_variant": {
+      "baseline_v28": 32,
+      "parent_v084": 32,
+      "power_v104": 32
+    },
+    "clean_candidate_fullrefs": 32,
+    "clean_inclusive_fullrefs": 96,
+    "all_jobs": [
+      {
+        "index": 1,
+        "round": 1,
+        "variant": "baseline_v28",
+        "native_pid": 388664,
+        "native_pgid": 388664,
+        "UTC_terminal": "2026-10-02T09:59:51.271551+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012774",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.031437",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.051912",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.051768",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.011909",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.023316",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.084224",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011059",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012774",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.031437",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.051912",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.051768",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.011909",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.023316",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.084224",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011059",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_01_baseline_v28/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_01_baseline_v28/native.log",
+        "memory_samples": 172,
+        "owned_identities": {
+          "388664": {
+            "pid": 388664,
+            "starttime_ticks": 95845493,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T09:58:28.831403+00:00"
+          },
+          "388846": {
+            "pid": 388846,
+            "starttime_ticks": 95848196,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:58:55.898039+00:00"
+          },
+          "388847": {
+            "pid": 388847,
+            "starttime_ticks": 95848197,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 388846,
+              "starttime_ticks": 95848196,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T09:58:55.898039+00:00"
+          },
+          "388858": {
+            "pid": 388858,
+            "starttime_ticks": 95848359,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:58:57.353586+00:00"
+          },
+          "388859": {
+            "pid": 388859,
+            "starttime_ticks": 95848359,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 388858,
+              "starttime_ticks": 95848359,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T09:58:57.353586+00:00"
+          },
+          "388912": {
+            "pid": 388912,
+            "starttime_ticks": 95848886,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:02.854095+00:00"
+          },
+          "388913": {
+            "pid": 388913,
+            "starttime_ticks": 95848887,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 388912,
+              "starttime_ticks": 95848886,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:02.854095+00:00"
+          },
+          "388924": {
+            "pid": 388924,
+            "starttime_ticks": 95849047,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:04.354792+00:00"
+          },
+          "388927": {
+            "pid": 388927,
+            "starttime_ticks": 95849071,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 388924,
+              "starttime_ticks": 95849047,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:04.354792+00:00"
+          },
+          "388985": {
+            "pid": 388985,
+            "starttime_ticks": 95849553,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:09.355838+00:00"
+          },
+          "388986": {
+            "pid": 388986,
+            "starttime_ticks": 95849554,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 388985,
+              "starttime_ticks": 95849553,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:09.355838+00:00"
+          },
+          "388997": {
+            "pid": 388997,
+            "starttime_ticks": 95849716,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:10.855679+00:00"
+          },
+          "388998": {
+            "pid": 388998,
+            "starttime_ticks": 95849716,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 388997,
+              "starttime_ticks": 95849716,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:10.855679+00:00"
+          },
+          "389005": {
+            "pid": 389005,
+            "starttime_ticks": 95849747,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:11.356059+00:00"
+          },
+          "389008": {
+            "pid": 389008,
+            "starttime_ticks": 95849771,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389005,
+              "starttime_ticks": 95849747,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:11.356059+00:00"
+          },
+          "389052": {
+            "pid": 389052,
+            "starttime_ticks": 95850314,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:16.857173+00:00"
+          },
+          "389053": {
+            "pid": 389053,
+            "starttime_ticks": 95850315,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389052,
+              "starttime_ticks": 95850314,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:16.857173+00:00"
+          },
+          "389061": {
+            "pid": 389061,
+            "starttime_ticks": 95850469,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389052,
+              "starttime_ticks": 95850314,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:18.357251+00:00"
+          },
+          "389072": {
+            "pid": 389072,
+            "starttime_ticks": 95850512,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:18.857160+00:00"
+          },
+          "389073": {
+            "pid": 389073,
+            "starttime_ticks": 95850512,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389072,
+              "starttime_ticks": 95850512,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:18.857160+00:00"
+          },
+          "389123": {
+            "pid": 389123,
+            "starttime_ticks": 95850941,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:23.357838+00:00"
+          },
+          "389124": {
+            "pid": 389124,
+            "starttime_ticks": 95850942,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389123,
+              "starttime_ticks": 95850941,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:23.357838+00:00"
+          },
+          "389129": {
+            "pid": 389129,
+            "starttime_ticks": 95851108,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:24.858029+00:00"
+          },
+          "389130": {
+            "pid": 389130,
+            "starttime_ticks": 95851108,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389129,
+              "starttime_ticks": 95851108,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:24.858029+00:00"
+          },
+          "389184": {
+            "pid": 389184,
+            "starttime_ticks": 95851414,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:27.858665+00:00"
+          },
+          "389185": {
+            "pid": 389185,
+            "starttime_ticks": 95851415,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389184,
+              "starttime_ticks": 95851414,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:27.858665+00:00"
+          },
+          "389194": {
+            "pid": 389194,
+            "starttime_ticks": 95851568,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389184,
+              "starttime_ticks": 95851414,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:29.358449+00:00"
+          },
+          "389196": {
+            "pid": 389196,
+            "starttime_ticks": 95851589,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:29.858707+00:00"
+          },
+          "389202": {
+            "pid": 389202,
+            "starttime_ticks": 95851624,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/collect2",
+            "observed_parent": {
+              "pid": 389196,
+              "starttime_ticks": 95851589,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:29.858707+00:00"
+          },
+          "389203": {
+            "pid": 389203,
+            "starttime_ticks": 95851624,
+            "exe": "/usr/bin/x86_64-linux-gnu-ld.bfd",
+            "observed_parent": {
+              "pid": 389202,
+              "starttime_ticks": 95851624,
+              "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/collect2"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:29.858707+00:00"
+          },
+          "389261": {
+            "pid": 389261,
+            "starttime_ticks": 95851904,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:32.859471+00:00"
+          },
+          "389262": {
+            "pid": 389262,
+            "starttime_ticks": 95851905,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389261,
+              "starttime_ticks": 95851904,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:32.859471+00:00"
+          },
+          "389271": {
+            "pid": 389271,
+            "starttime_ticks": 95852059,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389261,
+              "starttime_ticks": 95851904,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:34.397713+00:00"
+          },
+          "389273": {
+            "pid": 389273,
+            "starttime_ticks": 95852091,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:34.859762+00:00"
+          },
+          "389277": {
+            "pid": 389277,
+            "starttime_ticks": 95852115,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389273,
+              "starttime_ticks": 95852091,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:34.859762+00:00"
+          },
+          "389282": {
+            "pid": 389282,
+            "starttime_ticks": 95852138,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:35.359998+00:00"
+          },
+          "389291": {
+            "pid": 389291,
+            "starttime_ticks": 95852162,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389282,
+              "starttime_ticks": 95852138,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:35.359998+00:00"
+          },
+          "389326": {
+            "pid": 389326,
+            "starttime_ticks": 95852503,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:38.859622+00:00"
+          },
+          "389327": {
+            "pid": 389327,
+            "starttime_ticks": 95852503,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389326,
+              "starttime_ticks": 95852503,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:38.859622+00:00"
+          },
+          "389338": {
+            "pid": 389338,
+            "starttime_ticks": 95852665,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:40.359977+00:00"
+          },
+          "389339": {
+            "pid": 389339,
+            "starttime_ticks": 95852665,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389338,
+              "starttime_ticks": 95852665,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:40.359977+00:00"
+          },
+          "389346": {
+            "pid": 389346,
+            "starttime_ticks": 95852697,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 388664,
+              "starttime_ticks": 95845493,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:40.861235+00:00"
+          },
+          "389352": {
+            "pid": 389352,
+            "starttime_ticks": 95852725,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/collect2",
+            "observed_parent": {
+              "pid": 389346,
+              "starttime_ticks": 95852697,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:40.861235+00:00"
+          },
+          "389353": {
+            "pid": 389353,
+            "starttime_ticks": 95852725,
+            "exe": "/usr/bin/x86_64-linux-gnu-ld.bfd",
+            "observed_parent": {
+              "pid": 389352,
+              "starttime_ticks": 95852725,
+              "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/collect2"
+            },
+            "first_seen_UTC": "2026-10-02T09:59:40.861235+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "3492614144\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 347947008\nrss 2881630208\nrss_huge 0\nshmem 81920\nmapped_file 51089408\ndirty 53248\nwriteback 0\nswap 811773952\npgpgin 4428982503\npgpgout 4428186725\npgfault 4895331938\npgmajfault 195157\ninactive_anon 2139627520\nactive_anon 771899392\ninactive_file 74027008\nactive_file 273866752\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 347947008\ntotal_rss 2881630208\ntotal_rss_huge 0\ntotal_shmem 81920\ntotal_mapped_file 51089408\ntotal_dirty 53248\ntotal_writeback 0\ntotal_swap 811773952\ntotal_pgpgin 4428982503\ntotal_pgpgout 4428186725\ntotal_pgfault 4895331938\ntotal_pgmajfault 195157\ntotal_inactive_anon 2139627520\ntotal_active_anon 771899392\ntotal_inactive_file 74027008\ntotal_active_file 273866752\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 3492614144
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2381156352\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 363216896\nrss 1764921344\nrss_huge 0\nshmem 86016\nmapped_file 51089408\ndirty 786432\nwriteback 0\nswap 810463232\npgpgin 4434975361\npgpgout 4434448473\npgfault 4902143896\npgmajfault 195264\ninactive_anon 1099743232\nactive_anon 694824960\ninactive_file 89006080\nactive_file 274141184\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 363216896\ntotal_rss 1764921344\ntotal_rss_huge 0\ntotal_shmem 86016\ntotal_mapped_file 51089408\ntotal_dirty 786432\ntotal_writeback 0\ntotal_swap 810463232\ntotal_pgpgin 4434975361\ntotal_pgpgout 4434448473\ntotal_pgfault 4902143889\ntotal_pgmajfault 195264\ntotal_inactive_anon 1099743232\ntotal_active_anon 694824960\ntotal_inactive_file 89006080\ntotal_active_file 274141184\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2381156352
+        }
+      },
+      {
+        "index": 2,
+        "round": 1,
+        "variant": "parent_v084",
+        "native_pid": 389422,
+        "native_pgid": 389422,
+        "UTC_terminal": "2026-10-02T10:01:01.016307+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011443",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024817",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040044",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040673",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010931",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019354",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.072166",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012083",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011443",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024817",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040044",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040673",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010931",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019354",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.072166",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012083",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_02_parent_v084/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_02_parent_v084/native.log",
+        "memory_samples": 141,
+        "owned_identities": {
+          "389422": {
+            "pid": 389422,
+            "starttime_ticks": 95853794,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T09:59:51.839076+00:00"
+          },
+          "389597": {
+            "pid": 389597,
+            "starttime_ticks": 95856372,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:17.370800+00:00"
+          },
+          "389598": {
+            "pid": 389598,
+            "starttime_ticks": 95856373,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389597,
+              "starttime_ticks": 95856372,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:17.370800+00:00"
+          },
+          "389607": {
+            "pid": 389607,
+            "starttime_ticks": 95856525,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389597,
+              "starttime_ticks": 95856372,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:18.861543+00:00"
+          },
+          "389617": {
+            "pid": 389617,
+            "starttime_ticks": 95856567,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:19.361695+00:00"
+          },
+          "389618": {
+            "pid": 389618,
+            "starttime_ticks": 95856567,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389617,
+              "starttime_ticks": 95856567,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:19.361695+00:00"
+          },
+          "389661": {
+            "pid": 389661,
+            "starttime_ticks": 95856902,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:22.862270+00:00"
+          },
+          "389662": {
+            "pid": 389662,
+            "starttime_ticks": 95856903,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389661,
+              "starttime_ticks": 95856902,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:22.862270+00:00"
+          },
+          "389673": {
+            "pid": 389673,
+            "starttime_ticks": 95857062,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:24.362363+00:00"
+          },
+          "389674": {
+            "pid": 389674,
+            "starttime_ticks": 95857062,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389673,
+              "starttime_ticks": 95857062,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:24.362363+00:00"
+          },
+          "389719": {
+            "pid": 389719,
+            "starttime_ticks": 95857392,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:27.863005+00:00"
+          },
+          "389720": {
+            "pid": 389720,
+            "starttime_ticks": 95857393,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389719,
+              "starttime_ticks": 95857392,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:27.863005+00:00"
+          },
+          "389731": {
+            "pid": 389731,
+            "starttime_ticks": 95857552,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:29.362955+00:00"
+          },
+          "389734": {
+            "pid": 389734,
+            "starttime_ticks": 95857575,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389731,
+              "starttime_ticks": 95857552,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:29.362955+00:00"
+          },
+          "389785": {
+            "pid": 389785,
+            "starttime_ticks": 95857965,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:33.363715+00:00"
+          },
+          "389786": {
+            "pid": 389786,
+            "starttime_ticks": 95857966,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389785,
+              "starttime_ticks": 95857965,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:33.363715+00:00"
+          },
+          "389797": {
+            "pid": 389797,
+            "starttime_ticks": 95858125,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:34.863699+00:00"
+          },
+          "389798": {
+            "pid": 389798,
+            "starttime_ticks": 95858125,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389797,
+              "starttime_ticks": 95858125,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:34.863699+00:00"
+          },
+          "389805": {
+            "pid": 389805,
+            "starttime_ticks": 95858156,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:35.363878+00:00"
+          },
+          "389806": {
+            "pid": 389806,
+            "starttime_ticks": 95858156,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389805,
+              "starttime_ticks": 95858156,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:35.363878+00:00"
+          },
+          "389843": {
+            "pid": 389843,
+            "starttime_ticks": 95858446,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:38.364440+00:00"
+          },
+          "389844": {
+            "pid": 389844,
+            "starttime_ticks": 95858447,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389843,
+              "starttime_ticks": 95858446,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:38.364440+00:00"
+          },
+          "389854": {
+            "pid": 389854,
+            "starttime_ticks": 95858607,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:39.864356+00:00"
+          },
+          "389855": {
+            "pid": 389855,
+            "starttime_ticks": 95858607,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389854,
+              "starttime_ticks": 95858607,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:39.864356+00:00"
+          },
+          "389899": {
+            "pid": 389899,
+            "starttime_ticks": 95858752,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:41.364627+00:00"
+          },
+          "389900": {
+            "pid": 389900,
+            "starttime_ticks": 95858752,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389899,
+              "starttime_ticks": 95858752,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:41.364627+00:00"
+          },
+          "389910": {
+            "pid": 389910,
+            "starttime_ticks": 95858912,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:42.864662+00:00"
+          },
+          "389911": {
+            "pid": 389911,
+            "starttime_ticks": 95858912,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389910,
+              "starttime_ticks": 95858912,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:42.864662+00:00"
+          },
+          "389975": {
+            "pid": 389975,
+            "starttime_ticks": 95859121,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:44.865095+00:00"
+          },
+          "389976": {
+            "pid": 389976,
+            "starttime_ticks": 95859121,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389975,
+              "starttime_ticks": 95859121,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:44.865095+00:00"
+          },
+          "389978": {
+            "pid": 389978,
+            "starttime_ticks": 95859271,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389975,
+              "starttime_ticks": 95859121,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:46.365527+00:00"
+          },
+          "389994": {
+            "pid": 389994,
+            "starttime_ticks": 95859314,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:46.865772+00:00"
+          },
+          "389995": {
+            "pid": 389995,
+            "starttime_ticks": 95859314,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 389994,
+              "starttime_ticks": 95859314,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:46.865772+00:00"
+          },
+          "390031": {
+            "pid": 390031,
+            "starttime_ticks": 95859508,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:48.866264+00:00"
+          },
+          "390032": {
+            "pid": 390032,
+            "starttime_ticks": 95859509,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 390031,
+              "starttime_ticks": 95859508,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:48.866264+00:00"
+          },
+          "390141": {
+            "pid": 390141,
+            "starttime_ticks": 95859671,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 390031,
+              "starttime_ticks": 95859508,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:50.366200+00:00"
+          },
+          "390157": {
+            "pid": 390157,
+            "starttime_ticks": 95859712,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 389422,
+              "starttime_ticks": 95853794,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:50.866405+00:00"
+          },
+          "390158": {
+            "pid": 390158,
+            "starttime_ticks": 95859713,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 390157,
+              "starttime_ticks": 95859712,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T10:00:50.866405+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2431844352\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 363339776\nrss 1815027712\nrss_huge 0\nshmem 86016\nmapped_file 51089408\ndirty 913408\nwriteback 0\nswap 810434560\npgpgin 4435077491\npgpgout 4434538337\npgfault 4902260223\npgmajfault 195271\ninactive_anon 1149763584\nactive_anon 694902784\ninactive_file 89137152\nactive_file 274141184\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 363339776\ntotal_rss 1815027712\ntotal_rss_huge 0\ntotal_shmem 86016\ntotal_mapped_file 51089408\ntotal_dirty 913408\ntotal_writeback 0\ntotal_swap 810434560\ntotal_pgpgin 4435077491\ntotal_pgpgout 4434538337\ntotal_pgfault 4902260223\ntotal_pgmajfault 195271\ntotal_inactive_anon 1149763584\ntotal_active_anon 694902784\ntotal_inactive_file 89137152\ntotal_active_file 274141184\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2431844352
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "3731660800\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 375873536\nrss 3079188480\nrss_huge 0\nshmem 90112\nmapped_file 51089408\ndirty 614400\nwriteback 0\nswap 808939520\npgpgin 4441396781\npgpgout 4440546001\npgfault 4909425593\npgmajfault 195400\ninactive_anon 2414018560\nactive_anon 694886400\ninactive_file 101367808\nactive_file 274407424\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 375873536\ntotal_rss 3079188480\ntotal_rss_huge 0\ntotal_shmem 90112\ntotal_mapped_file 51089408\ntotal_dirty 614400\ntotal_writeback 0\ntotal_swap 808939520\ntotal_pgpgin 4441396781\ntotal_pgpgout 4440546001\ntotal_pgfault 4909425593\ntotal_pgmajfault 195400\ntotal_inactive_anon 2414018560\ntotal_active_anon 694886400\ntotal_inactive_file 101367808\ntotal_active_file 274407424\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 3731660800
+        }
+      },
+      {
+        "index": 3,
+        "round": 1,
+        "variant": "power_v104",
+        "native_pid": 390224,
+        "native_pgid": 390224,
+        "UTC_terminal": "2026-10-02T10:01:52.915430+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011269",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024868",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.039987",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040453",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010680",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019599",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.069059",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.009841",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011269",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024868",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.039987",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040453",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010680",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019599",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.069059",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.009841",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_03_power_v104/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_03_power_v104/native.log",
+        "memory_samples": 104,
+        "owned_identities": {
+          "390224": {
+            "pid": 390224,
+            "starttime_ticks": 95860768,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T10:01:01.577496+00:00"
+          },
+          "390485": {
+            "pid": 390485,
+            "starttime_ticks": 95864528,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 390224,
+              "starttime_ticks": 95860768,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:01:39.100845+00:00"
+          },
+          "390486": {
+            "pid": 390486,
+            "starttime_ticks": 95864529,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 390485,
+              "starttime_ticks": 95864528,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T10:01:39.100845+00:00"
+          },
+          "390505": {
+            "pid": 390505,
+            "starttime_ticks": 95864741,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 390224,
+              "starttime_ticks": 95860768,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:01:41.101261+00:00"
+          },
+          "390506": {
+            "pid": 390506,
+            "starttime_ticks": 95864741,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 390505,
+              "starttime_ticks": 95864741,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T10:01:41.101261+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "3731988480\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 375988224\nrss 3079720960\nrss_huge 0\nshmem 90112\nmapped_file 51089408\ndirty 712704\nwriteback 0\nswap 808919040\npgpgin 4441476823\npgpgout 4440625884\npgfault 4909505620\npgmajfault 195404\ninactive_anon 2414538752\nactive_anon 694886400\ninactive_file 101519360\nactive_file 274407424\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 375988224\ntotal_rss 3079720960\ntotal_rss_huge 0\ntotal_shmem 90112\ntotal_mapped_file 51089408\ntotal_dirty 712704\ntotal_writeback 0\ntotal_swap 808919040\ntotal_pgpgin 4441476823\ntotal_pgpgout 4440625884\ntotal_pgfault 4909505620\ntotal_pgmajfault 195404\ntotal_inactive_anon 2414538752\ntotal_active_anon 694886400\ntotal_inactive_file 101519360\ntotal_active_file 274407424\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 3731988480
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2270068736\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 383508480\nrss 1649250304\nrss_huge 0\nshmem 94208\nmapped_file 51089408\ndirty 208896\nwriteback 0\nswap 808333312\npgpgin 4446999491\npgpgout 4446495954\npgfault 4915594476\npgmajfault 195484\ninactive_anon 1017806848\nactive_anon 661172224\ninactive_file 108519424\nactive_file 274890752\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 383508480\ntotal_rss 1649250304\ntotal_rss_huge 0\ntotal_shmem 94208\ntotal_mapped_file 51089408\ntotal_dirty 208896\ntotal_writeback 0\ntotal_swap 808333312\ntotal_pgpgin 4446999491\ntotal_pgpgout 4446495954\ntotal_pgfault 4915594476\ntotal_pgmajfault 195484\ntotal_inactive_anon 1017806848\ntotal_active_anon 661172224\ntotal_inactive_file 108519424\ntotal_active_file 274890752\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2270068736
+        }
+      },
+      {
+        "index": 4,
+        "round": 1,
+        "variant": "power_v104",
+        "native_pid": 390688,
+        "native_pgid": 390688,
+        "UTC_terminal": "2026-10-02T10:02:40.665565+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011244",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024433",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040141",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040387",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010675",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019768",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.069059",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.010066",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011244",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024433",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040141",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040387",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010675",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019768",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.069059",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.010066",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_04_power_v104/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_04_power_v104/native.log",
+        "memory_samples": 101,
+        "owned_identities": {
+          "390688": {
+            "pid": 390688,
+            "starttime_ticks": 95865958,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T10:01:53.476562+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2270838784\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 383586304\nrss 1649340416\nrss_huge 0\nshmem 94208\nmapped_file 51089408\ndirty 282624\nwriteback 0\nswap 808312832\npgpgin 4447079467\npgpgout 4446575890\npgfault 4915674493\npgmajfault 195488\ninactive_anon 1017925632\nactive_anon 661176320\ninactive_file 108630016\nactive_file 274890752\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 383586304\ntotal_rss 1649340416\ntotal_rss_huge 0\ntotal_shmem 94208\ntotal_mapped_file 51089408\ntotal_dirty 282624\ntotal_writeback 0\ntotal_swap 808312832\ntotal_pgpgin 4447079467\ntotal_pgpgout 4446575890\ntotal_pgfault 4915674493\ntotal_pgmajfault 195488\ntotal_inactive_anon 1017925632\ntotal_active_anon 661176320\ntotal_inactive_file 108630016\ntotal_active_file 274890752\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2270838784
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2280312832\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 390742016\nrss 1649897472\nrss_huge 0\nshmem 98304\nmapped_file 51089408\ndirty 528384\nwriteback 0\nswap 807567360\npgpgin 4452527366\npgpgout 4452021867\npgfault 4921589941\npgmajfault 195561\ninactive_anon 1018667008\nactive_anon 661176320\ninactive_file 114552832\nactive_file 276094976\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 390742016\ntotal_rss 1649897472\ntotal_rss_huge 0\ntotal_shmem 98304\ntotal_mapped_file 51089408\ntotal_dirty 528384\ntotal_writeback 0\ntotal_swap 807567360\ntotal_pgpgin 4452527366\ntotal_pgpgout 4452021867\ntotal_pgfault 4921589941\ntotal_pgmajfault 195561\ntotal_inactive_anon 1018667008\ntotal_active_anon 661176320\ntotal_inactive_file 114552832\ntotal_active_file 276094976\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2280312832
+        }
+      },
+      {
+        "index": 5,
+        "round": 1,
+        "variant": "parent_v084",
+        "native_pid": 391010,
+        "native_pgid": 391010,
+        "UTC_terminal": "2026-10-02T10:03:29.680490+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012631",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024888",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040653",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040402",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.012780",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019589",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.072632",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012575",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012631",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024888",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040653",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040402",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.012780",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019589",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.072632",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012575",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_05_parent_v084/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_05_parent_v084/native.log",
+        "memory_samples": 100,
+        "owned_identities": {
+          "391010": {
+            "pid": 391010,
+            "starttime_ticks": 95870733,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T10:02:41.226766+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2280443904\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 390823936\nrss 1649946624\nrss_huge 0\nshmem 98304\nmapped_file 51089408\ndirty 606208\nwriteback 0\nswap 807550976\npgpgin 4452608050\npgpgout 4452102519\npgfault 4921672261\npgmajfault 195563\ninactive_anon 1018703872\nactive_anon 661180416\ninactive_file 114659328\nactive_file 276094976\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 390823936\ntotal_rss 1649946624\ntotal_rss_huge 0\ntotal_shmem 98304\ntotal_mapped_file 51089408\ntotal_dirty 606208\ntotal_writeback 0\ntotal_swap 807550976\ntotal_pgpgin 4452608050\ntotal_pgpgout 4452102519\ntotal_pgfault 4921672261\ntotal_pgmajfault 195563\ntotal_inactive_anon 1018703872\ntotal_active_anon 661180416\ntotal_inactive_file 114659328\ntotal_active_file 276094976\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2280443904
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2288984064\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 397631488\nrss 1651081216\nrss_huge 0\nshmem 102400\nmapped_file 51089408\ndirty 344064\nwriteback 0\nswap 807170048\npgpgin 4458061101\npgpgout 4457553640\npgfault 4927674233\npgmajfault 195615\ninactive_anon 1019809792\nactive_anon 661180416\ninactive_file 121356288\nactive_file 276168704\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 397631488\ntotal_rss 1651081216\ntotal_rss_huge 0\ntotal_shmem 102400\ntotal_mapped_file 51089408\ntotal_dirty 344064\ntotal_writeback 0\ntotal_swap 807170048\ntotal_pgpgin 4458061101\ntotal_pgpgout 4457553640\ntotal_pgfault 4927674233\ntotal_pgmajfault 195615\ntotal_inactive_anon 1019809792\ntotal_active_anon 661180416\ntotal_inactive_file 121356288\ntotal_active_file 276168704\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2288984064
+        }
+      },
+      {
+        "index": 6,
+        "round": 1,
+        "variant": "baseline_v28",
+        "native_pid": 391430,
+        "native_pgid": 391430,
+        "UTC_terminal": "2026-10-02T10:04:19.022220+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.013061",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.030853",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.052429",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.052332",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.013225",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.023700",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.084460",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012646",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.013061",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.030853",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.052429",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.052332",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.013225",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.023700",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.084460",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012646",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_06_baseline_v28/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_06_baseline_v28/native.log",
+        "memory_samples": 98,
+        "owned_identities": {
+          "391430": {
+            "pid": 391430,
+            "starttime_ticks": 95875635,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T10:03:30.243427+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2288353280\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 397709312\nrss 1651130368\nrss_huge 0\nshmem 102400\nmapped_file 51089408\ndirty 417792\nwriteback 0\nswap 807170048\npgpgin 4458141048\npgpgout 4457633556\npgfault 4927754181\npgmajfault 195615\ninactive_anon 1019850752\nactive_anon 661180416\ninactive_file 121466880\nactive_file 276168704\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 397709312\ntotal_rss 1651130368\ntotal_rss_huge 0\ntotal_shmem 102400\ntotal_mapped_file 51089408\ntotal_dirty 417792\ntotal_writeback 0\ntotal_swap 807170048\ntotal_pgpgin 4458141048\ntotal_pgpgout 4457633556\ntotal_pgfault 4927754181\ntotal_pgmajfault 195615\ntotal_inactive_anon 1019850752\ntotal_active_anon 661180416\ntotal_inactive_file 121466880\ntotal_active_file 276168704\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2288353280
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2295300096\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 404373504\nrss 1650880512\nrss_huge 0\nshmem 106496\nmapped_file 51089408\ndirty 409600\nwriteback 0\nswap 806973440\npgpgin 4463593003\npgpgout 4463083938\npgfault 4933790312\npgmajfault 195651\ninactive_anon 1019650048\nactive_anon 661151744\ninactive_file 127410176\nactive_file 276885504\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 404373504\ntotal_rss 1650880512\ntotal_rss_huge 0\ntotal_shmem 106496\ntotal_mapped_file 51089408\ntotal_dirty 409600\ntotal_writeback 0\ntotal_swap 806973440\ntotal_pgpgin 4463593003\ntotal_pgpgout 4463083938\ntotal_pgfault 4933790312\ntotal_pgmajfault 195651\ntotal_inactive_anon 1019650048\ntotal_active_anon 661151744\ntotal_inactive_file 127410176\ntotal_active_file 276885504\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2295300096
+        }
+      },
+      {
+        "index": 7,
+        "round": 2,
+        "variant": "baseline_v28",
+        "native_pid": 391844,
+        "native_pgid": 391844,
+        "UTC_terminal": "2026-10-02T10:05:08.979322+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012887",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.031007",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.051978",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.052444",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.013491",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.023511",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.083835",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012682",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012887",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.031007",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.051978",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.052444",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.013491",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.023511",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.083835",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012682",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_07_baseline_v28/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_07_baseline_v28/native.log",
+        "memory_samples": 101,
+        "owned_identities": {
+          "391844": {
+            "pid": 391844,
+            "starttime_ticks": 95880569,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T10:04:19.584497+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2295242752\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 404451328\nrss 1650925568\nrss_huge 0\nshmem 106496\nmapped_file 51089408\ndirty 487424\nwriteback 0\nswap 806965248\npgpgin 4463672975\npgpgout 4463163880\npgfault 4933870337\npgmajfault 195653\ninactive_anon 1019686912\nactive_anon 661147648\ninactive_file 127488000\nactive_file 276885504\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 404451328\ntotal_rss 1650925568\ntotal_rss_huge 0\ntotal_shmem 106496\ntotal_mapped_file 51089408\ntotal_dirty 487424\ntotal_writeback 0\ntotal_swap 806965248\ntotal_pgpgin 4463672975\ntotal_pgpgout 4463163880\ntotal_pgfault 4933870337\ntotal_pgmajfault 195653\ntotal_inactive_anon 1019686912\ntotal_active_anon 661147648\ntotal_inactive_file 127488000\ntotal_active_file 276885504\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2295242752
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2303225856\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 411766784\nrss 1651281920\nrss_huge 0\nshmem 110592\nmapped_file 51089408\ndirty 0\nwriteback 0\nswap 806899712\npgpgin 4469124016\npgpgout 4468613051\npgfault 4939815379\npgmajfault 195680\ninactive_anon 1020076032\nactive_anon 661143552\ninactive_file 132325376\nactive_file 279347200\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 411766784\ntotal_rss 1651281920\ntotal_rss_huge 0\ntotal_shmem 110592\ntotal_mapped_file 51089408\ntotal_dirty 0\ntotal_writeback 0\ntotal_swap 806899712\ntotal_pgpgin 4469124016\ntotal_pgpgout 4468613051\ntotal_pgfault 4939815379\ntotal_pgmajfault 195680\ntotal_inactive_anon 1020076032\ntotal_active_anon 661143552\ntotal_inactive_file 132325376\ntotal_active_file 279347200\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2303225856
+        }
+      },
+      {
+        "index": 8,
+        "round": 2,
+        "variant": "parent_v084",
+        "native_pid": 392187,
+        "native_pgid": 392187,
+        "UTC_terminal": "2026-10-02T10:05:57.245044+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011162",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024433",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040172",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040458",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010655",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019599",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.072310",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011167",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011162",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024433",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040172",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040458",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010655",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019599",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.072310",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011167",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_08_parent_v084/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_08_parent_v084/native.log",
+        "memory_samples": 102,
+        "owned_identities": {
+          "392187": {
+            "pid": 392187,
+            "starttime_ticks": 95885564,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T10:05:09.541635+00:00"
+          },
+          "392405": {
+            "pid": 392405,
+            "starttime_ticks": 95888896,
+            "exe": "/opt/maca-3.7.1/bin/macainfo",
+            "observed_parent": {
+              "pid": 392187,
+              "starttime_ticks": 95885564,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T10:05:42.564304+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2304475136\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 411844608\nrss 1651552256\nrss_huge 0\nshmem 110592\nmapped_file 51089408\ndirty 77824\nwriteback 0\nswap 806883328\npgpgin 4469204047\npgpgout 4468692995\npgfault 4939895640\npgmajfault 195681\ninactive_anon 1020256256\nactive_anon 661143552\ninactive_file 132403200\nactive_file 279347200\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 411844608\ntotal_rss 1651527680\ntotal_rss_huge 0\ntotal_shmem 110592\ntotal_mapped_file 51089408\ntotal_dirty 77824\ntotal_writeback 0\ntotal_swap 806883328\ntotal_pgpgin 4469204040\ntotal_pgpgout 4468692995\ntotal_pgfault 4939895630\ntotal_pgmajfault 195681\ntotal_inactive_anon 1020194816\ntotal_active_anon 661143552\ntotal_inactive_file 132403200\ntotal_active_file 279347200\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2304475136
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2310778880\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 418770944\nrss 1652232192\nrss_huge 0\nshmem 114688\nmapped_file 51089408\ndirty 204800\nwriteback 0\nswap 806690816\npgpgin 4474645229\npgpgout 4474132308\npgfault 4945910547\npgmajfault 195724\ninactive_anon 1021116416\nactive_anon 661123072\ninactive_file 139104256\nactive_file 279552000\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 418770944\ntotal_rss 1652232192\ntotal_rss_huge 0\ntotal_shmem 114688\ntotal_mapped_file 51089408\ntotal_dirty 204800\ntotal_writeback 0\ntotal_swap 806690816\ntotal_pgpgin 4474645229\ntotal_pgpgout 4474132308\ntotal_pgfault 4945910547\ntotal_pgmajfault 195724\ntotal_inactive_anon 1021116416\ntotal_active_anon 661123072\ntotal_inactive_file 139104256\ntotal_active_file 279552000\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2310778880
+        }
+      },
+      {
+        "index": 9,
+        "round": 2,
+        "variant": "power_v104",
+        "native_pid": 392498,
+        "native_pgid": 392498,
+        "UTC_terminal": "2026-10-02T10:06:44.709890+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.010993",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024366",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.039839",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040760",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010783",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019763",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.069335",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.009667",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.010993",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024366",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.039839",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040760",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010783",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019763",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.069335",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.009667",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_09_power_v104/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_09_power_v104/native.log",
+        "memory_samples": 96,
+        "owned_identities": {
+          "392498": {
+            "pid": 392498,
+            "starttime_ticks": 95890391,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T10:05:57.810959+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2310909952\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 418848768\nrss 1652277248\nrss_huge 0\nshmem 114688\nmapped_file 51089408\ndirty 278528\nwriteback 0\nswap 806682624\npgpgin 4474725205\npgpgout 4474212244\npgfault 4945990571\npgmajfault 195726\ninactive_anon 1021136896\nactive_anon 661123072\ninactive_file 139210752\nactive_file 279552000\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 418848768\ntotal_rss 1652277248\ntotal_rss_huge 0\ntotal_shmem 114688\ntotal_mapped_file 51089408\ntotal_dirty 278528\ntotal_writeback 0\ntotal_swap 806682624\ntotal_pgpgin 4474725205\ntotal_pgpgout 4474212244\ntotal_pgfault 4945990571\ntotal_pgmajfault 195726\ntotal_inactive_anon 1021136896\ntotal_active_anon 661123072\ntotal_inactive_file 139210752\ntotal_active_file 279552000\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2310909952
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2318209024\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 425365504\nrss 1652289536\nrss_huge 0\nshmem 118784\nmapped_file 51089408\ndirty 69632\nwriteback 0\nswap 806658048\npgpgin 4480165838\npgpgout 4479651291\npgfault 4951947520\npgmajfault 195744\ninactive_anon 1021186048\nactive_anon 661114880\ninactive_file 145461248\nactive_file 279810048\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 425365504\ntotal_rss 1652289536\ntotal_rss_huge 0\ntotal_shmem 118784\ntotal_mapped_file 51089408\ntotal_dirty 69632\ntotal_writeback 0\ntotal_swap 806658048\ntotal_pgpgin 4480165838\ntotal_pgpgout 4479651291\ntotal_pgfault 4951947520\ntotal_pgmajfault 195744\ntotal_inactive_anon 1021186048\ntotal_active_anon 661114880\ntotal_inactive_file 145461248\ntotal_active_file 279810048\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2318209024
+        }
+      },
+      {
+        "index": 10,
+        "round": 2,
+        "variant": "power_v104",
+        "native_pid": 392808,
+        "native_pgid": 392808,
+        "UTC_terminal": "2026-10-02T10:07:33.343727+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011151",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024801",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.042117",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040141",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010598",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019384",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.069166",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.009457",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011151",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024801",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.042117",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040141",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010598",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019384",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.069166",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.009457",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_10_power_v104/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_10_power_v104/native.log",
+        "memory_samples": 101,
+        "owned_identities": {
+          "392808": {
+            "pid": 392808,
+            "starttime_ticks": 95895138,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T10:06:45.277978+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2318336000\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 425447424\nrss 1652318208\nrss_huge 0\nshmem 118784\nmapped_file 51089408\ndirty 147456\nwriteback 0\nswap 806658048\npgpgin 4480246524\npgpgout 4479731950\npgfault 4952029847\npgmajfault 195744\ninactive_anon 1021181952\nactive_anon 661118976\ninactive_file 145547264\nactive_file 279810048\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 425447424\ntotal_rss 1652318208\ntotal_rss_huge 0\ntotal_shmem 118784\ntotal_mapped_file 51089408\ntotal_dirty 147456\ntotal_writeback 0\ntotal_swap 806658048\ntotal_pgpgin 4480246524\ntotal_pgpgout 4479731950\ntotal_pgfault 4952029847\ntotal_pgmajfault 195744\ntotal_inactive_anon 1021181952\ntotal_active_anon 661118976\ntotal_inactive_file 145547264\ntotal_active_file 279810048\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2318336000
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2330546176\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 432300032\nrss 1656860672\nrss_huge 0\nshmem 122880\nmapped_file 51089408\ndirty 466944\nwriteback 0\nswap 806305792\npgpgin 4485694626\npgpgout 4485177250\npgfault 4957970143\npgmajfault 195807\ninactive_anon 1025814528\nactive_anon 661110784\ninactive_file 152367104\nactive_file 279818240\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 432300032\ntotal_rss 1656860672\ntotal_rss_huge 0\ntotal_shmem 122880\ntotal_mapped_file 51089408\ntotal_dirty 466944\ntotal_writeback 0\ntotal_swap 806305792\ntotal_pgpgin 4485694626\ntotal_pgpgout 4485177250\ntotal_pgfault 4957970143\ntotal_pgmajfault 195807\ntotal_inactive_anon 1025814528\ntotal_active_anon 661110784\ntotal_inactive_file 152367104\ntotal_active_file 279818240\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2330546176
+        }
+      },
+      {
+        "index": 11,
+        "round": 2,
+        "variant": "parent_v084",
+        "native_pid": 393218,
+        "native_pgid": 393218,
+        "UTC_terminal": "2026-10-02T10:08:20.983676+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011459",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024545",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.039951",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040371",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010685",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019476",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.072448",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.009431",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.011459",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.024545",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.039951",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.040371",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.010685",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.019476",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.072448",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.009431",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_11_parent_v084/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_11_parent_v084/native.log",
+        "memory_samples": 99,
+        "owned_identities": {
+          "393218": {
+            "pid": 393218,
+            "starttime_ticks": 95900001,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T10:07:33.905223+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2331230208\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 432381952\nrss 1656922112\nrss_huge 0\nshmem 122880\nmapped_file 51089408\ndirty 544768\nwriteback 0\nswap 806268928\npgpgin 4485774616\npgpgout 4485257192\npgfault 4958050180\npgmajfault 195812\ninactive_anon 1025875968\nactive_anon 661110784\ninactive_file 152469504\nactive_file 279818240\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 432381952\ntotal_rss 1656922112\ntotal_rss_huge 0\ntotal_shmem 122880\ntotal_mapped_file 51089408\ntotal_dirty 544768\ntotal_writeback 0\ntotal_swap 806268928\ntotal_pgpgin 4485774616\ntotal_pgpgout 4485257192\ntotal_pgfault 4958050180\ntotal_pgmajfault 195812\ntotal_inactive_anon 1025875968\ntotal_active_anon 661110784\ntotal_inactive_file 152469504\ntotal_active_file 279818240\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2331230208
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2338045952\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 439103488\nrss 1657110528\nrss_huge 0\nshmem 126976\nmapped_file 51089408\ndirty 532480\nwriteback 0\nswap 806096896\npgpgin 4491227623\npgpgout 4490708514\npgfault 4964005586\npgmajfault 195846\ninactive_anon 1026138112\nactive_anon 661090304\ninactive_file 158973952\nactive_file 280014848\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 439103488\ntotal_rss 1657110528\ntotal_rss_huge 0\ntotal_shmem 126976\ntotal_mapped_file 51089408\ntotal_dirty 532480\ntotal_writeback 0\ntotal_swap 806096896\ntotal_pgpgin 4491227623\ntotal_pgpgout 4490708514\ntotal_pgfault 4964005586\ntotal_pgmajfault 195846\ntotal_inactive_anon 1026138112\ntotal_active_anon 661090304\ntotal_inactive_file 158973952\ntotal_active_file 280014848\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2338045952
+        }
+      },
+      {
+        "index": 12,
+        "round": 2,
+        "variant": "baseline_v28",
+        "native_pid": 393633,
+        "native_pgid": 393633,
+        "UTC_terminal": "2026-10-02T10:09:09.739193+00:00",
+        "GO_sent": true,
+        "native_exit": 0,
+        "stop_reason": null,
+        "clean_process_accepted": true,
+        "observed_complete_reference_PASS_rows": 8,
+        "rawCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012861",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.031068",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.052040",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.051988",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.011924",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.023347",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.084506",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.010900",
+            "status": "PASS"
+          }
+        ],
+        "verifiedCSVrows": [
+          {
+            "case": "4",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.012861",
+            "status": "PASS"
+          },
+          {
+            "case": "7",
+            "B": "1",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.031068",
+            "status": "PASS"
+          },
+          {
+            "case": "8",
+            "B": "2",
+            "SEQ_LEN": "4096",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.052040",
+            "status": "PASS"
+          },
+          {
+            "case": "9",
+            "B": "1",
+            "SEQ_LEN": "8192",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.051988",
+            "status": "PASS"
+          },
+          {
+            "case": "10",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "2",
+            "block_size": "16",
+            "latency_ms": "0.011924",
+            "status": "PASS"
+          },
+          {
+            "case": "11",
+            "B": "2",
+            "SEQ_LEN": "512",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "4",
+            "block_size": "16",
+            "latency_ms": "0.023347",
+            "status": "PASS"
+          },
+          {
+            "case": "12",
+            "B": "4",
+            "SEQ_LEN": "1024",
+            "H": "1",
+            "HQ": "16",
+            "D": "64",
+            "S": "8",
+            "block_size": "16",
+            "latency_ms": "0.084506",
+            "status": "PASS"
+          },
+          {
+            "case": "13",
+            "B": "1",
+            "SEQ_LEN": "256",
+            "H": "2",
+            "HQ": "32",
+            "D": "64",
+            "S": "1",
+            "block_size": "16",
+            "latency_ms": "0.010900",
+            "status": "PASS"
+          }
+        ],
+        "auditerrors": [],
+        "clean_process_accepted_reference_rows": 8,
+        "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_12_baseline_v28/native_risk_subset.csv",
+        "log": "/root/tilelang-metax/race_tests/nsa/rep/v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2/job_12_baseline_v28/native.log",
+        "memory_samples": 103,
+        "owned_identities": {
+          "393633": {
+            "pid": 393633,
+            "starttime_ticks": 95904765,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 388657
+            },
+            "first_seen_UTC": "2026-10-02T10:08:21.550327+00:00"
+          }
+        },
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2337644544\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 439181312\nrss 1657163776\nrss_huge 0\nshmem 126976\nmapped_file 51089408\ndirty 610304\nwriteback 0\nswap 806080512\npgpgin 4491307560\npgpgout 4490788417\npgfault 4964085478\npgmajfault 195848\ninactive_anon 1026199552\nactive_anon 661090304\ninactive_file 159068160\nactive_file 280014848\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 439181312\ntotal_rss 1657163776\ntotal_rss_huge 0\ntotal_shmem 126976\ntotal_mapped_file 51089408\ntotal_dirty 610304\ntotal_writeback 0\ntotal_swap 806080512\ntotal_pgpgin 4491307560\ntotal_pgpgout 4490788417\ntotal_pgfault 4964085478\ntotal_pgmajfault 195848\ntotal_inactive_anon 1026199552\ntotal_active_anon 661090304\ntotal_inactive_file 159068160\ntotal_active_file 280014848\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2337644544
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "2347171840\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 446160896\nrss 1658032128\nrss_huge 0\nshmem 131072\nmapped_file 51089408\ndirty 729088\nwriteback 0\nswap 805679104\npgpgin 4496764337\npgpgout 4496243239\npgfault 4970014043\npgmajfault 195911\ninactive_anon 1027121152\nactive_anon 661086208\ninactive_file 166010880\nactive_file 280023040\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 446160896\ntotal_rss 1658032128\ntotal_rss_huge 0\ntotal_shmem 131072\ntotal_mapped_file 51089408\ntotal_dirty 729088\ntotal_writeback 0\ntotal_swap 805679104\ntotal_pgpgin 4496764337\ntotal_pgpgout 4496243239\ntotal_pgfault 4970014031\ntotal_pgmajfault 195911\ntotal_inactive_anon 1027121152\ntotal_active_anon 661086208\ntotal_inactive_file 166010880\ntotal_active_file 280023040\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 2347171840
+        }
+      }
+    ],
+    "cgroup_initial": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "3461316608\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 347926528\nrss 2850406400\nrss_huge 0\nshmem 81920\nmapped_file 51089408\ndirty 28672\nwriteback 0\nswap 811778048\npgpgin 4428934935\npgpgout 4428146783\npgfault 4895284371\npgmajfault 195155\ninactive_anon 2108346368\nactive_anon 771899392\ninactive_file 74002432\nactive_file 273866752\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 347926528\ntotal_rss 2850402304\ntotal_rss_huge 0\ntotal_shmem 81920\ntotal_mapped_file 51089408\ntotal_dirty 28672\ntotal_writeback 0\ntotal_swap 811782144\ntotal_pgpgin 4428934934\ntotal_pgpgout 4428146783\ntotal_pgfault 4895284370\ntotal_pgmajfault 195154\ntotal_inactive_anon 2108346368\ntotal_active_anon 771899392\ntotal_inactive_file 74002432\ntotal_active_file 273866752\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 3461316608
+    },
+    "cgroup_final": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "2347282432\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 446242816\nrss 1658081280\nrss_huge 0\nshmem 131072\nmapped_file 51089408\ndirty 806912\nwriteback 0\nswap 805662720\npgpgin 4496804921\npgpgout 4496283789\npgfault 4970055751\npgmajfault 195913\ninactive_anon 1027162112\nactive_anon 661086208\ninactive_file 166117376\nactive_file 280023040\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 446242816\ntotal_rss 1658081280\ntotal_rss_huge 0\ntotal_shmem 131072\ntotal_mapped_file 51089408\ntotal_dirty 806912\ntotal_writeback 0\ntotal_swap 805662720\ntotal_pgpgin 4496804921\ntotal_pgpgout 4496283789\ntotal_pgfault 4970055751\ntotal_pgmajfault 195913\ntotal_inactive_anon 1027162112\ntotal_active_anon 661086208\ntotal_inactive_file 166117376\ntotal_active_file 280023040\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 2347282432
+    },
+    "owned_live_at_end": [],
+    "no_retry": true,
+    "old_v105_zero_ref_gate1_preserved": true,
+    "old_v104_formal_exit1_not_changed": true,
+    "old_v101137_not_changed": true,
+    "candidate_source_v104_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "not_OOM_cause_proof_or_OJ_or_no_regression": true
+  },
+  "reference_counts": {
+    "selected_cases": [
+      4,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "candidate_observed_and_clean_fullrefs": 32,
+    "inclusive_observed_and_clean_fullrefs": 96,
+    "native_processes": 12,
+    "original168_not_merged": true,
+    "not_all14": true,
+    "metadata_profile_refs": 0
+  },
+  "runtime_final": {
+    "UTC": "2026-10-02T10:11:30.537133+00:00",
+    "status": "fixed_risk_completed_C12_improved_C11_positive_no_regression_not_demonstrated",
+    "masterPID": 388657,
+    "master_terminal": true,
+    "gate": 0,
+    "all12_native0_clean8each": true,
+    "C32_inclusive96": true,
+    "OOM_before": 13,
+    "OOM_after": 13,
+    "no_unknown_or_editor_signal": true,
+    "no_repeat_afterfixedrisk": true,
+    "oldfailedgates_preserved": true,
+    "no_main_OJ_promotion": true
+  },
+  "risk_summary": {
+    "candidate_source_v104_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "observed_candidate_refs": 32,
+    "observed_inclusive_refs": 96,
+    "clean_candidate_refs": 32,
+    "clean_inclusive_refs": 96,
+    "OOM_start": 13,
+    "OOM_end": 13,
+    "new_protocol_only_no_oldabsolute_median_or_refmerge": true,
+    "event50Pythoncalls_notpurekernel": true,
+    "two_rounds_not_statistical_stability": true,
+    "positive_cases_vs_either_control": [
+      11
+    ],
+    "cases": [
+      {
+        "case": 4,
+        "samples_us": {
+          "baseline_v28": [
+            "12.774000",
+            "13.061000",
+            "12.887000",
+            "12.861000"
+          ],
+          "parent_v084": [
+            "11.443000",
+            "12.631000",
+            "11.162000",
+            "11.459000"
+          ],
+          "power_v104": [
+            "11.269000",
+            "11.244000",
+            "10.993000",
+            "11.151000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "12.874000",
+          "parent_v084": "11.451000",
+          "power_v104": "11.197500"
+        },
+        "vs_parent_pct": "-2.213780455855383809274299190",
+        "vs_v28_pct": "-13.02237066956656827714773963",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "12.917500",
+              "parent_v084": "12.037000",
+              "power_v104": "11.256500"
+            },
+            "vs_parent_pct": "-6.484173797457838331810251720",
+            "vs_v28_pct": "-12.85852525643506870524482291"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "12.874000",
+              "parent_v084": "11.310500",
+              "power_v104": "11.072000"
+            },
+            "vs_parent_pct": "-2.108660094602360638344900760",
+            "vs_v28_pct": "-13.99720366630417896535653255"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "12.774000",
+            "13.061000"
+          ],
+          "parent_v084": [
+            "11.162000",
+            "12.631000"
+          ],
+          "power_v104": [
+            "10.993000",
+            "11.269000"
+          ]
+        },
+        "ranges_overlap_parent": true,
+        "allC_below_allP": false,
+        "allC_above_allP": false,
+        "all_raw_outliers_retained": true
+      },
+      {
+        "case": 7,
+        "samples_us": {
+          "baseline_v28": [
+            "31.437000",
+            "30.853000",
+            "31.007000",
+            "31.068000"
+          ],
+          "parent_v084": [
+            "24.817000",
+            "24.888000",
+            "24.433000",
+            "24.545000"
+          ],
+          "power_v104": [
+            "24.868000",
+            "24.433000",
+            "24.366000",
+            "24.801000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "31.037500",
+          "parent_v084": "24.681000",
+          "power_v104": "24.617000"
+        },
+        "vs_parent_pct": "-0.2593087800332239374417568200",
+        "vs_v28_pct": "-20.68626661296818364881192106",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "31.145000",
+              "parent_v084": "24.852500",
+              "power_v104": "24.650500"
+            },
+            "vs_parent_pct": "-0.8127954934111256412835730800",
+            "vs_v28_pct": "-20.85246427998073527050890994"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "31.037500",
+              "parent_v084": "24.489000",
+              "power_v104": "24.583500"
+            },
+            "vs_parent_pct": "0.385887541345093715545755200",
+            "vs_v28_pct": "-20.79420056383407168747482884"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "30.853000",
+            "31.437000"
+          ],
+          "parent_v084": [
+            "24.433000",
+            "24.888000"
+          ],
+          "power_v104": [
+            "24.366000",
+            "24.868000"
+          ]
+        },
+        "ranges_overlap_parent": true,
+        "allC_below_allP": false,
+        "allC_above_allP": false,
+        "all_raw_outliers_retained": true
+      },
+      {
+        "case": 8,
+        "samples_us": {
+          "baseline_v28": [
+            "51.912000",
+            "52.429000",
+            "51.978000",
+            "52.040000"
+          ],
+          "parent_v084": [
+            "40.044000",
+            "40.653000",
+            "40.172000",
+            "39.951000"
+          ],
+          "power_v104": [
+            "39.987000",
+            "40.141000",
+            "39.839000",
+            "42.117000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "52.009000",
+          "parent_v084": "40.108000",
+          "power_v104": "40.064000"
+        },
+        "vs_parent_pct": "-0.1097037997407001097037997400",
+        "vs_v28_pct": "-22.96717875752273644946067027",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "52.170500",
+              "parent_v084": "40.348500",
+              "power_v104": "40.064000"
+            },
+            "vs_parent_pct": "-0.7051067573763584767711315200",
+            "vs_v28_pct": "-23.20564303581525958156429400"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "52.009000",
+              "parent_v084": "40.061500",
+              "power_v104": "40.978000"
+            },
+            "vs_parent_pct": "2.287732611110417732735918500",
+            "vs_v28_pct": "-21.20979061316310638543329039"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "51.912000",
+            "52.429000"
+          ],
+          "parent_v084": [
+            "39.951000",
+            "40.653000"
+          ],
+          "power_v104": [
+            "39.839000",
+            "42.117000"
+          ]
+        },
+        "ranges_overlap_parent": true,
+        "allC_below_allP": false,
+        "allC_above_allP": false,
+        "all_raw_outliers_retained": true
+      },
+      {
+        "case": 9,
+        "samples_us": {
+          "baseline_v28": [
+            "51.768000",
+            "52.332000",
+            "52.444000",
+            "51.988000"
+          ],
+          "parent_v084": [
+            "40.673000",
+            "40.402000",
+            "40.458000",
+            "40.371000"
+          ],
+          "power_v104": [
+            "40.453000",
+            "40.387000",
+            "40.760000",
+            "40.141000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "52.160000",
+          "parent_v084": "40.430000",
+          "power_v104": "40.420000"
+        },
+        "vs_parent_pct": "-0.0247341083353945090279495400",
+        "vs_v28_pct": "-22.50766871165644171779141104",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "52.050000",
+              "parent_v084": "40.537500",
+              "power_v104": "40.420000"
+            },
+            "vs_parent_pct": "-0.2898550724637681159420289900",
+            "vs_v28_pct": "-22.34390009606147934678194044"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "52.216000",
+              "parent_v084": "40.414500",
+              "power_v104": "40.450500"
+            },
+            "vs_parent_pct": "0.089076940207103885981516500",
+            "vs_v28_pct": "-22.53236555844951738930595986"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "51.768000",
+            "52.444000"
+          ],
+          "parent_v084": [
+            "40.371000",
+            "40.673000"
+          ],
+          "power_v104": [
+            "40.141000",
+            "40.760000"
+          ]
+        },
+        "ranges_overlap_parent": true,
+        "allC_below_allP": false,
+        "allC_above_allP": false,
+        "all_raw_outliers_retained": true
+      },
+      {
+        "case": 10,
+        "samples_us": {
+          "baseline_v28": [
+            "11.909000",
+            "13.225000",
+            "13.491000",
+            "11.924000"
+          ],
+          "parent_v084": [
+            "10.931000",
+            "12.780000",
+            "10.655000",
+            "10.685000"
+          ],
+          "power_v104": [
+            "10.680000",
+            "10.675000",
+            "10.783000",
+            "10.598000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "12.574500",
+          "parent_v084": "10.808000",
+          "power_v104": "10.677500"
+        },
+        "vs_parent_pct": "-1.207438934122871946706143600",
+        "vs_v28_pct": "-15.08608692194520656884965605",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "12.567000",
+              "parent_v084": "11.855500",
+              "power_v104": "10.677500"
+            },
+            "vs_parent_pct": "-9.936316477584243600016869810",
+            "vs_v28_pct": "-15.03541020132091986949948277"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "12.707500",
+              "parent_v084": "10.670000",
+              "power_v104": "10.690500"
+            },
+            "vs_parent_pct": "0.192127460168697282099344000",
+            "vs_v28_pct": "-15.87251623057249655715128861"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "11.909000",
+            "13.491000"
+          ],
+          "parent_v084": [
+            "10.655000",
+            "12.780000"
+          ],
+          "power_v104": [
+            "10.598000",
+            "10.783000"
+          ]
+        },
+        "ranges_overlap_parent": true,
+        "allC_below_allP": false,
+        "allC_above_allP": false,
+        "all_raw_outliers_retained": true
+      },
+      {
+        "case": 11,
+        "samples_us": {
+          "baseline_v28": [
+            "23.316000",
+            "23.700000",
+            "23.511000",
+            "23.347000"
+          ],
+          "parent_v084": [
+            "19.354000",
+            "19.589000",
+            "19.599000",
+            "19.476000"
+          ],
+          "power_v104": [
+            "19.599000",
+            "19.768000",
+            "19.763000",
+            "19.384000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "23.429000",
+          "parent_v084": "19.532500",
+          "power_v104": "19.681000"
+        },
+        "vs_parent_pct": "0.760271342634071419429156500",
+        "vs_v28_pct": "-15.99726834265226855606299885",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "23.508000",
+              "parent_v084": "19.471500",
+              "power_v104": "19.683500"
+            },
+            "vs_parent_pct": "1.088770767532033998407929500",
+            "vs_v28_pct": "-16.26892972605070614258975668"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "23.429000",
+              "parent_v084": "19.537500",
+              "power_v104": "19.573500"
+            },
+            "vs_parent_pct": "0.184261036468330134357005800",
+            "vs_v28_pct": "-16.45610141277903452985616117"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "23.316000",
+            "23.700000"
+          ],
+          "parent_v084": [
+            "19.354000",
+            "19.599000"
+          ],
+          "power_v104": [
+            "19.384000",
+            "19.768000"
+          ]
+        },
+        "ranges_overlap_parent": true,
+        "allC_below_allP": false,
+        "allC_above_allP": false,
+        "all_raw_outliers_retained": true
+      },
+      {
+        "case": 12,
+        "samples_us": {
+          "baseline_v28": [
+            "84.224000",
+            "84.460000",
+            "83.835000",
+            "84.506000"
+          ],
+          "parent_v084": [
+            "72.166000",
+            "72.632000",
+            "72.310000",
+            "72.448000"
+          ],
+          "power_v104": [
+            "69.059000",
+            "69.059000",
+            "69.335000",
+            "69.166000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "84.342000",
+          "parent_v084": "72.379000",
+          "power_v104": "69.112500"
+        },
+        "vs_parent_pct": "-4.513049365147349369292198010",
+        "vs_v28_pct": "-18.05684000853667212065163264",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "84.342000",
+              "parent_v084": "72.399000",
+              "power_v104": "69.059000"
+            },
+            "vs_parent_pct": "-4.613323388444591776129504550",
+            "vs_v28_pct": "-18.12027222498873633539636243"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "84.170500",
+              "parent_v084": "72.379000",
+              "power_v104": "69.250500"
+            },
+            "vs_parent_pct": "-4.322386327525939844430014230",
+            "vs_v28_pct": "-17.72592535389477310934353485"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "83.835000",
+            "84.506000"
+          ],
+          "parent_v084": [
+            "72.166000",
+            "72.632000"
+          ],
+          "power_v104": [
+            "69.059000",
+            "69.335000"
+          ]
+        },
+        "ranges_overlap_parent": false,
+        "allC_below_allP": true,
+        "allC_above_allP": false,
+        "all_raw_outliers_retained": true
+      },
+      {
+        "case": 13,
+        "samples_us": {
+          "baseline_v28": [
+            "11.059000",
+            "12.646000",
+            "12.682000",
+            "10.900000"
+          ],
+          "parent_v084": [
+            "12.083000",
+            "12.575000",
+            "11.167000",
+            "9.431000"
+          ],
+          "power_v104": [
+            "9.841000",
+            "10.066000",
+            "9.667000",
+            "9.457000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "11.852500",
+          "parent_v084": "11.625000",
+          "power_v104": "9.754000"
+        },
+        "vs_parent_pct": "-16.09462365591397849462365591",
+        "vs_v28_pct": "-17.70512550094916684243830416",
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "11.852500",
+              "parent_v084": "12.329000",
+              "power_v104": "9.953500"
+            },
+            "vs_parent_pct": "-19.26758050125719847513991402",
+            "vs_v28_pct": "-16.02193630035857414047669268"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "11.791000",
+              "parent_v084": "10.299000",
+              "power_v104": "9.562000"
+            },
+            "vs_parent_pct": "-7.156034566462763375084959700",
+            "vs_v28_pct": "-18.90424900347722839453820711"
+          }
+        ],
+        "ranges_us": {
+          "baseline_v28": [
+            "10.900000",
+            "12.682000"
+          ],
+          "parent_v084": [
+            "9.431000",
+            "12.575000"
+          ],
+          "power_v104": [
+            "9.457000",
+            "10.066000"
+          ]
+        },
+        "ranges_overlap_parent": true,
+        "allC_below_allP": false,
+        "allC_above_allP": false,
+        "all_raw_outliers_retained": true
+      }
+    ],
+    "no_OJ_or_main_promotion": true,
+    "risk_metadata_profile_not_authorized_by_this_analysis": true
+  },
+  "old_v1041_v101137_preserved": true,
+  "no_adaptive_retry_or_loosening": true,
+  "kernel_source_changes": 0,
+  "native_processes": 12,
+  "observed_and_clean32C96inclusive": true,
+  "full14_native_completed": false,
+  "risk8case_completed": true,
+  "OJ": null,
+  "main_promotion": false
+}
