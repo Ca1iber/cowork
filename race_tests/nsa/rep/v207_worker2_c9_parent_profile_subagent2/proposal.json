@@ -1,0 +1,105 @@
+{
+  "version": "v207_worker2_c9_parent_profile_subagent2",
+  "status": "DIAGNOSTIC_PROPOSAL_NO_NEWKERNEL_OR_HEAVY",
+  "source_base_commit": "f7c53a69b83d3bf8ead72101ca2d26a14a3a8032",
+  "official_case_number": 9,
+  "only_key": [
+    1,
+    8192,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "parent_source": "race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+  "parent_sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "existing_parent_CPP": "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case9_stage1.device.cpp",
+  "existing_parent_CPP_SHA": "85b2d06253ada7098991de3035caf9d03156c7914175fe2e03f0544756c498fe",
+  "existing_parent_host": "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case9_stage1.host.cpp",
+  "existing_parent_hostSHA": "f69ccb3644e47fe5e96a2f97463a32c281f4cf1300784acc57ed3927fa101f34",
+  "existing_launch": [
+    8192,
+    1,
+    64,
+    1,
+    1,
+    2048
+  ],
+  "parent_factory": "_make_power_s1_case4_dense",
+  "driver_path": "race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py",
+  "driverSHA": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a",
+  "fixed_scope": "one originalmcProfiler perf_exec invocation; --counts2 --custom --per-kernel; parent84 onlyC9;noB28/candidate/controlcomparison",
+  "metrics": [
+    "L2C Hit Rate",
+    "Global Memory Read bytes",
+    "Global Memory Write bytes",
+    "AP MTE Duty ratio",
+    "AP MMA Duty ratio",
+    "shared memory access efficiency",
+    "average conflict cycles per instruction",
+    "average latency per load instruction",
+    "Achieved waves",
+    "Dispatched waves"
+  ],
+  "tool": "/usr/local/bin/mcProfiler",
+  "tool_workdir": "/opt/mcProfiler-ubuntu18.04",
+  "planned_fixed_command_shape": [
+    "mcProfiler",
+    "perf_exec",
+    "--cmdline",
+    "env MACA_PATH=/opt/maca PYTHONDONTWRITEBYTECODE=1 PYTHONWARNINGS=ignore PYTHONPATH=/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa NSA_PROFILE_MODE=mctx NSA_VARIANT_SOURCE=exact4c /opt/conda/bin/python -u original_driver.py 9",
+    "--casename",
+    "nsa_worker2_v207_parent84_case9",
+    "--metrics",
+    "fixed10metrics",
+    "--counts",
+    "2",
+    "--custom",
+    "--per-kernel",
+    "--cwd",
+    "/root/tilelang-metax"
+  ],
+  "sampling": "two intendedperkernelreportrecords fromoneCLI;nottwoindependentnativebenchmarks; no adaptive capture",
+  "profile_driver_semantics": "seed0/F16 requiresgradFalse/nofullreference;firstlaunch+warm10+profile20 per successfuldriverinvocation; indexconstruction randperm(max(1,t//16)) excludes currentblock atfullblockboundary, differentfromoriginalnative input protocol. Toolreplay/launchcount mustbeobserved notassumed",
+  "strict_initial_scope": {
+    "kernel_name": "native_sparse_attention_kernel",
+    "grid": [
+      8192,
+      1
+    ],
+    "full_wave_count": 8192,
+    "necessary_output_payload_bytes": 16777216,
+    "write_residual_allowed_bytes": [
+      0,
+      512
+    ],
+    "not_exclusive_HBM_or_only_writer_proof": true
+  },
+  "old_v200_C9_failure_kept": "parent sample1 numeric16777792-16777216=576>512 failed;otherparent sample448pass; cannot call pairclean orchange512 threshold",
+  "admission_runtime": "samecooperativeheavylock/wholeCG<=2GiB prepostadmission/unownedRSS>1GiBrefuse/stdlib-Sobserver0.5s/whole>=28GiB-OOM-unknownheavy-nonzero-Killed-300sstop;stableownedwrapper waitsGO thenmcProfiler subprocess;onlyverifiedownedPIDstarttimeexe/observedancestry;no retry",
+  "report_scope": "captureallrawfiles/jobPID+CLI/driver markers/actualcounts; outerCLI0 notclean ifinnerKilled/NA/OOM/missingscope; two numericvalid orpartialfail explicit; neverreinterpret counter ascalibratedDRAM oractualoccupancy; no roofcalibration/ISA claim",
+  "stop_and_closure": "anyruntimefailure stops;unavailable/NA/scopefail no resample;closev207diagnostic withexistingraw/0refs/0newkernel; noautomaticnative/compiler/trace/optimization",
+  "new_native_reference_count": 0,
+  "new_kernel_source_count": 0,
+  "new_heavy_launched": false,
+  "next_mechanism_selection": "afterlimitedparentdiagnostic choose actualmemory/compute/scheduling mechanism withownhypothesis+peer+leaderreview; avoidC5Vshuffle/Num8/earlyV/twoqueryCTA128 variants",
+  "metrics_group_semantics": {
+    "WG_average_latency_per_load": "WorkgroupMemorycycles,notDRAMlatency",
+    "global_readwrite_bytes": "toolcounters,notcalibratedHBMtraffic",
+    "Achieved_Dispatched_waves": "recordedwholewaves,notoccupancy",
+    "MTE_MMA_duty": "utilizationcounter,no roof bandwidth claim"
+  },
+  "fixed_actual_command_manifest": "fixed_profile_manifest.json",
+  "toolSHA": "8b668655748648b40d12c7a4a5e179105f0e31b178a2d15e87b6bcdaa89efa3b",
+  "tool_version_evidence": "mcProfiler 3.8.1.4 fromv200 versioncommand, currentbinarySHA fixed withoutheavyimport",
+  "peer_advisory_received": true,
+  "peer_requirements_adopted": [
+    "all10metrics numerical+CLI0/innerKilled/OOM/scopechecks;NA incomplete",
+    "parent/observedancestry capture multi-layer/replay/setsid,neverblindPGIDkill",
+    "normalownexit missingproc usesactualPopen terminal;priorabort nevercleared",
+    "scope necessarynotexclusive/metrics interpretation anddifferentnativeprotocol",
+    "samebudget/namespace/samplinglimits"
+  ]
+}
