@@ -20,7 +20,7 @@
   "oj_total": 1204,
   "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
   "peer_exchange_actual": "Both workers directly discussed inverse mapping, global vector width, shared-V synchronization and failed-run semantics; own-branch records only",
-  "updated_at_utc": "2026-10-02T10:13:22.255838+00:00",
+  "updated_at_utc": "2026-10-02T10:21:02.175961+00:00",
   "worker1": {
     "cases": [
       6,
@@ -28,9 +28,9 @@
       11,
       12
     ],
-    "active_version": "v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2",
-    "stage": "ownerreports v10912riskprocesses complete96clean/C32;C11positive remains;closurepending",
-    "last_closed_source_commit": "bdadf18ed069e06e2c30468d002cc0d5e97d2793",
+    "active_version": "v110 proposal-only",
+    "stage": "v109closed196/195SHA and rawCSV independentlyaudited; C11+.760271% persists; v110proposal",
+    "last_closed_source_commit": "3ff4611a668b109e30d66f23d063b5c6fc1232b6",
     "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
     "completed_native_processes": 12,
     "observed_refs": 168,
@@ -58,7 +58,7 @@
     "OJ": "UNAVAILABLE",
     "new_native_metadata_profile_GO": false,
     "main_submission_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
-    "communication_head": "02b0d9a07961965f20c34e95e7236365a193b9bd",
+    "communication_head": "9e0c486ddd690befe487d40c491a88e1b4a1c26a",
     "master_pid": 388657,
     "master_starttime_ticks": 95845437,
     "active_native_pid": 388664,
@@ -69,8 +69,12 @@
     "risk_protocol_last_reported_clean_inclusive_refs": 96,
     "risk_protocol_last_reported_clean_candidate_refs": 32,
     "original_full14_refs_remain_separate": 168,
-    "risk_case12_delta_vs_parent_pct": -4.513049,
-    "risk_case11_delta_vs_parent_pct": 0.760271
+    "risk_case12_delta_vs_parent_pct": -4.513049365147349,
+    "risk_case11_delta_vs_parent_pct": 0.7602713426340714,
+    "risk_protocol_independent_clean_refs": {
+      "candidate": 32,
+      "inclusive": 96
+    }
   },
   "worker2": {
     "cases": [
@@ -86,7 +90,7 @@
       14
     ],
     "active_version": "v208_worker2_c9_q_register_transpose_subagent2",
-    "stage": "actualsemantic/source/resources/screenplan reviewed; onefixed12nativeapproved;launchpending",
+    "stage": "workerreported first7/12 C9nativeclean; bothround1 C>P; fixed12continues",
     "last_closed_source_commit": "e61d29b899f32d3ea86681c984076568ff70dcf7",
     "parent_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
     "actual_cli_returncode": 0,
@@ -101,7 +105,7 @@
     "oom_kill": 3,
     "profile_scope_verdict": "limited necessary numeric/waves/payload scope passes; exclusive runtime grid unavailable",
     "new_heavy_GO": "v208 fixedC9nativeonly",
-    "communication_head": "497965586bda7e46ca6ac4dc02030fe418f6e278",
+    "communication_head": "eae996683f177f1148147a7135a6ad165a612ee9",
     "candidate_sha256": "46696428569b1cb16eb4aac52d07cefcdc28edc0c223a400937a880ad9a6a264",
     "metadata_actual_returncode": 0,
     "metadata_actual_samples": 79,
@@ -125,7 +129,17 @@
       "stack_bytes_both": 0,
       "dynamic_shared_bytes_both": 2048
     },
-    "native_GO": true
+    "native_GO": true,
+    "screen_last_reported_candidate_refs": 2,
+    "screen_last_reported_inclusive_refs": 7,
+    "screen_round1_raw_candidate_us": [
+      41.59,
+      41.078
+    ],
+    "screen_round1_raw_parent_us": [
+      40.284,
+      40.095
+    ]
   },
   "leader_next": "Audit v108 closure, review fixed risk proposal and worker2 own C9 new mechanism; keep nonregression and all failed-gate evidence intact.",
   "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration"
