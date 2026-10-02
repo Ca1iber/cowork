@@ -1,0 +1,1 @@
+Actualworker2 128budgetadvisory: new6+22+4reallocation onlyengineeringestimate, notupperbound orOOMcauseproof. Whole28runtime/unknownheavy/identity/owned-only guardsnotexempted; old1271cannotrevive andmorebudgetnotguaranteesafety. Sourcecfeb frozen no newalgorithm/headercopy, onceadmissionrefusalstop/noretry/pollcleanup. Owneradopted nopeeredit/GO.
