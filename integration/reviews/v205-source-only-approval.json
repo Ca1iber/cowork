@@ -1,0 +1,55 @@
+{
+  "reviewed_at_utc": "2026-10-02T07:10:19.701098+00:00",
+  "decision": "GO corrected source-only v205, no heavy execution",
+  "owner": "worker2",
+  "source_base_commit": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
+  "numerical_parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "actual_corrected_case": 5,
+  "only_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "host_grid": [
+    1024,
+    4
+  ],
+  "threads": 64,
+  "waves": 4096,
+  "output_payload_bytes": 8388608,
+  "actual_read_paths": [
+    "rep/v205_worker2_c5_num8_output_reuse_subagent2/proposal.json",
+    "rep/v205_worker2_c5_num8_output_reuse_subagent2/scope_correction.json",
+    "rep/v205_worker2_c5_num8_output_reuse_subagent2/output_partition_proof.json"
+  ],
+  "scope_correction": "Wrong case7 proposal archived; first literalbinding lookup1 and actual loopbinding recovery0 retained, no candidate/heavy before correction",
+  "mechanism": "All original Voperand16half/lane cached before any outputoverwrite. Original preoutput fullwarp fence protects fulltile reads, then two32feature groups reuse Num8:clear/valid-only twoPV/sameF32denDivision/F16cast/store originalout_slot. Original finalwarp/packed16B outputgather stays.",
+  "required_source_scope": [
+    "# codex-power v205",
+    "exact parent topASTprefix maintained",
+    "only officialJSON case5 key override",
+    "same P/den shfl32then16/perfeature MMA0accum/invalid Num0-den0 design",
+    "unchanged global16B paths and sharedoutput8B sourcepath",
+    "no earlyV/othermechanisms/peer edits"
+  ],
+  "design_proofs": "perquery512+512 outputslot sets disjoint/union1024; four-half vector contiguous8B; allVoperandreads cover1024 sharedhalf. These remain requirements until actual candidate/compiler validation.",
+  "retained_falsifiers": [
+    "MT>=42 stops before native per owner hypothesis",
+    "stack>0 stops",
+    "all Vsharedreads must dominate first outputwrite, no later sharedVreads",
+    "math/vector/hash/guard/sync or scope mismatch stops"
+  ],
+  "allowed": "Direct source write and stdlib-S static/existing sourcevalidator only",
+  "not_approved": [
+    "imports/compiler/precompile",
+    "attention/reference/native",
+    "profile/formal",
+    "main/OJ promotion"
+  ],
+  "next": "Review exact candidateSHA and actualsource group/validguard/fence/vector/key/AST then separately approve bounded metadata"
+}

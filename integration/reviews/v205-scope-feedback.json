@@ -1,0 +1,38 @@
+{
+  "reviewed_at_utc": "2026-10-02T07:06:24.857033+00:00",
+  "decision": "HOLD new source/heavy until owner corrects actual target key",
+  "actual_proposal_path": "rep/v205_worker2_c5_num8_output_reuse_subagent2/proposal.json",
+  "mechanism": "C5 Num8 two32feature output groups after all Voperand16half cached; original outputsharedslots and final packed16B gather retained",
+  "observed_only_key": [
+    1,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "observed_key_case": 7,
+  "intended_case": 5,
+  "required_case5_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "required_host_grid": [
+    1024,
+    4
+  ],
+  "expected_waves": 4096,
+  "expected_output_payload_bytes": 8388608,
+  "proof_limit": "Case7 has samewaves/payload; those alone cannot identify case5",
+  "owner_required_action": "Fix only ownplan/comm/proof shape labeling, confirm parent case5 factory/key and L1024 index bounds, then leader reads corrected concrete proposal",
+  "unresolved_scope_prevents_GO": true,
+  "no_peer_code_plan_edits": true
+}
