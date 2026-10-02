@@ -1,0 +1,46 @@
+{
+  "candidate_path": "/tmp/nsa_worker2_v206_c5_v_shared4row.py",
+  "candidate_sha256": "d1a58e61691db44287bd25e6b2aca80eaef2a173c925d3921d64a0645671b626",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "factory_name": "_make_worker2_c5_v_shared4row",
+  "dispatch_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "official_case_number": 5,
+  "prefix_14_AST_nodes_equal": true,
+  "additional_nodes_only": [
+    "_make_worker2_c5_v_shared4row",
+    "exactC5installer"
+  ],
+  "inverse_ownership_and_declarations_whole_factory_AST_equal": true,
+  "Num_float32_elements": 16,
+  "v_column_float16_elements": 4,
+  "packed_receive_uint32_elements": 4,
+  "unchanged_globalVfetch_and_math_and_consumer_and_output_AST": true,
+  "source_sync_sites": 7,
+  "new_ownership_source": "half = (lane // 8) % 2\nfor row in T.unroll(2):\n    for pair in T.unroll(2):\n        send_lo = T.if_then_else(half == 0,\n            v_fetch[row * 8 + 4 + pair * 2], v_fetch[row * 8 + pair * 2])\n        send_hi = T.if_then_else(half == 0,\n            v_fetch[row * 8 + 4 + pair * 2 + 1], v_fetch[row * 8 + pair * 2 + 1])\n        send_word = T.reinterpret('uint16', send_lo).astype('uint32') | (T.reinterpret('uint16', send_hi).astype('uint32') << 16)\n        packed_receive[row * 2 + pair] = T.shfl_xor(send_word, 8, width=64, mask=0xFFFFFFFFFFFFFFFF)\nfor col in T.unroll(4):\n    for row in T.vectorized(4):\n        own_value = T.if_then_else(half == 0,\n            v_fetch[(row % 2) * 8 + col], v_fetch[(row % 2) * 8 + 4 + col])\n        received_word = packed_receive[(row % 2) * 2 + col // 2]\n        received_value = T.reinterpret('float16', (received_word >> ((col % 2) * 16)).astype('uint16'))\n        v_column[row] = T.if_then_else(row // 2 == half, own_value, received_value)\n    for row in T.vectorized(4):\n        shared[v_slot((lane // 16) * 4 + row, fetch_col + half * 4 + col)] = v_column[row]\n",
+  "source_shfl_callsite_inside_2x2unrolls": 1,
+  "planned_expanded_uint32_shfl": 4,
+  "shfl_xor_delta": 8,
+  "shfl_width": 64,
+  "shfl_mask": 18446744073709551615,
+  "only_uniform_valid_branch_encloses_shfl": true,
+  "no_lane_dependent_index_for_localarrays": true,
+  "uint16_reinterpret_zeroextend_shift_or_split_reinterpret": true,
+  "planned_V_shared_stores_perlane": 4,
+  "planned_V_shared_vector_bytes": 8,
+  "actual_CPP_IR_unavailable_sourceonly": true,
+  "new_import_compile_attention_native": [
+    0,
+    0,
+    0,
+    0
+  ]
+}
