@@ -1,0 +1,33 @@
+--- 
++++ 
+@@ -20,7 +20,7 @@
+   half_t v_operand[32];
+   half_t k_local[4];
+   half_t v_fetch[16];
+-  half_t v_column[2];
++  half_t v_column[4];
+   half_t shared_local_cast[4];
+   half_t output_fetch[8];
+   #pragma unroll
+@@ -123,15 +123,15 @@
+     #pragma unroll
+     for (int panel = 0; panel < 2; ++panel) {
+       #pragma unroll
+-      for (int row = 0; row < 2; ++row) {
+-        *(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + ((((((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)256) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)row) * (int64_t)128)) + (((int64_t)panel) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));
++      for (int row = 0; row < 4; ++row) {
++        *(uint2*)(v_fetch + (row * 4)) = *(uint2*)(V + ((((((((int64_t)((int)threadIdx.x)) >> (int64_t)4) * (int64_t)512) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)row) * (int64_t)128)) + (((int64_t)panel) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)15) * (int64_t)4)));
+       }
+       #pragma unroll
+-      for (int col = 0; col < 8; ++col) {
+-        for (int row_1 = 0; row_1 < 2; ++row_1) {
+-          v_column[row_1] = v_fetch[((row_1 * 8) + col)];
++      for (int col = 0; col < 4; ++col) {
++        for (int row_1 = 0; row_1 < 4; ++row_1) {
++          v_column[row_1] = v_fetch[((row_1 * 4) + col)];
+         }
+-        *(uint1*)(shared + ((((panel * 1024) + ((((((col & 3) * 16) + ((((int)threadIdx.x) & 7) * 2)) + (col >> 2)) ^ ((((int)threadIdx.x) & 31) >> 4)) * 16)) + ((((((int)threadIdx.x) >> 4) ^ ((((int)threadIdx.x) & 7) >> 1)) ^ (col & 3)) * 4)) + (((((int)threadIdx.x) & 15) >> 3) * 2))) = *(uint1*)(v_column + 0);
++        *(uint2*)(shared + (((panel * 1024) + ((((col * 16) + (((int)threadIdx.x) & 15)) ^ ((((int)threadIdx.x) & 31) >> 4)) * 16)) + ((((((int)threadIdx.x) >> 4) ^ ((((int)threadIdx.x) & 15) >> 2)) ^ col) * 4))) = *(uint2*)(v_column + 0);
+       }
+     }
+     __syncwarp();

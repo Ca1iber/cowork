@@ -1,0 +1,35 @@
+--- 
++++ 
+@@ -4,7 +4,7 @@
+ root=U.root;r=U.r;h=U.h
+ nplan=json.loads((r/'native_screen_plan.json').read_text());pplan=U.plan
+ expected_OOM=3
+-sources={'baseline_v28':(root/'race_tests/nsa/submission.py','42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd'),'parent_v084':(root/pplan['numerical_parent'],pplan['parent_sha256']),'power_v220':(Path(pplan['candidate_path']),'f306db56959d7919932fbecace3dd2fef78cfd6df42014e9fea596bfbc2d1279')}
++sources={'baseline_v28':(root/'race_tests/nsa/submission.py','42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd'),'parent_v084':(root/pplan['numerical_parent'],pplan['parent_sha256']),'power_v222':(Path(pplan['candidate_path']),'5e449b847770b5114ec43f11d0d4c1e8abd524bb0bf070d83687f67854027f6e')}
+ sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+ runner=Path(nplan['runner']);assert sha(runner)==nplan['runnerSHA']
+ for p,s in sources.values():assert sha(p)==s
+@@ -150,18 +150,18 @@
+  with (r/'screen_case3_subagent2.csv').open('w',newline='') as f:
+   w=csv.DictWriter(f,fieldnames=['case','run','round','variant','latency_ms','status']);w.writeheader();w.writerows(rows)
+  complete=stop is None and len(jobs)==12
+- summary={'complete12jobs':complete,'job_stop':stop,'actual_full_references':{'candidate':sum(q['variant']=='power_v220' for q in rows),'total':len(rows)},'protocol':'fixed12/sourcefresh/wholecg0.5s/nativeW10R50unchanged','raw_PASS_CSV_record_count':len(raw_rows),'raw_all_records':raw_rows,'automatic_formal':False,'currentOOM':U.snapshot('summary')['oom_kill'],'sourceSHA':sources['power_v220'][1]}
++ summary={'complete12jobs':complete,'job_stop':stop,'actual_full_references':{'candidate':sum(q['variant']=='power_v222' for q in rows),'total':len(rows)},'protocol':'fixed12/sourcefresh/wholecg0.5s/nativeW10R50unchanged','raw_PASS_CSV_record_count':len(raw_rows),'raw_all_records':raw_rows,'automatic_formal':False,'currentOOM':U.snapshot('summary')['oom_kill'],'sourceSHA':sources['power_v222'][1]}
+  if complete:
+   vals={s:[float(q['latency_ms'])*1000 for q in rows if q['variant']==s] for s in sources};med={s:statistics.median(q) for s,q in vals.items()}
+   rounds=[]
+   for rnd in [1,2]:
+    m={s:statistics.median(float(q['latency_ms'])*1000 for q in rows if q['round']==rnd and q['variant']==s) for s in sources}
+-   rounds.append({'round':rnd,'medians_us':m,'candidate_vs_parent_pct':(m['power_v220']/m['parent_v084']-1)*100})
+-  overlap=not(max(vals['power_v220'])<min(vals['parent_v084']) or max(vals['parent_v084'])<min(vals['power_v220']))
++   rounds.append({'round':rnd,'medians_us':m,'candidate_vs_parent_pct':(m['power_v222']/m['parent_v084']-1)*100})
++  overlap=not(max(vals['power_v222'])<min(vals['parent_v084']) or max(vals['parent_v084'])<min(vals['power_v222']))
+   status='target_screen_passed_for_leader_review_only'
+-  if med['power_v220']>=med['parent_v084'] or med['power_v220']>=med['baseline_v28']:status='rejected_target_median_not_faster'
++  if med['power_v222']>=med['parent_v084'] or med['power_v222']>=med['baseline_v28']:status='rejected_target_median_not_faster'
+   elif overlap or any(x['candidate_vs_parent_pct']>0 for x in rounds):status='inconclusive_target_overlap_or_round_regression'
+-  summary.update({'status':status,'samples_us':vals,'medians_us':med,'candidate_vs_parent_pct':(med['power_v220']/med['parent_v084']-1)*100,'rounds':rounds,'ranges_overlap':overlap})
++  summary.update({'status':status,'samples_us':vals,'medians_us':med,'candidate_vs_parent_pct':(med['power_v222']/med['parent_v084']-1)*100,'rounds':rounds,'ranges_overlap':overlap})
+  else:summary['status']='failed_runtime_or_validation_selected_screen'
+  U.save('screen_summary.json',summary);(r/'screen.exit').write_text('0\n' if complete else '1\n');U.save('live_stage.json',{'stage':'screen_terminal','status':summary['status']})
+  print(json.dumps(summary),flush=True)

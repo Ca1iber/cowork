@@ -1,0 +1,27 @@
+{
+  "id": "v222_worker2_c3_v_4row_producer_subagent2",
+  "stage": "SOURCE_READY_COMPILE_PREPARED_NO_GO",
+  "sourceSHA": "5e449b847770b5114ec43f11d0d4c1e8abd524bb0bf070d83687f67854027f6e",
+  "parent4c": "originalC3 not220; prefix14/exactkey/JIT preserved",
+  "hypothesis": "4row4col Vproducer makes sharedhalf4contiguous8B stores ratherthanhalf2/4B; may alter observedaggregateconflict orpreparationcost, notproven specificinstruction bottleneck",
+  "evidence": "219P84 and221planeonly bothshared80.4878/.888889; 220endtoendrejected+2.4086, no sameplane continuation",
+  "tradeoff": "globalVold4x16B\u2192new8x8B/lane; sharedold16x4B\u2192new8x8B/lane; logicalbytes4096/query unchanged doesnotprove request/HBM equivalence; extra globalinstructions/MLP/cache/addressreg may regress",
+  "order": [
+    "onefresh P84+C222 exactC3 exports2pairs4files",
+    "CPUstrictgenerated/host256x1threads64dyn4096/sourceandVvaluevectorproof",
+    "candidate1resourceSDK stack0/noAS5/resourceallrecorded no requiredMTdecrease",
+    "candidatefirstO3IR",
+    "readonlyactualVglobal8B/store8B/consumer/math/sync/lifetimeaudit thenleaderreview"
+  ],
+  "parent_reuse": "P84C3CPP814735/hostfa1bde/SDK5d matchreuse21966MT20ST/max7/stack0 no parentresourceIR newcommands",
+  "preserved": "vslot/Voperand32/QK/out/Num32/math/Proundden/guard/sync7/shared2048half",
+  "falsifiers": [
+    "value/vector/guard/lifetime/math mismatch or stack/private spill",
+    "actualglobal/sharedwidth/path different from declared",
+    "counter noimprovement iflaterauthorizedprofile",
+    "native latency regress iflaterauthorizedfixedscreen"
+  ],
+  "scope": "source+stdlibprepare only; no compile/native/profileGO",
+  "guard": "same2GiB28/OOM3/600s/.5s/critical1s50ms/verifiedancestry/priorabort/no retry",
+  "caseimpact": "onlyC3source; others13 deviceperformanceUNAVAILABLE"
+}
