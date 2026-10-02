@@ -11,3 +11,9 @@ leader允许在v104正式运行时做轻量估算。parent使用同S8factory但S
 ## worker2实际轻量advisory
 
 已直接回复四点：actual roundedP16同时用于den/PV，globalmax量化不是online位等价；partialvalid保持legalprefix/sentinel/rawguard与全P初始化/emptyall原NaN；selected0..3 perfeature同序、QK→V shared覆盖sync、unroll4需actualIR无private/stack；不把C12百分比迁移到19us的C11，MMA不减且ST/code-size代价要作反向预测。建议已纳入未来讨论，未启用新版本/kernel/import/native；不改peer计划。
+
+## 当前parent C11实际生成代码只读核对
+
+当前4c源已有archive C11 device SHA0b55862b9a50328b8b89cba2dbce947ae1c551001b148f686e974bd84a138348；实际Num16、Score4、selectedloop4、shared2KiB，Q/K16B、V8B、Output16B。common resource_summary没有C11，物理MT/ST/stack/max明确UNAVAILABLE，不能把C12的80MT套给C11。只读文件/哈希见future_case11_s4_evidence.json，没有新import/compiler/GPU/版本kernel。
+
+后续可证伪机制仍为Score16/P16全QK→globalsoftmax→allPV，保持currentparent真实布局/全部global宽度，Num不在QK长期live、den用actualroundedP16；unroll4/cache/phase占比/ST与代码尺寸有反向风险。全4有效时32MMA/querygroup、1024组nominal268435456FLOPs，工作量不是时间/瓶颈证明。当前先完成v108，未启用C11机制，也不直接复制C12收益或其layout。
