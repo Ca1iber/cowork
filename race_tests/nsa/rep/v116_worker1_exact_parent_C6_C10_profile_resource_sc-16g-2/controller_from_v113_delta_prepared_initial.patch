@@ -1,0 +1,77 @@
+--- 113bounded_metadata_controller
++++ 116exactparent_resource_profile_controller
+@@ -1,8 +1,8 @@
+ from pathlib import Path
+ from decimal import Decimal
+ import json,hashlib,subprocess,os,time,datetime,csv,traceback,fcntl
+-root=Path('/root/tilelang-metax');p=root/'race_tests/nsa';v='v113_worker1_s4_global_softmax_sc-16g-2';r=p/'rep'/v
+-manifest=json.loads((r/'metadata_source_manifest.json').read_text());plan=json.loads((r/'metadata_execution_plan.json').read_text());shared=json.loads((r/'shared_inputs_identity.json').read_text())['files'];cg=Path('/sys/fs/cgroup/memory');official=json.loads((p/'official_case.json').read_text());budget=plan['memory_engineering_budget']
++root=Path('/root/tilelang-metax');p=root/'race_tests/nsa';v='v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2';r=p/'rep'/v
++manifest=json.loads((r/'source_manifest.json').read_text());plan=json.loads((r/'execution_plan.json').read_text());shared=json.loads((r/'shared_inputs_identity.json').read_text())['files'];cg=Path('/sys/fs/cgroup/memory');official=json.loads((p/'official_case.json').read_text());budget=plan['memory_engineering_budget']
+ monitor_file=Path(manifest['tools']['process_monitor']['path']);assert monitor_file.is_file() and hashlib.sha256(monitor_file.read_bytes()).hexdigest()==manifest['tools']['process_monitor']['sha256']
+ from process_monitor import read_pid_metadata,identity_decision
+ def now():return datetime.datetime.now(datetime.timezone.utc).isoformat()
+@@ -56,7 +56,7 @@
+ def admission(sample,oom):
+  if not sample['identified_unowned_baseline']['identity_match']:return 'recognizedunowned baseline identity missing/changed'
+  if sample['cgroup']['oom_kill']!=oom:return 'OOMchanged beforeadmission'
+- if sample['cgroup']['usage_bytes']>budget['new_admission_max_whole_bytes']:return 'wholeCG exceeds new4GiB admission'
++ if sample['cgroup']['usage_bytes']>budget['new_admission_max_whole_bytes']:return 'wholeCG exceeds new5GiB admission'
+  if unknown_heavy(sample,{}):return 'unowned visibleRSS exceeds1GiB admission'
+  return None
+ 
+@@ -106,8 +106,8 @@
+  if 'killed' in s:return 'innerKilled log'
+  if 'out of memory' in s:return 'innerOOM log'
+  return None
+-assert plan['phase']=='leader_GO_metadata_resources_once'
+-verify();fd=os.open(r/'launch_once.lock',os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600);os.write(fd,json.dumps({'UTC':now(),'master_pid':os.getpid(),'scope':'C11 2metadata pairs +2SDKresources +candidateIR +CPUgates'}).encode());os.close(fd);lock=open(manifest['cooperative_heavy_lock'],'a+');initial=cgstate();jobs=[];failure=None;active=None;known={}
++assert plan['phase']=='leader_GO_v116_profile_resource_once'
++verify();fd=os.open(r/'launch_once.lock',os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600);os.write(fd,json.dumps({'UTC':now(),'master_pid':os.getpid(),'scope':'C6_C10_4metadatapairs_2resourceSDK_2MCcounts2'}).encode());os.close(fd);lock=open(manifest['cooperative_heavy_lock'],'a+');initial=cgstate();jobs=[];failure=None;active=None;known={}
+ try:
+  assert initial['oom_kill']==13;fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+  for i,spec in enumerate(plan['guard_stage_jobs'],1):
+@@ -116,10 +116,9 @@
+   py=manifest['tools']['python']['path']
+   if kind=='metadata':cmd=[py,'-u',manifest['tools']['metadata_export']['path'],spec['variant']]
+   elif kind=='audit_codegen':cmd=[py,'-S','-u',manifest['tools']['codegen_audit']['path']]
+-  elif kind=='optimized_IR':cmd=[py,'-S','-u',manifest['tools']['IR_capture']['path']]
+-  elif kind=='compiled_gate':cmd=[py,'-S','-u',manifest['tools']['compiled_gate']['path']]
++  elif kind=='profile':cmd=[py,'-S','-u',manifest['tools']['profile_wrapper']['path'],str(spec['profile_job_index'])]
+   else:cmd=[py,'-S','-u',manifest['tools']['resource_capture']['path'],spec['variant'],str(spec['case'])]
+-  launch={'stage_index':i,'stage_spec':spec,'native_command':cmd,'manifest_path':str(r/'metadata_source_manifest.json'),'ready_file':str(d/'child_ready.json'),'planned_PID_file':str(d/'child.pid'),'planned_PGID_file':str(d/'child.pgid'),'no_NSA_launch_or_ref_expected':True};(d/'launch_plan.json').write_text(json.dumps(launch,indent=2)+chr(10));gatecmd=[py,'-S','-u',manifest['tools']['native_gate']['path'],str(d/'launch_plan.json')];env=os.environ.copy();env.update(MACA_PATH='/opt/maca',PYTHONDONTWRITEBYTECODE='1',PYTHONWARNINGS='ignore',PYTHONPATH=str(root)+':'+str(p));known={};abort=None;pending=None;started=time.monotonic();logpath=d/'stage.log'
++  launch={'stage_index':i,'stage_spec':spec,'native_command':cmd,'manifest_path':str(r/'source_manifest.json'),'ready_file':str(d/'child_ready.json'),'planned_PID_file':str(d/'child.pid'),'planned_PGID_file':str(d/'child.pgid'),'no_NSA_launch_or_ref_expected':True};(d/'launch_plan.json').write_text(json.dumps(launch,indent=2)+chr(10));gatecmd=[py,'-S','-u',manifest['tools']['native_gate']['path'],str(d/'launch_plan.json')];env=os.environ.copy();env.update(MACA_PATH='/opt/maca',PYTHONDONTWRITEBYTECODE='1',PYTHONWARNINGS='ignore',PYTHONPATH=str(root)+':'+str(p));known={};abort=None;pending=None;started=time.monotonic();logpath=d/'stage.log'
+   with logpath.open('w') as log,(d/'whole_memory_samples.jsonl').open('w') as mon:
+    active=subprocess.Popen(gatecmd,cwd=root,env=env,stdin=subprocess.PIPE,stdout=log,stderr=subprocess.STDOUT,text=True,start_new_session=True);pid=active.pid;pgid=os.getpgid(pid);(d/'child.pid').write_text(str(pid)+chr(10));(d/'child.pgid').write_text(str(pgid)+chr(10));(r/'active_stage.json').write_text(json.dumps(dict(launch,pid=pid,pgid=pgid),indent=2)+chr(10));ready=Path(launch['ready_file'])
+    while not ready.exists() and active.poll() is None and time.monotonic()-started<5:time.sleep(0.05)
+@@ -159,9 +158,9 @@
+   verify();remaining=[x for x in last['visible_PIDs'] if x.get('state')!='Z' and matches(x,known.get(x['pid'],{}))]
+   if remaining:reason=reason or 'ownedchildstilllive';terminate_owned(active,known,d/'owned_postexit_signal_wait.json')
+   if not reason and kind=='metadata':
+-   data=json.loads((r/('metadata_'+spec['variant']+'.json')).read_text());assert len(data['records'])==1 and data['NSA_attention_calls']==data['full_reference_checks']==0 and [x['case'] for x in data['records']]==[11]
++   data=json.loads((r/('metadata_'+spec['variant']+'.json')).read_text());assert len(data['records'])==2 and data['NSA_attention_calls']==data['full_reference_checks']==0 and [x['case'] for x in data['records']]==[6,10]
+   if not reason and kind=='resource':assert json.loads((r/'resources'/('case'+str(spec['case'])+'_'+spec['variant']+'.json')).read_text())['stack_bytes']==0
+-  item={'index':i,'spec':spec,'pid':pid,'pgid':pgid,'UTC_terminal':now(),'actual_exit':code,'stop_reason':reason,'cgroup_before':first['cgroup'],'cgroup_after':last['cgroup'],'owned_identities':known,'NSA_attention_calls':0,'full_reference_checks':0};(d/'terminal_result.json').write_text(json.dumps(item,indent=2)+chr(10));jobs.append(item);(r/'completed_stage_jobs.json').write_text(json.dumps(jobs,indent=2)+chr(10));print('EVIDENCE_STAGE_TERMINAL',i,spec,code,reason,flush=True);active=None
++  item={'index':i,'spec':spec,'pid':pid,'pgid':pgid,'UTC_terminal':now(),'actual_exit':code,'stop_reason':reason,'cgroup_before':first['cgroup'],'cgroup_after':last['cgroup'],'owned_identities':known,'NSA_attention_calls':('UNMEASURED profile driver/SDKreplay' if kind=='profile' else 0),'full_reference_checks':0};(d/'terminal_result.json').write_text(json.dumps(item,indent=2)+chr(10));jobs.append(item);(r/'completed_stage_jobs.json').write_text(json.dumps(jobs,indent=2)+chr(10));print('EVIDENCE_STAGE_TERMINAL',i,spec,code,reason,flush=True);active=None
+   if reason:failure=reason;break
+ except BaseException as error:
+  failure='orchestrationexception '+repr(error);(r/'orchestration_failure.log').write_text(traceback.format_exc())
+@@ -172,10 +171,16 @@
+    if x and x.get('critical_identity_available') and x.get('ppid')==os.getpid() and x.get('pgid')==active.pid and x.get('exe')==str(Path(manifest['tools']['python']['path']).resolve()):known[active.pid]=dict(identity(x),observed_parent={'pid':os.getpid()},first_seen_UTC=now())
+   terminate_owned(active,known,r/'exception_owned_signal_wait.json');active=None
+ complete=not failure and len(jobs)==7 and all(x['actual_exit']==0 and x['stop_reason'] is None for x in jobs);final=census();records=[]
+-for label in ['power_v104','power_v113']:
++for label in ['parent_v084','power_v113']:
+  f=r/('metadata_'+label+'.json')
+  if f.exists():records+=json.loads(f.read_text())['records']
+ resources=[]
+ for f in (r/'resources').glob('case*.json') if (r/'resources').exists() else []:
+  if not f.name.endswith('.command.json'):resources.append(json.loads(f.read_text()))
+-(r/'stage_result.json').write_text(json.dumps({'UTC':now(),'complete':complete,'failure':failure,'all_jobs':jobs,'metadata_record_pairs':len(records),'resource_results':resources,'NSA_attention_calls':0,'full_reference_checks':0,'cgroup_initial':initial,'cgroup_final':final['cgroup'],'no_retry':True,'not_performance_or_no_regression_proof':True},indent=2)+chr(10));(r/'final_census.json').write_text(json.dumps(final,indent=2)+chr(10));(r/'stage.exit').write_text(('0' if complete else '1')+chr(10));print('V113_METADATA_TERMINAL',complete,len(records),len(resources),failure,flush=True);lock.close();raise SystemExit(0 if complete else 1)
++counter_analyses=[]
++for job in plan['jobs']:
++ f=Path(job['output_dir'])/'counter_analysis.json'
++ if f.exists():counter_analyses.append(json.loads(f.read_text()))
++actual_counter_records=sum(x['actual_records'] for x in counter_analyses);valid_scope_records=sum(x['valid_numeric_scope_records'] for x in counter_analyses)
++if complete and (len(counter_analyses)!=2 or actual_counter_records!=4 or valid_scope_records!=4):complete=False;failure=failure or 'fixedcountergate incomplete'
++(r/'stage_result.json').write_text(json.dumps({'UTC':now(),'complete':complete,'failure':failure,'all_jobs':jobs,'metadata_record_pairs':len(records),'resource_results':resources,'metadata_NSA_attention_calls':0,'profile_attention_launch_count':'UNMEASURED; driver/SDKreplay','full_reference_checks':0,'counter_analyses':counter_analyses,'actual_counter_records':actual_counter_records,'valid_scope_records':valid_scope_records,'cgroup_initial':initial,'cgroup_final':final['cgroup'],'no_retry':True,'not_performance_or_no_regression_proof':True},indent=2)+chr(10));(r/'final_census.json').write_text(json.dumps(final,indent=2)+chr(10));(r/'stage.exit').write_text(('0' if complete else '1')+chr(10));print('V116_PARENT_EVIDENCE_TERMINAL',complete,len(records),len(resources),failure,flush=True);lock.close();raise SystemExit(0 if complete else 1)

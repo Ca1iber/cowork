@@ -1,0 +1,613 @@
+{
+  "version": "v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2",
+  "closedUTC": "2026-10-02T14:24:24.797209+00:00",
+  "status": "original_stage3_CPUparser_failed_independent_CPUidentity_recovery_complete",
+  "actual_original_stage_result": {
+    "UTC": "2026-10-02T14:08:14.086733+00:00",
+    "complete": false,
+    "failure": "childnonzero 1",
+    "all_jobs": [
+      {
+        "index": 1,
+        "spec": {
+          "kind": "metadata",
+          "variant": "parent_v084"
+        },
+        "pid": 463408,
+        "pgid": 463408,
+        "UTC_terminal": "2026-10-02T14:07:37.005406+00:00",
+        "actual_exit": 0,
+        "stop_reason": null,
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4384796672\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1128099840\nrss 2948497408\nrss_huge 0\nshmem 270336\nmapped_file 51687424\ndirty 53248\nwriteback 0\nswap 783998976\npgpgin 4690515696\npgpgout 4689512353\npgfault 5204252582\npgmajfault 202715\ninactive_anon 2413649920\nactive_anon 567955456\ninactive_file 481333248\nactive_file 646483968\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1128099840\ntotal_rss 2948497408\ntotal_rss_huge 0\ntotal_shmem 270336\ntotal_mapped_file 51687424\ntotal_dirty 53248\ntotal_writeback 0\ntotal_swap 783998976\ntotal_pgpgin 4690515696\ntotal_pgpgout 4689512353\ntotal_pgfault 5204252582\ntotal_pgmajfault 202715\ntotal_inactive_anon 2413649920\ntotal_active_anon 567955456\ntotal_inactive_file 481333248\ntotal_active_file 646483968\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4384796672
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4394463232\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1135042560\nrss 2948685824\nrss_huge 0\nshmem 274432\nmapped_file 51687424\ndirty 1101824\nwriteback 0\nswap 783925248\npgpgin 4695803055\npgpgout 4694797968\npgfault 5210026292\npgmajfault 202724\ninactive_anon 2414034944\nactive_anon 567951360\ninactive_file 488239104\nactive_file 646557696\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1135042560\ntotal_rss 2948685824\ntotal_rss_huge 0\ntotal_shmem 274432\ntotal_mapped_file 51687424\ntotal_dirty 1101824\ntotal_writeback 0\ntotal_swap 783925248\ntotal_pgpgin 4695803055\ntotal_pgpgout 4694797968\ntotal_pgfault 5210026292\ntotal_pgmajfault 202724\ntotal_inactive_anon 2414034944\ntotal_active_anon 567951360\ntotal_inactive_file 488239104\ntotal_active_file 646557696\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4394463232
+        },
+        "owned_identities": {
+          "463408": {
+            "pid": 463408,
+            "starttime_ticks": 97336405,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 463406
+            },
+            "first_seen_UTC": "2026-10-02T14:06:58.147104+00:00"
+          },
+          "463582": {
+            "pid": 463582,
+            "starttime_ticks": 97338941,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 463408,
+              "starttime_ticks": 97336405,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T14:07:23.169078+00:00"
+          },
+          "463583": {
+            "pid": 463583,
+            "starttime_ticks": 97338942,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 463582,
+              "starttime_ticks": 97338941,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T14:07:23.169078+00:00"
+          },
+          "463610": {
+            "pid": 463610,
+            "starttime_ticks": 97339197,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 463408,
+              "starttime_ticks": 97336405,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T14:07:25.669093+00:00"
+          },
+          "463611": {
+            "pid": 463611,
+            "starttime_ticks": 97339198,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 463610,
+              "starttime_ticks": 97339197,
+              "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+            },
+            "first_seen_UTC": "2026-10-02T14:07:25.669093+00:00"
+          },
+          "463616": {
+            "pid": 463616,
+            "starttime_ticks": 97339356,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+            "observed_parent": {
+              "pid": 463408,
+              "starttime_ticks": 97336405,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T14:07:27.169637+00:00"
+          },
+          "463617": {
+            "pid": 463617,
+            "starttime_ticks": 97339356,
+            "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+            "observed_parent": {
+              "pid": 463616,
+              "starttime_ticks": 97339356,
+              "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+            },
+            "first_seen_UTC": "2026-10-02T14:07:27.169637+00:00"
+          }
+        },
+        "NSA_attention_calls": 0,
+        "full_reference_checks": 0
+      },
+      {
+        "index": 2,
+        "spec": {
+          "kind": "metadata",
+          "variant": "power_v113"
+        },
+        "pid": 463669,
+        "pgid": 463669,
+        "UTC_terminal": "2026-10-02T14:08:12.173551+00:00",
+        "actual_exit": 0,
+        "stop_reason": null,
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4393680896\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1135132672\nrss 2949664768\nrss_huge 0\nshmem 274432\nmapped_file 51687424\ndirty 20480\nwriteback 0\nswap 783925248\npgpgin 4695961211\npgpgout 4694955864\npgfault 5210185869\npgmajfault 202724\ninactive_anon 2414927872\nactive_anon 567955456\ninactive_file 488329216\nactive_file 646557696\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1135132672\ntotal_rss 2949664768\ntotal_rss_huge 0\ntotal_shmem 274432\ntotal_mapped_file 51687424\ntotal_dirty 20480\ntotal_writeback 0\ntotal_swap 783925248\ntotal_pgpgin 4695961211\ntotal_pgpgout 4694955864\ntotal_pgfault 5210185869\ntotal_pgmajfault 202724\ntotal_inactive_anon 2414927872\ntotal_active_anon 567955456\ntotal_inactive_file 488329216\ntotal_active_file 646557696\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4393680896
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4400537600\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1140707328\nrss 2949824512\nrss_huge 0\nshmem 278528\nmapped_file 51687424\ndirty 573440\nwriteback 0\nswap 783872000\npgpgin 4701149954\npgpgout 4700143197\npgfault 5215803079\npgmajfault 202734\ninactive_anon 2415198208\nactive_anon 567951360\ninactive_file 493682688\nactive_file 646721536\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1140707328\ntotal_rss 2949824512\ntotal_rss_huge 0\ntotal_shmem 278528\ntotal_mapped_file 51687424\ntotal_dirty 573440\ntotal_writeback 0\ntotal_swap 783872000\ntotal_pgpgin 4701149954\ntotal_pgpgout 4700143197\ntotal_pgfault 5215803079\ntotal_pgmajfault 202734\ntotal_inactive_anon 2415198208\ntotal_active_anon 567951360\ntotal_inactive_file 493682688\ntotal_active_file 646721536\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4400537600
+        },
+        "owned_identities": {
+          "463669": {
+            "pid": 463669,
+            "starttime_ticks": 97340387,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 463406
+            },
+            "first_seen_UTC": "2026-10-02T14:07:37.969390+00:00"
+          }
+        },
+        "NSA_attention_calls": 0,
+        "full_reference_checks": 0
+      },
+      {
+        "index": 3,
+        "spec": {
+          "kind": "audit_codegen"
+        },
+        "pid": 463885,
+        "pgid": 463885,
+        "UTC_terminal": "2026-10-02T14:08:14.078322+00:00",
+        "actual_exit": 1,
+        "stop_reason": "childnonzero 1",
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4399644672\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1140781056\nrss 2949820416\nrss_huge 0\nshmem 278528\nmapped_file 51687424\ndirty 651264\nwriteback 0\nswap 783872000\npgpgin 4701300415\npgpgout 4700293641\npgfault 5215955032\npgmajfault 202734\ninactive_anon 2415206400\nactive_anon 567951360\ninactive_file 493817856\nactive_file 646713344\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1140781056\ntotal_rss 2949820416\ntotal_rss_huge 0\ntotal_shmem 278528\ntotal_mapped_file 51687424\ntotal_dirty 651264\ntotal_writeback 0\ntotal_swap 783872000\ntotal_pgpgin 4701300415\ntotal_pgpgout 4700293641\ntotal_pgfault 5215955032\ntotal_pgmajfault 202734\ntotal_inactive_anon 2415206400\ntotal_active_anon 567951360\ntotal_inactive_file 493817856\ntotal_active_file 646713344\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4399644672
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4400001024\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1141039104\nrss 2949869568\nrss_huge 0\nshmem 278528\nmapped_file 51687424\ndirty 909312\nwriteback 0\nswap 783851520\npgpgin 4701386257\npgpgout 4700379409\npgfault 5216041312\npgmajfault 202738\ninactive_anon 2415226880\nactive_anon 567951360\ninactive_file 493895680\nactive_file 646848512\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1141039104\ntotal_rss 2949869568\ntotal_rss_huge 0\ntotal_shmem 278528\ntotal_mapped_file 51687424\ntotal_dirty 909312\ntotal_writeback 0\ntotal_swap 783851520\ntotal_pgpgin 4701386257\ntotal_pgpgout 4700379409\ntotal_pgfault 5216041312\ntotal_pgmajfault 202738\ntotal_inactive_anon 2415226880\ntotal_active_anon 567951360\ntotal_inactive_file 493895680\ntotal_active_file 646848512\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4400001024
+        },
+        "owned_identities": {
+          "463885": {
+            "pid": 463885,
+            "starttime_ticks": 97343903,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 463406
+            },
+            "first_seen_UTC": "2026-10-02T14:08:13.124765+00:00"
+          }
+        },
+        "NSA_attention_calls": 0,
+        "full_reference_checks": 0
+      }
+    ],
+    "metadata_record_pairs": 4,
+    "resource_results": [],
+    "metadata_NSA_attention_calls": 0,
+    "profile_attention_launch_count": "UNMEASURED; driver/SDKreplay",
+    "full_reference_checks": 0,
+    "counter_analyses": [],
+    "actual_counter_records": 0,
+    "valid_scope_records": 0,
+    "cgroup_initial": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "4354256896\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 1128099840\nrss 2917306368\nrss_huge 0\nshmem 270336\nmapped_file 51687424\ndirty 53248\nwriteback 0\nswap 783998976\npgpgin 4690433268\npgpgout 4689437540\npgfault 5204170131\npgmajfault 202715\ninactive_anon 2382503936\nactive_anon 567955456\ninactive_file 481329152\nactive_file 646483968\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1128099840\ntotal_rss 2917306368\ntotal_rss_huge 0\ntotal_shmem 270336\ntotal_mapped_file 51687424\ntotal_dirty 53248\ntotal_writeback 0\ntotal_swap 783998976\ntotal_pgpgin 4690433268\ntotal_pgpgout 4689437540\ntotal_pgfault 5204170131\ntotal_pgmajfault 202715\ntotal_inactive_anon 2382503936\ntotal_active_anon 567955456\ntotal_inactive_file 481329152\ntotal_active_file 646483968\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 4354256896
+    },
+    "cgroup_final": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "4400631808\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 1141116928\nrss 2949869568\nrss_huge 0\nshmem 278528\nmapped_file 51687424\ndirty 983040\nwriteback 0\nswap 783851520\npgpgin 4701461911\npgpgout 4700455041\npgfault 5216118364\npgmajfault 202738\ninactive_anon 2415190016\nactive_anon 567955456\ninactive_file 494026752\nactive_file 646848512\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1141116928\ntotal_rss 2949869568\ntotal_rss_huge 0\ntotal_shmem 278528\ntotal_mapped_file 51687424\ntotal_dirty 983040\ntotal_writeback 0\ntotal_swap 783851520\ntotal_pgpgin 4701461911\ntotal_pgpgout 4700455041\ntotal_pgfault 5216118364\ntotal_pgmajfault 202738\ntotal_inactive_anon 2415190016\ntotal_active_anon 567955456\ntotal_inactive_file 494026752\ntotal_active_file 646848512\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 4400631808
+    },
+    "no_retry": true,
+    "not_performance_or_no_regression_proof": true
+  },
+  "CPUrecovery_originalwait": {
+    "UTC": "2026-10-02T14:21:48.214103+00:00",
+    "argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "-u",
+      "/root/tilelang-metax/race_tests/nsa/hack/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/audit_codegen_recovery01.py"
+    ],
+    "helper_SHA": "f22016b9071d3f1f90e88df045b65bf6d44be7a701687a935111651ec3970b0f",
+    "existing4records": [
+      {
+        "case": 6,
+        "variant": "parent_v084",
+        "source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "kernel_type": "tilelang.jit.kernel.JITKernel",
+        "hook_count_in_case": 1,
+        "argument_metadata": [
+          {
+            "shape": [
+              8,
+              1024,
+              16,
+              128
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              8,
+              1024,
+              1,
+              128
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              8,
+              1024,
+              1,
+              128
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              8,
+              1024,
+              1,
+              1
+            ],
+            "dtype": "torch.int32",
+            "requires_grad": false
+          },
+          {
+            "shape": [
+              8,
+              1024,
+              16,
+              128
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": false
+          }
+        ],
+        "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/parent_v084/case6.device.cpp",
+        "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/parent_v084/case6.host.cpp",
+        "device_sha256": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d",
+        "host_sha256": "b138df6c88a6de13e8dedff593135b2a7c1355be0f0dfa225b07227ec44dd2d8",
+        "actual_NSA_launch_after_hook": false
+      },
+      {
+        "case": 10,
+        "variant": "parent_v084",
+        "source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "kernel_type": "tilelang.jit.kernel.JITKernel",
+        "hook_count_in_case": 1,
+        "argument_metadata": [
+          {
+            "shape": [
+              1,
+              256,
+              16,
+              64
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              1,
+              256,
+              1,
+              64
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              1,
+              256,
+              1,
+              64
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              1,
+              256,
+              1,
+              2
+            ],
+            "dtype": "torch.int32",
+            "requires_grad": false
+          },
+          {
+            "shape": [
+              1,
+              256,
+              16,
+              64
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": false
+          }
+        ],
+        "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/parent_v084/case10.device.cpp",
+        "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/parent_v084/case10.host.cpp",
+        "device_sha256": "f578605b2b2d6295eceee0a37807c276b8a990fad09976fb7dcb4b6f4ed7ab45",
+        "host_sha256": "00d8c0cd87845bf3381aa22d5e79d7fb0af14864724e5639ceea560ab2fc5d3c",
+        "actual_NSA_launch_after_hook": false
+      },
+      {
+        "case": 6,
+        "variant": "power_v113",
+        "source_sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+        "kernel_type": "tilelang.jit.kernel.JITKernel",
+        "hook_count_in_case": 1,
+        "argument_metadata": [
+          {
+            "shape": [
+              8,
+              1024,
+              16,
+              128
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              8,
+              1024,
+              1,
+              128
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              8,
+              1024,
+              1,
+              128
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              8,
+              1024,
+              1,
+              1
+            ],
+            "dtype": "torch.int32",
+            "requires_grad": false
+          },
+          {
+            "shape": [
+              8,
+              1024,
+              16,
+              128
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": false
+          }
+        ],
+        "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/power_v113/case6.device.cpp",
+        "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/power_v113/case6.host.cpp",
+        "device_sha256": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d",
+        "host_sha256": "b138df6c88a6de13e8dedff593135b2a7c1355be0f0dfa225b07227ec44dd2d8",
+        "actual_NSA_launch_after_hook": false
+      },
+      {
+        "case": 10,
+        "variant": "power_v113",
+        "source_sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+        "kernel_type": "tilelang.jit.kernel.JITKernel",
+        "hook_count_in_case": 1,
+        "argument_metadata": [
+          {
+            "shape": [
+              1,
+              256,
+              16,
+              64
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              1,
+              256,
+              1,
+              64
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              1,
+              256,
+              1,
+              64
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": true
+          },
+          {
+            "shape": [
+              1,
+              256,
+              1,
+              2
+            ],
+            "dtype": "torch.int32",
+            "requires_grad": false
+          },
+          {
+            "shape": [
+              1,
+              256,
+              16,
+              64
+            ],
+            "dtype": "torch.float16",
+            "requires_grad": false
+          }
+        ],
+        "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/power_v113/case10.device.cpp",
+        "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/power_v113/case10.host.cpp",
+        "device_sha256": "f578605b2b2d6295eceee0a37807c276b8a990fad09976fb7dcb4b6f4ed7ab45",
+        "host_sha256": "00d8c0cd87845bf3381aa22d5e79d7fb0af14864724e5639ceea560ab2fc5d3c",
+        "actual_NSA_launch_after_hook": false
+      }
+    ],
+    "old4layers_exit1_preserved": true,
+    "no_Torch_export_GPU_SDK_profile": true,
+    "original_Popen_wait": 0,
+    "pid": 467710
+  },
+  "actual_identity_recovery": {
+    "checks": [
+      {
+        "label": "parent_v084",
+        "case": 6,
+        "device_SHA": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d",
+        "host_SHA": "b138df6c88a6de13e8dedff593135b2a7c1355be0f0dfa225b07227ec44dd2d8",
+        "actual_host_launch_args_5_to10": [
+          1024,
+          8,
+          64,
+          1,
+          1,
+          8192
+        ],
+        "host_grid_contract_not_runtime_launch_proof": true
+      },
+      {
+        "label": "parent_v084",
+        "case": 10,
+        "device_SHA": "f578605b2b2d6295eceee0a37807c276b8a990fad09976fb7dcb4b6f4ed7ab45",
+        "host_SHA": "00d8c0cd87845bf3381aa22d5e79d7fb0af14864724e5639ceea560ab2fc5d3c",
+        "actual_host_launch_args_5_to10": [
+          256,
+          1,
+          64,
+          1,
+          1,
+          2048
+        ],
+        "host_grid_contract_not_runtime_launch_proof": true
+      },
+      {
+        "label": "power_v113",
+        "case": 6,
+        "device_SHA": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d",
+        "host_SHA": "b138df6c88a6de13e8dedff593135b2a7c1355be0f0dfa225b07227ec44dd2d8",
+        "actual_host_launch_args_5_to10": [
+          1024,
+          8,
+          64,
+          1,
+          1,
+          8192
+        ],
+        "host_grid_contract_not_runtime_launch_proof": true
+      },
+      {
+        "label": "power_v113",
+        "case": 10,
+        "device_SHA": "f578605b2b2d6295eceee0a37807c276b8a990fad09976fb7dcb4b6f4ed7ab45",
+        "host_SHA": "00d8c0cd87845bf3381aa22d5e79d7fb0af14864724e5639ceea560ab2fc5d3c",
+        "actual_host_launch_args_5_to10": [
+          256,
+          1,
+          64,
+          1,
+          1,
+          2048
+        ],
+        "host_grid_contract_not_runtime_launch_proof": true
+      }
+    ],
+    "actualdevice_host_byteidentity_C6_C10": true,
+    "resource_reuse_requires_actualsameCPP": true,
+    "no_performance_positive_waiver": true,
+    "NSA_attention_calls": 0,
+    "full_reference_checks": 0
+  },
+  "runtime_final": {
+    "UTC": "2026-10-02T14:23:26.045767+00:00",
+    "status": "original_stage3_CPUparser_failed_independent_CPUidentity_recovery_complete",
+    "original_launcher_supervisor_controller_stage_waits": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "CPUrecovery_originalwait": 0,
+    "actual_metadata_source_processes": 2,
+    "actual_metadata_pairs": 4,
+    "device_hostfiles": 8,
+    "resourceSDK_commands": 0,
+    "MCprofiler_CLI": 0,
+    "counterrecords": 0,
+    "fullreference_checks": 0,
+    "metadata_attention_calls": 0,
+    "GPUcontext_empty_allocations_not0GPUclaim": true,
+    "original_slotparser_reuse_failure": "slot5 wholehost uses46_C6/42_C10; actualkernelcall region unique",
+    "runtime_grid": "UNAVAILABLE; actualhost launch contract confirmed byCPUrecovery",
+    "OOM_before": 13,
+    "OOM_after": 13,
+    "old_failedgate_not_rewritten": true,
+    "no_reexport_or_profile_replay": true
+  },
+  "references": {
+    "candidate_fullrefs": 0,
+    "inclusive_fullrefs": 0,
+    "native_benchmark": 0,
+    "actual_metadata_pairs": 4,
+    "actual_SDKresource_and_MC_CLI": 0,
+    "actual_counterrecords": 0,
+    "planned4counterrecords_not_actual": true
+  },
+  "no_oldgate_rewrite_reexport_or_profile_execution": true,
+  "main_promotion": false,
+  "OJ": null
+}

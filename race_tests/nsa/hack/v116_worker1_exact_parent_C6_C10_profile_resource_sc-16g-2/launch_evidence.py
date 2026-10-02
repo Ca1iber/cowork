@@ -1,0 +1,8 @@
+from pathlib import Path
+import sys,json,hashlib,subprocess,os,datetime
+r=Path(sys.argv[1]);m=json.loads((r/'source_manifest.json').read_text());plan=json.loads((r/'execution_plan.json').read_text());assert plan['phase']=='leader_GO_v116_profile_resource_once';assert not (r/'evidence_launcher_once.lock').exists() and not (r/'launch_once.lock').exists()
+for k,x in list(m['sources'].items())+list(m['tools'].items())+[('shared_doc',m['shared_identity_document'])]+list(m['existing_parent_devices'].items()):assert Path(x['path']).is_file() and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256'],k
+cmd=[m['tools']['python']['path'],'-S','-u',m['tools']['supervisor']['path'],str(r)];assert cmd==json.loads((r/'launch_preflight.json').read_text())['supervisor_argv'];fd=os.open(r/'evidence_launcher_once.lock',os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600);os.write(fd,json.dumps({'UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'launcher_PID':os.getpid(),'argv':cmd}).encode());os.close(fd)
+with (r/'supervisor.log').open('w') as log:
+ p=subprocess.Popen(cmd,cwd='/root/tilelang-metax',stdout=log,stderr=subprocess.STDOUT,start_new_session=True);(r/'supervisor.pid').write_text(str(p.pid)+chr(10));(r/'supervisor.pgid').write_text(str(os.getpgid(p.pid))+chr(10));rc=p.wait()
+(r/'supervisor_actual.exit').write_text(str(rc)+chr(10));(r/'supervisor_wait.json').write_text(json.dumps({'UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'original_Popen_wait':rc,'supervisor_PID':p.pid},indent=2)+chr(10));raise SystemExit(rc)

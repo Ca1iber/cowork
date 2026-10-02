@@ -1,0 +1,140 @@
+{
+  "variant": "power_v113",
+  "source": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+    "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+  },
+  "records": [
+    {
+      "case": 6,
+      "variant": "power_v113",
+      "source_sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+      "kernel_type": "tilelang.jit.kernel.JITKernel",
+      "hook_count_in_case": 1,
+      "argument_metadata": [
+        {
+          "shape": [
+            8,
+            1024,
+            16,
+            128
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            1,
+            128
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            1,
+            128
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            1,
+            1
+          ],
+          "dtype": "torch.int32",
+          "requires_grad": false
+        },
+        {
+          "shape": [
+            8,
+            1024,
+            16,
+            128
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": false
+        }
+      ],
+      "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/power_v113/case6.device.cpp",
+      "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/power_v113/case6.host.cpp",
+      "device_sha256": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d",
+      "host_sha256": "b138df6c88a6de13e8dedff593135b2a7c1355be0f0dfa225b07227ec44dd2d8",
+      "actual_NSA_launch_after_hook": false
+    },
+    {
+      "case": 10,
+      "variant": "power_v113",
+      "source_sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+      "kernel_type": "tilelang.jit.kernel.JITKernel",
+      "hook_count_in_case": 1,
+      "argument_metadata": [
+        {
+          "shape": [
+            1,
+            256,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            1,
+            256,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            1,
+            256,
+            1,
+            64
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            1,
+            256,
+            1,
+            2
+          ],
+          "dtype": "torch.int32",
+          "requires_grad": false
+        },
+        {
+          "shape": [
+            1,
+            256,
+            16,
+            64
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": false
+        }
+      ],
+      "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/power_v113/case10.device.cpp",
+      "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v116_worker1_exact_parent_C6_C10_profile_resource_sc-16g-2/codegen/power_v113/case10.host.cpp",
+      "device_sha256": "f578605b2b2d6295eceee0a37807c276b8a990fad09976fb7dcb4b6f4ed7ab45",
+      "host_sha256": "00d8c0cd87845bf3381aa22d5e79d7fb0af14864724e5639ceea560ab2fc5d3c",
+      "actual_NSA_launch_after_hook": false
+    }
+  ],
+  "NSA_attention_calls": 0,
+  "full_reference_checks": 0,
+  "GPUcontext_tensorallocations_not_zeroGPU_claim": true
+}
