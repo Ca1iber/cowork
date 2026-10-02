@@ -1,0 +1,28 @@
+{
+  "id": "v215_worker2_c8_qk_shared_store16_subagent2",
+  "stage": "SOURCE_ONLY_LEADER_GO",
+  "parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "only_key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "hypothesis": "Q and K keep two global16B producer loads and MFMA slots; merge two adjacent shared8B writes into one shared16B write after constant-index conditional half4 exchange. Fewer shared write instructions may reduce preparation cost.",
+  "evidence": "v214 incumbent C8 MTE68.57/68.70%, MMA6.81/6.83%, shared100/conflict0; no exclusive/HBM or unique bottleneck proof",
+  "mechanism": "base=row64+((col//8)xor(row%8))*8; rowflip=((row//8)%2)xor(row%2); constant indices via T.if_then_else",
+  "preserved": "globalQK16B exact addresses/values; original shared slot consumer, QKPden/PVNum16/V/output/sync7/guard/math; no rejected212 directK",
+  "falsifiers": [
+    "actual CPP/IR shared store remains split8B or scalar",
+    "dynamic lane-indexed private/AS5 or stack>0",
+    "vector/value mapping mismatch or altered global width/address/math/sync",
+    "extra select/local register pressure may reverse latency; actual resources recorded, staticmax not occupancy",
+    "original fixednative median/round/range decides only after separate GO"
+  ],
+  "scope": "only source/stdlb checks now; no import/compiler/profile/native/trace",
+  "cross_case_impact": "parent14ASTprefix+exact C8 install; others13 source unchanged; generatedcode/performance UNAVAILABLE_not_measured"
+}
