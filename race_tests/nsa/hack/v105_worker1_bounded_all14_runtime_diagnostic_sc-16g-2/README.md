@@ -1,0 +1,1 @@
+No runtime scripts or heavy tasks started. Implement only after leader review of fixed12process protocol; all tools/childargv must load single source_manifest and verify path+hash. Nativebody andcandidate source remain original immutable files.
