@@ -1,0 +1,19 @@
+{
+  "source4c": true,
+  "factory": "_make_power_s1_v_hybrid_pack",
+  "defs": [
+    {
+      "function": "qk_slot",
+      "source": "def qk_slot(row, col, rows):\n        return (col // 64) * rows * 64 + row * 64 + (((col % 64) // 8) ^ (row % 8)) * 8 + (((col // 4) % 2) ^ ((row // 8) % 2) ^ (col // 64)) * 4 + col % 4"
+    },
+    {
+      "function": "v_slot",
+      "source": "def v_slot(row, col):\n        return ((col // 64) * 64 + (col % 64) // 8 + 8 * (col % 8)) * 32 + ((((row // 4) % 2) * 4 + row // 8) ^ (col % 8) ^ ((col % 64) // 16)) * 4 + row % 4"
+    },
+    {
+      "function": "out_slot",
+      "source": "def out_slot(row, col):\n        return qk_slot(row, col, 16)"
+    }
+  ],
+  "scope": "commonparentreadonly; do not infer actualbank/performance or editworker1"
+}
