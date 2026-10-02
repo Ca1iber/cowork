@@ -1,0 +1,15 @@
+from pathlib import Path
+import ast,hashlib,json,difflib
+p=Path('/root/tilelang-metax/race_tests/nsa');v='v101_worker1_s2_fixed_selection_sc-16g-2';e=p/'experiments'/v;r=p/'rep'/v;parent=p/'submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py';base=parent.read_text();assert hashlib.sha256(parent.read_bytes()).hexdigest()=='4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0'
+oldfile=p/'experiments/v077_codex_power_s8_output_pair_sc-16g-2/s8_kernel.py';old=oldfile.read_text();assert hashlib.sha256(oldfile.read_bytes()).hexdigest()=='6cab13e3b158003e6fc0abceb3bace5579a7816bc0a0836c573e04118dec5895'
+a=old.index('            for part in T.unroll(2):');b=old.index('            T.fill(numerator, 0)',a)
+q="""            for chunk in T.unroll(4):
+                for element in T.vectorized(4):
+                    q_local[chunk * 4 + element] = Q[batch_id, token, kv_head * groups + lane % 16, chunk * 16 + (lane // 16) * 4 + element]
+"""
+s=old[:a]+q+old[b:];a=s.index('                    T.sync_warp()',s.index('            for selected in'));b=s.index('                    T.fill(scores, 0)',a);s=s[:a]+s[b:]
+s=s.replace('k_local[element] = shared[qk_slot(lane % 16, chunk * 16 + (lane // 16) * 4) + element]','k_local[element] = K[batch_id, block_start + lane % 16, kv_head, chunk * 16 + (lane // 16) * 4 + element]').replace('            qk_fetch = T.alloc_local(8, dtype)\n','').replace('# codex-power v077','# codex-power v101').replace('_make_power_s8_output_pair','_make_power_s2_direct_qk').replace('selected_blocks == 8','selected_blocks == 2')
+assert s.count('T.sync_warp()')==4 and 'qk_fetch' not in s;ast.parse(s);(e/'s2_direct_qk_kernel.py').write_text(s)
+text=base.replace('# codex-power v084','# codex-power v101',1)+'\n\n'+s[s.index('@tilelang.jit'):]+'\n_power_install_lazy_code((1,256,1,16,64,2,16,True), _make_power_s2_direct_qk)\n';source=Path('/tmp/nsa_power_v101_direct_qk.py');source.write_text(text);pt=ast.parse(base);ct=ast.parse(text);assert ast.dump(ast.Module(body=ct.body[:len(pt.body)],type_ignores=[]),include_attributes=False)==ast.dump(pt,include_attributes=False)
+(e/'source_diff.patch').write_text(''.join(difflib.unified_diff(base.splitlines(True),text.splitlines(True),fromfile=str(parent),tofile=str(source))));(e/'helper_diff.patch').write_text(''.join(difflib.unified_diff(old.splitlines(True),s.splitlines(True),fromfile=str(oldfile),tofile='s2_direct_qk_kernel.py')))
+(r/'source_identity.json').write_text(json.dumps({'candidate_path':str(source),'candidate_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'parent_path':str(parent),'parent_sha256':hashlib.sha256(parent.read_bytes()).hexdigest(),'parent_AST_prefix_exact':True,'new_dispatch_cases':[10],'other13math_and_keys_exact_parent':True,'helper_origin':str(oldfile),'helper_origin_sha256':hashlib.sha256(oldfile.read_bytes()).hexdigest(),'expected_shared_syncs_removed_dynamic_C10':5,'new_helper_static_sync_occurrences':4,'softmax_denominator_V_output_AST_unchanged_by_text_edits':True},indent=2)+'\n');print('BUILT',hashlib.sha256(source.read_bytes()).hexdigest())

@@ -1,0 +1,69 @@
+--- /root/tilelang-metax/race_tests/nsa/experiments/v077_codex_power_s8_output_pair_sc-16g-2/s8_kernel.py
++++ s2_direct_qk_kernel.py
+@@ -1,4 +1,4 @@
+-# codex-power v077
++# codex-power v101
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -9,9 +9,9 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s8_output_pair(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s2_direct_qk(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+-    assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
++    assert groups == 16 and dim == 64 and selected_blocks == 2 and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+     scale = (1.0 / dim) ** 0.5 * 1.44269504
+     dtype = T.float16
+@@ -38,7 +38,6 @@
+             lane = T.KernelLaunchFrame.Current().get_thread_binding() % 64
+             shared = T.alloc_shared([1024], dtype)
+             q_local = T.alloc_local(16, dtype)
+-            qk_fetch = T.alloc_local(8, dtype)
+             k_local = T.alloc_local(4, dtype)
+             scores = T.alloc_local(4, accum_dtype)
+             probabilities = T.alloc_local(4, dtype)
+@@ -53,38 +52,19 @@
+             v_column = T.alloc_local(4, dtype)
+             v_operand = T.alloc_local(16, dtype)
+             output_fetch = T.alloc_local(8, dtype)
+-            for part in T.unroll(2):
+-                for element in T.vectorized(8):
+-                    pos = part * 512 + lane * 8 + element
+-                    qk_fetch[element] = Q[batch_id, token, kv_head * groups + pos // 64, pos % 64]
+-                for pack in T.unroll(2):
+-                    pos = part * 512 + lane * 8 + pack * 4
+-                    for element in T.vectorized(4):
+-                        shared[qk_slot(pos // 64, pos % 64) + element] = qk_fetch[pack * 4 + element]
+-            T.sync_warp()
+             for chunk in T.unroll(4):
+                 for element in T.vectorized(4):
+-                    q_local[chunk * 4 + element] = shared[qk_slot(lane % 16, chunk * 16 + (lane // 16) * 4) + element]
++                    q_local[chunk * 4 + element] = Q[batch_id, token, kv_head * groups + lane % 16, chunk * 16 + (lane // 16) * 4 + element]
+             T.fill(numerator, 0)
+             denominator[0] = 0
+             maximum[0] = -T.infinity(accum_dtype)
+             for selected in T.unroll(selected_blocks, annotations={"pragma_unroll_explicit": False, "pragma_unroll_factor": 1}):
+                 block_start = Indices[batch_id, token, kv_head, selected] * block_size
+                 if block_start >= 0 and block_start <= token:
+-                    T.sync_warp()
+-                    for part in T.unroll(2):
+-                        for element in T.vectorized(8):
+-                            pos = part * 512 + lane * 8 + element
+-                            qk_fetch[element] = K[batch_id, block_start + pos // 64, kv_head, pos % 64]
+-                        for pack in T.unroll(2):
+-                            pos = part * 512 + lane * 8 + pack * 4
+-                            for element in T.vectorized(4):
+-                                shared[qk_slot(pos // 64, pos % 64) + element] = qk_fetch[pack * 4 + element]
+-                    T.sync_warp()
+                     T.fill(scores, 0)
+                     for chunk in T.unroll(4):
+                         for element in T.vectorized(4):
+-                            k_local[element] = shared[qk_slot(lane % 16, chunk * 16 + (lane // 16) * 4) + element]
++                            k_local[element] = K[batch_id, block_start + lane % 16, kv_head, chunk * 16 + (lane // 16) * 4 + element]
+                         T.tvm_mfma('16x16x16f16', 'row', 'row',
+                             'float16x4', 'float16x4', 'float32x4',
+                             k_local.data, 0, q_local.data, chunk, scores.data, 0,

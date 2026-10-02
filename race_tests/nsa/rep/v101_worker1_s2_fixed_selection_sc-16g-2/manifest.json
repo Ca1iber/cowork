@@ -1,0 +1,350 @@
+{
+  "version": "v101_worker1_s2_fixed_selection_sc-16g-2",
+  "worker": "worker1",
+  "status": "failed_runtime_OOM_screen_inconclusive",
+  "closed_utc": "2026-10-02T03:26:32.997700+00:00",
+  "source_sha256": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "start": {
+    "utc": "2026-10-02T03:07:49.452080+00:00",
+    "version": "v101_worker1_s2_fixed_selection_sc-16g-2",
+    "worker": "worker1",
+    "target_cases": [
+      10
+    ],
+    "phase": "fresh parent evidence; no candidate edit; hypothesis pending leader review",
+    "head": "9dc327b37eed1f6e98fa0c8ddfa718162cc91a1d",
+    "branch": "codex-power-v28-base",
+    "parent_source": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 10\n",
+    "cpu_limit": "34359738368\n"
+  },
+  "source_identity": {
+    "candidate_path": "/tmp/nsa_power_v101_direct_qk.py",
+    "candidate_sha256": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2",
+    "parent_path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "parent_AST_prefix_exact": true,
+    "new_dispatch_cases": [
+      10
+    ],
+    "other13math_and_keys_exact_parent": true,
+    "helper_origin": "/root/tilelang-metax/race_tests/nsa/experiments/v077_codex_power_s8_output_pair_sc-16g-2/s8_kernel.py",
+    "helper_origin_sha256": "6cab13e3b158003e6fc0abceb3bace5579a7816bc0a0836c573e04118dec5895",
+    "expected_shared_syncs_removed_dynamic_C10": 5,
+    "new_helper_static_sync_occurrences": 4,
+    "softmax_denominator_V_output_AST_unchanged_by_text_edits": true
+  },
+  "raw_failed_screen": {
+    "status": "failed_runtime_OOM_screen_inconclusive",
+    "process_exit": 137,
+    "screen_exit": 137,
+    "screen_gate": "failed; not rewritten",
+    "candidate_PASS_records": 4,
+    "control_inclusive_PASS_records": 12,
+    "record_scope": "CSV observations from failed process; not a successful screen or full14 verdict",
+    "case": 10,
+    "medians_us": {
+      "baseline_v28": "13.660160000",
+      "parent_v084": "12.352000000",
+      "power_v101": "11.788799500"
+    },
+    "samples_us": {
+      "baseline_v28": [
+        "11.816961000",
+        "14.028800000",
+        "13.829120000",
+        "13.491200000"
+      ],
+      "parent_v084": [
+        "11.719680000",
+        "13.081599000",
+        "12.984320000",
+        "10.752000000"
+      ],
+      "power_v101": [
+        "12.062720000",
+        "11.514879000",
+        "13.736960000",
+        "11.473920000"
+      ]
+    },
+    "vs_parent_pct": "-4.559589540155440414507772020",
+    "vs_v28_pct": "-13.69940396012931034482758621",
+    "samples_overlap": true,
+    "OOM_start": 10,
+    "OOM_after": 11,
+    "no_retry": true,
+    "failure_component": "after CSV and metadata files emitted; exact cleanup/export/destructor component unknown"
+  },
+  "reference_count_scope": {
+    "candidate_label": "power_v101",
+    "candidate_PASS_records": 4,
+    "control_inclusive_PASS_records": 12,
+    "candidate_cases": [
+      10
+    ],
+    "file": "target_case10_sc-16g-2.csv",
+    "screen_gate": "failed_exit137; counts describe emitted full-reference rows only",
+    "full14": false,
+    "duplicate_policy": "percase original CSV counted once; no merged CSV or retries; precompile/metadata/static/profile are zero extra references"
+  },
+  "parent_profile": [
+    {
+      "file": "race_tests/nsa/rep/v101_worker1_s2_fixed_selection_sc-16g-2/mcprof_case10_parent_v084/report_bundle/1_native_sparse_attention_kernel.txt.json",
+      "raw": {
+        "L2C Hit Rate": "68.86%",
+        "Global Memory Read bytes": "593,056.0byte",
+        "Global Memory Write bytes": "524,608.0byte",
+        "average latency per load instruction": 45.87,
+        "average conflict cycles per instruction": 0.0,
+        "shared memory access efficiency": "100.0%",
+        "Achieved waves": 254.0,
+        "Dispatched waves": 256.0,
+        "AP MTE Duty ratio": "15.42%",
+        "AP MMA Duty ratio": "1.87%"
+      }
+    },
+    {
+      "file": "race_tests/nsa/rep/v101_worker1_s2_fixed_selection_sc-16g-2/mcprof_case10_parent_v084/report_bundle/2_native_sparse_attention_kernel.txt.json",
+      "raw": {
+        "L2C Hit Rate": "68.86%",
+        "Global Memory Read bytes": "593,056.0byte",
+        "Global Memory Write bytes": "524,608.0byte",
+        "average latency per load instruction": 45.83,
+        "average conflict cycles per instruction": 0.0,
+        "shared memory access efficiency": "100.0%",
+        "Achieved waves": 253.0,
+        "Dispatched waves": 256.0,
+        "AP MTE Duty ratio": "15.19%",
+        "AP MMA Duty ratio": "1.84%"
+      }
+    }
+  ],
+  "parent_resources": {
+    "command": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-device-obj",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-resource-usage",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v101_worker1_s2_fixed_selection_sc-16g-2/resources/parent_case10.mcbin",
+      "/root/tilelang-metax/race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2/codegen_formal/power_v084/case10_stage1.device.cpp"
+    ],
+    "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2/codegen_formal/power_v084/case10_stage1.device.cpp",
+    "device_sha256": "f578605b2b2d6295eceee0a37807c276b8a990fad09976fb7dcb4b6f4ed7ab45",
+    "host_sha256": "00d8c0cd87845bf3381aa22d5e79d7fb0af14864724e5639ceea560ab2fc5d3c",
+    "MT": 82,
+    "ST": 24,
+    "static_shared_bytes": 0,
+    "dynamic_shared_bytes": 2048,
+    "stack_bytes": 0,
+    "static_max_warps": 5,
+    "not_measured_occupancy": true
+  },
+  "candidate_precompile_resources": {
+    "command": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-device-obj",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-resource-usage",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v101_worker1_s2_fixed_selection_sc-16g-2/resources/candidate_case10.mcbin",
+      "/root/tilelang-metax/race_tests/nsa/rep/v101_worker1_s2_fixed_selection_sc-16g-2/codegen_precompile/power_v101/case10_stage1.device.cpp"
+    ],
+    "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v101_worker1_s2_fixed_selection_sc-16g-2/codegen_precompile/power_v101/case10_stage1.device.cpp",
+    "device_sha256": "3e9793abf95cbc6705ef703d34172233c08f63d206c61d82fedc8214ba64551b",
+    "host_sha256": "00d8c0cd87845bf3381aa22d5e79d7fb0af14864724e5639ceea560ab2fc5d3c",
+    "MT": 70,
+    "ST": 30,
+    "static_shared_bytes": 0,
+    "dynamic_shared_bytes": 2048,
+    "stack_bytes": 0,
+    "static_max_warps": 7,
+    "not_measured_occupancy": true,
+    "resource_gate_pass": true
+  },
+  "actual_generated_mechanism": [
+    {
+      "variant": "parent_v084",
+      "path": "race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2/codegen_formal/power_v084/case10_stage1.device.cpp",
+      "sha256": "f578605b2b2d6295eceee0a37807c276b8a990fad09976fb7dcb4b6f4ed7ab45",
+      "sync_occurrences": 7,
+      "qk_fetch_present": true,
+      "load_and_sync_lines": [
+        {
+          "line": 11,
+          "text": "half_t qk_fetch[8];"
+        },
+        {
+          "line": 13,
+          "text": "half_t q_local[16];"
+        },
+        {
+          "line": 25,
+          "text": "half_t k_local[4];"
+        },
+        {
+          "line": 31,
+          "text": "*(uint4*)(qk_fetch + 0) = *(uint4*)(Q + (((((int)blockIdx.x) * 1024) + (part * 512)) + (((int)threadIdx.x) * 8)));"
+        },
+        {
+          "line": 34,
+          "text": "*(uint2*)(shared + ((((part * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack ^ part) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack * 4));"
+        },
+        {
+          "line": 37,
+          "text": "__syncwarp();"
+        },
+        {
+          "line": 40,
+          "text": "*(uint2*)(q_local + (chunk * 4)) = *(uint2*)(shared + ((((((int)threadIdx.x) & 15) * 64) + ((((chunk * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (((int)threadIdx.x) & 1)) * 4)));"
+        },
+        {
+          "line": 53,
+          "text": "__syncwarp();"
+        },
+        {
+          "line": 56,
+          "text": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + (((((int64_t)part_1) * (int64_t)512) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));"
+        },
+        {
+          "line": 59,
+          "text": "*(uint2*)(shared + ((((part_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack_1 ^ part_1) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack_1 * 4));"
+        },
+        {
+          "line": 62,
+          "text": "__syncwarp();"
+        },
+        {
+          "line": 67,
+          "text": "*(uint2*)(k_local + 0) = *(uint2*)(shared + ((((((int)threadIdx.x) & 15) * 64) + ((((chunk_1 * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (((int)threadIdx.x) & 1)) * 4)));"
+        },
+        {
+          "line": 69,
+          "text": "*(((float32x4*)scores) + 0) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)k_local) + 0),"
+        },
+        {
+          "line": 70,
+          "text": "*(((float16x4*)q_local) + chunk_1),"
+        },
+        {
+          "line": 142,
+          "text": "__syncwarp();"
+        },
+        {
+          "line": 154,
+          "text": "__syncwarp();"
+        },
+        {
+          "line": 182,
+          "text": "__syncwarp();"
+        },
+        {
+          "line": 192,
+          "text": "__syncwarp();"
+        }
+      ],
+      "static_not_dynamic_instruction_count": true
+    },
+    {
+      "variant": "power_v101",
+      "path": "race_tests/nsa/rep/v101_worker1_s2_fixed_selection_sc-16g-2/codegen_precompile/power_v101/case10_stage1.device.cpp",
+      "sha256": "3e9793abf95cbc6705ef703d34172233c08f63d206c61d82fedc8214ba64551b",
+      "sync_occurrences": 4,
+      "qk_fetch_present": false,
+      "load_and_sync_lines": [
+        {
+          "line": 11,
+          "text": "half_t q_local[16];"
+        },
+        {
+          "line": 24,
+          "text": "half_t k_local[4];"
+        },
+        {
+          "line": 30,
+          "text": "*(uint2*)(q_local + (chunk * 4)) = *(uint2*)(Q + ((((((int)blockIdx.x) * 1024) + ((((int)threadIdx.x) & 15) * 64)) + (chunk * 16)) + ((((int)threadIdx.x) >> 4) * 4)));"
+        },
+        {
+          "line": 47,
+          "text": "*(uint2*)(k_local + 0) = *(uint2*)(K + ((((((int64_t)block_start) * (int64_t)64) + ((((int64_t)((int)threadIdx.x)) & (int64_t)15) * (int64_t)64)) + (((int64_t)chunk_1) * (int64_t)16)) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)4) * (int64_t)4)));"
+        },
+        {
+          "line": 49,
+          "text": "*(((float32x4*)scores) + 0) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)k_local) + 0),"
+        },
+        {
+          "line": 50,
+          "text": "*(((float16x4*)q_local) + chunk_1),"
+        },
+        {
+          "line": 122,
+          "text": "__syncwarp();"
+        },
+        {
+          "line": 134,
+          "text": "__syncwarp();"
+        },
+        {
+          "line": 162,
+          "text": "__syncwarp();"
+        },
+        {
+          "line": 172,
+          "text": "__syncwarp();"
+        }
+      ],
+      "static_not_dynamic_instruction_count": true
+    }
+  ],
+  "runtime_final": {
+    "utc": "2026-10-02T03:25:18.424961+00:00",
+    "oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+    "cpu_limit": "34359738368\n",
+    "post_failure_cgroup_usage": "2871328768\n",
+    "no_gpu_config_changes": true,
+    "screen_exit": 137,
+    "failed_status_retained": true,
+    "component_cause_unproven": true
+  },
+  "shared_inputs": {
+    "files": {
+      "race_tests/nsa/official_case.json": "85f2c34acd793fb0a45084175acd7bcde48ff5d717a395d370800c30cf4e7036",
+      "race_tests/nsa/reference.py": "e31d5f188923d8696c7ad190b1652d5b3142c004dc96d0604f371c71f179bf32",
+      "race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/test_tilelang_nsa_fwd_v28.py": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568",
+      "race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+      "race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a"
+    },
+    "head": "9dc327b37eed1f6e98fa0c8ddfa718162cc91a1d",
+    "native_body_unchanged": true,
+    "no_shared_source_copies": true
+  },
+  "initial_screen_exit": 137,
+  "failed_gate_unchanged": true,
+  "automatic_approval_rejected_native_pass_gate": true,
+  "native_metadata_retries": 0,
+  "candidate_profile": "not collected after failed gate",
+  "full14": false,
+  "OJ": "no v101 scores",
+  "promotion": "none; failed archive only; main originalv28 unchanged"
+}

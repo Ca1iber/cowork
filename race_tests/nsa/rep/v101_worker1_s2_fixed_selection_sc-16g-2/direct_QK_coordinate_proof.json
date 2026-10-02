@@ -1,0 +1,16 @@
+{
+  "case": 10,
+  "parent_helper": "/root/tilelang-metax/race_tests/nsa/experiments/v077_codex_power_s8_output_pair_sc-16g-2/s8_kernel.py",
+  "parent_helper_sha256": "6cab13e3b158003e6fc0abceb3bace5579a7816bc0a0836c573e04118dec5895",
+  "writer_slots_bijective": 1024,
+  "original_shared_consumer_equals_direct_global_coordinate": true,
+  "global_coordinates_each_read_once_for_Q_and_each_K_tile": 1024,
+  "direct_coordinate": "row=lane%16,col=chunk*16+(lane//16)*4+element",
+  "groups": 16,
+  "dim": 64,
+  "threads": 64,
+  "Q_K_fragment_order_preserved": true,
+  "sync_reason": "remove only Q/K shared staging; V/output barriers unchanged and local fragments contain all operands before MFMA",
+  "correctness_reference_checks": 0,
+  "proof_limit": "coordinate equivalence only,not numerical runtime correctness or latency nonregression"
+}

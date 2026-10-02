@@ -1,0 +1,134 @@
+[
+  {
+    "variant": "parent_v084",
+    "path": "race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2/codegen_formal/power_v084/case10_stage1.device.cpp",
+    "sha256": "f578605b2b2d6295eceee0a37807c276b8a990fad09976fb7dcb4b6f4ed7ab45",
+    "sync_occurrences": 7,
+    "qk_fetch_present": true,
+    "load_and_sync_lines": [
+      {
+        "line": 11,
+        "text": "half_t qk_fetch[8];"
+      },
+      {
+        "line": 13,
+        "text": "half_t q_local[16];"
+      },
+      {
+        "line": 25,
+        "text": "half_t k_local[4];"
+      },
+      {
+        "line": 31,
+        "text": "*(uint4*)(qk_fetch + 0) = *(uint4*)(Q + (((((int)blockIdx.x) * 1024) + (part * 512)) + (((int)threadIdx.x) * 8)));"
+      },
+      {
+        "line": 34,
+        "text": "*(uint2*)(shared + ((((part * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack ^ part) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack * 4));"
+      },
+      {
+        "line": 37,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 40,
+        "text": "*(uint2*)(q_local + (chunk * 4)) = *(uint2*)(shared + ((((((int)threadIdx.x) & 15) * 64) + ((((chunk * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (((int)threadIdx.x) & 1)) * 4)));"
+      },
+      {
+        "line": 53,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 56,
+        "text": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + (((((int64_t)part_1) * (int64_t)512) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));"
+      },
+      {
+        "line": 59,
+        "text": "*(uint2*)(shared + ((((part_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack_1 ^ part_1) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack_1 * 4));"
+      },
+      {
+        "line": 62,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 67,
+        "text": "*(uint2*)(k_local + 0) = *(uint2*)(shared + ((((((int)threadIdx.x) & 15) * 64) + ((((chunk_1 * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (((int)threadIdx.x) & 1)) * 4)));"
+      },
+      {
+        "line": 69,
+        "text": "*(((float32x4*)scores) + 0) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)k_local) + 0),"
+      },
+      {
+        "line": 70,
+        "text": "*(((float16x4*)q_local) + chunk_1),"
+      },
+      {
+        "line": 142,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 154,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 182,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 192,
+        "text": "__syncwarp();"
+      }
+    ],
+    "static_not_dynamic_instruction_count": true
+  },
+  {
+    "variant": "power_v101",
+    "path": "race_tests/nsa/rep/v101_worker1_s2_fixed_selection_sc-16g-2/codegen_precompile/power_v101/case10_stage1.device.cpp",
+    "sha256": "3e9793abf95cbc6705ef703d34172233c08f63d206c61d82fedc8214ba64551b",
+    "sync_occurrences": 4,
+    "qk_fetch_present": false,
+    "load_and_sync_lines": [
+      {
+        "line": 11,
+        "text": "half_t q_local[16];"
+      },
+      {
+        "line": 24,
+        "text": "half_t k_local[4];"
+      },
+      {
+        "line": 30,
+        "text": "*(uint2*)(q_local + (chunk * 4)) = *(uint2*)(Q + ((((((int)blockIdx.x) * 1024) + ((((int)threadIdx.x) & 15) * 64)) + (chunk * 16)) + ((((int)threadIdx.x) >> 4) * 4)));"
+      },
+      {
+        "line": 47,
+        "text": "*(uint2*)(k_local + 0) = *(uint2*)(K + ((((((int64_t)block_start) * (int64_t)64) + ((((int64_t)((int)threadIdx.x)) & (int64_t)15) * (int64_t)64)) + (((int64_t)chunk_1) * (int64_t)16)) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)4) * (int64_t)4)));"
+      },
+      {
+        "line": 49,
+        "text": "*(((float32x4*)scores) + 0) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)k_local) + 0),"
+      },
+      {
+        "line": 50,
+        "text": "*(((float16x4*)q_local) + chunk_1),"
+      },
+      {
+        "line": 122,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 134,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 162,
+        "text": "__syncwarp();"
+      },
+      {
+        "line": 172,
+        "text": "__syncwarp();"
+      }
+    ],
+    "static_not_dynamic_instruction_count": true
+  }
+]
