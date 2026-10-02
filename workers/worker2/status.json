@@ -1,15 +1,13 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T04:46:26.898924+00:00",
-  "state": "WAITING_V202_CASE8_TWO_QUERY_CTA_REVIEW",
+  "timestamp_utc": "2026-10-02T05:15:07.949377+00:00",
+  "state": "V202_FIXED_CASE8_SCREEN_RUNNING",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
-  "source_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_repo_present": true,
-  "source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
-  "candidate_path": null,
-  "cases": [
+  "source_commit": "189ab5f4d56af37f558732c2dc0241aeb47e5b22",
+  "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+  "owned_cases": [
     1,
     2,
     3,
@@ -21,338 +19,163 @@
     13,
     14
   ],
-  "priority_cases": [
-    5,
-    9,
-    8
-  ],
-  "job_pid": null,
-  "stage": "currentAPI_mathproof_peerreview_complete_no_kernel_edit",
-  "correctness_counts": {
-    "candidate": 4,
-    "total": 12,
-    "cases": [
-      5
+  "current": {
+    "version": "v202_worker2_c8_two_query_cta_subagent2",
+    "target_cases": [
+      8
     ],
-    "full14_done": false
-  },
-  "benchmark_paths": [
-    "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/baseline_case*_subagent2.csv"
-  ],
-  "profile_paths": [
-    "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/mcprof_case{5,8,9}_{baseline_v28,parent_v084}"
-  ],
-  "target_deltas": {
-    "baseline_v28": -11.255966490242542,
-    "parent_v084": 10.437417921002123
-  },
-  "non_target_deltas": {},
-  "tools": {
-    "torch": "2.8.0+metax3.7.1.3",
-    "python": "3.12",
-    "tilelang": {
-      "loaded_version": "0.1.9+cuda.git7bb0e33b",
-      "loaded_path": "/root/tilelang-metax/tilelang/__init__.py",
-      "evidence": "existing import_recovery.log, no extra import"
+    "candidate_path": "/tmp/nsa_worker2_v202_c8_two_query_cta.py",
+    "candidate_sha256": "ed46e5cd8732e463ff9cefd2e21035c9ca4426132001fe5d6c02c67c97b722a2",
+    "metadata_pid": 87784,
+    "metadata_terminal_exit": 0,
+    "source_generated_exit": 0,
+    "ownership_exit": 0,
+    "compiled_affine_checks": 5760,
+    "actual": {
+      "threads": 128,
+      "grid": [
+        2048,
+        2
+      ],
+      "shared_bytes": 4096,
+      "warp_syncs": 7,
+      "CTA_barriers": 0,
+      "global_QKV_Output_width": 16,
+      "fulluint64_width64_shfl": true
     },
-    "tvm": {
-      "loaded_with_tilelang": true,
-      "source_package_path": "/root/tilelang-metax/3rdparty/tvm/python/tvm",
-      "version": "UNAVAILABLE; not separately printed in initial import metadata",
-      "library_sha256": "40ba05cc6d1f12d207342784bce510a7845ba6490ab2003539acb5d99bb7b378"
-    },
-    "mcProfiler": {
-      "path": "/usr/local/bin/mcProfiler",
-      "version": "3.8.1.4",
-      "hash_reported": "575f5a9f6d",
-      "distro": "ubuntu18.04"
-    },
-    "mxcc": "/opt/maca/mxgpu_llvm/bin/mxcc",
-    "mcTracer": {
-      "path": "/opt/maca/bin/mcTracer",
-      "version": "3.7.1.5-ef9e10e",
-      "help_exit": 0,
-      "not_in_PATH": true,
-      "trace_not_yet_collected": true
-    },
-    "mx_smi": "2.3.1",
-    "MACA": "3.7.1.5",
-    "KMD": "3.8.30",
-    "BIOS": "1.33.5.0"
-  },
-  "hardware": {
-    "physical_vram_mib": 65536,
-    "sgpu_vram_mib": 16000,
-    "compute_percent": 25,
-    "cpu_memory_limit_bytes": 34359738368,
-    "oom_kill": 1
-  },
-  "blockers": [],
-  "next_step": "Leaderreview/GO beforeanyv202kernel edit orcompile/native. Preserveparent16B allpaths; planefullmask/warp64/group ownership actualmetadata gates thenfixednative.",
-  "source_commit": "189ab5f4d56af37f558732c2dc0241aeb47e5b22",
-  "environment_evidence_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/environment",
-  "import_attempts": [
-    {
-      "pid": 2360,
-      "exit": 1,
-      "log": "/tmp/nsa_worker2_environment/import_probe.log",
-      "reason": "tilelang/env.py asserts build/tvm search directory exists; missing runtime directory",
-      "oom_kill_before": 0,
-      "oom_kill_after": 0
-    }
-  ],
-  "runtime_library_hashes_verified": true,
-  "source_hashes_verified": true,
-  "git_status_clean": true,
-  "version": "v201_worker2_c5_direct_output_subagent2",
-  "environment_ready": true,
-  "runtime_search_directory_recovery": {
-    "directory": "build/tvm",
-    "empty": true,
-    "source_edited": false,
-    "installed_or_built": false,
-    "initial_import_exit": 1,
-    "recovery_import_exit": 0,
-    "oom_kill_after": 0
-  },
-  "native_environment_gate": {
-    "pid": 2647,
-    "exit": 0,
-    "case": 5,
-    "latency_ms": 0.024812,
-    "full_reference_count": 1,
-    "source": "parent_v084",
-    "part_of_v200_counts": false
-  },
-  "active_case_process": {
-    "stage": "native_baseline",
-    "case": 5,
-    "pid": 4648,
-    "command": [
-      "/opt/conda/bin/python",
-      "/root/tilelang-metax/race_tests/nsa/hack/v200_worker2_baseline_profile_subagent2/run_case.py",
-      "5"
-    ],
-    "timestamp_utc": "2026-10-02T03:07:04.693456+00:00"
-  },
-  "queued_post_baseline_pid": 4850,
-  "active_profile_process": null,
-  "benchmark_summary_path": "workers/worker2/v200_baseline_summary.json",
-  "profile_samples_completed": null,
-  "profile_samples_planned": 12,
-  "static_generated_gate": {
-    "baseline_v28_cases": 14,
-    "parent_v084_cases": 14,
-    "both_exit": 0
-  },
-  "peer_feedback_path": "workers/worker2/lessons/peer_worker1_review_v200.json",
-  "profile_jobs": [
-    {
-      "job": "mcprof_case5_baseline_v28",
-      "cli_pid": 12789,
-      "cli_exit": 0,
-      "actual_sample_files": 2
-    },
-    {
-      "job": "mcprof_case5_parent_v084",
-      "cli_pid": 18239,
-      "cli_exit": 0,
-      "actual_sample_files": 2
-    },
-    {
-      "job": "mcprof_case8_baseline_v28",
-      "cli_pid": 24127,
-      "cli_exit": 0,
-      "actual_sample_files": 2
-    },
-    {
-      "job": "mcprof_case8_parent_v084",
-      "cli_pid": 29533,
-      "cli_exit": 0,
-      "actual_sample_files": 2
-    },
-    {
-      "job": "mcprof_case9_baseline_v28",
-      "cli_pid": 35454,
-      "cli_exit": null,
-      "actual_sample_files": 0
-    }
-  ],
-  "queued_trace_orchestrator_pid": 34284,
-  "runtime_incident": {
-    "oom_before": 0,
-    "oom_now": 1,
-    "associated_job": "mcprof_case8_baseline_v28",
-    "raw_Killed_line": 234,
-    "Killed_near_UTC": "03:22:02; before target initialization03:22:07, not after PROFILE_DONE",
-    "specific_victim_component": "UNKNOWN; dmesg Operation not permitted",
-    "outer_CLI_exit": 0,
-    "samples_captured": 2,
-    "clean_process_gate": "NOT DEMONSTRATED",
-    "agent_retries": 0
-  },
-  "candidate_source_created": false,
-  "closed_version": "v201_worker2_c5_direct_output_subagent2",
-  "closed_status": "rejected_case5_direct_output_regression_vs_v084",
-  "all_owned_jobs_terminal": true,
-  "profile_raw_records_captured": 12,
-  "profile_numeric_records": 10,
-  "profile_original_scope_consistent_records": 9,
-  "profile_unavailable_records": 2,
-  "profile_numeric_scope_fail_records": 1,
-  "original_gates": {
-    "profile_analysis": 1,
-    "post_pipeline": 1,
-    "trace_queue": 1,
-    "trace_tool_executed": false
-  },
-  "independent_resources": {
-    "records": 6,
-    "exit": 0,
-    "attention_runs": 0,
-    "full_references": 0
-  },
-  "report_path": "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/report_subagent2.md",
-  "proposal_path": "workers/worker2/proposals/v202_case8_two_query_cta.md",
-  "peer_review_path": "workers/worker2/reviews/v202_peer_advisory.json",
-  "code_relay_bundle": {
-    "path": "/tmp/nsa_worker2_code_189ab5f4d56a.bundle",
-    "size": 91227,
-    "sha256": "eb250d3b19b806e5417bdc670fcfc718106e23d3dd29189e6ee8029e56d1c408",
-    "prerequisite": "d1c7891b163f6ce8b0ad7f96292d30ab5b736474"
-  },
-  "active_native_process": null,
-  "candidate_source_sha256": "66ed461e355a69c456f2224b749d425ede38ce6ebba7f22ae1568351b05d6264",
-  "target_cases": [
-    8
-  ],
-  "metadata": {
-    "initial_helper_exit": 1,
-    "initial_compile_attention_refs": [
-      0,
-      0,
-      0
-    ],
-    "recovery_exit": 0,
-    "factory_identity_checked": true,
-    "recovery_pid": 57726,
-    "candidate_source_unchanged": true,
-    "actual_syncs": 5,
-    "actual_output_vector_bytes": 8,
-    "dynamic_shared_bytes": 2048,
-    "actual_output_ptr_mod8": 0,
-    "generated_source_gate": 0
-  },
-  "resource": {
-    "case": 5,
-    "variant": "power_v201",
-    "MT": 36,
-    "ST": 22,
-    "static_shared_bytes_reported": 0,
-    "dynamic_shared_bytes_host": 2048,
-    "static_max_warps_per_PEU": 8,
-    "stack_bytes": 0,
-    "not_measured_occupancy": true,
-    "parent": {
-      "case": 5,
-      "variant": "parent_v084",
-      "MT": 42,
-      "ST": 20,
+    "resources": {
+      "case": 8,
+      "variant": "power_v202",
+      "MT": 44,
+      "ST": 22,
       "static_shared_bytes_reported": 0,
-      "dynamic_shared_bytes_host": 2048,
-      "stack_bytes": 0,
+      "dynamic_shared_bytes_host": 4096,
       "static_max_warps_per_PEU": 8,
-      "not_measured_occupancy": true
+      "stack_bytes": 0,
+      "not_measured_occupancy": true,
+      "command": [
+        "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "-x",
+        "maca",
+        "-device-obj",
+        "-O3",
+        "-lineinfo",
+        "--offload-arch=xcore1000",
+        "-std=c++17",
+        "-I/root/tilelang-metax/src",
+        "-use-fast-math",
+        "-D__FAST_HALF_CVT__",
+        "-resource-usage",
+        "-o",
+        "/root/tilelang-metax/race_tests/nsa/rep/v202_worker2_c8_two_query_cta_subagent2/resources/case8_power_v202.mcbin",
+        "/root/tilelang-metax/race_tests/nsa/rep/v202_worker2_c8_two_query_cta_subagent2/codegen/power_v202/case8_stage1.device.cpp"
+      ],
+      "device_sha256": "cbfecac02c0a9979c477e8504bb5b2d88f7234398a2f441fb46ff4d90fbbdce6",
+      "parent": {
+        "MT": 42,
+        "ST": 20,
+        "dynamic_shared_bytes_host": 2048,
+        "static_max_warps_per_PEU": 8,
+        "stack_bytes": 0
+      }
     },
-    "command": [
-      "/opt/maca/mxgpu_llvm/bin/mxcc",
-      "-x",
-      "maca",
-      "-device-obj",
-      "-O3",
-      "-lineinfo",
-      "--offload-arch=xcore1000",
-      "-std=c++17",
-      "-I/root/tilelang-metax/src",
-      "-use-fast-math",
-      "-D__FAST_HALF_CVT__",
-      "-resource-usage",
-      "-o",
-      "/root/tilelang-metax/race_tests/nsa/rep/v201_worker2_c5_direct_output_subagent2/resources/case5_power_v201.mcbin",
-      "/root/tilelang-metax/race_tests/nsa/rep/v201_worker2_c5_direct_output_subagent2/codegen/power_v201/case5_stage1.device.cpp"
-    ]
-  },
-  "archive_is_promotion": false,
-  "screen_summary": {
-    "source_sha256": "66ed461e355a69c456f2224b749d425ede38ce6ebba7f22ae1568351b05d6264",
-    "complete12jobs": true,
-    "job_stop": null,
-    "actual_full_references": {
+    "screen_orchestrator_pid": 92796,
+    "live": {
+      "stage": "fixed_native_selected_case8",
+      "run": 2,
+      "variant": "parent_v084",
+      "pid": 93945,
+      "timestamp_utc": "2026-10-02T05:15:07.876931+00:00",
+      "oom": 1
+    },
+    "completed_reference_counts": {
+      "candidate": 0,
+      "total": 1
+    },
+    "planned_reference_counts": {
       "candidate": 4,
       "total": 12
     },
-    "oom_final": 1,
-    "protocol": "single-source freshproc/full unchangednative; no postexport; fixed12 only",
-    "automatic_formal": false,
-    "status": "rejected_target_median_not_faster",
-    "samples_us": {
-      "baseline_v28": [
-        30.889,
-        30.705,
-        30.659,
-        31.278
-      ],
-      "parent_v084": [
-        24.677999999999997,
-        24.765,
-        24.791,
-        24.729999999999997
-      ],
-      "power_v201": [
-        27.355999999999998,
-        27.351,
-        27.249,
-        27.310000000000002
-      ]
-    },
-    "medians_us": {
-      "baseline_v28": 30.796999999999997,
-      "parent_v084": 24.7475,
-      "power_v201": 27.3305
-    },
-    "candidate_vs_control_pct": {
-      "baseline_v28": -11.255966490242542,
-      "parent_v084": 10.437417921002123
-    },
-    "rounds": [
-      {
-        "round": 1,
-        "medians_us": {
-          "baseline_v28": 30.796999999999997,
-          "parent_v084": 24.7215,
-          "power_v201": 27.353499999999997
-        },
-        "candidate_vs_parent_pct": 10.646603159193413
-      },
-      {
-        "round": 2,
-        "medians_us": {
-          "baseline_v28": 30.9685,
-          "parent_v084": 24.7605,
-          "power_v201": 27.2795
-        },
-        "candidate_vs_parent_pct": 10.173461763696201
-      }
-    ],
-    "candidate_parent_ranges_overlap": false
+    "oom_baseline": 1,
+    "oom_current": 1,
+    "formal_started": false,
+    "repeat_or_adaptive_retry": false
   },
-  "native_jobs_all_exit0": true,
-  "oom_delta": 0,
-  "formal_started": false,
-  "new_profile_samples": 0,
-  "proposed_version": "v202_worker2_c8_two_query_cta_subagent2",
-  "proof_path": "workers/worker2/proposals/v202_case8_two_query_cta_proof.json",
-  "vector_touches_path": "workers/worker2/proposals/v202_case8_vector_touches.json",
-  "API_identity_path": "workers/worker2/proposals/v202_api_identity.json",
-  "proposed_GPU_native_runs": 0
+  "history": {
+    "closed_version": "v201_worker2_c5_direct_output_subagent2",
+    "closed_status": "rejected_case5_direct_output_regression_vs_v084",
+    "source_commit": "189ab5f4d56af37f558732c2dc0241aeb47e5b22",
+    "screen_summary": {
+      "source_sha256": "66ed461e355a69c456f2224b749d425ede38ce6ebba7f22ae1568351b05d6264",
+      "complete12jobs": true,
+      "job_stop": null,
+      "actual_full_references": {
+        "candidate": 4,
+        "total": 12
+      },
+      "oom_final": 1,
+      "protocol": "single-source freshproc/full unchangednative; no postexport; fixed12 only",
+      "automatic_formal": false,
+      "status": "rejected_target_median_not_faster",
+      "samples_us": {
+        "baseline_v28": [
+          30.889,
+          30.705,
+          30.659,
+          31.278
+        ],
+        "parent_v084": [
+          24.677999999999997,
+          24.765,
+          24.791,
+          24.729999999999997
+        ],
+        "power_v201": [
+          27.355999999999998,
+          27.351,
+          27.249,
+          27.310000000000002
+        ]
+      },
+      "medians_us": {
+        "baseline_v28": 30.796999999999997,
+        "parent_v084": 24.7475,
+        "power_v201": 27.3305
+      },
+      "candidate_vs_control_pct": {
+        "baseline_v28": -11.255966490242542,
+        "parent_v084": 10.437417921002123
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": 30.796999999999997,
+            "parent_v084": 24.7215,
+            "power_v201": 27.353499999999997
+          },
+          "candidate_vs_parent_pct": 10.646603159193413
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": 30.9685,
+            "parent_v084": 24.7605,
+            "power_v201": 27.2795
+          },
+          "candidate_vs_parent_pct": 10.173461763696201
+        }
+      ],
+      "candidate_parent_ranges_overlap": false
+    },
+    "code_relay_bundle": {
+      "path": "/tmp/nsa_worker2_code_189ab5f4d56a.bundle",
+      "size": 91227,
+      "sha256": "eb250d3b19b806e5417bdc670fcfc718106e23d3dd29189e6ee8029e56d1c408",
+      "prerequisite": "d1c7891b163f6ce8b0ad7f96292d30ab5b736474"
+    }
+  },
+  "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
+  "next_step": "Finish uniquefixedC8 B-P-C-C-P-Bx2; stopdeclaredfailures; evaluateonlytarget; returnrawresources toleader beforeanyfull14.",
+  "job_pid": 92796
 }
