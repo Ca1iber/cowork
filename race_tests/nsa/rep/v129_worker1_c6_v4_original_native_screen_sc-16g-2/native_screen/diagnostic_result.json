@@ -1,0 +1,1117 @@
+{
+  "UTC": "2026-10-02T22:31:35.512599+00:00",
+  "status": "fixed_case6_screen_protocol_completed",
+  "runtime_protocol_completed": true,
+  "failure": null,
+  "planned_native_processes": 12,
+  "terminal_job_records": 12,
+  "spawned_native_processes": 12,
+  "planned_candidate_fullrefs": 4,
+  "planned_inclusive_fullrefs": 12,
+  "observed_complete_reference_PASS_rows_by_variant": {
+    "baseline_v28": 4,
+    "parent_v113": 4,
+    "candidate_v127": 4
+  },
+  "observed_candidate_fullrefs": 4,
+  "observed_inclusive_fullrefs": 12,
+  "clean_process_accepted_fullrefs_by_variant": {
+    "baseline_v28": 4,
+    "parent_v113": 4,
+    "candidate_v127": 4
+  },
+  "clean_candidate_fullrefs": 4,
+  "clean_inclusive_fullrefs": 12,
+  "all_jobs": [
+    {
+      "index": 1,
+      "round": 1,
+      "variant": "baseline_v28",
+      "native_pid": 606876,
+      "native_pgid": 606876,
+      "UTC_terminal": "2026-10-02T22:24:16.649494+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.156626",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.156626",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_01_baseline_v28/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_01_baseline_v28/native.log",
+      "memory_samples": 88,
+      "owned_identities": {
+        "606876": {
+          "pid": 606876,
+          "starttime_ticks": 100315940,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:23:33.093814+00:00"
+        },
+        "607065": {
+          "pid": 607065,
+          "starttime_ticks": 100318712,
+          "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+          "observed_parent": {
+            "pid": 606876,
+            "starttime_ticks": 100315940,
+            "exe": "/opt/conda/bin/python3.12"
+          },
+          "first_seen_UTC": "2026-10-02T22:24:01.116886+00:00"
+        },
+        "607066": {
+          "pid": 607066,
+          "starttime_ticks": 100318713,
+          "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+          "observed_parent": {
+            "pid": 607065,
+            "starttime_ticks": 100318712,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+          },
+          "first_seen_UTC": "2026-10-02T22:24:01.116886+00:00"
+        },
+        "607076": {
+          "pid": 607076,
+          "starttime_ticks": 100318885,
+          "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+          "observed_parent": {
+            "pid": 606876,
+            "starttime_ticks": 100315940,
+            "exe": "/opt/conda/bin/python3.12"
+          },
+          "first_seen_UTC": "2026-10-02T22:24:02.617751+00:00"
+        },
+        "607077": {
+          "pid": 607077,
+          "starttime_ticks": 100318885,
+          "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+          "observed_parent": {
+            "pid": 607076,
+            "starttime_ticks": 100318885,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+          },
+          "first_seen_UTC": "2026-10-02T22:24:02.617751+00:00"
+        },
+        "607085": {
+          "pid": 607085,
+          "starttime_ticks": 100318921,
+          "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+          "observed_parent": {
+            "pid": 606876,
+            "starttime_ticks": 100315940,
+            "exe": "/opt/conda/bin/python3.12"
+          },
+          "first_seen_UTC": "2026-10-02T22:24:03.117716+00:00"
+        },
+        "607088": {
+          "pid": 607088,
+          "starttime_ticks": 100318945,
+          "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+          "observed_parent": {
+            "pid": 607085,
+            "starttime_ticks": 100318921,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+          },
+          "first_seen_UTC": "2026-10-02T22:24:03.117716+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5729693696\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2146709504\nrss 3192295424\nrss_huge 0\nshmem 651264\nmapped_file 52232192\ndirty 57344\nwriteback 0\nswap 745508864\npgpgin 5214558255\npgpgout 5213246207\npgfault 5814784180\npgmajfault 207139\ninactive_anon 2680852480\nactive_anon 547065856\ninactive_file 622301184\nactive_file 1523761152\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2146709504\ntotal_rss 3192295424\ntotal_rss_huge 0\ntotal_shmem 651264\ntotal_mapped_file 52232192\ntotal_dirty 57344\ntotal_writeback 0\ntotal_swap 745508864\ntotal_pgpgin 5214558255\ntotal_pgpgout 5213246207\ntotal_pgfault 5814784180\ntotal_pgmajfault 207139\ntotal_inactive_anon 2680852480\ntotal_active_anon 547065856\ntotal_inactive_file 622301184\ntotal_active_file 1523761152\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5729693696
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5738393600\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2153603072\nrss 3192901632\nrss_huge 0\nshmem 655360\nmapped_file 52232192\ndirty 77824\nwriteback 0\nswap 745459712\npgpgin 5219912691\npgpgout 5218598813\npgfault 5820759040\npgmajfault 207145\ninactive_anon 2681536512\nactive_anon 547061760\ninactive_file 629141504\nactive_file 1523802112\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2153603072\ntotal_rss 3192901632\ntotal_rss_huge 0\ntotal_shmem 655360\ntotal_mapped_file 52232192\ntotal_dirty 77824\ntotal_writeback 0\ntotal_swap 745459712\ntotal_pgpgin 5219912691\ntotal_pgpgout 5218598813\ntotal_pgfault 5820759040\ntotal_pgmajfault 207145\ntotal_inactive_anon 2681536512\ntotal_active_anon 547061760\ntotal_inactive_file 629141504\ntotal_active_file 1523802112\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5738393600
+      }
+    },
+    {
+      "index": 2,
+      "round": 1,
+      "variant": "parent_v113",
+      "native_pid": 607167,
+      "native_pgid": 607167,
+      "UTC_terminal": "2026-10-02T22:24:58.845974+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.092979",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.092979",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_02_parent_v113/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_02_parent_v113/native.log",
+      "memory_samples": 85,
+      "owned_identities": {
+        "607167": {
+          "pid": 607167,
+          "starttime_ticks": 100320309,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:24:16.790676+00:00"
+        },
+        "607349": {
+          "pid": 607349,
+          "starttime_ticks": 100322951,
+          "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+          "observed_parent": {
+            "pid": 607167,
+            "starttime_ticks": 100320309,
+            "exe": "/opt/conda/bin/python3.12"
+          },
+          "first_seen_UTC": "2026-10-02T22:24:43.313951+00:00"
+        },
+        "607350": {
+          "pid": 607350,
+          "starttime_ticks": 100322952,
+          "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+          "observed_parent": {
+            "pid": 607349,
+            "starttime_ticks": 100322951,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+          },
+          "first_seen_UTC": "2026-10-02T22:24:43.313951+00:00"
+        },
+        "607369": {
+          "pid": 607369,
+          "starttime_ticks": 100323155,
+          "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+          "observed_parent": {
+            "pid": 607167,
+            "starttime_ticks": 100320309,
+            "exe": "/opt/conda/bin/python3.12"
+          },
+          "first_seen_UTC": "2026-10-02T22:24:45.313861+00:00"
+        },
+        "607370": {
+          "pid": 607370,
+          "starttime_ticks": 100323155,
+          "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+          "observed_parent": {
+            "pid": 607369,
+            "starttime_ticks": 100323155,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+          },
+          "first_seen_UTC": "2026-10-02T22:24:45.313861+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5739520000\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2153697280\nrss 3193892864\nrss_huge 0\nshmem 655360\nmapped_file 52232192\ndirty 172032\nwriteback 0\nswap 745459712\npgpgin 5219912958\npgpgout 5218598814\npgfault 5820759284\npgmajfault 207145\ninactive_anon 2682511360\nactive_anon 547061760\ninactive_file 629268480\nactive_file 1523802112\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2153697280\ntotal_rss 3193892864\ntotal_rss_huge 0\ntotal_shmem 655360\ntotal_mapped_file 52232192\ntotal_dirty 172032\ntotal_writeback 0\ntotal_swap 745459712\ntotal_pgpgin 5219912958\ntotal_pgpgout 5218598814\ntotal_pgfault 5820759284\ntotal_pgmajfault 207145\ntotal_inactive_anon 2682511360\ntotal_active_anon 547061760\ntotal_inactive_file 629268480\ntotal_active_file 1523802112\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5739520000
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5747294208\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2160332800\nrss 3193561088\nrss_huge 0\nshmem 659456\nmapped_file 52232192\ndirty 81920\nwriteback 0\nswap 745447424\npgpgin 5225281313\npgpgout 5223965618\npgfault 5826640639\npgmajfault 207147\ninactive_anon 2682224640\nactive_anon 547069952\ninactive_file 635793408\nactive_file 1523851264\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2160332800\ntotal_rss 3193561088\ntotal_rss_huge 0\ntotal_shmem 659456\ntotal_mapped_file 52232192\ntotal_dirty 81920\ntotal_writeback 0\ntotal_swap 745447424\ntotal_pgpgin 5225281313\ntotal_pgpgout 5223965618\ntotal_pgfault 5826640639\ntotal_pgmajfault 207147\ntotal_inactive_anon 2682224640\ntotal_active_anon 547069952\ntotal_inactive_file 635793408\ntotal_active_file 1523851264\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5747294208
+      }
+    },
+    {
+      "index": 3,
+      "round": 1,
+      "variant": "candidate_v127",
+      "native_pid": 607448,
+      "native_pgid": 607448,
+      "UTC_terminal": "2026-10-02T22:25:40.542857+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093793",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093793",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_03_candidate_v127/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_03_candidate_v127/native.log",
+      "memory_samples": 84,
+      "owned_identities": {
+        "607448": {
+          "pid": 607448,
+          "starttime_ticks": 100324529,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:24:58.987218+00:00"
+        },
+        "607629": {
+          "pid": 607629,
+          "starttime_ticks": 100327185,
+          "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+          "observed_parent": {
+            "pid": 607448,
+            "starttime_ticks": 100324529,
+            "exe": "/opt/conda/bin/python3.12"
+          },
+          "first_seen_UTC": "2026-10-02T22:25:25.510048+00:00"
+        },
+        "607630": {
+          "pid": 607630,
+          "starttime_ticks": 100327185,
+          "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+          "observed_parent": {
+            "pid": 607629,
+            "starttime_ticks": 100327185,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+          },
+          "first_seen_UTC": "2026-10-02T22:25:25.510048+00:00"
+        },
+        "607639": {
+          "pid": 607639,
+          "starttime_ticks": 100327339,
+          "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+          "observed_parent": {
+            "pid": 607629,
+            "starttime_ticks": 100327185,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+          },
+          "first_seen_UTC": "2026-10-02T22:25:27.010363+00:00"
+        },
+        "607649": {
+          "pid": 607649,
+          "starttime_ticks": 100327389,
+          "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+          "observed_parent": {
+            "pid": 607448,
+            "starttime_ticks": 100324529,
+            "exe": "/opt/conda/bin/python3.12"
+          },
+          "first_seen_UTC": "2026-10-02T22:25:27.510703+00:00"
+        },
+        "607650": {
+          "pid": 607650,
+          "starttime_ticks": 100327389,
+          "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+          "observed_parent": {
+            "pid": 607649,
+            "starttime_ticks": 100327389,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+          },
+          "first_seen_UTC": "2026-10-02T22:25:27.510703+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5747396608\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2160414720\nrss 3193565184\nrss_huge 0\nshmem 659456\nmapped_file 52232192\ndirty 163840\nwriteback 0\nswap 745447424\npgpgin 5225281337\npgpgout 5223965622\npgfault 5826640644\npgmajfault 207147\ninactive_anon 2682216448\nactive_anon 547069952\ninactive_file 635940864\nactive_file 1523843072\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2160414720\ntotal_rss 3193565184\ntotal_rss_huge 0\ntotal_shmem 659456\ntotal_mapped_file 52232192\ntotal_dirty 163840\ntotal_writeback 0\ntotal_swap 745447424\ntotal_pgpgin 5225281337\ntotal_pgpgout 5223965622\ntotal_pgfault 5826640644\ntotal_pgmajfault 207147\ntotal_inactive_anon 2682216448\ntotal_active_anon 547069952\ntotal_inactive_file 635940864\ntotal_active_file 1523843072\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5747396608
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5754036224\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2166984704\nrss 3193622528\nrss_huge 0\nshmem 663552\nmapped_file 52232192\ndirty 0\nwriteback 0\nswap 745435136\npgpgin 5230624744\npgpgout 5229307424\npgfault 5832480826\npgmajfault 207149\ninactive_anon 2682236928\nactive_anon 547061760\ninactive_file 642416640\nactive_file 1523896320\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2166984704\ntotal_rss 3193622528\ntotal_rss_huge 0\ntotal_shmem 663552\ntotal_mapped_file 52232192\ntotal_dirty 0\ntotal_writeback 0\ntotal_swap 745435136\ntotal_pgpgin 5230624744\ntotal_pgpgout 5229307424\ntotal_pgfault 5832480826\ntotal_pgmajfault 207149\ntotal_inactive_anon 2682236928\ntotal_active_anon 547061760\ntotal_inactive_file 642416640\ntotal_active_file 1523896320\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5754036224
+      }
+    },
+    {
+      "index": 4,
+      "round": 1,
+      "variant": "candidate_v127",
+      "native_pid": 607730,
+      "native_pgid": 607730,
+      "UTC_terminal": "2026-10-02T22:26:20.091241+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093399",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093399",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_04_candidate_v127/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_04_candidate_v127/native.log",
+      "memory_samples": 85,
+      "owned_identities": {
+        "607730": {
+          "pid": 607730,
+          "starttime_ticks": 100328699,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:25:40.684174+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5753982976\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2167070720\nrss 3193630720\nrss_huge 0\nshmem 663552\nmapped_file 52232192\ndirty 86016\nwriteback 0\nswap 745418752\npgpgin 5230624773\npgpgout 5229307428\npgfault 5832480832\npgmajfault 207151\ninactive_anon 2682249216\nactive_anon 547061760\ninactive_file 642506752\nactive_file 1523884032\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2167070720\ntotal_rss 3193630720\ntotal_rss_huge 0\ntotal_shmem 663552\ntotal_mapped_file 52232192\ntotal_dirty 86016\ntotal_writeback 0\ntotal_swap 745418752\ntotal_pgpgin 5230624773\ntotal_pgpgout 5229307428\ntotal_pgfault 5832480832\ntotal_pgmajfault 207151\ntotal_inactive_anon 2682249216\ntotal_active_anon 547061760\ntotal_inactive_file 642506752\ntotal_active_file 1523884032\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5753982976
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5760901120\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2173313024\nrss 3193909248\nrss_huge 0\nshmem 667648\nmapped_file 52232192\ndirty 716800\nwriteback 0\nswap 745418752\npgpgin 5235907960\npgpgout 5234589025\npgfault 5838267553\npgmajfault 207151\ninactive_anon 2682605568\nactive_anon 547061760\ninactive_file 645468160\nactive_file 1527189504\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2173313024\ntotal_rss 3193909248\ntotal_rss_huge 0\ntotal_shmem 667648\ntotal_mapped_file 52232192\ntotal_dirty 716800\ntotal_writeback 0\ntotal_swap 745418752\ntotal_pgpgin 5235907960\ntotal_pgpgout 5234589025\ntotal_pgfault 5838267553\ntotal_pgmajfault 207151\ntotal_inactive_anon 2682605568\ntotal_active_anon 547061760\ntotal_inactive_file 645468160\ntotal_active_file 1527189504\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5760901120
+      }
+    },
+    {
+      "index": 5,
+      "round": 1,
+      "variant": "parent_v113",
+      "native_pid": 608067,
+      "native_pgid": 608067,
+      "UTC_terminal": "2026-10-02T22:26:59.462918+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093507",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093507",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_05_parent_v113/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_05_parent_v113/native.log",
+      "memory_samples": 82,
+      "owned_identities": {
+        "608067": {
+          "pid": 608067,
+          "starttime_ticks": 100332653,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:26:20.232139+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5760901120\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2173390848\nrss 3193913344\nrss_huge 0\nshmem 667648\nmapped_file 52232192\ndirty 794624\nwriteback 0\nswap 745418752\npgpgin 5235907985\npgpgout 5234589031\npgfault 5838267557\npgmajfault 207151\ninactive_anon 2682601472\nactive_anon 547061760\ninactive_file 645566464\nactive_file 1527169024\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2173390848\ntotal_rss 3193913344\ntotal_rss_huge 0\ntotal_shmem 667648\ntotal_mapped_file 52232192\ntotal_dirty 794624\ntotal_writeback 0\ntotal_swap 745418752\ntotal_pgpgin 5235907985\ntotal_pgpgout 5234589031\ntotal_pgfault 5838267557\ntotal_pgmajfault 207151\ntotal_inactive_anon 2682601472\ntotal_active_anon 547061760\ntotal_inactive_file 645566464\ntotal_active_file 1527169024\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5760901120
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5768605696\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2179436544\nrss 3194728448\nrss_huge 0\nshmem 671744\nmapped_file 52232192\ndirty 868352\nwriteback 0\nswap 745349120\npgpgin 5241201230\npgpgout 5239880602\npgfault 5844064602\npgmajfault 207159\ninactive_anon 2683363328\nactive_anon 547065856\ninactive_file 639279104\nactive_file 1539502080\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2179436544\ntotal_rss 3194728448\ntotal_rss_huge 0\ntotal_shmem 671744\ntotal_mapped_file 52232192\ntotal_dirty 868352\ntotal_writeback 0\ntotal_swap 745349120\ntotal_pgpgin 5241201230\ntotal_pgpgout 5239880602\ntotal_pgfault 5844064602\ntotal_pgmajfault 207159\ntotal_inactive_anon 2683363328\ntotal_active_anon 547065856\ntotal_inactive_file 639279104\ntotal_active_file 1539502080\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5768605696
+      }
+    },
+    {
+      "index": 6,
+      "round": 1,
+      "variant": "baseline_v28",
+      "native_pid": 608412,
+      "native_pgid": 608412,
+      "UTC_terminal": "2026-10-02T22:27:38.249990+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.156442",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.156442",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_06_baseline_v28/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_06_baseline_v28/native.log",
+      "memory_samples": 79,
+      "owned_identities": {
+        "608412": {
+          "pid": 608412,
+          "starttime_ticks": 100336591,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:26:59.605697+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5768536064\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2179510272\nrss 3194728448\nrss_huge 0\nshmem 671744\nmapped_file 52232192\ndirty 946176\nwriteback 0\nswap 745349120\npgpgin 5241201254\npgpgout 5239880608\npgfault 5844064602\npgmajfault 207159\ninactive_anon 2683363328\nactive_anon 547065856\ninactive_file 639369216\nactive_file 1539477504\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2179510272\ntotal_rss 3194728448\ntotal_rss_huge 0\ntotal_shmem 671744\ntotal_mapped_file 52232192\ntotal_dirty 946176\ntotal_writeback 0\ntotal_swap 745349120\ntotal_pgpgin 5241201254\ntotal_pgpgout 5239880608\ntotal_pgfault 5844064602\ntotal_pgmajfault 207159\ntotal_inactive_anon 2683363328\ntotal_active_anon 547065856\ntotal_inactive_file 639369216\ntotal_active_file 1539477504\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5768536064
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5773729792\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2185334784\nrss 3194753024\nrss_huge 0\nshmem 675840\nmapped_file 52232192\ndirty 155648\nwriteback 0\nswap 745349120\npgpgin 5246478079\npgpgout 5245156009\npgfault 5849831343\npgmajfault 207159\ninactive_anon 2683404288\nactive_anon 547061760\ninactive_file 645066752\nactive_file 1539604480\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2185334784\ntotal_rss 3194753024\ntotal_rss_huge 0\ntotal_shmem 675840\ntotal_mapped_file 52232192\ntotal_dirty 155648\ntotal_writeback 0\ntotal_swap 745349120\ntotal_pgpgin 5246478079\ntotal_pgpgout 5245156009\ntotal_pgfault 5849831343\ntotal_pgmajfault 207159\ntotal_inactive_anon 2683404288\ntotal_active_anon 547061760\ntotal_inactive_file 645066752\ntotal_active_file 1539604480\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5773729792
+      }
+    },
+    {
+      "index": 7,
+      "round": 2,
+      "variant": "baseline_v28",
+      "native_pid": 608643,
+      "native_pgid": 608643,
+      "UTC_terminal": "2026-10-02T22:28:17.005819+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.157409",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.157409",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_07_baseline_v28/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_07_baseline_v28/native.log",
+      "memory_samples": 79,
+      "owned_identities": {
+        "608643": {
+          "pid": 608643,
+          "starttime_ticks": 100340469,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:27:38.392299+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5773729792\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2185408512\nrss 3194761216\nrss_huge 0\nshmem 675840\nmapped_file 52232192\ndirty 229376\nwriteback 0\nswap 745345024\npgpgin 5246478104\npgpgout 5245156015\npgfault 5849831349\npgmajfault 207160\ninactive_anon 2683408384\nactive_anon 547061760\ninactive_file 645189632\nactive_file 1539579904\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2185408512\ntotal_rss 3194761216\ntotal_rss_huge 0\ntotal_shmem 675840\ntotal_mapped_file 52232192\ntotal_dirty 229376\ntotal_writeback 0\ntotal_swap 745345024\ntotal_pgpgin 5246478104\ntotal_pgpgout 5245156015\ntotal_pgfault 5849831349\ntotal_pgmajfault 207160\ntotal_inactive_anon 2683408384\ntotal_active_anon 547061760\ntotal_inactive_file 645189632\ntotal_active_file 1539579904\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5773729792
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5776519168\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2191224832\nrss 3192336384\nrss_huge 0\nshmem 679936\nmapped_file 52232192\ndirty 368640\nwriteback 0\nswap 745336832\npgpgin 5251756274\npgpgout 5250433359\npgfault 5855640906\npgmajfault 207161\ninactive_anon 2680991744\nactive_anon 547074048\ninactive_file 650735616\nactive_file 1539837952\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2191224832\ntotal_rss 3192336384\ntotal_rss_huge 0\ntotal_shmem 679936\ntotal_mapped_file 52232192\ntotal_dirty 368640\ntotal_writeback 0\ntotal_swap 745336832\ntotal_pgpgin 5251756274\ntotal_pgpgout 5250433359\ntotal_pgfault 5855640906\ntotal_pgmajfault 207161\ntotal_inactive_anon 2680991744\ntotal_active_anon 547074048\ntotal_inactive_file 650735616\ntotal_active_file 1539837952\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5776519168
+      }
+    },
+    {
+      "index": 8,
+      "round": 2,
+      "variant": "parent_v113",
+      "native_pid": 608873,
+      "native_pgid": 608873,
+      "UTC_terminal": "2026-10-02T22:28:56.701917+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093901",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093901",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_08_parent_v113/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_08_parent_v113/native.log",
+      "memory_samples": 80,
+      "owned_identities": {
+        "608873": {
+          "pid": 608873,
+          "starttime_ticks": 100344345,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:28:17.147156+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5776752640\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2191302656\nrss 3192340480\nrss_huge 0\nshmem 679936\nmapped_file 52232192\ndirty 446464\nwriteback 0\nswap 745336832\npgpgin 5251756350\npgpgout 5250433415\npgfault 5855641034\npgmajfault 207161\ninactive_anon 2680995840\nactive_anon 547069952\ninactive_file 650833920\nactive_file 1539809280\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2191302656\ntotal_rss 3192340480\ntotal_rss_huge 0\ntotal_shmem 679936\ntotal_mapped_file 52232192\ntotal_dirty 446464\ntotal_writeback 0\ntotal_swap 745336832\ntotal_pgpgin 5251756350\ntotal_pgpgout 5250433415\ntotal_pgfault 5855641034\ntotal_pgmajfault 207161\ntotal_inactive_anon 2680995840\ntotal_active_anon 547069952\ntotal_inactive_file 650833920\ntotal_active_file 1539809280\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5776752640
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5784195072\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2197196800\nrss 3192397824\nrss_huge 0\nshmem 684032\nmapped_file 52232192\ndirty 512000\nwriteback 0\nswap 745324544\npgpgin 5257033368\npgpgout 5255708983\npgfault 5861421108\npgmajfault 207163\ninactive_anon 2681049088\nactive_anon 547069952\ninactive_file 656457728\nactive_file 1540055040\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2197196800\ntotal_rss 3192397824\ntotal_rss_huge 0\ntotal_shmem 684032\ntotal_mapped_file 52232192\ntotal_dirty 512000\ntotal_writeback 0\ntotal_swap 745324544\ntotal_pgpgin 5257033368\ntotal_pgpgout 5255708983\ntotal_pgfault 5861421108\ntotal_pgmajfault 207163\ntotal_inactive_anon 2681049088\ntotal_active_anon 547069952\ntotal_inactive_file 656457728\ntotal_active_file 1540055040\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5784195072
+      }
+    },
+    {
+      "index": 9,
+      "round": 2,
+      "variant": "candidate_v127",
+      "native_pid": 609106,
+      "native_pgid": 609106,
+      "UTC_terminal": "2026-10-02T22:29:36.643513+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.094193",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.094193",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_09_candidate_v127/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_09_candidate_v127/native.log",
+      "memory_samples": 84,
+      "owned_identities": {
+        "609106": {
+          "pid": 609106,
+          "starttime_ticks": 100348315,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:28:56.843983+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5784420352\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2197274624\nrss 3192406016\nrss_huge 0\nshmem 684032\nmapped_file 52232192\ndirty 589824\nwriteback 0\nswap 745316352\npgpgin 5257033398\npgpgout 5255708991\npgfault 5861421114\npgmajfault 207164\ninactive_anon 2681061376\nactive_anon 547069952\ninactive_file 656601088\nactive_file 1540022272\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2197274624\ntotal_rss 3192406016\ntotal_rss_huge 0\ntotal_shmem 684032\ntotal_mapped_file 52232192\ntotal_dirty 589824\ntotal_writeback 0\ntotal_swap 745316352\ntotal_pgpgin 5257033398\ntotal_pgpgout 5255708991\ntotal_pgfault 5861421114\ntotal_pgmajfault 207164\ntotal_inactive_anon 2681061376\ntotal_active_anon 547069952\ntotal_inactive_file 656601088\ntotal_active_file 1540022272\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5784420352
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5790261248\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2203443200\nrss 3192446976\nrss_huge 0\nshmem 688128\nmapped_file 52232192\ndirty 290816\nwriteback 0\nswap 745312256\npgpgin 5262334926\npgpgout 5261009007\npgfault 5867298789\npgmajfault 207165\ninactive_anon 2681081856\nactive_anon 547061760\ninactive_file 662507520\nactive_file 1540272128\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2203443200\ntotal_rss 3192446976\ntotal_rss_huge 0\ntotal_shmem 688128\ntotal_mapped_file 52232192\ntotal_dirty 290816\ntotal_writeback 0\ntotal_swap 745312256\ntotal_pgpgin 5262334926\ntotal_pgpgout 5261009007\ntotal_pgfault 5867298789\ntotal_pgmajfault 207165\ntotal_inactive_anon 2681081856\ntotal_active_anon 547061760\ntotal_inactive_file 662507520\ntotal_active_file 1540272128\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5790261248
+      }
+    },
+    {
+      "index": 10,
+      "round": 2,
+      "variant": "candidate_v127",
+      "native_pid": 609346,
+      "native_pgid": 609346,
+      "UTC_terminal": "2026-10-02T22:30:16.372023+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093875",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093875",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_10_candidate_v127/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_10_candidate_v127/native.log",
+      "memory_samples": 80,
+      "owned_identities": {
+        "609346": {
+          "pid": 609346,
+          "starttime_ticks": 100352312,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:29:36.814918+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5790289920\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2203521024\nrss 3192463360\nrss_huge 0\nshmem 688128\nmapped_file 52232192\ndirty 368640\nwriteback 0\nswap 745308160\npgpgin 5262343449\npgpgout 5261017510\npgfault 5867307292\npgmajfault 207166\ninactive_anon 2681077760\nactive_anon 547061760\ninactive_file 662614016\nactive_file 1540235264\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2203521024\ntotal_rss 3192463360\ntotal_rss_huge 0\ntotal_shmem 688128\ntotal_mapped_file 52232192\ntotal_dirty 368640\ntotal_writeback 0\ntotal_swap 745308160\ntotal_pgpgin 5262343449\ntotal_pgpgout 5261017510\ntotal_pgfault 5867307292\ntotal_pgmajfault 207166\ntotal_inactive_anon 2681077760\ntotal_active_anon 547061760\ntotal_inactive_file 662614016\ntotal_active_file 1540235264\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5790289920
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5797576704\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2209419264\nrss 3192754176\nrss_huge 0\nshmem 692224\nmapped_file 52232192\ndirty 368640\nwriteback 0\nswap 745308160\npgpgin 5267655805\npgpgout 5266328313\npgfault 5873103066\npgmajfault 207166\ninactive_anon 2681487360\nactive_anon 547065856\ninactive_file 668479488\nactive_file 1540284416\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2209419264\ntotal_rss 3192758272\ntotal_rss_huge 0\ntotal_shmem 692224\ntotal_mapped_file 52232192\ntotal_dirty 368640\ntotal_writeback 0\ntotal_swap 745308160\ntotal_pgpgin 5267655805\ntotal_pgpgout 5266328313\ntotal_pgfault 5873103066\ntotal_pgmajfault 207166\ntotal_inactive_anon 2681487360\ntotal_active_anon 547065856\ntotal_inactive_file 668479488\ntotal_active_file 1540284416\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5797576704
+      }
+    },
+    {
+      "index": 11,
+      "round": 2,
+      "variant": "parent_v113",
+      "native_pid": 609689,
+      "native_pgid": 609689,
+      "UTC_terminal": "2026-10-02T22:30:56.069166+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093829",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.093829",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_11_parent_v113/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_11_parent_v113/native.log",
+      "memory_samples": 80,
+      "owned_identities": {
+        "609689": {
+          "pid": 609689,
+          "starttime_ticks": 100356282,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:30:16.513906+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5796712448\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2209497088\nrss 3192774656\nrss_huge 0\nshmem 692224\nmapped_file 52232192\ndirty 446464\nwriteback 0\nswap 745308160\npgpgin 5267656548\npgpgout 5266329078\npgfault 5873105500\npgmajfault 207166\ninactive_anon 2681315328\nactive_anon 547061760\ninactive_file 668598272\nactive_file 1540243456\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2209497088\ntotal_rss 3192774656\ntotal_rss_huge 0\ntotal_shmem 692224\ntotal_mapped_file 52232192\ntotal_dirty 446464\ntotal_writeback 0\ntotal_swap 745308160\ntotal_pgpgin 5267656548\ntotal_pgpgout 5266329078\ntotal_pgfault 5873105500\ntotal_pgmajfault 207166\ntotal_inactive_anon 2681315328\ntotal_active_anon 547061760\ntotal_inactive_file 668598272\ntotal_active_file 1540243456\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5796712448
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5802958848\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2215383040\nrss 3192967168\nrss_huge 0\nshmem 696320\nmapped_file 52232192\ndirty 655360\nwriteback 0\nswap 745234432\npgpgin 5272958024\npgpgout 5271629072\npgfault 5878889011\npgmajfault 207171\ninactive_anon 2681602048\nactive_anon 547061760\ninactive_file 674426880\nactive_file 1540296704\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2215383040\ntotal_rss 3192967168\ntotal_rss_huge 0\ntotal_shmem 696320\ntotal_mapped_file 52232192\ntotal_dirty 655360\ntotal_writeback 0\ntotal_swap 745234432\ntotal_pgpgin 5272958024\ntotal_pgpgout 5271629072\ntotal_pgfault 5878889011\ntotal_pgmajfault 207171\ntotal_inactive_anon 2681602048\ntotal_active_anon 547061760\ntotal_inactive_file 674426880\ntotal_active_file 1540296704\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5802958848
+      }
+    },
+    {
+      "index": 12,
+      "round": 2,
+      "variant": "baseline_v28",
+      "native_pid": 610023,
+      "native_pgid": 610023,
+      "UTC_terminal": "2026-10-02T22:31:35.501973+00:00",
+      "GO_sent": true,
+      "native_exit": 0,
+      "stop_reason": null,
+      "clean_process_accepted": true,
+      "observed_complete_reference_PASS_rows": 1,
+      "rawCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.156662",
+          "status": "PASS"
+        }
+      ],
+      "verifiedCSVrows": [
+        {
+          "case": "6",
+          "B": "8",
+          "SEQ_LEN": "1024",
+          "H": "1",
+          "HQ": "16",
+          "D": "128",
+          "S": "1",
+          "block_size": "32",
+          "latency_ms": "0.156662",
+          "status": "PASS"
+        }
+      ],
+      "auditerrors": [],
+      "clean_process_accepted_reference_rows": 1,
+      "CSV": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_12_baseline_v28/native_case6.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v129_worker1_c6_v4_original_native_screen_sc-16g-2/native_screen/job_12_baseline_v28/native.log",
+      "memory_samples": 83,
+      "owned_identities": {
+        "610023": {
+          "pid": 610023,
+          "starttime_ticks": 100360251,
+          "exe": "/opt/conda/bin/python3.12",
+          "observed_parent": {
+            "pid": 606875
+          },
+          "first_seen_UTC": "2026-10-02T22:30:56.211788+00:00"
+        }
+      },
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5803040768\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2215460864\nrss 3192995840\nrss_huge 0\nshmem 696320\nmapped_file 52232192\ndirty 733184\nwriteback 0\nswap 745234432\npgpgin 5272958063\npgpgout 5271629086\npgfault 5878889023\npgmajfault 207171\ninactive_anon 2681618432\nactive_anon 547061760\ninactive_file 674549760\nactive_file 1540251648\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2215460864\ntotal_rss 3192995840\ntotal_rss_huge 0\ntotal_shmem 696320\ntotal_mapped_file 52232192\ntotal_dirty 733184\ntotal_writeback 0\ntotal_swap 745234432\ntotal_pgpgin 5272958063\ntotal_pgpgout 5271629086\ntotal_pgfault 5878889023\ntotal_pgmajfault 207171\ntotal_inactive_anon 2681618432\ntotal_active_anon 547061760\ntotal_inactive_file 674549760\ntotal_active_file 1540251648\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5803040768
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "5808619520\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+        "memory.failcnt": "3180266\n",
+        "memory.stat": "cache 2221555712\nrss 3193053184\nrss_huge 0\nshmem 700416\nmapped_file 52232192\ndirty 356352\nwriteback 0\nswap 745213952\npgpgin 5278261112\npgpgout 5276930634\npgfault 5884648017\npgmajfault 207175\ninactive_anon 2681638912\nactive_anon 547061760\ninactive_file 680538112\nactive_file 1540308992\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2221555712\ntotal_rss 3193053184\ntotal_rss_huge 0\ntotal_shmem 700416\ntotal_mapped_file 52232192\ntotal_dirty 356352\ntotal_writeback 0\ntotal_swap 745213952\ntotal_pgpgin 5278261112\ntotal_pgpgout 5276930634\ntotal_pgfault 5884648017\ntotal_pgmajfault 207175\ntotal_inactive_anon 2681638912\ntotal_active_anon 547061760\ntotal_inactive_file 680538112\ntotal_active_file 1540308992\ntotal_unevictable 0\n",
+        "oom_kill": 13,
+        "usage_bytes": 5808619520
+      }
+    }
+  ],
+  "cgroup_initial": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "5698383872\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 2146697216\nrss 3161092096\nrss_huge 0\nshmem 651264\nmapped_file 52232192\ndirty 40960\nwriteback 0\nswap 745512960\npgpgin 5214550632\npgpgout 5213246204\npgfault 5814776556\npgmajfault 207138\ninactive_anon 2649673728\nactive_anon 547065856\ninactive_file 622284800\nactive_file 1523761152\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2146697216\ntotal_rss 3161092096\ntotal_rss_huge 0\ntotal_shmem 651264\ntotal_mapped_file 52232192\ntotal_dirty 40960\ntotal_writeback 0\ntotal_swap 745512960\ntotal_pgpgin 5214550632\ntotal_pgpgout 5213246204\ntotal_pgfault 5814776556\ntotal_pgmajfault 207138\ntotal_inactive_anon 2649673728\ntotal_active_anon 547065856\ntotal_inactive_file 622284800\ntotal_active_file 1523761152\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 5698383872
+  },
+  "cgroup_final": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "5808824320\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 2221633536\nrss 3193053184\nrss_huge 0\nshmem 700416\nmapped_file 52232192\ndirty 434176\nwriteback 0\nswap 745213952\npgpgin 5278261271\npgpgout 5276930774\npgfault 5884648146\npgmajfault 207175\ninactive_anon 2681606144\nactive_anon 547061760\ninactive_file 680710144\nactive_file 1540259840\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 2221633536\ntotal_rss 3193053184\ntotal_rss_huge 0\ntotal_shmem 700416\ntotal_mapped_file 52232192\ntotal_dirty 434176\ntotal_writeback 0\ntotal_swap 745213952\ntotal_pgpgin 5278261271\ntotal_pgpgout 5276930774\ntotal_pgfault 5884648146\ntotal_pgmajfault 207175\ntotal_inactive_anon 2681606144\ntotal_active_anon 547061760\ntotal_inactive_file 680710144\ntotal_active_file 1540259840\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 5808824320
+  },
+  "owned_live_at_end": [],
+  "no_retry": true,
+  "old_v105_zero_ref_gate1_preserved": true,
+  "old_v104_formal_exit1_not_changed": true,
+  "old_v101137_not_changed": true,
+  "candidate_source_v127_sha256": "cfeb8e5d18adb3c0d0c887633fc8dea1778ebfdfc100fdc9c9a77544c514515d",
+  "not_OOM_cause_proof_or_OJ_or_no_regression": true
+}
