@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T08:32:34.982222+00:00",
-  "state": "V206_FIXED_C5_NATIVE_RUNNING",
+  "timestamp_utc": "2026-10-02T08:45:26.245141+00:00",
+  "state": "V206_REJECTED_CLOSED",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "ff293bcf8c4cbf734e7b7fa41cce020f04cbb10f",
+  "source_commit": "f7c53a69b83d3bf8ead72101ca2d26a14a3a8032",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v206_worker2_c5_v_shared4row_subagent2",
-    "state": "PROPOSAL_ONLY",
+    "state": "REJECTED_CLOSED",
     "only_key": [
       4,
       1024,
@@ -110,27 +110,34 @@
     "uint32_bpermute_new_count": 4,
     "final_ISA_width": "UNAVAILABLE",
     "native_go": true,
-    "native_observerPID": 159260,
-    "native_live": {
-      "stage": "fixed_C5_native_observed",
-      "run": 12,
-      "variant": "baseline_v28",
-      "pid": 161983,
-      "observerPID": 159260,
-      "sample_count": 34,
-      "utc": "2026-10-02T08:32:34.849327+00:00",
-      "usage_bytes": 15837298688,
-      "oom": 3
-    },
+    "native_observerPID": null,
+    "native_live": "ALL12_TERMINAL0",
     "accepted_refs": {
       "candidate": 4,
-      "total": 11
+      "total": 12
     },
     "planned_refs": {
       "candidate": 4,
       "total": 12
     },
-    "OOM": 3
+    "OOM": 3,
+    "native_jobs_actual": 12,
+    "candidate_median_us": 26.089,
+    "parent_median_us": 24.6785,
+    "candidate_vs_parent_pct": 5.7155013473266125,
+    "round_deltas_pct": [
+      5.563648134660526,
+      16.09901471840407
+    ],
+    "ranges_overlap": false,
+    "allC_greater_than_allP": true,
+    "highpoints_us_retained": {
+      "candidate": 31.416,
+      "baseline": 46.72
+    },
+    "inventory_files": 259,
+    "source_commit": "f7c53a69b83d3bf8ead72101ca2d26a14a3a8032",
+    "no_formal_profile_repeat_or_promotion": true
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -342,8 +349,8 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "finish originalfixed12 or stopfailedprefix; noadditionalprofile/formal",
-  "job_pid": 159260,
+  "next_step": "case9newmechanism/limitedparentprofile proposalreview; noextraheavy",
+  "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
     "no_kernel_edit": true,
