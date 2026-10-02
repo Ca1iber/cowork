@@ -48,7 +48,7 @@
     9,
     8
   ],
-  "state": "ENVIRONMENT_RESTORE_AND_GATE",
+  "state": "READY_V200_BASELINE_PROFILE_RUNNING",
   "workspace": "/root/tilelang-metax",
   "requirements": [
     "profile exact parent on this machine before new mechanism",
@@ -61,8 +61,15 @@
     "publish status and mergeable patch at checkpoints; do not merge or promote main independently"
   ],
   "transport": "leader relay; worker has no direct GitHub access; do not copy private keys",
-  "updated_at_utc": "2026-10-02T02:57:07.740775+00:00",
+  "updated_at_utc": "2026-10-02T03:05:35.892998+00:00",
   "code_common_remote_branch": "code/nsa-common-v084",
   "code_worker_remote_branch": "code/worker2",
-  "leader_feedback": "Complete SHA verification, branch creation, runtime restore and native case5 environment gate before baseline/profile."
+  "leader_feedback": "Recovery import passed after empty build/tvm restoration. After native case5 environment gate passes, perform fixed v200 diagnostic B28-P84-P84-B28 for all14 (56 checks, candidate0) and fixed 12 profiler samples for cases5/8/9 across two sources. Submit next single-mechanism hypothesis for review before v201 edit.",
+  "environment_gate_verified": {
+    "initial_import": 1,
+    "recovery_import": 0,
+    "native_case5": 0,
+    "native_refs": 1,
+    "oom_kill": 0
+  }
 }

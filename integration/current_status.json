@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-10-02T02:57:07.740775+00:00",
+  "updated_at_utc": "2026-10-02T03:13:56.826912+00:00",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "oj_reference_version": "v084",
   "oj_scores": [
@@ -26,9 +26,34 @@
       11,
       12
     ],
-    "stage": "case12 fresh parent profile complete; hypothesis review issued",
-    "active_version": "v100_worker1_s8_pair_iteration_sc-16g-2",
-    "communication_head": "ab012ea110b2a194f689164e7eab97a7d0630c8c"
+    "stage": "v101 fresh case10 profile complete, single direct-QK mechanism approved for screen",
+    "active_version": "v101_worker1_s2_fixed_selection_sc-16g-2",
+    "communication_head": "3736f003c8f4310c7f6882c9977b0a7693f4f573",
+    "resources_parent_to_candidate": {
+      "MT": [
+        80,
+        98
+      ],
+      "ST": [
+        22,
+        32
+      ],
+      "static_max_warps": [
+        6,
+        4
+      ],
+      "dynamic_shared_bytes": [
+        2048,
+        2048
+      ],
+      "stack_bytes": [
+        0,
+        0
+      ]
+    },
+    "resource_interpretation": "Increased register resource pressure accompanies slowdown; static warp limit is not measured occupancy or sole cause.",
+    "last_closed_source_commit": "9dc327b37eed1f6e98fa0c8ddfa718162cc91a1d",
+    "last_closed_status": "v100 rejected selected case12 screen; 4 candidate/12 all checks; no full14/OJ claim"
   },
   "worker2": {
     "cases": [
@@ -43,8 +68,13 @@
       13,
       14
     ],
-    "stage": "source and runtime fully transferred; environment gate next",
-    "communication_head": "8655c3701c298d3f03b737bca5ea475b19d8aac7"
+    "stage": "v200 baseline continues, at least 32 raw native checks completed, case9 running per worker report",
+    "communication_head": "08e246b91777aa9260d6f5c27d75441bc5570e6a",
+    "baseline_plan": "After native gate, fixed all14 B28-P84-P84-B28, 56 fullrefs, no candidate kernel; fixed profiler12 samples cases5/8/9 two sources",
+    "active_version": "v200_worker2_baseline_profile_subagent2",
+    "completed_v200_refs_observed": 32,
+    "planned_v200_refs": 56,
+    "new_candidate_refs": 0
   },
-  "leader_next": "Review worker2 environment and v200 baseline plan; review worker1 screen correctness/codegen/latency before formal all14."
+  "leader_next": "Review fixed v101 screen and complete v200 baseline/profile evidence before S1 edits"
 }
