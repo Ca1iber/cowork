@@ -1,0 +1,10 @@
+--- closed122/launch_native_screen.py
++++ 124/launch_native_screen.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import sys,json,subprocess,hashlib,os,datetime
+-r=Path(sys.argv[1]);m=json.loads((r/'native_source_manifest.json').read_text());plan=json.loads((r/'native_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v122_native_screen_once';assert not (r/'launch_once.lock').exists();assert not (r/'native_supervisor_once.lock').exists()
++r=Path(sys.argv[1]);m=json.loads((r/'native_source_manifest.json').read_text());plan=json.loads((r/'native_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v124_native_screen_once';assert not (r/'launch_once.lock').exists();assert not (r/'native_supervisor_once.lock').exists()
+ cmd=[m['tools']['python']['path'],'-S','-u',m['tools']['supervisor']['path'],str(r)];assert cmd==json.loads((r/'native_launch_preflight.json').read_text())['corrected_supervisor_argv']
+ for k,x in list(m['sources'].items())+list(m['tools'].items())+ [('document',m['shared_identity_document'])]+[(k,m[k]) for k in ['existing_parent_C12_device','existing_candidate_C12_device','frozen_compiled_observation','frozen_IR_actual_exit','preserved_codegen_stage_exit','frozen_compiled_observation_actual_exit']]:assert Path(x['path']).is_file() and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256'],k
+ f=os.open(r/'native_supervisor_once.lock',os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600);os.write(f,json.dumps({'UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'launcher_PID':os.getpid(),'argv':cmd}).encode());os.close(f)

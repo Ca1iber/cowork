@@ -1,0 +1,95 @@
+{
+  "actual_exported_CPP_affine_addresses": true,
+  "Max_Den_Num_KV_disjoint_fullvectors": true,
+  "actual_hostshared_bytes": 10496,
+  "ranges": {
+    "MaxW": {
+      "min_index": 1536,
+      "max_index": 1567,
+      "unique_elements": 32
+    },
+    "MaxR": {
+      "min_index": 1536,
+      "max_index": 1567,
+      "unique_elements": 32
+    },
+    "DenW": {
+      "min_index": 1568,
+      "max_index": 1599,
+      "unique_elements": 32
+    },
+    "DenR": {
+      "min_index": 1568,
+      "max_index": 1599,
+      "unique_elements": 32
+    },
+    "NumW": {
+      "min_index": 1600,
+      "max_index": 2623,
+      "unique_elements": 1024
+    },
+    "NumR": {
+      "min_index": 1600,
+      "max_index": 2623,
+      "unique_elements": 1024
+    },
+    "Half": {
+      "min_index": 0,
+      "max_index": 3071,
+      "unique_elements": 3072
+    }
+  },
+  "actual_F32shared_sites": [
+    {
+      "line": 98,
+      "kind": "MaxW",
+      "expressions": [
+        "((((((int)threadIdx.x) >> 6) * 16) + (((int)threadIdx.x) & 63)) + 1536)"
+      ],
+      "vector_float_width": 1
+    },
+    {
+      "line": 101,
+      "kind": "MaxR",
+      "expressions": [
+        "((((int)threadIdx.x) & 15) + 1536)",
+        "((((int)threadIdx.x) & 15) + 1552)"
+      ],
+      "vector_float_width": 1
+    },
+    {
+      "line": 144,
+      "kind": "DenW",
+      "expressions": [
+        "((((((int)threadIdx.x) >> 6) * 16) + (((int)threadIdx.x) & 63)) + 1568)"
+      ],
+      "vector_float_width": 1
+    },
+    {
+      "line": 186,
+      "kind": "NumW",
+      "expressions": [
+        "(((chunk_4 * 256) + ((((int)threadIdx.x) & 63) * 4)) + 1600)"
+      ],
+      "vector_float_width": 4
+    },
+    {
+      "line": 191,
+      "kind": "DenR",
+      "expressions": [
+        "((((int)threadIdx.x) & 15) + 1568)",
+        "((((int)threadIdx.x) & 15) + 1584)"
+      ],
+      "vector_float_width": 1
+    },
+    {
+      "line": 196,
+      "kind": "NumR",
+      "expressions": [
+        "(((chunk_5 * 256) + ((((int)threadIdx.x) & 63) * 4)) + 1600)"
+      ],
+      "vector_float_width": 4
+    }
+  ],
+  "not_runtime_or_numerical_proof": true
+}

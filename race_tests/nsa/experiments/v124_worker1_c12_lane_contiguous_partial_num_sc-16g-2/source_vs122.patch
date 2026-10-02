@@ -1,0 +1,25 @@
+--- closed122/source.py
++++ 124/candidate.py
+@@ -1,4 +1,4 @@
+-# codex-power v122
++# codex-power v124
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -1595,14 +1595,14 @@
+                 for chunk in T.unroll(4):
+                     for element in T.vectorized(4):
+                         feature = chunk * 16 + (lane // 16) * 4 + element
+-                        partial_numerator[(lane % 16) * 64 + feature] = numerator[chunk * 4 + element]
++                        partial_numerator[chunk * 256 + lane * 4 + element] = numerator[chunk * 4 + element]
+             T.sync_threads()
+             if warp_id == 0:
+                 denominator[0] = reduction_values[32 + lane % 16] + reduction_values[48 + lane % 16]
+                 for chunk in T.unroll(4):
+                     for element in T.vectorized(4):
+                         feature = chunk * 16 + (lane // 16) * 4 + element
+-                        numerator[chunk * 4 + element] += partial_numerator[(lane % 16) * 64 + feature]
++                        numerator[chunk * 4 + element] += partial_numerator[chunk * 256 + lane * 4 + element]
+                 for chunk in T.unroll(4):
+                     for element in T.vectorized(4):
+                         numerator[chunk * 4 + element] /= denominator[0]

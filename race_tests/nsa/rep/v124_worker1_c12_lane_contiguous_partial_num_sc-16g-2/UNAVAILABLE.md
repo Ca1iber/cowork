@@ -1,0 +1,1 @@
+No newMC/trace/ISA/runtimeoccupancy or all14/OJ in124. OnlyC12fullnaive4candidate12inclusive. Sharedcounter movement afterlayout UNKNOWN; no inferredbank-onlycause or stablewin. Old121gate1/122+48.64%/123fourraw retained, no repeats orpromotion.
