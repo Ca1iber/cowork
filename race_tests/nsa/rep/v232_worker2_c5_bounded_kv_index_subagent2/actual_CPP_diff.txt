@@ -1,0 +1,20 @@
+--- 
++++ 
+@@ -48,7 +48,7 @@
+     __syncwarp();
+     #pragma unroll
+     for (int part_1 = 0; part_1 < 2; ++part_1) {
+-      *(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + (((int64_t)part_1) * (int64_t)512)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));
++      *(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int)blockIdx.y) * 65536) + (part_1 * 512)) + (min(block_start, 1008) * 64)) + (((int)threadIdx.x) * 8)));
+       #pragma unroll
+       for (int pack_1 = 0; pack_1 < 2; ++pack_1) {
+         *(uint2*)(shared + ((((part_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack_1 ^ part_1) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack_1 * 4));
+@@ -122,7 +122,7 @@
+     __syncwarp();
+     #pragma unroll
+     for (int row = 0; row < 2; ++row) {
+-      *(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)128)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)row) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));
++      *(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((int)blockIdx.y) * 65536) + ((((int)threadIdx.x) >> 3) * 128)) + (min(block_start, 1008) * 64)) + (row * 64)) + ((((int)threadIdx.x) & 7) * 8)));
+     }
+     #pragma unroll
+     for (int col = 0; col < 8; ++col) {

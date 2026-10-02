@@ -1,0 +1,62 @@
+{
+  "gate": 0,
+  "sourceSHA": "1d038ce6cd14ace06178c8398e19e88f7c4f7955118c74b8add4370410d20685",
+  "CPP_SHA": "b8fbd67c9862044fb836946ed451b8524167ce0712cdb2744fafb90056f61299",
+  "IR_SHA": "e598501fa1eee17f7c935f5e6df97f8c6d0240d7dcf5bc72d92966722c17de8b",
+  "parent_CPP_SHA": "c544b9aee12ff8cc0acf6452367b8bdffc726c33b3d50c1ef6652fd22941582d",
+  "host_parent_candidate_equal": true,
+  "onlyactualCPPdiff2KVrowexprs": true,
+  "allmath_guard_mask_globalwidth16B_layout7sync_Num16_literal_preserved": true,
+  "actualindexSSA": [
+    "%mul108 = shl nsw i32 %0, 16",
+    "%cond.i.i = tail call noundef range(i32 0, 1009) i32 @llvm.smin.i32(i32 %mul99, i32 1008)",
+    "%mul112 = shl nuw nsw i32 %cond.i.i, 6",
+    "%14 = or disjoint i32 %mul11, %mul108",
+    "%add113 = add nuw nsw i32 %14, %mul112",
+    "%15 = zext nneg i32 %add113 to i64, !dbg !75",
+    "%add352 = or disjoint i32 %mul351, %mul108",
+    "%add355 = or disjoint i32 %add352, %xor731",
+    "%add357 = add nuw nsw i32 %add355, %mul112",
+    "%57 = zext nneg i32 %add357 to i64, !dbg !185"
+  ],
+  "batch65536_androw64_i32": true,
+  "latepointerGEP64_normal": true,
+  "extra_smin_retained": true,
+  "independent_vectors": 65536,
+  "flat_half_max": 262143,
+  "lastbyte": 524287,
+  "kernel_counts": {
+    "MMA": 8,
+    "warp": 7,
+    "bpermute": 4,
+    "alloca": 0,
+    "AS5": false
+  },
+  "parentresource": [
+    42,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "candidate_resource": [
+    38,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "allcompileoriginalwaits": [
+    0,
+    0,
+    0
+  ],
+  "owner_exit_matches_chain": true,
+  "native_correctness_latency": "UNAVAILABLE_notrun",
+  "C8_gain_transfer": false,
+  "attention_native_reference": [
+    0,
+    0,
+    0
+  ]
+}

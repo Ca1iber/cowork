@@ -1,0 +1,10 @@
+--- 
++++ 
+@@ -13,4 +13,6 @@
+     q=r/(name+'_observation/live_stage.json');print('SAME_COMPILE_HANDLE',name,q.read_text() if q.exists() else 'running',flush=True)
+  record['actualwait']=code;rows.append(record);(r/(name+'_originalPopen_wait.json')).write_text(json.dumps(record,indent=2)+'\n');(r/'compile_chain_results.json').write_text(json.dumps(rows,indent=2)+'\n');print('COMPILE_STAGE_ACTUALWAIT',name,code,flush=True)
+  if code!=0:break
+-(r/'compile_chain.exit').write_text(str(0 if len(rows)==3 and all(x['actualwait']==0 for x in rows) else 1)+'\n')
++chaincode=0 if len(rows)==3 and all(x['actualwait']==0 for x in rows) else 1
++(r/'compile_chain.exit').write_text(str(chaincode)+'\n')
++raise SystemExit(chaincode)
