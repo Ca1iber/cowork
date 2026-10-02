@@ -29,3 +29,7 @@ Workers must directly exchange evidence and review each other before editing a n
 Before edit: send observed profile/codegen/resource facts, proposed mechanism, numerical/index/synchronization risks and falsifiers to the peer. Peer responds with concrete agreement, counterexample, or missing evidence. Leader considers both and approves or changes the plan. After screen: exchange the raw scope, regressions, resource tradeoffs and failure reasons. Results with unfinished or failed process gates cannot become successful verdicts.
 
 Shared principles and evidence may inform another case; do not copy old team algorithms or assume a win on one shape transfers to another. Each worker retains independent validation on its own machine. Final integration remains leader-owned.
+
+## User constraint: advice without changing peer code or plans
+
+Workers may discuss, share observations and propose alternatives. They cannot directly modify the other worker's source, hypotheses, scripts, task plans, case ownership or branches. Peer reviews are advisory; a worker cannot declare the other worker's plan active or approved. If advice is adopted, the owning worker proposes its own plan change and the leader decides. Leader alone edits shared tasks and performs final integration. Do not bypass ownership by merging or cherry-picking unreviewed peer code or plan changes. Reading peer snapshots is permitted.

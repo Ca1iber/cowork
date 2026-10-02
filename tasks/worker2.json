@@ -61,7 +61,7 @@
     "publish status and mergeable patch at checkpoints; do not merge or promote main independently"
   ],
   "transport": "leader relay; worker has no direct GitHub access; do not copy private keys",
-  "updated_at_utc": "2026-10-02T03:22:12.685076+00:00",
+  "updated_at_utc": "2026-10-02T03:22:55.980945+00:00",
   "code_common_remote_branch": "code/nsa-common-v084",
   "code_worker_remote_branch": "code/worker2",
   "leader_feedback": "Recovery import passed after empty build/tvm restoration. After native case5 environment gate passes, perform fixed v200 diagnostic B28-P84-P84-B28 for all14 (56 checks, candidate0) and fixed 12 profiler samples for cases5/8/9 across two sources. Submit next single-mechanism hypothesis for review before v201 edit.",
@@ -76,5 +76,8 @@
   "peer_review_required_before_kernel_edit": true,
   "peer_review_paths": "workers/worker2/reviews/",
   "lessons_paths": "workers/worker2/lessons/",
-  "peer_transport": "direct collaboration messages plus leader-relayed Git peer snapshot"
+  "peer_transport": "direct collaboration messages plus leader-relayed Git peer snapshot",
+  "peer_review_authority": "advisory only; cannot edit or activate peer code/plans",
+  "plan_change_authority": "owning worker proposes; leader approves; peer cannot directly modify",
+  "cross_worker_write_prohibited": true
 }
