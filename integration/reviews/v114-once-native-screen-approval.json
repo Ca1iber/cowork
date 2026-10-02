@@ -1,0 +1,57 @@
+{
+  "version": "v114_worker1_reallocated_baseline_original_C11_screen_sc-16g-2",
+  "approval": "one original C11 fixed12 screen only",
+  "proposal_sha256": "21fbd0fe8b51ef0934822a0ba48884e499db1d14276509ec31643cbd150fdb44",
+  "manifest_sha256": "909d1d4ceac54dc415af6bf39943a9e8117ae6a1d2ada2f7c335e626aaf05a17",
+  "review_archive_sha256": "4cffabadfb521ed7f71509259b97e495327ef5e2eaa6251bb64e6782786335a2",
+  "verified_text_inventory_count": 19,
+  "sources": {
+    "baseline_v28": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+      "sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd"
+    },
+    "power_v104": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v104_worker1_s8_global_softmax_sc-16g-2/submission.py",
+      "sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07"
+    },
+    "power_v113": {
+      "path": "/root/tilelang-metax/race_tests/nsa/experiments/v113_worker1_s4_global_softmax_sc-16g-2/candidate.py",
+      "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+    }
+  },
+  "old_compiled_gate1_preserved_independent_gate0": true,
+  "original_native_unchanged": {
+    "case_seed_reset_each_call": 0,
+    "full_naive": true,
+    "warmup": 10,
+    "repeat": 50,
+    "atol": 0.01,
+    "rtol": 0.01,
+    "F16_requires_grad": true,
+    "no_post_export_or_metadata": true,
+    "wrapper_sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+    "case_runner_sha256": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568"
+  },
+  "budget_GiB": [
+    5,
+    23,
+    4
+  ],
+  "runtime_stop_GiB": 28,
+  "unknown_RSS_stop_GiB": 1,
+  "bounded_process_seconds": 600,
+  "identity_terminal_confirmation_seconds": 1,
+  "same_monitor_and_gate_as_v113": true,
+  "shared_6files_verified_against_source_blobs": true,
+  "launch_argv": [
+    "/opt/conda/bin/python",
+    "-S",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v114_worker1_reallocated_baseline_original_C11_screen_sc-16g-2/launch_native_screen.py",
+    "/root/tilelang-metax/race_tests/nsa/rep/v114_worker1_reallocated_baseline_original_C11_screen_sc-16g-2/native_screen"
+  ],
+  "old_v113_refusal_not_reinterpreted": true,
+  "no_extra_metadata_IR_profile_retry_or_formal": true,
+  "counts_scope": "4 candidate/12 inclusive only after true exits+full naive PASS+guards; old refs separate",
+  "next_gate": "target evidence then leader decides full14; source identity never performance waiver"
+}

@@ -19,8 +19,11 @@
   ],
   "oj_total": 1204,
   "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
-  "peer_exchange_actual": "Both workers directly discussed inverse mapping, global vector width, shared-V synchronization and failed-run semantics; own-branch records only",
-  "updated_at_utc": "2026-10-02T12:25:54.007244+00:00",
+  "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration",
+  "schema": 2,
+  "updated_at_utc": "2026-10-02T12:34:22.675227+00:00",
+  "canonical_main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "historical_snapshot": "integration/reviews/leader-status-before-v114-screen.json",
   "worker1": {
     "cases": [
       6,
@@ -28,64 +31,21 @@
       11,
       12
     ],
-    "active_version": "v114proposal",
-    "stage": "v113zero-native admissionrefusal4314877952>4GiB;compiledcb30 retained;v114proposal",
-    "last_closed_source_commit": "022c1694a29d4425aa5fc86029a8d44411f0873c",
+    "active_version": "v114_worker1_reallocated_baseline_original_C11_screen_sc-16g-2",
+    "stage": "actual review passed; one original C11 fixed12 approved; launch pending",
+    "source_commit": "7045d8a31d6e6c76a0b091946b5abfbf2243356a",
+    "candidate_version": "v113",
     "candidate_sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
-    "completed_native_processes": 12,
-    "observed_refs": 168,
-    "clean_accepted_refs": 168,
-    "clean_candidate_refs": 56,
-    "actual_protocol_gate": 0,
-    "oom_before_after": [
-      13,
-      13
+    "new_refs": 0,
+    "protocol_budget_GiB": [
+      5,
+      23,
+      4
     ],
-    "case12_candidate_us": 68.959,
-    "case12_parent_us": 72.202,
-    "case12_delta_vs_parent_pct": -4.4915653306002605,
-    "case12_delta_vs_v28_pct": -17.827203450926184,
-    "non_target_positive_median_cases": [
-      4,
-      7,
-      8,
-      9,
-      10,
-      11
-    ],
-    "additional_round_positive_case": 13,
-    "all14_nonregression": "UNPROVEN",
-    "OJ": "UNAVAILABLE",
-    "new_native_metadata_profile_GO": false,
-    "main_submission_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
-    "communication_head": "b49d777d58afd93025f5809e795163ac0992ec53",
-    "master_pid": 388657,
-    "master_starttime_ticks": 95845437,
-    "active_native_pid": 388664,
-    "active_native_starttime_ticks": 95845493,
-    "freeze_plan_sha256": "450c909752afdb190e0f2cd64398a007b326cbc2affc4622b840b5d07b20de8d",
-    "freeze_manifest_sha256": "b5deeb1bc4cfa95698bd3e34d4e74fe683d6ba7a153b53c275da170bf2a8670b",
-    "risk_protocol_last_reported_completed_processes": 12,
-    "risk_protocol_last_reported_clean_inclusive_refs": 96,
-    "risk_protocol_last_reported_clean_candidate_refs": 32,
-    "original_full14_refs_remain_separate": 168,
-    "risk_case12_delta_vs_parent_pct": -4.513049365147349,
-    "risk_case11_delta_vs_parent_pct": 0.7602713426340714,
-    "risk_protocol_independent_clean_refs": {
-      "candidate": 32,
-      "inclusive": 96
-    },
-    "actual_profile_controller_exit": 1,
-    "actual_profile_records": 0,
-    "C11_candidate_resources_worker_report": {
-      "MT": 60,
-      "ST": 42,
-      "staticmax": 8,
-      "stack": 0,
-      "dynshared": 2048
-    },
-    "screen_native_spawned": 0,
-    "screen_refs": 0
+    "runtime_stop_GiB": 28,
+    "old_v113_zero_native_refusal_preserved": true,
+    "active_PID": "not yet reported; no historical PID reused",
+    "communication_head": "e96b91f3f4ee8d320397c6fc445c0d129985436b"
   },
   "worker2": {
     "cases": [
@@ -101,79 +61,48 @@
       14
     ],
     "active_version": "v210_worker2_c8_serial_query_pair_subagent2",
-    "stage": "actualsourcef98 entirecore inverseAST verified;boundedC8metadata approved;launchpending",
-    "last_closed_source_commit": "d4df40603a5f2093786e2385e417fff742aa04fc",
-    "parent_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
-    "actual_cli_returncode": 0,
-    "samples": 313,
-    "elapsed_seconds": 165.75700656091794,
-    "observed_driver_process_count": 3,
-    "full_reference_native_newkernel": [
-      0,
-      0,
-      0
+    "stage": "metadata/backend actual wait0 reported; readonly semantic review in progress",
+    "source_commit": "d4df40603a5f2093786e2385e417fff742aa04fc",
+    "candidate_sha256": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+    "reported_metadata_wait": 0,
+    "reported_backend_wait": 0,
+    "resources_reported_parent_candidate": [
+      [
+        42,
+        20,
+        8,
+        0,
+        2048
+      ],
+      [
+        56,
+        28,
+        8,
+        0,
+        2048
+      ]
     ],
-    "oom_kill": 3,
-    "profile_scope_verdict": "limited necessary numeric/waves/payload scope passes; exclusive runtime grid unavailable",
-    "new_heavy_GO": "v210metadata/resource/IRonly",
-    "communication_head": "9c28001e4db7cf7c37a8b739def530633c96dcf1",
-    "candidate_sha256": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
-    "metadata_actual_returncode": 0,
-    "metadata_actual_samples": 79,
-    "metadata_actual_elapsed_seconds": 40.396836397238076,
-    "metadata_actual_OOM_before_after": [
+    "reported_OOM_before_after": [
       3,
       3
     ],
-    "SDK_first_command_returncodes_worker_report": [
-      0,
-      0,
-      0,
-      0
-    ],
-    "compiler_resources_worker_report": {
-      "parent_MT": 42,
-      "parent_ST": 20,
-      "candidate_MT": 44,
-      "candidate_ST": 26,
-      "static_max_warps_both": 8,
-      "stack_bytes_both": 0,
-      "dynamic_shared_bytes_both": 2048
-    },
+    "new_refs": 0,
     "native_GO": false,
-    "screen_last_reported_candidate_refs": 4,
-    "screen_last_reported_inclusive_refs": 12,
-    "screen_round1_raw_candidate_us": [
-      41.59,
-      41.078
-    ],
-    "screen_round1_raw_parent_us": [
-      40.284,
-      40.095
-    ],
-    "actual_screen_completed": true,
-    "actual_screen_stop_reason": null,
-    "actual_screen_stop_returncode": null,
-    "screen_OOM_before_after": [
-      3,
-      3
-    ],
-    "parent_C14_resource_worker_report": {
-      "MT": 42,
-      "ST": 20,
-      "static_max_warps": 8,
-      "stack_bytes": 0,
-      "dynamic_shared_bytes": 2048
-    },
-    "initial_metadata_actual_exit": 1,
-    "recovery_metadata_actual_exit_worker_report": 0,
-    "recovery_metadata_OOM_before_after_worker_report": [
-      3,
-      3
-    ],
-    "screen_case14_delta_vs_parent_pct": -0.15611506012090937,
-    "screen_case14_ranges_overlap": true
+    "independent_compile_audit": "pending actual raw archive",
+    "communication_head": "2688710a54c197f2c579654dbd69c59370fc16f2"
   },
-  "leader_next": "C11 actualcompiledgate then originalnative decision; independently review C8 serialpair newproposal;promote onlyfull14correct/nonregressive evidence.",
-  "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration"
+  "retained_candidate_gain": {
+    "case": 12,
+    "source_version": "v104",
+    "latest_fixed_risk_comparison_us": [
+      69.1125,
+      72.379
+    ],
+    "delta_pct": -4.513049365147349,
+    "scope": "local diagnostic only; full14 nonregression remains UNPROVEN",
+    "persistent_case11_positive_pct": 0.7602713426340714
+  },
+  "all14_nonregression": "UNPROVEN",
+  "OJ_new_versions": "UNAVAILABLE",
+  "leader_next": "Review C11 fixed native evidence and C8 raw compilation/semantics; only then decide all14 integration. Peer modifies own code/plans only."
 }
