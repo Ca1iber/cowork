@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/root/tilelang-metax/race_tests/nsa/hack/v110_worker1_parent_resources_and_codegen_identity_sc-16g-2/run_evidence_stage.py", line 5, in <module>
+    manifest=json.loads((r/'source_manifest.json').read_text());plan=json.loads((r/'execution_plan.json').read_text());shared=json.loads((r/'shared_inputs_identity.json').read_text())['files'];cg=Path('/sys/fs/cgroup/memory');official=json.loads((p/'official_case.json').read_text());budget=plan['memory_engineering_budget']
+                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/tilelang-metax/race_tests/nsa/rep/v110_worker1_parent_resources_and_codegen_identity_sc-16g-2/shared_inputs_identity.json'

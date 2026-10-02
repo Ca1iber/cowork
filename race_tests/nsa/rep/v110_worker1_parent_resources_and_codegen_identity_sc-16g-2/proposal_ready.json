@@ -1,0 +1,57 @@
+{
+  "UTC": "2026-10-02T10:33:24.955077+00:00",
+  "plan_sha256": "a83a439de2d13313e8d13975293a1653a867ba0b5d32226578a687605aa237be",
+  "manifest_sha256": "50e7dcae38848b201014a80aaf7f1ded08424f92da804addb204aab219a39210",
+  "helper_paths_SHA": {
+    "metadata_export": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v110_worker1_parent_resources_and_codegen_identity_sc-16g-2/export_all14_metadata.py",
+      "sha256": "5cca88cc7f5e37d32bdfd7295a30d12a499598d603b01bb381d61135abcd493b"
+    },
+    "codegen_audit": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v110_worker1_parent_resources_and_codegen_identity_sc-16g-2/audit_codegen.py",
+      "sha256": "de0eab3162dc2e91717001f61e7c19fec9cea733c36756431131f853c590b984"
+    },
+    "resource_capture": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v110_worker1_parent_resources_and_codegen_identity_sc-16g-2/capture_one_resource.py",
+      "sha256": "50d74883198acacfa726510f77731f56c2085b8110f6be07053831d047465938"
+    },
+    "evidence_stage": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v110_worker1_parent_resources_and_codegen_identity_sc-16g-2/run_evidence_stage.py",
+      "sha256": "7fd38c4c7c0dbc112b4f7a28ef6c6848e8fc30caf6a7e8dd99e85462f63df159"
+    },
+    "native_gate": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v110_worker1_parent_resources_and_codegen_identity_sc-16g-2/owned_native_gate.py",
+      "sha256": "906d210a50da3773973a3ca34b8f770d83cf9cecce26581d499e6db695c36f31"
+    },
+    "process_monitor": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v110_worker1_parent_resources_and_codegen_identity_sc-16g-2/process_monitor.py",
+      "sha256": "95253d2f451c24688e64c4413fff96c03cc1131180fc800a5c8a120f885117d3"
+    }
+  },
+  "source_field_case14_fixed": true,
+  "all_paths_exists_SHA_AST_checked": true,
+  "primary_validator_repeat_flag_checked": true,
+  "resource_parse_existing_raw_only": [
+    {
+      "pattern": "Used\\s+(\\d+) MTregisters,\\s*(\\d+) STregisters,\\s*(\\d+) bytes shared mem",
+      "matches_real_existing_raw": true
+    },
+    {
+      "pattern": "staticMaxWarps/PEU\\s*:\\s*(\\d+)",
+      "matches_real_existing_raw": true
+    },
+    {
+      "pattern": "(\\d+) bytes stack frame",
+      "matches_real_existing_raw": true
+    },
+    {
+      "pattern": "int64_t\\)(\\d+)",
+      "matches_real_existing_raw": true
+    }
+  ],
+  "peer_actual_ready": true,
+  "bounded_stage_jobs": "2metadata+1CPUaudit+4SDKresourcehelpers serial",
+  "newheavy_imports_or_GPU_NSA_refs": 0,
+  "newkernel_edits": 0,
+  "no_newIR_or_profile": true
+}
