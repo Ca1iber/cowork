@@ -1,0 +1,67 @@
+{
+  "version": "v232",
+  "sourceSHA": "1d038ce6cd14ace06178c8398e19e88f7c4f7955118c74b8add4370410d20685",
+  "CPP_SHA": "b8fbd67c9862044fb836946ed451b8524167ce0712cdb2744fafb90056f61299",
+  "IR_SHA": "e598501fa1eee17f7c935f5e6df97f8c6d0240d7dcf5bc72d92966722c17de8b",
+  "actual_inventory_verified": 83,
+  "whole_CPP_only2KV_address_changes_and_global16B": true,
+  "whole_host_same_e2e8": true,
+  "actual_i32_defuse_batch65536_row64_thenlate_zext_GEP64": [
+    "%mul108 = shl nsw i32 %0, 16",
+    "%cond.i.i = tail call noundef range(i32 0, 1009) i32 @llvm.smin.i32(i32 %mul99, i32 1008)",
+    "%mul112 = shl nuw nsw i32 %cond.i.i, 6",
+    "%14 = or disjoint i32 %mul11, %mul108",
+    "%add113 = add nuw nsw i32 %14, %mul112",
+    "%15 = zext nneg i32 %add113 to i64, !dbg !75",
+    "%add352 = or disjoint i32 %mul351, %mul108",
+    "%add355 = or disjoint i32 %add352, %xor731",
+    "%add357 = add nuw nsw i32 %add355, %mul112",
+    "%57 = zext nneg i32 %add357 to i64, !dbg !185"
+  ],
+  "extra_smin1008_retained": true,
+  "counts": {
+    "MMA": 8,
+    "warp": 7,
+    "bpermute": 4
+  },
+  "alloca_opcode_count": 0,
+  "AS5_absent": true,
+  "candidate_resource": [
+    38,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "parent_resource": [
+    42,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "stage_truewaits": [
+    0,
+    0,
+    0
+  ],
+  "raw_memory_samples": 92,
+  "raw_memory_received_separately": [
+    {
+      "stage": "metadata",
+      "samples": 84,
+      "rawSHA": "379367eca61dc9d456bd956a91d73d142995491104000501d26884becabc1e38"
+    },
+    {
+      "stage": "backend",
+      "samples": 8,
+      "rawSHA": "8f59b0fe445601668324d030248ad1275356f01a8660be5b80ab2488b56d66b7"
+    }
+  ],
+  "sampled_peak_bytes_not_upper_bound": 23590543360,
+  "OOM_counters": [
+    3
+  ],
+  "native_correctness_latency": "notrun; no C8 gain transfer",
+  "next": "C5 original fixed12 native helper prep, separateGO"
+}
