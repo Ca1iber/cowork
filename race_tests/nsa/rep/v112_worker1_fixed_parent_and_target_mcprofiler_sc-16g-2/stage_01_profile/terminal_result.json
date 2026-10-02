@@ -1,0 +1,153 @@
+{
+  "index": 1,
+  "spec": {
+    "kind": "profile",
+    "profile_job_index": 1
+  },
+  "pid": 412903,
+  "pgid": 412903,
+  "UTC_terminal": "2026-10-02T11:17:32.883572+00:00",
+  "actual_exit": -15,
+  "stop_reason": "otherunknownheavyRSS>1GiB",
+  "cgroup_before": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "3642687488\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 500322304\nrss 2863628288\nrss_huge 0\nshmem 143360\nmapped_file 51154944\ndirty 57344\nwriteback 0\nswap 799567872\npgpgin 4519612328\npgpgout 4518783487\npgfault 5001584502\npgmajfault 196546\ninactive_anon 2325880832\nactive_anon 568664064\ninactive_file 86888448\nactive_file 413319168\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 500322304\ntotal_rss 2863628288\ntotal_rss_huge 0\ntotal_shmem 143360\ntotal_mapped_file 51154944\ntotal_dirty 57344\ntotal_writeback 0\ntotal_swap 799567872\ntotal_pgpgin 4519612328\ntotal_pgpgout 4518783487\ntotal_pgfault 5001584502\ntotal_pgmajfault 196546\ntotal_inactive_anon 2325880832\ntotal_active_anon 568664064\ntotal_inactive_file 86888448\ntotal_active_file 413319168\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 3642687488
+  },
+  "cgroup_after": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "6360702976\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 865845248\nrss 5201133568\nrss_huge 0\nshmem 159744\nmapped_file 51159040\ndirty 180224\nwriteback 0\nswap 799420416\npgpgin 4525757710\npgpgout 4524268870\npgfault 5008296505\npgmajfault 196566\ninactive_anon 4663287808\nactive_anon 568668160\ninactive_file 447168512\nactive_file 418545664\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 865845248\ntotal_rss 5201125376\ntotal_rss_huge 0\ntotal_shmem 159744\ntotal_mapped_file 51159040\ntotal_dirty 180224\ntotal_writeback 0\ntotal_swap 799420416\ntotal_pgpgin 4525757707\ntotal_pgpgout 4524268870\ntotal_pgfault 5008296502\ntotal_pgmajfault 196566\ntotal_inactive_anon 4663226368\ntotal_active_anon 568668160\ntotal_inactive_file 447168512\ntotal_active_file 418545664\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 6360702976
+  },
+  "owned_identities": {
+    "412903": {
+      "pid": 412903,
+      "starttime_ticks": 96314226,
+      "exe": "/opt/conda/bin/python3.12",
+      "observed_parent": {
+        "pid": 412901
+      },
+      "first_seen_UTC": "2026-10-02T11:16:36.354748+00:00"
+    },
+    "412911": {
+      "pid": 412911,
+      "starttime_ticks": 96314324,
+      "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler",
+      "observed_parent": {
+        "pid": 412903,
+        "starttime_ticks": 96314226,
+        "exe": "/opt/conda/bin/python3.12"
+      },
+      "first_seen_UTC": "2026-10-02T11:16:36.871644+00:00"
+    },
+    "412920": {
+      "pid": 412920,
+      "starttime_ticks": 96314532,
+      "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler",
+      "observed_parent": {
+        "pid": 412911,
+        "starttime_ticks": 96314324,
+        "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+      },
+      "first_seen_UTC": "2026-10-02T11:16:39.401199+00:00"
+    },
+    "413052": {
+      "pid": 413052,
+      "starttime_ticks": 96314806,
+      "exe": "/usr/bin/dash",
+      "observed_parent": {
+        "pid": 412920,
+        "starttime_ticks": 96314532,
+        "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+      },
+      "first_seen_UTC": "2026-10-02T11:16:41.899809+00:00"
+    },
+    "413053": {
+      "pid": 413053,
+      "starttime_ticks": 96314806,
+      "exe": "/opt/conda/bin/python3.12",
+      "observed_parent": {
+        "pid": 413052,
+        "starttime_ticks": 96314806,
+        "exe": "/usr/bin/dash"
+      },
+      "first_seen_UTC": "2026-10-02T11:16:41.899809+00:00"
+    },
+    "413320": {
+      "pid": 413320,
+      "starttime_ticks": 96317878,
+      "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+      "observed_parent": {
+        "pid": 413053,
+        "starttime_ticks": 96314806,
+        "exe": "/opt/conda/bin/python3.12"
+      },
+      "first_seen_UTC": "2026-10-02T11:17:12.406725+00:00"
+    },
+    "413321": {
+      "pid": 413321,
+      "starttime_ticks": 96317879,
+      "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+      "observed_parent": {
+        "pid": 413320,
+        "starttime_ticks": 96317878,
+        "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+      },
+      "first_seen_UTC": "2026-10-02T11:17:12.406725+00:00"
+    },
+    "413338": {
+      "pid": 413338,
+      "starttime_ticks": 96318073,
+      "exe": "/usr/bin/x86_64-linux-gnu-g++-13",
+      "observed_parent": {
+        "pid": 413053,
+        "starttime_ticks": 96314806,
+        "exe": "/opt/conda/bin/python3.12"
+      },
+      "first_seen_UTC": "2026-10-02T11:17:14.407189+00:00"
+    },
+    "413339": {
+      "pid": 413339,
+      "starttime_ticks": 96318074,
+      "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus",
+      "observed_parent": {
+        "pid": 413338,
+        "starttime_ticks": 96318073,
+        "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+      },
+      "first_seen_UTC": "2026-10-02T11:17:14.407189+00:00"
+    },
+    "413641": {
+      "pid": 413641,
+      "starttime_ticks": 96319549,
+      "exe": "/usr/bin/dash",
+      "observed_parent": {
+        "pid": 412920,
+        "starttime_ticks": 96314532,
+        "exe": "/opt/mcProfiler-ubuntu18.04/mcProfiler"
+      },
+      "first_seen_UTC": "2026-10-02T11:17:29.408608+00:00"
+    },
+    "413642": {
+      "pid": 413642,
+      "starttime_ticks": 96319549,
+      "exe": "/opt/conda/bin/python3.12",
+      "observed_parent": {
+        "pid": 413641,
+        "starttime_ticks": 96319549,
+        "exe": "/usr/bin/dash"
+      },
+      "first_seen_UTC": "2026-10-02T11:17:29.408608+00:00"
+    }
+  },
+  "profile_attention_launch_count": "UNMEASURED; originaldriver/toolreplay",
+  "full_reference_checks": 0
+}
