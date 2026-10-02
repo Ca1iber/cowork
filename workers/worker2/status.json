@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T03:07:05.758101+00:00",
-  "state": "V200_BASELINE_RUNNING",
+  "timestamp_utc": "2026-10-02T03:16:53.553965+00:00",
+  "state": "V200_NATIVE_COMPLETE_PROFILE_RUNNING",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
@@ -26,22 +26,36 @@
     9,
     8
   ],
-  "job_pid": 2996,
-  "stage": "native_baseline",
+  "job_pid": 4850,
+  "stage": "mcProfiler",
   "correctness_counts": {
     "candidate": 0,
-    "v200_completed_baseline_v28": 10,
-    "v200_completed_parent_v084": 10,
-    "v200_completed_total": 20,
-    "v200_planned_total": 56,
+    "v200_completed_baseline_v28": 28,
+    "v200_completed_parent_v084": 28,
+    "v200_completed_total": 56,
     "environment_gate_parent_v084_completed": 1,
     "environment_gate_excluded_from_v200": true
   },
   "benchmark_paths": [
     "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/baseline_case*_subagent2.csv"
   ],
-  "profile_paths": [],
-  "target_deltas": {},
+  "profile_paths": [
+    "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/mcprof_case{5,8,9}_{baseline_v28,parent_v084}"
+  ],
+  "target_deltas": {
+    "5": {
+      "parent_vs_original_pct": -21.22941969501355,
+      "diagnostic_only": true
+    },
+    "8": {
+      "parent_vs_original_pct": -22.33731261211992,
+      "diagnostic_only": true
+    },
+    "9": {
+      "parent_vs_original_pct": -22.16403698269137,
+      "diagnostic_only": true
+    }
+  },
   "non_target_deltas": {},
   "tools": {
     "torch": "2.8.0+metax3.7.1.3",
@@ -57,7 +71,12 @@
       "version": "UNAVAILABLE; not separately printed in initial import metadata",
       "library_sha256": "40ba05cc6d1f12d207342784bce510a7845ba6490ab2003539acb5d99bb7b378"
     },
-    "mcProfiler": "/usr/local/bin/mcProfiler",
+    "mcProfiler": {
+      "path": "/usr/local/bin/mcProfiler",
+      "version": "3.8.1.4",
+      "hash_reported": "575f5a9f6d",
+      "distro": "ubuntu18.04"
+    },
     "mxcc": "/opt/maca/mxgpu_llvm/bin/mxcc",
     "mcTracer": null,
     "mx_smi": "2.3.1",
@@ -73,7 +92,7 @@
     "oom_kill": 0
   },
   "blockers": [],
-  "next_step": "Finish fixed all14 controls, then queued static28CPP/profile12samples/resource6; no kernel edit until diagnosis closes and leader reviews one mechanism.",
+  "next_step": "Finish fixed12 profiler samples and6 resource captures; retain 2/source distributions and native50 Python enqueue span caveat; propose one evidence-based mechanism for leader review.",
   "source_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "environment_evidence_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/environment",
   "import_attempts": [
@@ -120,5 +139,20 @@
     ],
     "timestamp_utc": "2026-10-02T03:07:04.693456+00:00"
   },
-  "queued_post_baseline_pid": 4850
+  "queued_post_baseline_pid": 4850,
+  "active_profile_process": {
+    "stage": "mcProfiler",
+    "case": 5,
+    "variant": "baseline_v28",
+    "pid": 12789,
+    "timestamp_utc": "2026-10-02T03:16:52.143016+00:00"
+  },
+  "benchmark_summary_path": "workers/worker2/v200_baseline_summary.json",
+  "profile_samples_completed": 0,
+  "profile_samples_planned": 12,
+  "static_generated_gate": {
+    "baseline_v28_cases": 14,
+    "parent_v084_cases": 14,
+    "both_exit": 0
+  }
 }
