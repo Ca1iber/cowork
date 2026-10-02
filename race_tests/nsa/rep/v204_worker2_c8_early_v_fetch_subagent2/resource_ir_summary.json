@@ -1,0 +1,172 @@
+[
+  {
+    "variant": "parent_v084",
+    "MT": 42,
+    "ST": 20,
+    "static_shared_bytes": 0,
+    "dynamic_shared_bytes": 2048,
+    "static_max_warps_per_PEU": 8,
+    "stack_bytes": 0,
+    "not_measured_occupancy": true,
+    "threads": 64,
+    "grid": [
+      4096,
+      2
+    ],
+    "irSHA": "ffc7215d8edfcf7a05a2f2ada3b067e29d6adf307d09a13379273e48e6db3473",
+    "Vload_ir_lines": [
+      427,
+      429,
+      431,
+      433,
+      435,
+      437,
+      439,
+      441,
+      443,
+      445,
+      447,
+      449,
+      451,
+      453,
+      455,
+      457
+    ],
+    "QK_MMA_ir_lines": [
+      299,
+      301,
+      303,
+      305
+    ],
+    "PV_MMA_ir_lines": [
+      597,
+      598,
+      599,
+      600
+    ],
+    "warp_sync_ir_lines": [
+      223,
+      274,
+      296,
+      416,
+      560,
+      667,
+      804
+    ],
+    "CPP_V_global_width_bytes": 16,
+    "IR_Vload_count": 16,
+    "IR_Vload_type": "i16 (SROA of same two uint4 source loads); final ISA transaction width UNAVAILABLE",
+    "attention_reference_native": [
+      0,
+      0,
+      0
+    ],
+    "V_sharedstore_ir_lines": [
+      475,
+      488,
+      501,
+      514,
+      525,
+      536,
+      547,
+      558
+    ],
+    "valid_basicblock_start": 257,
+    "guard_instructions": [
+      "  %9 = load i32, ptr addrspace(1) %arrayidx98, align 4, !dbg !63, !tbaa !30",
+      "  %mul99 = shl nsw i32 %9, 4, !dbg !64",
+      "  %cmp100 = icmp slt i32 %9, 0, !dbg !65",
+      "  %cmp102.not = icmp sgt i32 %mul99, %1",
+      "  %or.cond = select i1 %cmp100, i1 true, i1 %cmp102.not, !dbg !66",
+      "  br i1 %or.cond, label %if.end480, label %if.then, !dbg !66"
+    ],
+    "CPPsync_count": 7,
+    "CPPuint4_V_load_sites": 1,
+    "IR_final_ISA_order_unavailable": true
+  },
+  {
+    "variant": "power_v204",
+    "MT": 44,
+    "ST": 20,
+    "static_shared_bytes": 0,
+    "dynamic_shared_bytes": 2048,
+    "static_max_warps_per_PEU": 8,
+    "stack_bytes": 0,
+    "not_measured_occupancy": true,
+    "threads": 64,
+    "grid": [
+      4096,
+      2
+    ],
+    "irSHA": "1c3d72bee55c752e0c128e537caffba96d9957305007c27dde87cea34c958c9d",
+    "Vload_ir_lines": [
+      307,
+      309,
+      311,
+      313,
+      315,
+      317,
+      319,
+      321,
+      323,
+      325,
+      327,
+      329,
+      331,
+      333,
+      335,
+      337
+    ],
+    "QK_MMA_ir_lines": [
+      339,
+      341,
+      343,
+      345
+    ],
+    "PV_MMA_ir_lines": [
+      597,
+      598,
+      599,
+      600
+    ],
+    "warp_sync_ir_lines": [
+      223,
+      274,
+      296,
+      456,
+      560,
+      667,
+      804
+    ],
+    "CPP_V_global_width_bytes": 16,
+    "IR_Vload_count": 16,
+    "IR_Vload_type": "i16 (SROA of same two uint4 source loads); final ISA transaction width UNAVAILABLE",
+    "attention_reference_native": [
+      0,
+      0,
+      0
+    ],
+    "V_sharedstore_ir_lines": [
+      475,
+      488,
+      501,
+      514,
+      525,
+      536,
+      547,
+      558
+    ],
+    "valid_basicblock_start": 257,
+    "guard_instructions": [
+      "  %9 = load i32, ptr addrspace(1) %arrayidx98, align 4, !dbg !63, !tbaa !30",
+      "  %mul99 = shl nsw i32 %9, 4, !dbg !64",
+      "  %cmp100 = icmp slt i32 %9, 0, !dbg !65",
+      "  %cmp102.not = icmp sgt i32 %mul99, %1",
+      "  %or.cond = select i1 %cmp100, i1 true, i1 %cmp102.not, !dbg !66",
+      "  br i1 %or.cond, label %if.end480, label %if.then, !dbg !66"
+    ],
+    "CPPsync_count": 7,
+    "CPPuint4_V_load_sites": 1,
+    "IR_final_ISA_order_unavailable": true
+  }
+]

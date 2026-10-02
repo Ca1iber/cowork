@@ -1,0 +1,62 @@
+{
+  "id": "v204_worker2_c8_early_v_fetch_subagent2",
+  "created_utc": "2026-10-02T06:20:28.426304+00:00",
+  "source_base_commit": "9eebae913786797e769b77d8f2731754828789ed",
+  "numerical_parent": "race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "only_target_key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "candidate_path": "/tmp/nsa_worker2_v204_c8_early_v_fetch.py",
+  "mechanism": "moveexistingordinaryVglobal16Bloadloop tolocalv_fetch afterKpostsync beforeQK; originalsharedVwrite remainsafterpreVsync",
+  "guards": "same0<=block_start<=token/causal predicate; L4096multiple16 guarantees all16Vrows inrange; noinvalidslotload",
+  "source_only_GO": true,
+  "compiler_import_native_GO": false,
+  "currently_reference_attention_native": [
+    0,
+    0,
+    0
+  ],
+  "preserved": [
+    "allmath/Prounding/den/F32divisionF16",
+    "perquery7warpsync",
+    "QK16B,V16B,Output16Baddresses/count",
+    "dyn2048/threads64/grid4096x2",
+    "parentfullprefix/other13keys"
+  ],
+  "risks": [
+    "v_fetch16half longerlive throughQK/max/P canraiseMT/ST/lowerstaticmax",
+    "earliersource is not overlapproof; backendmayalreadyhoist orsink",
+    "globalreadbytecountnotguaranteedHBMtraffic"
+  ],
+  "falsifiers": [
+    "later actualCPP/optimizedIR do not retain earlyVreadbeforeQKMMA",
+    "sharedVwritebeforeoriginalpreVsync/forbidden/sourcehash/index failure",
+    "stack>0/runtimeOOM/nonzero/selectedscreen notwin"
+  ],
+  "future_profile_scope": {
+    "waves": 8192,
+    "output_payload_bytes": 16777216,
+    "write_residual_declared_bytes": [
+      0,
+      512
+    ]
+  },
+  "next": "sourceSHA/diff/AST/vector evidence toleader forboundedmetadata GO; noheavy automatic",
+  "heavy_lock": "/tmp/nsa_subagent2_heavy.lock",
+  "admission_usage_bytes": 2147483648,
+  "unknown_heavy_RSS_bytes": 1073741824,
+  "runtime_stop_usage_bytes": 30064771072,
+  "max_seconds": 300,
+  "max_samples": 600,
+  "period_seconds": 0.5,
+  "bounded_metadata_GO": true,
+  "native_GO": false
+}

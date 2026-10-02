@@ -1,0 +1,35 @@
+{
+  "candidate_path": "/tmp/nsa_worker2_v204_c8_early_v_fetch.py",
+  "candidate_sha256": "2a93d74b3cb8df2469ded6f8ad24323a1aaeef17c254e628813efd88eeb7a787",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "factory_name": "_make_worker2_c8_early_v_fetch",
+  "dispatch_key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "original_parent_prefix_AST_equal": true,
+  "reverse_statement_move_entire_querybranch_AST_equal": true,
+  "moved_statements_source": [
+    "fetch_row = lane // 8 * 2",
+    "fetch_col = lane % 8 * 8",
+    "for row in T.unroll(2):\n    for col in T.vectorized(8):\n        v_fetch[row * 8 + col] = V[batch_id, block_start + fetch_row + row, kv_head, fetch_col + col]"
+  ],
+  "guard_source": "block_start >= 0 and block_start <= token",
+  "old_anchor": "original preVsync -> fetch_row/fetch_col/V16Bloadloop -> Vsharedwrite",
+  "new_anchor": "Ksharedwrite -> Kpostsync -> samefetchthree -> scoresclear/QK -> max/P/den -> originalpreVsync -> sameVsharedwrite",
+  "vectorized_half_elements": 8,
+  "global_V_vector_bytes": 16,
+  "source_sync_sites": 7,
+  "threads": 64,
+  "dynamic_shared_elements_half": 1024,
+  "local_v_fetch_elements_half": 16,
+  "no_early_shared_write": true,
+  "no_shader_math_or_index_change": true,
+  "only_static_S_checks_no_import_compile_native": true
+}

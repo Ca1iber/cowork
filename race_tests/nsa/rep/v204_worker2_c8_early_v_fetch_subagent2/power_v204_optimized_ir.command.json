@@ -1,0 +1,30 @@
+{
+  "variant": "power_v204",
+  "kind": "optimized_ir",
+  "argv": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-maca-device-only",
+    "-S",
+    "-emit-llvm",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v204_worker2_c8_early_v_fetch_subagent2/codegen/power_v204/case8_stage1.device.ll",
+    "/root/tilelang-metax/race_tests/nsa/rep/v204_worker2_c8_early_v_fetch_subagent2/codegen/power_v204/case8_stage1.device.cpp"
+  ],
+  "input_device_sha256": "95e0a395a529678a9d00afb787eb4361857dc9f5bb275c5b48850fe49328c02b",
+  "source_sha256": "2a93d74b3cb8df2469ded6f8ad24323a1aaeef17c254e628813efd88eeb7a787",
+  "attention_reference_native": [
+    0,
+    0,
+    0
+  ],
+  "PID": 125305
+}
