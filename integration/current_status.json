@@ -20,7 +20,7 @@
   "oj_total": 1204,
   "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
   "peer_exchange_actual": "Both workers directly discussed inverse mapping, global vector width, shared-V synchronization and failed-run semantics; own-branch records only",
-  "updated_at_utc": "2026-10-02T06:34:26.029309+00:00",
+  "updated_at_utc": "2026-10-02T06:40:25.250331+00:00",
   "worker1": {
     "cases": [
       6,
@@ -58,7 +58,7 @@
     "active_version": "v204_worker2_c8_early_v_fetch_subagent2",
     "last_closed_source_commit": "9eebae913786797e769b77d8f2731754828789ed",
     "communication_head": "a8aacebbfc76bb0963d81b852a06903fb3d5dc96",
-    "stage": "v204 metadata2factories terminal0/OOM3 stable; generated validation/resource/optimizedIR pending;no native",
+    "stage": "v204 actual metadata+resource+IR gates0; once C8 selected native screen approved",
     "oom_kill": 3,
     "prior_v202": "run10 -9 and OOM1->3; 3C/9inclusive refs; incomplete screen retained",
     "diagnostic_reference_calls": 0,
@@ -72,7 +72,15 @@
       0,
       0,
       0
-    ]
+    ],
+    "resources": {
+      "MT": 44,
+      "ST": 20,
+      "static_max_warps": 8,
+      "dynamic_shared_bytes": 2048,
+      "stack_bytes": 0
+    },
+    "final_ISA_width": "UNAVAILABLE"
   },
   "leader_next": "Monitor actual gates; review formal non-target risks and once-only memory diagnostic; no main promotion",
   "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration"

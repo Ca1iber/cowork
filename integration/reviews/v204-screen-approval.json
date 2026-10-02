@@ -1,0 +1,93 @@
+{
+  "reviewed_at_utc": "2026-10-02T06:40:25.250331+00:00",
+  "decision": "GO same-source once-only C8 selected native screen, no full14/profile autostart",
+  "candidate_sha256": "2a93d74b3cb8df2469ded6f8ad24323a1aaeef17c254e628813efd88eeb7a787",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "compiled_gates": {
+    "metadata_exit": 0,
+    "generated_validator_exits": [
+      0,
+      0
+    ],
+    "SDK_resource_IR_commands": 4,
+    "all_command_exits": 0,
+    "OOM_before": 3,
+    "OOM_after": 3,
+    "attention_reference_native_calls": [
+      0,
+      0,
+      0
+    ]
+  },
+  "resource_parent_to_candidate": {
+    "MT": [
+      42,
+      44
+    ],
+    "ST": [
+      20,
+      20
+    ],
+    "static_max_warps": [
+      8,
+      8
+    ],
+    "dynamic_shared_bytes": [
+      2048,
+      2048
+    ],
+    "stack_bytes": [
+      0,
+      0
+    ]
+  },
+  "IR_observed_parent": {
+    "Vloads_lines": [
+      427,
+      457
+    ],
+    "QK_MMA_lines": [
+      299,
+      305
+    ],
+    "preVsync_line": 416
+  },
+  "IR_observed_candidate": {
+    "Vloads_lines": [
+      307,
+      337
+    ],
+    "QK_MMA_lines": [
+      339,
+      345
+    ],
+    "preVsync_line": 456,
+    "sharedVwrites_still_after_preVsync": true
+  },
+  "proof_limits": [
+    "Ordinary early V read present in optimized compiler IR; not runtime overlap proof",
+    "Both CPP paths have two uint4 16B Vloads per lane; optimizedIR SROA has16i16 loads, final ISA transaction width UNAVAILABLE",
+    "MT increase preserved; static warp limit not measured occupancy"
+  ],
+  "screen_scope": {
+    "case": 8,
+    "order": "B28-P84-C204-C204-P84-B28 x2",
+    "native_jobs": 12,
+    "candidate_full_reference_checks_planned": 4,
+    "inclusive_full_reference_checks_planned": 12,
+    "runner": "original immutable run_variant.py; seed0/F16/native naive_nsa/atolrtol1e-2/W10R50 unchanged",
+    "fresh_process_per_job": true,
+    "no_metadata_postexport": true,
+    "fixed_manifest_and_onceguard_before_launch": true
+  },
+  "memory_admission": "cooperative heavylock,whole usage<=2GiB,no unownedvisibleRSS>1GiB,immediate pre/post check; stdlib-S0.5s disk observer outside timed function",
+  "stop": "usage>=28GiB,OOMincrement,new unownedheavy,nonzero/Killed,CSV or SHA failure,predeclared timeout; preserve prefix,no retry,only verified ownidentity termination",
+  "all_adverse_rows_outliers_preserved": true,
+  "v202_failure_not_retried_or_recovered": true,
+  "not_approved": [
+    "full14 formal",
+    "GPU profile",
+    "main/OJ promotion"
+  ],
+  "next": "Review all12 real terminals and4C/12inclusive refs plus perround medians; no performance claim yet"
+}
