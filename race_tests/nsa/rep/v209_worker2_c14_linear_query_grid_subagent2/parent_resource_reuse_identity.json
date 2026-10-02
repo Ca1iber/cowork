@@ -1,0 +1,45 @@
+{
+  "new_CPP_path": "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/codegen/parent_v084/case14_stage1.device.cpp",
+  "new_CPP_SHA": "c6957b7274e656c0c03b0ed0959d2c5d322fcb549396cff9eb212fc7e69a7e1a",
+  "original_CPP_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case14_stage1.device.cpp",
+  "original_CPP_SHA": "c6957b7274e656c0c03b0ed0959d2c5d322fcb549396cff9eb212fc7e69a7e1a",
+  "SDK_path": "/opt/maca/mxgpu_llvm/bin/mxcc",
+  "SDK_SHA": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25",
+  "semantic_compilation_options_equal": true,
+  "options": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-device-obj",
+    "-resource-usage"
+  ],
+  "original_input_output_paths": [
+    "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/parent_case14.device.mcbin",
+    "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case14_stage1.device.cpp"
+  ],
+  "new_parent_resource_command_executed": false,
+  "existing_log_SHA": "99fe2a347418bc881ee373713d618eace81d3957286a4ba7d2b87e8154ed6a72",
+  "existing_exit": 0,
+  "resource": {
+    "MT": 42,
+    "ST": 20,
+    "staticMaxWarpsPerPEU": 8,
+    "stackBytes": 0,
+    "staticSharedBytes": 0,
+    "hostDynamicSharedBytes": 2048,
+    "sourceHostGrid": [
+      512,
+      4
+    ],
+    "threads": 64,
+    "resourceExit": 0,
+    "profileAuditHelperSHA": "86778365962f7f0144ad83db828e53dce432a2036b0befeaef7cefa7e27edc3e"
+  }
+}

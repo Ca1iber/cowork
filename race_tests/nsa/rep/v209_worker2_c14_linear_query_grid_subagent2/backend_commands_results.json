@@ -1,0 +1,100 @@
+[
+  {
+    "variant": "power_v209",
+    "kind": "resource",
+    "argv": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-device-obj",
+      "-resource-usage",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/codegen/power_v209/case14_stage1.device.mcbin",
+      "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/codegen/power_v209/case14_stage1.device.cpp"
+    ],
+    "input_CPP_path": "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/codegen/power_v209/case14_stage1.device.cpp",
+    "input_CPP_SHA": "59bf635fe2854c8781b731d10d2979e5e55cba6547e186b961f9997a2ce130fb",
+    "sourceSHA": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
+    "SDK_SHA": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25",
+    "attention_reference_native": [
+      0,
+      0,
+      0
+    ],
+    "PID": 210353,
+    "returncode": 0
+  },
+  {
+    "variant": "parent_v084",
+    "kind": "optimized_ir",
+    "argv": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-maca-device-only",
+      "-S",
+      "-emit-llvm",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/codegen/parent_v084/case14_stage1.device.ll",
+      "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/codegen/parent_v084/case14_stage1.device.cpp"
+    ],
+    "input_CPP_path": "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/codegen/parent_v084/case14_stage1.device.cpp",
+    "input_CPP_SHA": "c6957b7274e656c0c03b0ed0959d2c5d322fcb549396cff9eb212fc7e69a7e1a",
+    "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "SDK_SHA": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25",
+    "attention_reference_native": [
+      0,
+      0,
+      0
+    ],
+    "PID": 210364,
+    "returncode": 0
+  },
+  {
+    "variant": "power_v209",
+    "kind": "optimized_ir",
+    "argv": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-maca-device-only",
+      "-S",
+      "-emit-llvm",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/codegen/power_v209/case14_stage1.device.ll",
+      "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/codegen/power_v209/case14_stage1.device.cpp"
+    ],
+    "input_CPP_path": "/root/tilelang-metax/race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/codegen/power_v209/case14_stage1.device.cpp",
+    "input_CPP_SHA": "59bf635fe2854c8781b731d10d2979e5e55cba6547e186b961f9997a2ce130fb",
+    "sourceSHA": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
+    "SDK_SHA": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25",
+    "attention_reference_native": [
+      0,
+      0,
+      0
+    ],
+    "PID": 210367,
+    "returncode": 0
+  }
+]

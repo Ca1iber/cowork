@@ -1,0 +1,40 @@
+{
+  "candidate_path": "/tmp/nsa_worker2_v209_c14_linear_query_grid.py",
+  "candidate_sha256": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "factory_name": "_make_worker2_c14_linear_query_grid",
+  "dispatch_key": [
+    2,
+    512,
+    2,
+    32,
+    64,
+    1,
+    16,
+    true
+  ],
+  "official_case_number": 14,
+  "prefix_14_AST_nodes_equal": true,
+  "only_additional_factory_and_C14_install": true,
+  "inverse_kernel_grid_decode_whole_factory_AST_equal": true,
+  "actual_grid_context": "T.Kernel(batch*seq_len*kv_heads,threads=64) as linear_query",
+  "actual_decode": [
+    "batch_id = linear_query // (seq_len * kv_heads)",
+    "token = linear_query // kv_heads % seq_len",
+    "kv_head = linear_query % kv_heads"
+  ],
+  "source_sync_sites": 7,
+  "Num_float32_elements": 16,
+  "QKPdenVPVoutput_guard_index_math_source_AST_unchanged": true,
+  "raw_index_multiplyBS_before_parent_guard_unchanged": true,
+  "existing_query_address_proof": "query_grid_proof.json",
+  "existing_2048_bijection": "query_linear_mapping.json",
+  "exact_import_count": 3,
+  "source_only_new_import_compile_attention_native": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "actual_CPP_IR_resources_UNAVAILABLE_before_metadata": true
+}

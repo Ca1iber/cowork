@@ -1,0 +1,116 @@
+{
+  "version": "v209_worker2_c14_linear_query_grid_subagent2",
+  "status": "PARENT_EVIDENCE_PROPOSAL_BEFORE_ANY_SOURCEEDIT",
+  "development_parent_commit": "ccc057b060b706f7c4632ee2a72abc0c8b947913",
+  "parent_sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "official_case_number": 14,
+  "only_key": [
+    2,
+    512,
+    2,
+    32,
+    64,
+    1,
+    16,
+    true
+  ],
+  "mechanism": "replace launchgrid(token512,batchhead4) withflat2048 CTA64 ininputqueryorder,decodeb=linear//1024,t=(linear//2)%512,h=linear%2;core attention entirelyparent",
+  "positive_hypothesis": [
+    "Indicespointer b1024+t2+h canfoldtoexactlinear",
+    "Q/output base b1048576+t2048+h1024 canfoldlinear1024,lessscalaraddress preparation",
+    "logicalneighborCTA h0/h1 sametoken accesses adjacentQ/O2KiBslices;workingorder maychangecache behavior butnotexecutionguarantee"
+  ],
+  "reverse_hypothesis": [
+    "hardwareCTA executionorder opaque,1D doesnotguaranteesequentialcache reuse",
+    "oldperheadtoken scanning mayhavebetter K/V locality, H0/H1selectedindicesindependent",
+    "decoderextraST/countermath/resource/launch schedulinggranularity mayoffset anyfolding",
+    "samewavecount2048/globalpayload/MMA count, no claimedbandwidthworkreduction orQ/Vshuffle transplant"
+  ],
+  "existing_evidence": {
+    "parent14_CPP_SHA": "c6957b7274e656c0c03b0ed0959d2c5d322fcb549396cff9eb212fc7e69a7e1a",
+    "old_launch": [
+      512,
+      4,
+      64,
+      1,
+      1,
+      2048
+    ],
+    "parent14MT_ST_staticmax": "UNAVAILABLE_noexistingresourcecapture",
+    "parent14profiling": "UNAVAILABLE_noexistingprofile",
+    "case13secondary_shape": [
+      1,
+      256,
+      2,
+      32,
+      64,
+      1,
+      16,
+      true
+    ],
+    "case13_notmodified": true
+  },
+  "workload": {
+    "2048_query_groups": true,
+    "outputbytes": 4194304,
+    "MMA_perquery": 8,
+    "nominal_MMA_FLOPs": 134217728,
+    "K_V_unique_eachbytes": 262144,
+    "logicalK_V_reads_eachbytes": 4194304,
+    "all_perquerytraffic_unchanged": true
+  },
+  "scope_math": "Num16/QK/PactualroundedPden/PVorder/F32divideF16/output/privatebuffers/layouts/7warpsync unchanged; onlylaunch indices replaced;allguards use decodedtokennotlinear/2 unmodded; preserve originalblock_start multiplication+samevalidguard,negative/SEQ_LENsentinel no KVread",
+  "GQA": "HQ32/H2=16;Qheadgroup h16+localhead;K/V stillb65536+blockstart128+h64+row128+col, notlinearQstride",
+  "stdlib_proofs": [
+    "query_grid_proof.json",
+    "query_linear_mapping.json"
+  ],
+  "proofs_done": "all2048querybijection,exactIndices=linear,Q/Oall64lane2part16B bases,parentKVaddress foreachvalidalignedblock/vector bounds;purestdlib only",
+  "peer_actual_received": true,
+  "peer_adopted": "bijection/decodedtoken/GQA+KVseparate stride/independentheadindices/perlogicalqueryaddress invariant/CTAordernotguaranteed/actualfolding-resource-data thenoriginalfixednative only; nopeeredit",
+  "falsifiers": [
+    "ASTcore changed/other13keys touched/wrongtarget/key/token/head/bounds/guard/math/sync/forbidden=>stop",
+    "actualCPP/hostnewgrid2048/threads64/dyn2KiB notmaterialized orperlogicalqueryoldsiteaddresses differ=>stop",
+    "sourceQ/O/Indicesfoldinghypothesis mayalreadybeparentoptimized;no latencyclaim solelyfrominstruction counts",
+    "actualstack>0 orcandidate staticmaxbelowfreshparent control=>stop;MT/ST allreportednotborrowC5/C9",
+    "nativefixedmedian>=parent rejects;anypositiveRound/rangeoverlap inconclusive;failurefirstprefixstop"
+  ],
+  "future_authorization_only": "firstleader source-onlyheader209/exact3imports/parent14ASTprefix/onlyC14;separate boundedparent+C209metadata actualfactorykey+SDKresource/O3IR withsameworker2lock2GiBdoubleadmit/28GiB/OOM3/unknownRSS1GiB/300s/ownedverified/no retry;then onlyleader GO originalC14fixedB-P-C-C-P-Bx2/4C12totalrefs/gradF16seed0fullnaive1e-2W10R50/600s;noautoprofile/full14/main/OJ",
+  "base_state_readonce": {
+    "cgroup_usage_bytes": 1417158656,
+    "OOM": 3,
+    "notadmission_orrootcauseproof": true,
+    "unknown193423_notoperated": true
+  },
+  "candidate_created": false,
+  "new_import_compile_attention_native": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "limited_parent_evidence_step": {
+    "manifest": "fixed_parent_evidence_manifest.json",
+    "one_resource_from_existing_C14CPP": true,
+    "one_profilerCLI_counts2_old10metrics_parent4c_driver14": true,
+    "source_scope_grid_wave_payload": [
+      [
+        512,
+        4
+      ],
+      2048,
+      4194304,
+      [
+        0,
+        512
+      ]
+    ],
+    "directruntimegrid_ifmissing_UNAVAILABLE": true,
+    "nativeW10R50_not_equivalent": "driver gradFalse/seed0/initial1+warm10+region20/differentidxgeneration;toolreplayobservednotguessed",
+    "guard": "sameworker2lock/2GiBdoubleadmit/0.5s/28GiB-OOM3-unknown1GiB-300s-failure-innerKilled stop onlyverifiedownedidentity,priorabort retained,no retry",
+    "numeric_rule": "tenmetrics allnumeric/isErrorfalse/CLI0/noKilled/OOM stable/wavespayload range necessary;NA/scopefailedraw retained/no thresholds change/no recapture",
+    "no_auto_candidate_compiler_native_or_trace": true,
+    "cannot_borrow_C9_metrics": "C14profile/resources stillunknown untilownlimitedstepactual, C9 notbottleneckproof",
+    "actual_new_heavy_started": false
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "semantic_gate": 0,
+  "sourceSHA": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
+  "CPP_changed_line_count": 7,
+  "CPP_only_changed_sites": [
+    {
+      "line": 28,
+      "kind": "Qvector",
+      "parent": "    *(uint4*)(qk_fetch + 0) = *(uint4*)(Q + ((((((((int)blockIdx.y) >> 1) * 1048576) + (((int)blockIdx.x) * 2048)) + ((((int)blockIdx.y) & 1) * 1024)) + (part * 512)) + (((int)threadIdx.x) * 8)));",
+      "candidate": "    *(uint4*)(qk_fetch + 0) = *(uint4*)(Q + (((((int)blockIdx.x) * 1024) + (part * 512)) + (((int)threadIdx.x) * 8)));"
+    },
+    {
+      "line": 46,
+      "kind": "Indices",
+      "parent": "  int block_start = (Indices[((((((int)blockIdx.y) >> 1) * 1024) + (((int)blockIdx.x) * 2)) + (((int)blockIdx.y) & 1))] * 16);",
+      "candidate": "  int block_start = (Indices[((int)blockIdx.x)] * 16);"
+    },
+    {
+      "line": 47,
+      "kind": "valid_guard",
+      "parent": "  if ((0 <= block_start) && (block_start <= ((int)blockIdx.x))) {",
+      "candidate": "  if ((0 <= block_start) && (block_start <= ((((int)blockIdx.x) & 1023) >> 1))) {"
+    },
+    {
+      "line": 51,
+      "kind": "Kvector",
+      "parent": "      *(uint4*)(qk_fetch + 0) = *(uint4*)(K + (((((((((int64_t)((int)blockIdx.y)) >> (int64_t)1) * (int64_t)65536) + (((int64_t)part_1) * (int64_t)1024)) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)128)) + (((int64_t)block_start) * (int64_t)128)) + ((((int64_t)((int)blockIdx.y)) & (int64_t)1) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));",
+      "candidate": "      *(uint4*)(qk_fetch + 0) = *(uint4*)(K + (((((((((int64_t)((int)blockIdx.x)) >> (int64_t)10) * (int64_t)65536) + (((int64_t)part_1) * (int64_t)1024)) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)128)) + (((int64_t)block_start) * (int64_t)128)) + ((((int64_t)((int)blockIdx.x)) & (int64_t)1) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));"
+    },
+    {
+      "line": 72,
+      "kind": "causal_guard",
+      "parent": "      if ((((((((int)threadIdx.x) >> 4) * 4) + block_start) + element) <= ((int)blockIdx.x))) {",
+      "candidate": "      if ((((((((int)threadIdx.x) >> 4) * 4) + block_start) + element) <= ((((int)blockIdx.x) & 1023) >> 1))) {"
+    },
+    {
+      "line": 125,
+      "kind": "Vvector",
+      "parent": "      *(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((((int64_t)((int)blockIdx.y)) >> (int64_t)1) * (int64_t)65536) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)256)) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)row) * (int64_t)128)) + ((((int64_t)((int)blockIdx.y)) & (int64_t)1) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));",
+      "candidate": "      *(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((((int64_t)((int)blockIdx.x)) >> (int64_t)10) * (int64_t)65536) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)256)) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)row) * (int64_t)128)) + ((((int64_t)((int)blockIdx.x)) & (int64_t)1) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));"
+    },
+    {
+      "line": 178,
+      "kind": "Outputvector",
+      "parent": "    *(uint4*)(Output + ((((((((int)blockIdx.y) >> 1) * 1048576) + (((int)blockIdx.x) * 2048)) + ((((int)blockIdx.y) & 1) * 1024)) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);",
+      "candidate": "    *(uint4*)(Output + (((((int)blockIdx.x) * 1024) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+    }
+  ],
+  "all_other_CPP_lines_identical": true,
+  "actual_CPP_address_equal_checks": 2097152,
+  "all2048Indices_linear_equal": true,
+  "K_V_blockstart_affine_coefficient128_same": true,
+  "actualCPP_uint4_paths_perlane_same_address_count": true,
+  "host_launch_actual": [
+    [
+      11,
+      [
+        512,
+        4,
+        64,
+        1,
+        1,
+        2048
+      ]
+    ],
+    [
+      10,
+      [
+        2048,
+        64,
+        1,
+        1,
+        2048
+      ]
+    ]
+  ],
+  "dynamic_shared_slot_parent_candidate": [
+    10,
+    9
+  ],
+  "candidate_resource": {
+    "MT": 42,
+    "ST": 20,
+    "staticMax": 8,
+    "stack": 0
+  },
+  "parent_resource_reuse": "parent_resource_reuse_identity.json exactc695/SDK/options",
+  "optimizedIR": [
+    {
+      "variant": "parent_v084",
+      "IR_SHA": "d11e156eb520ab7534276060467b2412883ac990055d02d553ebeffbf1ff91e9",
+      "MMA8_sync7_shuffle4": true,
+      "no_private_stack_numeric_FPtransport": true,
+      "kernel_block_y_call_count": 1,
+      "Qprefix_integer_lines": [
+        "%1 = shl nuw nsw i32 %0, 19",
+        "%mul = and i32 %1, 2146435072",
+        "%mul7 = shl nsw i32 %2, 11",
+        "%and = shl i32 %0, 10",
+        "%mul9 = and i32 %and, 1024",
+        "%mul14 = shl nuw nsw i32 %3, 3",
+        "%add = add nuw nsw i32 %mul14, %mul7",
+        "%add10 = add nuw nsw i32 %add, %mul",
+        "%add12 = add nuw nsw i32 %add10, %mul9",
+        "%mul28 = and i32 %mul14, 8128",
+        "%xor768 = and i32 %mul14, 56",
+        "%call32.masked = and i32 %3, 1016",
+        "%shr39 = and i32 %and38, 1"
+      ]
+    },
+    {
+      "variant": "power_v209",
+      "IR_SHA": "3711e19d8ec0cc98c758e39374a3170bacc150982fec5ba8cb1ed07b64229c08",
+      "MMA8_sync7_shuffle4": true,
+      "no_private_stack_numeric_FPtransport": true,
+      "kernel_block_y_call_count": 0,
+      "Qprefix_integer_lines": [
+        "%mul = shl nsw i32 %0, 10",
+        "%mul8 = shl nuw nsw i32 %1, 3",
+        "%add = add nuw nsw i32 %mul8, %mul",
+        "%mul21 = and i32 %mul8, 8128",
+        "%xor748 = and i32 %mul8, 56",
+        "%call24.masked = and i32 %1, 1016",
+        "%shr31 = and i32 %and30, 1"
+      ]
+    }
+  ],
+  "Qprep_observation": "candidate Q/Output base linear*1024 and Indiceslinear materialized inCPP;IR removes kernelblockY and shorter Q prefix. No runtime sequence/cache/latency inference",
+  "final_ISA_transaction_width": "UNAVAILABLE;CPPuint4/IR split i64 not measured ISA",
+  "full_reference_attention_native": [
+    0,
+    0,
+    0
+  ],
+  "initial_metadata_gate1_preserved": true,
+  "no_extra_capture_or_native": true
+}

@@ -1,0 +1,17 @@
+--- initial_helper
++++ recovery_01_helper
+@@ -3,13 +3,13 @@
+ assert sys.stdin.readline().strip()=='GO'
+ from pathlib import Path
+ import json,hashlib,importlib.util
++root=Path('/root/tilelang-metax');v='v209_worker2_c14_linear_query_grid_subagent2';r=root/'race_tests/nsa/rep'/v
+ manifest=json.loads((r/'metadata_launch_manifest.json').read_text())
+ for entry in manifest['fixed_inputs']:
+  p=Path(entry['path']);assert p.exists() and hashlib.sha256(p.read_bytes()).hexdigest()==entry['sha256'],str(p)
+ import tilelang
+ from tilelang.jit.kernel import JITKernel
+ tilelang.set_log_level('ERROR')
+-root=Path('/root/tilelang-metax');v='v209_worker2_c14_linear_query_grid_subagent2';r=root/'race_tests/nsa/rep'/v
+ identity=json.loads((r/'source_identity.json').read_text());plan=json.loads((r/'metadata_observation/plan.json').read_text());key=tuple(plan['only_target_key'])
+ sources={'parent_v084':(root/plan['numerical_parent'],plan['parent_sha256'],'_make_power_s1_case4_dense'),'power_v209':(Path(identity['candidate_path']),identity['candidate_sha256'],identity['factory_name'])}
+ def no_attention(*a,**kw):raise AssertionError('metadata cannot launchattention')
