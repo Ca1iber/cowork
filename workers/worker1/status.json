@@ -1,6 +1,6 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T03:28:36.755758+00:00",
+  "utc": "2026-10-02T03:34:00.307555+00:00",
   "machine": "sc-16g-2",
   "source_branch": "codex-power-v28-base",
   "source_commit": "29a45229cdcf9b1b3535402b68dd5cbfd782ec38",
@@ -16,7 +16,7 @@
   "candidate_source_sha256": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2",
   "parent_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
-  "phase": "failed v101 closed; awaiting next peer and leader review",
+  "phase": "v102 diagnostic plan ready; peerreview incorporated; awaiting leaderGO",
   "active_job_pid": null,
   "all_owned_jobs_terminal": true,
   "case_and_screen_exit": 137,
@@ -80,6 +80,16 @@
   "peer_lessons": "workers/worker1/lessons/v100-v101.md",
   "peer_review_received": true,
   "ownership": "no edits to worker2 source or plan; advice only",
-  "next": "new direction needs worker2 peerreview then leaderreview",
-  "transport": "leader relay, no credentials copied"
+  "next": "leaderreview fixed single-source nativeprocess isolation protocol,no kernel edits",
+  "transport": "leader relay, no credentials copied",
+  "active_version": "v102_worker1_native_process_isolation_sc-16g-2",
+  "active_target": [
+    10
+  ],
+  "native_started": false,
+  "v102_planned_reference_calls": {
+    "candidate_source_v101": 4,
+    "all_sources": 12
+  },
+  "v102_OOM_baseline": 11
 }

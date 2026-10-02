@@ -1,0 +1,103 @@
+{
+  "version": "v102_worker1_native_process_isolation_sc-16g-2",
+  "proposal_only": true,
+  "native_started": false,
+  "source_manifest": {
+    "version": "v102_worker1_native_process_isolation_sc-16g-2",
+    "diagnostic_only": true,
+    "new_kernel_source": false,
+    "sources": {
+      "baseline_v28": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+        "sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd"
+      },
+      "parent_v084": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+        "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+      },
+      "candidate_source_v101": {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v101_worker1_s2_fixed_selection_sc-16g-2/submission.py",
+        "sha256": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    "wrapper_path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py",
+    "wrapper_sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+    "native_case_selector": 10,
+    "source_header_unchanged": "# codex-power v101",
+    "v101_screen_exit_remains": 137
+  },
+  "execution_plan": {
+    "phase": "plan_only_awaiting_peer_then_leader_GO",
+    "order": [
+      "baseline_v28",
+      "parent_v084",
+      "candidate_source_v101",
+      "candidate_source_v101",
+      "parent_v084",
+      "baseline_v28",
+      "baseline_v28",
+      "parent_v084",
+      "candidate_source_v101",
+      "candidate_source_v101",
+      "parent_v084",
+      "baseline_v28"
+    ],
+    "jobs": 12,
+    "case": 10,
+    "single_source_fresh_process_per_job": true,
+    "candidate_source_v101_full_reference_checks_planned": 4,
+    "all_sources_full_reference_checks_planned": 12,
+    "warmup": 10,
+    "repeat": 50,
+    "seed": 0,
+    "tolerance": "original1e-2unchanged",
+    "metadata_in_native_process": false,
+    "RSS_HWM_monitor_period_seconds": 2,
+    "stop_on": [
+      "any nonzero process exit",
+      "cgroup OOM counter increment",
+      "wrong/missing/extra CSV rows",
+      "source/wrapper/native hashes changed"
+    ],
+    "no_adaptive_retries": true,
+    "no_v101_gate_rewrite": true,
+    "timing_scope": "original event around50 Python calls,host enqueue gaps included; fresh process import/compile outside measured calls",
+    "profile_and_kernel_changes": false,
+    "monitor_scope": [
+      "native PID/PGID and discoverable children VmRSS/VmHWM",
+      "sampled cgroup usage/OOM every2s",
+      "job before/after cgroupOOM and actual terminal code"
+    ],
+    "monitor_limits": [
+      "2s can miss short peaks/children",
+      "sampledHWM not guaranteed finalpeak",
+      "parentRSS not cgroup total",
+      "cgroup contains other users/processes; increment not victim attribution"
+    ],
+    "stop_on_inner_log_anomaly": [
+      "Killed",
+      "explicit OOM or child abnormal exit evidence"
+    ],
+    "runtime_diagnostic_success": "all12 native processes truly terminal0,correct singlecasePASS CSV,unchanged source/native hashes,OOM unchanged,no inner anomaly; not proof of old OOM cause",
+    "latency_falsifier": "candidate finalmedian>=parent rejects; any remaining cycle positive delta/range overlap retained,no stable-improvement claim or adaptive repeat",
+    "peer_review": "direct worker2 received; suggestions incorporated; no execution approval"
+  },
+  "planning_environment": {
+    "utc": "2026-10-02T03:31:43.691835+00:00",
+    "head": "29a45229cdcf9b1b3535402b68dd5cbfd782ec38",
+    "branch": "codex-power-v28-base",
+    "cgroup_memory": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "2898178048\n",
+      "memory.max_usage_in_bytes": "34359869440\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+      "memory.failcnt": "2963204\n"
+    },
+    "no_reset_of_lifetime_counters": true,
+    "native_started": false
+  },
+  "hypothesis_path": "/root/tilelang-metax/race_tests/nsa/experiments/v102_worker1_native_process_isolation_sc-16g-2/hypothesis.md",
+  "peer_review_text": "# worker2\u5bf9v102\u5b9e\u9a8c\u8bbe\u8ba1\u7684\u76f4\u63a5\u5ba1\u9605\n\nworker2\u660e\u786e\u4ee5\u5efa\u8bae\u800c\u975e\u5ba1\u6279\u56de\u590d\uff1afreshproc\u5bf9\u4e09source\u7edf\u4e00\u516c\u5e73\uff0c\u4f46\u76f8\u5bf9v101\u5c5e\u4e8eprotocol change\uff0c\u4ec5runtime diagnostic\uff1bstartup/JIT\u5728event\u5916\uff0c\u6d4b\u539fW10R50 steady-state\u3002context/diskcache/\u6e29\u5ea6\u6f02\u79fb\u4ecd\u5728\uff0c\u56fa\u5b9aB-P-C-C-P-B\u4e0d\u6d88\u9664\u6240\u6709\u6ce2\u52a8\u3002\u4fdd\u755950 Pythoncall event\u53e3\u5f84\u30022s RSS/HWM\u89c2\u5bdf\u53ef\u80fd\u6f0f\u5cf0\u548cchild\uff0c\u7236PID\u4e0d\u662fcgrouptotal\uff1bOOM\u524d\u540e\u53caactual\u5b50PID\u4fdd\u7559\u3002\u6309\u5b9e\u9645PASS CSV\u884c\u8ba1\u6570\uff0c\u524d\u5f15\u7528\u5931\u8d250\uff0c\u975ezero/OOM\u7acb\u523bstop\u3002\u5b8c\u657412terminal0\u4e5f\u4e0d\u80fd\u8bc1\u660e\u65e7OOM\u6839\u56e0\u3002worker2\u7684C8outerCLI0/Killed/OOM1\u4f8b\u5b50\u4ec5\u63d0\u9192\u95e8\u7981\uff0c\u4e0d\u6539\u5176\u8bca\u65ad\u6216\u8ba1\u5212\u3002\n\nworker1\u5df2\u628a\u610f\u89c1\u7eb3\u5165\u81ea\u8eabhypothesis/\u6267\u884c\u8ba1\u5212\u9650\u5236\uff0c\u672a\u542f\u52a8native\u6216\u4fee\u6539source\uff0c\u5f85leader GO\u3002\n",
+  "next": "awaitleaderGO,no native/kernel edit until then",
+  "v101_gate_unchanged": 137
+}
