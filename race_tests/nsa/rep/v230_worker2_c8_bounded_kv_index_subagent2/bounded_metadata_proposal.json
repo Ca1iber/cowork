@@ -1,0 +1,31 @@
+{
+  "id": "v230_worker2_c8_bounded_kv_index_subagent2",
+  "stage": "SOURCE_AFTER_PEER_READY_COMPILE_PREPARATION_ONLY",
+  "sourceSHA": "4d90055cb7bde627fb3678739e1e4b1655ccea3732fc671566b589663d4cdbee",
+  "exactC8key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "hypothesis": "explicitbounded0..4080 may keepdynamicK/Vscaledindexarith inclbatch in i32; actualC8CPP24237 int64 confirmed",
+  "evidence_scope": "ownC8identity/rangeproof, noC9gaintransfer; priorC8profilelimitedMTE~68/shared100 notHBMbottleneckproof",
+  "prediction": "batch*262144+boundedrow64+lane offsets i32 beforelatezext/GEP64; remainingbatch64/extra min/reg/nativecost mayfalsify",
+  "order": [
+    "onefreshP84+C230C8exports2pairs4files",
+    "CPUstrictgenerated/geometry4096x2threads64dyn2048",
+    "candidate1resourceSDK stack0 allMTST/staticmaxrecorded",
+    "candidatefirstO3IR",
+    "readonlybatch/rowi32/address/math/noAS5gate thenleaderreview"
+  ],
+  "parent_reuse": "exactP8CPP24237/host5285/source4c/SDK5d matchedv204resource42/20/max8/stack0dyn2048 no newparentcommands",
+  "preserved": "Idx*16/guard/mask/QO/layouts/global16B/count/7sync/Num16/Pden/MMAorder",
+  "semantic": "officialB2/idx0..255/clampidentity/halfmax524287/lastbyte1048575/16Balignment independentproof; no malformedoverflow claim",
+  "guard": "same3GiB25estimate4reserve/runtime28/OOM3/unknown1G/600/.5/1s50ms/Popenownership/priorabort/no retry",
+  "scope": "source+stdlibprepare only; no compiler/native/profile/c300edit",
+  "caseimpact": "onlyC8; others13ASTprefix no guaranteeperformance"
+}

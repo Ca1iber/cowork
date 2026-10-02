@@ -1,0 +1,85 @@
+{
+  "run": 3,
+  "variant": "power_v230",
+  "source_path": "/tmp/nsa_worker2_v230_c8_bounded_kv_index.py",
+  "sourceSHA": "4d90055cb7bde627fb3678739e1e4b1655ccea3732fc671566b589663d4cdbee",
+  "reference_records": 1,
+  "oom_before": 3,
+  "launcher_argv": [
+    "/opt/conda/bin/python",
+    "-S",
+    "/root/tilelang-metax/race_tests/nsa/hack/v230_worker2_c8_bounded_kv_index_subagent2/native_exec.py"
+  ],
+  "native_argv": [
+    "/opt/conda/bin/python",
+    "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+  ],
+  "pid": 415977,
+  "starttime_ticks": 335159650,
+  "pgid": 415977,
+  "exe": "/opt/conda/bin/python3.12",
+  "released_native": true,
+  "critical_confirmation_events": [
+    {
+      "event": "started",
+      "monotonic": 3351636.90969703,
+      "deadline": 3351637.90969703,
+      "metadata": {
+        "pid": 415977,
+        "ppid": 415423,
+        "pgid": 415977,
+        "starttime_ticks": 335159650,
+        "state": "R",
+        "comm": "python",
+        "exe": null,
+        "status": {
+          "Threads": "1"
+        },
+        "cgroup": [
+          "13:devices:/",
+          "12:perf_event:/",
+          "11:hugetlb:/",
+          "10:misc:/",
+          "9:pids:/",
+          "8:blkio:/",
+          "7:freezer:/",
+          "6:memory:/",
+          "5:cpu,cpuacct:/",
+          "4:net_cls,net_prio:/",
+          "3:rdma:/",
+          "2:cpuset:/",
+          "1:name=systemd:/",
+          "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+        ],
+        "thread_children": [],
+        "metadata_errors": [
+          {
+            "phase": "exe",
+            "errno": 2,
+            "filename": "/proc/415977/exe"
+          }
+        ],
+        "critical_complete": false,
+        "RSS_unavailable": true
+      }
+    },
+    {
+      "event": "terminal_confirmed",
+      "elapsed": 0.4726125057786703,
+      "total_missing_elapsed": 0.4726125057786703,
+      "actualPopenpoll": 0
+    }
+  ],
+  "critical_missing_total_seconds": 0.4726125057786703,
+  "samples": 88,
+  "exit": 0,
+  "owned_termination_actions": [],
+  "oom_after": 3,
+  "terminal_observed_owned_descendants": [],
+  "csv_valid": true,
+  "inner_Killed": false,
+  "source_hash_unchanged": true,
+  "runner_hash_unchanged": true,
+  "shared_hashes_unchanged": true,
+  "clean_full_reference_record": 1
+}

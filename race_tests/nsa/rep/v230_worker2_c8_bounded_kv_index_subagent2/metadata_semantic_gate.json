@@ -1,0 +1,60 @@
+{
+  "gate": 0,
+  "sourceSHA": "4d90055cb7bde627fb3678739e1e4b1655ccea3732fc671566b589663d4cdbee",
+  "CPP_SHA": "a9c5c5d5aff26e117e52b1f8bd43b9670067b7d83579756122c179f82a9cb37c",
+  "IR_SHA": "f7580422a93edc226f5109e5a186af1b862fc0bd5f1c62edc3e1d3bc4f95412c",
+  "actualCPP_only2KVindexrows": true,
+  "batch_and_row_scaled_i32_prediction": true,
+  "actualindexSSA": [
+    "%mul108 = shl nsw i32 %0, 18",
+    "%cond.i.i = tail call noundef range(i32 0, 4081) i32 @llvm.smin.i32(i32 %mul99, i32 4080)",
+    "%mul112 = shl nuw nsw i32 %cond.i.i, 6",
+    "%14 = or disjoint i32 %mul11, %mul108",
+    "%add113 = add nuw nsw i32 %14, %mul112",
+    "%15 = zext nneg i32 %add113 to i64, !dbg !75",
+    "%add352 = or disjoint i32 %mul351, %mul108",
+    "%add355 = or disjoint i32 %add352, %xor731",
+    "%add357 = add nuw nsw i32 %add355, %mul112",
+    "%57 = zext nneg i32 %add357 to i64, !dbg !185"
+  ],
+  "latepointerGEP64_normal": true,
+  "extra_smin_retained": true,
+  "allglobalwidth16B_math_layout_7sync_guard_literal_preserved": true,
+  "independent_fullvectorchecks": 131072,
+  "half_max": 524287,
+  "lastbyte": 1048575,
+  "resource_parent": [
+    42,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "resource_candidate": [
+    38,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "kernel_counts": {
+    "MMA": 8,
+    "warp": 7,
+    "bpermute": 4,
+    "alloca": 0,
+    "AS5": false
+  },
+  "compile_originalwaits": [
+    0,
+    0,
+    0
+  ],
+  "native_correctness_latency": "UNAVAILABLE_pending",
+  "C9_gain_transfer_claim": false,
+  "ISAoccupancy": "UNAVAILABLE",
+  "attention_native_reference": [
+    0,
+    0,
+    0
+  ]
+}
