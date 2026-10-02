@@ -1,0 +1,53 @@
+{
+  "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "CPP_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case8_stage1.device.cpp",
+  "CPP_SHA": "24237e8843b6168692cb751c7e1b35455812d40d5b186420ad12694aa506d4a8",
+  "resource": {
+    "case": 8,
+    "variant": "parent_v084",
+    "MT": 42,
+    "ST": 20,
+    "static_shared_bytes_reported": 0,
+    "dynamic_shared_bytes_host": 2048,
+    "stack_bytes": 0,
+    "static_max_warps_per_PEU": 8,
+    "not_measured_occupancy": true
+  },
+  "profiles": [
+    {
+      "raw_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/mcprof_case8_parent_v084/report_bundle/1_native_sparse_attention_kernel_dumped_result.json",
+      "rawSHA": "92b7b3161554786f02c8db58405f1b8431a2366ca1b2442f0216a8b6c875ab22",
+      "metrics": {
+        "L2C Hit Rate": 47.950914693431855,
+        "Global Memory Read bytes": 18908320.0,
+        "Global Memory Write bytes": 16777664.0,
+        "average latency per load instruction": 50.513724190848215,
+        "average conflict cycles per instruction": 0.0,
+        "shared memory access efficiency": 100.0,
+        "Achieved waves": 8192.0,
+        "Dispatched waves": 8192.0,
+        "AP MTE Duty ratio": 67.97201571861109,
+        "AP MMA Duty ratio": 6.754982928557625
+      },
+      "write_residual": 448.0
+    },
+    {
+      "raw_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/mcprof_case8_parent_v084/report_bundle/2_native_sparse_attention_kernel_dumped_result.json",
+      "rawSHA": "4c4861a0e36560f44b919dc7a238e36d2592a97b16c6fc8d25d752de683af145",
+      "metrics": {
+        "L2C Hit Rate": 47.95764050509865,
+        "Global Memory Read bytes": 18913312.0,
+        "Global Memory Write bytes": 16777600.0,
+        "average latency per load instruction": 50.5413818359375,
+        "average conflict cycles per instruction": 0.0,
+        "shared memory access efficiency": 100.0,
+        "Achieved waves": 8192.0,
+        "Dispatched waves": 8192.0,
+        "AP MTE Duty ratio": 67.80137447028248,
+        "AP MMA Duty ratio": 6.738024792077763
+      },
+      "write_residual": 384.0
+    }
+  ],
+  "limitation": "v200 broader pipeline OOM0->1/analysis1/post1/clean-processgate not established; these two numeric/wave/payload records necessary scope only, original failure/NA/scopefail elsewhere unchanged; no sampling here"
+}
