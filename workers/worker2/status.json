@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T10:53:08.540487+00:00",
-  "state": "PARENT_EVIDENCE_COMPLETE_WAIT_SOURCE_GO",
+  "timestamp_utc": "2026-10-02T11:00:48.364817+00:00",
+  "state": "SOURCE_ONLY_COMPLETE_METADATA_PROPOSAL",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v209_worker2_c14_linear_query_grid_subagent2",
-    "state": "PARENT_EVIDENCE_COMPLETE_WAIT_SOURCE_GO",
+    "state": "SOURCE_ONLY_COMPLETE_METADATA_PROPOSAL",
     "only_key": [
       2,
       512,
@@ -47,10 +47,10 @@
     "outputbytes": 4194304,
     "query_address_bijection_stdlib_exit": 0,
     "peer_actual_received": true,
-    "candidate_created": false,
+    "candidate_created": true,
     "unknown193423_not_operated": true,
     "base_state_once_not_admission_proof": true,
-    "kernel_edit_GO": false,
+    "kernel_edit_GO": "source-only executed",
     "peer_finite_evidence_received": true,
     "planned_resource_CLI_records": [
       1,
@@ -154,7 +154,23 @@
       0
     ],
     "active_PIDs": [],
-    "current_live_heavy": 0
+    "current_live_heavy": 0,
+    "candidate_path": "/tmp/nsa_worker2_v209_c14_linear_query_grid.py",
+    "candidateSHA": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
+    "factory": "_make_worker2_c14_linear_query_grid",
+    "source_static_exit": 0,
+    "strict_source_exit": 0,
+    "prefix14_AST_equal": true,
+    "inverse_grid_decode_wholefactory_AST_equal": true,
+    "candidate_grid": [
+      2048
+    ],
+    "candidate_decode": [
+      "batch_id = linear_query // (seq_len * kv_heads)",
+      "token = linear_query // kv_heads % seq_len",
+      "kv_head = linear_query % kv_heads"
+    ],
+    "metadata_execution_GO": false
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -684,7 +700,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader review finite parent evidence then source-only C14 flatten decision; no auto heavy.",
+  "next_step": "Leader audit source0719 and bounded_metadata_proposal before any new import/compiler",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
