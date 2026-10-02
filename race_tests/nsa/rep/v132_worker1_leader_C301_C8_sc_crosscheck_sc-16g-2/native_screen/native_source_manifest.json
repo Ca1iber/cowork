@@ -1,0 +1,83 @@
+{
+  "wrapper_path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py",
+  "recognized_unowned_baseline": {
+    "pid": 213447,
+    "starttime_ticks": 93125003,
+    "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+    "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+  },
+  "cooperative_heavy_lock": "/tmp/nsa_sc-16g-2_cooperative_heavy.lock",
+  "version": "v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2",
+  "sources": {
+    "baseline_v28": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+      "sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd"
+    },
+    "parent_v113": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+      "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+    },
+    "candidate_v301": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v301_leader_c8_bounded_index_sc_crosscheck_sc-16g-2/submission.py",
+      "sha256": "85192e76d8fee464a8dbfe41d5ec95d3a2a3688e5dc1c29b7803c6ff63253f6d"
+    }
+  },
+  "tools": {
+    "python": {
+      "path": "/opt/conda/bin/python",
+      "sha256": "0e4dbf3236310955eaeee14323756b54961e1d0dc12c680c441f50839a67eee0"
+    },
+    "native_wrapper": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py",
+      "sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f"
+    },
+    "bounded_controller": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2/run_native_screen.py",
+      "sha256": "3e0692395a7b34e80fb476ae944bc2477751659a0f12e50d4727c5b5d2872c65"
+    },
+    "native_gate": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2/owned_native_gate.py",
+      "sha256": "906d210a50da3773973a3ca34b8f770d83cf9cecce26581d499e6db695c36f31"
+    },
+    "process_monitor": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2/process_monitor.py",
+      "sha256": "95253d2f451c24688e64c4413fff96c03cc1131180fc800a5c8a120f885117d3"
+    },
+    "supervisor": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2/supervise_native_screen.py",
+      "sha256": "7bab611472e2da0ad0f6e0e7a50d1d7c8b18dffed12fee31d593104262d53093"
+    },
+    "screen_launcher": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2/launch_native_screen.py",
+      "sha256": "91dd43d2f75d7048b1936de4f3417c2b5474d371a269758468f337efe5e0420a"
+    },
+    "screen_analyzer": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2/analyze_native_screen.py",
+      "sha256": "287508e7d137174f0bf2e7f05e943a423527e8f7f00a06fe418b57bd6bd778df"
+    },
+    "source_validator": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/validate_oj_submission.py",
+      "sha256": "04eaef24dd21833f571d59d5e30c89190650f9e9eaa77094bcf87cecf062a6bf"
+    }
+  },
+  "shared_identity_document": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2/native_screen/shared_inputs_identity.json",
+    "sha256": "69ea3fdea7f639083ecdd65a62365a55c11e27088a99b9a590e498d2e87c312e"
+  },
+  "existing_parent_C8_device": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v111_worker1_shared_identity_preflight_codegen_sc-16g-2/codegen/power_v104/case8.device.cpp",
+    "sha256": "24237e8843b6168692cb751c7e1b35455812d40d5b186420ad12694aa506d4a8"
+  },
+  "existing_parent_C8_host": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v111_worker1_shared_identity_preflight_codegen_sc-16g-2/codegen/power_v104/case8.host.cpp",
+    "sha256": "5285a26a6bd63474032667fedd485364f6bc81eeaa5e4979f2878534134d9941"
+  },
+  "frozen_C301_source_proof": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2/native_screen/C301_source_semantic_gate.json",
+    "sha256": "ff69d7b06fb5e75ad9ed762394af185e2bb3cbf352cd4fc30da12008a3e23742"
+  },
+  "source_validator_actual_exit": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2/native_screen/source_validator.exit",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  }
+}

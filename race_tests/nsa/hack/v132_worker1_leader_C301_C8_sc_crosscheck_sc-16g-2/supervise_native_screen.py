@@ -1,0 +1,9 @@
+from pathlib import Path
+import json,sys,hashlib,subprocess,os,datetime
+r=Path(sys.argv[1]);m=json.loads((r/'native_source_manifest.json').read_text());plan=json.loads((r/'native_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v132_native_screen_once';shared=m['shared_identity_document'];doc=Path(shared['path']);assert doc.is_file() and hashlib.sha256(doc.read_bytes()).hexdigest()==shared['sha256'];inputs=json.loads(doc.read_text())['files'];assert len(inputs)==6
+for relative,sha in inputs.items():f=Path('/root/tilelang-metax')/relative;assert f.is_file() and hashlib.sha256(f.read_bytes()).hexdigest()==sha
+for x in list(m['sources'].values())+list(m['tools'].values()):assert Path(x['path']).is_file() and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256']
+assert not (r/'master.pid').exists() and not (r/'launch_once.lock').exists();cmd=[m['tools']['python']['path'],'-S','-u',m['tools']['bounded_controller']['path']]
+with (r/'screen_controller.log').open('w') as log:
+ p=subprocess.Popen(cmd,cwd='/root/tilelang-metax',stdout=log,stderr=subprocess.STDOUT,start_new_session=True);pid=p.pid;pgid=os.getpgid(pid);(r/'master.pid').write_text(str(pid)+chr(10));(r/'master.pgid').write_text(str(pgid)+chr(10));(r/'supervisor_started.json').write_text(json.dumps({'UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'supervisor_pid':os.getpid(),'controller_pid':pid,'controller_pgid':pgid,'command':cmd,'retained_original_Popen_handle':True},indent=2)+chr(10));code=p.wait();(r/'controller_actual.exit').write_text(str(code)+chr(10));(r/'supervisor_wait_result.json').write_text(json.dumps({'UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'controller_pid':pid,'actual_wait_returncode':code,'authority':'originalPopen.wait','not_inferred_from_log_or_missingproc':True},indent=2)+chr(10))
+print('ACTUAL_CONTROLLER_WAIT',pid,code,flush=True);raise SystemExit(code)

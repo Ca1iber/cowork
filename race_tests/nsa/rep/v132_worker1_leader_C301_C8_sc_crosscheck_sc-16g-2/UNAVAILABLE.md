@@ -1,0 +1,1 @@
+C301candidate_SC_CPP_IR_resources not exported/captured in132, no standaloneSDK/profile/trace/full14/OJ. Originalnative did JIT+GPU,4C12fullrefs completed, selectedlocalgain only. Physicalindex/resource/HBM/occupancycauseUNAVAILABLE; no pooling230/231. No source edits orautomaticfull14/promotion.
