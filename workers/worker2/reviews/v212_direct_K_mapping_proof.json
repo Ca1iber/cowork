@@ -1,0 +1,83 @@
+{
+  "proposal_only_no_candidate": true,
+  "MFMA_K_scalar_coordinates_equal": 1024,
+  "all_direct8B_vectors_aligned": true,
+  "full_tile_bijection": true,
+  "alllegal_batch_block_scalar_bounds_checks": 524288,
+  "old_parentK_global_vectors_perlane_bytes": [
+    2,
+    16
+  ],
+  "new_directK_global_vectors_perlane_bytes": [
+    4,
+    8
+  ],
+  "logical_tilebytes_equal": 2048,
+  "request_models": [
+    {
+      "assumed_line_bytes": 32,
+      "assumed_coalescing_lanes": 16,
+      "parent_line_intersections": 64,
+      "direct_line_intersections": 256,
+      "ratio": 4.0
+    },
+    {
+      "assumed_line_bytes": 32,
+      "assumed_coalescing_lanes": 32,
+      "parent_line_intersections": 64,
+      "direct_line_intersections": 128,
+      "ratio": 2.0
+    },
+    {
+      "assumed_line_bytes": 32,
+      "assumed_coalescing_lanes": 64,
+      "parent_line_intersections": 64,
+      "direct_line_intersections": 64,
+      "ratio": 1.0
+    },
+    {
+      "assumed_line_bytes": 64,
+      "assumed_coalescing_lanes": 16,
+      "parent_line_intersections": 32,
+      "direct_line_intersections": 256,
+      "ratio": 8.0
+    },
+    {
+      "assumed_line_bytes": 64,
+      "assumed_coalescing_lanes": 32,
+      "parent_line_intersections": 32,
+      "direct_line_intersections": 128,
+      "ratio": 4.0
+    },
+    {
+      "assumed_line_bytes": 64,
+      "assumed_coalescing_lanes": 64,
+      "parent_line_intersections": 32,
+      "direct_line_intersections": 64,
+      "ratio": 2.0
+    },
+    {
+      "assumed_line_bytes": 128,
+      "assumed_coalescing_lanes": 16,
+      "parent_line_intersections": 16,
+      "direct_line_intersections": 256,
+      "ratio": 16.0
+    },
+    {
+      "assumed_line_bytes": 128,
+      "assumed_coalescing_lanes": 32,
+      "parent_line_intersections": 16,
+      "direct_line_intersections": 128,
+      "ratio": 8.0
+    },
+    {
+      "assumed_line_bytes": 128,
+      "assumed_coalescing_lanes": 64,
+      "parent_line_intersections": 16,
+      "direct_line_intersections": 64,
+      "ratio": 4.0
+    }
+  ],
+  "models_not_C500calibrated_sector_or_HBMtraffic": true,
+  "cross_instruction_cache_writecombine_not_modelled": true
+}
