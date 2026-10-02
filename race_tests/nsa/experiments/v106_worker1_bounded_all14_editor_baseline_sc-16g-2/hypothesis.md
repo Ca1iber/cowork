@@ -1,0 +1,11 @@
+# v106 proposal: single unowned editor baseline, no source change
+
+v105 once-only admission refused before native (0refs/exit1): whole2,968,227,840B below3GiB, but unowned editorPID213447 had2,325,192KiB RSS. v104 prior readonlycensus contains samePID/start93125003/exactexe and1,990,348KiB RSS. This establishes limited identity continuity and drift, not the oldOOMcause. The editor remains user-owned/unowned by team and is never signalled, restarted, inspected via cmdline/env/shm or cleaned.
+
+NEW v106 only: one explicit tuple PID213447/start93125003/exactnodeexe/exactcgroup may be treated as recognized baseline for unknownRSS classification, while allits RAM remains inunchanged3GiB whole admission budget. No name/tree whitelist or own-ancestry status. Every admission/runtime census must match this tuple; absent/reusedPID/exec/cgroup changes stop. Children and allother unowned/newheavy retain1GiB rule; cannot inherit exception. Whole28GiB/OOM/hash/Killed/CSV/nonzero/600s stops, cooperative lock, doubleowned-S admission and0.5s observer unchanged. Admissionrefusal stops once, no pollinguntilpass or retries.
+
+Editor HWM3,611,504KiB already exceeds3GiB; identity says nothing about resource stability. Whole admission refuses ifbaseline hasgrown, andexisting runtimewholeguard handlesdrift only withsamplingblindspots/4GiB reserve asengineering hypothesis. No cap raised, unknown process operated or previous v105gate weakened.
+
+Same immutable candidate27f/header104, no newkernel. Native12fresh-source processes B-P-C-C-P-B twice, each originalall14/seed0percase/fullnaive1e-2/GradF16/W10R50/order unchanged, no metadata/postexport.56C/168inclusive planned, actual0. Observedfullreference PASSrows vs cleanacceptedprocessrefs separate; partialfailure doesnot completegate anddoesnot merge old140prefix. Allraw/positive/ranges/outliers retained, newprotocol absoluteoldtimings notsubstituted, two rounds notstatisticalstability. Risk/profile/metadata/OJ/main remain separate review.
+
+Currentstage: proposalonly0heavy, peer advice requested, leader approval required. v105exit1, v104exit1/v101137 andtheir rawrecords remain immutable. Falsifier: any identity/budget/unknown/runtime/CSV violation stops diagnostic; successfulonce only proves protocol completion underobservedconditions, not OOMcause or future guarantee.

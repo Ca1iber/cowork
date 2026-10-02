@@ -1,0 +1,229 @@
+{
+  "wrapper_path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py",
+  "wrapper_sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+  "native_path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/test_tilelang_nsa_fwd_v28.py",
+  "native_sha256": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568",
+  "selector": "comma-separated set membership; wrapper iterates originalofficial enumerate1..14, not selector insertionorder",
+  "explicit_selector": "1,2,3,4,5,6,7,8,9,10,11,12,13,14",
+  "seed0_reset_inside_case_function_line": 153,
+  "same_case_inputs_each_source_and_onecasevsall14": true,
+  "native_body_no_modifications": true,
+  "full_naive_no_grad_atol_rtol": 0.01,
+  "warmup": 10,
+  "repeat": 50,
+  "event50Pythoncalls_unchanged": true,
+  "input_gradient_F16_unchanged": true,
+  "smem_checks": [
+    {
+      "case": 1,
+      "official": {
+        "B": 1,
+        "SEQ_LEN": 64,
+        "H": 1,
+        "HQ": 16,
+        "D": 32,
+        "S": 1,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 5632,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 2,
+      "official": {
+        "B": 1,
+        "SEQ_LEN": 128,
+        "H": 1,
+        "HQ": 16,
+        "D": 64,
+        "S": 1,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 9728,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 3,
+      "official": {
+        "B": 1,
+        "SEQ_LEN": 256,
+        "H": 1,
+        "HQ": 16,
+        "D": 128,
+        "S": 1,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 17920,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 4,
+      "official": {
+        "B": 2,
+        "SEQ_LEN": 512,
+        "H": 1,
+        "HQ": 16,
+        "D": 64,
+        "S": 1,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 9728,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 5,
+      "official": {
+        "B": 4,
+        "SEQ_LEN": 1024,
+        "H": 1,
+        "HQ": 16,
+        "D": 64,
+        "S": 1,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 9728,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 6,
+      "official": {
+        "B": 8,
+        "SEQ_LEN": 1024,
+        "H": 1,
+        "HQ": 16,
+        "D": 128,
+        "S": 1,
+        "block_size": 32,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 27648,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 7,
+      "official": {
+        "B": 1,
+        "SEQ_LEN": 4096,
+        "H": 1,
+        "HQ": 16,
+        "D": 64,
+        "S": 1,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 9728,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 8,
+      "official": {
+        "B": 2,
+        "SEQ_LEN": 4096,
+        "H": 1,
+        "HQ": 16,
+        "D": 64,
+        "S": 1,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 9728,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 9,
+      "official": {
+        "B": 1,
+        "SEQ_LEN": 8192,
+        "H": 1,
+        "HQ": 16,
+        "D": 64,
+        "S": 1,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 9728,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 10,
+      "official": {
+        "B": 1,
+        "SEQ_LEN": 256,
+        "H": 1,
+        "HQ": 16,
+        "D": 64,
+        "S": 2,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 9728,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 11,
+      "official": {
+        "B": 2,
+        "SEQ_LEN": 512,
+        "H": 1,
+        "HQ": 16,
+        "D": 64,
+        "S": 4,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 9728,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 12,
+      "official": {
+        "B": 4,
+        "SEQ_LEN": 1024,
+        "H": 1,
+        "HQ": 16,
+        "D": 64,
+        "S": 8,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 9728,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 13,
+      "official": {
+        "B": 1,
+        "SEQ_LEN": 256,
+        "H": 2,
+        "HQ": 32,
+        "D": 64,
+        "S": 1,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 9728,
+      "original_runner_skip_guard_false": true
+    },
+    {
+      "case": 14,
+      "official": {
+        "B": 2,
+        "SEQ_LEN": 512,
+        "H": 2,
+        "HQ": 32,
+        "D": 64,
+        "S": 1,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "original_runner_smem_estimate": 9728,
+      "original_runner_skip_guard_false": true
+    }
+  ],
+  "no_heavy_import_or_run": true
+}
