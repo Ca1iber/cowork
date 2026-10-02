@@ -1,0 +1,79 @@
+{
+  "reviewed_at_utc": "2026-10-02T08:22:53.629039+00:00",
+  "decision": "GO same-source oncefixed officialC5 v206 native screen",
+  "candidate_sha256": "d1a58e61691db44287bd25e6b2aca80eaef2a173c925d3921d64a0645671b626",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "actual_gate_file": "rep/v206_worker2_c5_v_shared4row_subagent2/metadata_mechanism_gate_semantic.json",
+  "actual_semantic_audit_PID": 157808,
+  "actual_semantic_audit_exit": 0,
+  "first_parser_failures_preserved": [
+    1,
+    1,
+    1
+  ],
+  "leader_IR_checked": {
+    "parent_Vstores": "8i32 align4",
+    "candidate_Vstores": "4i64 align8",
+    "fourpacked_U32_bpermute_lines": [
+      474,
+      489,
+      504,
+      519
+    ],
+    "percall_payload_and_address_def_use": true,
+    "actual8halfextracts": "4plaintrunc+4truncnuw after4lshr16; ownerdeleted-trunc explanation corrected",
+    "no_transport_numeric_FPcast_or_lanebranch_private": true,
+    "MMA_each": 8,
+    "warpsync_each": 7,
+    "globalQKVOutput_perlane_uint4_CPP_same": true,
+    "host_grid": [
+      1024,
+      4
+    ]
+  },
+  "resources_parent_candidate": {
+    "MT": [
+      42,
+      46
+    ],
+    "ST": [
+      20,
+      20
+    ],
+    "staticmax": [
+      8,
+      8
+    ],
+    "dynshared": [
+      2048,
+      2048
+    ],
+    "stack": [
+      0,
+      0
+    ]
+  },
+  "proof_limits": [
+    "MTincrease retained;no resourcewin claim",
+    "Source/IR store widths not final ISA transactions orruntime bank efficiency",
+    "Hypotheticalbankmodels not calibrated; performance unverified"
+  ],
+  "screen": {
+    "case": 5,
+    "order": "B28-P84-C206-C206-P84-B28 x2",
+    "fresh_source_jobs": 12,
+    "candidate_refs_planned": 4,
+    "inclusive_refs_planned": 12,
+    "original_runner_seed0_GradF16_fullnaive_tolerance_W10R50_unchanged": true,
+    "no_postexport": true,
+    "source_runner_shared6hash_manifest_and_onceguard_beforelaunch": true
+  },
+  "memory_protocol": "2GiB prepostadmission/flock/unowned1GiB/0.5s/whole28GiB-OOM-unknownheavy-nonzero-Killed-hash-CSV-600s stop;no retry;onlyverifiedownidentity termination",
+  "data_gate": "CSVactualPASS andrealcleanterminal0/noabort required,rawoutliers/positive/range/tworounds retained",
+  "performance": "median>=parent reject;positive-round/overlap perownerpredeclaredinconclusive,no samplingextension",
+  "not_approved": [
+    "full14 formal",
+    "GPU profile",
+    "main/OJ promotion"
+  ]
+}
