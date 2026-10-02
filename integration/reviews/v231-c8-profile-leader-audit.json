@@ -1,0 +1,101 @@
+{
+  "version": "v231",
+  "closed_source_commit": "7a1dc6b3a8378f2692283894c06635a2446265f4",
+  "closed_scope": 105,
+  "closed_inventory_verified": 104,
+  "primary_raw_records": [
+    {
+      "stage": "parent_profile",
+      "record": 1,
+      "rawSHA": "ee583e88586c7af744570be691be9049638dcd0abaee117e58f5e2c67b734618",
+      "metrics": {
+        "L2C Hit Rate": 47.83919579203942,
+        "Global Memory Read bytes": 18864672.0,
+        "Global Memory Write bytes": 16777536.0,
+        "average latency per load instruction": 50.423575265066965,
+        "average conflict cycles per instruction": 0.0,
+        "shared memory access efficiency": 100.0,
+        "Achieved waves": 8192.0,
+        "Dispatched waves": 8192.0,
+        "AP MTE Duty ratio": 69.19084070382115,
+        "AP MMA Duty ratio": 6.876108392926326
+      },
+      "write_residual": 320.0
+    },
+    {
+      "stage": "parent_profile",
+      "record": 2,
+      "rawSHA": "e63c8fe0ff094f6207b91ef54f4dca312d4ff78ac8db06d55535378e1aa8525f",
+      "metrics": {
+        "L2C Hit Rate": 47.954470255931895,
+        "Global Memory Read bytes": 18861216.0,
+        "Global Memory Write bytes": 16777728.0,
+        "average latency per load instruction": 50.54502650669643,
+        "average conflict cycles per instruction": 0.0,
+        "shared memory access efficiency": 100.0,
+        "Achieved waves": 8192.0,
+        "Dispatched waves": 8192.0,
+        "AP MTE Duty ratio": 69.1592759447832,
+        "AP MMA Duty ratio": 6.872971522462927
+      },
+      "write_residual": 512.0
+    },
+    {
+      "stage": "candidate_profile",
+      "record": 1,
+      "rawSHA": "5750bc6fc821851a7c2685f31129df270c7e84b289908a72b7633b72d4ce5489",
+      "metrics": {
+        "L2C Hit Rate": 47.934890103213434,
+        "Global Memory Read bytes": 18869152.0,
+        "Global Memory Write bytes": 16777600.0,
+        "average latency per load instruction": 51.077078683035715,
+        "average conflict cycles per instruction": 0.0,
+        "shared memory access efficiency": 100.0,
+        "Achieved waves": 8192.0,
+        "Dispatched waves": 8192.0,
+        "AP MTE Duty ratio": 71.50720704717475,
+        "AP MMA Duty ratio": 7.287358679966853
+      },
+      "write_residual": 384.0
+    },
+    {
+      "stage": "candidate_profile",
+      "record": 2,
+      "rawSHA": "5485451e0fef47032ffe3c413d5726e43c77eabd3ffccb7c056c4255ce3f93bc",
+      "metrics": {
+        "L2C Hit Rate": 47.924680011593445,
+        "Global Memory Read bytes": 18867744.0,
+        "Global Memory Write bytes": 16777536.0,
+        "average latency per load instruction": 50.698416573660715,
+        "average conflict cycles per instruction": 0.0,
+        "shared memory access efficiency": 100.0,
+        "Achieved waves": 8192.0,
+        "Dispatched waves": 8192.0,
+        "AP MTE Duty ratio": 68.62921030550186,
+        "AP MMA Duty ratio": 6.994059648968342
+      },
+      "write_residual": 320.0
+    }
+  ],
+  "true_waits": {
+    "paired_owner.exit": "0",
+    "parent_profile_CLI_actualwait.exit": "0",
+    "candidate_profile_CLI_actualwait.exit": "0",
+    "parent_profile_observation/gate.exit": "0",
+    "candidate_profile_observation/gate.exit": "0"
+  },
+  "original_observer_handle_waits": [
+    0,
+    0
+  ],
+  "memory_samples": 638,
+  "samples_by_stage": {
+    "candidate_profile_observation": 319,
+    "parent_profile_observation": 319
+  },
+  "sampled_peak_bytes_not_upper_bound": 24021741568,
+  "oom_counters": [
+    3
+  ],
+  "inference": "same shared100/conflict0; no WG load latency reduction; variable duty. Does not identify cause of v230 native gain. No calibratedHBM/occupancy/solecause/full14/OJ claim."
+}

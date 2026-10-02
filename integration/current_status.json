@@ -29,7 +29,7 @@
     "all14_nonregression": "UNPROVEN"
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-02T22:50:25.929631+00:00",
+  "updated_at_utc": "2026-10-02T22:59:26.362162+00:00",
   "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
   "worker1": {
     "cases": [
@@ -42,7 +42,7 @@
     "last_closed_source_commit": "f6c34a93aa6c7167092ddede18073ff958bbed03",
     "last_result": "12ref PASS/4candidate, C93.834 vsCB13 93.668 +.177222%, bothround positive; rejected no retry;217hash/989samples/OOM13",
     "active_version": "v132",
-    "stage": "NATIVE GO first original C301 case8 SC fixed12; candidate source unchanged, v131 compile deferred until terminal",
+    "stage": "original132 native fixed12 live; first actual launcher verified, original toolapproval timeout preflight had0markers and never launched",
     "authorized_scope": "first originalcase8 B28-CB13-C301-C301-CB13-B28x2,4C12ref; all previous6G28OOM13 guards/no retry",
     "native_GO": true,
     "source_audit": "integration/reviews/v131-c6-source-leader-audit.json",
@@ -60,7 +60,9 @@
       8192
     ],
     "profile_GO": false,
-    "review_correction": "prior126terminaldefect claim camefromdisplaytruncation; originalsourcecorrect, onlyformattingchange"
+    "review_correction": "prior126terminaldefect claim camefromdisplaytruncation; originalsourcecorrect, onlyformattingchange",
+    "active_PID": 616017,
+    "active_starttime_ticks": 100496493
   },
   "worker2": {
     "cases": [
@@ -75,11 +77,11 @@
       13,
       14
     ],
-    "last_closed_version": "v230",
-    "last_closed_source_commit": "65ac028ed75a9f6a65166b9e98e31a0584f99fb0",
-    "active_version": "v231",
-    "source_SHA": "4d90055cb7bde627fb3678739e1e4b1655ccea3732fc671566b589663d4cdbee",
-    "source_header": "v230",
+    "last_closed_version": "v231",
+    "last_closed_source_commit": "7a1dc6b3a8378f2692283894c06635a2446265f4",
+    "active_version": "v232",
+    "source_SHA": "1d038ce6cd14ace06178c8398e19e88f7c4f7955118c74b8add4370410d20685",
+    "source_header": "v232 SOURCEONLY",
     "actual_resource": [
       38,
       20,
@@ -88,15 +90,16 @@
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "PROFILE GO first fixed P84 C8 then C230 C8, parent wait0/rawgate0 required before candidate; no native/source edits",
-    "authorized_scope": "2 fixed MCProfiler CLI/4planned primary; driver573pos8/tool8b counts2/10metrics; all prior3G28OOM3 guards/no retry",
+    "stage": "PREP ONLY C5 boundedindex compile helpers; independent source/65536vectors proof andOJvalidator0 verified; no import/compile/native/profile",
+    "authorized_scope": "minimum C5 compile helper text preparation only, no new heavy work",
     "native_GO": false,
     "approval": "integration/reviews/v231-c8-profile-approval.json",
-    "last_result": "C8 selectedlocal39.685 vsP84 40.4785 -1.960300%, bothround negative/nonoverlap;12ref PASS4C;233hash1007samples/OOM3",
-    "runtime_audit": "integration/reviews/v230-c8-closed-leader-audit.json",
+    "last_result": "pairedC8 4raw10finite explicitFalse/104SHA/638samples/allwait0/OOM3, same shared100/conf0/noWG latency reduction, nosolecause",
+    "runtime_audit": "integration/reviews/v231-c8-profile-leader-audit.json",
     "compile_GO": false,
-    "profile_GO": true,
-    "retained_local_gain": "v230 C8 -1.960300%; SC/full14/OJ unproven"
+    "profile_GO": false,
+    "retained_local_gain": "v230 C8 -1.960300%; SC/full14/OJ unproven",
+    "source_audit": "integration/reviews/v232-c5-source-leader-audit.json"
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
@@ -117,7 +120,7 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-smoke/report.md"
   },
-  "leader_next": "Review v132 C8 crossSC helper, preserve all14 nonregression gate; v131 C6 bounded-index source reviewed, compile later without overlap; review v231 counters without HBM/occupancy causality claims.",
+  "leader_next": "Wait same verified132 originalSC handle; review232 C5 firstcompile helper, then131 C6 compile after132 terminal; preserve full14 nonregression gate and best113.",
   "pending_integration": {
     "version": "v300",
     "path": "/root/tilelang-metax/race_tests/nsa/submission/v300_leader_c9_bounded_index_full14_sc-16g-2/submission.py",
@@ -136,6 +139,8 @@
     "source_SHA": "85192e76d8fee464a8dbfe41d5ec95d3a2a3688e5dc1c29b7803c6ff63253f6d",
     "status": "first original native selectedC8 SC fixed12 authorized; full14 unproven/no promotion",
     "only_C8_changed": true,
-    "other13_CB13_unchanged": true
+    "other13_CB13_unchanged": true,
+    "commit": "f23209082fc43ecabcda0f07bb5a1cbf5ac1052f",
+    "branch": "code/integration-c8-review"
   }
 }
