@@ -1,0 +1,49 @@
+{
+  "CPP_SHA": "42c055290859c64a3d50d5f31688c8fec0c1c99265bd68ebe7ccb31bc5017d31",
+  "actual_host_shared_bytes": 10368,
+  "source_logical_shared_sum_bytes": 10496,
+  "actual_Max_Den_alias_float_region": [
+    1536,
+    1568
+  ],
+  "Num_float_region_start": 1568,
+  "exact_evidence": [
+    {
+      "line": 98,
+      "text": "    ((float*)buf_dyn_shmem)[((((((int)threadIdx.x) >> 6) * 16) + (((int)threadIdx.x) & 63)) + 1536)] = maximum[0];"
+    },
+    {
+      "line": 100,
+      "text": "  __syncthreads();"
+    },
+    {
+      "line": 101,
+      "text": "  maximum[0] = max(((float*)buf_dyn_shmem)[((((int)threadIdx.x) & 15) + 1536)], ((float*)buf_dyn_shmem)[((((int)threadIdx.x) & 15) + 1552)]);"
+    },
+    {
+      "line": 144,
+      "text": "    ((float*)buf_dyn_shmem)[((((((int)threadIdx.x) >> 6) * 16) + (((int)threadIdx.x) & 63)) + 1536)] = denominator[0];"
+    },
+    {
+      "line": 146,
+      "text": "  __syncthreads();"
+    },
+    {
+      "line": 186,
+      "text": "      *(float4*)(((float*)buf_dyn_shmem) + (((((((int)threadIdx.x) & 15) * 64) + (chunk_4 * 16)) + (((((int)threadIdx.x) & 63) >> 4) * 4)) + 1568)) = *(float4*)(numerator + (chunk_4 * 4));"
+    },
+    {
+      "line": 189,
+      "text": "  __syncthreads();"
+    },
+    {
+      "line": 191,
+      "text": "    denominator[0] = (((float*)buf_dyn_shmem)[((((int)threadIdx.x) & 15) + 1536)] + ((float*)buf_dyn_shmem)[((((int)threadIdx.x) & 15) + 1552)]);"
+    }
+  ],
+  "crosswarp_read_before_overwrite_risk": "Fastwarp Denwrite144 can overwriteMax before otherwarp Maxread101; CTA146 isafterwrite andcannotprotectpreviousread. Source distinctbuffers/CTA4 notenough whenallocator aliases.",
+  "no_measured_runtime_corruption_or_causal_performance_claim": true,
+  "oldgeometry_gate1_not_relaxed": true,
+  "new_resource_IR_native_attempts": 0,
+  "source738_unchanged": true
+}
