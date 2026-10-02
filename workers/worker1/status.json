@@ -1,8 +1,8 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T10:02:33.802527+00:00",
+  "utc": "2026-10-02T10:16:19.421229+00:00",
   "source_branch": "codex-power-v28-base",
-  "last_closed_source_commit": "bdadf18ed069e06e2c30468d002cc0d5e97d2793",
+  "last_closed_source_commit": "3ff4611a668b109e30d66f23d063b5c6fc1232b6",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
@@ -11,34 +11,12 @@
     12
   ],
   "current": {
-    "version": "v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2",
-    "phase": "fixedonce8case risk running",
-    "candidate_source_v104_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
-    "masterPID": 388657,
-    "active": {
-      "index": 4,
-      "variant": "power_v104",
-      "pid": 390688,
-      "phase": "native_original_risk_subset"
-    },
-    "case_order": [
-      4,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13
-    ],
-    "planned32C96inclusive": true,
-    "terminal_processes": 3,
-    "clean_inclusive_refs": 24,
-    "clean_candidate_refs": 8,
-    "OOM13_baseline": true,
-    "old168_andallfailures_notmerged": true,
-    "no_Meta_profile_kernel_2ndheavy": true,
-    "no_peer_code_plan_edit": true
+    "phase": "closedrisk_no_liveheavy",
+    "source_v104_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "source_commit": "3ff4611a668b109e30d66f23d063b5c6fc1232b6",
+    "all_self_jobs_terminal": true,
+    "newkernel_edits": 0,
+    "no_activePID": true
   },
   "history": {
     "v101": {
@@ -136,11 +114,27 @@
       "C13_round2_positive": true,
       "OOM13_unchanged": true,
       "no_OJ_or_mainpromotion": true
+    },
+    "v109": {
+      "commit": "3ff4611a668b109e30d66f23d063b5c6fc1232b6",
+      "fixed_once32C96clean": true,
+      "OOM13_stable": true,
+      "C12_vs84_pct": -4.513049365147349,
+      "C11_vs84_pct": 0.7602713426340714,
+      "C11_both_rounds_positive": true,
+      "other_round_positive_retained": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "no_more_risk": true,
+      "no_OJ_mainpromotion": true
     }
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
-  "next": "ownnew diagnostic plan/source-only feasibility + peer thenleader review; no heavyGO yet",
-  "last_closed_version": "v108_worker1_reallocated_memory_budget_all14_sc-16g-2",
-  "last_closed_status": "completed_fixed_native_all14_C12_improved_positive_parent_deltas_retained"
+  "next": "limited parentC11 resource andcandidate/parent codegen proposal + peer/leader review",
+  "last_closed_version": "v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2",
+  "last_closed_status": "fixed_risk_completed_C12_improved_C11_positive_no_regression_not_demonstrated"
 }
