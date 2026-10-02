@@ -1,8 +1,8 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T04:32:54.859148+00:00",
+  "utc": "2026-10-02T04:54:18.623054+00:00",
   "source_branch": "codex-power-v28-base",
-  "last_closed_source_commit": "694b2e0650d4f203b41c946effe9f7d56350795d",
+  "last_closed_source_commit": "805ca04d159974d096d17733cad92b8ae742fa33",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
@@ -11,57 +11,20 @@
     12
   ],
   "current": {
-    "version": "v103_worker1_s1_d128_operand_lifetimes_sc-16g-2",
-    "case": 6,
-    "phase": "one fixed native screen running",
-    "source_sha256": "2a56f48e011d50cb0de4401d851161fd9d314cf03327f4f399e10389cfc5e7e0",
-    "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
-    "master_pid": 277023,
-    "active_native_pid": 278961,
-    "active_job_index": 8,
-    "completed_terminal_jobs": 7,
-    "actual_candidate_ref_records": 2,
-    "actual_total_ref_records": 7,
-    "planned_candidate_refs": 4,
-    "planned_total_refs": 12,
-    "metadata_attention_and_reference_calls": 0,
-    "resources": {
-      "command": [
-        "/opt/maca/mxgpu_llvm/bin/mxcc",
-        "-x",
-        "maca",
-        "-device-obj",
-        "-O3",
-        "-lineinfo",
-        "--offload-arch=xcore1000",
-        "-std=c++17",
-        "-I/root/tilelang-metax/src",
-        "-use-fast-math",
-        "-D__FAST_HALF_CVT__",
-        "-resource-usage",
-        "-o",
-        "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/resources/candidate_case6.mcbin",
-        "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/codegen_precompile/power_v103/case6_stage1.device.cpp"
-      ],
-      "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/codegen_precompile/power_v103/case6_stage1.device.cpp",
-      "device_sha256": "61f9773fc256f4bfc81f427760cfc9f7512988d7961ebcca231d0f97455e10a3",
-      "host_sha256": "b138df6c88a6de13e8dedff593135b2a7c1355be0f0dfa225b07227ec44dd2d8",
-      "MT": 90,
-      "ST": 24,
-      "static_shared_bytes": 0,
-      "dynamic_shared_bytes": 8192,
-      "stack_bytes": 0,
-      "static_max_warps": 5,
-      "not_measured_occupancy": true,
-      "actual_num16": true,
-      "resource_gate_pass": true
-    },
-    "global16B_actual": true,
-    "num16_actual": true,
-    "OOM_baseline": 11,
-    "initial_static_argument_failure": "sourcefilename typo,initialstatic/stage1 retained;manifest-only validator recovery0,no metadata rerun",
-    "no_adaptive_retries": true,
-    "no_automatic_formal": true
+    "phase": "v103 closed; next C12 proposal evidence only",
+    "active_job_pid": null,
+    "all_owned_jobs_terminal": true,
+    "candidate_sha256": "2a56f48e011d50cb0de4401d851161fd9d314cf03327f4f399e10389cfc5e7e0",
+    "candidate_refs": 4,
+    "total_refs": 12,
+    "native_all12_terminal0": true,
+    "OOM11_unchanged": true,
+    "median_us": 96.1,
+    "parent_median_us": 93.581,
+    "vs_parent_pct": 2.691785725734925,
+    "all_candidate_above_all_parent": true,
+    "corrected_ranges_overlap": false,
+    "no_formal": true
   },
   "history": {
     "v101": {
@@ -82,5 +45,7 @@
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
-  "next": "fixed12 actual results review; no formal without leader"
+  "next": "investigate C12 allQK-score32 then globalsoftmax/P32 thenPV; peer andleader review beforeedit",
+  "last_closed_version": "v103_worker1_s1_d128_operand_lifetimes_sc-16g-2",
+  "last_closed_status": "rejected_case6_latency_regression_vs_v084"
 }
