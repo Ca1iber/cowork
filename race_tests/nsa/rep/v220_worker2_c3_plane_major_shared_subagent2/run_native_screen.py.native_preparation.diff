@@ -1,0 +1,82 @@
+--- approved218/run_native_screen.py
++++ C3v220/run_native_screen.py
+@@ -4,15 +4,13 @@
+ root=U.root;r=U.r;h=U.h
+ nplan=json.loads((r/'native_screen_plan.json').read_text());pplan=U.plan
+ expected_OOM=3
+-sources={'baseline_v28':(root/'race_tests/nsa/submission.py','42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd'),'parent_v084':(root/pplan['numerical_parent'],pplan['parent_sha256']),'power_v218':(Path(pplan['candidate_path']),'21332fbff1793eda669c5d37533b02a183685e85061393265596b19fdb313d52')}
++sources={'baseline_v28':(root/'race_tests/nsa/submission.py','42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd'),'parent_v084':(root/pplan['numerical_parent'],pplan['parent_sha256']),'power_v220':(Path(pplan['candidate_path']),'f306db56959d7919932fbecace3dd2fef78cfd6df42014e9fea596bfbc2d1279')}
+ sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+ runner=Path(nplan['runner']);assert sha(runner)==nplan['runnerSHA']
+ for p,s in sources.values():assert sha(p)==s
+-assert json.loads((r/'CPU_native_prerequisite_gate.json').read_text())['CPU_math_geometry_lifetime_gate']==0
+-assert (r/'CPU_gate.exit').read_text().strip()=='0'
+-old217=root/'race_tests/nsa/rep/v217_worker2_c8_qk_shared_store16_branch_subagent2'
+-assert (old217/'compile_chain.exit').read_text().strip()=='0'
+-assert json.loads((old217/'metadata_mechanism_gate.json').read_text())['mechanism_gate']==1
++assert json.loads((r/'metadata_semantic_gate.json').read_text())['gate']==0
++assert (r/'metadata_semantic_gate.exit').read_text().strip()=='0'
++assert (r/'compile_chain.exit').read_text().strip()=='0'
+ expected_shared=json.loads((root/'race_tests/nsa/rep/v203_worker2_whole_cgroup_import_subagent2/shared_inputs_final.json').read_text())
+ assert all(sha(root/p)==q for p,q in expected_shared.items())
+ with (r/'native_screen_once.guard').open('x') as f:f.write(datetime.datetime.now(datetime.timezone.utc).isoformat()+'\n')
+@@ -48,7 +46,7 @@
+   try:
+    if pre['oom_kill']!=expected_OOM:raise RuntimeError('ADMISSION_EXPECTED_OOM_MISMATCH')
+    if pre['usage_bytes']>pplan['admission_usage_bytes'] or U.heavy(pre,{os.getpid():observer_identity}):raise RuntimeError('ADMISSION_REFUSED_USAGE_OR_UNOWNED_HEAVY')
+-   env={**os.environ,'PYTHONPATH':str(root)+':'+str(root/'race_tests/nsa'),'NSA_VARIANT_SOURCE':str(source),'NSA_RESULTS_PATH':str(csvpath),'NSA_CASES':'8'}
++   env={**os.environ,'PYTHONPATH':str(root)+':'+str(root/'race_tests/nsa'),'NSA_VARIANT_SOURCE':str(source),'NSA_RESULTS_PATH':str(csvpath),'NSA_CASES':'3'}
+    argv=['/opt/conda/bin/python','-S',str(h/'native_exec.py')];job['launcher_argv']=argv;job['native_argv']=['/opt/conda/bin/python',str(runner)]
+    log=logpath.open('w');proc=subprocess.Popen(argv,stdin=subprocess.PIPE,cwd=root,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+    d=U.info(proc.pid);assert d and d['exe'];owned[proc.pid]=d;job.update({'pid':proc.pid,'starttime_ticks':d['starttime_ticks'],'pgid':d['pgid'],'exe':d['exe']})
+@@ -92,7 +90,7 @@
+         owned[q['pid']]=q;changed=True
+      snap['observed_owned_identities']=[{k:q[k] for k in ['pid','ppid','pgid','starttime_ticks','exe']} for q in owned.values()]
+      stream.write(json.dumps(snap)+'\n');stream.flush();samples+=1
+-     U.save('live_stage.json',{'stage':'fixed_C8_native_observed','run':run,'variant':label,'pid':proc.pid,'observerPID':os.getpid(),'sample_count':samples,'utc':snap['utc'],'usage_bytes':snap['usage_bytes'],'oom':snap['oom_kill']})
++     U.save('live_stage.json',{'stage':'fixed_C3_native_observed','run':run,'variant':label,'pid':proc.pid,'observerPID':os.getpid(),'sample_count':samples,'utc':snap['utc'],'usage_bytes':snap['usage_bytes'],'oom':snap['oom_kill']})
+      if critical_reason:reason=critical_reason
+      elif snap['usage_bytes']>=pplan['runtime_stop_usage_bytes']:reason='WHOLE_CGROUP_PRESSURE_THRESHOLD'
+      elif snap['oom_kill']!=expected_OOM:reason='OOM_COUNTER_INCREMENT'
+@@ -132,11 +130,11 @@
+    job.setdefault('stop_reason',terminal_reason);job['terminal_guard_reason']=terminal_reason
+    if proc is not None:job['owned_termination_actions']+=terminate_owned(proc,owned)
+   local=list(csv.DictReader(csvpath.open())) if csvpath.exists() else []
+-  valid=len(local)==1 and local[0].get('status')=='PASS' and int(local[0]['case'])==8 and tuple(int(local[0][key]) for key in ['B','SEQ_LEN','H','HQ','D','S','block_size'])==(2,4096,1,16,64,1,16) and math.isfinite(float(local[0]['latency_ms'])) and float(local[0]['latency_ms'])>0
++  valid=len(local)==1 and local[0].get('status')=='PASS' and int(local[0]['case'])==3 and tuple(int(local[0][key]) for key in ['B','SEQ_LEN','H','HQ','D','S','block_size'])==(1,256,1,16,128,1,16) and math.isfinite(float(local[0]['latency_ms'])) and float(local[0]['latency_ms'])>0
+   job['csv_valid']=valid;job['inner_Killed']=bool(logpath.exists() and any(x.strip()=='Killed' for x in logpath.read_text().splitlines()))
+   job['source_hash_unchanged']=sha(source)==expected;job['runner_hash_unchanged']=sha(runner)==nplan['runnerSHA']
+   job['shared_hashes_unchanged']=all(sha(root/p)==s for p,s in expected_shared.items())
+-  if valid:raw_rows.append({'case':8,'run':run,'round':1 if run<=6 else 2,'variant':label,'latency_ms':local[0]['latency_ms'],'status':'PASS'});job['reference_records']=1
++  if valid:raw_rows.append({'case':3,'run':run,'round':1 if run<=6 else 2,'variant':label,'latency_ms':local[0]['latency_ms'],'status':'PASS'});job['reference_records']=1
+   clean=valid and job.get('exit')==0 and not job.get('stop_reason') and job['oom_after']==job['oom_before'] and not job['inner_Killed'] and job['source_hash_unchanged'] and job['runner_hash_unchanged'] and job['shared_hashes_unchanged']
+   job['clean_full_reference_record']=int(clean)
+   if clean:rows.append(raw_rows[-1])
+@@ -149,21 +147,21 @@
+ finally:
+  if lock_taken:fcntl.flock(lock,fcntl.LOCK_UN)
+  lock.close()
+- with (r/'screen_case8_subagent2.csv').open('w',newline='') as f:
++ with (r/'screen_case3_subagent2.csv').open('w',newline='') as f:
+   w=csv.DictWriter(f,fieldnames=['case','run','round','variant','latency_ms','status']);w.writeheader();w.writerows(rows)
+  complete=stop is None and len(jobs)==12
+- summary={'complete12jobs':complete,'job_stop':stop,'actual_full_references':{'candidate':sum(q['variant']=='power_v218' for q in rows),'total':len(rows)},'protocol':'fixed12/sourcefresh/wholecg0.5s/nativeW10R50unchanged','raw_PASS_CSV_record_count':len(raw_rows),'raw_all_records':raw_rows,'automatic_formal':False,'currentOOM':U.snapshot('summary')['oom_kill'],'sourceSHA':sources['power_v218'][1]}
++ summary={'complete12jobs':complete,'job_stop':stop,'actual_full_references':{'candidate':sum(q['variant']=='power_v220' for q in rows),'total':len(rows)},'protocol':'fixed12/sourcefresh/wholecg0.5s/nativeW10R50unchanged','raw_PASS_CSV_record_count':len(raw_rows),'raw_all_records':raw_rows,'automatic_formal':False,'currentOOM':U.snapshot('summary')['oom_kill'],'sourceSHA':sources['power_v220'][1]}
+  if complete:
+   vals={s:[float(q['latency_ms'])*1000 for q in rows if q['variant']==s] for s in sources};med={s:statistics.median(q) for s,q in vals.items()}
+   rounds=[]
+   for rnd in [1,2]:
+    m={s:statistics.median(float(q['latency_ms'])*1000 for q in rows if q['round']==rnd and q['variant']==s) for s in sources}
+-   rounds.append({'round':rnd,'medians_us':m,'candidate_vs_parent_pct':(m['power_v218']/m['parent_v084']-1)*100})
+-  overlap=not(max(vals['power_v218'])<min(vals['parent_v084']) or max(vals['parent_v084'])<min(vals['power_v218']))
++   rounds.append({'round':rnd,'medians_us':m,'candidate_vs_parent_pct':(m['power_v220']/m['parent_v084']-1)*100})
++  overlap=not(max(vals['power_v220'])<min(vals['parent_v084']) or max(vals['parent_v084'])<min(vals['power_v220']))
+   status='target_screen_passed_for_leader_review_only'
+-  if med['power_v218']>=med['parent_v084'] or med['power_v218']>=med['baseline_v28']:status='rejected_target_median_not_faster'
++  if med['power_v220']>=med['parent_v084'] or med['power_v220']>=med['baseline_v28']:status='rejected_target_median_not_faster'
+   elif overlap or any(x['candidate_vs_parent_pct']>0 for x in rounds):status='inconclusive_target_overlap_or_round_regression'
+-  summary.update({'status':status,'samples_us':vals,'medians_us':med,'candidate_vs_parent_pct':(med['power_v218']/med['parent_v084']-1)*100,'rounds':rounds,'ranges_overlap':overlap})
++  summary.update({'status':status,'samples_us':vals,'medians_us':med,'candidate_vs_parent_pct':(med['power_v220']/med['parent_v084']-1)*100,'rounds':rounds,'ranges_overlap':overlap})
+  else:summary['status']='failed_runtime_or_validation_selected_screen'
+  U.save('screen_summary.json',summary);(r/'screen.exit').write_text('0\n' if complete else '1\n');U.save('live_stage.json',{'stage':'screen_terminal','status':summary['status']})
+  print(json.dumps(summary),flush=True)
