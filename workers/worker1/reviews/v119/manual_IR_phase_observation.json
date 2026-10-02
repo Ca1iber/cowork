@@ -1,0 +1,147 @@
+{
+  "IR_SHA": "814d143b46a1736702e5a3fd150c254a4f745010eee29def9857ac1001616979",
+  "phases": [
+    {
+      "phase": "V0_load_MMA",
+      "line_range": [
+        1135,
+        1181
+      ],
+      "observation": "eight 4half LDSloads alternate with eight PV MFMA calls; key0 zero initializer then key1 previous accumulator",
+      "context": "for.cond528.preheader"
+    },
+    {
+      "phase": "lower_divide_sync_cast_store",
+      "line_range": [
+        1184,
+        1365
+      ],
+      "observation": "valid/invalid phi zero, sixteen F32 divide by same denominator; warp barrier1222 then F16 cast/packed-i64 stores1260/1295/1330/1365"
+    },
+    {
+      "phase": "V1_load_MMA",
+      "line_range": [
+        1368,
+        1428
+      ],
+      "observation": "shared half plane base constants2048/2112/2176/2240; eight V1 reads+PV, new zero initializers and originalkey1 accumulators; after all lower stores"
+    },
+    {
+      "phase": "upper_store_final_sync_gather",
+      "line_range": [
+        1497,
+        1620
+      ],
+      "observation": "upper stores1497/1529/1561/1593; warp1595 followed sharedgather1614/1618 and LLVM scalarized i64 globalstore align16; sourceCPP packeduint4 retained, finalISA width UNAVAILABLE"
+    }
+  ],
+  "selected_exact_lines": [
+    {
+      "line": 1107,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !226"
+    },
+    {
+      "line": 1127,
+      "text": "  br i1 %or.cond, label %if.end584, label %for.cond528.preheader, !dbg !230"
+    },
+    {
+      "line": 1135,
+      "text": "  %v_operand.sroa.0.0.copyload = load <4 x half>, ptr addrspace(3) %add.ptr564, align 8, !dbg !233"
+    },
+    {
+      "line": 1136,
+      "text": "  %192 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %v_operand.sroa.0.0.copyload, <4 x half> %probabilities.sroa.0.0, <4 x float> zeroinitializer), !dbg !234"
+    },
+    {
+      "line": 1181,
+      "text": "  %202 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %v_operand.sroa.0.0.copyload.3.1, <4 x half> %probabilities.sroa.9.0, <4 x float> %198), !dbg !234"
+    },
+    {
+      "line": 1185,
+      "text": "  %numerator.sroa.122.0 = phi <4 x float> [ zeroinitializer, %if.end505 ], [ %202, %for.cond528.preheader ], !dbg !229"
+    },
+    {
+      "line": 1188,
+      "text": "  %numerator.sroa.0.0 = phi <4 x float> [ zeroinitializer, %if.end505 ], [ %199, %for.cond528.preheader ], !dbg !229"
+    },
+    {
+      "line": 1193,
+      "text": "  %div = fdiv contract float %numerator.sroa.0.0.vec.extract, %denominator.sroa.0.1, !dbg !237"
+    },
+    {
+      "line": 1222,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !244"
+    },
+    {
+      "line": 1260,
+      "text": "  store i64 %__7.sroa.0.0.insert.insert, ptr addrspace(3) %add.ptr670, align 8, !dbg !278"
+    },
+    {
+      "line": 1295,
+      "text": "  store i64 %__7.sroa.0.0.insert.insert.1, ptr addrspace(3) %add.ptr670.1, align 8, !dbg !278"
+    },
+    {
+      "line": 1330,
+      "text": "  store i64 %__7.sroa.0.0.insert.insert.2, ptr addrspace(3) %add.ptr670.2, align 8, !dbg !278"
+    },
+    {
+      "line": 1365,
+      "text": "  store i64 %__7.sroa.0.0.insert.insert.3, ptr addrspace(3) %add.ptr670.3, align 8, !dbg !278"
+    },
+    {
+      "line": 1366,
+      "text": "  br i1 %or.cond, label %if.end622.1, label %for.cond528.preheader.1, !dbg !230"
+    },
+    {
+      "line": 1371,
+      "text": "  %add547.11080 = or disjoint i32 %add540.1, 2048, !dbg !231"
+    },
+    {
+      "line": 1375,
+      "text": "  %v_operand.sroa.0.0.copyload.11083 = load <4 x half>, ptr addrspace(3) %add.ptr564.11082, align 8, !dbg !233"
+    },
+    {
+      "line": 1376,
+      "text": "  %254 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %v_operand.sroa.0.0.copyload.11083, <4 x half> %probabilities.sroa.0.0, <4 x float> zeroinitializer), !dbg !234"
+    },
+    {
+      "line": 1406,
+      "text": "  %261 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %v_operand.sroa.0.0.copyload.11075.1, <4 x half> %probabilities.sroa.9.0, <4 x float> %254), !dbg !234"
+    },
+    {
+      "line": 1421,
+      "text": "  %264 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %v_operand.sroa.0.0.copyload.3.1.1, <4 x half> %probabilities.sroa.9.0, <4 x float> %260), !dbg !234"
+    },
+    {
+      "line": 1425,
+      "text": "  %numerator.sroa.122.1 = phi <4 x float> [ zeroinitializer, %if.end584 ], [ %264, %for.cond528.preheader.1 ], !dbg !229"
+    },
+    {
+      "line": 1497,
+      "text": "  store i64 %__7.sroa.0.0.insert.insert.11133, ptr addrspace(3) %add.ptr670.11137, align 8, !dbg !278"
+    },
+    {
+      "line": 1593,
+      "text": "  store i64 %__7.sroa.0.0.insert.insert.3.1, ptr addrspace(3) %add.ptr670.3.1, align 8, !dbg !278"
+    },
+    {
+      "line": 1595,
+      "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !283"
+    },
+    {
+      "line": 1614,
+      "text": "  %320 = load i64, ptr addrspace(3) %add.ptr714, align 8, !dbg !287"
+    },
+    {
+      "line": 1618,
+      "text": "  %321 = load i64, ptr addrspace(3) %add.ptr714.1, align 8, !dbg !287"
+    },
+    {
+      "line": 1620,
+      "text": "  store i64 %320, ptr addrspace(1) %add.ptr735, align 16, !dbg !289"
+    }
+  ],
+  "observed_instruction_order_only": true,
+  "not_final_CFG_or_physical_register_liveness_proof": true,
+  "no_new_correctness_or_speed_claim": true
+}
