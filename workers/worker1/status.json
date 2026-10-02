@@ -1,6 +1,6 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T19:27:42.708350+00:00",
+  "utc": "2026-10-02T19:36:38.207392+00:00",
   "source_branch": "codex-power-v28-base",
   "last_closed_source_commit": "d24d341172e9a389d40797bad15c3ff11c24c0dd",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
@@ -12,7 +12,7 @@
   ],
   "current": {
     "version": "v124_worker1_c12_lane_contiguous_partial_num_sc-16g-2",
-    "phase": "onlyNum2indices_source_compile_text_ready_no_GO",
+    "phase": "compile5wait0_originalC12_native_text_ready_no_GO",
     "sourceSHA": "1c1b2041feb8709fa3313b738ce6cdcaa6e2b8291fabbb32a186a9708a183a0c",
     "header124_jit64reduction_CTA4_math_global_preserved": true,
     "source_validator_wait0": true,
@@ -22,7 +22,25 @@
     "review_archive": "/tmp/nsa_worker1_v124_source_compile_review_378b9a959fa9.tar.gz",
     "archiveSHA": "46a6ce967ab9152f02f2e1c3b097c450b8ef194145cf79278801c9c37c64d8ff",
     "newheavy_attempts": 0,
-    "no_activePID": true
+    "no_activePID": true,
+    "compile5wait0": true,
+    "resource": [
+      68,
+      42,
+      7,
+      0,
+      10496
+    ],
+    "IR_SHA": "b1052bf660ea0b0d512753b527f20f2636ef6688e2ccca14ae2ab14ee06b837b",
+    "actualCPP_NumW_NumR_only2addresslines_changed": true,
+    "actualNum1024_headfeaturecorrespondence_align16": true,
+    "actual_codegen_package": "/tmp/nsa_worker1_v124_actual_codegen_b1052bf660ea.tar.gz",
+    "actual_codegen_SHA": "e9b372fe69a31a59922255ed42877f1cd93f04d252fea043f7720ccad53ddf00",
+    "native_review_package": "/tmp/nsa_worker1_v124_native_review_03868ac24548.tar.gz",
+    "native_review_SHA": "b2873e04774d9079cabbd4819f91a823372c48bcc158699b43ea657ad96f7cb1",
+    "native_plan_SHA": "d5d7e371f01d8b0987354a7121e13e24e20b36114242306543df15d2904516e1",
+    "native_manifest_SHA": "03868ac24548e6d61a7d1d14fdfdd921cb572127570811da3380c20bbcff9149",
+    "actual_native_refs": 0
   },
   "history": {
     "v101": {
@@ -384,7 +402,7 @@
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
-  "next": "Leader actual124source/finitecompile review, no newGPU untilGO",
+  "next": "LeaderactualCPPIR andfixednative12reviewGO; no extraheavy orsource",
   "last_closed_version": "v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2",
   "last_closed_status": "finite_raw_profile_completed_shared_regression_observed_no_unique_cause"
 }

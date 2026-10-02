@@ -1,0 +1,12 @@
+{
+  "actual_changed_lines": [
+    "-      *(float4*)(((float*)buf_dyn_shmem) + (((((((int)threadIdx.x) & 15) * 64) + (chunk_4 * 16)) + (((((int)threadIdx.x) & 63) >> 4) * 4)) + 1600)) = *(float4*)(numerator + (chunk_4 * 4));",
+    "+      *(float4*)(((float*)buf_dyn_shmem) + (((chunk_4 * 256) + ((((int)threadIdx.x) & 63) * 4)) + 1600)) = *(float4*)(numerator + (chunk_4 * 4));",
+    "-        float4 v__5 = *(float4*)(((float*)buf_dyn_shmem) + (((((((int)threadIdx.x) & 15) * 64) + (chunk_5 * 16)) + (((((int)threadIdx.x) & 63) >> 4) * 4)) + 1600));",
+    "+        float4 v__5 = *(float4*)(((float*)buf_dyn_shmem) + (((chunk_5 * 256) + ((((int)threadIdx.x) & 63) * 4)) + 1600));"
+  ],
+  "only_Num_Writer_Reader_addresses_changed": true,
+  "math_lifetime_and_control_body_otherwise_sameCPP": true,
+  "actualNumpointproof": "/root/tilelang-metax/race_tests/nsa/rep/v124_worker1_c12_lane_contiguous_partial_num_sc-16g-2/actual_Num_value_correspondence.json",
+  "no_new_correctness_or_latency_claim": true
+}
