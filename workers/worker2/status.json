@@ -20,84 +20,12 @@
     14
   ],
   "current": {
-    "version": "v212_worker2_c8_direct_k_operand_subagent2",
-    "state": "V212_COMPILE_COMPLETE_NATIVE_PREPARED_V213_TRACE_PREPARED",
-    "source_base_commit": "f581f927d21b47950e7e9914e2833f502050d963",
-    "parent_sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
-    "only_key": [
-      2,
-      4096,
-      1,
-      16,
-      64,
-      1,
-      16,
-      true
-    ],
-    "mechanism": "K-only directglobal4x8B removeKsharedprepostsync; keepQ/PV/Num16/math",
-    "expected_fullvalid_sync": 5,
-    "expected_MMA_shfl": [
-      8,
-      4
-    ],
-    "proof_stdlib_actualwait": 0,
-    "exact_K_coordinates": 1024,
-    "peer_received": true,
-    "candidate_created": true,
-    "source_kernel_or_heavy_GO": false,
-    "new_import_compile_profile_native": [
-      0,
-      0,
-      0,
-      0
-    ],
-    "current_live_heavy": 0,
-    "active_PIDs": [],
-    "candidateSHA": "66871ec89712c58e3432485fcd63601175c7de0b1f29bfe27f4a586dd5a528e4",
-    "source_static_strict_actualwait": [
-      0,
-      0
-    ],
-    "inverse_Kstage_wholefactory_AST_equal": true,
-    "source_sync5": true,
-    "source_kernel_GO": "source-only executed",
-    "new_heavy_GO": false,
-    "cycle_trace_stage": "readonlyCLI_mapper_inventory_and_parentC8proposal_only",
-    "cycle_trace_capture_count": 0,
-    "compile_original_stage_waits": [
-      0,
-      0,
-      0
-    ],
-    "metadata_exports": 2,
-    "candidate_resource_IR_exits": [
-      0,
-      0
-    ],
-    "resource_parent_candidate": [
-      [
-        42,
-        20,
-        8,
-        0
-      ],
-      [
-        48,
-        24,
-        8,
-        0
-      ]
-    ],
-    "semantic_initial_recovery_actualwait": [
-      1,
-      0
-    ],
-    "semantic_gate": 0,
-    "native_execution_GO": false,
-    "native_refs": [
-      0,
-      0
-    ]
+    "version": "v214",
+    "stage": "prepared_parent_C8_profile_await_leader_GO",
+    "live_processes": 0,
+    "heavy_started": false,
+    "proposalSHA": "c1a2da6e1c92b333569edfcee521bdee053c055389bd621a20da028be49e85af",
+    "launch_manifestSHA": "70918d17a010f804643495ae254b302b13fb5850c8ab3213b97a00ea71a1e663"
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -1463,6 +1391,21 @@
       "no_retest_full14_promotion": true,
       "caveat": "one completed observation protocol is not allfutureexit/OOM/namespace guarantee;not purekernel latency",
       "utc": "2026-10-02T13:51:43.531294+00:00"
+    },
+    "v212": {
+      "status": "closed_rejected",
+      "source_commit": "47949a830ba311a23182f09dbbfc2a39a0b68c07",
+      "candidate_sourceSHA": "66871ec89712c58e3432485fcd63601175c7de0b1f29bfe27f4a586dd5a528e4",
+      "cleanrefs_candidate_total": [
+        4,
+        12
+      ],
+      "OOM": [
+        3,
+        3
+      ],
+      "median_vs_parent_pct": 7.0906949352179005,
+      "native_original_wait": 0
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
@@ -1543,5 +1486,9 @@
     "sampler_own_command_only": true,
     "hardware_process_exclusive_scope": "UNAVAILABLE",
     "must_not_parallel_other_heavy": true
+  },
+  "cycletrace": {
+    "worker2_v213": "not_executed_no_retry",
+    "leader_unique_trial": "queue_xpid ERROR/255, no valid NSA trace; cause unproved"
   }
 }
