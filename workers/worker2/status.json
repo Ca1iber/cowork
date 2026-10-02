@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T11:00:48.364817+00:00",
-  "state": "SOURCE_ONLY_COMPLETE_METADATA_PROPOSAL",
+  "timestamp_utc": "2026-10-02T11:07:26.924809+00:00",
+  "state": "METADATA_HELPER_FAILURE_BEFORE_IMPORT_WAIT_REVIEW",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v209_worker2_c14_linear_query_grid_subagent2",
-    "state": "SOURCE_ONLY_COMPLETE_METADATA_PROPOSAL",
+    "state": "METADATA_HELPER_FAILURE_BEFORE_IMPORT_WAIT_REVIEW",
     "only_key": [
       2,
       512,
@@ -170,7 +170,17 @@
       "token = linear_query // kv_heads % seq_len",
       "kv_head = linear_query % kv_heads"
     ],
-    "metadata_execution_GO": false
+    "metadata_execution_GO": "initial attempted and stopped",
+    "metadata_initial_actualwait": 1,
+    "metadata_initial_gate": 1,
+    "metadata_initial_factory_exports": 0,
+    "metadata_initial_heavy_import": 0,
+    "metadata_initial_observer_child_PIDs": [
+      207461,
+      207462
+    ],
+    "metadata_error": "NameError r before tilelang import",
+    "metadata_recovery_started": false
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -700,7 +710,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader audit source0719 and bounded_metadata_proposal before any new import/compiler",
+  "next_step": "Leader helper-only recovery review; no automatic rerun or native.",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
