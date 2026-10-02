@@ -1,8 +1,8 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T22:20:48.103941+00:00",
+  "utc": "2026-10-02T22:36:37.935846+00:00",
   "source_branch": "codex-power-v28-base",
-  "last_closed_source_commit": "c6396464b8ea606885596d3b74b324ca6bf8d838",
+  "last_closed_source_commit": "f6c34a93aa6c7167092ddede18073ff958bbed03",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
@@ -11,8 +11,8 @@
     12
   ],
   "current": {
-    "version": "v130_worker1_leader_C300_four_source_all14_validation_sc-16g-2",
-    "phase": "closed_full224refs_correctness_runtime_performance_positive_deltas_no_promotion",
+    "version": "v129_worker1_c6_v4_original_native_screen_sc-16g-2",
+    "phase": "closed_originalC6_latency_rejected",
     "allselfjobs_terminal": true
   },
   "history": {
@@ -475,11 +475,25 @@
       "any_roundpositive_anycontrol_all14": true,
       "OOM13stable_2012samples_peak27556098048_notupperbound": true,
       "no_sourceprofile_codegen_or_promotion": true
+    },
+    "v129": {
+      "sourcecommit": "f6c34a93aa6c7167092ddede18073ff958bbed03",
+      "same127cfeb_header127": true,
+      "original12native_allwait0_naive4C12PASS": true,
+      "Cmedian93_834_CB1393_668_vs_pct": ".177221676559764273818166300",
+      "roundpositive": [
+        ".378580697746747745139045300",
+        ".180045810472487082512118500"
+      ],
+      "ranges_overlap": true,
+      "rejected_no_extra_native_or_profile": true,
+      "memory989samples_peak27280719872_notupperbound_OOM13": true,
+      "128resource100_22_max4_notdecreased_falsifier_preserved": true
     }
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
-  "next": "Await leader independent raw/source audit and separate v129 originalC6 nativeGO; no heavy active",
-  "last_closed_version": "v130_worker1_leader_C300_four_source_all14_validation_sc-16g-2",
-  "last_closed_status": "all14_runtime_correctness_complete_performance_positive_deltas_retained_no_promotion"
+  "next": "Leader131 source-only C6 boundedK/Vindex from originalCB13 hybridV16 Num32;awaitpeerbeforeedit,noheavyuntilnewGO",
+  "last_closed_version": "v129_worker1_c6_v4_original_native_screen_sc-16g-2",
+  "last_closed_status": "rejected_latency_originalC6_4candidate12inclusive_complete"
 }
