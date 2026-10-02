@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T12:07:47.359698+00:00",
-  "state": "V210_SOURCE_ONLY_COMPLETE_METADATA_PLAN_WAIT_REVIEW",
+  "timestamp_utc": "2026-10-02T12:45:12.261665+00:00",
+  "state": "V210_METADATA_COMPLETE_NATIVE_PREPARED_WAIT_GO",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v210_worker2_c8_serial_query_pair_subagent2",
-    "state": "V210_SOURCE_ONLY_COMPLETE_METADATA_PLAN_WAIT_REVIEW",
+    "state": "V210_METADATA_COMPLETE_NATIVE_PREPARED_WAIT_GO",
     "only_key": [
       2,
       4096,
@@ -50,12 +50,6 @@
     "peer_advisory_received": true,
     "candidate_created": true,
     "kernel_or_heavy_GO": false,
-    "new_import_compile_profile_native": [
-      0,
-      0,
-      0,
-      0
-    ],
     "current_live_heavy": 0,
     "active_PIDs": [],
     "candidate_path": "/tmp/nsa_worker2_v210_c8_serial_query_pair.py",
@@ -70,7 +64,51 @@
     "source_sync_sites": 8,
     "planned_executed_syncs_pair": 15,
     "kernel_GO": "source-only executed",
-    "heavy_GO": false
+    "heavy_GO": "once metadata+candidateSDK complete",
+    "metadata_actualwait": 0,
+    "metadata_exports": 2,
+    "generated_validator_exits": [
+      0,
+      0
+    ],
+    "SDK_resource_IR_exits": [
+      0,
+      0
+    ],
+    "backend_actualwait": 0,
+    "metadata_semantic_actualwait": 0,
+    "semantic_gate": 0,
+    "parent_resource_IR_reused": true,
+    "resource_parent_candidate": [
+      [
+        42,
+        20,
+        8,
+        0
+      ],
+      [
+        56,
+        28,
+        8,
+        0
+      ]
+    ],
+    "IR_fullvalid_MMA_sync_shfl": [
+      16,
+      15,
+      8
+    ],
+    "IR_counts_static_sites_with_valid_predicates": true,
+    "actual_address_checks": 2097152,
+    "native_prepared_stdlib_actualwait": 0,
+    "native_execution_GO": false,
+    "native_processes_references": [
+      0,
+      0
+    ],
+    "other13_source_changed": false,
+    "other13_generated_device": "UNAVAILABLE_not_exported",
+    "source_same_not_nonreg_guarantee": true
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -694,7 +732,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader review actualsource f98e and boundedmetadata eab5 before import/compiler",
+  "next_step": "Leader review prepared native archive; no startup before explicitGO",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
