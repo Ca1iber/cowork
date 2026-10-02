@@ -1,0 +1,44 @@
+{
+  "version": "v131_worker1_c6_bounded_kv_index_sc-16g-2",
+  "UTC": "2026-10-02T22:38:13.195482+00:00",
+  "phase": "leader_authorized_source_only_no_heavy",
+  "parent": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+    "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+  },
+  "factory": "_make_power_s1_v_hybrid_pack",
+  "official_case": 6,
+  "official_tuple": [
+    8,
+    1024,
+    1,
+    16,
+    128,
+    1,
+    32,
+    true
+  ],
+  "core": "originalCB13 V16/Num32, not rejected V4",
+  "observed": "actualf186 K/V globaluint4 uses int64 batch131072+rawblockstart128",
+  "hypothesis": "validguard bounded_start=min(max(rawstart,0),992) onlyK/Vrow can give compiler signed32 intermediatebounds; scaledflat batch+row expectedi32 thenlateGEP64",
+  "unchanged": [
+    "Idx*32/rawuniformguard/causalmask",
+    "Num32/P8/Score8/32MMA/V16",
+    "global16B/producers/layout/output/sync",
+    "correctparentJIT and18ASTprefix/other13"
+  ],
+  "risks": [
+    "extra minmax/ALU/reg or compile elimination/no width change",
+    "native numerical/reference failure orlatency regression",
+    "officialvalid/sentinelcontract only, no arbitrary overflow extension"
+  ],
+  "falsifiers": [
+    "actualscaledarith still64 orneededclamp notmaterialized",
+    "global/layout/math/sync drift",
+    "stack/spill or originalnative fail/regress"
+  ],
+  "scope": "source+stdlibproof/limitedcompileTEXTonly, noTorch/import/SDK/GPU/native/profileuntilseparateGO",
+  "predicted_stride_half_max": 1048575,
+  "last_byte_inclusive": 2097151,
+  "no_other_kernel_or_peer_edit": true
+}
