@@ -1,0 +1,63 @@
+[
+  {
+    "kind": "resource",
+    "argv": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-device-obj",
+      "-resource-usage",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v216_worker2_c8_qk_shared_store16_jit_subagent2/codegen/power_v216/case8_stage1.device.mcbin",
+      "/root/tilelang-metax/race_tests/nsa/rep/v216_worker2_c8_qk_shared_store16_jit_subagent2/codegen/power_v216/case8_stage1.device.cpp"
+    ],
+    "input_CPP_SHA": "1a5a42c3e8ef2344387c3a22c1fc2df251ce5144291f31e17beebd5fa706232a",
+    "sourceSHA": "c09eecf87438a63cd47319b0eac420fb723985483f3126d2f8fce1d2cf55769d",
+    "SDK_SHA": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25",
+    "attention_reference_native": [
+      0,
+      0,
+      0
+    ],
+    "PID": 322008,
+    "returncode": 0
+  },
+  {
+    "kind": "optimized_ir",
+    "argv": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-maca-device-only",
+      "-S",
+      "-emit-llvm",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v216_worker2_c8_qk_shared_store16_jit_subagent2/codegen/power_v216/case8_stage1.device.ll",
+      "/root/tilelang-metax/race_tests/nsa/rep/v216_worker2_c8_qk_shared_store16_jit_subagent2/codegen/power_v216/case8_stage1.device.cpp"
+    ],
+    "input_CPP_SHA": "1a5a42c3e8ef2344387c3a22c1fc2df251ce5144291f31e17beebd5fa706232a",
+    "sourceSHA": "c09eecf87438a63cd47319b0eac420fb723985483f3126d2f8fce1d2cf55769d",
+    "SDK_SHA": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25",
+    "attention_reference_native": [
+      0,
+      0,
+      0
+    ],
+    "PID": 322019,
+    "returncode": 0
+  }
+]
