@@ -1,0 +1,43 @@
+{
+  "version": "v230",
+  "owner": "worker2",
+  "scope": "currentC8 sourceonly afterpeer advisory",
+  "parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "case": 8,
+  "key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "mechanism": "bounded_start inoriginalvalidguard onlyK/Vrow, test32bitindexarithmetic inclbatchoffset",
+  "evidence": "C9sameS1D64mechanism actuali32 and stable\u22121.364%; noautomatic C8transfer",
+  "required_bounds": {
+    "batch": [
+      0,
+      1
+    ],
+    "blockidx": [
+      0,
+      255
+    ],
+    "block_start": [
+      0,
+      4080
+    ],
+    "flat_half_max": 524287
+  },
+  "preserved": "other13parent14AST/Idxguardmask/global16B/layout/7sync/Num16/Pden/peroutputmath",
+  "no_sourcecopy_fromoldC9_asproof": true,
+  "falsifiers": [
+    "batch arithmetic still64/noeffect",
+    "clamp/resourcecost",
+    "originalnaive/address/alignmentfailure",
+    "native regression/noise"
+  ],
+  "noheavy_until_compileGO": true
+}
