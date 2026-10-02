@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-device-obj",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-resource-usage",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v082_codex_power_s1_d128_dense_sc-16g-2/target_case3.mcbin",
+    "/root/tilelang-metax/race_tests/nsa/rep/v082_codex_power_s1_d128_dense_sc-16g-2/codegen_target/power_v082/case3_stage1.device.cpp"
+  ],
+  "MT": 66,
+  "ST": 20,
+  "stack_bytes": 0,
+  "dynamic_shared_bytes_host": 4096,
+  "static_maxwarps": 7,
+  "not_measured_occupancy": true
+}

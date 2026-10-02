@@ -1,0 +1,13 @@
+{
+  "source": "race_tests/nsa/submission/v081_codex_power_s24_lazy_dispatch_sc-16g-2/submission.py",
+  "audit_mode": "interface AST only; prior team algorithms/class bodies omitted",
+  "run_kernel_top_nodes": [
+    "Assign key",
+    "Assign kernel=_KERNEL_CACHE.get(key)",
+    "If kernel is None",
+    "Call kernel with5tensorargs"
+  ],
+  "percall_class_creation_hypothesis": "falsified: class definitions are under cachemiss branch,not hot path",
+  "no_earlycache_optimization_needed": true,
+  "not_a_timing_cause_proof": true
+}

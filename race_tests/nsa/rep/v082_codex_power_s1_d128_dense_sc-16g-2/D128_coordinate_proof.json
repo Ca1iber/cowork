@@ -1,0 +1,16 @@
+{
+  "three_shared_bijections": 2048,
+  "Q_K_Global_copy_full_unique": 2048,
+  "QK_operand_coords_full_unique": 2048,
+  "V_producer_full_unique": 2048,
+  "PV_operand_coords_full_unique": 2048,
+  "output_scatter_gather": "same proven2048 QKread/prodcounter coordinates,contiguous4store/gather packs",
+  "MMA_vector_chunk_offsets": "0..7,4 elements/vec;local q/num/Vop extent32",
+  "global_queryheads": "16 rows only,exactC3 H1/HQ16",
+  "valid_block_rows_16_inbounds": true,
+  "shared_half_capacity": 2048,
+  "expected_QK_MFMA": 8,
+  "expected_PV_MFMA": 8,
+  "math": "single selected block,global max perhead,FP16Pscale256,FP32den sum of consumed P,FP32PV",
+  "not_native_correctness_proof": true
+}

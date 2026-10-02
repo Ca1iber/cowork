@@ -1,0 +1,80 @@
+{
+  "case": 3,
+  "shape": {
+    "B": 1,
+    "SEQ_LEN": 256,
+    "H": 1,
+    "HQ": 16,
+    "D": 128,
+    "S": 1,
+    "block_size": 16,
+    "is_causal": true
+  },
+  "source_sha256": "5d972adf74e54b7c9a1e7c546f85bde7c44fb9c335391d5fa9b4ca9d454c3d43",
+  "device": "exactv28 fallback verified samecase81",
+  "MT": 52,
+  "ST": 20,
+  "dynamic_shared_bytes": 8192,
+  "static_maxwarps": 8,
+  "not_measured_occupancy": true,
+  "samples": [
+    {
+      "file": "/root/tilelang-metax/race_tests/nsa/rep/v082_codex_power_s1_d128_dense_sc-16g-2/mcprof_parent_preprobe/report_bundle/1_native_sparse_attention_kernel.txt.json",
+      "raw": {
+        "L2C Hit Rate": "56.51%",
+        "Global Memory Read bytes": "1,181,024.0byte",
+        "Global Memory Write bytes": "1,048,896.0byte",
+        "average latency per load instruction": 43.67,
+        "average conflict cycles per instruction": 7.16,
+        "shared memory access efficiency": "35.24%",
+        "Achieved waves": 253.0,
+        "Dispatched waves": 256.0,
+        "AP MTE Duty ratio": "10.45%",
+        "AP MMA Duty ratio": "1.49%"
+      },
+      "numeric": {
+        "L2C Hit Rate": 56.51,
+        "Global Memory Read bytes": 1181024.0,
+        "Global Memory Write bytes": 1048896.0,
+        "average latency per load instruction": 43.67,
+        "average conflict cycles per instruction": 7.16,
+        "shared memory access efficiency": 35.24,
+        "Achieved waves": 253.0,
+        "Dispatched waves": 256.0,
+        "AP MTE Duty ratio": 10.45,
+        "AP MMA Duty ratio": 1.49
+      },
+      "footprint_consistent": true
+    },
+    {
+      "file": "/root/tilelang-metax/race_tests/nsa/rep/v082_codex_power_s1_d128_dense_sc-16g-2/mcprof_parent_preprobe/report_bundle/2_native_sparse_attention_kernel.txt.json",
+      "raw": {
+        "L2C Hit Rate": "56.49%",
+        "Global Memory Read bytes": "1,181,024.0byte",
+        "Global Memory Write bytes": "1,048,896.0byte",
+        "average latency per load instruction": 43.81,
+        "average conflict cycles per instruction": 7.16,
+        "shared memory access efficiency": "35.24%",
+        "Achieved waves": 254.0,
+        "Dispatched waves": 256.0,
+        "AP MTE Duty ratio": "10.34%",
+        "AP MMA Duty ratio": "1.47%"
+      },
+      "numeric": {
+        "L2C Hit Rate": 56.49,
+        "Global Memory Read bytes": 1181024.0,
+        "Global Memory Write bytes": 1048896.0,
+        "average latency per load instruction": 43.81,
+        "average conflict cycles per instruction": 7.16,
+        "shared memory access efficiency": 35.24,
+        "Achieved waves": 254.0,
+        "Dispatched waves": 256.0,
+        "AP MTE Duty ratio": 10.34,
+        "AP MMA Duty ratio": 1.47
+      },
+      "footprint_consistent": true
+    }
+  ],
+  "profiler_gradFalse_native_gradTrue": "not runtime equivalence proof",
+  "scope": "256waves+1MiB necessary consistency,not exclusive guarantee"
+}

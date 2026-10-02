@@ -1,0 +1,75 @@
+{
+  "perfList": {
+    "ISU": [
+      [
+        1,
+        "AP_PERF_WAVES"
+      ],
+      [
+        73,
+        "AP_PERF_BSM_WR_CYCLES"
+      ],
+      [
+        74,
+        "AP_PERF_BSM_ATOMIC_CYCLES"
+      ],
+      [
+        52,
+        "AP_PERF_INST_CYCLES_VALU_4CYCLES"
+      ],
+      [
+        78,
+        "AP_PERF_BSM_CONFLICT_CYCLES"
+      ],
+      [
+        28,
+        "AP_PERF_INST_BSM_RD"
+      ]
+    ],
+    "RM": [
+      [
+        4,
+        "RM_PERF_DISPATCHED_WAVES_P0"
+      ],
+      [
+        36,
+        "RM_PERF_DISPATCHED_WAVES_P2"
+      ],
+      [
+        52,
+        "RM_PERF_DISPATCHED_WAVES_P3"
+      ],
+      [
+        20,
+        "RM_PERF_DISPATCHED_WAVES_P1"
+      ]
+    ],
+    "L2C": [
+      [
+        270,
+        "perf_dnoc_wrreq_32B_high"
+      ],
+      [
+        271,
+        "perf_dnoc_wrreq_64B"
+      ],
+      [
+        46,
+        "perf_dnoc_rdreq_32B"
+      ],
+      [
+        19,
+        "perf_hit"
+      ]
+    ]
+  },
+  "action": "config,disable,read_dump,enable,kernel_collect",
+  "conditions": {
+    "kernelnames": [],
+    "include": false,
+    "is_perkernel": true,
+    "is_multi_device": false,
+    "profile_from_start": true,
+    "counts": 4
+  }
+}
