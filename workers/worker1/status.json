@@ -1,6 +1,6 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T05:35:18.442145+00:00",
+  "utc": "2026-10-02T05:50:19.284893+00:00",
   "source_branch": "codex-power-v28-base",
   "last_closed_source_commit": "805ca04d159974d096d17733cad92b8ae742fa33",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
@@ -12,68 +12,88 @@
   ],
   "current": {
     "version": "v104_worker1_s8_global_softmax_sc-16g-2",
-    "case": 12,
-    "phase": "one fixed native screen running",
-    "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
-    "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
-    "master_pid": 294206,
-    "active_native_pid": 297032,
-    "completed_native_terminal0": 10,
-    "actual_candidate_refs": 4,
-    "actual_total_refs": 10,
-    "resource": {
-      "command": [
-        "/opt/maca/mxgpu_llvm/bin/mxcc",
-        "-x",
-        "maca",
-        "-device-obj",
-        "-O3",
-        "-lineinfo",
-        "--offload-arch=xcore1000",
-        "-std=c++17",
-        "-I/root/tilelang-metax/src",
-        "-use-fast-math",
-        "-D__FAST_HALF_CVT__",
-        "-resource-usage",
-        "-o",
-        "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/resources/candidate_case12.mcbin",
-        "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/codegen_precompile/power_v104/case12_stage1.device.cpp"
-      ],
-      "device_sha256": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13",
-      "MT": 68,
-      "ST": 44,
-      "static_shared_bytes": 0,
-      "dynamic_shared_bytes": 2048,
-      "stack_bytes": 0,
-      "static_max_warps": 7,
-      "not_measured_occupancy": true,
-      "resource_gate_pass": true
+    "phase": "same exact archive formal168 once running",
+    "source_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "candidate_archive_path": "/root/tilelang-metax/race_tests/nsa/submission/v104_worker1_s8_global_softmax_sc-16g-2/submission.py",
+    "master_pid": 300011,
+    "active_job": {
+      "index": 9,
+      "case": 1,
+      "variant": "power_v104",
+      "pid": 302141
     },
-    "optimized_IR_index_proof": {
-      "IR_path": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/codegen_optimized/power_v104.ll",
-      "IR_sha256": "de3bcdfdac453609d68d33a9250f835720ffdc48661f03df20d69b1712b79277",
-      "kernel_MMA_static_call_sites": 64,
-      "expected_QK_sites": 32,
-      "expected_PV_sites": 32,
-      "kernel_loop_metadata_sites": [],
-      "kernel_alloca_instructions": [],
-      "kernel_private_addrspace5_sites": [],
-      "Score_P_data_offsets_after_O3": "buffer indexing eliminated into scalar/vector SSA;8selections expanded;no runtime selector loop/localbuffer indexing survives",
-      "compiler_capture_attention_reference_checks": 0,
-      "stack_resource_bytes": 0,
-      "proof_limit": "optimized compiler IR plus resource,not decoded machine ISA or runtime occupancy;conditional invalidslots can skip MMAs",
-      "gate_pass": true
-    },
-    "actual_widths": {
-      "Q": 16,
-      "K": 16,
-      "V": 8,
-      "Output": 16
-    },
+    "formal_terminal_jobs": 8,
+    "formal_actual_candidate_refs": 2,
+    "formal_actual_total_refs": 8,
+    "formal_planned_candidate_refs": 56,
+    "formal_planned_total_refs": 168,
     "OOM_baseline": 11,
-    "no_adaptive_retry": true,
-    "no_automatic_formal": true,
-    "no_final_latency_or_no_reg_verdict": true
+    "selected_C12_screen": {
+      "scope": "C12 selectedscreen only",
+      "source_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+      "candidate_full_reference_checks": 4,
+      "control_inclusive_checks": 12,
+      "all_native_terminal_zero": true,
+      "OOM_before": 11,
+      "OOM_after": 11,
+      "latency": {
+        "samples_us": {
+          "baseline_v28": [
+            "83.292000",
+            "83.067000",
+            "82.739000",
+            "83.466000"
+          ],
+          "parent_v084": [
+            "71.951000",
+            "72.653000",
+            "72.581000",
+            "71.956000"
+          ],
+          "power_v104": [
+            "68.859000",
+            "68.644000",
+            "69.023000",
+            "69.560000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "83.179500",
+          "parent_v084": "72.268500",
+          "power_v104": "68.941000"
+        },
+        "vs_parent_pct": "-4.604357361782796100652428100",
+        "ranges_overlap": false,
+        "rounds": [
+          {
+            "round": 1,
+            "medians_us": {
+              "baseline_v28": "83.179500",
+              "parent_v084": "72.302000",
+              "power_v104": "68.751500"
+            },
+            "vs_parent_pct": "-4.910652540731929960443694500"
+          },
+          {
+            "round": 2,
+            "medians_us": {
+              "baseline_v28": "83.102500",
+              "parent_v084": "72.268500",
+              "power_v104": "69.291500"
+            },
+            "vs_parent_pct": "-4.119360440579228847976642660"
+          }
+        ],
+        "any_round_positive": false,
+        "diagnostic_conclusion": "fixedsample lower/separated; full14 and OJ unverified",
+        "new_protocol_not_directly_comparable_to_old_v101_absolute_us": true
+      },
+      "not_no_regression_or_OJ_verdict": true
+    },
+    "risk_plan_preregistered_not_started": true,
+    "metadata_profile_after_native_serial": true,
+    "no_auto_mainpromotion_or_OJ_claim": true,
+    "no_adaptive_retries": true
   },
   "history": {
     "v101": {
@@ -94,7 +114,7 @@
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
-  "next": "finish fixed12 then leaderreview full14 only if supported",
+  "next": "complete formal168 or stoponruntimefailure, thenleaderreview positivecase risk/codegen/profile gates",
   "last_closed_version": "v103_worker1_s1_d128_operand_lifetimes_sc-16g-2",
   "last_closed_status": "rejected_case6_latency_regression_vs_v084"
 }
