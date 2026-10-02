@@ -1,0 +1,68 @@
+{
+  "candidate_SHA": "be7566ae3fc67c278c62f356cf051f11732ed3b2e8899a76b405153e1c4b100c",
+  "parentCB13_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+  "parent18ASTprefix_equal": true,
+  "newfactory_and_one_exactC12_dispatch_only": true,
+  "CTA_barriers": [
+    {
+      "line": 1511,
+      "conditional_ancestors": []
+    },
+    {
+      "line": 1551,
+      "conditional_ancestors": []
+    },
+    {
+      "line": 1563,
+      "conditional_ancestors": []
+    },
+    {
+      "line": 1594,
+      "conditional_ancestors": []
+    }
+  ],
+  "warp_barriers": [
+    {
+      "line": 1522,
+      "conditional_ancestors": [
+        "raw_index >= 0 and raw_index < seq_len // block_size and (raw_index <= token // block_size)"
+      ]
+    },
+    {
+      "line": 1531,
+      "conditional_ancestors": [
+        "raw_index >= 0 and raw_index < seq_len // block_size and (raw_index <= token // block_size)"
+      ]
+    },
+    {
+      "line": 1569,
+      "conditional_ancestors": [
+        "raw_index >= 0 and raw_index < seq_len // block_size and (raw_index <= token // block_size)"
+      ]
+    },
+    {
+      "line": 1580,
+      "conditional_ancestors": [
+        "raw_index >= 0 and raw_index < seq_len // block_size and (raw_index <= token // block_size)"
+      ]
+    },
+    {
+      "line": 1604,
+      "conditional_ancestors": [
+        "warp_id == 0"
+      ]
+    },
+    {
+      "line": 1609,
+      "conditional_ancestors": [
+        "warp_id == 0"
+      ]
+    }
+  ],
+  "CTA4_unconditionally_reachable_source": true,
+  "actual_generated_CPP_IR": "UNAVAILABLE/no compilation yet",
+  "other13_source_AST_preserved_not_latencywaiver": true,
+  "other13_actualdevice_identity": "UNAVAILABLE forv121/no export",
+  "fullvalid_math_call_count_model": "32/warp x2=64/query; actualcodegen pending",
+  "all_newheavy_attention_native_refs": 0
+}

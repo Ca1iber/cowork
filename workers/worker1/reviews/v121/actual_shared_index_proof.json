@@ -1,0 +1,51 @@
+{
+  "actual_AST_slots_executed_purestdlib": true,
+  "private_KV_regions": [
+    {
+      "warp": 0,
+      "kind": "qk_slot",
+      "min_half": 1024,
+      "max_half": 2047,
+      "unique1024": true
+    },
+    {
+      "warp": 0,
+      "kind": "v_slot",
+      "min_half": 1024,
+      "max_half": 2047,
+      "unique1024": true
+    },
+    {
+      "warp": 1,
+      "kind": "qk_slot",
+      "min_half": 2048,
+      "max_half": 3071,
+      "unique1024": true
+    },
+    {
+      "warp": 1,
+      "kind": "v_slot",
+      "min_half": 2048,
+      "max_half": 3071,
+      "unique1024": true
+    }
+  ],
+  "Q_Output_region": [
+    0,
+    1024
+  ],
+  "Q_Output_disjoint_KV": true,
+  "warp1_partial_Num_float_bijection1024": true,
+  "each_Max_Den_producer_bijection32": true,
+  "selected0..7_unique_two_groups": true,
+  "all16rows_64features_in_each_region": true,
+  "complete_qk4_vectors_and_Vconsumer4_vectors_covered": true,
+  "causal_bounds": "raw_index0..63 <=token//16 beforemultiply, block_start+15<=1023; key-levelmask sameparent",
+  "numerical": "sameglobmax/actualF16P forden/PV, groupFP32merge changesorder; originalnaive not runyet",
+  "actual_backend_sync_alignment_vector_MFMA": "PENDING boundedcompile noGPUauthorized",
+  "vector_align_bounds_full4half_proof0": true,
+  "QK512vectors": 512,
+  "V512vectors": 512,
+  "Output256vectors": 256,
+  "partialNum256float4_vectors": 256
+}
