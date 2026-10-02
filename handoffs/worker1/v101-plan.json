@@ -1,0 +1,49 @@
+{
+  "version": "v101_worker1_s2_fixed_selection_sc-16g-2",
+  "target_cases": [
+    10
+  ],
+  "candidate_edited": false,
+  "state": "awaiting_leader_hypothesis_review",
+  "parent_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "evidence": {
+    "waves": 256,
+    "read_bytes": 593056,
+    "write_bytes": 524608,
+    "l2_hit_pct": 68.86,
+    "shared_nonconflict_pct": 100,
+    "conflict_cycles": 0,
+    "WG_load_cycles": [
+      45.87,
+      45.83
+    ],
+    "MTE_pct": [
+      15.42,
+      15.19
+    ],
+    "MMA_pct": [
+      1.87,
+      1.84
+    ]
+  },
+  "resources": {
+    "MT": 82,
+    "ST": 24,
+    "dynamic_shared_bytes": 2048,
+    "stack_bytes": 0,
+    "static_max_warps": 5,
+    "not_measured_occupancy": true
+  },
+  "hypothesis_path": "/root/tilelang-metax/race_tests/nsa/experiments/v101_worker1_s2_fixed_selection_sc-16g-2/hypothesis.md",
+  "mechanism": "Q/K direct global->same MFMA register fragments, remove qk_fetch8 and 1Q+2K*2 staging warp syncs; unchanged V/output shared,64threads and sequential rounded-P online softmax",
+  "not_verified_bottleneck": "no dominant bound established from low duties",
+  "resource_gate": "stack>0 or staticmaxwarps<5 rejects before native screen",
+  "latency_gate": "fixed B-I-C-C-I-B x2 fourcandidate/twelvecontrols nativeW10R50, not belowparentmedian rejects, no repeat until win",
+  "correctness": "unchanged fullnaive_nsa1e-2,original inputs/dtype/seed; all13non-targetpaths same parent; full14 onlyafter target and leader review",
+  "risks": [
+    "global Q/K request coalescing can worsen",
+    "addressing/register pressure can increase",
+    "V/output shared sync retained",
+    "no v101 OJ evidence"
+  ]
+}
