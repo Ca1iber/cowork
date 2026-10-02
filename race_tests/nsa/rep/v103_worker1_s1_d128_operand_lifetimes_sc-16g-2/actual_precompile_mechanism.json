@@ -1,0 +1,96 @@
+{
+  "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/codegen_precompile/power_v103/case6_stage1.device.cpp",
+  "device_sha256": "61f9773fc256f4bfc81f427760cfc9f7512988d7961ebcca231d0f97455e10a3",
+  "selected_CPP_lines": [
+    {
+      "line": 21,
+      "text": "float numerator[16];"
+    },
+    {
+      "line": 30,
+      "text": "*(uint4*)(qk_fetch + 0) = *(uint4*)(Q + ((((((int)blockIdx.y) * 2097152) + (((int)blockIdx.x) * 2048)) + (part * 512)) + (((int)threadIdx.x) * 8)));"
+    },
+    {
+      "line": 36,
+      "text": "__syncwarp();"
+    },
+    {
+      "line": 40,
+      "text": "__syncwarp();"
+    },
+    {
+      "line": 43,
+      "text": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int64_t)((int)blockIdx.y)) * (int64_t)131072) + (((int64_t)part_1) * (int64_t)512)) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));"
+    },
+    {
+      "line": 49,
+      "text": "__syncwarp();"
+    },
+    {
+      "line": 57,
+      "text": "for (int key_tile = 0; key_tile < 2; ++key_tile) {"
+    },
+    {
+      "line": 67,
+      "text": "for (int key_tile_1 = 0; key_tile_1 < 2; ++key_tile_1) {"
+    },
+    {
+      "line": 87,
+      "text": "for (int key_tile_2 = 0; key_tile_2 < 2; ++key_tile_2) {"
+    },
+    {
+      "line": 125,
+      "text": "__syncwarp();"
+    },
+    {
+      "line": 127,
+      "text": "for (int key_tile_3 = 0; key_tile_3 < 2; ++key_tile_3) {"
+    },
+    {
+      "line": 129,
+      "text": "for (int plane = 0; plane < 2; ++plane) {"
+    },
+    {
+      "line": 132,
+      "text": "*(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((((int64_t)((int)blockIdx.y)) * (int64_t)131072) + (((int64_t)key_tile_3) * (int64_t)2048)) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)256)) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)row) * (int64_t)128)) + (((int64_t)plane) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));"
+    },
+    {
+      "line": 143,
+      "text": "__syncwarp();"
+    },
+    {
+      "line": 146,
+      "text": "for (int plane_1 = 0; plane_1 < 2; ++plane_1) {"
+    },
+    {
+      "line": 150,
+      "text": "*(float4*)(numerator + (i_1 * 4)) = make_float4(broadcast_var_3, broadcast_var_3, broadcast_var_3, broadcast_var_3);"
+    },
+    {
+      "line": 154,
+      "text": "for (int key_tile_4 = 0; key_tile_4 < 2; ++key_tile_4) {"
+    },
+    {
+      "line": 173,
+      "text": "if (plane_1 == 0) {"
+    },
+    {
+      "line": 174,
+      "text": "__syncwarp();"
+    },
+    {
+      "line": 184,
+      "text": "__syncwarp();"
+    },
+    {
+      "line": 191,
+      "text": "*(uint4*)(Output + ((((((int)blockIdx.y) * 2097152) + (((int)blockIdx.x) * 2048)) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+    }
+  ],
+  "actual_Num16": true,
+  "global_QKV16B_preserved": true,
+  "global_output16B_preserved": true,
+  "static_sync_occurrences": 7,
+  "register_resource_separately_measured": true,
+  "not_dynamic_lifetime_occupancy_or_latency_proof": true
+}

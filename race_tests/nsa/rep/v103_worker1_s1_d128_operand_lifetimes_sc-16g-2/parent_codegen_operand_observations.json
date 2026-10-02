@@ -1,0 +1,354 @@
+{
+  "source_path": "/root/tilelang-metax/race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2/codegen_formal/power_v084/case6_stage1.device.cpp",
+  "source_sha256": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d",
+  "arrays": [
+    {
+      "name": "denominator",
+      "dtype_cpp": "float",
+      "elements": 1,
+      "declaration_line": 11,
+      "textual_reference_lines": [
+        {
+          "line": 11,
+          "text": "float denominator[1];"
+        },
+        {
+          "line": 26,
+          "text": "denominator[0] = 0x0p+0f/*0.000000e+00*/;"
+        },
+        {
+          "line": 121,
+          "text": "denominator[0] = (denominator[0] + ((float)probabilities[element_2]));"
+        },
+        {
+          "line": 123,
+          "text": "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));"
+        },
+        {
+          "line": 124,
+          "text": "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));"
+        },
+        {
+          "line": 176,
+          "text": "numerator[i_3] = (numerator[i_3] / denominator[0]);"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "qk_fetch",
+      "dtype_cpp": "half_t",
+      "elements": 8,
+      "declaration_line": 12,
+      "textual_reference_lines": [
+        {
+          "line": 12,
+          "text": "half_t qk_fetch[8];"
+        },
+        {
+          "line": 30,
+          "text": "*(uint4*)(qk_fetch + 0) = *(uint4*)(Q + ((((((int)blockIdx.y) * 2097152) + (((int)blockIdx.x) * 2048)) + (part * 512)) + (((int)threadIdx.x) * 8)));"
+        },
+        {
+          "line": 33,
+          "text": "*(uint2*)(shared + (((((((((int)threadIdx.x) & 15) >> 3) * 1024) + (part * 256)) + ((((int)threadIdx.x) >> 4) * 64)) + (((((int)threadIdx.x) & 7) ^ (((part & 1) * 4) + (((int)threadIdx.x) >> 4))) * 8)) + (((pack ^ (part >> 1)) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack * 4));"
+        },
+        {
+          "line": 43,
+          "text": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int64_t)((int)blockIdx.y)) * (int64_t)131072) + (((int64_t)part_1) * (int64_t)512)) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));"
+        },
+        {
+          "line": 46,
+          "text": "*(uint2*)(shared + (((((((((int)threadIdx.x) & 15) >> 3) * 2048) + (part_1 * 256)) + ((((int)threadIdx.x) >> 4) * 64)) + (((((int)threadIdx.x) & 7) ^ (((part_1 & 1) * 4) + (((int)threadIdx.x) >> 4))) * 8)) + (((pack_1 ^ ((part_1 & 3) >> 1)) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack_1 * 4));"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "q_local",
+      "dtype_cpp": "half_t",
+      "elements": 32,
+      "declaration_line": 14,
+      "textual_reference_lines": [
+        {
+          "line": 14,
+          "text": "half_t q_local[32];"
+        },
+        {
+          "line": 38,
+          "text": "*(uint2*)(q_local + (chunk * 4)) = *(uint2*)(shared + (((((chunk >> 2) * 1024) + ((((int)threadIdx.x) & 15) * 64)) + (((((chunk & 3) * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (chunk >> 2)) * 4)));"
+        },
+        {
+          "line": 61,
+          "text": "*(((float16x4*)q_local) + chunk_1),"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "scores",
+      "dtype_cpp": "float",
+      "elements": 8,
+      "declaration_line": 15,
+      "textual_reference_lines": [
+        {
+          "line": 15,
+          "text": "float scores[8];"
+        },
+        {
+          "line": 53,
+          "text": "*(float4*)(scores + (i * 4)) = make_float4(broadcast_var, broadcast_var, broadcast_var, broadcast_var);"
+        },
+        {
+          "line": 60,
+          "text": "*(((float32x4*)scores) + key_tile) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)k_local) + 0),"
+        },
+        {
+          "line": 62,
+          "text": "*(((float32x4*)scores) + key_tile));"
+        },
+        {
+          "line": 72,
+          "text": "condval = scores[((key_tile_1 * 4) + element)];"
+        },
+        {
+          "line": 76,
+          "text": "scores[((key_tile_1 * 4) + element)] = condval;"
+        },
+        {
+          "line": 82,
+          "text": "maximum[0] = max(maximum[0], scores[element_1]);"
+        },
+        {
+          "line": 95,
+          "text": "float4 v_ = *(float4*)(scores + (key_tile_2 * 4));"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "maximum",
+      "dtype_cpp": "float",
+      "elements": 1,
+      "declaration_line": 16,
+      "textual_reference_lines": [
+        {
+          "line": 16,
+          "text": "float maximum[1];"
+        },
+        {
+          "line": 79,
+          "text": "maximum[0] = -MACART_INF_F;"
+        },
+        {
+          "line": 82,
+          "text": "maximum[0] = max(maximum[0], scores[element_1]);"
+        },
+        {
+          "line": 84,
+          "text": "maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 32, 64));"
+        },
+        {
+          "line": 85,
+          "text": "maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 16, 64));"
+        },
+        {
+          "line": 96,
+          "text": "float4 v__1 = make_float4(maximum[0], maximum[0], maximum[0], maximum[0]);"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "probabilities",
+      "dtype_cpp": "half_t",
+      "elements": 8,
+      "declaration_line": 17,
+      "textual_reference_lines": [
+        {
+          "line": 17,
+          "text": "half_t probabilities[8];"
+        },
+        {
+          "line": 117,
+          "text": "*(uint2*)(probabilities + (key_tile_2 * 4)) = __1;"
+        },
+        {
+          "line": 121,
+          "text": "denominator[0] = (denominator[0] + ((float)probabilities[element_2]));"
+        },
+        {
+          "line": 161,
+          "text": "*(((float16x4*)probabilities) + key_tile_4),"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "numerator",
+      "dtype_cpp": "float",
+      "elements": 32,
+      "declaration_line": 18,
+      "textual_reference_lines": [
+        {
+          "line": 18,
+          "text": "float numerator[32];"
+        },
+        {
+          "line": 147,
+          "text": "*(float4*)(numerator + (i_1 * 4)) = make_float4(broadcast_var_3, broadcast_var_3, broadcast_var_3, broadcast_var_3);"
+        },
+        {
+          "line": 160,
+          "text": "*(((float32x4*)numerator) + ((plane_1 * 4) + chunk_3)) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)v_operand) + chunk_3),"
+        },
+        {
+          "line": 162,
+          "text": "*(((float32x4*)numerator) + ((plane_1 * 4) + chunk_3)));"
+        },
+        {
+          "line": 171,
+          "text": "*(float4*)(numerator + (i_2 * 4)) = make_float4(broadcast_var_4, broadcast_var_4, broadcast_var_4, broadcast_var_4);"
+        },
+        {
+          "line": 176,
+          "text": "numerator[i_3] = (numerator[i_3] / denominator[0]);"
+        },
+        {
+          "line": 182,
+          "text": "shared_local_cast[element_3] = ((half_t)numerator[((chunk_4 * 4) + element_3)]);"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "k_local",
+      "dtype_cpp": "half_t",
+      "elements": 4,
+      "declaration_line": 19,
+      "textual_reference_lines": [
+        {
+          "line": 19,
+          "text": "half_t k_local[4];"
+        },
+        {
+          "line": 58,
+          "text": "*(uint2*)(k_local + 0) = *(uint2*)(shared + ((((((chunk_1 >> 2) * 2048) + (key_tile * 1024)) + ((((int)threadIdx.x) & 15) * 64)) + (((((chunk_1 & 3) * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (chunk_1 >> 2)) * 4)));"
+        },
+        {
+          "line": 60,
+          "text": "*(((float32x4*)scores) + key_tile) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)k_local) + 0),"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "v_fetch",
+      "dtype_cpp": "half_t",
+      "elements": 16,
+      "declaration_line": 20,
+      "textual_reference_lines": [
+        {
+          "line": 20,
+          "text": "half_t v_fetch[16];"
+        },
+        {
+          "line": 132,
+          "text": "*(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((((int64_t)((int)blockIdx.y)) * (int64_t)131072) + (((int64_t)key_tile_3) * (int64_t)2048)) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)256)) + (((int64_t)block_start) * (int64_t)128)) + (((int64_t)row) * (int64_t)128)) + (((int64_t)plane) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));"
+        },
+        {
+          "line": 137,
+          "text": "v_column[row_1] = v_fetch[((row_1 * 8) + col)];"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "v_column",
+      "dtype_cpp": "half_t",
+      "elements": 2,
+      "declaration_line": 21,
+      "textual_reference_lines": [
+        {
+          "line": 21,
+          "text": "half_t v_column[2];"
+        },
+        {
+          "line": 137,
+          "text": "v_column[row_1] = v_fetch[((row_1 * 8) + col)];"
+        },
+        {
+          "line": 139,
+          "text": "*(uint1*)(shared + (((((plane * 2048) + (col * 256)) + ((((int)threadIdx.x) & 7) * 32)) + ((((((((((int)threadIdx.x) & 31) >> 4) * 4) + (key_tile_3 * 2)) + (((int)threadIdx.x) >> 5)) ^ col) ^ ((((int)threadIdx.x) & 7) >> 1)) * 4)) + (((((int)threadIdx.x) & 15) >> 3) * 2))) = *(uint1*)(v_column + 0);"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "v_operand",
+      "dtype_cpp": "half_t",
+      "elements": 16,
+      "declaration_line": 22,
+      "textual_reference_lines": [
+        {
+          "line": 22,
+          "text": "half_t v_operand[16];"
+        },
+        {
+          "line": 155,
+          "text": "*(uint2*)(v_operand + (chunk_2 * 4)) = *(uint2*)(shared + (((((plane_1 * 2048) + ((((int)threadIdx.x) & 7) * 256)) + (chunk_2 * 64)) + (((((int)threadIdx.x) & 15) >> 3) * 32)) + ((((((((((int)threadIdx.x) & 31) >> 4) * 4) + (key_tile_4 * 2)) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) ^ chunk_2) * 4)));"
+        },
+        {
+          "line": 160,
+          "text": "*(((float32x4*)numerator) + ((plane_1 * 4) + chunk_3)) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)v_operand) + chunk_3),"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "shared_local_cast",
+      "dtype_cpp": "half_t",
+      "elements": 4,
+      "declaration_line": 23,
+      "textual_reference_lines": [
+        {
+          "line": 23,
+          "text": "half_t shared_local_cast[4];"
+        },
+        {
+          "line": 182,
+          "text": "shared_local_cast[element_3] = ((half_t)numerator[((chunk_4 * 4) + element_3)]);"
+        },
+        {
+          "line": 184,
+          "text": "*(uint2*)(shared + (((((chunk_4 >> 2) * 1024) + ((((int)threadIdx.x) & 15) * 64)) + (((((chunk_4 & 3) * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (chunk_4 >> 2)) * 4))) = *(uint2*)(shared_local_cast + 0);"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    },
+    {
+      "name": "output_fetch",
+      "dtype_cpp": "half_t",
+      "elements": 8,
+      "declaration_line": 24,
+      "textual_reference_lines": [
+        {
+          "line": 24,
+          "text": "half_t output_fetch[8];"
+        },
+        {
+          "line": 191,
+          "text": "*(uint2*)(output_fetch + (pack_2 * 4)) = *(uint2*)(shared + (((((((((int)threadIdx.x) & 15) >> 3) * 1024) + (part_2 * 256)) + ((((int)threadIdx.x) >> 4) * 64)) + (((((int)threadIdx.x) & 7) ^ (((part_2 & 1) * 4) + (((int)threadIdx.x) >> 4))) * 8)) + (((pack_2 ^ (part_2 >> 1)) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4)));"
+        },
+        {
+          "line": 193,
+          "text": "*(uint4*)(Output + ((((((int)blockIdx.y) * 2097152) + (((int)blockIdx.x) * 2048)) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+        }
+      ],
+      "not_compiler_or_dynamic_live_range": true
+    }
+  ],
+  "generated_CXX_observation_only": true,
+  "source_version": "exactparent84 formalexport",
+  "no_new_attention_or_ref": true
+}

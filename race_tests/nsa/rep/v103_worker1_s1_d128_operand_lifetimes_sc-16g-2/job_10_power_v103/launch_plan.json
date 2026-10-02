@@ -1,0 +1,34 @@
+{
+  "index": 10,
+  "variant": "power_v103",
+  "utc_before": "2026-10-02T04:33:40.845272+00:00",
+  "command": [
+    "/opt/conda/bin/python",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+  ],
+  "source": {
+    "path": "/tmp/nsa_power_v103_pv_plane.py",
+    "sha256": "2a56f48e011d50cb0de4401d851161fd9d314cf03327f4f399e10389cfc5e7e0"
+  },
+  "env_explicit": {
+    "MACA_PATH": "/opt/maca",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONWARNINGS": "ignore",
+    "PYTHONPATH": "/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa",
+    "NSA_VARIANT_SOURCE": "/tmp/nsa_power_v103_pv_plane.py",
+    "NSA_RESULTS_PATH": "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/job_10_power_v103/native_case6.csv",
+    "NSA_CASES": "6"
+  },
+  "planned_pid_file": "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/job_10_power_v103/native.pid",
+  "planned_pgid_file": "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/job_10_power_v103/native.pgid",
+  "monitor_file": "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/job_10_power_v103/memory_samples.jsonl",
+  "cgroup_before": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "2970910720\n",
+    "memory.max_usage_in_bytes": "34359869440\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+    "memory.failcnt": "2963204\n",
+    "oom_kill": 11
+  }
+}

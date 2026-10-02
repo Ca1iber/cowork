@@ -1,0 +1,48 @@
+{
+  "index": 4,
+  "variant": "power_v103",
+  "pid": 277813,
+  "pgid": 277813,
+  "utc_terminal": "2026-10-02T04:30:22.641779+00:00",
+  "native_exit": 0,
+  "cgroup_before": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "2969899008\n",
+    "memory.max_usage_in_bytes": "34359869440\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+    "memory.failcnt": "2963204\n",
+    "oom_kill": 11
+  },
+  "cgroup_after": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "2969243648\n",
+    "memory.max_usage_in_bytes": "34359869440\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+    "memory.failcnt": "2963204\n",
+    "oom_kill": 11
+  },
+  "csv": "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/job_04_power_v103/native_case6.csv",
+  "log": "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/job_04_power_v103/native.log",
+  "observed_PASS_records": 1,
+  "records": [
+    {
+      "case": "6",
+      "B": "8",
+      "SEQ_LEN": "1024",
+      "H": "1",
+      "HQ": "16",
+      "D": "128",
+      "S": "1",
+      "block_size": "32",
+      "latency_ms": "0.096384",
+      "status": "PASS"
+    }
+  ],
+  "samples": 21,
+  "stop_reason": null,
+  "source_hashes_after": {
+    "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "power_v103": "2a56f48e011d50cb0de4401d851161fd9d314cf03327f4f399e10389cfc5e7e0"
+  }
+}

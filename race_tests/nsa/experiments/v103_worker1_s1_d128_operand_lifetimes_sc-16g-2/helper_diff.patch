@@ -1,0 +1,62 @@
+--- parent84 ownhybridfactory
++++ s1_pv_plane_kernel.py
+@@ -4,7 +4,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_v_hybrid_pack(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s1_pv_plane_reuse(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 32 and is_causal
+     assert seq_len % block_size == 0
+@@ -44,9 +44,9 @@
+             v_column = T.alloc_local(2, dtype)
+             v_operand = T.alloc_local(16, dtype)
+             output_fetch = T.alloc_local(8, dtype)
+-            numerator = T.alloc_fragment([groups, dim], accum_dtype)
++            numerator = T.alloc_fragment([groups, 64], accum_dtype)
+             T.annotate_layout({
+-                numerator: T.Fragment([groups, dim],
++                numerator: T.Fragment([groups, 64],
+                     forward_thread_fn=lambda head, col: head + 16 * ((col % 16) // 4),
+                     forward_index_fn=lambda head, col: col % 4 + 4 * (col // 16)),
+             })
+@@ -115,9 +115,10 @@
+                             for row in T.vectorized(2):
+                                 shared[v_slot(fetch_row + row, fetch_col + col)] = v_column[row]
+                 T.sync_warp()
++            for plane in T.unroll(2):
+                 T.fill(numerator, 0)
+-                for key_tile in T.unroll(2):
+-                    for plane in T.unroll(2):
++                if block_start >= 0 and block_start <= token:
++                    for key_tile in T.unroll(2):
+                         for chunk in T.unroll(4):
+                             for element in T.vectorized(4):
+                                 v_operand[chunk * 4 + element] = shared[v_slot(
+@@ -127,16 +128,15 @@
+                             T.tvm_mfma('16x16x16f16', 'row', 'row',
+                                 'float16x4', 'float16x4', 'float32x4',
+                                 v_operand.data, chunk, probabilities.data, key_tile,
+-                                numerator.data, plane * 4 + chunk, dtype='float32x4')
+-            else:
+-                T.fill(numerator, 0)
+-            for head, feature in T.Parallel(groups, dim):
+-                numerator[head, feature] /= denominator[0]
+-            T.sync_warp()
+-            for chunk in T.unroll(8):
+-                feature_base = chunk * 16 + (lane // 16) * 4
+-                for element in T.vectorized(4):
+-                    shared[out_slot(lane % 16, feature_base) + element] = numerator[lane % 16, feature_base + element]
++                                numerator.data, chunk, dtype='float32x4')
++                for head, feature in T.Parallel(groups, 64):
++                    numerator[head, feature] /= denominator[0]
++                if plane == 0:
++                    T.sync_warp()
++                for chunk in T.unroll(4):
++                    feature_base = chunk * 16 + (lane // 16) * 4
++                    for element in T.vectorized(4):
++                        shared[out_slot(lane % 16, plane * 64 + feature_base) + element] = numerator[lane % 16, feature_base + element]
+             T.sync_warp()
+             for part in T.unroll(4):
+                 for pack in T.unroll(2):

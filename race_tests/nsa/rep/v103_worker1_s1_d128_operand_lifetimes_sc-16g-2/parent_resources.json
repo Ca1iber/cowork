@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-device-obj",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-resource-usage",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v103_worker1_s1_d128_operand_lifetimes_sc-16g-2/resources/parent_case6.mcbin",
+    "/root/tilelang-metax/race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2/codegen_formal/power_v084/case6_stage1.device.cpp"
+  ],
+  "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2/codegen_formal/power_v084/case6_stage1.device.cpp",
+  "device_sha256": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d",
+  "host_sha256": "b138df6c88a6de13e8dedff593135b2a7c1355be0f0dfa225b07227ec44dd2d8",
+  "MT": 100,
+  "ST": 22,
+  "static_shared_bytes": 0,
+  "dynamic_shared_bytes": 8192,
+  "stack_bytes": 0,
+  "static_max_warps": 4,
+  "not_measured_occupancy": true
+}
