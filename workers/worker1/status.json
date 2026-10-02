@@ -1,76 +1,85 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T03:12:10.139757+00:00",
+  "utc": "2026-10-02T03:28:36.755758+00:00",
   "machine": "sc-16g-2",
-  "code_branch": "codex-power-v28-base",
-  "code_commit": "9dc327b37eed1f6e98fa0c8ddfa718162cc91a1d",
-  "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+  "source_branch": "codex-power-v28-base",
+  "source_commit": "29a45229cdcf9b1b3535402b68dd5cbfd782ec38",
+  "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
     10,
     11,
     12
   ],
-  "active_version": "v101_worker1_s2_fixed_selection_sc-16g-2",
-  "active_target": [
-    10
-  ],
-  "phase": "case10 fresh parent profile/resource complete; new hypothesis awaiting leader review",
-  "profile_pid": null,
-  "github_transport": "remote Github SSH connection closed port443; leader relay required",
+  "last_closed_version": "v101_worker1_s2_fixed_selection_sc-16g-2",
+  "last_closed_status": "failed_runtime_OOM_screen_inconclusive",
+  "candidate_source_sha256": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2",
+  "parent_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
-  "last_checkpoint": "v084 114 candidate ref/314 controls, user OJ 1204/1169 +35, parent local positive deltas retained",
-  "next": "leader review onlyC10 direct global-to-Q/K fragments, remove5 staging syncs, preserve V/output and sequential online softmax",
-  "communication": "cowork worker1 branch; leader relay via bundle; no credentials transferred",
-  "candidate_source_sha256": "39e142971e79d40d4040f616ef57ac2186f524c09a7f7721e06082bc472a8edf",
-  "native_scope": "4 candidate full references / 12 including controls,case12 only",
-  "screen_medians_us": {
-    "baseline_v28": 83.3126405,
-    "parent_v084": 72.5222395,
-    "power_v100": 73.82272
+  "phase": "failed v101 closed; awaiting next peer and leader review",
+  "active_job_pid": null,
+  "all_owned_jobs_terminal": true,
+  "case_and_screen_exit": 137,
+  "OOM_start": 10,
+  "OOM_final": 11,
+  "observed_full_reference_PASS_records": {
+    "candidate": 4,
+    "including_controls": 12,
+    "case": 10,
+    "scope": "emitted records, overall screen failed"
   },
-  "vs_parent_pct": 1.7932161347554636,
-  "all_candidate_samples_above_all_parent_samples": true,
-  "resources": {
-    "parent_MT": 80,
-    "candidate_MT": 98,
-    "parent_ST": 22,
-    "candidate_ST": 32,
-    "parent_static_max_warps": 6,
-    "candidate_static_max_warps": 4,
-    "dynamic_shared_bytes": 2048,
-    "stack_bytes": 0,
-    "not_measured_occupancy": true
+  "failed_screen_raw": {
+    "status": "failed_runtime_OOM_screen_inconclusive",
+    "process_exit": 137,
+    "screen_exit": 137,
+    "screen_gate": "failed; not rewritten",
+    "candidate_PASS_records": 4,
+    "control_inclusive_PASS_records": 12,
+    "record_scope": "CSV observations from failed process; not a successful screen or full14 verdict",
+    "case": 10,
+    "medians_us": {
+      "baseline_v28": "13.660160000",
+      "parent_v084": "12.352000000",
+      "power_v101": "11.788799500"
+    },
+    "samples_us": {
+      "baseline_v28": [
+        "11.816961000",
+        "14.028800000",
+        "13.829120000",
+        "13.491200000"
+      ],
+      "parent_v084": [
+        "11.719680000",
+        "13.081599000",
+        "12.984320000",
+        "10.752000000"
+      ],
+      "power_v101": [
+        "12.062720000",
+        "11.514879000",
+        "13.736960000",
+        "11.473920000"
+      ]
+    },
+    "vs_parent_pct": "-4.559589540155440414507772020",
+    "vs_v28_pct": "-13.69940396012931034482758621",
+    "samples_overlap": true,
+    "OOM_start": 10,
+    "OOM_after": 11,
+    "no_retry": true,
+    "failure_component": "after CSV and metadata files emitted; exact cleanup/export/destructor component unknown"
   },
-  "closed_version": "v100_worker1_s8_pair_iteration_sc-16g-2",
-  "closed_status": "rejected_case12_selected_screen_regression_vs_v084",
-  "all_current_owned_jobs_terminal": true,
-  "parent_profile": {
-    "waves": 256,
-    "read_bytes": 593056,
-    "write_bytes": 524608,
-    "l2_hit_pct": 68.86,
-    "shared_nonconflict_pct": 100,
-    "conflict_cycles": 0,
-    "WG_load_cycles": [
-      45.87,
-      45.83
-    ],
-    "MTE_pct": [
-      15.42,
-      15.19
-    ],
-    "MMA_pct": [
-      1.87,
-      1.84
-    ]
+  "full14": false,
+  "OJ_v101": null,
+  "automatic_approval_rejection": "passgate write rejected and not executed;137 unchanged",
+  "retries": {
+    "native": 0,
+    "metadata": 0
   },
-  "parent_resources": {
-    "MT": 82,
-    "ST": 24,
-    "dynamic_shared_bytes": 2048,
-    "stack_bytes": 0,
-    "static_max_warps": 5,
-    "not_measured_occupancy": true
-  }
+  "peer_lessons": "workers/worker1/lessons/v100-v101.md",
+  "peer_review_received": true,
+  "ownership": "no edits to worker2 source or plan; advice only",
+  "next": "new direction needs worker2 peerreview then leaderreview",
+  "transport": "leader relay, no credentials copied"
 }
