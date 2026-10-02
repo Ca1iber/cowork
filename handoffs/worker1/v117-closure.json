@@ -1,0 +1,397 @@
+{
+  "sourcecommit": "9857129dd38acfd43bd42dbe9fabfd0306375dfc",
+  "counts": "110files109inventorySHA",
+  "runtime_final": {
+    "UTC": "2026-10-02T15:06:32.439802+00:00",
+    "status": "C6_resource_complete_C6_profiler_numeric_records_failed_predeclared_Achieved_wave_scope",
+    "outer_launcher_supervisor_controller_stage_originalwaits": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "C6resource_SDK_actualwait": 0,
+    "C6MC_CLI_originalwait": 0,
+    "resourceSDK_executed": 1,
+    "profilerCLI_executed": 1,
+    "counter_records": 2,
+    "numeric_all10_finite_isErrorFalse_records": 2,
+    "predeclared_valid_scope_records": 0,
+    "expected_bothwaves": 8192,
+    "actual_Achieved": [
+      8114.0,
+      8116.0
+    ],
+    "actual_Dispatched": [
+      8192.0,
+      8192.0
+    ],
+    "actual_write": [
+      33554752.0,
+      33554752.0
+    ],
+    "write_residual": [
+      320.0,
+      320.0
+    ],
+    "C10resource_MC": "NOT_STARTED",
+    "native_fullrefs": 0,
+    "profile_hardware_attention_launch_count": "UNMEASURED; originaldriver/SDKreplay",
+    "newmetadata_export_validator_IR_trace_native": 0,
+    "OOM_before": 13,
+    "OOM_after": 13,
+    "no_retry_or_boundschange": true,
+    "old116_failedgate1_preserved": true,
+    "no_no_reg_OJ_or_mainpromotion": true,
+    "sample_count": 317,
+    "observed_whole_peak_bytes": 25792217088,
+    "sampled_peak_not_upperbound": true
+  },
+  "rawcounter": {
+    "actual_records": 2,
+    "valid_numeric_scope_records": 0,
+    "rows": [
+      {
+        "case": 6,
+        "variant": "parent_v084",
+        "sample": 1,
+        "source_file": "/root/tilelang-metax/race_tests/nsa/rep/v117_worker1_reused_C6_C10_parent_resource_profile_sc-16g-2/profile_1_case6_parent_v084/report_bundle/1_native_sparse_attention_kernel_dumped_result.json",
+        "l2_hit_pct": 64.96159687458464,
+        "read_bytes": 37641888.0,
+        "write_bytes": 33554752.0,
+        "WG_load_cycles": 47.68878892449265,
+        "WG_conflict_cycles": 0.0,
+        "shared_nonconflict_pct": 100.0,
+        "achieved_waves_raw": 8114.0,
+        "dispatched_waves": 8192.0,
+        "MTE_pct": 48.230152549793736,
+        "MMA_pct": 10.218365080875609,
+        "unavailable_raw": {},
+        "write_residual_bytes": 320.0,
+        "scope_necessary_not_exclusive": true,
+        "runtime_grid": "UNAVAILABLE unlessactualrawreports providegrid",
+        "predeclared_scope_met": false
+      },
+      {
+        "case": 6,
+        "variant": "parent_v084",
+        "sample": 2,
+        "source_file": "/root/tilelang-metax/race_tests/nsa/rep/v117_worker1_reused_C6_C10_parent_resource_profile_sc-16g-2/profile_1_case6_parent_v084/report_bundle/2_native_sparse_attention_kernel_dumped_result.json",
+        "l2_hit_pct": 64.95173952508644,
+        "read_bytes": 37663072.0,
+        "write_bytes": 33554752.0,
+        "WG_load_cycles": 47.34490512567768,
+        "WG_conflict_cycles": 0.0,
+        "shared_nonconflict_pct": 100.0,
+        "achieved_waves_raw": 8116.0,
+        "dispatched_waves": 8192.0,
+        "MTE_pct": 48.574757184578765,
+        "MMA_pct": 10.294063875539935,
+        "unavailable_raw": {},
+        "write_residual_bytes": 320.0,
+        "scope_necessary_not_exclusive": true,
+        "runtime_grid": "UNAVAILABLE unlessactualrawreports providegrid",
+        "predeclared_scope_met": false
+      }
+    ],
+    "errors": [
+      {
+        "sample": 1,
+        "reason": "necessaryscopefailed",
+        "dispatched_waves": 8192.0,
+        "achieved_waves": 8114.0,
+        "residual": 320.0,
+        "original_bound": [
+          0,
+          512
+        ]
+      },
+      {
+        "sample": 2,
+        "reason": "necessaryscopefailed",
+        "dispatched_waves": 8192.0,
+        "achieved_waves": 8116.0,
+        "residual": 320.0,
+        "original_bound": [
+          0,
+          512
+        ]
+      }
+    ],
+    "raw_metric_context": [
+      {
+        "sample": 1,
+        "group": "Memory Statistics",
+        "name": "L2C Hit Rate",
+        "raw": [
+          {
+            "data": 64.96159687458464,
+            "isError": false,
+            "message": "",
+            "name": "L2C Hit Rate"
+          }
+        ]
+      },
+      {
+        "sample": 1,
+        "group": "Memory Statistics",
+        "name": "Global Memory Read bytes",
+        "raw": [
+          {
+            "data": 37641888.0,
+            "isError": false,
+            "message": "",
+            "name": "Global Memory Read bytes"
+          }
+        ]
+      },
+      {
+        "sample": 1,
+        "group": "Memory Statistics",
+        "name": "Global Memory Write bytes",
+        "raw": [
+          {
+            "data": 33554752.0,
+            "isError": false,
+            "message": "",
+            "name": "Global Memory Write bytes"
+          }
+        ]
+      },
+      {
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "name": "average latency per load instruction",
+        "raw": [
+          {
+            "data": 47.68878892449265,
+            "isError": false,
+            "message": "",
+            "name": "average latency per load instruction"
+          }
+        ]
+      },
+      {
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "name": "average conflict cycles per instruction",
+        "raw": [
+          {
+            "data": 0.0,
+            "isError": false,
+            "message": "",
+            "name": "average conflict cycles per instruction"
+          }
+        ]
+      },
+      {
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "name": "shared memory access efficiency",
+        "raw": [
+          {
+            "data": 100.0,
+            "isError": false,
+            "message": "",
+            "name": "shared memory access efficiency"
+          }
+        ]
+      },
+      {
+        "sample": 1,
+        "group": "Occupancy",
+        "name": "Achieved waves",
+        "raw": [
+          {
+            "data": 8114.0,
+            "isError": false,
+            "message": "",
+            "name": "Achieved waves"
+          }
+        ]
+      },
+      {
+        "sample": 1,
+        "group": "Occupancy",
+        "name": "Dispatched waves",
+        "raw": [
+          {
+            "data": 8192.0,
+            "isError": false,
+            "message": "",
+            "name": "Dispatched waves"
+          }
+        ]
+      },
+      {
+        "sample": 1,
+        "group": "GPU Throughput Statistics",
+        "name": "AP MTE Duty ratio",
+        "raw": [
+          {
+            "data": 48.230152549793736,
+            "isError": false,
+            "message": "",
+            "name": "AP MTE Duty ratio"
+          }
+        ]
+      },
+      {
+        "sample": 1,
+        "group": "GPU Throughput Statistics",
+        "name": "AP MMA Duty ratio",
+        "raw": [
+          {
+            "data": 10.218365080875609,
+            "isError": false,
+            "message": "",
+            "name": "AP MMA Duty ratio"
+          }
+        ]
+      },
+      {
+        "sample": 2,
+        "group": "Memory Statistics",
+        "name": "L2C Hit Rate",
+        "raw": [
+          {
+            "data": 64.95173952508644,
+            "isError": false,
+            "message": "",
+            "name": "L2C Hit Rate"
+          }
+        ]
+      },
+      {
+        "sample": 2,
+        "group": "Memory Statistics",
+        "name": "Global Memory Read bytes",
+        "raw": [
+          {
+            "data": 37663072.0,
+            "isError": false,
+            "message": "",
+            "name": "Global Memory Read bytes"
+          }
+        ]
+      },
+      {
+        "sample": 2,
+        "group": "Memory Statistics",
+        "name": "Global Memory Write bytes",
+        "raw": [
+          {
+            "data": 33554752.0,
+            "isError": false,
+            "message": "",
+            "name": "Global Memory Write bytes"
+          }
+        ]
+      },
+      {
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "name": "average latency per load instruction",
+        "raw": [
+          {
+            "data": 47.34490512567768,
+            "isError": false,
+            "message": "",
+            "name": "average latency per load instruction"
+          }
+        ]
+      },
+      {
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "name": "average conflict cycles per instruction",
+        "raw": [
+          {
+            "data": 0.0,
+            "isError": false,
+            "message": "",
+            "name": "average conflict cycles per instruction"
+          }
+        ]
+      },
+      {
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "name": "shared memory access efficiency",
+        "raw": [
+          {
+            "data": 100.0,
+            "isError": false,
+            "message": "",
+            "name": "shared memory access efficiency"
+          }
+        ]
+      },
+      {
+        "sample": 2,
+        "group": "Occupancy",
+        "name": "Achieved waves",
+        "raw": [
+          {
+            "data": 8116.0,
+            "isError": false,
+            "message": "",
+            "name": "Achieved waves"
+          }
+        ]
+      },
+      {
+        "sample": 2,
+        "group": "Occupancy",
+        "name": "Dispatched waves",
+        "raw": [
+          {
+            "data": 8192.0,
+            "isError": false,
+            "message": "",
+            "name": "Dispatched waves"
+          }
+        ]
+      },
+      {
+        "sample": 2,
+        "group": "GPU Throughput Statistics",
+        "name": "AP MTE Duty ratio",
+        "raw": [
+          {
+            "data": 48.574757184578765,
+            "isError": false,
+            "message": "",
+            "name": "AP MTE Duty ratio"
+          }
+        ]
+      },
+      {
+        "sample": 2,
+        "group": "GPU Throughput Statistics",
+        "name": "AP MMA Duty ratio",
+        "raw": [
+          {
+            "data": 10.294063875539935,
+            "isError": false,
+            "message": "",
+            "name": "AP MMA Duty ratio"
+          }
+        ]
+      }
+    ],
+    "complete": false,
+    "not_native_or_totalGPU_launch_count": true,
+    "primary_values": "perkernel dumped_result data/isError, notformatted value",
+    "formatted_files_corroboration_only": [
+      "/root/tilelang-metax/race_tests/nsa/rep/v117_worker1_reused_C6_C10_parent_resource_profile_sc-16g-2/profile_1_case6_parent_v084/report_bundle/1_native_sparse_attention_kernel.txt.json",
+      "/root/tilelang-metax/race_tests/nsa/rep/v117_worker1_reused_C6_C10_parent_resource_profile_sc-16g-2/profile_1_case6_parent_v084/report_bundle/2_native_sparse_attention_kernel.txt.json"
+    ],
+    "no_reprofile_or_bound_change": true
+  },
+  "sourcebundle": {
+    "path": "/tmp/nsa_worker1_source_9857129dd38a.bundle",
+    "bytes": 7892127,
+    "SHA": "1b640e9edff46f82863d8b1e8c4258fba0aa7123da76161cf84cb6b8a63962a0"
+  }
+}

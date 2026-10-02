@@ -1,0 +1,127 @@
+{
+  "plan": {
+    "version": "v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2",
+    "UTC": "2026-10-02T15:26:28.532435+00:00",
+    "phase": "principle_symbolproof_only_no_source_compile_run_GO",
+    "target_case": 6,
+    "official_key": [
+      8,
+      1024,
+      1,
+      16,
+      128,
+      1,
+      32,
+      true
+    ],
+    "source_parent": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+      "SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+    },
+    "scope": "dedicatedC6factory+exacttuple only, fullCB13prefix/allother13 inclC11/C12 kept; no sharedfactory edit",
+    "actual_current_C6": {
+      "device_SHA": "f18629c1d5c9fd562adbc5109295db24f8a4abf9b16d76917ef65233df4dc88d",
+      "Num_F32": 32,
+      "Voperand_half": 16,
+      "Voperand_already_D64slice_not_full_D128": true,
+      "Num_init_afterVstage_not_beforeQK": true,
+      "MT": 100,
+      "ST": 22,
+      "staticmax": 4,
+      "dynamicshared": 8192,
+      "stack": 0,
+      "measuredoccupancy": "UNKNOWN"
+    },
+    "mechanism": "plane-first D64x2; Num16F32 reusesaftercomplete divide/cast/shared output forplane0; Voperand4half loadonechunk immediatelyMFMA, shortensVlocalstorage vs currentcached16",
+    "falsifiable_prediction": "Actualcompiled Num16/V4 andMT<90/staticmax>=5/stack0/dyn8192 andsamepacked16B; fixedoriginalnative mustbeatparent. Sourceallocs/numericalregistercounts alone notphysicalproof orspeedclaim",
+    "old_counter_scope": "117MC2allnumeric butstrictAchievedWavegatefailed; rawnotcleanexclusivebottleneck evidence, no counterreplay",
+    "prior_own_Num16_attempt": "103Num16withV16 preserved +2.691786% rejected; thisnewV4stream mechanism maystilllose. Do notrepeatunchangedimplementation orclaimregistercutguaranteesgain",
+    "math": [
+      "QK8scores/P8actualF16/FP32den/max/causal/index/masks unchanged",
+      "everyfeaturePV still keytile0then1 andnormal16x16x16f16 MFMA; F32zero/accum/divide andF16cast same",
+      "currentvalidpredicate remainsuniform; all-invalidNum0/den0 yieldsoriginalNaN, notforcedzero",
+      "Numprivateclear onlyafter currentplane fulldivide/cast/stores, no stalevalues"
+    ],
+    "shared_lifetimes": [
+      "sameVglobalproducer16B/all4096half stage thenpostsync; noextra shared",
+      "actualV0[0,2048),V1[2048,4096)half; readallV0forbothkeytiles beforefull64sync andlowerOutput[0,1024) overwritesV0",
+      "futureV1vectors do notintersectlower/upper Output[0,2048), vectorends verified",
+      "upperOutput[1024,2048) afterV1PV; finalfull64sync beforeoriginalpacked16Bglobalgather",
+      "alloriginalQ/K/Vproducerand sync protected; do not usewrongrow128linear layout"
+    ],
+    "risks": [
+      "Vstream4 canreduce memorylevelparallelism/prefetch and increase load-to-MMA dependency; cachedV16 mayhavebetterlatencyhiding",
+      "plane-first exposes4insteadof8independentPVaccumulators, oldNum16latencylosscounterexample retained",
+      "compiler mayhoistloads and materializeV16 SSA despitealloc4; needactualCPP/resource/lifetime evidence",
+      "ST/code-size/extraindex costs ornewbarriers canoffsetMTcut; no barriercountreductionassumption",
+      "no newcandidatecode/compile/native; metadata/nativeresource plan awaitsseparateGO"
+    ],
+    "symbolproof_path": "/root/tilelang-metax/race_tests/nsa/rep/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/actual_layout_vector_alias_proof.json",
+    "source_and_benchmark_and_inputs_cache_unchanged_now": true,
+    "native_and_metadata_not_authorized": true,
+    "no_mainpromotion_orOJclaim": true,
+    "peer_adopted_remaining_actual_checks": [
+      "allactualV0reads/MMA/divide/cast/store completebeforeNumclear",
+      "actualV1only readvectorregion disjoint andfinalsync/gather proof",
+      "actualphysicalV4/Num16/resource/ILP notsourcepromise"
+    ]
+  },
+  "ready": {
+    "phase": "actualprinciple_aliasproof_peerready_no_candidate_source_compile_run",
+    "plan_SHA": "675079825022387616fec5e2858f1d2a4d1a5d66b376be12c049858837e674fd",
+    "symbolproof_SHA": "2eb59b1ea7c1104253eb8d32b3ee4671a3ab742ccff17263b45868f30a352d17",
+    "complete_vectors_SHA": "25879f59dbfecbffb5a88d151468b9ae9b8d8d6a463680d401a51ff46789b901",
+    "peer_SHA": "fbd4f9801f3d54593e317e19a09170a83174073d65b247650227656ef2fed7c9",
+    "metric_definition_readonly_SHA": "e9e0de57db2b909818734dd89125b519f1a60a0f8582cdd46d4ac97ac5ef0aee",
+    "Num32_to16_V16_to4_newmechanism_not_old103clone": true,
+    "shared_extra_bytes": 0,
+    "source_kernel_changes_actual": 0,
+    "compile_profile_native_actual": 0
+  },
+  "layout_vector_aliasproof": {
+    "actual_parent_source_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+    "actual_layout_AST": [
+      "def qk_slot(row, col, rows):\n    return col // 64 * rows * 64 + row * 64 + (col % 64 // 8 ^ row % 8) * 8 + (col // 4 % 2 ^ row // 8 % 2 ^ col // 64) * 4 + col % 4",
+      "def v_slot(row, col):\n    return (col // 64 * 64 + col % 64 // 8 + 8 * (col % 8)) * 32 + (row // 4 % 2 * 4 + row // 8 ^ col % 8 ^ col % 64 // 16) * 4 + row % 4",
+      "def out_slot(row, col):\n    return qk_slot(row, col, 16)"
+    ],
+    "scope": "C6 official B8/L1024/H1/HQ16/D128/S1/BS32 only, no candidate code or GPU",
+    "V_plane_half_regions": [
+      [
+        0,
+        2048
+      ],
+      [
+        2048,
+        4096
+      ]
+    ],
+    "Output_D64_half_regions": [
+      [
+        0,
+        1024
+      ],
+      [
+        1024,
+        2048
+      ]
+    ],
+    "earlylower_and_upper_output_both_inside_V0_disjoint_futureV1": true,
+    "V4half_vectors_checked": 1024,
+    "all_vector_elements_notjustfirst_address_bounded": true,
+    "V_read_points_2048_perplane_covered_exactlyonce": true,
+    "Output_store_points_1024_perplane_disjoint_union2048": true,
+    "final_global_producer_4passes8half16B_preserved": "same originalpart512+lane8 coordinate/gather, all2048 outputs",
+    "Num16clear_after_plane_divide_cast_store_then_reuse": true,
+    "PV_perfeature_key_order": "0then1 unchanged; plane/chunk operations for otherfeatures independent",
+    "sync": "allV0reads bothkeytiles ->full64 sync ->lower output overwrite V0; V1read vectors completely in[2048,4096) disjoint; final64sync afterupperOwrites beforeglobalgather. EarlierQ/K/V producers and theirsync unchanged.",
+    "source_guard": "uniform currentvalidpredicate andemptyall0/den0 NaN retained; QK/P8/roundedPden not moved",
+    "no_extra_shared_or_resultcache_or_inputchange": true
+  },
+  "reviewarchive": {
+    "path": "/tmp/nsa_worker1_v118_principle_review_675079825022.tar.gz",
+    "bytes": 16631,
+    "SHA": "463fcee7e35afc0d749cb3339dcd58a257fa52808bf70429b51a19f4e88b5348"
+  },
+  "source_notwritten": true
+}
