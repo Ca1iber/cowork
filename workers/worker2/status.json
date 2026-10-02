@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T11:24:21.251027+00:00",
-  "state": "FIXED_C14_NATIVE_SCREEN_RUNNING",
+  "timestamp_utc": "2026-10-02T11:37:12.538098+00:00",
+  "state": "V209_CLOSED_INCONCLUSIVE_OVERLAP",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "ccc057b060b706f7c4632ee2a72abc0c8b947913",
+  "source_commit": "d4df40603a5f2093786e2385e417fff742aa04fc",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v209_worker2_c14_linear_query_grid_subagent2",
-    "state": "FIXED_C14_NATIVE_SCREEN_RUNNING",
+    "state": "V209_CLOSED_INCONCLUSIVE_OVERLAP",
     "only_key": [
       2,
       512,
@@ -153,11 +153,8 @@
       0,
       0
     ],
-    "active_PIDs": [
-      212847,
-      213131
-    ],
-    "current_live_heavy": 1,
+    "active_PIDs": [],
+    "current_live_heavy": 0,
     "candidate_path": "/tmp/nsa_worker2_v209_c14_linear_query_grid.py",
     "candidateSHA": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
     "factory": "_make_worker2_c14_linear_query_grid",
@@ -218,27 +215,15 @@
         2048
       ]
     ],
-    "native_execution_GO": "once fixed12 executing",
+    "native_execution_GO": "unique fixed12 completed, no additional GO",
     "full_reference_native_counts": [
-      0,
-      0
+      12,
+      12
     ],
-    "native_observerPID": 212847,
-    "native_live": {
-      "stage": "fixed_C14_native_observed",
-      "run": 2,
-      "variant": "parent_v084",
-      "pid": 213131,
-      "observerPID": 212847,
-      "sample_count": 9,
-      "utc": "2026-10-02T11:24:21.229262+00:00",
-      "usage_bytes": 3476209664,
-      "oom": 3
-    },
-    "native_real_completed_jobs": 1,
+    "native_real_completed_jobs": 12,
     "native_clean_candidate_total": [
-      0,
-      1
+      4,
+      12
     ],
     "fixed_order": [
       "B",
@@ -257,7 +242,50 @@
     "planned_not_completed_C_total": [
       4,
       12
-    ]
+    ],
+    "native_launch_snapshot": {
+      "stage": "fixed_C14_native_observed",
+      "run": 2,
+      "variant": "parent_v084",
+      "pid": 213131,
+      "observerPID": 212847,
+      "sample_count": 9,
+      "utc": "2026-10-02T11:24:21.229262+00:00",
+      "usage_bytes": 3476209664,
+      "oom": 3
+    },
+    "actual_source_commit": "d4df40603a5f2093786e2385e417fff742aa04fc",
+    "native_status": "inconclusive_target_overlap_or_round_regression",
+    "native_medians_us": {
+      "baseline_v28": 19.4815,
+      "parent_v084": 15.053,
+      "power_v209": 15.0295
+    },
+    "native_vs_parent_pct": -0.15611506012090937,
+    "native_ranges_overlap": true,
+    "native_rounds": [
+      {
+        "round": 1,
+        "medians_us": {
+          "baseline_v28": 19.4815,
+          "parent_v084": 15.2015,
+          "power_v209": 15.104
+        },
+        "candidate_vs_parent_pct": -0.6413840739400767
+      },
+      {
+        "round": 2,
+        "medians_us": {
+          "baseline_v28": 19.848,
+          "parent_v084": 15.0425,
+          "power_v209": 15.0295
+        },
+        "candidate_vs_parent_pct": -0.08642180488614981
+      }
+    ],
+    "archiveSHA": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
+    "manifest": "race_tests/nsa/rep/v209_worker2_c14_linear_query_grid_subagent2/archive_sha256.json",
+    "SOTA_or_main_promotion": false
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -784,10 +812,104 @@
       "inventory_files": 224,
       "source_commit": "ccc057b060b706f7c4632ee2a72abc0c8b947913",
       "no_retry_extra_profile_formal_or_promotion": true
+    },
+    "v209_worker2_c14_linear_query_grid_subagent2": {
+      "status": "inconclusive_target_overlap_or_round_regression",
+      "scope": "selectedC14 only,no full14/promotion/OJ",
+      "sourceSHA": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
+      "clean_C_inclusive_fullrefs": [
+        4,
+        12
+      ],
+      "native12_actualwait_all0": true,
+      "OOM_before_after": [
+        3,
+        3
+      ],
+      "native_observed_whole_peak_bytes": 22967934976,
+      "native_observer_samples": 881,
+      "samples_us": {
+        "baseline_v28": [
+          19.584,
+          19.379,
+          19.359,
+          20.337
+        ],
+        "parent_v084": [
+          15.344999999999999,
+          15.058,
+          15.048,
+          15.037
+        ],
+        "power_v209": [
+          15.190999999999999,
+          15.017000000000001,
+          15.032,
+          15.027000000000001
+        ]
+      },
+      "medians_us": {
+        "baseline_v28": 19.4815,
+        "parent_v084": 15.053,
+        "power_v209": 15.0295
+      },
+      "candidate_vs_parent_pct": -0.15611506012090937,
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": 19.4815,
+            "parent_v084": 15.2015,
+            "power_v209": 15.104
+          },
+          "candidate_vs_parent_pct": -0.6413840739400767
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": 19.848,
+            "parent_v084": 15.0425,
+            "power_v209": 15.0295
+          },
+          "candidate_vs_parent_pct": -0.08642180488614981
+        }
+      ],
+      "ranges_overlap": true,
+      "metadata_initial_recovery_gates": [
+        1,
+        0
+      ],
+      "backend_commands_exit": [
+        0,
+        0,
+        0
+      ],
+      "parent_resource_reuse": "exactc695/SDK/options original0",
+      "parent_candidate_resources": [
+        [
+          42,
+          20,
+          8,
+          0
+        ],
+        [
+          42,
+          20,
+          8,
+          0
+        ]
+      ],
+      "semantic_gate": 0,
+      "semantic_OS_exit": "UNAVAILABLE_initialshell_notexplicitlycaptured",
+      "parent_profile": "1CLI/2numericrecords/2048waves/4MiB+320;runtimegridUNAVAILABLE/nonexclusive",
+      "new_live_heavy": 0,
+      "timing": "events50Pythoncalls canincludehostenqueue gaps",
+      "effective_roofs_ISA_occupancy": "UNAVAILABLE",
+      "utc": "2026-10-02T11:34:12.356362+00:00"
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Wait same once fixed12 terminal; no adaptive samples or full14/profile",
+  "next_step": "Await leader next mechanism direction; closed version, no additional heavy authorized",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
