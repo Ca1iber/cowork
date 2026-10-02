@@ -1,0 +1,40 @@
+{
+  "parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "out_slot_source": "def out_slot(row, col):\n        return row * 64 + ((col // 8) ^ (row % 8)) * 8 + (((col // 4) % 2) ^ ((row // 8) % 2)) * 4 + col % 4",
+  "two_groups_exact_output_half_counts": [
+    512,
+    512
+  ],
+  "groups_disjoint": true,
+  "union_exact1024": true,
+  "all_vectors_contiguous_four_half_and_8B_aligned": true,
+  "all_Voperand_reads_cover1024_shared_half": true,
+  "V_must_be_local_before_any_output_overwrite": true,
+  "all_empty_den0_and_num0_division_preserved": true,
+  "candidate_source_not_created": true,
+  "attention_reference_native": [
+    0,
+    0,
+    0
+  ],
+  "official_case_number": 5,
+  "only_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "query_partition_proof_B_L_independent": true,
+  "actual_host_grid_from_proposal": [
+    1024,
+    4
+  ],
+  "expected_waves": 4096,
+  "expected_output_payload_bytes": 8388608,
+  "max_valid_aligned_block_V_row": 1023,
+  "numerical_empty_behavior_is_design_requirement_not_candidate_validation": true
+}
