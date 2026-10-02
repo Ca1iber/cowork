@@ -1,0 +1,47 @@
+{
+  "UTC": "2026-10-02T11:50:44.838124+00:00",
+  "version": "v113_worker1_s4_global_softmax_sc-16g-2",
+  "approval": "onefixedC11 bounded7stage metadata/resource/firstIR only",
+  "actual_metadata_plan_SHA": "d0ca149cf3529a2f009d666a9452e35455d9608ee6dbf95f43b2b267fdf9503c",
+  "actual_metadata_manifest_SHA": "e0eca3e9d0f05b83da37525921c14945f037774aa6999229735f85e5f0d5333b",
+  "actual_metadata_ready_SHA": "98b18040f03d16982579c0cfaf6361298631c445678c5e846c0335d78298b7a8",
+  "actual_metadata_peer_SHA": "11929e19231bb84a200a8e083adec1a2a26359ebe0338d6b7ea620710ad29eb7",
+  "source_leader_actual_audit": {
+    "base_SHA": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+    "candidate_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+    "header": "# codex-power v113",
+    "base_AST_nodes": 16,
+    "complete_base_AST_prefix_unchanged": true,
+    "added_nodes": [
+      [
+        "FunctionDef",
+        "_make_power_s4_global_softmax"
+      ],
+      [
+        "Expr",
+        null
+      ]
+    ],
+    "dispatch": "_power_install_lazy_code((2, 512, 1, 16, 64, 4, 16, True), _make_power_s4_global_softmax)",
+    "imports": [
+      "import tilelang",
+      "import tilelang.language as T",
+      "from tilelang.layout import make_swizzled_layout"
+    ]
+  },
+  "source_review": "allQK4/globalmax/P16/denroundedP/sameP16PV/selected accumulation order;guard beforemultiply/emptyNaN/uniformsync/originalwidths inspected;FP16roundingchange requiresnaive,notbit-equivalence",
+  "scope": "2fresh C11 P104/C113 export2pairs4files;CPUsource/deviceaudit;2SDKresources;candidatefirstO3IR;CPUcompiledgate;0NSA/refs/native",
+  "gates": {
+    "MT_max": 96,
+    "static_max_warps_min": 5,
+    "stack_bytes": 0,
+    "dynamic_shared_bytes": 2048,
+    "IR_MMA_count": 32,
+    "private_alloca_AS5": false
+  },
+  "guards": "unchanged4GiBdoubleadmit/28whole/OOM13/unknown1GiB/600s/1scritical/verifiedownedidentity/lock/priorabort/no retry,allstages serial",
+  "profile_gap": "v1120counter afterunknownheavy;not a verified C11 bottleneck;currentresource80MT22ST/staticmax6 andactualonlinecode basis",
+  "limits": "other13inclC12source unchangeddoesnotwaivelatency positives;resourcecostnotoccupancy/runtime;no native/full14/profile or secondkernelGO",
+  "failure_history": "v112controller1/wrapper-15/SDKwaitUNAVAILABLE preserved;v113initialcustomvalidator wrongexpectation preserved,recovery0sourceunchanged",
+  "freeze_before_launch": true
+}
