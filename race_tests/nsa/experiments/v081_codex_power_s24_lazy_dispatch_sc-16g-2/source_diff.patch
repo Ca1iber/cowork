@@ -1,0 +1,50 @@
+--- exact_power_v080
++++ /tmp/nsa_power_v081_s24_lazy.py
+@@ -1,4 +1,4 @@
+-# codex-power v080
++# codex-power v081
+ import tilelang
+ import tilelang.language as T
+ from tilelang.layout import make_swizzled_layout
+@@ -623,7 +623,7 @@
+ })
+ def _make_power_s8_output_pair(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+-    assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
++    assert groups == 16 and dim == 64 and selected_blocks in (2, 4, 8) and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+     scale = (1.0 / dim) ** 0.5 * 1.44269504
+     dtype = T.float16
+@@ -901,15 +901,25 @@
+                     Output[batch_id, token, kv_head * groups + pos // 64, pos % 64] = output_fetch[element]
+     return native_sparse_attention
+ 
+-_KERNEL_CACHE[(8,1024,1,16,128,1,32,True)] = _make_power_s1_v_hybrid_pack(8,1024,1,16,128,1,32,True)
+-_KERNEL_CACHE[(4,1024,1,16,64,8,16,True)] = _make_power_s8_output_pair(4,1024,1,16,64,8,16,True)
+-# First call caches a compiled code object, never attention data.
+-def _power_install_lazy_s1_code(key):
++def _power_install_lazy_code(key, factory):
+     def first_call(*tensor_args):
+-        kernel = _make_power_s1_case4_dense(*key)
++        kernel = factory(*key)
+         _KERNEL_CACHE[key] = kernel
+         return kernel(*tensor_args)
+     _KERNEL_CACHE[key] = first_call
+ 
+-for _power_s1_key in ((1, 128, 1, 16, 64, 1, 16, True), (2, 512, 1, 16, 64, 1, 16, True), (4, 1024, 1, 16, 64, 1, 16, True), (1, 4096, 1, 16, 64, 1, 16, True), (2, 4096, 1, 16, 64, 1, 16, True), (1, 8192, 1, 16, 64, 1, 16, True), (1, 256, 2, 32, 64, 1, 16, True), (2, 512, 2, 32, 64, 1, 16, True)):
+-    _power_install_lazy_s1_code(_power_s1_key)
++for _power_key, _power_factory in (
++    ((1, 128, 1, 16, 64, 1, 16, True), _make_power_s1_case4_dense),
++    ((2, 512, 1, 16, 64, 1, 16, True), _make_power_s1_case4_dense),
++    ((4, 1024, 1, 16, 64, 1, 16, True), _make_power_s1_case4_dense),
++    ((8, 1024, 1, 16, 128, 1, 32, True), _make_power_s1_v_hybrid_pack),
++    ((1, 4096, 1, 16, 64, 1, 16, True), _make_power_s1_case4_dense),
++    ((2, 4096, 1, 16, 64, 1, 16, True), _make_power_s1_case4_dense),
++    ((1, 8192, 1, 16, 64, 1, 16, True), _make_power_s1_case4_dense),
++    ((1, 256, 1, 16, 64, 2, 16, True), _make_power_s8_output_pair),
++    ((2, 512, 1, 16, 64, 4, 16, True), _make_power_s8_output_pair),
++    ((4, 1024, 1, 16, 64, 8, 16, True), _make_power_s8_output_pair),
++    ((1, 256, 2, 32, 64, 1, 16, True), _make_power_s1_case4_dense),
++    ((2, 512, 2, 32, 64, 1, 16, True), _make_power_s1_case4_dense),
++):
++    _power_install_lazy_code(_power_key, _power_factory)

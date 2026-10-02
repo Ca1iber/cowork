@@ -1,0 +1,48 @@
+{
+  "compute_body_exact_own77_excluding_asserts": true,
+  "new_source_sha256": "65fa0690120f1c84772571ef0fe449302ebe4db26ea86868b0badc1c3a5a4c61",
+  "three_shared_bijections": "all1024half coordinates,unchanged",
+  "online_denominator_identity": "each quarter d_j=alpha*d_j+sum_consumedFP16P;alpha uniform by head;sum_j commutes with rescale over real arithmetic",
+  "floating_order": "same asown77;native ref required,not proof bitexact toTorch",
+  "math_does_not_assume_eight_iterations": true,
+  "cases": [
+    {
+      "case": 10,
+      "shape": {
+        "B": 1,
+        "SEQ_LEN": 256,
+        "H": 1,
+        "HQ": 16,
+        "D": 64,
+        "S": 2,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "indices_selected_extent": 2,
+      "selected_loop": "0..S-1",
+      "full16_validblock_rows_inbounds": true,
+      "query_head_mapping": "kv_head*16+row;0<=row<16",
+      "waves": 256,
+      "output_bytes": 524288
+    },
+    {
+      "case": 11,
+      "shape": {
+        "B": 2,
+        "SEQ_LEN": 512,
+        "H": 1,
+        "HQ": 16,
+        "D": 64,
+        "S": 4,
+        "block_size": 16,
+        "is_causal": true
+      },
+      "indices_selected_extent": 4,
+      "selected_loop": "0..S-1",
+      "full16_validblock_rows_inbounds": true,
+      "query_head_mapping": "kv_head*16+row;0<=row<16",
+      "waves": 1024,
+      "output_bytes": 2097152
+    }
+  ]
+}
