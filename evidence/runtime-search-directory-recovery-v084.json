@@ -1,0 +1,26 @@
+{
+  "timestamp_utc": "2026-10-02T03:00:38.619095+00:00",
+  "runtime_transfer": "source-runtime-transfer-v084.json",
+  "initial_worker2_import": {
+    "exit_code": 1,
+    "native_reference_checks": 0,
+    "oom_kill": 0,
+    "stage": "env.py library search directory assertion before TVM load"
+  },
+  "cause": "build/tvm directory omitted from runtime tar; env.py requires both build/lib and build/tvm exist",
+  "original_sc_build_tvm_verified": {
+    "exists": true,
+    "shared_library_files": [],
+    "contents": [
+      "3rdparty",
+      "CMakeFiles",
+      "cmake_install.cmake",
+      "temp_config_file.cmake",
+      "tvmConfig.cmake"
+    ]
+  },
+  "approved_recovery": "create empty build/tvm in new checkout, preserve initial failure; one labelled recovery import followed by native case5 only if import succeeds",
+  "runtime_libraries_location": "all five verified libraries in build/lib",
+  "no_dependency_install_or_upgrade": true,
+  "no_source_or_gpu_settings_change": true
+}
