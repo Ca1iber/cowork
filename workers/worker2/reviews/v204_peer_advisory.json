@@ -1,0 +1,27 @@
+{
+  "worker": "worker2",
+  "peer": "worker1",
+  "advisory_only": true,
+  "no_peer_code_or_plan_edits": true,
+  "advice": [
+    "same valid index and causal guard before global read",
+    "early ordinary V read local only; shared write retains preV K-read protection",
+    "longer live v_fetch may increase resources",
+    "actual CPP and optimized IR must preserve early order; no runtime overlap guarantee",
+    "both IR SROA scalarizations do not establish final ISA vector width"
+  ],
+  "observed_metadata": {
+    "parent_MT": 42,
+    "candidate_MT": 44,
+    "stack_bytes": 0,
+    "dynamic_shared_bytes": 2048,
+    "all_warp_sync": 7,
+    "IR_order_materialized": true,
+    "attention_reference_native_before_screen": [
+      0,
+      0,
+      0
+    ]
+  },
+  "screen_status": "first unique fixed12 ongoing; no verdict"
+}

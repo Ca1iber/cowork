@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T06:10:13.836233+00:00",
-  "state": "V203_CLOSED_SINGLE_IMPORT_OBSERVATION",
+  "timestamp_utc": "2026-10-02T06:44:06.160321+00:00",
+  "state": "V204_C8_FIXED_NATIVE_RUNNING",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -20,149 +20,61 @@
     14
   ],
   "current": {
-    "version": "v202_worker2_c8_two_query_cta_subagent2",
-    "target_cases": [
+    "version": "v204_worker2_c8_early_v_fetch_subagent2",
+    "sourceSHA": "2a93d74b3cb8df2469ded6f8ad24323a1aaeef17c254e628813efd88eeb7a787",
+    "case": 8,
+    "mechanism": "ordinaryVlocalreadbeforeQK/samepreVsharedwrite",
+    "metadata_exit": 0,
+    "backend_four_commands_exit": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "MT_parent_candidate": [
+      42,
+      44
+    ],
+    "ST": [
+      20,
+      20
+    ],
+    "staticmax": [
+      8,
       8
     ],
-    "candidate_path": "/tmp/nsa_worker2_v202_c8_two_query_cta.py",
-    "candidate_sha256": "ed46e5cd8732e463ff9cefd2e21035c9ca4426132001fe5d6c02c67c97b722a2",
-    "metadata_pid": 87784,
-    "metadata_terminal_exit": 0,
-    "source_generated_exit": 0,
-    "ownership_exit": 0,
-    "compiled_affine_checks": 5760,
-    "actual": {
-      "threads": 128,
-      "grid": [
-        2048,
-        2
-      ],
-      "shared_bytes": 4096,
-      "warp_syncs": 7,
-      "CTA_barriers": 0,
-      "global_QKV_Output_width": 16,
-      "fulluint64_width64_shfl": true
+    "stack": [
+      0,
+      0
+    ],
+    "dynamicshared": [
+      2048,
+      2048
+    ],
+    "IR_order_materialized": true,
+    "final_ISA_width": "UNAVAILABLE",
+    "native_observer_PID": 127818,
+    "native_actual_counts": {
+      "candidate": 0,
+      "total": 0
     },
-    "resources": {
-      "case": 8,
-      "variant": "power_v202",
-      "MT": 44,
-      "ST": 22,
-      "static_shared_bytes_reported": 0,
-      "dynamic_shared_bytes_host": 4096,
-      "static_max_warps_per_PEU": 8,
-      "stack_bytes": 0,
-      "not_measured_occupancy": true,
-      "command": [
-        "/opt/maca/mxgpu_llvm/bin/mxcc",
-        "-x",
-        "maca",
-        "-device-obj",
-        "-O3",
-        "-lineinfo",
-        "--offload-arch=xcore1000",
-        "-std=c++17",
-        "-I/root/tilelang-metax/src",
-        "-use-fast-math",
-        "-D__FAST_HALF_CVT__",
-        "-resource-usage",
-        "-o",
-        "/root/tilelang-metax/race_tests/nsa/rep/v202_worker2_c8_two_query_cta_subagent2/resources/case8_power_v202.mcbin",
-        "/root/tilelang-metax/race_tests/nsa/rep/v202_worker2_c8_two_query_cta_subagent2/codegen/power_v202/case8_stage1.device.cpp"
-      ],
-      "device_sha256": "cbfecac02c0a9979c477e8504bb5b2d88f7234398a2f441fb46ff4d90fbbdce6",
-      "parent": {
-        "MT": 42,
-        "ST": 20,
-        "dynamic_shared_bytes_host": 2048,
-        "static_max_warps_per_PEU": 8,
-        "stack_bytes": 0
-      }
-    },
-    "screen_orchestrator_pid": null,
-    "live": null,
-    "completed_reference_counts": {
-      "candidate": 3,
-      "total": 9,
-      "failed_job_ref": 0
-    },
-    "planned_reference_counts": {
+    "native_planned_counts": {
       "candidate": 4,
       "total": 12
     },
-    "oom_baseline": 1,
-    "oom_current": 3,
-    "formal_started": false,
-    "repeat_or_adaptive_retry": false,
-    "closed_status": "failed_runtime_OOM_selected_screen_inconclusive",
-    "candidate_archive": "race_tests/nsa/submission/v202_worker2_c8_two_query_cta_subagent2/submission.py",
-    "archive_is_promotion": false,
-    "all_owned_jobs_terminal": true,
-    "screen_summary": {
-      "source_sha256": "ed46e5cd8732e463ff9cefd2e21035c9ca4426132001fe5d6c02c67c97b722a2",
-      "complete12jobs": false,
-      "job_stop": {
-        "run": 10,
-        "variant": "power_v202",
-        "exit": -9,
-        "oom_before": 1,
-        "oom_after": 3,
-        "inner_Killed": false,
-        "csv_valid": false,
-        "source_hash_ok": true
-      },
-      "actual_full_references": {
-        "candidate": 3,
-        "total": 9
-      },
-      "oom_final": 3,
-      "protocol": "single-source freshproc/full unchangednative; no postexport; fixed12 only",
-      "automatic_formal": false,
-      "status": "failed_runtime_or_validation_selected_screen"
+    "native_stage": {
+      "stage": "fixed_C8_native_observed",
+      "run": 2,
+      "variant": "parent_v084",
+      "pid": 128111,
+      "observerPID": 127818,
+      "sample_count": 21,
+      "utc": "2026-10-02T06:44:06.033490+00:00",
+      "usage_bytes": 8974196736,
+      "oom": 3
     },
-    "failed_native_pid": 102320,
-    "failed_returncode": -9,
-    "stop_stage": "beforeCSV creation; logonlyLoading tilelanglibs; specificcomponentUNKNOWN",
-    "run11_12_not_started": true,
-    "additional_runtime_marker_pid": 102519,
-    "additional_pid_owner": "UNKNOWN",
-    "partial_observations": {
-      "observations_only_not_complete_screen_verdict": true,
-      "samples_us": {
-        "baseline_v28": [
-          51.727000000000004,
-          51.656,
-          51.604
-        ],
-        "parent_v084": [
-          40.479,
-          40.135999999999996,
-          40.233
-        ],
-        "power_v202": [
-          41.861000000000004,
-          41.876,
-          41.457
-        ]
-      },
-      "partial_medians_us": {
-        "baseline_v28": 51.656,
-        "parent_v084": 40.233,
-        "power_v202": 41.861000000000004
-      },
-      "partial_candidate_vs_parent_pct": 4.04642954788359,
-      "complete_fixed_schedule": false,
-      "candidate_refs": 3,
-      "total_refs": 9,
-      "failed_job_ref": 0,
-      "run11_12_not_started": true
-    },
-    "code_relay_bundle": {
-      "path": "/tmp/nsa_worker2_code_c993479f0ded.bundle",
-      "size": 98839,
-      "sha256": "a4276bff9219fa936017a07a80b794b01b5c4efe2868a5237eba5b719fff98c8",
-      "prerequisite": "189ab5f4d56af37f558732c2dc0241aeb47e5b22"
-    }
+    "OOM": 3,
+    "no_full14_or_OJ_verdict": true
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -239,8 +151,8 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Newsinglecase8 synchronousV-load scheduling proposal+peer/leaderreview; noautomaticheavy/native.",
-  "job_pid": null,
+  "next_step": "finish unique fixed case8 native sequence or preserve first failed prefix; no automatic formal",
+  "job_pid": 127818,
   "proposed_diagnostic": {
     "version": "v203",
     "no_kernel_edit": true,
