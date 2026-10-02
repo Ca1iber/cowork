@@ -1,0 +1,183 @@
+{
+  "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+  "oj_reference_version": "v084",
+  "oj_scores": [
+    87,
+    88,
+    87,
+    88,
+    84,
+    82,
+    89,
+    85,
+    84,
+    86,
+    87,
+    80,
+    89,
+    88
+  ],
+  "oj_total": 1204,
+  "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
+  "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration",
+  "schema": 2,
+  "updated_at_utc": "2026-10-02T16:01:02.712354+00:00",
+  "canonical_main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "historical_snapshot": "integration/reviews/leader-status-before-v114-screen.json",
+  "worker1": {
+    "cases": [
+      6,
+      10,
+      11,
+      12
+    ],
+    "active_version": "v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2",
+    "stage": "source290ac/header118 independently audited; prefix18/QK/P8/den/Vproducer/lifetimes/packed16B unchanged;boundedcompile plan pending",
+    "source_commit": "9857129dd38acfd43bd42dbe9fabfd0306375dfc",
+    "candidate_version": "v113",
+    "candidate_sha256": "290ac7d13d219d161d14833fcfa777df6ae809982708bb6a95f1a4172a3acf2e",
+    "new_refs": 0,
+    "protocol_budget_GiB": [
+      5,
+      23,
+      4
+    ],
+    "runtime_stop_GiB": 28,
+    "old_v113_zero_native_refusal_preserved": true,
+    "active_PID": null,
+    "communication_head": "7839a3eb09d5ecef8027f660c9267c399df5b009",
+    "current_observed_clean_refs": 168,
+    "current_observed_candidate_refs": 56,
+    "launch_plan_GO_sha256": "fbd963330f3025a2335cb82c731264bed35e089759eed2cdf9315e3b3fbe6cfc",
+    "native_GO": false,
+    "new_candidate_median_us": 18.025,
+    "comparison_v104_median_us": 19.377,
+    "C11_delta_vs104_pct": -6.977344274139444,
+    "C11_delta_vs_original28_pct": -22.95526917569618,
+    "round_deltas_pct": [
+      -7.330300460071452,
+      -6.918742892587615
+    ],
+    "candidate_parent_ranges_overlap": false,
+    "all14_nonregression": "UNPROVEN",
+    "closure_audit": "integration/reviews/v114-closed-artifact-audit.json",
+    "planned_refs_candidate_inclusive": [
+      56,
+      168
+    ],
+    "C11_delta_vs84_pct": -6.2845303867403315,
+    "C12_delta_vs84_pct": -4.111325892207604,
+    "non_target_positive_median_cases": [
+      1,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "any_round_positive_cases": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      14
+    ],
+    "new_metadata_pairs_reported": 4,
+    "new_resource_commands_reported": 0,
+    "new_MC_CLI_reported": 1,
+    "new_counter_records_reported": 2,
+    "active_PID_scope": "launcher originalPopen;worker SSH5841 held until realwait",
+    "C6_resource_actual": {
+      "MT": 100,
+      "ST": 22,
+      "static_max_warps": 4,
+      "dynamic_shared_bytes": 8192,
+      "stack_bytes": 0
+    },
+    "C6_profile_raw_gate": "1;Achieved8114/8116 vs8192, all raw retained, not cleanexclusive",
+    "valid_scope_counter_records": 0
+  },
+  "worker2": {
+    "cases": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      13,
+      14
+    ],
+    "active_version": "v212_worker2_c8_direct_k_operand_subagent2 plus independentv213traceplan",
+    "stage": "rev02 SHA+CPUgenerated geometry gate audited; C8 finite metadata/resource/IR approved,launch pending",
+    "source_commit": "f581f927d21b47950e7e9914e2833f502050d963",
+    "candidate_sha256": "66871ec89712c58e3432485fcd63601175c7de0b1f29bfe27f4a586dd5a528e4",
+    "reported_metadata_wait": 0,
+    "reported_backend_wait": 0,
+    "resources_reported_parent_candidate": [
+      [
+        42,
+        20,
+        8,
+        0,
+        2048
+      ],
+      [
+        56,
+        28,
+        8,
+        0,
+        2048
+      ]
+    ],
+    "reported_OOM_before_after": [
+      3,
+      3
+    ],
+    "new_refs": 0,
+    "native_GO": "metadata/compile only,no attention",
+    "independent_compile_audit": "integration/reviews/v210-compiled-semantic-leader-audit.json",
+    "communication_head": "e039e750b124ba22baeaadb960a1c5233e941aa2",
+    "active_PID": null,
+    "current_observed_clean_refs": 12,
+    "current_observed_candidate_refs": 4,
+    "planned_refs_candidate_inclusive": [
+      4,
+      12
+    ],
+    "current_observed_PASS_refs": 2,
+    "controller_actual_wait": 1,
+    "OOM_before_after": [
+      3,
+      3
+    ],
+    "C8_serialpair_delta_vs84_pct": 1.3832252946790446
+  },
+  "retained_candidate_gain": {
+    "case": 12,
+    "source_version": "v104",
+    "latest_fixed_risk_comparison_us": [
+      69.1125,
+      72.379
+    ],
+    "delta_pct": -4.513049365147349,
+    "scope": "local diagnostic only; full14 nonregression remains UNPROVEN",
+    "persistent_case11_positive_pct": 0.7602713426340714
+  },
+  "all14_nonregression": "UNPROVEN;6positive case medians and9positive round cases preserved",
+  "OJ_new_versions": "UNAVAILABLE",
+  "leader_next": "Review C6 output-half lifetime proof and C8 DirectK proposal; worker2 CycleTrace ownedtarget capability plan pending; retain C11/C12 and non-target positive evidence.",
+  "best_known_packaging": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/leader_best_known_v113/submission.py",
+    "source_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+    "integration_commit": "753d1b707918cfbd9b4c5b199c15fdd1410c7056",
+    "branch": "code/integration",
+    "all14_nonregression": "UNPROVEN"
+  }
+}
