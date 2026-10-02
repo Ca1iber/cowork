@@ -1,0 +1,98 @@
+{
+  "stage": "V213_PREPARED_NO_TRACE_GO",
+  "tool_argv": [
+    "/opt/maca-20260921/bin/cycle-trace-ng",
+    "--sample-mode",
+    "A",
+    "--filename",
+    "/tmp/nsa_cycle_trace_leader/capture_parentC8_once",
+    "--target-device",
+    "0",
+    "--dpc-id",
+    "0",
+    "--target-ap",
+    "0",
+    "--target-peu",
+    "1",
+    "--token-msk",
+    "inst_type,inst_pc,isu_starve_type,wave_start,wave_end",
+    "--dpg-page-num",
+    "1",
+    "--format",
+    "json",
+    "--filter",
+    "wave_limit=64",
+    "--filter",
+    "ap=0",
+    "--filter",
+    "peu=0",
+    "--filter",
+    "strip",
+    "/opt/conda/bin/python -u /root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py 8"
+  ],
+  "target_argv": [
+    "/opt/conda/bin/python",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py",
+    "8"
+  ],
+  "target_command_one_positional_argument": "/opt/conda/bin/python -u /root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py 8",
+  "target_only_env_overrides": {
+    "MACA_PATH": "/opt/maca",
+    "PYTHONPATH": "/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONWARNINGS": "ignore",
+    "NSA_PROFILE_MODE": "mctx",
+    "NSA_VARIANT_SOURCE": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py"
+  },
+  "globalSDK_PATH_LD_LIBRARY_PATH_unchanged": true,
+  "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "driverSHA": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a",
+  "toolSHA": "421cd53f968b500cd83b7d3e78da6c0a23dd193d23566c740ab3b359d97a648b",
+  "helperSHA": "549a5a0d5eef8ea51828680022fbccbc0abe866e2ba19cccce88350492929838",
+  "no_tool_or_target_started": true,
+  "no_kernel_probe_option_or_recompile": true,
+  "child": "/tmp/nsa_cycle_trace_leader/cycle_trace_child.py",
+  "fixed_inputs": [
+    {
+      "path": "/opt/maca-20260921/bin/cycle-trace-ng",
+      "sha256": "421cd53f968b500cd83b7d3e78da6c0a23dd193d23566c740ab3b359d97a648b"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+      "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py",
+      "sha256": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a"
+    },
+    {
+      "path": "/tmp/nsa_cycle_trace_leader/bounded_utils.py",
+      "sha256": "bb8daae921dcc1a5ca4539f78b32dea2deb9a55043439a57371a86631fb3b5bf"
+    },
+    {
+      "path": "/tmp/nsa_cycle_trace_leader/cycle_trace_child.py",
+      "sha256": "ef5259eafd746c2b832648e641a4cda4dc1892cba61f027e737cedd3fef10c91"
+    },
+    {
+      "path": "/tmp/nsa_cycle_trace_leader/run_cycle_trace_once.py",
+      "sha256": "645c5185d14fbf6a56decb7cefb9a148eeb60b619707a7564e07e2d30ad44294"
+    },
+    {
+      "path": "/tmp/nsa_cycle_trace_leader/bounded_runtime_plan.json",
+      "sha256": "8122d31d3b949f12205d596748cac68cead1bd70669739dff738acba82ec955f"
+    }
+  ],
+  "argv_observer": [
+    "/opt/conda/bin/python",
+    "-S",
+    "/tmp/nsa_cycle_trace_leader/run_cycle_trace_once.py"
+  ],
+  "scope_evidence": {
+    "positional_cmdline_launch": "static DpgArgParser default->cmdline, no PIDattachoption",
+    "queue_xpid": "staticcreate_queue confirms samplerownqueue API,not LinuxTargetPID",
+    "hardware_wave_ownership": "UNAVAILABLE_priorcapture;wave kernel_sign/entryPC binding needed;notexclusive",
+    "no_unknownPID_attach_or_signal": true
+  },
+  "leader_scope": "one bounded owned parent C8 tool compatibility smoke; no native latency verdict"
+}

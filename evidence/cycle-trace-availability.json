@@ -1,5 +1,5 @@
 {
-  "UTC": "2026-10-02T14:52:47.306911+00:00",
+  "UTC": "2026-10-02T16:49:46.820055+00:00",
   "user_request": "Check Cycle Trace availability and possible NSA use",
   "sc16g2": "NoCycleTrace executable found in PATH/common installation dirs; mcProfiler/mcTracer present",
   "subagent2": {
@@ -39,8 +39,8 @@
     "https://developer.metax-tech.com/api/client/document/preview/\u53d1\u5e03\u8bf4\u660e/MXMACA_\u53d1\u5e03\u8bf4\u660e/\u66e6\u4e91C500\u7cfb\u5217/latest/split_files/\u65b0\u589e\u7279\u6027\u53ca\u53d8\u66f4.html",
     "https://developer.metax-tech.com/forum/t/profilinggong-ju-zi-xun/223/"
   ],
-  "capture_verdict": "UNPROVEN; ng help runs, no valid NSA trace collected yet; helpererror not rootcauseproof",
-  "next": "bounded targetapplication/driver-queue compatibility check on worker2; do not claim trace or alter benchmark/globalSDK",
+  "capture_verdict": "REAL_NSA_TARGET_SMOKE_FAILED; NG actualwait255 queue_xpid API ERROR; no valid trace; rootcause UNPROVEN",
+  "next": "Continue native/codegen/mcProfiler diagnosis; CycleTrace needs compatible queue API/environment before useful sampling",
   "worker2_readonly_compatibility_and_bounded_ownedtarget_plan_requested": true,
   "no_new_Trace_GPU_GO": true,
   "prepared_review": {
@@ -49,5 +49,20 @@
     "scope": "one own parent C8 profile driver, limited AP/PEU/waves; attribute NSA from actual data",
     "pending": "recursive own-output size watcher and distinct runtime/trace validity",
     "native_first": "v212 fixed original C8 screen"
+  },
+  "actual_smoke": {
+    "directory": "/tmp/nsa_cycle_trace_leader",
+    "archive_SHA": "ffaaedf40956b14f52839f39385f96163a2aa2e4da4b5ac4f1650f4e9a666bf8",
+    "NG_PID": 302985,
+    "actualwait": 255,
+    "runtime_seconds": 0.5391146279871464,
+    "OOM_before_after": [
+      3,
+      3
+    ],
+    "owned_signals": 0,
+    "trace_files": 0,
+    "retry": false,
+    "evidence": "evidence/cycle-trace-smoke/trace_observation/child.log"
   }
 }
