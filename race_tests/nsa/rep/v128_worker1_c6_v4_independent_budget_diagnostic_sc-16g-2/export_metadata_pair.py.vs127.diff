@@ -1,0 +1,10 @@
+--- closed127/export_metadata_pair.py
++++ 128/export_metadata_pair.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,hashlib,importlib.util
+-b=Path('/root/tilelang-metax/race_tests/nsa');r=b/'rep/v127_worker1_c6_v_operand_chunk_stream_sc-16g-2';m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());assert p['phase']=='leader_GO_v127_bounded_compile_once'
++b=Path('/root/tilelang-metax/race_tests/nsa');r=b/'rep/v128_worker1_c6_v4_independent_budget_diagnostic_sc-16g-2';m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());assert p['phase']=='leader_GO_v128_bounded_compile_once'
+ for x in m['sources'].values():assert hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256']
+ import tilelang
+ from tilelang.jit.kernel import JITKernel

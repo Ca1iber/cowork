@@ -1,0 +1,10 @@
+--- closed127/launch_evidence.py
++++ 128/launch_evidence.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import sys,json,hashlib,subprocess,os,datetime
+-r=Path(sys.argv[1]);m=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v127_bounded_compile_once';assert not (r/'evidence_launcher_once.lock').exists() and not (r/'launch_once.lock').exists()
++r=Path(sys.argv[1]);m=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v128_bounded_compile_once';assert not (r/'evidence_launcher_once.lock').exists() and not (r/'launch_once.lock').exists()
+ for k,x in list(m['sources'].items())+list(m['tools'].items())+[('shared_doc',m['shared_identity_document']),('parentCPP',m['parent_C6_device'])]:assert Path(x['path']).is_file() and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256'],k
+ cmd=[m['tools']['python']['path'],'-S','-u',m['tools']['supervisor']['path'],str(r)];assert cmd==json.loads((r/'launch_preflight.json').read_text())['supervisor_argv'];fd=os.open(r/'evidence_launcher_once.lock',os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600);os.write(fd,json.dumps({'UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'launcher_PID':os.getpid(),'argv':cmd}).encode());os.close(fd)
+ with (r/'supervisor.log').open('w') as log:

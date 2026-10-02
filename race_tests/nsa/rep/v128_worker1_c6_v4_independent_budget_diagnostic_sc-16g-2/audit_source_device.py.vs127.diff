@@ -1,0 +1,10 @@
+--- closed127/audit_source_device.py
++++ 128/audit_source_device.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,hashlib,subprocess,re
+-r=Path('/root/tilelang-metax/race_tests/nsa/rep/v127_worker1_c6_v_operand_chunk_stream_sc-16g-2');m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());d=json.loads((r/'metadata_pair.json').read_text());assert len(d['records'])==2 and d['NSA_attention_calls']==d['fullrefs']==0;rows={x['variant']:x for x in d['records']};assert rows['parent113']['device_SHA']==m['parent_C6_device']['sha256'];checks=[]
++r=Path('/root/tilelang-metax/race_tests/nsa/rep/v128_worker1_c6_v4_independent_budget_diagnostic_sc-16g-2');m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());d=json.loads((r/'metadata_pair.json').read_text());assert len(d['records'])==2 and d['NSA_attention_calls']==d['fullrefs']==0;rows={x['variant']:x for x in d['records']};assert rows['parent113']['device_SHA']==m['parent_C6_device']['sha256'];checks=[]
+ for label,x in rows.items():
+  for k in ['device','host']:assert hashlib.sha256(Path(x[k+'_path']).read_bytes()).hexdigest()==x[k+'_SHA']
+  dev=Path(x['device_path']).read_text();host=Path(x['host_path']).read_text();end=host.rfind('TVMFFIFunctionCall(native_sparse_attention_kernel_packed');start=host.rfind('(((TVMFFIAny*)stack_ffi_any)[0].v_ptr) = Indices;',0,end);assert 0<=start<end;seg=host[start:end];args=[]

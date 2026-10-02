@@ -1,0 +1,10 @@
+--- closed127/capture_candidate_SDK.py
++++ 128/capture_candidate_SDK.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,hashlib,subprocess,sys,re,datetime
+-r=Path('/root/tilelang-metax/race_tests/nsa/rep/v127_worker1_c6_v_operand_chunk_stream_sc-16g-2');m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());mode=sys.argv[1];assert mode in ['resource','IR'];assert (r/'device_shape_static.exit').read_text().strip()=='0';x=next(x for x in json.loads((r/'metadata_pair.json').read_text())['records'] if x['variant']=='candidate127');src=Path(x['device_path']);assert hashlib.sha256(src.read_bytes()).hexdigest()==x['device_SHA'];tool=m['tools']['compiler'];assert hashlib.sha256(Path(tool['path']).read_bytes()).hexdigest()==tool['sha256'];cmd=p['candidate_'+mode+'_argv'];assert cmd[-1]==str(src) and cmd[0]==tool['path'];d=r/'SDK';d.mkdir(exist_ok=True);assert not Path(cmd[-2]).exists()
++r=Path('/root/tilelang-metax/race_tests/nsa/rep/v128_worker1_c6_v4_independent_budget_diagnostic_sc-16g-2');m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());mode=sys.argv[1];assert mode in ['resource','IR'];assert (r/'device_shape_static.exit').read_text().strip()=='0';x=next(x for x in json.loads((r/'metadata_pair.json').read_text())['records'] if x['variant']=='candidate127');src=Path(x['device_path']);assert hashlib.sha256(src.read_bytes()).hexdigest()==x['device_SHA'];tool=m['tools']['compiler'];assert hashlib.sha256(Path(tool['path']).read_bytes()).hexdigest()==tool['sha256'];cmd=p['candidate_'+mode+'_argv'];assert cmd[-1]==str(src) and cmd[0]==tool['path'];d=r/'SDK';d.mkdir(exist_ok=True);assert not Path(cmd[-2]).exists()
+ if mode=='IR':assert (d/'resource_gate.exit').read_text().strip()=='0'
+ (r/('SDK_'+mode+'_command.json')).write_text(json.dumps({'argv':cmd,'source_SHA':x['device_SHA'],'attention_fullrefs':0},indent=2)+chr(10))
+ with (d/(mode+'.log')).open('w') as log:
