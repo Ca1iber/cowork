@@ -1,8 +1,8 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T06:52:58.674259+00:00",
+  "utc": "2026-10-02T07:32:26.798979+00:00",
   "source_branch": "codex-power-v28-base",
-  "last_closed_source_commit": "805ca04d159974d096d17733cad92b8ae742fa33",
+  "last_closed_source_commit": "eb5059ba03a9ff82cbcd61ed34fc4881f1729da8",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
@@ -12,90 +12,36 @@
   ],
   "current": {
     "version": "v104_worker1_s8_global_softmax_sc-16g-2",
-    "phase": "same exact archive formal168 once running",
+    "phase": "closed_failed_formal_checkpoint",
     "source_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
-    "candidate_archive_path": "/root/tilelang-metax/race_tests/nsa/submission/v104_worker1_s8_global_softmax_sc-16g-2/submission.py",
-    "master_pid": 300011,
-    "active_job": {
-      "index": 104,
-      "case": 9,
-      "variant": "parent_v084",
-      "pid": 328245
-    },
-    "formal_terminal_jobs": 103,
-    "formal_actual_candidate_refs": 34,
-    "formal_actual_total_refs": 103,
-    "formal_planned_candidate_refs": 56,
-    "formal_planned_total_refs": 168,
-    "OOM_baseline": 11,
-    "selected_C12_screen": {
-      "scope": "C12 selectedscreen only",
-      "source_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
-      "candidate_full_reference_checks": 4,
-      "control_inclusive_checks": 12,
-      "all_native_terminal_zero": true,
-      "OOM_before": 11,
-      "OOM_after": 11,
-      "latency": {
-        "samples_us": {
-          "baseline_v28": [
-            "83.292000",
-            "83.067000",
-            "82.739000",
-            "83.466000"
-          ],
-          "parent_v084": [
-            "71.951000",
-            "72.653000",
-            "72.581000",
-            "71.956000"
-          ],
-          "power_v104": [
-            "68.859000",
-            "68.644000",
-            "69.023000",
-            "69.560000"
-          ]
-        },
-        "medians_us": {
-          "baseline_v28": "83.179500",
-          "parent_v084": "72.268500",
-          "power_v104": "68.941000"
-        },
-        "vs_parent_pct": "-4.604357361782796100652428100",
-        "ranges_overlap": false,
-        "rounds": [
-          {
-            "round": 1,
-            "medians_us": {
-              "baseline_v28": "83.179500",
-              "parent_v084": "72.302000",
-              "power_v104": "68.751500"
-            },
-            "vs_parent_pct": "-4.910652540731929960443694500"
-          },
-          {
-            "round": 2,
-            "medians_us": {
-              "baseline_v28": "83.102500",
-              "parent_v084": "72.268500",
-              "power_v104": "69.291500"
-            },
-            "vs_parent_pct": "-4.119360440579228847976642660"
-          }
-        ],
-        "any_round_positive": false,
-        "diagnostic_conclusion": "fixedsample lower/separated; full14 and OJ unverified",
-        "new_protocol_not_directly_comparable_to_old_v101_absolute_us": true
-      },
-      "not_no_regression_or_OJ_verdict": true
-    },
-    "risk_plan_preregistered_not_started": true,
-    "metadata_profile_after_native_serial": true,
-    "no_auto_mainpromotion_or_OJ_claim": true,
-    "no_adaptive_retries": true,
-    "formal_terminal_nonzero": [],
-    "OOM_current": 11
+    "formal_exit": 1,
+    "formal_terminal_jobs": 141,
+    "formal_planned_jobs": 168,
+    "failed_native_PID": 338622,
+    "failed_native_exit": -9,
+    "failed_job_reference_checks": 0,
+    "formal_candidate_full_refs": 46,
+    "formal_inclusive_full_refs": 140,
+    "screen_candidate_full_refs": 4,
+    "screen_inclusive_full_refs": 12,
+    "actual_candidate_total_refs": 50,
+    "actual_inclusive_total_refs": 152,
+    "OOM_before": 11,
+    "OOM_after": 13,
+    "all_self_jobs_terminal": true,
+    "no_live_heavy_PID": true,
+    "C13_C14_not_run": true,
+    "formal_positive_vs84_cases": [
+      3,
+      4,
+      7,
+      8,
+      10
+    ],
+    "risk_metadata_profile_not_started": true,
+    "no_no_regression_or_OJ_claim": true,
+    "main_promotion": false,
+    "no_retry_to_complete_old168": true
   },
   "history": {
     "v101": {
@@ -112,11 +58,44 @@
       "source101_latency_vs84_pct": 9.071842927264614,
       "latency_rejected": true,
       "no_cause_claim": true
+    },
+    "v104": {
+      "version": "v104_worker1_s8_global_softmax_sc-16g-2",
+      "phase": "closed_failed_formal_checkpoint",
+      "source_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+      "formal_exit": 1,
+      "formal_terminal_jobs": 141,
+      "formal_planned_jobs": 168,
+      "failed_native_PID": 338622,
+      "failed_native_exit": -9,
+      "failed_job_reference_checks": 0,
+      "formal_candidate_full_refs": 46,
+      "formal_inclusive_full_refs": 140,
+      "screen_candidate_full_refs": 4,
+      "screen_inclusive_full_refs": 12,
+      "actual_candidate_total_refs": 50,
+      "actual_inclusive_total_refs": 152,
+      "OOM_before": 11,
+      "OOM_after": 13,
+      "all_self_jobs_terminal": true,
+      "no_live_heavy_PID": true,
+      "C13_C14_not_run": true,
+      "formal_positive_vs84_cases": [
+        3,
+        4,
+        7,
+        8,
+        10
+      ],
+      "risk_metadata_profile_not_started": true,
+      "no_no_regression_or_OJ_claim": true,
+      "main_promotion": false,
+      "no_retry_to_complete_old168": true
     }
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
-  "next": "complete formal168 or stoponruntimefailure, thenleaderreview positivecase risk/codegen/profile gates",
-  "last_closed_version": "v103_worker1_s1_d128_operand_lifetimes_sc-16g-2",
-  "last_closed_status": "rejected_case6_latency_regression_vs_v084"
+  "next": "ownnew diagnostic plan/source-only feasibility + peer thenleader review; no heavyGO yet",
+  "last_closed_version": "v104_worker1_s8_global_softmax_sc-16g-2",
+  "last_closed_status": "failed_runtime_OOM_formal_incomplete"
 }
