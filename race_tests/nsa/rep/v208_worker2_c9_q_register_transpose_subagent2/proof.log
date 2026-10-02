@@ -1,0 +1,37 @@
+{
+  "official_case_number": 9,
+  "only_key": [
+    1,
+    8192,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "initial_coordinate": "x[laneQuarter,cell,e]=Q(head,16laneQuarter+4cell+e)",
+  "final_coordinate": "xprime[quarter,cell,e]=Q(head,16cell+4quarter+e)",
+  "all1024_coordinates_exact": true,
+  "xor16_xor32_preserve_head_query": true,
+  "two_stages_each4word_shfl": true,
+  "planned_logical_register_exchange_bytes_perquery": 2048,
+  "old_Qshared_write_read_bytes_perquery": 4096,
+  "old_total_shared_write_read_bytes_perquery": 16384,
+  "planned_total_shared_bytes_afterQremoval": 12288,
+  "logical_shared_reduction_pct": 25,
+  "planned_Qglobal_uint4_perlane": 2,
+  "same_global_Q_payload_bytes_perquery": 2048,
+  "globalQ_perlane_address_changed": true,
+  "fullcoverage_16Bvector_alignment_andbounds": true,
+  "inputoutput_bits": "uint16 bitreinterpret/zeroextend/pack/shfl/split/reinterpret;no numericconversion",
+  "planned_removed_sync": "only original Qshared writer-reader sync;K/V/output6others retained",
+  "Num_float32_elements_kept": 16,
+  "candidate_created": false,
+  "new_import_compile_attention_native": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

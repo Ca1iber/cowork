@@ -1,0 +1,29 @@
+{
+  "variant": "parent_v084",
+  "kind": "resource",
+  "argv": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-device-obj",
+    "-resource-usage",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v208_worker2_c9_q_register_transpose_subagent2/codegen/parent_v084/case9_stage1.device.mcbin",
+    "/root/tilelang-metax/race_tests/nsa/rep/v208_worker2_c9_q_register_transpose_subagent2/codegen/parent_v084/case9_stage1.device.cpp"
+  ],
+  "input_device_sha256": "85b2d06253ada7098991de3035caf9d03156c7914175fe2e03f0544756c498fe",
+  "source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "attention_reference_native": [
+    0,
+    0,
+    0
+  ],
+  "PID": 187771
+}

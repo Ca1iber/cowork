@@ -1,0 +1,126 @@
+{
+  "complete12jobs": false,
+  "job_stop": {
+    "run": 10,
+    "variant": "power_v208",
+    "source_path": "/tmp/nsa_worker2_v208_c9_q_register_transpose.py",
+    "sourceSHA": "46696428569b1cb16eb4aac52d07cefcdc28edc0c223a400937a880ad9a6a264",
+    "reference_records": 0,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v208_worker2_c9_q_register_transpose_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 193344,
+    "starttime_ticks": 330827589,
+    "pgid": 193344,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "samples": 8,
+    "stop_reason": "UNOWNED_VISIBLE_HEAVY_THRESHOLD",
+    "exit": -15,
+    "owned_termination_actions": [
+      {
+        "pid": 193344,
+        "signal": "TERM",
+        "identity_verified": true
+      }
+    ],
+    "oom_after": 3,
+    "csv_valid": false,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 0
+  },
+  "actual_full_references": {
+    "candidate": 3,
+    "total": 9
+  },
+  "protocol": "fixed12/sourcefresh/wholecg0.5s/nativeW10R50unchanged",
+  "raw_PASS_CSV_record_count": 9,
+  "raw_all_records": [
+    {
+      "case": 9,
+      "run": 1,
+      "round": 1,
+      "variant": "baseline_v28",
+      "latency_ms": "0.051671",
+      "status": "PASS"
+    },
+    {
+      "case": 9,
+      "run": 2,
+      "round": 1,
+      "variant": "parent_v084",
+      "latency_ms": "0.040284",
+      "status": "PASS"
+    },
+    {
+      "case": 9,
+      "run": 3,
+      "round": 1,
+      "variant": "power_v208",
+      "latency_ms": "0.041590",
+      "status": "PASS"
+    },
+    {
+      "case": 9,
+      "run": 4,
+      "round": 1,
+      "variant": "power_v208",
+      "latency_ms": "0.041078",
+      "status": "PASS"
+    },
+    {
+      "case": 9,
+      "run": 5,
+      "round": 1,
+      "variant": "parent_v084",
+      "latency_ms": "0.040095",
+      "status": "PASS"
+    },
+    {
+      "case": 9,
+      "run": 6,
+      "round": 1,
+      "variant": "baseline_v28",
+      "latency_ms": "0.051738",
+      "status": "PASS"
+    },
+    {
+      "case": 9,
+      "run": 7,
+      "round": 2,
+      "variant": "baseline_v28",
+      "latency_ms": "0.051994",
+      "status": "PASS"
+    },
+    {
+      "case": 9,
+      "run": 8,
+      "round": 2,
+      "variant": "parent_v084",
+      "latency_ms": "0.040100",
+      "status": "PASS"
+    },
+    {
+      "case": 9,
+      "run": 9,
+      "round": 2,
+      "variant": "power_v208",
+      "latency_ms": "0.041298",
+      "status": "PASS"
+    }
+  ],
+  "automatic_formal": false,
+  "currentOOM": 3,
+  "sourceSHA": "46696428569b1cb16eb4aac52d07cefcdc28edc0c223a400937a880ad9a6a264",
+  "status": "failed_runtime_or_validation_selected_screen"
+}

@@ -1,0 +1,58 @@
+{
+  "candidate_path": "/tmp/nsa_worker2_v208_c9_q_register_transpose.py",
+  "candidate_sha256": "46696428569b1cb16eb4aac52d07cefcdc28edc0c223a400937a880ad9a6a264",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "factory_name": "_make_worker2_c9_q_register_transpose",
+  "dispatch_key": [
+    1,
+    8192,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "official_case_number": 9,
+  "prefix_14_AST_nodes_equal": true,
+  "additional_nodes_only": [
+    "_make_worker2_c9_q_register_transpose",
+    "exactC9installer"
+  ],
+  "inverse_Qstage_and_Qreceive_decl_whole_factory_AST_equal": true,
+  "Num_float32_elements": 16,
+  "qLocal_float16_elements": 16,
+  "qReceive_uint32_elements": 4,
+  "remaining_KPdenVPVOutput_source_AST_identical": true,
+  "removed_sync": "onlyQsharedwrite_readsync",
+  "source_sync_sites": 6,
+  "Qglobal_vector_half_elements": 8,
+  "Qglobal_perlane_vector_count": 2,
+  "Qglobal_perlane_addresses_changed": true,
+  "newQstage_source": "for part in T.unroll(2):\n    for element in T.vectorized(8):\n        q_local[part * 8 + element] = Q[batch_id, token, kv_head * groups + lane % 16, (lane // 16) * 16 + part * 8 + element]\nquarter_low = (lane // 16) % 2\nquarter_high = lane // 32\nfor other in T.unroll(2):\n    for pair in T.unroll(2):\n        send_lo = T.if_then_else(quarter_low == 0, q_local[(other * 2 + 1) * 4 + pair * 2], q_local[(other * 2) * 4 + pair * 2])\n        send_hi = T.if_then_else(quarter_low == 0, q_local[(other * 2 + 1) * 4 + pair * 2 + 1], q_local[(other * 2) * 4 + pair * 2 + 1])\n        send_word = T.reinterpret('uint16', send_lo).astype('uint32') | (T.reinterpret('uint16', send_hi).astype('uint32') << 16)\n        q_receive[other * 2 + pair] = T.shfl_xor(send_word, 16, width=64, mask=0xFFFFFFFFFFFFFFFF)\nfor cell in T.unroll(4):\n    for element in T.vectorized(4):\n        received_word = q_receive[(cell // 2) * 2 + element // 2]\n        received_value = T.reinterpret('float16', (received_word >> ((element % 2) * 16)).astype('uint16'))\n        q_local[cell * 4 + element] = T.if_then_else(cell % 2 == quarter_low, q_local[cell * 4 + element], received_value)\nfor other in T.unroll(2):\n    for pair in T.unroll(2):\n        send_lo = T.if_then_else(quarter_high == 0, q_local[(2 + other) * 4 + pair * 2], q_local[(other) * 4 + pair * 2])\n        send_hi = T.if_then_else(quarter_high == 0, q_local[(2 + other) * 4 + pair * 2 + 1], q_local[(other) * 4 + pair * 2 + 1])\n        send_word = T.reinterpret('uint16', send_lo).astype('uint32') | (T.reinterpret('uint16', send_hi).astype('uint32') << 16)\n        q_receive[other * 2 + pair] = T.shfl_xor(send_word, 32, width=64, mask=0xFFFFFFFFFFFFFFFF)\nfor cell in T.unroll(4):\n    for element in T.vectorized(4):\n        received_word = q_receive[(cell % 2) * 2 + element // 2]\n        received_value = T.reinterpret('float16', (received_word >> ((element % 2) * 16)).astype('uint16'))\n        q_local[cell * 4 + element] = T.if_then_else(cell // 2 == quarter_high, q_local[cell * 4 + element], received_value)\n",
+  "stage_shfl_callsite_count": [
+    1,
+    1
+  ],
+  "expanded_wordshfl_count_perstage": [
+    4,
+    4
+  ],
+  "shfl_xor_deltas": [
+    16,
+    32
+  ],
+  "width": 64,
+  "mask": 18446744073709551615,
+  "no_lane_dependent_local_index_or_branch_enclosing_shfl": true,
+  "collect_recv_before_each_stage_inplace_overwrite": true,
+  "planned_Qshared_reads_writes_removed": true,
+  "bittransport_reinterpret_not_FPnumeric_cast": true,
+  "actual_CPP_IR_resource_unavailable_sourceonly": true,
+  "new_import_compile_attention_native": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

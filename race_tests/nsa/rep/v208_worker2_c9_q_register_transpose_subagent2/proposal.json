@@ -1,0 +1,55 @@
+{
+  "version": "v208_worker2_c9_q_register_transpose_subagent2",
+  "status": "PROPOSAL_ONLY_NO_KERNEL_EDIT_OR_HEAVY",
+  "development_parent_commit": "e61d29b899f32d3ea86681c984076568ff70dcf7",
+  "numerical_parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "official_case_number": 9,
+  "only_key": [
+    1,
+    8192,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "mechanism": "remove complete Qshared writer/readback stage; two globaluint4 directly intoqLocal16 contiguousquarter theninplaceregister4x4transpose usingxor16/xor32 fourpackedwords eachstage",
+  "existing_C9_evidence": "v207parent MTE68.79/71.44,MMA6.86/7.12,WGnonconf100/WGload50.35/50.08cycles;gridruntimeUNAVAILABLE/sourcecontract8192x1/waves8192+16MiBwrite320 limitedvalid. These do notprove Qstage bottleneck",
+  "specific_positive": "removeQshared2KiBwrite+2KiBread/query (32MiB logicalshared at8192queries),4store8B+4load8B/lane andQ-onlysync;totalsharedlogical16KiB\u219212KiB/query(25percent),notHBM orlatencyclaim",
+  "specific_negative": [
+    "8packeduint32shfl perlane/additional2KiB/query logicallaneexchange+pack/select/extract ALU",
+    "qLocal/send/recv liveness canraiseMT/ST/spill orlowerstaticmax",
+    "Qglobal eachpass1KiBpayload spread2KiBholes;64lane-wholewave32/64/128Bline model2x, subgroup8/16 with64/128Bline can4x/8x; logicalminimumline intersections notactualtransactions andsecondpasscachemayreuse"
+  ],
+  "newQ_address": "head=lane%16,quarter=lane//16; eachpart0/1 reads8half atQ[batch,token,kvhead*16+head,quarter*16+part*8+e]",
+  "inplace_transpose": "raw x[q,c,e]=Q(head,16q+4c+e). Stagebit0 peerxor16 andbit1 peerxor32: keepcells withcbit==qbit; otherwise receivespeer cell(c xor bit). All4uint32recv collect beforewrites. finalxprime[q,c,e]=Q(head,16c+4q+e)",
+  "bittransport": "normalT.reinterpret uint16 fromF16 thenzeroextendU32/shift-or;full64mask,width64 xor16/xor32;splitU16/reinterpretF16;arbitrarybitsno numericFP\u2192int",
+  "indices": "source/local indices fullyconstantunroll(cell/pair/part/e);lanequarter bits onlyif_then_else valuesselection,neveraddressindex orbrancharoundshfl;perstageoverwriteoutgoingcells onlyafterfourrecv complete",
+  "math_risks": "MMA qLocal offsets mustbitmatchoriginalhead/chunk/quarter;K/Pden/PV/Num16/F32divisionF16 math/order unchanged;misorderedinplace writes corruptsource forsecondstage",
+  "synchronization": "onlyoriginalQsharedwrite\u2192Qread barrier removed;remainingKpre/Kpost/Vpre/Vpost/outputpre/outputpost6warp sync unchanged;shuffle doesnotreplaceany remaining shared lifetime protection;allQ shfl beforeuniformselectedguard(all64querylanes) evenallinvalid index",
+  "scope": "onlyofficialC9tuple fromJSON;parent14topASTprefix/other13keys kept;samegrid8192x1/threads64/dyn2KiB held forK/V/out",
+  "stdlib_proofs": [
+    "q_transpose_proof.json",
+    "q_stage_packet_coordinates.json",
+    "Q_global_vector_addresses.json",
+    "global_line_hypotheses.json"
+  ],
+  "peer": "worker1 actualadvisory received:stagecoordinatex[q,c]\u2192x[c,q],recvbeforeoverwrite,head-preserving xor16/32,onlyQsyncdelete,globalcoalescingrisk andbytevsperformance distinction. Adoptedownplan,nopeeredit",
+  "metadata_falsifiers": [
+    "actualqLocal finalcoordinates/bits differorFPnumerictransport/lane-dependentbranch/spill/stack>0 =>stop",
+    "Qshared stage notremoved/twoQuint4read8shfl notmaterialized orremaining6sync/math8MMA/Num16 alter=>stop",
+    "actualglobalQvectorsnotnewalignedvalidformula orK/V/outperlaneexpressions changed=>stop",
+    "actualstaticmax<8/forbidden/sourcehash/key/hostshape/privatefailure=>stop;allMT/ST changes recorded,notresourceswin"
+  ],
+  "future_gates_only_after_GO": "sourceonlyheader208/exact3imports/prefix/bit/vector/AST/sourcevalidator0;then separateleaderboundedparent+C208metadata/O3IR/resources/sameworker2heavylock2GiBdoubleadmit/whole0.5s/28GiBstop/300s/ownverifiedidentity/no retry;thenonlyifnewGO originalC9native4C12 fixedB-P-C-C-P-Bx2/W10R50/fullnaive/gradF16/seed0/1e-2/600s;positive/outlier/round/overlap retained,nomedianwinreject/noautoformal/profile",
+  "new_import_compile_attention_native": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "candidate_created": false,
+  "source_only_GO": true,
+  "heavy_GO": false
+}

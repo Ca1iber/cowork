@@ -1,0 +1,56 @@
+[
+  {
+    "variant": "parent_v084",
+    "MT": 42,
+    "ST": 20,
+    "staticmax": 8,
+    "not_actual_occupancy": true,
+    "stack": 0,
+    "dynamic_shared_bytes": 2048,
+    "launch": [
+      8192,
+      1,
+      64,
+      1,
+      1,
+      2048
+    ],
+    "global_CPP_uint4_expr": {
+      "Q": "*(uint4*)(qk_fetch + 0) = *(uint4*)(Q + (((((int)blockIdx.x) * 1024) + (part * 512)) + (((int)threadIdx.x) * 8)));",
+      "K": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + (((((int64_t)part_1) * (int64_t)512) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));",
+      "V": "*(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)128) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)row) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));",
+      "Output": "*(uint4*)(Output + (((((int)blockIdx.x) * 1024) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+    },
+    "warp_sync_count": 7,
+    "IR_MMA_count": 8,
+    "IR_SHA": "722c5764812db2d76ae3eb666aa824d0e6409fd402eba857001ef7368717bfea",
+    "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+  },
+  {
+    "variant": "power_v208",
+    "MT": 44,
+    "ST": 26,
+    "staticmax": 8,
+    "not_actual_occupancy": true,
+    "stack": 0,
+    "dynamic_shared_bytes": 2048,
+    "launch": [
+      8192,
+      1,
+      64,
+      1,
+      1,
+      2048
+    ],
+    "global_CPP_uint4_expr": {
+      "Q": "*(uint4*)(q_local + (part * 8)) = *(uint4*)(Q + ((((((int)blockIdx.x) * 1024) + ((((int)threadIdx.x) & 15) * 64)) + ((((int)threadIdx.x) >> 4) * 16)) + (part * 8)));",
+      "K": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + (((((int64_t)part_1) * (int64_t)512) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));",
+      "V": "*(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)128) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)row) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));",
+      "Output": "*(uint4*)(Output + (((((int)blockIdx.x) * 1024) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+    },
+    "warp_sync_count": 6,
+    "IR_MMA_count": 8,
+    "IR_SHA": "7a3b4a422c6ede44ef71b90ed806edc4f1d11d83a9b61b1742dd7c148a21756b",
+    "sourceSHA": "46696428569b1cb16eb4aac52d07cefcdc28edc0c223a400937a880ad9a6a264"
+  }
+]
