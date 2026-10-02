@@ -1,0 +1,71 @@
+{
+  "UTC": "2026-10-02T11:06:51.449920+00:00",
+  "version": "v209_worker2_c14_linear_query_grid_subagent2",
+  "approval": "onceboundedmetadata+candidateSDKresource1+firstO3IR2+readonlyaudit only",
+  "actual_plan_SHA": "a69211fa79f8e1ffdc6b9dd2016ebb3036dc9017132b6080ef8a6f033c6eb4db",
+  "actual_source_leader_audit": {
+    "parent_SHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "source_SHA": "0719e8e9fa5f14641ee79692bed0f526e445573ffc447c199ac5bedb39bcd725",
+    "header": "# codex-power v209",
+    "actual_grid": "T.Kernel(batch * seq_len * kv_heads, threads=64) as linear_query",
+    "actual_decode": [
+      "batch_id = linear_query // (seq_len * kv_heads)",
+      "token = linear_query // kv_heads % seq_len",
+      "kv_head = linear_query % kv_heads"
+    ],
+    "inverse_grid_decode_whole_factory_AST_equal": true,
+    "parent14_AST_prefix": true,
+    "exact3imports": [
+      "import tilelang",
+      "import tilelang.language as T",
+      "from tilelang.layout import make_swizzled_layout"
+    ],
+    "dispatch": "_power_install_lazy_code((2, 512, 2, 32, 64, 1, 16, True), _make_worker2_c14_linear_query_grid)"
+  },
+  "parent_profile_leader_raw_review": {
+    "rawSHA": [
+      "270a8dd4c775747a1d5da810f05d6253e44ab2e12e76d2cdbcdb65cad4304122",
+      "e1a3944cb8e0f1ae6ebd87cc8f3d7869cfaa1475a34b622238480048408c7fb0"
+    ],
+    "numeric10_both": true,
+    "waves": 2048,
+    "write_payload_bytes": 4194304,
+    "residual_both": 320,
+    "MTE_duty_pct": [
+      53.2442761873506,
+      53.97983663328883
+    ],
+    "MMA_duty_pct": [
+      5.258693944429689,
+      5.331341889707539
+    ],
+    "WG_load_cycles": [
+      50.373081752232146,
+      50.61830357142857
+    ],
+    "shared_nonconflict_pct": [
+      100,
+      100
+    ],
+    "runtime_grid": "UNAVAILABLE_noexclusiveclaim",
+    "fullref_native_newkernel_duringprofile": [
+      0,
+      0,
+      0
+    ]
+  },
+  "counts": {
+    "metadata_process": 1,
+    "factories": 2,
+    "candidate_resource_command": 1,
+    "optimized_IR_commands": 2,
+    "attention": 0,
+    "ref": 0,
+    "native": 0
+  },
+  "parent_resource_reuse": "OnlynewparentCPP=c695/SDK5d0/exactcompileroptions match original resource42MT20ST/max8/stack0. Input/outputfilepaths recorded separately asprovenance,CPP contenthash binding required. No automatic parent recapture.",
+  "held": "parent14ASTprefix,other13keys/core Num16/score4P4/8MMA/7sync/math guard unchanged;perlogicalquery alladdresses match decodedb/t/h;newhostgrid2048 threads64 dyn2K;parse1Dsharedslot9 actualhost",
+  "guards": "unchanged2GiBdoubleadmission/28whole/OOM3/unknownRSS1GiB/300s/0.5s/verifiedownedidentity/priorabort/no retry, allheavyserial",
+  "next": "Freeze actualargv/helper/source/tool/inputSHA beforelaunch;reportfinite actualcodegen/resource/addressfacts for nextnative decision",
+  "no_auto_native_profile_or_other_heavy": true
+}
