@@ -1,0 +1,83 @@
+{
+  "created_utc": "2026-10-02T03:49:41.792263+00:00",
+  "id": "v201_worker2_c5_direct_output_subagent2",
+  "base_commit": "d1c7891b163f6ce8b0ad7f96292d30ab5b736474",
+  "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+  "target_cases": [
+    5
+  ],
+  "target_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "parent_source": "race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "original_source": "race_tests/nsa/submission.py",
+  "original_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "candidate_path": "/tmp/nsa_worker2_v201_c5_direct_output.py",
+  "mechanism": "only final output from existing normalized MFMA numerator direct to global8B instead of shared staging",
+  "predictions": {
+    "syncwarp": {
+      "parent": 7,
+      "candidate": 5
+    },
+    "global_store_per_lane": {
+      "parent": "2x16B contiguous",
+      "candidate": "4x8B strided16rows each32B logical run"
+    },
+    "shared_output_write_read_eliminated_bytes_per_query": [
+      2048,
+      2048
+    ],
+    "dynamic_shared_bytes": 2048,
+    "grid": [
+      1024,
+      4
+    ],
+    "dispatched_waves": 4096,
+    "threads": 64,
+    "output_payload_bytes": 8388608,
+    "write_residual_scope_bytes": [
+      0,
+      512
+    ],
+    "measured_sector_width": "UNKNOWN; no NVIDIA sector fact",
+    "register_pressure": "retain increases; parent42MT20ST/staticmax8/stack0 are controls, no occupancy claim"
+  },
+  "native_screen_order": [
+    "baseline_v28",
+    "parent_v084",
+    "power_v201",
+    "power_v201",
+    "parent_v084",
+    "baseline_v28",
+    "baseline_v28",
+    "parent_v084",
+    "power_v201",
+    "power_v201",
+    "parent_v084",
+    "baseline_v28"
+  ],
+  "native_scope": "existing run_variant single source per freshprocess NSA_CASES5/full naive_nsa/W10R50/seed0/tol/gradTrue unchanged/no postexport in native",
+  "planned_full_references": {
+    "candidate": 4,
+    "total": 12
+  },
+  "stop_rules": [
+    "metadata source/forbidden lowering/hash failure",
+    "stack>0",
+    "native nonzero/OOM increment/innerKilled/hash/CSVerror",
+    "median slow/equal reject; overlap or any round positive inconclusive; no automaticformal/retry"
+  ],
+  "metadata_attention_runs": 0,
+  "new_shuffle": false,
+  "other13_dispatch_math": "exact parent prefix remains; one final installer overridesonlyC5",
+  "peer_review": "worker1 mapping/sync/coalescing advisory recorded in cowork114db76; execution approved by leader message",
+  "oom_before": "oom_kill_disable 0\nunder_oom 0\noom_kill 1\n"
+}

@@ -1,0 +1,39 @@
+{
+  "case": 5,
+  "variant": "power_v201",
+  "MT": 36,
+  "ST": 22,
+  "static_shared_bytes_reported": 0,
+  "dynamic_shared_bytes_host": 2048,
+  "static_max_warps_per_PEU": 8,
+  "stack_bytes": 0,
+  "not_measured_occupancy": true,
+  "parent": {
+    "case": 5,
+    "variant": "parent_v084",
+    "MT": 42,
+    "ST": 20,
+    "static_shared_bytes_reported": 0,
+    "dynamic_shared_bytes_host": 2048,
+    "stack_bytes": 0,
+    "static_max_warps_per_PEU": 8,
+    "not_measured_occupancy": true
+  },
+  "command": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-device-obj",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-resource-usage",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v201_worker2_c5_direct_output_subagent2/resources/case5_power_v201.mcbin",
+    "/root/tilelang-metax/race_tests/nsa/rep/v201_worker2_c5_direct_output_subagent2/codegen/power_v201/case5_stage1.device.cpp"
+  ]
+}

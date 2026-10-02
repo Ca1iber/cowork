@@ -1,0 +1,126 @@
+{
+  "id": "v201_worker2_c5_direct_output_subagent2",
+  "status": "rejected_case5_direct_output_regression_vs_v084",
+  "base_commit": "d1c7891b163f6ce8b0ad7f96292d30ab5b736474",
+  "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+  "branch": "exp/nsa-worker2-s1-from-v084",
+  "machine": "subagent2",
+  "hostname": "6b3727803ca4",
+  "candidate_sha256": "66ed461e355a69c456f2224b749d425ede38ce6ebba7f22ae1568351b05d6264",
+  "header": "# codex-power v201",
+  "candidate_archive": "race_tests/nsa/submission/v201_worker2_c5_direct_output_subagent2/submission.py",
+  "archive_is_promotion": false,
+  "screen": {
+    "source_sha256": "66ed461e355a69c456f2224b749d425ede38ce6ebba7f22ae1568351b05d6264",
+    "complete12jobs": true,
+    "job_stop": null,
+    "actual_full_references": {
+      "candidate": 4,
+      "total": 12
+    },
+    "oom_final": 1,
+    "protocol": "single-source freshproc/full unchangednative; no postexport; fixed12 only",
+    "automatic_formal": false,
+    "status": "rejected_target_median_not_faster",
+    "samples_us": {
+      "baseline_v28": [
+        30.889,
+        30.705,
+        30.659,
+        31.278
+      ],
+      "parent_v084": [
+        24.677999999999997,
+        24.765,
+        24.791,
+        24.729999999999997
+      ],
+      "power_v201": [
+        27.355999999999998,
+        27.351,
+        27.249,
+        27.310000000000002
+      ]
+    },
+    "medians_us": {
+      "baseline_v28": 30.796999999999997,
+      "parent_v084": 24.7475,
+      "power_v201": 27.3305
+    },
+    "candidate_vs_control_pct": {
+      "baseline_v28": -11.255966490242542,
+      "parent_v084": 10.437417921002123
+    },
+    "rounds": [
+      {
+        "round": 1,
+        "medians_us": {
+          "baseline_v28": 30.796999999999997,
+          "parent_v084": 24.7215,
+          "power_v201": 27.353499999999997
+        },
+        "candidate_vs_parent_pct": 10.646603159193413
+      },
+      {
+        "round": 2,
+        "medians_us": {
+          "baseline_v28": 30.9685,
+          "parent_v084": 24.7605,
+          "power_v201": 27.2795
+        },
+        "candidate_vs_parent_pct": 10.173461763696201
+      }
+    ],
+    "candidate_parent_ranges_overlap": false
+  },
+  "metadata_initial_helper_gate": 1,
+  "metadata_recovery_gate": 0,
+  "source_generated_and_archive_static_gate": 0,
+  "resource_gate": 0,
+  "resource": {
+    "case": 5,
+    "variant": "power_v201",
+    "MT": 36,
+    "ST": 22,
+    "static_shared_bytes_reported": 0,
+    "dynamic_shared_bytes_host": 2048,
+    "static_max_warps_per_PEU": 8,
+    "stack_bytes": 0,
+    "not_measured_occupancy": true,
+    "parent": {
+      "case": 5,
+      "variant": "parent_v084",
+      "MT": 42,
+      "ST": 20,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 2048,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 8,
+      "not_measured_occupancy": true
+    },
+    "command": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-device-obj",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-resource-usage",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v201_worker2_c5_direct_output_subagent2/resources/case5_power_v201.mcbin",
+      "/root/tilelang-metax/race_tests/nsa/rep/v201_worker2_c5_direct_output_subagent2/codegen/power_v201/case5_stage1.device.cpp"
+    ]
+  },
+  "actual_candidate_correctness_cases": [
+    5
+  ],
+  "full14_gate": null,
+  "new_profiler_samples": 0,
+  "main_source_unchanged": true,
+  "next": "packed16B output retained; newmechanism needsfresh evidence/leaderreview; noformal/retest"
+}
