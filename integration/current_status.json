@@ -20,7 +20,7 @@
   "oj_total": 1204,
   "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
   "peer_exchange_actual": "Both workers directly discussed inverse mapping, global vector width, shared-V synchronization and failed-run semantics; own-branch records only",
-  "updated_at_utc": "2026-10-02T05:48:52.367228+00:00",
+  "updated_at_utc": "2026-10-02T06:02:20.964073+00:00",
   "worker1": {
     "cases": [
       6,
@@ -31,15 +31,16 @@
     "active_version": "v104_worker1_s8_global_softmax_sc-16g-2",
     "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
     "last_closed_source_commit": "805ca04d159974d096d17733cad92b8ae742fa33",
-    "stage": "same-source fixed full14 formal running; not all14 verdict",
+    "stage": "v104 fixed formal: cases1/2 complete,job27 C3 candidate running; no all14 verdict",
     "master_pid": 300011,
-    "last_reported_completed_jobs": 2,
-    "last_reported_candidate_refs": 0,
-    "last_reported_inclusive_refs": 2,
+    "last_reported_completed_jobs": 26,
+    "last_reported_candidate_refs": 8,
+    "last_reported_inclusive_refs": 26,
     "oom_kill": 11,
     "selected_screen_candidate_us": 68.941,
     "selected_screen_parent_us": 72.2685,
-    "selected_screen_delta_pct": -4.604357
+    "selected_screen_delta_pct": -4.604357,
+    "communication_head": "3047cb505036edbc5dd31cf8ac61c90b9288769a"
   },
   "worker2": {
     "cases": [
@@ -57,9 +58,13 @@
     "active_version": "v203 diagnostic",
     "last_closed_source_commit": "c993479f0dedb9a878915fb1d26087b3d0411110",
     "communication_head": "f120141f9ebdf9b335e4f400d96fa42ef18b57ca",
-    "stage": "once-only import memory diagnostic approved; execution checkpoint pending",
+    "stage": "v203 onceimport done0/OOM3 stable; report/commit and new kernel proposal pending",
     "oom_kill": 3,
-    "prior_v202": "run10 -9 and OOM1->3; 3C/9inclusive refs; incomplete screen retained"
+    "prior_v202": "run10 -9 and OOM1->3; 3C/9inclusive refs; incomplete screen retained",
+    "diagnostic_reference_calls": 0,
+    "diagnostic_attention_calls": 0,
+    "diagnostic_sample_count": 67,
+    "observed_cgroup_peak_bytes": 21680566272
   },
   "leader_next": "Monitor actual gates; review formal non-target risks and once-only memory diagnostic; no main promotion",
   "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration"
