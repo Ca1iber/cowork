@@ -1,0 +1,76 @@
+{
+  "version": "v115_worker1_fixed_all14_C11_C12_validation_sc-16g-2",
+  "UTC": "2026-10-02T13:00:21.602010+00:00",
+  "approval": "one original all14 fixed12 only",
+  "review_archive_SHA": "3f4594478bdc45882ddbd0efb43375fd792b385b70148ba35029f0267746c0e3",
+  "verified_text_hashes": 18,
+  "plan_SHA": "79702f5b7804bff4c8c2c037fb558d77ac344378c4d2e5951375ad09f7c0642f",
+  "manifest_SHA": "61837d790f5679b017d04a7df3ce0a666a11d36bb2debeec0e624cffa9c0090b",
+  "sources": {
+    "baseline_v28": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+      "sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd"
+    },
+    "power_v113": {
+      "path": "/root/tilelang-metax/race_tests/nsa/experiments/v113_worker1_s4_global_softmax_sc-16g-2/candidate.py",
+      "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+    },
+    "parent_v084": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+      "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+    }
+  },
+  "actual_helper_diff": "only version/output naming and generic official selected cases/control replacement; guards unchanged",
+  "original_case_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "planned_refs_candidate_inclusive": [
+    56,
+    168
+  ],
+  "planned_refs_not_actual_counts": true,
+  "native_original": {
+    "case_seed_reset_each_call": 0,
+    "full_naive": true,
+    "warmup": 10,
+    "repeat": 50,
+    "atol": 0.01,
+    "rtol": 0.01,
+    "F16_requires_grad": true,
+    "no_post_export_or_metadata": true,
+    "wrapper_sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+    "case_runner_sha256": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568"
+  },
+  "budget_GiB": [
+    5,
+    23,
+    4
+  ],
+  "runtime_stop_GiB": 28,
+  "expected_OOM": 13,
+  "lock_no_retry_owned_tuple_identity_and_unknown_guards": "same verified v114",
+  "launcher_argv": [
+    "/opt/conda/bin/python",
+    "-S",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v115_worker1_fixed_all14_C11_C12_validation_sc-16g-2/launch_native_screen.py",
+    "/root/tilelang-metax/race_tests/nsa/rep/v115_worker1_fixed_all14_C11_C12_validation_sc-16g-2/native_validation"
+  ],
+  "full14_performance": "all raw/case/round positive deltas and ranges retained; no source identity waiver; old results separate",
+  "no_extra_metadata_IR_profile_or_adaptive_tests": true,
+  "canonical_main_not_promoted": true,
+  "local_audit_initial_error": "inventory key SHA initially assumed sha256; no worker files or gates changed; actual schema inspected and hashes corrected"
+}

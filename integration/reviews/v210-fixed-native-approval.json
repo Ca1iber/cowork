@@ -1,0 +1,75 @@
+{
+  "version": "v210_worker2_c8_serial_query_pair_subagent2",
+  "UTC": "2026-10-02T13:01:43.778905+00:00",
+  "approval": "one original C8 fixed12 only",
+  "archive_SHA": "382a7822581a186ff62f8ef9b264b52cd5c09d592a9eef2c2297743683055cf6",
+  "verified_text_hashes": 22,
+  "candidate_SHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+  "plan_before_GO_SHA": "68db5bd9c2d7564ee58c5fe5a6ec3e37f43e663c7d73775cdc0b1824175c6c91",
+  "runtime_plan_before_GO_SHA": "dcf15c93651691b6b6237c103d7da5a2cafbfe20815ae8e067ad8fc2fd3b510d",
+  "helpers": [
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/run_native_screen.py",
+      "sha256": "b9d3cec1e6991640af8e35ec079e9acabf83d2b790b9243c859c08c4e2a8a1b8"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/native_whole_cgroup_utils.py",
+      "sha256": "eaf7eb6e9488e7a75820874b68d2497492b92af44815b26bc7bc59ba9925d3e7"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/native_exec.py",
+      "sha256": "547e45c040e544366d3a56eeb03fb7b1a24bc5cdeb9d825936909e94d429a4ab"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/native_guardfix2_stdlib_preflight.py",
+      "sha256": "64792687d3a0ba2c23285de3d2fc970564a627e27909f131be5f2ba615649c5c"
+    }
+  ],
+  "fixed_order": [
+    "baseline_v28",
+    "parent_v084",
+    "power_v210",
+    "power_v210",
+    "parent_v084",
+    "baseline_v28",
+    "baseline_v28",
+    "parent_v084",
+    "power_v210",
+    "power_v210",
+    "parent_v084",
+    "baseline_v28"
+  ],
+  "expected_OOM": 3,
+  "admission_GiB": 2,
+  "runtime_stop_GiB": 28,
+  "unknown_RSS_GiB": 1,
+  "period_seconds": 0.5,
+  "max_job_seconds": 600,
+  "actual_three_guardfix_plus_critical_fields_reviewed": true,
+  "shared_original_inputs_SHA_verified_against_Git": true,
+  "original_native_contract": "seed0/GradF16/fullnaive/no_gradref/tol1e-2/W10R50/noexport",
+  "planned_refs_C_inclusive": [
+    4,
+    12
+  ],
+  "counts_only_actual_PASS_true_exit0_no_guard_violation": true,
+  "resources_cost_parent_candidate": [
+    [
+      42,
+      20,
+      8,
+      0,
+      2048
+    ],
+    [
+      56,
+      28,
+      8,
+      0,
+      2048
+    ]
+  ],
+  "decision": "no adaptive repeats; candidate median>=parent reject; overlap or positive round inconclusive; all raw retained",
+  "no_extra_metadata_IR_profile_formal_or_main_promotion": true,
+  "local_review_initial_error": "old filename used for v2 archive manifest; corrected by exact file listing, no worker edits/gates changed"
+}
