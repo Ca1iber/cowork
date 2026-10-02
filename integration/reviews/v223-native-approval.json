@@ -1,0 +1,78 @@
+{
+  "GO": "onefixed12native_only_case5",
+  "sourceSHA": "0dbec413ce91a7b65e409b1765b24ac9d98df1f79d7bdc800a51b7be52194a7a",
+  "actualCPP_inverse_restores_parent_entire_source_except3prebars": true,
+  "actualCPP_SHA": "46d593aed704982582b28446829f92d7fba92779ada794cd0e3519246490db76",
+  "actualslot_address_checks": [
+    {
+      "line": 53,
+      "vectors": 256,
+      "width_half": 4,
+      "covered_half": [
+        1024,
+        2047
+      ],
+      "same_map_plus1024": true,
+      "alignment8B": true
+    },
+    {
+      "line": 61,
+      "vectors": 256,
+      "width_half": 4,
+      "covered_half": [
+        1024,
+        2047
+      ],
+      "same_map_plus1024": true,
+      "alignment8B": true
+    },
+    {
+      "line": 166,
+      "vectors": 256,
+      "width_half": 4,
+      "covered_half": [
+        1024,
+        2047
+      ],
+      "same_map_plus1024": true,
+      "alignment8B": true
+    },
+    {
+      "line": 173,
+      "vectors": 256,
+      "width_half": 4,
+      "covered_half": [
+        1024,
+        2047
+      ],
+      "same_map_plus1024": true,
+      "alignment8B": true
+    }
+  ],
+  "retained_CPP_sync_lines": [
+    34,
+    56,
+    132,
+    168
+  ],
+  "ordering": "Q0 ->Qpost ->Qread; K1 ->Kpost witnesses Qread; Kread ->V0 ->Vpost witnesses Kread; Vread ->Out1 ->Outpost witnesses Vread; gatherOut1. Uniform invalid skipK/V retains Q0/Out1 disjoint.",
+  "IR": {
+    "MMA": 8,
+    "warp_sync": 4,
+    "bpermute": 4,
+    "alloca_instruction": 0,
+    "AS5": 0
+  },
+  "resource": {
+    "MT": 40,
+    "ST": 20,
+    "staticmax": 8,
+    "stack": 0,
+    "dynamicshared": 4096
+  },
+  "native_planSHA": "c120edb6d1b191c078d73053bffdf939b4ad235127463657378bb9b953ac5b18",
+  "native_manifestSHA": "564d0874192e34f8df43bbd283bfdae8739ebcfbca460433795d65b909a0a947",
+  "nativeinventory_sha_verified": 15,
+  "additional_compile_profile_retries": false,
+  "all14_nonregression": "UNPROVEN"
+}
