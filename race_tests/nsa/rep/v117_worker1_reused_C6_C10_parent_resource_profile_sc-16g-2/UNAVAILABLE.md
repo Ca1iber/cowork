@@ -1,0 +1,1 @@
+C10 resource/profile neverstarted afterC6 strictscope failure. Runtimegrid/ISA/MCTracer/CycleTrace notcaptured. CleanexclusiveC6 counterscope/occupancy/HBM/no-reg/OJ claims unavailable; numericrecords preserved despitepredeclaredAchieved equalityfalsification. No oldrecord substituted orrecaptured.

@@ -1,0 +1,61 @@
+{
+  "index": 1,
+  "variant": "parent_v084",
+  "case": 6,
+  "counts": 2,
+  "source": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+  },
+  "output_dir": "/root/tilelang-metax/race_tests/nsa/rep/v117_worker1_reused_C6_C10_parent_resource_profile_sc-16g-2/profile_1_case6_parent_v084",
+  "target_argv": [
+    "env",
+    "MACA_PATH=/opt/maca",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONWARNINGS=ignore",
+    "PYTHONPATH=/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa",
+    "NSA_VARIANT_SOURCE=/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "NSA_PROFILE_MODE=mctx",
+    "MCTX_TARGET_PROFILE_PATH=/root/tilelang-metax/race_tests/nsa/rep/v117_worker1_reused_C6_C10_parent_resource_profile_sc-16g-2/profile_1_case6_parent_v084/raw",
+    "/opt/conda/bin/python",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py",
+    "6"
+  ],
+  "profiler_command": [
+    "/opt/mcProfiler-ubuntu18.04/mcProfiler",
+    "perf_exec",
+    "--cmdline",
+    "env MACA_PATH=/opt/maca PYTHONDONTWRITEBYTECODE=1 PYTHONWARNINGS=ignore PYTHONPATH=/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa NSA_VARIANT_SOURCE=/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py NSA_PROFILE_MODE=mctx MCTX_TARGET_PROFILE_PATH=/root/tilelang-metax/race_tests/nsa/rep/v117_worker1_reused_C6_C10_parent_resource_profile_sc-16g-2/profile_1_case6_parent_v084/raw /opt/conda/bin/python -u /root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py 6",
+    "--casename",
+    "nsa_worker1_v117_parent_v084_case6",
+    "--metrics",
+    "L2C Hit Rate",
+    "Global Memory Read bytes",
+    "Global Memory Write bytes",
+    "AP MTE Duty ratio",
+    "AP MMA Duty ratio",
+    "shared memory access efficiency",
+    "average conflict cycles per instruction",
+    "average latency per load instruction",
+    "Achieved waves",
+    "Dispatched waves",
+    "--counts",
+    "2",
+    "--custom",
+    "--per-kernel",
+    "--cwd",
+    "/root/tilelang-metax"
+  ],
+  "cwd": "/opt/mcProfiler-ubuntu18.04",
+  "expected_waves": 8192,
+  "output_payload_bytes": 33554432,
+  "residual_allowed": [
+    0,
+    512
+  ],
+  "expected_grid": [
+    1024,
+    8
+  ]
+}
