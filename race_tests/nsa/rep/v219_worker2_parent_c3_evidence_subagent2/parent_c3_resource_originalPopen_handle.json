@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-device-obj",
+    "-resource-usage",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v219_worker2_parent_c3_evidence_subagent2/case3_parent.device.mcbin",
+    "/tmp/nsa_worker2_v219_inputs/case3.device.cpp"
+  ],
+  "PID": 340577,
+  "originalPopen_held": true
+}
