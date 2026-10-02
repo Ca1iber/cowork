@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T09:59:11.638419+00:00",
-  "state": "V208_SOURCE_STATIC0_PENDING_METADATA_REVIEW",
+  "timestamp_utc": "2026-10-02T10:12:55.549957+00:00",
+  "state": "V208_METADATA0_READY_SELECTED_REVIEW",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v208_worker2_c9_q_register_transpose_subagent2",
-    "state": "ONE_C9_QSTAGE_PROPOSAL",
+    "state": "METADATA_SEMANTIC0_NATIVE_PROPOSAL",
     "only_key": [
       1,
       8192,
@@ -45,23 +45,69 @@
     "Num_float32_kept": 16,
     "peer_actual_received": true,
     "leader_GO": false,
-    "new_import_compile_attention_native": [
-      0,
-      0,
-      0,
-      0
-    ],
     "candidate_path": "/tmp/nsa_worker2_v208_c9_q_register_transpose.py",
     "sourceSHA": "46696428569b1cb16eb4aac52d07cefcdc28edc0c223a400937a880ad9a6a264",
     "source_static_exit": 0,
     "source_GO": true,
     "heavy_GO": false,
-    "metadata_GO": false,
+    "metadata_GO": true,
     "Num_float32_elements": 16,
     "source_sync_sites": 6,
     "wholefactory_inverse_AST_equal": true,
-    "CPP_IR_resource_now": "NOT_RUN_sourceonly_snapshot",
-    "model_wording_corrected": "wholewave2x/somesubgroups4x8x notrealtransaction"
+    "model_wording_corrected": "wholewave2x/somesubgroups4x8x notrealtransaction",
+    "initial_source_only_snapshot": {
+      "new_import_compile_attention_native": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "CPP_IR_resource_now": "NOT_RUN_sourceonly_snapshot"
+    },
+    "metadata_exit": 0,
+    "SDK_commands": 4,
+    "SDK_exits": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "initial_parser_exit": 1,
+    "readonly_kernel_scope_parser_exit": 0,
+    "Qoperand_symbolic_bits_verified": 16384,
+    "actual_Q_value_count_verified": 1024,
+    "actual_newQ_bpermutes": 8,
+    "original_maxden_bpermutes": 4,
+    "total_kernel_bpermutes": 12,
+    "actual_Num16_MMA8_sync6": true,
+    "MT_parent_candidate": [
+      42,
+      44
+    ],
+    "ST_parent_candidate": [
+      20,
+      26
+    ],
+    "staticmax": [
+      8,
+      8
+    ],
+    "stack": [
+      0,
+      0
+    ],
+    "dynamicshared": [
+      2048,
+      2048
+    ],
+    "actual_CPP_IR_status": "VERIFIED_SEMANTIC0",
+    "currently_live_owned": 0,
+    "native_actual_refs": {
+      "candidate": 0,
+      "total": 0
+    },
+    "native_GO": false,
+    "OOM": 3
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -471,7 +517,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "leader review466source andboundedmetadata plan; noheavyuntilGO",
+  "next_step": "leader review originalC9fixed12shortplan; noactualnativeuntilGO",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
