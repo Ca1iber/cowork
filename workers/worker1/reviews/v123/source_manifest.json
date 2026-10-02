@@ -1,0 +1,100 @@
+{
+  "recognized_unowned_baseline": {
+    "pid": 213447,
+    "starttime_ticks": 93125003,
+    "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+    "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+  },
+  "cooperative_heavy_lock": "/tmp/nsa_sc-16g-2_cooperative_heavy.lock",
+  "version": "v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2",
+  "sources": {
+    "parent_v113": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+      "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+    },
+    "candidate_v122": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/submission.py",
+      "sha256": "88bd3007df4a5173fec5de7c0471ac4d8462e1f44269c1c2ee2fae9cd60aca01"
+    }
+  },
+  "tools": {
+    "python": {
+      "path": "/opt/conda/bin/python",
+      "sha256": "0e4dbf3236310955eaeee14323756b54961e1d0dc12c680c441f50839a67eee0"
+    },
+    "profile_driver": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py",
+      "sha256": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a"
+    },
+    "profiler": {
+      "path": "/opt/mcProfiler-ubuntu18.04/mcProfiler",
+      "sha256": "8b668655748648b40d12c7a4a5e179105f0e31b178a2d15e87b6bcdaa89efa3b"
+    },
+    "profile_wrapper": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/run_one_profile.py",
+      "sha256": "e22c5f0e08102736c5428a29cdcc7bfe4000f67faac42b27a9aec8499128a716"
+    },
+    "counter_audit": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/counter_audit.py",
+      "sha256": "e0a09d04945d8fe3ae5674ce2f0b2d2841ebd8a665389aa9fe34a86431e1569b"
+    },
+    "evidence_stage": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/run_evidence_stage.py",
+      "sha256": "d802d815466986c532cd20c8a1ab3403b6710aeba61b21ebab68c5110876ad5f"
+    },
+    "native_gate": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/owned_native_gate.py",
+      "sha256": "906d210a50da3773973a3ca34b8f770d83cf9cecce26581d499e6db695c36f31"
+    },
+    "process_monitor": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/process_monitor.py",
+      "sha256": "95253d2f451c24688e64c4413fff96c03cc1131180fc800a5c8a120f885117d3"
+    },
+    "supervisor": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/supervise_controller.py",
+      "sha256": "85b2b83f9c0bf50345ec74aa2df4b889c634d8f9708443cbbe9ccf253a08b93d"
+    },
+    "launcher": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/launch_evidence.py",
+      "sha256": "6690f2c12ef58c9cabe8ac6f328f7a6cd1feef4bed634b6b6ad4e6ee301c1fb9"
+    }
+  },
+  "shared_identity_document": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2/shared_inputs_identity.json",
+    "sha256": "69ea3fdea7f639083ecdd65a62365a55c11e27088a99b9a590e498d2e87c312e"
+  },
+  "reused_artifacts": {
+    "codegen/parent113/case12.device.cpp": {
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/codegen/parent113/case12.device.cpp",
+      "sha256": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13"
+    },
+    "codegen/parent113/case12.host.cpp": {
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/codegen/parent113/case12.host.cpp",
+      "sha256": "5465bbd453110638b2134febc7fad0fab87b29bf088883823e511ba04675d82e"
+    },
+    "codegen/candidate122/case12.device.cpp": {
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/codegen/candidate122/case12.device.cpp",
+      "sha256": "4dbc8b0ac4f5c3724ad85524a817df5e1c22b2ae614afcb9c9ed2cfc38b6d4d0"
+    },
+    "codegen/candidate122/case12.host.cpp": {
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/codegen/candidate122/case12.host.cpp",
+      "sha256": "7713434af2094965a6573bc11fd2873cf4a332a379f326d604de3f72258cdf2f"
+    },
+    "actual_shared_materialization.json": {
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/actual_shared_materialization.json",
+      "sha256": "17e938cfde0c9be7108392693f798edc5cfb1420a2ba864fbdcb8cf16c91baea"
+    },
+    "compiled_observation_result.json": {
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/compiled_observation_result.json",
+      "sha256": "9b45baa35f2d8924ff60900ac61f91704acd5bc9ce91ec7a7403032949842356"
+    },
+    "compiled_observation.exit": {
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/compiled_observation.exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "native_screen/screen_summary.json": {
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v122_worker1_c12_explicit_reduction_slots_sc-16g-2/native_screen/screen_summary.json",
+      "sha256": "107d7e447c2361db685d2b5f0c45c575bd3258cdaff1d37b75239933f006edc9"
+    }
+  }
+}

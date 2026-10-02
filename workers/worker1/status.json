@@ -1,8 +1,8 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T18:25:27.502156+00:00",
+  "utc": "2026-10-02T18:54:27.585650+00:00",
   "source_branch": "codex-power-v28-base",
-  "last_closed_source_commit": "37ee8fa89c82f11734034c5b91e9167d297e6fa0",
+  "last_closed_source_commit": "76644d36b1c849c9e4e001636a8d678aa3a49369",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
@@ -11,39 +11,15 @@
     12
   ],
   "current": {
-    "version": "v122_worker1_c12_explicit_reduction_slots_sc-16g-2",
-    "phase": "compile_complete0_original_C12_native_text_ready_no_GO",
-    "sourceSHA": "88bd3007df4a5173fec5de7c0471ac4d8462e1f44269c1c2ee2fae9cd60aca01",
-    "header122_correct_JIT": true,
-    "single64F32_Max0_31_Den32_63": true,
-    "parentCB13_18ASTprefix_other13_kept": true,
-    "inverse_same121rev02_exceptalloc_addresses": true,
-    "source_validator_wait0": true,
-    "planSHA": "5a304127593bd585c4f533e0624beaa8ce2c1b0eaa39c5ad99a8a36a8c67ea7d",
-    "manifestSHA": "d398e9d0758fd7a818937cef894d5217bbb38b46dea9c86e1f6a59bda2de0c78",
-    "review_archive": "/tmp/nsa_worker1_v122_source_compile_review_d398e9d0758f.tar.gz",
-    "archiveSHA": "c1ecc86f76595b35b4e202de18c2faaaddc7f974e05a3639f7c301399a9c4c61",
-    "new_heavy_attempts": 0,
-    "no_activePID": true,
-    "compile5_actualwait0": true,
-    "metadata2pairs0NSA_refs": true,
-    "actualshared10496_MaxDenNumKV_disjoint": true,
-    "resource": [
-      68,
-      42,
-      7,
-      0,
-      10496
-    ],
-    "IR_SHA": "78829f1930b60e264789a5bf84c66221b7e1b1c48ef1a13282610bef0fd6c1d4",
-    "IR32static_MMA_noalloca_AS5": true,
-    "actual_codegen_package": "/tmp/nsa_worker1_v122_actual_codegen_78829f1930b6.tar.gz",
-    "actual_codegen_SHA": "8b1bb45b2686cac6be7c91d8f249cd6084c5626efb43847bae7583c2b519167b",
-    "native_planSHA": "5e3cf53cce7b7409b34eb20947871c21e4fdf231a20fe98aabfea7a659f188f4",
-    "native_manifestSHA": "139a3b14d0d561cd2d11abc1444b486f57aa508ee07bb047d204a746e9e6a990",
-    "native_review_package": "/tmp/nsa_worker1_v122_native_review_139a3b14d0d5.tar.gz",
-    "native_reviewSHA": "f930d91428f7b5be75c48c752f26cf152d4f3c5faaff73fb7e344d06228e4772",
-    "actual_native_refs": 0
+    "version": "v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2",
+    "phase": "fixedtwoCLI_profile_actual_text_ready_no_GO",
+    "planSHA": "8341b8fad5464c7e05e8b86fc86b70a7488c1e08f03595efed06049fdcbb5fbb",
+    "manifestSHA": "6c42fc0abfea9a829acb972cb4d0b424df6340492066a6fbf6ca802679e8252a",
+    "review_archive": "/tmp/nsa_worker1_v123_profile_review_6c42fc0abfea.tar.gz",
+    "archiveSHA": "7a05eaf4de3c15898892a83574c4d491de67217fb0c2a774618bb6d34509c22b",
+    "source88_CB13_stable": true,
+    "new_profile_GPU_fullrefs": 0,
+    "no_activePID": true
   },
   "history": {
     "v101": {
@@ -375,11 +351,27 @@
       "resource_IR_native_fullrefs": 0,
       "OOM13stable": true,
       "allselfjobs_terminal": true
+    },
+    "v122": {
+      "sourcecommit": "76644d36b1c849c9e4e001636a8d678aa3a49369",
+      "compile5wait0_sharedaliasfix": true,
+      "native12wait0_4C12clean_fullnaivePASS": true,
+      "Cmedian_us": "102.8275",
+      "CB13median_us": "69.1785",
+      "vsCB13_pct": "48.64083494149193752394168710",
+      "rounds_pct": [
+        "47.97024518831473657603004370",
+        "48.97041710936201276408132580"
+      ],
+      "allC_gt_allP_nooverlap": true,
+      "OOM13stable": true,
+      "old121gate1_retained": true,
+      "no_repeat_orfull14": true
     }
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
-  "next": "Leader actual nativefixed12 B28-CB13-C122 review/GO; no additional source/codegen",
-  "last_closed_version": "v121_worker1_c12_two_warp_selected_partition_sc-16g-2",
-  "last_closed_status": "failed_codegen_geometry_and_crosswarp_shared_alias_risk_no_native"
+  "next": "Leader actual twoCLI profile review/GO, no newsource ornewframework",
+  "last_closed_version": "v122_worker1_c12_explicit_reduction_slots_sc-16g-2",
+  "last_closed_status": "rejected_latency_vs_current_best_CB13"
 }
