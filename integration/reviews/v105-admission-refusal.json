@@ -1,0 +1,33 @@
+{
+  "reviewed_at_utc": "2026-10-02T08:07:54.842768+00:00",
+  "decision": "v105 first admission refused; no native started; gate1 immutable",
+  "source_commit_reported": "b072fae5a4aa15fdb707fc21b9ecff019e198582",
+  "candidate_sha256_retained": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+  "leader_actual_master_missing": 349730,
+  "controller_exit": 1,
+  "spawned_native_processes": 0,
+  "observed_reference_rows": 0,
+  "clean_accepted_refs": 0,
+  "OOM_before": 13,
+  "OOM_after": 13,
+  "reason": "existing unowned visible RSS>1GiB before first native launch",
+  "reported_blocking_identity": {
+    "pid": 213447,
+    "ppid": 212213,
+    "pgid": 211770,
+    "starttime_ticks": 93125003,
+    "comm": "MainThread",
+    "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+    "RSS_KiB": 2325192,
+    "HWM_KiB": 3611504,
+    "owned_by_worker": false
+  },
+  "whole_usage_before_refusal_bytes": 2968227840,
+  "whole_admission_limit_bytes": 3221225472,
+  "limits": [
+    "Identity and RSS do not establish historical OOM cause",
+    "Unowned editor never signalled/modified/cleaned",
+    "Oldv105 refused gate andv104 failed prefix remain independent"
+  ],
+  "next": "Owner may propose newly named singleidentity known-unowned editor baseline within unchanged3GiB wholeadmission and28GiB runtimeguard. No broadname whitelist, no descendants inheritance orPIDreuse, allother unknownheavy1GiB remain. Specificpeer+leader review before any newnative."
+}

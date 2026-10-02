@@ -1,0 +1,43 @@
+{
+  "reviewed_at_utc": "2026-10-02T08:07:54.842768+00:00",
+  "decision": "One readonly parser recovery approved; no compiler/native repetition",
+  "candidate_sha256": "d1a58e61691db44287bd25e6b2aca80eaef2a173c925d3921d64a0645671b626",
+  "original_audit_exit": 1,
+  "original_error": "Regex counted allVphase xor8:4shuffle lane address XOR plus1sharedstore address XOR atline573",
+  "original_source_script_log_exit_preserved": true,
+  "actual_IR_leader_observations": {
+    "parent_Vsharedstores": "8 i32/align4",
+    "candidate_Vsharedstores": "4 i64/align8",
+    "all_sharedstore_counts_parent_candidate": [
+      20,
+      16
+    ],
+    "MMA_calls_each": 8,
+    "private_alloca_addrspace5": 0,
+    "fptoui_fptosi": 0,
+    "true_lane_intrinsic": "llvm.mxc.bsm.bpermute",
+    "all_bpermute_parent_candidate": [
+      4,
+      8
+    ],
+    "four_new_Vregion_calls": [
+      474,
+      489,
+      504,
+      519
+    ]
+  },
+  "recovery_scope": "Trace per bpermute addressSSA def-use to lane XOR8/fullwidth chain anduniform CFG; unrelatedstoreaddress XOR excluded fromshuffle operationcount. Allother source/bit/global/private/sync/materialization gates retained.",
+  "resource_MT_parent_candidate": [
+    42,
+    46
+  ],
+  "ST_parent_candidate": [
+    20,
+    20
+  ],
+  "staticmax_each": 8,
+  "stack_each": 0,
+  "source_or_IR_not_machinewidth_or_runtimebenefit": true,
+  "native_not_approved_yet": true
+}
