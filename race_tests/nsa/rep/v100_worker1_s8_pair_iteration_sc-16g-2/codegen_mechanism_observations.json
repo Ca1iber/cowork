@@ -1,0 +1,398 @@
+[
+  {
+    "variant": "baseline_v28",
+    "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v100_worker1_s8_pair_iteration_sc-16g-2/codegen_target/baseline_v28/case12_stage1.device.cpp",
+    "device_sha256": "8caa500e5f5990d46055d4765d5845917c33e92ffd66b40af8aec75beea100da",
+    "observed_loop_and_intrinsic_lines": [
+      {
+        "line": 16,
+        "text": "float scores[4];"
+      },
+      {
+        "line": 24,
+        "text": "for (int i = 0; i < 2; ++i) {"
+      },
+      {
+        "line": 28,
+        "text": "for (int i_1 = 0; i_1 < 4; ++i_1) {"
+      },
+      {
+        "line": 34,
+        "text": "for (int selected = 0; selected < 8; ++selected) {"
+      },
+      {
+        "line": 39,
+        "text": "for (int ki = 0; ki < 2; ++ki) {"
+      },
+      {
+        "line": 48,
+        "text": "for (int kp = 0; kp < 2; ++kp) {"
+      },
+      {
+        "line": 50,
+        "text": "*(((float32x4*)scores) + 0) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)k_local) + kp),"
+      },
+      {
+        "line": 58,
+        "text": "for (int i_2 = 0; i_2 < 4; ++i_2) {"
+      },
+      {
+        "line": 75,
+        "text": "for (int rv = 0; rv < 4; ++rv) {"
+      },
+      {
+        "line": 79,
+        "text": "rescale[0] = exp2f(((previous_max[0] * 0x1.7154764ee6c2fp-3f/*1.803369e-01*/) - (block_max[0] * 0x1.7154764ee6c2fp-3f/*1.803369e-01*/)));"
+      },
+      {
+        "line": 81,
+        "text": "for (int i_3 = 0; i_3 < 4; ++i_3) {"
+      },
+      {
+        "line": 82,
+        "text": "scores[i_3] = exp2f(((scores[i_3] * 0x1.7154764ee6c2fp-3f/*1.803369e-01*/) - (block_max[0] * 0x1.7154764ee6c2fp-3f/*1.803369e-01*/)));"
+      },
+      {
+        "line": 86,
+        "text": "for (int rv_1 = 0; rv_1 < 4; ++rv_1) {"
+      },
+      {
+        "line": 97,
+        "text": "for (int i_4 = 0; i_4 < 16; ++i_4) {"
+      },
+      {
+        "line": 104,
+        "text": "for (int i_5 = 0; i_5 < 2; ++i_5) {"
+      },
+      {
+        "line": 118,
+        "text": "for (int j = 0; j < 4; ++j) {"
+      },
+      {
+        "line": 119,
+        "text": "for (int local_id = 0; local_id < 4; ++local_id) {"
+      },
+      {
+        "line": 123,
+        "text": "for (int j_1 = 0; j_1 < 4; ++j_1) {"
+      },
+      {
+        "line": 125,
+        "text": "*(((float32x4*)output_acc) + j_1) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)B_local) + j_1),"
+      },
+      {
+        "line": 133,
+        "text": "for (int i_6 = 0; i_6 < 16; ++i_6) {"
+      },
+      {
+        "line": 138,
+        "text": "for (int i_7 = 0; i_7 < 4; ++i_7) {"
+      },
+      {
+        "line": 148,
+        "text": "for (int i_8 = 0; i_8 < 2; ++i_8) {"
+      }
+    ],
+    "interpretation_limit": "static source occurrences are not dynamic instruction count or runtime attribution"
+  },
+  {
+    "variant": "parent_v084",
+    "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v100_worker1_s8_pair_iteration_sc-16g-2/codegen_target/parent_v084/case12_stage1.device.cpp",
+    "device_sha256": "47fac37a9f0ad9f9cf9ddac3fd2f6f7c0ecf3fb75a195689f3360c899fb487bd",
+    "observed_loop_and_intrinsic_lines": [
+      {
+        "line": 17,
+        "text": "float scores[4];"
+      },
+      {
+        "line": 30,
+        "text": "for (int part = 0; part < 2; ++part) {"
+      },
+      {
+        "line": 33,
+        "text": "for (int pack = 0; pack < 2; ++pack) {"
+      },
+      {
+        "line": 39,
+        "text": "for (int chunk = 0; chunk < 4; ++chunk) {"
+      },
+      {
+        "line": 43,
+        "text": "for (int i = 0; i < 4; ++i) {"
+      },
+      {
+        "line": 50,
+        "text": "for (int selected = 0; selected < 8; ++selected) {"
+      },
+      {
+        "line": 55,
+        "text": "for (int part_1 = 0; part_1 < 2; ++part_1) {"
+      },
+      {
+        "line": 58,
+        "text": "for (int pack_1 = 0; pack_1 < 2; ++pack_1) {"
+      },
+      {
+        "line": 66,
+        "text": "for (int chunk_1 = 0; chunk_1 < 4; ++chunk_1) {"
+      },
+      {
+        "line": 69,
+        "text": "*(((float32x4*)scores) + 0) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)k_local) + 0),"
+      },
+      {
+        "line": 75,
+        "text": "for (int element = 0; element < 4; ++element) {"
+      },
+      {
+        "line": 86,
+        "text": "for (int element_1 = 0; element_1 < 4; ++element_1) {"
+      },
+      {
+        "line": 89,
+        "text": "block_maximum[0] = max(block_maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, block_maximum[0], 32, 64));"
+      },
+      {
+        "line": 90,
+        "text": "block_maximum[0] = max(block_maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, block_maximum[0], 16, 64));"
+      },
+      {
+        "line": 92,
+        "text": "rescale[0] = exp2f(((maximum[0] - new_maximum[0]) * 0x1.7154764ee6c2fp-3f/*1.803369e-01*/));"
+      },
+      {
+        "line": 94,
+        "text": "for (int chunk_2 = 0; chunk_2 < 4; ++chunk_2) {"
+      },
+      {
+        "line": 129,
+        "text": "__3.x = exp2f(__4.x);"
+      },
+      {
+        "line": 130,
+        "text": "__3.y = exp2f(__4.y);"
+      },
+      {
+        "line": 131,
+        "text": "__3.z = exp2f(__4.z);"
+      },
+      {
+        "line": 132,
+        "text": "__3.w = exp2f(__4.w);"
+      },
+      {
+        "line": 138,
+        "text": "for (int element_2 = 0; element_2 < 4; ++element_2) {"
+      },
+      {
+        "line": 144,
+        "text": "for (int row = 0; row < 4; ++row) {"
+      },
+      {
+        "line": 148,
+        "text": "for (int col = 0; col < 4; ++col) {"
+      },
+      {
+        "line": 149,
+        "text": "for (int row_1 = 0; row_1 < 4; ++row_1) {"
+      },
+      {
+        "line": 156,
+        "text": "for (int chunk_3 = 0; chunk_3 < 4; ++chunk_3) {"
+      },
+      {
+        "line": 160,
+        "text": "for (int chunk_4 = 0; chunk_4 < 4; ++chunk_4) {"
+      },
+      {
+        "line": 162,
+        "text": "*(((float32x4*)numerator) + chunk_4) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)v_operand) + chunk_4),"
+      },
+      {
+        "line": 169,
+        "text": "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));"
+      },
+      {
+        "line": 170,
+        "text": "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));"
+      },
+      {
+        "line": 172,
+        "text": "for (int chunk_5 = 0; chunk_5 < 4; ++chunk_5) {"
+      },
+      {
+        "line": 184,
+        "text": "for (int chunk_6 = 0; chunk_6 < 4; ++chunk_6) {"
+      },
+      {
+        "line": 194,
+        "text": "for (int part_2 = 0; part_2 < 2; ++part_2) {"
+      },
+      {
+        "line": 196,
+        "text": "for (int pack_2 = 0; pack_2 < 2; ++pack_2) {"
+      }
+    ],
+    "interpretation_limit": "static source occurrences are not dynamic instruction count or runtime attribution"
+  },
+  {
+    "variant": "power_v100",
+    "device_path": "/root/tilelang-metax/race_tests/nsa/rep/v100_worker1_s8_pair_iteration_sc-16g-2/codegen_target/power_v100/case12_stage1.device.cpp",
+    "device_sha256": "0c91736a747b4582526590ca8119b36e4fb408d4a1427feebdc1e0dbca3106b0",
+    "observed_loop_and_intrinsic_lines": [
+      {
+        "line": 17,
+        "text": "float scores[8];"
+      },
+      {
+        "line": 32,
+        "text": "for (int part = 0; part < 2; ++part) {"
+      },
+      {
+        "line": 35,
+        "text": "for (int pack = 0; pack < 2; ++pack) {"
+      },
+      {
+        "line": 41,
+        "text": "for (int chunk = 0; chunk < 4; ++chunk) {"
+      },
+      {
+        "line": 45,
+        "text": "for (int i = 0; i < 4; ++i) {"
+      },
+      {
+        "line": 52,
+        "text": "for (int pair = 0; pair < 4; ++pair) {"
+      },
+      {
+        "line": 54,
+        "text": "for (int i_1 = 0; i_1 < 2; ++i_1) {"
+      },
+      {
+        "line": 59,
+        "text": "for (int inner = 0; inner < 2; ++inner) {"
+      },
+      {
+        "line": 66,
+        "text": "for (int part_1 = 0; part_1 < 2; ++part_1) {"
+      },
+      {
+        "line": 69,
+        "text": "for (int pack_1 = 0; pack_1 < 2; ++pack_1) {"
+      },
+      {
+        "line": 75,
+        "text": "for (int element = 0; element < 4; ++element) {"
+      },
+      {
+        "line": 79,
+        "text": "for (int chunk_1 = 0; chunk_1 < 4; ++chunk_1) {"
+      },
+      {
+        "line": 82,
+        "text": "*(((float32x4*)scores) + inner) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)k_local) + 0),"
+      },
+      {
+        "line": 88,
+        "text": "for (int element_1 = 0; element_1 < 4; ++element_1) {"
+      },
+      {
+        "line": 102,
+        "text": "for (int element_2 = 0; element_2 < 8; ++element_2) {"
+      },
+      {
+        "line": 105,
+        "text": "block_maximum[0] = max(block_maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, block_maximum[0], 32, 64));"
+      },
+      {
+        "line": 106,
+        "text": "block_maximum[0] = max(block_maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, block_maximum[0], 16, 64));"
+      },
+      {
+        "line": 108,
+        "text": "rescale[0] = exp2f(((maximum[0] - new_maximum[0]) * 0x1.7154764ee6c2fp-3f/*1.803369e-01*/));"
+      },
+      {
+        "line": 110,
+        "text": "for (int chunk_2 = 0; chunk_2 < 4; ++chunk_2) {"
+      },
+      {
+        "line": 122,
+        "text": "for (int element_3 = 0; element_3 < 2; ++element_3) {"
+      },
+      {
+        "line": 146,
+        "text": "__3.x = exp2f(__4.x);"
+      },
+      {
+        "line": 147,
+        "text": "__3.y = exp2f(__4.y);"
+      },
+      {
+        "line": 148,
+        "text": "__3.z = exp2f(__4.z);"
+      },
+      {
+        "line": 149,
+        "text": "__3.w = exp2f(__4.w);"
+      },
+      {
+        "line": 156,
+        "text": "for (int element_4 = 0; element_4 < 8; ++element_4) {"
+      },
+      {
+        "line": 161,
+        "text": "for (int inner_1 = 0; inner_1 < 2; ++inner_1) {"
+      },
+      {
+        "line": 166,
+        "text": "for (int row = 0; row < 4; ++row) {"
+      },
+      {
+        "line": 170,
+        "text": "for (int col = 0; col < 4; ++col) {"
+      },
+      {
+        "line": 171,
+        "text": "for (int row_1 = 0; row_1 < 4; ++row_1) {"
+      },
+      {
+        "line": 178,
+        "text": "for (int chunk_3 = 0; chunk_3 < 4; ++chunk_3) {"
+      },
+      {
+        "line": 182,
+        "text": "for (int chunk_4 = 0; chunk_4 < 4; ++chunk_4) {"
+      },
+      {
+        "line": 184,
+        "text": "*(((float32x4*)numerator) + chunk_4) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)v_operand) + chunk_4),"
+      },
+      {
+        "line": 193,
+        "text": "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));"
+      },
+      {
+        "line": 194,
+        "text": "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));"
+      },
+      {
+        "line": 196,
+        "text": "for (int chunk_5 = 0; chunk_5 < 4; ++chunk_5) {"
+      },
+      {
+        "line": 208,
+        "text": "for (int chunk_6 = 0; chunk_6 < 4; ++chunk_6) {"
+      },
+      {
+        "line": 218,
+        "text": "for (int part_2 = 0; part_2 < 2; ++part_2) {"
+      },
+      {
+        "line": 220,
+        "text": "for (int pack_2 = 0; pack_2 < 2; ++pack_2) {"
+      }
+    ],
+    "interpretation_limit": "static source occurrences are not dynamic instruction count or runtime attribution"
+  }
+]

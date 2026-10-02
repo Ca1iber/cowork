@@ -1,0 +1,402 @@
+{
+  "version": "v100_worker1_s8_pair_iteration_sc-16g-2",
+  "worker": "worker1",
+  "status": "rejected_case12_selected_screen_regression_vs_v084",
+  "closed_utc": "2026-10-02T03:06:34.321442+00:00",
+  "start": {
+    "version": "v100_worker1_s8_pair_iteration_sc-16g-2",
+    "worker": "worker1",
+    "utc": "2026-10-02T02:51:26.491151+00:00",
+    "branch": "codex-power-v28-base",
+    "head": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+    "parent_source": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 10\n",
+    "cpu_limit": "34359738368\n",
+    "target_cases": [
+      12
+    ],
+    "owned_cases": [
+      6,
+      10,
+      11,
+      12
+    ],
+    "phase": "fresh parent profile before hypothesis and candidate edit"
+  },
+  "source_identity": {
+    "candidate_path": "/tmp/nsa_power_v100_pair_iteration.py",
+    "candidate_sha256": "39e142971e79d40d4040f616ef57ac2186f524c09a7f7721e06082bc472a8edf",
+    "parent_source": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "parent_AST_prefix_exact": true,
+    "new_dispatch_cases": [
+      12
+    ],
+    "other13keys_math_exact_parent": true,
+    "helper_origin": "/root/tilelang-metax/race_tests/nsa/experiments/v077_codex_power_s8_output_pair_sc-16g-2/s8_kernel.py",
+    "helper_origin_sha256": "6cab13e3b158003e6fc0abceb3bace5579a7816bc0a0836c573e04118dec5895",
+    "mechanism": "pair QK scores -> one online softmax rescale -> two PV, same global transfers"
+  },
+  "native_scope": {
+    "candidate_label": "power_v100",
+    "candidate_checks": 4,
+    "experiment_checks_with_controls": 12,
+    "candidate_cases": [
+      12
+    ],
+    "file": "target_screen_sc-16g-2.csv",
+    "duplicate_policy": "merged only; percase CSV duplicate excluded; profile/metadata/static/preflight zero full references",
+    "initial_wrapper_failure_reference_checks": 0,
+    "full14": "not performed; target screen fails predeclared gate,no merge proposal"
+  },
+  "screen": {
+    "scope": "selectedtarget screen,notall14 verdict",
+    "candidate_refs": 4,
+    "experiment_refs": 12,
+    "cases": [
+      {
+        "case": 12,
+        "samples_us": {
+          "baseline_v28": [
+            "83.251200000",
+            "82.923517000",
+            "83.527679000",
+            "83.374081000"
+          ],
+          "parent_v084": [
+            "72.540159000",
+            "72.140799000",
+            "72.673278000",
+            "72.504320000"
+          ],
+          "power_v100": [
+            "73.932800000",
+            "73.287678000",
+            "73.840642000",
+            "73.804798000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "83.312640500",
+          "parent_v084": "72.522239500",
+          "power_v100": "73.822720000"
+        },
+        "vs_v28_pct": "-11.39073307849365307296916126",
+        "vs_parent_pct": "1.793216134755463529225404000",
+        "candidate_range_below_parent": false
+      }
+    ]
+  },
+  "resources": [
+    {
+      "case": 12,
+      "variant": "parent_v084",
+      "MT": 80,
+      "ST": 22,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 2048,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 6,
+      "not_measured_occupancy": true
+    },
+    {
+      "case": 12,
+      "variant": "power_v100",
+      "MT": 98,
+      "ST": 32,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 2048,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 4,
+      "not_measured_occupancy": true
+    }
+  ],
+  "profile": [
+    {
+      "case": 12,
+      "variant": "power_v100",
+      "sample": 1,
+      "waves": 4096.0,
+      "achieved_waves_raw": 4055.0,
+      "l2_hit_pct": 87.45,
+      "read_bytes": 9559520.0,
+      "write_bytes": 8388928.0,
+      "mte_pct": 67.03,
+      "mma_pct": 12.76,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "WG_load_latency_cycles": 49.6,
+      "unavailable_raw": {}
+    },
+    {
+      "case": 12,
+      "variant": "power_v100",
+      "sample": 2,
+      "waves": 4096.0,
+      "achieved_waves_raw": 4056.0,
+      "l2_hit_pct": 87.45,
+      "read_bytes": 9559520.0,
+      "write_bytes": 8388928.0,
+      "mte_pct": 66.92,
+      "mma_pct": 12.74,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "WG_load_latency_cycles": 49.56,
+      "unavailable_raw": {}
+    },
+    {
+      "case": 12,
+      "variant": "parent_v084",
+      "sample": 1,
+      "waves": 4096.0,
+      "achieved_waves_raw": 4056.0,
+      "l2_hit_pct": 87.43,
+      "read_bytes": 9557152.0,
+      "write_bytes": 8388928.0,
+      "mte_pct": 75.15,
+      "mma_pct": 12.95,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "WG_load_latency_cycles": 50.39,
+      "unavailable_raw": {}
+    },
+    {
+      "case": 12,
+      "variant": "parent_v084",
+      "sample": 2,
+      "waves": 4096.0,
+      "achieved_waves_raw": 4057.0,
+      "l2_hit_pct": 87.43,
+      "read_bytes": 9557152.0,
+      "write_bytes": 8388928.0,
+      "mte_pct": 75.14,
+      "mma_pct": 12.96,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "WG_load_latency_cycles": 50.3,
+      "unavailable_raw": {}
+    }
+  ],
+  "profile_scope": [
+    {
+      "case": 12,
+      "variant": "power_v100",
+      "sample": 1,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "output_payload": 8388608,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    },
+    {
+      "case": 12,
+      "variant": "power_v100",
+      "sample": 2,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "output_payload": 8388608,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    },
+    {
+      "case": 12,
+      "variant": "parent_v084",
+      "sample": 1,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "output_payload": 8388608,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    },
+    {
+      "case": 12,
+      "variant": "parent_v084",
+      "sample": 2,
+      "expected_waves": 4096,
+      "observed_waves": 4096.0,
+      "output_payload": 8388608,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    }
+  ],
+  "WG_metric_context": {
+    "records": [
+      {
+        "case": 12,
+        "variant": "power_v100",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 49.6
+        }
+      },
+      {
+        "case": 12,
+        "variant": "power_v100",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 0.0
+        }
+      },
+      {
+        "case": 12,
+        "variant": "power_v100",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "100.0%"
+        }
+      },
+      {
+        "case": 12,
+        "variant": "power_v100",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 49.56
+        }
+      },
+      {
+        "case": 12,
+        "variant": "power_v100",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 0.0
+        }
+      },
+      {
+        "case": 12,
+        "variant": "power_v100",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "100.0%"
+        }
+      },
+      {
+        "case": 12,
+        "variant": "parent_v084",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 50.39
+        }
+      },
+      {
+        "case": 12,
+        "variant": "parent_v084",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 0.0
+        }
+      },
+      {
+        "case": 12,
+        "variant": "parent_v084",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "100.0%"
+        }
+      },
+      {
+        "case": 12,
+        "variant": "parent_v084",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 50.3
+        }
+      },
+      {
+        "case": 12,
+        "variant": "parent_v084",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 0.0
+        }
+      },
+      {
+        "case": 12,
+        "variant": "parent_v084",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "100.0%"
+        }
+      }
+    ],
+    "zeroaccess_interpretation": "reported100eff0WGload not interpreted usableeff or globalzero",
+    "WG-load definition": "Workgroup Memory issue-to-memopsdone"
+  },
+  "runtime_final": {
+    "utc": "2026-10-02T03:06:04.823973+00:00",
+    "oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 10\n",
+    "cpu_limit": "34359738368\n",
+    "no_gpu_config_changes": true,
+    "profile_stage_exit": "0"
+  },
+  "shared_inputs": {
+    "files": {
+      "race_tests/nsa/official_case.json": "85f2c34acd793fb0a45084175acd7bcde48ff5d717a395d370800c30cf4e7036",
+      "race_tests/nsa/reference.py": "e31d5f188923d8696c7ad190b1652d5b3142c004dc96d0604f371c71f179bf32",
+      "race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/test_tilelang_nsa_fwd_v28.py": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568",
+      "race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+      "race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a"
+    },
+    "head": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+    "native_body_unchanged": true,
+    "no_shared_source_copies": true
+  },
+  "initial_wrapper_failure": {
+    "failure": "wrapper candidate filename typo before source load or any native call",
+    "candidate_full_reference_checks": 0,
+    "controls_full_reference_checks": 0,
+    "candidate_source_unchanged": true,
+    "source_sha256": "39e142971e79d40d4040f616ef57ac2186f524c09a7f7721e06082bc472a8edf",
+    "original_loaded_path": "/tmp/nsa_power_v100_pair.py",
+    "corrected_path": "/tmp/nsa_power_v100_pair_iteration.py",
+    "linecache_note": "traceback source display reflects edited on-disk runner; exception path preserves actual originally loaded code",
+    "retry_policy": "one corrected wrapper attempt after actual terminal failure; no native sample repeated"
+  },
+  "promotion": "none; archive rejected candidate only; main originalv28 unchanged",
+  "source_sha256": "39e142971e79d40d4040f616ef57ac2186f524c09a7f7721e06082bc472a8edf",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "full14": "notperformed due target screen rejection; no merge proposal",
+  "OJ": "v100 not submitted; parent user scores do not apply"
+}

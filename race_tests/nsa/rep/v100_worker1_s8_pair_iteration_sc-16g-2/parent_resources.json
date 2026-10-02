@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-device-obj",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-resource-usage",
+    "-o",
+    "race_tests/nsa/rep/v100_worker1_s8_pair_iteration_sc-16g-2/resources/parent_case12.mcbin",
+    "race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2/codegen_formal/power_v084/case12_stage1.device.cpp"
+  ],
+  "source_path": "race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2/codegen_formal/power_v084/case12_stage1.device.cpp",
+  "device_sha256": "47fac37a9f0ad9f9cf9ddac3fd2f6f7c0ecf3fb75a195689f3360c899fb487bd",
+  "host_sha256": "5465bbd453110638b2134febc7fad0fab87b29bf088883823e511ba04675d82e",
+  "MT": 80,
+  "ST": 22,
+  "static_shared_bytes": 0,
+  "dynamic_shared_bytes": 2048,
+  "stack_bytes": 0,
+  "static_max_warps": 6,
+  "not_measured_occupancy": true
+}

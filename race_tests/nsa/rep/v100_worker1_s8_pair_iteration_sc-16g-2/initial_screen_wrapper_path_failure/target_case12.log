@@ -1,0 +1,20 @@
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+Traceback (most recent call last):
+  File "/root/tilelang-metax/race_tests/nsa/hack/v100_worker1_s8_pair_iteration_sc-16g-2/run_case.py", line 8, in <module>
+    sources={'baseline_v28':base,'parent_v084':root/'submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py','power_v100':Path('/tmp/nsa_power_v100_pair_iteration.py')};hashes={k:hashlib.sha256(f.read_bytes()).hexdigest() for k,f in sources.items()};assert hashes['baseline_v28']=='42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd';assert hashes['parent_v084']=='4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0';assert hashes['power_v100']==json.loads((r/'source_identity.json').read_text())['candidate_sha256']
+                                                                                                                                                                                                     ^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/nsa_power_v100_pair.py'
