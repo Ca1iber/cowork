@@ -1,0 +1,68 @@
+{
+  "reviewed_at_utc": "2026-10-02T07:45:43.587545+00:00",
+  "decision": "GO once independently named v105 full14 bounded runtime diagnostic implementation/execution",
+  "owner": "worker1",
+  "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
+  "retained_source_header": "# codex-power v104",
+  "new_kernel_edit": false,
+  "actual_review": [
+    "execution_plan.json",
+    "native_selector_and_input_semantics.json",
+    "peer_experimental_design_review.md",
+    "hypothesis.md",
+    "original native153line percase manual_seed0"
+  ],
+  "protocol": {
+    "fresh_source_processes": 12,
+    "order": "B28-P84-C104-C104-P84-B28 x2",
+    "cases_per_process": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "candidate_fullrefs_planned": 56,
+    "inclusive_fullrefs_planned": 168,
+    "original_runner_seed_dtype_grad_reference_tolerance_W10R50_unchanged": true,
+    "no_postexport_metadata": true
+  },
+  "new_preregistered_engineering_budget": {
+    "admission_bytes": 3221225472,
+    "additional_budget_not_upperbound_bytes": 26843545600,
+    "reserve_bytes": 4294967296,
+    "whole_runtime_stop_bytes": 30064771072,
+    "limit_bytes": 34359738368,
+    "not_memory_guarantee": true,
+    "old2GiB_comparison_refusal_preserved": true
+  },
+  "guard": "cooperative wholeprotocol lock;pre/postadmission owned-S handshake;no unownedvisibleRSS>1GiB;0.5s wholeCG/PID/allthreadchildren disk samples;600s perprocess;usage/OOM/unknownheavy/nonzero/Killed/hash/CSV/timeout stop prefix;no retry or pollinguntiladmit",
+  "signal_scope": "only verified ownPID+starttime+exe+actually observedancestry;record actualsignal/wait/skipmismatch,never unknownprocess",
+  "process_gate": "14 exactorderedPASSrows/officialdims/positive latency +terminal0/noabort/noOOM/sourcehash; distinguish observedcompletedrefs from cleanprocessacceptedrefs; partial rows immutable and cannot establish fullgate or winningmedian",
+  "old_failures_immutable": [
+    "v104 formal1/job141-9/OOM11->13/140prefix",
+    "v101137"
+  ],
+  "no_oldprefix_merge": true,
+  "risks": [
+    "14JIT and allocatorcache lifetime growth",
+    "sampling/namespace/cooperativelock limits",
+    "observer CPU and event50hostcalls;absolute oldus not substituted",
+    "two rounds not statistical stability;all positive/non-target deltas preserved"
+  ],
+  "not_approved": [
+    "risk reconfirmation",
+    "metadata/resources/profile",
+    "main/OJ promotion"
+  ],
+  "next": "Actual fixedmanifest/scriptSHA/onceguard andstartPID, then12true terminals/56C168inclusive or failureprefix"
+}
