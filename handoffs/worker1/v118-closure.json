@@ -1,0 +1,168 @@
+{
+  "sourcecommit": "7be9c514d009106e0c3df24e86903a36f0300aea",
+  "counts": "123files122inventorySHA",
+  "runtime_final": {
+    "UTC": "2026-10-02T16:10:40.845975+00:00",
+    "status": "candidate_compiled_MT90_rejected_by_preregistered_MT_less_than90_no_native",
+    "outer4_originalwaits": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "onefresh_metadata_process_pairs": 2,
+    "device_hostfiles": 4,
+    "CPUshape_OJ_source_device_gate_actual0": true,
+    "candidate_resourceSDK_originalwait": 0,
+    "candidate_resource_gate_actual1": true,
+    "resource": {
+      "case": 6,
+      "source_SHA": "d4ab8ae9028daa9d68b41da0352ef7bcedb14e81a44d8294155bc057314153b9",
+      "MT": 90,
+      "ST": 24,
+      "staticmax": 5,
+      "stack": 0,
+      "staticshared": 0,
+      "dynamicshared": 8192,
+      "occupancy": "NOT_MEASURED",
+      "attention_fullrefs": 0
+    },
+    "threshold_MT_less_than90_preserved": true,
+    "IR_compiled_gate_native_profile": "NOT_STARTED",
+    "fullrefs": 0,
+    "NSA_attention_calls": 0,
+    "GPUcontext_empty_allocations_not0GPUclaim": true,
+    "OOM_before": 13,
+    "OOM_after": 13,
+    "observed_whole_peak_bytes": 25494491136,
+    "samples": 89,
+    "sampled_peak_not_upperbound": true,
+    "no_candidate_edit_recompile_reexport_or_relaxedgate": true,
+    "old103_90resource_latencyfailure_and117gate1_retained": true,
+    "main_and_leadercollection_not_changed": true
+  },
+  "actual_CPP_observation": {
+    "readonly_existing_CPP_SHA": "d4ab8ae9028daa9d68b41da0352ef7bcedb14e81a44d8294155bc057314153b9",
+    "source290_unchanged": true,
+    "Num16_V4_declared_actualCPP": true,
+    "phase_event_lines": [
+      {
+        "line": 21,
+        "text": "  float numerator[16];"
+      },
+      {
+        "line": 22,
+        "text": "  half_t v_operand[4];"
+      },
+      {
+        "line": 23,
+        "text": "  half_t shared_local_cast[4];"
+      },
+      {
+        "line": 36,
+        "text": "    __syncwarp();"
+      },
+      {
+        "line": 40,
+        "text": "    __syncwarp();"
+      },
+      {
+        "line": 49,
+        "text": "    __syncwarp();"
+      },
+      {
+        "line": 57,
+        "text": "      for (int key_tile = 0; key_tile < 2; ++key_tile) {"
+      },
+      {
+        "line": 67,
+        "text": "    for (int key_tile_1 = 0; key_tile_1 < 2; ++key_tile_1) {"
+      },
+      {
+        "line": 87,
+        "text": "    for (int key_tile_2 = 0; key_tile_2 < 2; ++key_tile_2) {"
+      },
+      {
+        "line": 125,
+        "text": "    __syncwarp();"
+      },
+      {
+        "line": 127,
+        "text": "    for (int key_tile_3 = 0; key_tile_3 < 2; ++key_tile_3) {"
+      },
+      {
+        "line": 129,
+        "text": "      for (int plane = 0; plane < 2; ++plane) {"
+      },
+      {
+        "line": 143,
+        "text": "    __syncwarp();"
+      },
+      {
+        "line": 146,
+        "text": "  for (int plane_1 = 0; plane_1 < 2; ++plane_1) {"
+      },
+      {
+        "line": 150,
+        "text": "      *(float4*)(numerator + (i_1 * 4)) = make_float4(broadcast_var_3, broadcast_var_3, broadcast_var_3, broadcast_var_3);"
+      },
+      {
+        "line": 154,
+        "text": "      for (int key_tile_4 = 0; key_tile_4 < 2; ++key_tile_4) {"
+      },
+      {
+        "line": 157,
+        "text": "          *(uint2*)(v_operand + 0) = *(uint2*)(shared + (((((plane_1 * 2048) + ((((int)threadIdx.x) & 7) * 256)) + (chunk_2 * 64)) + (((((int)threadIdx.x) & 15) >> 3) * 32)) + ((((((((((int)threadIdx.x) & 31) >> 4) * 4) + (key_tile_4 * 2)) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) ^ chunk_2) * 4)));"
+      },
+      {
+        "line": 159,
+        "text": "      *(((float32x4*)numerator) + chunk_2) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)v_operand) + 0),"
+      },
+      {
+        "line": 161,
+        "text": "                    *(((float32x4*)numerator) + chunk_2));"
+      },
+      {
+        "line": 169,
+        "text": "        float4 v__4 = *(float4*)(numerator + (chunk_3 * 4));"
+      },
+      {
+        "line": 175,
+        "text": "      *(float4*)(numerator + (chunk_3 * 4)) = __6;"
+      },
+      {
+        "line": 178,
+        "text": "      __syncwarp();"
+      },
+      {
+        "line": 183,
+        "text": "      float4 v__6 = *(float4*)(numerator + (chunk_4 * 4));"
+      },
+      {
+        "line": 186,
+        "text": "      *(uint2*)(shared_local_cast + 0) = __7;"
+      },
+      {
+        "line": 187,
+        "text": "      *(uint2*)(shared + ((((plane_1 * 1024) + ((((int)threadIdx.x) & 15) * 64)) + ((((chunk_4 * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ plane_1) * 4))) = *(uint2*)(shared_local_cast + 0);"
+      },
+      {
+        "line": 190,
+        "text": "  __syncwarp();"
+      },
+      {
+        "line": 197,
+        "text": "    *(uint4*)(Output + ((((((int)blockIdx.y) * 2097152) + (((int)blockIdx.x) * 2048)) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+      }
+    ],
+    "scope": "source_cpp_order only; no O3IR orISA captured dueMTgate reject. Notfinalphysicallifetime proof orlatencycause.",
+    "physical_MT90_gate_rejected_and_not_relaxed": true,
+    "old103_Num16V16_physical90_ST24_staticmax5_same_counts_not_singlecauseproof": true,
+    "IR_native_profile_NOT_STARTED": true
+  },
+  "sourcebundle": {
+    "path": "/tmp/nsa_worker1_source_7be9c514d009.bundle",
+    "bytes": 8023389,
+    "SHA": "f216be7ed34886e563e5d780e434d879f91e43ab54149f1b14a9d073996e1941"
+  }
+}
