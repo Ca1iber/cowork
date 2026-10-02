@@ -1,0 +1,61 @@
+{
+  "sourceSHA": "21332fbff1793eda669c5d37533b02a183685e85061393265596b19fdb313d52",
+  "CPP_SHA": "92a8c771bb91ac1b6584228f6ebf2b110be2a75d5c8de2b5c476e5f2afb55365",
+  "IR_SHA": "f93860a1d92513baf5083a52508f817fca5833e90864fd3871c6d9425d9bd4a0",
+  "compile_truewaits": [
+    0,
+    0,
+    0
+  ],
+  "resource": {
+    "MT": 40,
+    "ST": 22,
+    "staticmax": 8,
+    "stack": 0,
+    "dynshared": 2048
+  },
+  "parent_resource": [
+    42,
+    20,
+    8,
+    0
+  ],
+  "QK_shared_i64_stores": [
+    "store i64 %qk_fetch.sroa.0.0.copyload.qk_fetch.sroa.8.0.copyload, ptr addrspace(3) %invariant.gep812, align 16, !dbg !48",
+    "store i64 %qk_fetch.sroa.8.0.copyload.qk_fetch.sroa.0.0.copyload, ptr addrspace(3) %qk_store.sroa.8.0.add.ptr43.sroa_idx, align 8, !dbg !48",
+    "store i64 %qk_fetch.sroa.0.0.copyload.qk_fetch.sroa.8.0.copyload.1, ptr addrspace(3) %gep813.1, align 16, !dbg !48",
+    "store i64 %qk_fetch.sroa.8.0.copyload.qk_fetch.sroa.0.0.copyload.1, ptr addrspace(3) %qk_store.sroa.8.0.add.ptr43.sroa_idx.1, align 8, !dbg !48",
+    "store i64 %qk_fetch.sroa.0.0.copyload802.qk_fetch.sroa.8.0.copyload803, ptr addrspace(3) %invariant.gep812, align 16, !dbg !80",
+    "store i64 %qk_fetch.sroa.8.0.copyload803.qk_fetch.sroa.0.0.copyload802, ptr addrspace(3) %qk_store.sroa.8.0.add.ptr43.sroa_idx, align 8, !dbg !80",
+    "store i64 %qk_fetch.sroa.0.0.copyload802.qk_fetch.sroa.8.0.copyload803.1, ptr addrspace(3) %gep813.1, align 16, !dbg !80",
+    "store i64 %qk_fetch.sroa.8.0.copyload803.qk_fetch.sroa.0.0.copyload802.1, ptr addrspace(3) %qk_store.sroa.8.0.add.ptr43.sroa_idx.1, align 8, !dbg !80"
+  ],
+  "QK_store_count": 8,
+  "QK_selects": [
+    "%qk_fetch.sroa.0.0.copyload.qk_fetch.sroa.8.0.copyload = select i1 %cmp15.not, i64 %qk_fetch.sroa.0.0.copyload, i64 %qk_fetch.sroa.8.0.copyload",
+    "%qk_fetch.sroa.8.0.copyload.qk_fetch.sroa.0.0.copyload = select i1 %cmp15.not, i64 %qk_fetch.sroa.8.0.copyload, i64 %qk_fetch.sroa.0.0.copyload",
+    "%qk_fetch.sroa.0.0.copyload.qk_fetch.sroa.8.0.copyload.1 = select i1 %cmp15.not.1.not, i64 %qk_fetch.sroa.8.0.copyload.1, i64 %qk_fetch.sroa.0.0.copyload.1",
+    "%qk_fetch.sroa.8.0.copyload.qk_fetch.sroa.0.0.copyload.1 = select i1 %cmp15.not.1.not, i64 %qk_fetch.sroa.0.0.copyload.1, i64 %qk_fetch.sroa.8.0.copyload.1",
+    "%qk_fetch.sroa.0.0.copyload802.qk_fetch.sroa.8.0.copyload803 = select i1 %cmp15.not, i64 %qk_fetch.sroa.0.0.copyload802, i64 %qk_fetch.sroa.8.0.copyload803",
+    "%qk_fetch.sroa.8.0.copyload803.qk_fetch.sroa.0.0.copyload802 = select i1 %cmp15.not, i64 %qk_fetch.sroa.8.0.copyload803, i64 %qk_fetch.sroa.0.0.copyload802",
+    "%qk_fetch.sroa.0.0.copyload802.qk_fetch.sroa.8.0.copyload803.1 = select i1 %cmp15.not.1.not, i64 %qk_fetch.sroa.8.0.copyload803.1, i64 %qk_fetch.sroa.0.0.copyload802.1",
+    "%qk_fetch.sroa.8.0.copyload803.qk_fetch.sroa.0.0.copyload802.1 = select i1 %cmp15.not.1.not, i64 %qk_fetch.sroa.0.0.copyload802.1, i64 %qk_fetch.sroa.8.0.copyload803.1"
+  ],
+  "kernel_counts": {
+    "MMA": 8,
+    "warp": 7,
+    "bpermute": 4,
+    "alloca": 0,
+    "AS5": false
+  },
+  "mechanism_gate": 1,
+  "reason": "declared16Bstorematerialization failed: optimizedIRQK2x8B perfetch not1x16B",
+  "global_cpp_intent": "originaluint4 addresses unchanged source; actualISAwidthUNAVAILABLE",
+  "ISA_transaction_or_performance_verdict": "UNAVAILABLE",
+  "attention_reference_native": [
+    0,
+    0,
+    0
+  ],
+  "no_gate_relaxation_no_retry": true
+}
