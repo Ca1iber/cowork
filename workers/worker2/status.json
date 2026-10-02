@@ -1,14 +1,14 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T04:09:07.124467+00:00",
-  "state": "V201_FIXED_TARGET_SCREEN_RUNNING",
+  "timestamp_utc": "2026-10-02T04:24:39.754983+00:00",
+  "state": "V201_CLOSED_REJECTED_WAITING_NEXT_EVIDENCE_PLAN",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
   "source_repo_present": true,
   "source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
-  "candidate_path": "/tmp/nsa_worker2_v201_c5_direct_output.py",
+  "candidate_path": "race_tests/nsa/submission/v201_worker2_c5_direct_output_subagent2/submission.py",
   "cases": [
     1,
     2,
@@ -26,13 +26,15 @@
     9,
     8
   ],
-  "job_pid": 60657,
-  "stage": "fixed_native_selected_case5",
+  "job_pid": null,
+  "stage": "rejected_target_screen_closed",
   "correctness_counts": {
-    "current_screen_candidate_completed": 0,
-    "current_screen_total_completed": 2,
-    "current_screen_candidate_planned": 4,
-    "current_screen_total_planned": 12
+    "candidate": 4,
+    "total": 12,
+    "cases": [
+      5
+    ],
+    "full14_done": false
   },
   "benchmark_paths": [
     "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/baseline_case*_subagent2.csv"
@@ -41,18 +43,8 @@
     "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/mcprof_case{5,8,9}_{baseline_v28,parent_v084}"
   ],
   "target_deltas": {
-    "5": {
-      "parent_vs_original_pct": -21.22941969501355,
-      "diagnostic_only": true
-    },
-    "8": {
-      "parent_vs_original_pct": -22.33731261211992,
-      "diagnostic_only": true
-    },
-    "9": {
-      "parent_vs_original_pct": -22.16403698269137,
-      "diagnostic_only": true
-    }
+    "baseline_v28": -11.255966490242542,
+    "parent_v084": 10.437417921002123
   },
   "non_target_deltas": {},
   "tools": {
@@ -96,8 +88,8 @@
     "oom_kill": 1
   },
   "blockers": [],
-  "next_step": "Finish only fixed12 single-source freshprocess case5 native jobs; stop nonzero/OOM/Killed/hash/CSVfailure; noautomaticformal. Send actualraw/resources toleader fordecision.",
-  "source_commit": "d1c7891b163f6ce8b0ad7f96292d30ab5b736474",
+  "next_step": "Wait leaderreview; retainparentpacked16B output and selectfresh evidence-based different mechanism, noautomaticexpansion/retest.",
+  "source_commit": "189ab5f4d56af37f558732c2dc0241aeb47e5b22",
   "environment_evidence_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/environment",
   "import_attempts": [
     {
@@ -200,9 +192,9 @@
     "agent_retries": 0
   },
   "candidate_source_created": true,
-  "closed_version": "v200_worker2_baseline_profile_subagent2",
-  "closed_status": "inconclusive_diagnostic_profile_incomplete_runtime_oom_scope_falsified",
-  "all_owned_jobs_terminal": false,
+  "closed_version": "v201_worker2_c5_direct_output_subagent2",
+  "closed_status": "rejected_case5_direct_output_regression_vs_v084",
+  "all_owned_jobs_terminal": true,
   "profile_raw_records_captured": 12,
   "profile_numeric_records": 10,
   "profile_original_scope_consistent_records": 9,
@@ -224,19 +216,12 @@
   "proposal_path": "workers/worker2/proposals/case5_direct_output_v201.md",
   "peer_review_path": "workers/worker2/reviews/peer_and_measurement_review_v201.json",
   "code_relay_bundle": {
-    "path": "/tmp/nsa_worker2_code_d1c7891b163f.bundle",
-    "size": 3173428,
-    "sha256": "4d81e19c2f05c406b579cbced1482f1b1833889cb54056ce2d3a50055babbd63",
-    "prerequisite": "7bb0e33b35a7b5a02a8fb42e99d4151617316572"
+    "path": "/tmp/nsa_worker2_code_189ab5f4d56a.bundle",
+    "size": 91227,
+    "sha256": "eb250d3b19b806e5417bdc670fcfc718106e23d3dd29189e6ee8029e56d1c408",
+    "prerequisite": "d1c7891b163f6ce8b0ad7f96292d30ab5b736474"
   },
-  "active_native_process": {
-    "stage": "fixed_native_selected_case5",
-    "run": 3,
-    "variant": "power_v201",
-    "pid": 63557,
-    "timestamp_utc": "2026-10-02T04:09:05.187994+00:00",
-    "oom": 1
-  },
+  "active_native_process": null,
   "candidate_source_sha256": "66ed461e355a69c456f2224b749d425ede38ce6ebba7f22ae1568351b05d6264",
   "target_cases": [
     5
@@ -296,5 +281,73 @@
       "/root/tilelang-metax/race_tests/nsa/rep/v201_worker2_c5_direct_output_subagent2/resources/case5_power_v201.mcbin",
       "/root/tilelang-metax/race_tests/nsa/rep/v201_worker2_c5_direct_output_subagent2/codegen/power_v201/case5_stage1.device.cpp"
     ]
-  }
+  },
+  "archive_is_promotion": false,
+  "screen_summary": {
+    "source_sha256": "66ed461e355a69c456f2224b749d425ede38ce6ebba7f22ae1568351b05d6264",
+    "complete12jobs": true,
+    "job_stop": null,
+    "actual_full_references": {
+      "candidate": 4,
+      "total": 12
+    },
+    "oom_final": 1,
+    "protocol": "single-source freshproc/full unchangednative; no postexport; fixed12 only",
+    "automatic_formal": false,
+    "status": "rejected_target_median_not_faster",
+    "samples_us": {
+      "baseline_v28": [
+        30.889,
+        30.705,
+        30.659,
+        31.278
+      ],
+      "parent_v084": [
+        24.677999999999997,
+        24.765,
+        24.791,
+        24.729999999999997
+      ],
+      "power_v201": [
+        27.355999999999998,
+        27.351,
+        27.249,
+        27.310000000000002
+      ]
+    },
+    "medians_us": {
+      "baseline_v28": 30.796999999999997,
+      "parent_v084": 24.7475,
+      "power_v201": 27.3305
+    },
+    "candidate_vs_control_pct": {
+      "baseline_v28": -11.255966490242542,
+      "parent_v084": 10.437417921002123
+    },
+    "rounds": [
+      {
+        "round": 1,
+        "medians_us": {
+          "baseline_v28": 30.796999999999997,
+          "parent_v084": 24.7215,
+          "power_v201": 27.353499999999997
+        },
+        "candidate_vs_parent_pct": 10.646603159193413
+      },
+      {
+        "round": 2,
+        "medians_us": {
+          "baseline_v28": 30.9685,
+          "parent_v084": 24.7605,
+          "power_v201": 27.2795
+        },
+        "candidate_vs_parent_pct": 10.173461763696201
+      }
+    ],
+    "candidate_parent_ranges_overlap": false
+  },
+  "native_jobs_all_exit0": true,
+  "oom_delta": 0,
+  "formal_started": false,
+  "new_profile_samples": 0
 }
