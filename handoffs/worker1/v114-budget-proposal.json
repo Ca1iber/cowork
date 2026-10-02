@@ -1,0 +1,354 @@
+{
+  "plan": {
+    "version": "v114_worker1_reallocated_baseline_original_C11_screen_sc-16g-2",
+    "UTC": "2026-10-02T12:25:13.841147+00:00",
+    "phase": "v114_proposal_no_heavy_GO",
+    "selected_cases": [
+      11
+    ],
+    "jobs": [
+      {
+        "index": 1,
+        "round": 1,
+        "variant": "baseline_v28",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      },
+      {
+        "index": 2,
+        "round": 1,
+        "variant": "power_v104",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      },
+      {
+        "index": 3,
+        "round": 1,
+        "variant": "power_v113",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      },
+      {
+        "index": 4,
+        "round": 1,
+        "variant": "power_v113",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      },
+      {
+        "index": 5,
+        "round": 1,
+        "variant": "power_v104",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      },
+      {
+        "index": 6,
+        "round": 1,
+        "variant": "baseline_v28",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      },
+      {
+        "index": 7,
+        "round": 2,
+        "variant": "baseline_v28",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      },
+      {
+        "index": 8,
+        "round": 2,
+        "variant": "power_v104",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      },
+      {
+        "index": 9,
+        "round": 2,
+        "variant": "power_v113",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      },
+      {
+        "index": 10,
+        "round": 2,
+        "variant": "power_v113",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      },
+      {
+        "index": 11,
+        "round": 2,
+        "variant": "power_v104",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      },
+      {
+        "index": 12,
+        "round": 2,
+        "variant": "baseline_v28",
+        "NSA_CASES": "11",
+        "case_order": [
+          11
+        ],
+        "planned_full_refs": 1
+      }
+    ],
+    "planned_native_processes": 12,
+    "planned_candidate_fullrefs": 4,
+    "planned_inclusive_fullrefs": 12,
+    "native_original": {
+      "case_seed_reset_each_call": 0,
+      "full_naive": true,
+      "warmup": 10,
+      "repeat": 50,
+      "atol": 0.01,
+      "rtol": 0.01,
+      "F16_requires_grad": true,
+      "no_post_export_or_metadata": true,
+      "wrapper_sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+      "case_runner_sha256": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568"
+    },
+    "memory_engineering_budget": {
+      "cgroup_limit_bytes": 34359738368,
+      "new_admission_max_whole_bytes": 5368709120,
+      "additional_import_runtime_budget_not_upperbound_bytes": 24696061952,
+      "reserve_bytes": 4294967296,
+      "runtime_stop_whole_bytes": 30064771072,
+      "unknown_visible_heavy_RSS_bytes": 1073741824,
+      "sample_interval_seconds": 0.5,
+      "per_process_walltime_stop_seconds": 600,
+      "newthreshold_preregistered_before_any_newheavy": true,
+      "all_cgroup_limit_changes_forbidden": true,
+      "baseline_GiB": 5,
+      "additional_GiB": 23,
+      "reserve_GiB": 4,
+      "runtime_whole_GiB": 28
+    },
+    "monitor_repair": {
+      "critical_identity_fields": [
+        "pid",
+        "starttime_ticks",
+        "exe"
+      ],
+      "per_read_phase_errors_with_filename": true,
+      "optional_status_or_thread_error_keeps_read_critical_identity": true,
+      "authoritative_original_Popen_terminal_poll_before_identity_abort": true,
+      "explicit_alive_critical_mismatch_fails_immediately": true,
+      "unavailable_identity_terminal_confirmation_max_seconds": 1.0,
+      "confirmation_within_original600s_and_all_existing_guards": true,
+      "terminal0_cannot_erase_prior_other_abort": true,
+      "no_signal_on_unverified_or_terminal_PID": true,
+      "no_oldgate_repair_or_repeat": true,
+      "per_job_pending_since_initialized": true,
+      "pending_not_reset_on_repeated_unavailable": true,
+      "permissiondenied_independent_fixture": "UNAVAILABLE; notexecuted, no verifiedsignal, boundedpending/strictguards remain"
+    },
+    "expected_oom_before": 13,
+    "handshake_budget_seconds": 5,
+    "recognized_unowned_baseline": {
+      "pid": 213447,
+      "starttime_ticks": 93125003,
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+    },
+    "hypothesis": "Independentonce originalC11 fixedscreen under newlypreregistered5+23+4 engineeringbudget can complete freshsource processes; existing4GiB refusal staysfailed. Notkernel optimization orOOMcauseproof.",
+    "performance": {
+      "primary": "C113 vs C104 medians per oncefixed12",
+      "thirdcontrol": "original28",
+      "median_ge_control": "reject",
+      "any_range_overlap_or_round_positive": "inconclusive, no stablewin",
+      "keep_all_raw_positive_outlier": true,
+      "no_adaptive_retries_or_automatic_formal": true
+    },
+    "scope": "Diagnostic validation of immutable113cb30/header113; no newkernel/fullsourcecopy/LLVM/metadata/profile",
+    "runtime_abort": "NEW5GiBdouble admission, unchanged28GiBwhole runtime/unknown1GiB/OOM13/600s/baseline exacttuple/identity1s/0.5s/CSV/hash/nonzero/Killed: stop fixedprefix, no retry or polling for admission",
+    "partial_counts": "observed PASS rows separately from cleanterminal rows, never pad via plan or mergedCSV",
+    "initial_failures": "v113 initialhelper/startup/parser failures and actual4GiB refusal0spawn0refs/controller1/supervisor1 permanently preserved; no counts transferred into v114",
+    "prior_v108_168_and_v109_96": "notcombined with newscreen; alloldpositive deltas retained",
+    "no_native_GO_yet": true,
+    "compiled_gate_readonly_recovery_originalwait": 0,
+    "sourcecb30_after_recovery_same": true,
+    "existing_budget_evidence": {
+      "path": "/root/tilelang-metax/race_tests/nsa/rep/v114_worker1_reallocated_baseline_original_C11_screen_sc-16g-2/baseline_budget_existing_evidence.json",
+      "old_admission_whole_bytes": 4314877952,
+      "old_boundary4GiB": 4294967296,
+      "old_excess_bytes": 19910656,
+      "baseline_Node_RSS_KiB": 2483964,
+      "baseline_Node_HWM_KiB": 3611504,
+      "unknown_visible_heavy_over1GiB": [],
+      "not_peakupperbound_or_futureguarantee": true
+    },
+    "budget_risks": [
+      "WholeCG includescache/kernel/sharedcharges/hiddennamespace, NodeHWM and oneexisting sample are notfuturebounds",
+      "5+23+4 reallocates existing32GiB, does not modifycgroup limit or weaken28GiB reserve stop",
+      "14visibledeps/currenttuple/unknown RSSguards remain; baselineeditor alwaysunowned, no signal/children exception",
+      "Loweradditional engineeringbudget23GiB is an estimate only; admission/refusal/aborts stoponce, no polluntilpass",
+      "CPU/GPUlibrarycontext/JIT/allocator/native reference mayneed more thanpastobservedpeak; 0.5s missestransients"
+    ]
+  },
+  "ready": {
+    "phase": "actualplan_peerhelpersready_noheavy",
+    "plan_SHA": "21fbd0fe8b51ef0934822a0ba48884e499db1d14276509ec31643cbd150fdb44",
+    "native_plan_SHA": "21fbd0fe8b51ef0934822a0ba48884e499db1d14276509ec31643cbd150fdb44",
+    "manifest_SHA": "909d1d4ceac54dc415af6bf39943a9e8117ae6a1d2ada2f7c335e626aaf05a17",
+    "peer_SHA": "3ffe3170bf7996f7f19d8fefae58912a5e71f616bf84974ddb6d2e743a309b59",
+    "existing_budget_evidence_SHA": "8b4ea670dfa987a93eb4d36c4f85b00055c746fbaa01f958a0fdb3c58adda718",
+    "controller_SHA": "3ff0994284563922f9af0e174555961374f7489739160359d5c7750c88af3e21",
+    "actual_helper_required_keys_validated": {
+      "launch_native_screen.py": {
+        "manifest_required": [
+          "existing_parent_C11_device",
+          "shared_identity_document",
+          "sources",
+          "tools"
+        ],
+        "plan_required": [
+          "phase"
+        ]
+      },
+      "supervise_native_screen.py": {
+        "manifest_required": [
+          "shared_identity_document",
+          "sources",
+          "tools"
+        ],
+        "plan_required": [
+          "phase"
+        ]
+      },
+      "run_native_screen.py": {
+        "manifest_required": [
+          "cooperative_heavy_lock",
+          "frozen_compiled_gate",
+          "frozen_compiled_gate_actual_exit",
+          "preserved_compiled_gate_original_exit",
+          "recognized_unowned_baseline",
+          "sources",
+          "tools",
+          "wrapper_path"
+        ],
+        "plan_required": [
+          "expected_oom_before",
+          "jobs",
+          "memory_engineering_budget",
+          "monitor_repair",
+          "phase",
+          "planned_candidate_fullrefs",
+          "planned_inclusive_fullrefs",
+          "selected_cases"
+        ]
+      }
+    },
+    "16dependencies_exists_SHA_syntaxonly": [
+      "baseline_v28",
+      "power_v104",
+      "power_v113",
+      "python",
+      "bounded_controller",
+      "native_gate",
+      "process_monitor",
+      "supervisor",
+      "native_wrapper",
+      "screen_launcher",
+      "screen_analyzer",
+      "frozen_compiled_gate",
+      "shared_identity_document",
+      "existing_parent_C11_device",
+      "frozen_compiled_gate_actual_exit",
+      "preserved_compiled_gate_original_exit"
+    ],
+    "native_onceguards_absent": true,
+    "new_GPU_native_attention_refs": 0
+  },
+  "actual_existing_admission_evidence": {
+    "version": "v114_worker1_reallocated_baseline_original_C11_screen_sc-16g-2",
+    "evidence_from_existing_sample_only": "/root/tilelang-metax/race_tests/nsa/rep/v113_worker1_s4_global_softmax_sc-16g-2/native_screen/job_01_baseline_v28/admission_first.json",
+    "sample_UTC": "2026-10-02T12:17:20.932170+00:00",
+    "wholeCG_bytes": 4314877952,
+    "old_4GiB_boundary": 4294967296,
+    "old_excess_bytes": 19910656,
+    "OOM": 13,
+    "exact_baseline_tuple": {
+      "pid": 213447,
+      "starttime_ticks": 93125003,
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+    },
+    "baseline_metadata": {
+      "pid": 213447,
+      "memory_KiB": {
+        "VmSize": 13496004,
+        "VmHWM": 3611504,
+        "VmRSS": 2483964
+      },
+      "all_thread_children": {
+        "213447": [],
+        "213448": [],
+        "213449": [],
+        "213450": [],
+        "213451": [],
+        "213452": [],
+        "213454": [],
+        "213688": [],
+        "213689": []
+      },
+      "phase_errors": [],
+      "ppid": 212213,
+      "pgid": 211770,
+      "state": "S",
+      "starttime_ticks": 93125003,
+      "comm": "MainThread",
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n",
+      "critical_identity_available": true
+    },
+    "unknown_visible_heavy_over1GiB": [],
+    "cgroup_raw_accounting": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "4314877952\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 889442304\nrss 3128922112\nrss_huge 0\nshmem 167936\nmapped_file 51163136\ndirty 57344\nwriteback 0\nswap 793710592\npgpgin 4544593201\npgpgout 4543604438\npgfault 5034174241\npgmajfault 197079\ninactive_anon 2591854592\nactive_anon 568438784\ninactive_file 454410240\nactive_file 434855936\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 889442304\ntotal_rss 3128922112\ntotal_rss_huge 0\ntotal_shmem 167936\ntotal_mapped_file 51163136\ntotal_dirty 57344\ntotal_writeback 0\ntotal_swap 793710592\ntotal_pgpgin 4544593201\ntotal_pgpgout 4543604438\ntotal_pgfault 5034174241\ntotal_pgmajfault 197079\ntotal_inactive_anon 2591854592\ntotal_active_anon 568438784\ntotal_inactive_file 454410240\ntotal_active_file 434855936\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 4314877952
+    },
+    "no_cmdline_environment_signal_cleanup_or_new_census": true,
+    "not_OOMcause_or_peakupperbound": true
+  },
+  "heavy_not_launched": true
+}
