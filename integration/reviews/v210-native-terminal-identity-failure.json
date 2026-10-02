@@ -1,0 +1,114 @@
+{
+  "version": "v210_worker2_c8_serial_query_pair_subagent2",
+  "UTC": "2026-10-02T13:11:20.724215+00:00",
+  "native_GO": "closed stopped protocol; no retry",
+  "source_SHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+  "observed_PASS_refs": 2,
+  "clean_candidate_total_refs": [
+    0,
+    1
+  ],
+  "native_jobs_started": 2,
+  "later_jobs": "NOT_STARTED",
+  "native_exits": [
+    0,
+    0
+  ],
+  "controller_original_wait": {
+    "owner": {
+      "pid": 242316,
+      "ppid": 1372,
+      "pgid": 242316,
+      "starttime_ticks": 331815760,
+      "exe": "/opt/conda/bin/python3.12"
+    },
+    "controller": {
+      "pid": 242317,
+      "ppid": 242316,
+      "pgid": 242317,
+      "starttime_ticks": 331815763,
+      "exe": "/opt/conda/bin/python3.12"
+    },
+    "argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/run_native_screen.py"
+    ],
+    "originalPopen_held": true,
+    "owner_helperSHA": "3da0762d4c9be911b4f4304bd41a265ac5745d09fbeed1675945b007472bf8dd",
+    "originalPopen_actualwait": 1
+  },
+  "prior_missing_critical_identity_guard_preserved": true,
+  "no_signal": true,
+  "OOM_before_after": [
+    3,
+    3
+  ],
+  "source_candidate_native_verdict": "UNAVAILABLE; no candidate executed",
+  "actual_terminal_transition_evidence": {
+    "stage": "existing_raw_only_exit_transition_forensic",
+    "last_three_samples": [
+      {
+        "utc": "2026-10-02T13:06:22.429845+00:00",
+        "usage_bytes": 10192064512,
+        "OOM": 3,
+        "parent_native_current_tuple": {
+          "pid": 242606,
+          "state": "R",
+          "starttime_ticks": 331820089,
+          "exe": "/opt/conda/bin/python3.12"
+        },
+        "sample_missing_pid": false
+      },
+      {
+        "utc": "2026-10-02T13:06:22.940532+00:00",
+        "usage_bytes": 8426483712,
+        "OOM": 3,
+        "parent_native_current_tuple": {
+          "pid": 242606,
+          "state": "R",
+          "starttime_ticks": 331820089,
+          "exe": "/opt/conda/bin/python3.12"
+        },
+        "sample_missing_pid": false
+      },
+      {
+        "utc": "2026-10-02T13:06:23.449953+00:00",
+        "usage_bytes": 3336691712,
+        "OOM": 3,
+        "parent_native_current_tuple": {
+          "pid": 242606,
+          "state": "R",
+          "starttime_ticks": 331820089,
+          "exe": null
+        },
+        "sample_missing_pid": false
+      }
+    ],
+    "sourceSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+    "sample_file_SHA": "0f67106dfaaa2b56e21ef291fbc7f81c08ca6933e692c2ec1050aed01d65527a",
+    "native_run2_actualwait": 0,
+    "original_controller_actualwait": 1,
+    "prior_identity_abort_kept": true,
+    "owned_signals": [],
+    "observed_C_totalrefs": [
+      0,
+      2
+    ],
+    "clean_C_totalrefs": [
+      0,
+      1
+    ],
+    "candidate_not_started": true,
+    "no_rootcause_or_clean_gate_restoration": true,
+    "no_retry": true
+  },
+  "rootcause": "UNPROVEN; missing exe in terminal transition observed",
+  "file_SHA": {
+    "summary": "51eae38c446e779259742c7c2ccb9237f3d709246fab79156dc83fadd7d4abd2",
+    "jobs": "bd46b32a6d1bc88ec57851429d22dbe01c587c911d2a070d80d0bb283212638b",
+    "forensic": "7e083832fefcf52d5b3b8f4eed45f1e7dd80e728987de862c51f7c3cf04f8bfe",
+    "original_wait": "bb8b368bf478118a46ece6b36529cfa7b8040fbcca100369a168b5e36d302bfc"
+  },
+  "next": "owner closes210 then independent211 diagnostic proposed with original Popen first, bounded1s missing-field confirmation, explicit mismatch immediate fail; no211 GO"
+}
