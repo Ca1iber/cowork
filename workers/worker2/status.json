@@ -1,13 +1,13 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T02:54:17.723650+00:00",
-  "state": "WAITING_SOURCE_RUNTIME_SYNC",
+  "timestamp_utc": "2026-10-02T02:59:14.112020+00:00",
+  "state": "ENVIRONMENT_IMPORT_FAILED",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_repo_present": false,
-  "source_sha256": null,
+  "source_repo_present": true,
+  "source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
   "candidate_path": null,
   "cases": [
     1,
@@ -27,7 +27,7 @@
     8
   ],
   "job_pid": null,
-  "stage": "read_only_environment_preparation_complete",
+  "stage": "first_isolated_import_terminal_exit1_before_TVM",
   "correctness_counts": {
     "candidate": 0,
     "all_sources": 0
@@ -57,8 +57,22 @@
     "oom_kill": 0
   },
   "blockers": [
-    "Awaiting exact source Git bundle and reusable runtime components; no TileLang/TVM installed.",
-    "GitHub SSH known_hosts and default key absent; use leader relay."
+    "Missing build/tvm runtime search directory; requesting bounded directory-only recovery or source machine directory contents."
   ],
-  "next_step": "Verify synchronized bundles and manifest; initialize source branch from exact common checkpoint; light dependency probe then one real import and official native case5 environment smoke. No kernel edit before baseline/profile."
+  "next_step": "Resolve missing runtime directory without source edits or dependency install; preserve initial failure; one isolated recovery import, then official native case5 gate.",
+  "source_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+  "environment_evidence_path": "/tmp/nsa_worker2_environment",
+  "import_attempts": [
+    {
+      "pid": 2360,
+      "exit": 1,
+      "log": "/tmp/nsa_worker2_environment/import_probe.log",
+      "reason": "tilelang/env.py asserts build/tvm search directory exists; missing runtime directory",
+      "oom_kill_before": 0,
+      "oom_kill_after": 0
+    }
+  ],
+  "runtime_library_hashes_verified": true,
+  "source_hashes_verified": true,
+  "git_status_clean": true
 }
