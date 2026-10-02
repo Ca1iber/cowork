@@ -1,0 +1,38 @@
+{
+  "version": "v121",
+  "UTC": "2026-10-02T17:24:38.698706+00:00",
+  "source_SHA": "be7566ae3fc67c278c62f356cf051f11732ed3b2e8899a76b405153e1c4b100c",
+  "review_archive_SHA": "9c1c34f53b58a093702b9b79d166b8d16341f2bcb5372ad28c6ae552c9899079",
+  "verified_hashes": 18,
+  "parent_CB13_18AST_prefix_equal": true,
+  "CTA_barriers_unconditional": [
+    [
+      1511,
+      0
+    ],
+    [
+      1551,
+      0
+    ],
+    [
+      1563,
+      0
+    ],
+    [
+      1594,
+      0
+    ]
+  ],
+  "pure_layout_bijections_Q_K_V_output": [
+    1024,
+    1024,
+    1024,
+    1024
+  ],
+  "warp1_partialNum_all1024written_once_readsame_bywarp0": true,
+  "partialNum_vec4_relative_alignment16": true,
+  "shared_bytes_source_expected": 10496,
+  "shared_Q_output_lifetime": "Q read by both warps before globalMax CTA barrier; output overwritten after final Num CTA barrier, KV slots disjoint",
+  "math": "global head max then rounded F16P feeding both denom and PV; split0..3/4..7 FP32 sums regrouped, native required",
+  "source_review": "approved preparation for one bounded compile; no native GO"
+}

@@ -29,7 +29,7 @@
     "all14_nonregression": "UNPROVEN"
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-02T17:19:02.955441+00:00",
+  "updated_at_utc": "2026-10-02T17:28:06.215439+00:00",
   "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
   "worker1": {
     "cases": [
@@ -42,12 +42,14 @@
     "last_closed_source_commit": "4c934e5aa238597f234a613e2e085f6ad3c593a8",
     "last_result": "independently verified C6 +11.94145% vs84, 12PASS/C4/1001samples/OOM13; rejected",
     "active_version": "v121",
-    "authorized_scope": "source-only C12 two warp selected split from best C113; no compile/native yet",
+    "authorized_scope": "source reviewed; prepare one original C12 metadata/SDK/IR bounded compile actual helpers, no native GO",
     "approval": "integration/reviews/v120-native-approval.json",
     "native_GO": false,
     "active_PID": null,
     "original_SSH_session": 5841,
-    "runtime_audit": "integration/reviews/v120-native-leader-audit.json"
+    "runtime_audit": "integration/reviews/v120-native-leader-audit.json",
+    "candidate_sha256": "be7566ae3fc67c278c62f356cf051f11732ed3b2e8899a76b405153e1c4b100c",
+    "source_audit": "integration/reviews/v121-source-leader-review.json"
   },
   "worker2": {
     "cases": [
@@ -74,7 +76,7 @@
       0,
       2048
     ],
-    "authorized_scope": "source-only C8 shared Q/K 16B packing from P84; no compile/native yet",
+    "authorized_scope": "source reviewed; prepare one original C8 metadata/SDK/IR bounded compile actual helpers, no native GO",
     "native_GO": false,
     "approval": "integration/reviews/v212-native-approval.json",
     "active_PID": null,
@@ -85,7 +87,9 @@
     "last_live_verified": "2026-10-02 PID303655 start333167465 Python3.12 stateS matched",
     "next_version": "v214",
     "next_scope": "prepare one fresh P84 C8 mcProfiler counts2; no source/codegen/native changes",
-    "runtime_audit": "integration/reviews/v214-profile-leader-audit.json"
+    "runtime_audit": "integration/reviews/v214-profile-leader-audit.json",
+    "candidate_sha256": "de337a7ad7d5636beeeecf519f4cd1a55a64b02098358cbeffabf4bca3f66a51",
+    "source_audit": "integration/reviews/v215-source-leader-review.json"
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
