@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T07:48:20.963173+00:00",
-  "state": "V206_SOURCE_STATIC0_PENDING_METADATA_REVIEW",
+  "timestamp_utc": "2026-10-02T08:32:34.982222+00:00",
+  "state": "V206_FIXED_C5_NATIVE_RUNNING",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -63,7 +63,74 @@
     "whole_factory_inverse_AST_equal": true,
     "source_sync_sites": 7,
     "source_fullwarp_shfl_xor_delta": 8,
-    "actualCPP_IR": "UNAVAILABLE_not_run"
+    "actualCPP_IR": "UNAVAILABLE_not_run",
+    "metadata_exit": 0,
+    "SDK_actual_count": 4,
+    "SDK_exits": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "semantic_audit_exit": 0,
+    "prior_parser_exits": [
+      1,
+      1,
+      1
+    ],
+    "prior_trunc_analysis_wrong_corrected": true,
+    "MT_parent_candidate": [
+      42,
+      46
+    ],
+    "ST_parent_candidate": [
+      20,
+      20
+    ],
+    "staticmax": [
+      8,
+      8
+    ],
+    "stack": [
+      0,
+      0
+    ],
+    "dynamicshared": [
+      2048,
+      2048
+    ],
+    "actual_IR_shared_V_store_counts": [
+      8,
+      4
+    ],
+    "actual_IR_shared_V_store_bytes": [
+      4,
+      8
+    ],
+    "uint32_bpermute_new_count": 4,
+    "final_ISA_width": "UNAVAILABLE",
+    "native_go": true,
+    "native_observerPID": 159260,
+    "native_live": {
+      "stage": "fixed_C5_native_observed",
+      "run": 12,
+      "variant": "baseline_v28",
+      "pid": 161983,
+      "observerPID": 159260,
+      "sample_count": 34,
+      "utc": "2026-10-02T08:32:34.849327+00:00",
+      "usage_bytes": 15837298688,
+      "oom": 3
+    },
+    "accepted_refs": {
+      "candidate": 4,
+      "total": 11
+    },
+    "planned_refs": {
+      "candidate": 4,
+      "total": 12
+    },
+    "OOM": 3
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -275,8 +342,8 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "leader review exactd1a58e candidate/sourceproof before boundedmetadata",
-  "job_pid": null,
+  "next_step": "finish originalfixed12 or stopfailedprefix; noadditionalprofile/formal",
+  "job_pid": 159260,
   "proposed_diagnostic": {
     "version": "v203",
     "no_kernel_edit": true,
