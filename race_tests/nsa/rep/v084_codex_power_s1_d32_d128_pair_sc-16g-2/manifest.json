@@ -1,0 +1,1843 @@
+{
+  "version": "v084_codex_power_s1_d32_d128_pair_sc-16g-2",
+  "status": "oj_user_reported_improvement_vs_v28_local_parent_deltas_retained",
+  "closed_utc": "2026-10-02T02:48:26.719146+00:00",
+  "start": {
+    "version": "v084_codex_power_s1_d32_d128_pair_sc-16g-2",
+    "utc": "2026-10-02T01:52:08.641580+00:00",
+    "head": "5152399183df04f97e350124df7636109662951f",
+    "branch": "codex-power-v28-base",
+    "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "parent81_sha256": "5d972adf74e54b7c9a1e7c546f85bde7c44fb9c335391d5fa9b4ca9d454c3d43",
+    "kernel_sources": "exact own82/83 bodies, rejected status not waived",
+    "oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 10\n",
+    "cpu_limit": "34359738368\n"
+  },
+  "runtime_final": {
+    "utc": "2026-10-02T02:47:42.635113+00:00",
+    "oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 10\n",
+    "cpu_limit": "34359738368\n",
+    "no_gpu_config_changes": true
+  },
+  "source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "source_identity": {
+    "candidate_path": "/tmp/nsa_power_v084_pair.py",
+    "candidate_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "parent_sha256": "5d972adf74e54b7c9a1e7c546f85bde7c44fb9c335391d5fa9b4ca9d454c3d43",
+    "parent_wholeAST_prefix_exact": true,
+    "helper_dependencies": {
+      "/root/tilelang-metax/race_tests/nsa/experiments/v082_codex_power_s1_d128_dense_sc-16g-2/s1_d128_kernel.py": "ef2288657772d165cae4d6aeb66bc721b6bc9b84c59c064fa86d7491c2050759",
+      "/root/tilelang-metax/race_tests/nsa/experiments/v083_codex_power_s1_d32_register_sc-16g-2/s1_d32_kernel.py": "50bcf7b4f395afcd7dd26bd81cdbebb37c288a675a88446f43e051c3844aca5e"
+    },
+    "unchanged_math_proof_dependencies": {
+      "/root/tilelang-metax/race_tests/nsa/rep/v082_codex_power_s1_d128_dense_sc-16g-2/D128_coordinate_proof.json": "b2f9a3455c9d1923a4a76c11b4878034da167502013993d221c7e61901b25fc3",
+      "/root/tilelang-metax/race_tests/nsa/rep/v083_codex_power_s1_d32_register_sc-16g-2/D32_coordinate_proof.json": "6de15ea1b60a0693535539b306dc2dd6149dc164373e6487d5974783fbada997"
+    },
+    "new_dispatch_cases": [
+      1,
+      3
+    ],
+    "factory_bodies_exact_own82_83": true,
+    "import_cache": "14codeclosures/0JIT, actualJITKernel duringfirstnormalcall,not contentcache",
+    "other12keys_and_math_exact_parent81": true,
+    "prior_failures_not_waived": true
+  },
+  "shared_inputs_identity": {
+    "files": {
+      "race_tests/nsa/official_case.json": "85f2c34acd793fb0a45084175acd7bcde48ff5d717a395d370800c30cf4e7036",
+      "race_tests/nsa/reference.py": "e31d5f188923d8696c7ad190b1652d5b3142c004dc96d0604f371c71f179bf32",
+      "race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/test_tilelang_nsa_fwd_v28.py": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568",
+      "race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+      "race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py": "573cb367a91b77ac0bafcc2262c5c6c3cb6e00e62ef9ce4e8dd823c5f898ba7a"
+    },
+    "head": "5152399183df04f97e350124df7636109662951f",
+    "native_body_unchanged": true,
+    "no_shared_source_copies": true
+  },
+  "native_reference_checks": {
+    "candidate_label": "power_v084",
+    "candidate_checks": 114,
+    "experiment_checks_with_controls": 314,
+    "rows": [
+      {
+        "file": "target_screen_sc-16g-2.csv",
+        "candidate_checks": 8,
+        "experiment_checks_with_controls": 24,
+        "candidate_cases": [
+          1,
+          3
+        ]
+      },
+      {
+        "file": "confirm_case1_sc-16g-2.csv",
+        "candidate_checks": 4,
+        "experiment_checks_with_controls": 12,
+        "candidate_cases": [
+          1
+        ]
+      },
+      {
+        "file": "formal_all14_sc-16g-2.csv",
+        "candidate_checks": 56,
+        "experiment_checks_with_controls": 168,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "file": "risk_sc-16g-2.csv",
+        "candidate_checks": 32,
+        "experiment_checks_with_controls": 96,
+        "candidate_cases": [
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          14
+        ]
+      },
+      {
+        "file": "archive_native_all14_sc-16g-2.csv",
+        "candidate_checks": 14,
+        "experiment_checks_with_controls": 14,
+        "candidate_cases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      }
+    ],
+    "duplicate_policy": "merged only; percase copies excluded;  metadata/cold/profile excluded"
+  },
+  "screen": {
+    "scope": "selectedtarget screen,notall14 verdict",
+    "candidate_refs": 8,
+    "experiment_refs": 24,
+    "cases": [
+      {
+        "case": 1,
+        "samples_us": {
+          "baseline_v28": [
+            "9.216000000",
+            "8.719360000",
+            "8.760320000",
+            "9.164800000"
+          ],
+          "parent_v081": [
+            "9.185280000",
+            "8.760320000",
+            "9.262080000",
+            "8.775680000"
+          ],
+          "power_v084": [
+            "8.960000000",
+            "9.456640000",
+            "9.359360000",
+            "8.939520000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "8.962560000",
+          "parent_v081": "8.980480000",
+          "power_v084": "9.159680000"
+        },
+        "vs_v28_pct": "2.199371608111968009140245600",
+        "vs_parent_pct": "1.995438996579247434435575800",
+        "candidate_range_below_parent": false
+      },
+      {
+        "case": 3,
+        "samples_us": {
+          "baseline_v28": [
+            "12.252160000",
+            "12.272640000",
+            "12.247040000",
+            "12.236800000"
+          ],
+          "parent_v081": [
+            "12.257280000",
+            "12.252160000",
+            "12.277761000",
+            "12.262400000"
+          ],
+          "power_v084": [
+            "10.736639000",
+            "10.393600000",
+            "10.731519000",
+            "10.337280000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "12.249600000",
+          "parent_v081": "12.259840000",
+          "power_v084": "10.562559500"
+        },
+        "vs_v28_pct": "-13.77220888845350052246603971",
+        "vs_parent_pct": "-13.84423043041344748381708081",
+        "candidate_range_below_parent": true
+      }
+    ]
+  },
+  "formal": {
+    "candidate_refs": 56,
+    "experiment_refs": 168,
+    "percaseprocess": "originalnative body/timing W10R50 unchanged,samecase3sources",
+    "allrawretained": true,
+    "cases": [
+      {
+        "case": 1,
+        "samples_us": {
+          "baseline_v28": [
+            "8.821760000",
+            "8.832000000",
+            "8.796160000",
+            "8.801280000"
+          ],
+          "parent_v081": [
+            "9.328640000",
+            "8.821760000",
+            "8.785920000",
+            "8.832000000"
+          ],
+          "power_v084": [
+            "8.611840000",
+            "8.581120000",
+            "8.545280000",
+            "8.872960000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "8.811520000",
+          "parent_v081": "8.826880000",
+          "power_v084": "8.596480000"
+        },
+        "vs_v28_pct": "-2.440441603718768158047646720",
+        "vs_parent_pct": "-2.610208816705336426914153130",
+        "ranges": {
+          "baseline_v28": [
+            "8.796160000",
+            "8.832000000"
+          ],
+          "parent_v081": [
+            "8.785920000",
+            "9.328640000"
+          ],
+          "power_v084": [
+            "8.545280000",
+            "8.872960000"
+          ]
+        }
+      },
+      {
+        "case": 2,
+        "samples_us": {
+          "baseline_v28": [
+            "9.676800000",
+            "9.287680000",
+            "9.763840000",
+            "9.635840000"
+          ],
+          "parent_v081": [
+            "8.929280000",
+            "8.883200000",
+            "8.888320000",
+            "9.190400000"
+          ],
+          "power_v084": [
+            "9.093120000",
+            "8.872960000",
+            "9.743360000",
+            "9.369600000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "9.656320000",
+          "parent_v081": "8.908800000",
+          "power_v084": "9.231360000"
+        },
+        "vs_v28_pct": "-4.400848356309650053022269350",
+        "vs_parent_pct": "3.620689655172413793103448300",
+        "ranges": {
+          "baseline_v28": [
+            "9.287680000",
+            "9.763840000"
+          ],
+          "parent_v081": [
+            "8.883200000",
+            "9.190400000"
+          ],
+          "power_v084": [
+            "8.872960000",
+            "9.743360000"
+          ]
+        }
+      },
+      {
+        "case": 3,
+        "samples_us": {
+          "baseline_v28": [
+            "12.492800000",
+            "12.277761000",
+            "12.257280000",
+            "12.241920000"
+          ],
+          "parent_v081": [
+            "12.236800000",
+            "22.850561000",
+            "12.267520000",
+            "12.252160000"
+          ],
+          "power_v084": [
+            "10.327040000",
+            "16.209919000",
+            "10.311680000",
+            "10.485760000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "12.267520500",
+          "parent_v081": "12.259840000",
+          "power_v084": "10.406400000"
+        },
+        "vs_v28_pct": "-15.17112198834312117106305223",
+        "vs_parent_pct": "-15.11797870119022760492795991",
+        "ranges": {
+          "baseline_v28": [
+            "12.241920000",
+            "12.492800000"
+          ],
+          "parent_v081": [
+            "12.236800000",
+            "22.850561000"
+          ],
+          "power_v084": [
+            "10.311680000",
+            "16.209919000"
+          ]
+        }
+      },
+      {
+        "case": 4,
+        "samples_us": {
+          "baseline_v28": [
+            "12.892160000",
+            "12.789760000",
+            "12.815360000",
+            "12.815360000"
+          ],
+          "parent_v081": [
+            "10.915840000",
+            "10.915840000",
+            "11.412480000",
+            "11.171840000"
+          ],
+          "power_v084": [
+            "11.361279000",
+            "11.125760000",
+            "10.992640000",
+            "10.931200000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "12.815360000",
+          "parent_v081": "11.043840000",
+          "power_v084": "11.059200000"
+        },
+        "vs_v28_pct": "-13.70355573312025569316819816",
+        "vs_parent_pct": "0.139082058414464534075104300",
+        "ranges": {
+          "baseline_v28": [
+            "12.789760000",
+            "12.892160000"
+          ],
+          "parent_v081": [
+            "10.915840000",
+            "11.412480000"
+          ],
+          "power_v084": [
+            "10.931200000",
+            "11.361279000"
+          ]
+        }
+      },
+      {
+        "case": 5,
+        "samples_us": {
+          "baseline_v28": [
+            "31.114240000",
+            "31.447041000",
+            "30.940161000",
+            "31.231999000"
+          ],
+          "parent_v081": [
+            "24.832001000",
+            "24.693761000",
+            "24.724481000",
+            "24.739840000"
+          ],
+          "power_v084": [
+            "24.683521000",
+            "24.852481000",
+            "24.785919000",
+            "24.770560000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "31.173119500",
+          "parent_v081": "24.732160500",
+          "power_v084": "24.778239500"
+        },
+        "vs_v28_pct": "-20.51408425775290150220609137",
+        "vs_parent_pct": "0.186312069258971532228249900",
+        "ranges": {
+          "baseline_v28": [
+            "30.940161000",
+            "31.447041000"
+          ],
+          "parent_v081": [
+            "24.693761000",
+            "24.832001000"
+          ],
+          "power_v084": [
+            "24.683521000",
+            "24.852481000"
+          ]
+        }
+      },
+      {
+        "case": 6,
+        "samples_us": {
+          "baseline_v28": [
+            "156.805124000",
+            "156.528645000",
+            "156.933117000",
+            "156.825600000"
+          ],
+          "parent_v081": [
+            "94.382076000",
+            "93.957119000",
+            "94.023676000",
+            "93.972483000"
+          ],
+          "power_v084": [
+            "94.095364000",
+            "94.371843000",
+            "94.330883000",
+            "93.982716000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "156.815362000",
+          "parent_v081": "93.998079500",
+          "power_v084": "94.213123500"
+        },
+        "vs_v28_pct": "-39.92098586616788220021454276",
+        "vs_parent_pct": "0.228774886831597447690407300",
+        "ranges": {
+          "baseline_v28": [
+            "156.528645000",
+            "156.933117000"
+          ],
+          "parent_v081": [
+            "93.957119000",
+            "94.382076000"
+          ],
+          "power_v084": [
+            "93.982716000",
+            "94.371843000"
+          ]
+        }
+      },
+      {
+        "case": 7,
+        "samples_us": {
+          "baseline_v28": [
+            "31.370239000",
+            "30.924799000",
+            "31.416321000",
+            "31.441920000"
+          ],
+          "parent_v081": [
+            "24.796159000",
+            "24.919040000",
+            "24.867840000",
+            "24.852481000"
+          ],
+          "power_v084": [
+            "24.893439000",
+            "24.888320000",
+            "24.949760000",
+            "24.826880000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "31.393280000",
+          "parent_v081": "24.860160500",
+          "power_v084": "24.890879500"
+        },
+        "vs_v28_pct": "-20.71271463192122645355948789",
+        "vs_parent_pct": "0.123567182923054740535564900",
+        "ranges": {
+          "baseline_v28": [
+            "30.924799000",
+            "31.441920000"
+          ],
+          "parent_v081": [
+            "24.796159000",
+            "24.919040000"
+          ],
+          "power_v084": [
+            "24.826880000",
+            "24.949760000"
+          ]
+        }
+      },
+      {
+        "case": 8,
+        "samples_us": {
+          "baseline_v28": [
+            "51.993599000",
+            "52.290559000",
+            "52.408319000",
+            "52.387838000"
+          ],
+          "parent_v081": [
+            "40.432639000",
+            "39.869440000",
+            "40.140800000",
+            "40.074239000"
+          ],
+          "power_v084": [
+            "40.151038000",
+            "40.161281000",
+            "40.340481000",
+            "40.217600000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "52.339198500",
+          "parent_v081": "40.107519500",
+          "power_v084": "40.189440500"
+        },
+        "vs_v28_pct": "-23.21349647721487366681780578",
+        "vs_parent_pct": "0.204253469227883813657436500",
+        "ranges": {
+          "baseline_v28": [
+            "51.993599000",
+            "52.408319000"
+          ],
+          "parent_v081": [
+            "39.869440000",
+            "40.432639000"
+          ],
+          "power_v084": [
+            "40.151038000",
+            "40.340481000"
+          ]
+        }
+      },
+      {
+        "case": 9,
+        "samples_us": {
+          "baseline_v28": [
+            "52.188158000",
+            "52.096000000",
+            "51.855359000",
+            "51.978240000"
+          ],
+          "parent_v081": [
+            "40.919042000",
+            "40.401921000",
+            "40.719361000",
+            "40.791039000"
+          ],
+          "power_v084": [
+            "40.944638000",
+            "40.785918000",
+            "40.755200000",
+            "40.447998000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "52.037120000",
+          "parent_v081": "40.755200000",
+          "power_v084": "40.770559000"
+        },
+        "vs_v28_pct": "-21.65100797277020711369114970",
+        "vs_parent_pct": "0.037685988536432160804020100",
+        "ranges": {
+          "baseline_v28": [
+            "51.855359000",
+            "52.188158000"
+          ],
+          "parent_v081": [
+            "40.401921000",
+            "40.919042000"
+          ],
+          "power_v084": [
+            "40.447998000",
+            "40.944638000"
+          ]
+        }
+      },
+      {
+        "case": 10,
+        "samples_us": {
+          "baseline_v28": [
+            "12.088320000",
+            "11.965441000",
+            "12.052480000",
+            "11.832319000"
+          ],
+          "parent_v081": [
+            "11.028481000",
+            "10.613760000",
+            "10.583040000",
+            "11.110400000"
+          ],
+          "power_v084": [
+            "10.613760000",
+            "10.654720000",
+            "10.618880000",
+            "11.110400000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "12.008960500",
+          "parent_v081": "10.821120500",
+          "power_v084": "10.636800000"
+        },
+        "vs_v28_pct": "-11.42613884024349984330450583",
+        "vs_parent_pct": "-1.703340240966727983483780630",
+        "ranges": {
+          "baseline_v28": [
+            "11.832319000",
+            "12.088320000"
+          ],
+          "parent_v081": [
+            "10.583040000",
+            "11.110400000"
+          ],
+          "power_v084": [
+            "10.613760000",
+            "11.110400000"
+          ]
+        }
+      },
+      {
+        "case": 11,
+        "samples_us": {
+          "baseline_v28": [
+            "23.377919000",
+            "23.383040000",
+            "23.342080000",
+            "23.454721000"
+          ],
+          "parent_v081": [
+            "19.476480000",
+            "19.537920000",
+            "19.860480000",
+            "19.471360000"
+          ],
+          "power_v084": [
+            "19.496959000",
+            "19.404800000",
+            "19.507200000",
+            "19.624960000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "23.380479500",
+          "parent_v081": "19.507200000",
+          "power_v084": "19.502079500"
+        },
+        "vs_v28_pct": "-16.58819700425733355896315129",
+        "vs_parent_pct": "-0.0262492823162729658792650900",
+        "ranges": {
+          "baseline_v28": [
+            "23.342080000",
+            "23.454721000"
+          ],
+          "parent_v081": [
+            "19.471360000",
+            "19.860480000"
+          ],
+          "power_v084": [
+            "19.404800000",
+            "19.624960000"
+          ]
+        }
+      },
+      {
+        "case": 12,
+        "samples_us": {
+          "baseline_v28": [
+            "83.128319000",
+            "83.174400000",
+            "82.969599000",
+            "82.995195000"
+          ],
+          "parent_v081": [
+            "72.396798000",
+            "72.263680000",
+            "72.207360000",
+            "75.617280000"
+          ],
+          "power_v084": [
+            "72.253442000",
+            "72.212481000",
+            "72.202239000",
+            "72.248321000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "83.061757000",
+          "parent_v081": "72.330239000",
+          "power_v084": "72.230401000"
+        },
+        "vs_v28_pct": "-13.04012386831643833394952144",
+        "vs_parent_pct": "-0.1380307895844226368448748000",
+        "ranges": {
+          "baseline_v28": [
+            "82.969599000",
+            "83.174400000"
+          ],
+          "parent_v081": [
+            "72.207360000",
+            "75.617280000"
+          ],
+          "power_v084": [
+            "72.202239000",
+            "72.253442000"
+          ]
+        }
+      },
+      {
+        "case": 13,
+        "samples_us": {
+          "baseline_v28": [
+            "10.880001000",
+            "11.289600000",
+            "11.371520000",
+            "11.279360000"
+          ],
+          "parent_v081": [
+            "10.629120000",
+            "9.676800000",
+            "9.799680000",
+            "9.774080000"
+          ],
+          "power_v084": [
+            "9.748480000",
+            "9.799680000",
+            "10.250241000",
+            "9.748480000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "11.284480000",
+          "parent_v081": "9.786880000",
+          "power_v084": "9.774080000"
+        },
+        "vs_v28_pct": "-13.38475499092558983666061706",
+        "vs_parent_pct": "-0.1307873397855087627517656300",
+        "ranges": {
+          "baseline_v28": [
+            "10.880001000",
+            "11.371520000"
+          ],
+          "parent_v081": [
+            "9.676800000",
+            "10.629120000"
+          ],
+          "power_v084": [
+            "9.748480000",
+            "10.250241000"
+          ]
+        }
+      },
+      {
+        "case": 14,
+        "samples_us": {
+          "baseline_v28": [
+            "19.927040000",
+            "19.758080000",
+            "19.727360000",
+            "19.783680000"
+          ],
+          "parent_v081": [
+            "15.503360000",
+            "15.467520000",
+            "15.493120000",
+            "15.539200000"
+          ],
+          "power_v084": [
+            "15.513600000",
+            "15.723521000",
+            "15.431679000",
+            "15.616000000"
+          ]
+        },
+        "medians_us": {
+          "baseline_v28": "19.770880000",
+          "parent_v081": "15.498240000",
+          "power_v084": "15.564800000"
+        },
+        "vs_v28_pct": "-21.27411627605852647934740386",
+        "vs_parent_pct": "0.429468120251073670300627700",
+        "ranges": {
+          "baseline_v28": [
+            "19.727360000",
+            "19.927040000"
+          ],
+          "parent_v081": [
+            "15.467520000",
+            "15.539200000"
+          ],
+          "power_v084": [
+            "15.431679000",
+            "15.723521000"
+          ]
+        }
+      }
+    ]
+  },
+  "risk": {
+    "candidate_refs": 32,
+    "experiment_refs": 96,
+    "selection": "all formal cases positive versus original or parent,one fixed confirmation only",
+    "allrawretained": true,
+    "cases": [
+      {
+        "case": 2,
+        "medians_us": {
+          "baseline_v28": "9.474560000",
+          "parent_v081": "8.919040000",
+          "power_v084": "8.875520000"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "9.702400000",
+            "9.717760000",
+            "9.246720000",
+            "9.246720000"
+          ],
+          "parent_v081": [
+            "8.847360000",
+            "9.272320000",
+            "8.919040000",
+            "8.919040000"
+          ],
+          "power_v084": [
+            "8.898560000",
+            "9.446400000",
+            "8.852480000",
+            "8.852480000"
+          ]
+        },
+        "vs_v28_pct": "-6.322615509321804917589840580",
+        "vs_parent_pct": "-0.4879448909299655568312284700"
+      },
+      {
+        "case": 4,
+        "medians_us": {
+          "baseline_v28": "12.792320000",
+          "parent_v081": "10.964480000",
+          "power_v084": "10.946560000"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "12.697600000",
+            "12.800000000",
+            "12.784640000",
+            "12.830720000"
+          ],
+          "parent_v081": [
+            "11.438080000",
+            "10.936320000",
+            "10.982400000",
+            "10.946560000"
+          ],
+          "power_v084": [
+            "10.967040000",
+            "10.926080000",
+            "10.915840000",
+            "10.997760000"
+          ]
+        },
+        "vs_v28_pct": "-14.42865719431658995397238343",
+        "vs_parent_pct": "-0.1634368433341116040158767200"
+      },
+      {
+        "case": 5,
+        "medians_us": {
+          "baseline_v28": "31.429120000",
+          "parent_v081": "24.660480000",
+          "power_v084": "24.849920000"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "31.534081000",
+            "31.339519000",
+            "31.390719000",
+            "31.467521000"
+          ],
+          "parent_v081": [
+            "24.673281000",
+            "24.816639000",
+            "24.647679000",
+            "24.632320000"
+          ],
+          "power_v084": [
+            "24.949760000",
+            "24.750080000",
+            "28.257279000",
+            "24.683521000"
+          ]
+        },
+        "vs_v28_pct": "-20.93345279791480003258124949",
+        "vs_parent_pct": "0.768192671026679123845115700"
+      },
+      {
+        "case": 6,
+        "medians_us": {
+          "baseline_v28": "156.869120500",
+          "parent_v081": "94.446077500",
+          "power_v084": "94.248957500"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "156.830721000",
+            "156.907520000",
+            "156.917763000",
+            "156.779518000"
+          ],
+          "parent_v081": [
+            "94.423037000",
+            "94.801922000",
+            "94.167042000",
+            "94.469118000"
+          ],
+          "power_v084": [
+            "94.136324000",
+            "94.458876000",
+            "94.228477000",
+            "94.269438000"
+          ]
+        },
+        "vs_v28_pct": "-39.91873148801137059986257780",
+        "vs_parent_pct": "-0.2087116852470659779385755900"
+      },
+      {
+        "case": 7,
+        "medians_us": {
+          "baseline_v28": "31.298559500",
+          "parent_v081": "24.760320000",
+          "power_v084": "24.808960000"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "31.534081000",
+            "31.139841000",
+            "31.375360000",
+            "31.221759000"
+          ],
+          "parent_v081": [
+            "24.652801000",
+            "24.796159000",
+            "24.724481000",
+            "24.903679000"
+          ],
+          "power_v084": [
+            "24.811521000",
+            "24.806399000",
+            "24.744959000",
+            "24.847360000"
+          ]
+        },
+        "vs_v28_pct": "-20.73449897909838310609790205",
+        "vs_parent_pct": "0.196443341604631927212572400"
+      },
+      {
+        "case": 8,
+        "medians_us": {
+          "baseline_v28": "51.978240000",
+          "parent_v081": "40.081920500",
+          "power_v084": "40.012800500"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "51.937280000",
+            "51.927042000",
+            "52.019200000",
+            "52.044802000"
+          ],
+          "parent_v081": [
+            "40.294399000",
+            "40.069122000",
+            "40.007682000",
+            "40.094719000"
+          ],
+          "power_v084": [
+            "39.930880000",
+            "40.273919000",
+            "40.028162000",
+            "39.997439000"
+          ]
+        },
+        "vs_v28_pct": "-23.02009360070675728920409771",
+        "vs_parent_pct": "-0.1724468267432445009714542000"
+      },
+      {
+        "case": 9,
+        "medians_us": {
+          "baseline_v28": "51.983361000",
+          "parent_v081": "40.460798500",
+          "power_v084": "40.529918500"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "51.962881000",
+            "51.983361000",
+            "52.367358000",
+            "51.983361000"
+          ],
+          "parent_v081": [
+            "40.232959000",
+            "40.627198000",
+            "40.734720000",
+            "40.294399000"
+          ],
+          "power_v084": [
+            "40.591359000",
+            "40.627198000",
+            "40.376320000",
+            "40.468478000"
+          ]
+        },
+        "vs_v28_pct": "-22.03290106617000005059311190",
+        "vs_parent_pct": "0.170832021518309877151831300"
+      },
+      {
+        "case": 14,
+        "medians_us": {
+          "baseline_v28": "19.886080000",
+          "parent_v081": "15.457279500",
+          "power_v084": "15.488000000"
+        },
+        "samples_us": {
+          "baseline_v28": [
+            "19.824640000",
+            "20.152321000",
+            "19.814399000",
+            "19.947520000"
+          ],
+          "parent_v081": [
+            "15.421439000",
+            "15.493120000",
+            "15.713280000",
+            "15.365120000"
+          ],
+          "power_v084": [
+            "15.508480000",
+            "15.283200000",
+            "15.467520000",
+            "15.518720000"
+          ]
+        },
+        "vs_v28_pct": "-22.11637487126673532440782698",
+        "vs_parent_pct": "0.198744546218498539798028500"
+      }
+    ]
+  },
+  "codegen_comparison": [
+    {
+      "case": 1,
+      "exactv28": false,
+      "exactparent079": false,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 2,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 3,
+      "exactv28": false,
+      "exactparent079": false,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 4,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 5,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 6,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 7,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 8,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 9,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 10,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 11,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 12,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 13,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    },
+    {
+      "case": 14,
+      "exactv28": false,
+      "exactparent079": true,
+      "identitynotperformancewaiver": true
+    }
+  ],
+  "resources": [
+    {
+      "case": 1,
+      "variant": "parent_v081",
+      "MT": 24,
+      "ST": 20,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 2048,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 8,
+      "not_measured_occupancy": true
+    },
+    {
+      "case": 1,
+      "variant": "power_v084",
+      "MT": 32,
+      "ST": 24,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 0,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 8,
+      "not_measured_occupancy": true
+    },
+    {
+      "case": 3,
+      "variant": "parent_v081",
+      "MT": 52,
+      "ST": 20,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 8192,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 8,
+      "not_measured_occupancy": true
+    },
+    {
+      "case": 3,
+      "variant": "power_v084",
+      "MT": 66,
+      "ST": 20,
+      "static_shared_bytes_reported": 0,
+      "dynamic_shared_bytes_host": 4096,
+      "stack_bytes": 0,
+      "static_max_warps_per_PEU": 7,
+      "not_measured_occupancy": true
+    }
+  ],
+  "mcProfiler": [
+    {
+      "case": 1,
+      "variant": "power_v084",
+      "sample": 1,
+      "waves": 64.0,
+      "achieved_waves_raw": 64.0,
+      "l2_hit_pct": 85.47,
+      "read_bytes": 75808.0,
+      "write_bytes": 65856.0,
+      "mte_pct": 4.45,
+      "mma_pct": 0.39,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "WG_load_latency_cycles": 0.0,
+      "unavailable_raw": {}
+    },
+    {
+      "case": 1,
+      "variant": "power_v084",
+      "sample": 2,
+      "waves": 64.0,
+      "achieved_waves_raw": 63.0,
+      "l2_hit_pct": 85.69,
+      "read_bytes": 75808.0,
+      "write_bytes": 65856.0,
+      "mte_pct": 4.46,
+      "mma_pct": 0.39,
+      "shared_nonconflict_pct": 100.0,
+      "conflict_cycles": 0.0,
+      "WG_load_latency_cycles": 0.0,
+      "unavailable_raw": {}
+    },
+    {
+      "case": 1,
+      "variant": "parent_v081",
+      "sample": 1,
+      "waves": 64.0,
+      "achieved_waves_raw": 63.0,
+      "l2_hit_pct": 76.06,
+      "read_bytes": 76704.0,
+      "write_bytes": 65856.0,
+      "mte_pct": 4.93,
+      "mma_pct": 0.32,
+      "shared_nonconflict_pct": 52.95,
+      "conflict_cycles": 3.27,
+      "WG_load_latency_cycles": 40.09,
+      "unavailable_raw": {}
+    },
+    {
+      "case": 1,
+      "variant": "parent_v081",
+      "sample": 2,
+      "waves": 64.0,
+      "achieved_waves_raw": 64.0,
+      "l2_hit_pct": 76.39,
+      "read_bytes": 76704.0,
+      "write_bytes": 65856.0,
+      "mte_pct": 5.24,
+      "mma_pct": 0.34,
+      "shared_nonconflict_pct": 52.63,
+      "conflict_cycles": 3.27,
+      "WG_load_latency_cycles": 40.67,
+      "unavailable_raw": {}
+    },
+    {
+      "case": 3,
+      "variant": "power_v084",
+      "sample": 1,
+      "waves": 256.0,
+      "achieved_waves_raw": 254.0,
+      "l2_hit_pct": 55.78,
+      "read_bytes": 1180256.0,
+      "write_bytes": 1048896.0,
+      "mte_pct": 13.08,
+      "mma_pct": 1.94,
+      "shared_nonconflict_pct": 80.49,
+      "conflict_cycles": 0.89,
+      "WG_load_latency_cycles": 50.53,
+      "unavailable_raw": {}
+    },
+    {
+      "case": 3,
+      "variant": "power_v084",
+      "sample": 2,
+      "waves": 256.0,
+      "achieved_waves_raw": 253.0,
+      "l2_hit_pct": 55.78,
+      "read_bytes": 1180256.0,
+      "write_bytes": 1048896.0,
+      "mte_pct": 12.97,
+      "mma_pct": 1.93,
+      "shared_nonconflict_pct": 80.49,
+      "conflict_cycles": 0.89,
+      "WG_load_latency_cycles": 49.84,
+      "unavailable_raw": {}
+    },
+    {
+      "case": 3,
+      "variant": "parent_v081",
+      "sample": 1,
+      "waves": 256.0,
+      "achieved_waves_raw": 253.0,
+      "l2_hit_pct": 56.5,
+      "read_bytes": 1181024.0,
+      "write_bytes": 1048896.0,
+      "mte_pct": 10.31,
+      "mma_pct": 1.47,
+      "shared_nonconflict_pct": 35.24,
+      "conflict_cycles": 7.16,
+      "WG_load_latency_cycles": 43.53,
+      "unavailable_raw": {}
+    },
+    {
+      "case": 3,
+      "variant": "parent_v081",
+      "sample": 2,
+      "waves": 256.0,
+      "achieved_waves_raw": 254.0,
+      "l2_hit_pct": 56.5,
+      "read_bytes": 1181024.0,
+      "write_bytes": 1048896.0,
+      "mte_pct": 10.22,
+      "mma_pct": 1.46,
+      "shared_nonconflict_pct": 35.24,
+      "conflict_cycles": 7.16,
+      "WG_load_latency_cycles": 44.54,
+      "unavailable_raw": {}
+    }
+  ],
+  "mcProfiler_scope": [
+    {
+      "case": 1,
+      "variant": "power_v084",
+      "sample": 1,
+      "expected_waves": 64,
+      "observed_waves": 64.0,
+      "output_payload": 65536,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    },
+    {
+      "case": 1,
+      "variant": "power_v084",
+      "sample": 2,
+      "expected_waves": 64,
+      "observed_waves": 64.0,
+      "output_payload": 65536,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    },
+    {
+      "case": 1,
+      "variant": "parent_v081",
+      "sample": 1,
+      "expected_waves": 64,
+      "observed_waves": 64.0,
+      "output_payload": 65536,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    },
+    {
+      "case": 1,
+      "variant": "parent_v081",
+      "sample": 2,
+      "expected_waves": 64,
+      "observed_waves": 64.0,
+      "output_payload": 65536,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    },
+    {
+      "case": 3,
+      "variant": "power_v084",
+      "sample": 1,
+      "expected_waves": 256,
+      "observed_waves": 256.0,
+      "output_payload": 1048576,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    },
+    {
+      "case": 3,
+      "variant": "power_v084",
+      "sample": 2,
+      "expected_waves": 256,
+      "observed_waves": 256.0,
+      "output_payload": 1048576,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    },
+    {
+      "case": 3,
+      "variant": "parent_v081",
+      "sample": 1,
+      "expected_waves": 256,
+      "observed_waves": 256.0,
+      "output_payload": 1048576,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    },
+    {
+      "case": 3,
+      "variant": "parent_v081",
+      "sample": 2,
+      "expected_waves": 256,
+      "observed_waves": 256.0,
+      "output_payload": 1048576,
+      "unattributed_counter_residual": 320.0,
+      "consistent_with_single_attention_launch_scope": true,
+      "necessary_not_exclusive": true
+    }
+  ],
+  "target_confirmation": {
+    "scope": "one fixed C1 confirmation only,not full14",
+    "candidate_refs": 4,
+    "experiment_refs": 12,
+    "samples_us": {
+      "baseline_v28": [
+        "8.816640000",
+        "9.267200000",
+        "8.806400000",
+        "8.821760000"
+      ],
+      "parent_v081": [
+        "8.785920000",
+        "8.770560000",
+        "8.806400000",
+        "9.523200000"
+      ],
+      "power_v084": [
+        "8.519680000",
+        "8.565760000",
+        "8.555520000",
+        "8.724480000"
+      ]
+    },
+    "medians_us": {
+      "baseline_v28": "8.819200000",
+      "parent_v081": "8.796160000",
+      "power_v084": "8.560640000"
+    },
+    "vs_v28_pct": "-2.931785195936139332365747460",
+    "vs_parent_pct": "-2.677532013969732246798603030",
+    "reject_target_regression": false
+  },
+  "WG_raw_metric_context": {
+    "records": [
+      {
+        "case": 1,
+        "variant": "power_v084",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 0
+        }
+      },
+      {
+        "case": 1,
+        "variant": "power_v084",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 0.0
+        }
+      },
+      {
+        "case": 1,
+        "variant": "power_v084",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "100.0%"
+        }
+      },
+      {
+        "case": 1,
+        "variant": "power_v084",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 0
+        }
+      },
+      {
+        "case": 1,
+        "variant": "power_v084",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 0.0
+        }
+      },
+      {
+        "case": 1,
+        "variant": "power_v084",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "100.0%"
+        }
+      },
+      {
+        "case": 1,
+        "variant": "parent_v081",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 40.09
+        }
+      },
+      {
+        "case": 1,
+        "variant": "parent_v081",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 3.27
+        }
+      },
+      {
+        "case": 1,
+        "variant": "parent_v081",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "52.95%"
+        }
+      },
+      {
+        "case": 1,
+        "variant": "parent_v081",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 40.67
+        }
+      },
+      {
+        "case": 1,
+        "variant": "parent_v081",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 3.27
+        }
+      },
+      {
+        "case": 1,
+        "variant": "parent_v081",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "52.63%"
+        }
+      },
+      {
+        "case": 3,
+        "variant": "power_v084",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 50.53
+        }
+      },
+      {
+        "case": 3,
+        "variant": "power_v084",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 0.89
+        }
+      },
+      {
+        "case": 3,
+        "variant": "power_v084",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "80.49%"
+        }
+      },
+      {
+        "case": 3,
+        "variant": "power_v084",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 49.84
+        }
+      },
+      {
+        "case": 3,
+        "variant": "power_v084",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 0.89
+        }
+      },
+      {
+        "case": 3,
+        "variant": "power_v084",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "80.49%"
+        }
+      },
+      {
+        "case": 3,
+        "variant": "parent_v081",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 43.53
+        }
+      },
+      {
+        "case": 3,
+        "variant": "parent_v081",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 7.16
+        }
+      },
+      {
+        "case": 3,
+        "variant": "parent_v081",
+        "sample": 1,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "35.24%"
+        }
+      },
+      {
+        "case": 3,
+        "variant": "parent_v081",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average latency per load instruction",
+          "description": "average latency per WG-load from issue to mem-ops done",
+          "value": 44.54
+        }
+      },
+      {
+        "case": 3,
+        "variant": "parent_v081",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "average conflict cycles per instruction",
+          "description": "average conflict cycles per WG-inst when bank conflict happens",
+          "value": 7.16
+        }
+      },
+      {
+        "case": 3,
+        "variant": "parent_v081",
+        "sample": 2,
+        "group": "Workgroup Memory",
+        "metric": {
+          "name": "shared memory access efficiency",
+          "description": "Proportion of NON-CONFLICT access",
+          "value": "35.24%"
+        }
+      }
+    ],
+    "zeroaccess_interpretation": "reported100eff0WGload not interpreted usableeff or globalzero",
+    "WG-load definition": "Workgroup Memory issue-to-memopsdone"
+  },
+  "profile_scope_contract": {
+    "set_before_currentprofile": true,
+    "cases": {
+      "1": {
+        "waves": 64,
+        "output_bytes": 65536,
+        "unattributed_write_residual_max": 512
+      },
+      "3": {
+        "waves": 256,
+        "output_bytes": 1048576,
+        "unattributed_write_residual_max": 512
+      }
+    },
+    "scope_only_necessary_not_exclusive": true,
+    "WGload_domain": "Workgroup Memory WG-load,not global/DRAM; zeroaccess100/0 toolvalues not usableefficiency"
+  },
+  "codegen_phase_paths_separate": true,
+  "cache": "compiledcode only;key+factory closures replaced by actualJITKernel during first normal attention call",
+  "promotion": "none; exact candidate archive only; originalv28 main unchanged",
+  "skipped": {
+    "external_OJ_source_attestation": "user screenshot supplied; uploaded source SHA not independently attested",
+    "mcTracer": "prior timeout124/headeronly, no new timeline",
+    "ISA": "no working decoder",
+    "roofline": "actual sGPU roofs uncalibrated"
+  },
+  "confirmed_losses_vs_v28": [],
+  "OJ_user_reported_evidence": {
+    "evidence_type": "user_provided_OJ_screenshot",
+    "user_version_label": "v84",
+    "candidate_version": "v084_codex_power_s1_d32_d128_pair_sc-16g-2",
+    "candidate_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "source_association": "user reports screenshot corresponds to v84; screenshot alone does not independently attest uploaded source SHA",
+    "screenshot_file_sha256": null,
+    "screenshot_sha_limit": "screenshot binary / independent upload hash unavailable; no hash invented",
+    "received_via": "leader relay of explicit user evidence",
+    "all14_accepted": true,
+    "baseline_v28_scores": [
+      85,
+      86,
+      84,
+      86,
+      80,
+      76,
+      87,
+      83,
+      81,
+      86,
+      84,
+      78,
+      87,
+      86
+    ],
+    "candidate_scores": [
+      87,
+      88,
+      87,
+      88,
+      84,
+      82,
+      89,
+      85,
+      84,
+      86,
+      87,
+      80,
+      89,
+      88
+    ],
+    "delta_vs_v28": [
+      2,
+      2,
+      3,
+      2,
+      4,
+      6,
+      2,
+      2,
+      3,
+      0,
+      3,
+      2,
+      2,
+      2
+    ],
+    "baseline_total": 1169,
+    "candidate_total": 1204,
+    "total_delta": 35,
+    "casewise_non_regression_vs_v28": true,
+    "strict_improvement_cases": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14
+    ],
+    "parent_v081_OJ_scores": null,
+    "no_OJ_claim_vs_parent_v081": true
+  }
+}

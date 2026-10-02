@@ -1,0 +1,21 @@
+#!/bin/bash
+set -u
+cd /root/tilelang-metax
+id=v084_codex_power_s1_d32_d128_pair_sc-16g-2
+r=/root/tilelang-metax/race_tests/nsa/rep/$id
+export MACA_PATH=/opt/maca PYTHONDONTWRITEBYTECODE=1 PYTHONWARNINGS=ignore PYTHONPATH=/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa NSA_VARIANT_SOURCE=/root/tilelang-metax/race_tests/nsa/submission/$id/submission.py
+for ci in $(seq 1 14);do
+ NSA_CASES=$ci NSA_RESULTS_PATH="$r/archive_case${ci}_sc-16g-2.csv" /opt/conda/bin/python -u race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py > "$r/archive_case$ci.log" 2>&1
+ code=$?;echo "$code" > "$r/archive_case$ci.exit"
+ if [ "$code" != 0 ];then exit "$code";fi
+done
+/opt/conda/bin/python - <<'MERGE'
+from pathlib import Path
+import csv
+r=Path('race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2');rows=[]
+for ci in range(1,15):
+ x=list(csv.DictReader((r/('archive_case'+str(ci)+'_sc-16g-2.csv')).open()));assert len(x)==1 and x[0]['status']=='PASS' and int(x[0]['case'])==ci;rows+=x
+with (r/'archive_native_all14_sc-16g-2.csv').open('w',newline='') as f:
+ w=csv.DictWriter(f,fieldnames=rows[0].keys());w.writeheader();w.writerows(rows)
+print('archived exactsource all14 native refs PASS')
+MERGE

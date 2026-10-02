@@ -1,0 +1,2154 @@
+ * Serving Flask app 'Profiler' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+profiler http listen to 127.0.0.1:50123
+try to connect to server...
+connect to server success
+cmdline is: env MACA_PATH=/opt/maca PYTHONDONTWRITEBYTECODE=1 PYTHONWARNINGS=ignore PYTHONPATH=/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa NSA_VARIANT_SOURCE=/tmp/nsa_power_v084_pair.py MCTX_TARGET_PROFILE_PATH=/root/tilelang-metax/race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2/mcprof_case1_power_v084/raw /opt/conda/bin/python -u /root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py 1
+casename is: nsa_power_v084_power_v084_case1
+metrics is: ['L2C Hit Rate', 'Global Memory Read bytes', 'Global Memory Write bytes', 'AP MTE Duty ratio', 'AP MMA Duty ratio', 'shared memory access efficiency', 'average conflict cycles per instruction', 'average latency per load instruction', 'Achieved waves', 'Dispatched waves']
+start a local task...
+[info] start a new perf exec thread
+[info] start perf_exec
+[info] new exec 32e7b458-ad2b-4862-89e0-e015cb7de353:('env MACA_PATH=/opt/maca PYTHONDONTWRITEBYTECODE=1 PYTHONWARNINGS=ignore PYTHONPATH=/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa NSA_VARIANT_SOURCE=/tmp/nsa_power_v084_pair.py MCTX_TARGET_PROFILE_PATH=/root/tilelang-metax/race_tests/nsa/rep/v084_codex_power_s1_d32_d128_pair_sc-16g-2/mcprof_case1_power_v084/raw /opt/conda/bin/python -u /root/tilelang-metax/race_tests/nsa/hack/v004_codex_power_s1_reprofile_sc-16g-2/profile_variant_v28.py 1', 'nsa_power_v084_power_v084_case1', ['L2C Hit Rate', 'Global Memory Read bytes', 'Global Memory Write bytes', 'AP MTE Duty ratio', 'AP MMA Duty ratio', 'shared memory access efficiency', 'average conflict cycles per instruction', 'average latency per load instruction', 'Achieved waves', 'Dispatched waves'])
+########## exec_id: 32e7b458-ad2b-4862-89e0-e015cb7de353 ##########
+[info] start generate batch files
+[info] output path is: /opt/mcProfiler-ubuntu18.04/output20261002022858
+[info] generate event_batch_1.json successfully!
+[info] generate event_batch_2.json successfully!
+[info] generate event_batch_3.json successfully!
+[info] generate batch files done
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[02:29:00.447][MXS][I]| MACA_LAUNCH_BLOCKING           | 1               | 0               |
+[02:29:00.447][MXS][W]| MCTX_TARGET_INIT               | 1               | 0               |
+[02:29:00.449][MCR][I]mc_device.cpp            :562 : Signal SIGUSR1 now has a custom handler to enable mctx at runtime!
+[02:29:00.449][MCR][I]mc_device.cpp            :309 : mcSnapShotCtx: Attempting to open shared memory: /shm_snapshot_216088
+mctxAutoStart called!
+[02:29:00.449][MCTX][I]mctxTPImpl.cpp           :201 : MACA configuration file path redirected from ${MACA_PATH}/etc to MACA_ETC_PATH
+[02:29:00.449][MCTX][I]mctxTPImpl.cpp           :201 : MACA configuration file path redirected from ${MACA_PATH}/etc to MACA_ETC_PATH
+[02:29:00.449][MCTX][I]mctxTPImpl.cpp           :300 : profiler target ENV file[/opt/mcProfiler-ubuntu18.04/output20261002022858/mcProfiler.json] exist!
+[02:29:00.450][MCR][I]mc_device.cpp            :849 : Init enter!
+[02:29:00.450][MXC][I]MxcInit: entering
+[02:29:00.453][MXKW][I]topology.c              :1358: [topology_sysfs_get_system_props]PlatformCpuNodes:2 ,num_sysfs_nodes:17
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/2/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 1,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/3/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 2,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/4/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 3,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/5/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 4,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/6/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 5,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/7/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 6,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/8/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 7,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/9/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 8,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/300/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 9,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/301/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 10,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/302/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 11,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/303/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 12,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/309/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 13,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/310/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 14,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :1460: [topology_sysfs_get_system_props]cpu total 2 nodes, map list:
+[02:29:00.453][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[0]:0
+[02:29:00.453][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[1]:1
+[02:29:00.453][MXKW][I]topology.c              :1465: [topology_sysfs_get_system_props]gpu total 1 nodes, map list:
+[02:29:00.453][MXKW][I]topology.c              :1468: [topology_sysfs_get_system_props]map_gpu[0]:14
+[02:29:00.453][MXKW][I]topology.c              :1516: [topology_sysfs_init_gpu_page_size]XCORE_PAGE_SIZE: 0x200000, GPU_PAGE_SIZE: 0x200000
+[02:29:00.453][MXKW][I]topology.c              :954 : [find_pci_info]create pci_info_array. It has 17 element. directory_name is 0.
+[02:29:00.453][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:29:00.453][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:29:00.453][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:29:00.453][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:29:00.453][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:29:00.453][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:29:00.453][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:29:00.453][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:29:00.453][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:29:00.453][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:29:00.453][MXKW][I]topology.c              :962 : [find_pci_info]node 305 's pci info is not found
+[02:29:00.453][MXKW][I]topology.c              :984 : [add_pci_info]added node 305 pci info , bdf_value:3840, domain_value:0
+[02:29:00.453][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 10, isa_minor is 0, MXName is
+[02:29:00.453][MXKW][I]fmm.c                   :2445: [init_mmap_apertures]Initialized unreserved SVM apertures: 0xa00000000 - 0x7fffffffffff
+[02:29:00.453][MXKW][I]topology.c              :1358: [topology_sysfs_get_system_props]PlatformCpuNodes:2 ,num_sysfs_nodes:17
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/2/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 1,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/3/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 2,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/4/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 3,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/5/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 4,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/6/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 5,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/7/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 6,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/8/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 7,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/9/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 8,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/300/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 9,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/301/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 10,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/302/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 11,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/303/gpu_id,res: 0,errno:1
+[02:29:00.453][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 12,ret is 0,is_node_supported is 0
+[02:29:00.453][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/309/gpu_id,res: 0,errno:1
+[02:29:00.454][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 13,ret is 0,is_node_supported is 0
+[02:29:00.454][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/310/gpu_id,res: 0,errno:1
+[02:29:00.454][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 14,ret is 0,is_node_supported is 0
+[02:29:00.454][MXKW][I]topology.c              :1460: [topology_sysfs_get_system_props]cpu total 2 nodes, map list:
+[02:29:00.454][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[0]:0
+[02:29:00.454][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[1]:1
+[02:29:00.454][MXKW][I]topology.c              :1465: [topology_sysfs_get_system_props]gpu total 1 nodes, map list:
+[02:29:00.454][MXKW][I]topology.c              :1468: [topology_sysfs_get_system_props]map_gpu[0]:14
+[02:29:00.454][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:29:00.454][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:29:00.454][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:29:00.454][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:29:00.454][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:29:00.454][MXKW][I]topology.c              :2548: [topology_take_snapshot]node0 direct_links route:
+[02:29:00.454][MXKW][I]topology.c              :2562: [topology_take_snapshot]link0 type:2,  0--->1
+[02:29:00.454][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:29:00.454][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:29:00.454][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:29:00.454][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:29:00.454][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:29:00.454][MXKW][I]topology.c              :2548: [topology_take_snapshot]node1 direct_links route:
+[02:29:00.454][MXKW][I]topology.c              :2562: [topology_take_snapshot]link0 type:2,  1--->0
+[02:29:00.454][MXKW][I]topology.c              :2573: [topology_take_snapshot]node1 indirect_links route:
+[02:29:00.454][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 10, isa_minor is 0, MXName is
+[02:29:00.456][MXC][I]MxcInit: leaving
+[02:29:00.456][MXC][I]InitDma: Entering
+[02:29:00.457][MXC][I]InitDma: Leaving
+[02:29:00.457][MCR][I]mx_device.cpp            :2294: Device xcore1000 create, major:10, minor:0
+[02:29:00.457][MCR][I]mx_device.cpp            :2795: private_mem:436207616, info_.globalMemSize_:16341008384, gpu_single_alloc_percent:0.990000
+[02:29:00.457][MCR][I]mx_device.cpp            :2865: get registersPerMtreg_:64,info_dpcNum_:8,info_wavePerDpc_:416, wavefrontWidth_:64
+[02:29:00.457][MCR][I]mx_device.cpp            :3042: rmNum_:8, isuNum_:13, sl1Num_:7, vlsNum_:13, vl1Num_:13, l2cNum_:32, l2aNum_:4, l2xNum_:4
+
+[02:29:00.458][MCR][I]mx_device.cpp            :1091: getQueueCnt hwQueueNum:16
+[02:29:00.458][MCR][I]mx_device.cpp            :1153: agent_handle=0x5640e7dc3840,hardware queues number:16, queue count configuration: 8-4-4(H-N-L), highForMccl:0
+[02:29:00.458][MCR][I]mx_device.cpp            :2445: Device xcore1000 create fininshed!
+
+[02:29:00.458][MCR][I]mx_device.cpp            :2294: Device xcore1000 create, major:10, minor:0
+[02:29:00.458][MCR][I]mx_device.cpp            :2795: private_mem:436207616, info_.globalMemSize_:16341008384, gpu_single_alloc_percent:0.990000
+[02:29:00.458][MCR][I]mx_device.cpp            :2865: get registersPerMtreg_:64,info_dpcNum_:8,info_wavePerDpc_:416, wavefrontWidth_:64
+[02:29:00.458][MCR][I]mx_device.cpp            :3042: rmNum_:8, isuNum_:13, sl1Num_:7, vlsNum_:13, vl1Num_:13, l2cNum_:32, l2aNum_:4, l2xNum_:4
+
+[02:29:00.458][MCR][I]mx_device.cpp            :1091: getQueueCnt hwQueueNum:16
+[02:29:00.458][MCR][I]mx_device.cpp            :1153: agent_handle=0x5640e7dc3840,hardware queues number:16, queue count configuration: 8-4-4(H-N-L), highForMccl:0
+[02:29:00.458][MCR][I]mx_device.cpp            :2445: Device xcore1000 create fininshed!
+
+[02:29:00.458][MCR][I]mc_vpu_impl.cpp          :80  : mcVpuLoad mxvpu lib version: 1.0.20260512_081136
+
+[02:29:00.458][MCR][I]mc_vpu_impl.cpp          :86  : mcVpuLoad load mxvpu lib path: /opt/maca-3.7.1/lib/libmxvpu.so
+
+[02:29:00.458][MCC][I]AddDevice device_id:0, arch:xcore1000
+[02:29:00.459][MCC][I]Get compiler from environment variable MACA_CLANG_PATH: /opt/maca/mxgpu_llvm/bin.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:29:22.320][MXS][I]                    Node0     Node1
+[02:29:22.320][MXS][I]Gpu0                X
+[02:29:22.320][MXS][I]CpuBind             X         X
+get_mempolicy: Operation not permitted
+[02:29:22.320][MXS][I]MemBind             X         X
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:29:23.101][MXS][I]mcruntime           2%        98%
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:29:23.880][MXS][I]mccompiler          12%       88%
+[02:29:24.660][MXS][I]mxc-runtime         9%        91%
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:29:25.442][MXS][I]mxkw                3%        97%
+[02:29:25.442][PTI][I]mcpti_profiler.cpp       :618 : getModuleInfo:1,8,13,7,13,13,32,4,4
+
+[02:29:25.443][MCR][I]mx_device.cpp            :5792: agent_handle=0x5640e7dc3840
+[02:29:25.446][MCR][I]mx_device.cpp            :1446: created hardware queue 0x7f921940b000(HWq=0x7f8e28001a90) with size 1024 with priority 0(L), cooperative: 0, is_exclusive: 0
+[02:29:25.446][MCR][I]mx_device.cpp            :1458: number of allocated hardware queues 0-0-1(H-N-L), number of users 0-0-1
+[02:29:25.451][MCR][W]mx_perf_counter.cpp      :568 : Perf is not exclusive, can not be disabled!
+[02:29:25.455][MCTX][I]mctxTPImpl.cpp           :186 : Automatically acquire a port.
+[02:29:25.455][MCTX][I]mcRpcAsyncImpl.cpp       :421 : mcRpcServerAsyncInit 0x5640e7db3a20 0
+[02:29:25.456][MCTX][I]mcRpcAsyncImpl.cpp       :500 : mcRpcAsyncServerTask start!
+[02:29:25.456][MCTX][I]mcRpcAsyncImpl.cpp       :472 : mcRpcServerAsyncRun start
+[02:29:25.456][MCTX][I]server.cpp               :69  : Server thread num: 1, listening on: 45701.
+mcToolsExtPid_UsedPort:216088-45701
+[info] MctxStreamProfilerCountDataGet Start
+[info] MctxStreamProfilerCountDataGet Loop
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[02:29:29.540][MXC][I]raw dispatch ts:[93172320638079,93172320638871]
+[02:29:29.540][MXC][I]dispatch ts translate ret [1790908169540053565, 1790908169540061485]
+[02:29:29.540][MXC][I]raw dispatch ts:[93172320658021,93172320658683]
+[02:29:29.540][MXC][I]dispatch ts translate ret [1790908169540252971, 1790908169540259591]
+[02:29:29.540][MXC][I]raw dispatch ts:[93172320663863,93172320664538]
+[02:29:29.540][MXC][I]dispatch ts translate ret [1790908169540311385, 1790908169540318134]
+[02:29:29.541][MXC][I]raw dispatch ts:[93172320770069,93172320770534]
+[02:29:29.541][MXC][I]dispatch ts translate ret [1790908169541373476, 1790908169541378126]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]GpuDevice 0xe7dc3840 enable profiling, sdm_counter:170421314624075, sys_time:1790908169543154451
+[02:29:29.543][MXC][I]raw async_copy ts:[170421314661194,170421314663531]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543195694, 1790908169543198290]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421314776330,170421314778337]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543323623, 1790908169543325853]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421314835041,170421314837027]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543388857, 1790908169543391063]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421314920065,170421314922066]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543483328, 1790908169543485551]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421314971337,170421314973319]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543540297, 1790908169543542499]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315022630,170421315024622]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543597289, 1790908169543599502]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315073390,170421315075892]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543653689, 1790908169543656469]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315122642,170421315124622]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543708414, 1790908169543710614]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315173110,170421315175121]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543764489, 1790908169543766723]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315223094,170421315225070]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543820027, 1790908169543822222]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315273888,170421315275897]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543876465, 1790908169543878697]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315337556,170421315339545]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169543947207, 1790908169543949417]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315390800,170421315392787]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544006367, 1790908169544008574]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315440856,170421315442839]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544061985, 1790908169544064188]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315490183,170421315492166]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544116793, 1790908169544118996]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315540303,170421315542307]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544172482, 1790908169544174708]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315591473,170421315593455]
+[02:29:29.543][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.543][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544229337, 1790908169544231539]
+[02:29:29.543][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.543][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.543][MXC][I]raw async_copy ts:[170421315640934,170421315642927]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544284294, 1790908169544286508]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421315688599,170421315690582]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544337255, 1790908169544339458]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421315737140,170421315739123]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544391189, 1790908169544393392]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421315793511,170421315795487]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544453824, 1790908169544456019]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421315842516,170421315844493]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544508274, 1790908169544510470]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421315892445,170421315894439]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544563751, 1790908169544565966]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421315941530,170421315943510]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544618289, 1790908169544620489]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421315992374,170421315994366]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544674783, 1790908169544676996]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316042382,170421316044371]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544730347, 1790908169544732557]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316092402,170421316094382]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544785925, 1790908169544788125]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316143437,170421316145439]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544842631, 1790908169544844855]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316202427,170421316204367]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544908175, 1790908169544910330]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316258752,170421316260731]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169544970758, 1790908169544972956]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316308282,170421316310259]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545025792, 1790908169545027988]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316358916,170421316360922]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545082052, 1790908169545084280]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316410758,170421316412741]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545139654, 1790908169545141857]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316461097,170421316463083]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545195586, 1790908169545197792]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316510738,170421316512731]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545250743, 1790908169545252957]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316560076,170421316562053]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545305563, 1790908169545307759]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316624599,170421316626590]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545377255, 1790908169545379467]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316680863,170421316682847]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545439771, 1790908169545441975]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316732420,170421316734406]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545497056, 1790908169545499262]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316783745,170421316785723]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545554084, 1790908169545556281]
+[02:29:29.544][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.544][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.544][MXC][I]raw async_copy ts:[170421316833043,170421316835031]
+[02:29:29.544][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.544][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545608859, 1790908169545611067]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421316883398,170421316885403]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545664809, 1790908169545667036]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421316933605,170421316935582]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545720595, 1790908169545722791]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421316983436,170421316985419]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545775963, 1790908169545778166]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317032816,170421317034799]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545830829, 1790908169545833032]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317087073,170421317089054]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545891115, 1790908169545893316]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317137570,170421317139554]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169545947223, 1790908169545949427]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317187624,170421317189603]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546002838, 1790908169546005036]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317237552,170421317239546]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546058314, 1790908169546060529]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317287734,170421317289715]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546114072, 1790908169546116273]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317337424,170421317339397]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546169283, 1790908169546171475]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317387679,170421317389659]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546225122, 1790908169546227322]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317435814,170421317437799]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546278605, 1790908169546280810]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317488674,170421317490666]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546337338, 1790908169546339551]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317540158,170421317542143]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546394543, 1790908169546396748]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317590497,170421317592495]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546450475, 1790908169546452695]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317642382,170421317644367]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546508125, 1790908169546510330]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317693072,170421317695058]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546564447, 1790908169546566653]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317743585,170421317745569]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546620573, 1790908169546622777]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317793521,170421317795499]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546676057, 1790908169546678254]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317843649,170421317845647]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546731755, 1790908169546733975]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317891630,170421317893621]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546785067, 1790908169546787279]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317947365,170421317949354]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546846995, 1790908169546849205]
+[02:29:29.545][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:29:29.545][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:29:29.545][MXC][I]raw async_copy ts:[170421317994872,170421317996851]
+[02:29:29.545][MXC][I]sdma_ts_.sdma_counter:170421314624075
+[02:29:29.545][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908169546899781, 1790908169546901979]
+[02:29:29.550][MXC][I]raw dispatch ts:[93172321633832,93172321634346]
+[02:29:29.550][MXC][I]dispatch ts translate ret [1790908169550011415, 1790908169550016555]
+[02:29:29.550][MXC][I]raw dispatch ts:[93172321674467,93172321674764]
+[02:29:29.550][MXC][I]dispatch ts translate ret [1790908169550417574, 1790908169550420543]
+[02:29:29.550][MXC][I]raw dispatch ts:[93172321684676,93172321685026]
+[02:29:29.550][MXC][I]dispatch ts translate ret [1790908169550519613, 1790908169550523112]
+[02:29:29.550][MXC][I]raw dispatch ts:[93172321689194,93172321689589]
+[02:29:29.550][MXC][I]dispatch ts translate ret [1790908169550564958, 1790908169550568912]
+[02:29:29.550][MXC][I]raw dispatch ts:[93172321713103,93172321713711]
+[02:29:29.550][MXC][I]dispatch ts translate ret [1790908169550803915, 1790908169550809991]
+[02:29:29.649][MXS][I]                    Node0     Node1
+[02:29:29.649][MXS][I]Gpu0                X
+[02:29:29.649][MXS][I]CpuBind             X         X
+get_mempolicy: Operation not permitted
+[02:29:29.649][MXS][I]MemBind             X         X
+[02:29:30.470][MXS][I]mcruntime           3%        97%
+[02:29:31.290][MXS][I]mccompiler          12%       88%
+[02:29:32.108][MXS][I]mxc-runtime         8%        92%
+[02:29:32.938][MXS][I]mxkw                2%        98%
+[02:29:32.938][MCC][I]Get compiler from environment variable MACA_CLANG_PATH: /opt/maca/mxgpu_llvm/bin.
+[02:29:32.938][MCC][I]Get compiler from environment variable MACA_CLANG_PATH: /opt/maca/mxgpu_llvm/bin.
+[02:29:32.942][MXC][I]raw dispatch ts:[93172660899735,93172660900329]
+[02:29:32.942][MXC][I]dispatch ts translate ret [1790908172942713980, 1790908172942719920]
+[02:29:32.942][MXC][I]raw dispatch ts:[93172660917953,93172660918523]
+[02:29:32.942][MXC][I]dispatch ts translate ret [1790908172942896155, 1790908172942901855]
+[02:29:32.942][MXC][I]raw dispatch ts:[93172660923720,93172660924288]
+[02:29:32.942][MXC][I]dispatch ts translate ret [1790908172942953822, 1790908172942959502]
+[02:29:32.943][MXC][I]raw dispatch ts:[93172660928794,93172660929360]
+[02:29:32.943][MXC][I]dispatch ts translate ret [1790908172943004560, 1790908172943010220]
+[02:29:32.943][MXC][I]raw dispatch ts:[93172660933640,93172660934236]
+[02:29:32.943][MXC][I]dispatch ts translate ret [1790908172943053167, 1790908172943059133]
+[02:29:32.943][MXC][I]raw dispatch ts:[93172660938419,93172660938985]
+[02:29:32.943][MXC][I]dispatch ts translate ret [1790908172943101005, 1790908172943106670]
+[02:29:32.943][MXC][I]raw dispatch ts:[93172660943138,93172660943700]
+[02:29:32.943][MXC][I]dispatch ts translate ret [1790908172943148243, 1790908172943153869]
+[02:29:32.943][MXC][I]raw dispatch ts:[93172660947758,93172660948340]
+[02:29:32.943][MXC][I]dispatch ts translate ret [1790908172943194351, 1790908172943200171]
+[02:29:32.943][MXC][I]raw dispatch ts:[93172660952472,93172660953052]
+[02:29:32.943][MXC][I]dispatch ts translate ret [1790908172943241485, 1790908172943247285]
+[02:29:32.943][MXC][I]raw dispatch ts:[93172660956818,93172660957383]
+[02:29:32.943][MXC][I]dispatch ts translate ret [1790908172943284941, 1790908172943290591]
+[02:29:32.943][MXC][I]raw dispatch ts:[93172660963218,93172660963785]
+[02:29:32.943][MXC][I]dispatch ts translate ret [1790908172943348968, 1790908172943354639]
+[02:29:32.950][MXC][I]raw dispatch ts:[93172661675719,93172661676281]
+[02:29:32.950][MXC][I]dispatch ts translate ret [1790908172950473912, 1790908172950479532]
+[02:29:32.957][MXC][I]raw dispatch ts:[93172662363211,93172662363778]
+[02:29:32.957][MXC][I]dispatch ts translate ret [1790908172957348910, 1790908172957354580]
+[02:29:32.960][MXC][I]raw dispatch ts:[93172662711294,93172662711856]
+[02:29:32.960][MXC][I]dispatch ts translate ret [1790908172960829871, 1790908172960835491]
+[02:29:32.960][MXC][I]raw dispatch ts:[93172662716316,93172662716900]
+[02:29:32.960][MXC][I]dispatch ts translate ret [1790908172960880092, 1790908172960885932]
+[02:29:32.960][MXC][I]raw dispatch ts:[93172662721119,93172662721687]
+[02:29:32.960][MXC][I]dispatch ts translate ret [1790908172960928124, 1790908172960933804]
+[02:29:32.960][MXC][I]raw dispatch ts:[93172662725809,93172662726375]
+[02:29:32.960][MXC][I]dispatch ts translate ret [1790908172960975078, 1790908172960980740]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662730600,93172662731167]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961023008, 1790908172961028680]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662735295,93172662735852]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961069978, 1790908172961075551]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662739973,93172662740538]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961116641, 1790908172961122287]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662744665,93172662745232]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961163529, 1790908172961169195]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662749223,93172662749777]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961209079, 1790908172961214615]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662753653,93172662754233]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961253398, 1790908172961259196]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662758375,93172662758956]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961300604, 1790908172961306412]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662762826,93172662763396]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961345102, 1790908172961350800]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662767183,93172662767741]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961388696, 1790908172961394276]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662771880,93172662772438]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961435666, 1790908172961441246]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662776338,93172662776914]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961480247, 1790908172961486007]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662780900,93172662781470]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961525888, 1790908172961531589]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662785450,93172662786011]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961571395, 1790908172961577006]
+[02:29:32.961][MXC][I]raw dispatch ts:[93172662789724,93172662790296]
+[02:29:32.961][MXC][I]dispatch ts translate ret [1790908172961614142, 1790908172961619863]
+PROFILE_DONE case=1 calls=20
+[info] MctxStreamProfilerCountDataGet Loop
+[02:29:33.173][MCR][I]mc_device.cpp            :1002: tearDown enter!
+
+[02:29:33.173][MCR][I]mx_device.cpp            :1578: deleting hardware queue 0x7f921940b000 with refCount 0
+[02:29:33.173][MCR][I]mx_device.cpp            :1601: number of allocated hardware queues 0-0-0(H-N-L), number of users 0-0-0
+[02:29:33.174][MXC][I]~GpuDevice: Entering
+[02:29:33.174][MCTX][I]mcRpcAsyncImpl.cpp       :550 : callback mcRpcAsyncDone!
+[02:29:33.174][PTI][I]mcpti_tracer.hpp         :309 : stopProcessThread
+[02:29:33.174][MCTX][I]mcRpcAsyncImpl.cpp       :491 : mcRpcServerAsync TearDown!
+[02:29:33.174][MCTX][I]server.cpp               :116 : Server will tearDown[3].
+[02:29:33.175][MCTX][I]mcRpcAsyncImpl.cpp       :250 : ProfilerCountDataGet the last msg:[
+{
+"ISU" : {
+"1" : {
+"dpcId0" : [
+2697348348914,
+2698575640356,
+2697720176377,
+2698663950509,
+2700234553526,
+2700109990039,
+2702433434336,
+2700414694235,
+2701037297873,
+2699339803462,
+2697741860104,
+2696375004370,
+2696057290424
+],
+"dpcId1" : [
+2698042415839,
+2698459343145,
+2700416025247,
+0,
+2699552814103,
+2699500344458,
+2701329010098,
+2701256660765,
+2701107609801,
+2700794415160,
+2700422817490,
+2697246870116,
+2695771412194
+],
+"dpcId2" : [
+2698701559665,
+2698413459946,
+2699457668988,
+2697976503362,
+2701062995925,
+2700277349738,
+2701392925177,
+2700329916877,
+2701103991866,
+2699540966781,
+2697203441121,
+2695010782842,
+2693743371666
+],
+"dpcId3" : [
+2698249173093,
+2699135948075,
+2698685148925,
+2699164424713,
+2700239649292,
+2699718819029,
+2700798011459,
+2700729644906,
+2700489681647,
+2699032447535,
+2697654164059,
+2694961723084,
+2694447745065
+],
+"dpcId4" : [
+2699105642044,
+2698279105878,
+2698742557342,
+2698379400178,
+2699542238612,
+2700343153759,
+2701245025889,
+[02:29:33.186][MCTX][I]server.cpp               :348 : HandleRpcs exit. thread_no=[0].
+[info] MctxStreamProfilerCountDataGet Loop
+[02:29:34.186][MCTX][I]server.cpp               :89  : Server Shutdown!
+[02:29:34.186][MCTX][I]mcRpcAsyncImpl.cpp       :477 : mcRpcServerAsyncRun stop
+[02:29:34.275][MCTX][I]mctxTPImpl.cpp           :433 : clear port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[02:29:45.753][MXS][I]| MACA_LAUNCH_BLOCKING           | 1               | 0               |
+[02:29:45.753][MXS][W]| MCTX_TARGET_INIT               | 1               | 0               |
+[02:29:45.755][MCR][I]mc_device.cpp            :562 : Signal SIGUSR1 now has a custom handler to enable mctx at runtime!
+[02:29:45.755][MCR][I]mc_device.cpp            :309 : mcSnapShotCtx: Attempting to open shared memory: /shm_snapshot_216548
+mctxAutoStart called!
+[02:29:45.755][MCTX][I]mctxTPImpl.cpp           :201 : MACA configuration file path redirected from ${MACA_PATH}/etc to MACA_ETC_PATH
+[02:29:45.755][MCTX][I]mctxTPImpl.cpp           :201 : MACA configuration file path redirected from ${MACA_PATH}/etc to MACA_ETC_PATH
+[02:29:45.755][MCTX][I]mctxTPImpl.cpp           :300 : profiler target ENV file[/opt/mcProfiler-ubuntu18.04/output20261002022858/mcProfiler.json] exist!
+[02:29:45.756][MCR][I]mc_device.cpp            :849 : Init enter!
+[02:29:45.756][MXC][I]MxcInit: entering
+[02:29:45.758][MXKW][I]topology.c              :1358: [topology_sysfs_get_system_props]PlatformCpuNodes:2 ,num_sysfs_nodes:17
+[02:29:45.758][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/2/gpu_id,res: 0,errno:1
+[02:29:45.758][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 1,ret is 0,is_node_supported is 0
+[02:29:45.758][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/3/gpu_id,res: 0,errno:1
+[02:29:45.758][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 2,ret is 0,is_node_supported is 0
+[02:29:45.758][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/4/gpu_id,res: 0,errno:1
+[02:29:45.758][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 3,ret is 0,is_node_supported is 0
+[02:29:45.758][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/5/gpu_id,res: 0,errno:1
+[02:29:45.758][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 4,ret is 0,is_node_supported is 0
+[02:29:45.758][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/6/gpu_id,res: 0,errno:1
+[02:29:45.758][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 5,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/7/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 6,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/8/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 7,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/9/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 8,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/300/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 9,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/301/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 10,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/302/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 11,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/303/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 12,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/309/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 13,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/310/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 14,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :1460: [topology_sysfs_get_system_props]cpu total 2 nodes, map list:
+[02:29:45.759][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[0]:0
+[02:29:45.759][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[1]:1
+[02:29:45.759][MXKW][I]topology.c              :1465: [topology_sysfs_get_system_props]gpu total 1 nodes, map list:
+[02:29:45.759][MXKW][I]topology.c              :1468: [topology_sysfs_get_system_props]map_gpu[0]:14
+[02:29:45.759][MXKW][I]topology.c              :1516: [topology_sysfs_init_gpu_page_size]XCORE_PAGE_SIZE: 0x200000, GPU_PAGE_SIZE: 0x200000
+[02:29:45.759][MXKW][I]topology.c              :954 : [find_pci_info]create pci_info_array. It has 17 element. directory_name is 0.
+[02:29:45.759][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:29:45.759][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:29:45.759][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:29:45.759][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:29:45.759][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:29:45.759][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:29:45.759][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:29:45.759][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:29:45.759][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:29:45.759][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:29:45.759][MXKW][I]topology.c              :962 : [find_pci_info]node 305 's pci info is not found
+[02:29:45.759][MXKW][I]topology.c              :984 : [add_pci_info]added node 305 pci info , bdf_value:3840, domain_value:0
+[02:29:45.759][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 10, isa_minor is 0, MXName is
+[02:29:45.759][MXKW][I]fmm.c                   :2445: [init_mmap_apertures]Initialized unreserved SVM apertures: 0xa00000000 - 0x7fffffffffff
+[02:29:45.759][MXKW][I]topology.c              :1358: [topology_sysfs_get_system_props]PlatformCpuNodes:2 ,num_sysfs_nodes:17
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/2/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 1,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/3/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 2,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/4/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 3,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/5/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 4,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/6/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 5,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/7/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 6,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/8/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 7,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/9/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 8,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/300/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 9,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/301/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 10,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/302/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 11,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/303/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 12,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/309/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 13,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/310/gpu_id,res: 0,errno:1
+[02:29:45.759][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 14,ret is 0,is_node_supported is 0
+[02:29:45.759][MXKW][I]topology.c              :1460: [topology_sysfs_get_system_props]cpu total 2 nodes, map list:
+[02:29:45.759][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[0]:0
+[02:29:45.759][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[1]:1
+[02:29:45.759][MXKW][I]topology.c              :1465: [topology_sysfs_get_system_props]gpu total 1 nodes, map list:
+[02:29:45.759][MXKW][I]topology.c              :1468: [topology_sysfs_get_system_props]map_gpu[0]:14
+[02:29:45.759][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:29:45.759][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:29:45.759][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:29:45.760][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:29:45.760][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:29:45.760][MXKW][I]topology.c              :2548: [topology_take_snapshot]node0 direct_links route:
+[02:29:45.760][MXKW][I]topology.c              :2562: [topology_take_snapshot]link0 type:2,  0--->1
+[02:29:45.760][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:29:45.760][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:29:45.760][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:29:45.760][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:29:45.760][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:29:45.760][MXKW][I]topology.c              :2548: [topology_take_snapshot]node1 direct_links route:
+[02:29:45.760][MXKW][I]topology.c              :2562: [topology_take_snapshot]link0 type:2,  1--->0
+[02:29:45.760][MXKW][I]topology.c              :2573: [topology_take_snapshot]node1 indirect_links route:
+[02:29:45.760][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 10, isa_minor is 0, MXName is
+[02:29:45.762][MXC][I]MxcInit: leaving
+[02:29:45.762][MXC][I]InitDma: Entering
+[02:29:45.763][MXC][I]InitDma: Leaving
+[02:29:45.763][MCR][I]mx_device.cpp            :2294: Device xcore1000 create, major:10, minor:0
+[02:29:45.763][MCR][I]mx_device.cpp            :2795: private_mem:436207616, info_.globalMemSize_:16341008384, gpu_single_alloc_percent:0.990000
+[02:29:45.763][MCR][I]mx_device.cpp            :2865: get registersPerMtreg_:64,info_dpcNum_:8,info_wavePerDpc_:416, wavefrontWidth_:64
+[02:29:45.763][MCR][I]mx_device.cpp            :3042: rmNum_:8, isuNum_:13, sl1Num_:7, vlsNum_:13, vl1Num_:13, l2cNum_:32, l2aNum_:4, l2xNum_:4
+
+[02:29:45.764][MCR][I]mx_device.cpp            :1091: getQueueCnt hwQueueNum:16
+[02:29:45.764][MCR][I]mx_device.cpp            :1153: agent_handle=0x55d57087d470,hardware queues number:16, queue count configuration: 8-4-4(H-N-L), highForMccl:0
+[02:29:45.764][MCR][I]mx_device.cpp            :2445: Device xcore1000 create fininshed!
+
+[02:29:45.764][MCR][I]mx_device.cpp            :2294: Device xcore1000 create, major:10, minor:0
+[02:29:45.764][MCR][I]mx_device.cpp            :2795: private_mem:436207616, info_.globalMemSize_:16341008384, gpu_single_alloc_percent:0.990000
+[02:29:45.764][MCR][I]mx_device.cpp            :2865: get registersPerMtreg_:64,info_dpcNum_:8,info_wavePerDpc_:416, wavefrontWidth_:64
+[02:29:45.764][MCR][I]mx_device.cpp            :3042: rmNum_:8, isuNum_:13, sl1Num_:7, vlsNum_:13, vl1Num_:13, l2cNum_:32, l2aNum_:4, l2xNum_:4
+
+[02:29:45.764][MCR][I]mx_device.cpp            :1091: getQueueCnt hwQueueNum:16
+[02:29:45.764][MCR][I]mx_device.cpp            :1153: agent_handle=0x55d57087d470,hardware queues number:16, queue count configuration: 8-4-4(H-N-L), highForMccl:0
+[02:29:45.764][MCR][I]mx_device.cpp            :2445: Device xcore1000 create fininshed!
+
+[02:29:45.765][MCR][I]mc_vpu_impl.cpp          :80  : mcVpuLoad mxvpu lib version: 1.0.20260512_081136
+
+[02:29:45.765][MCR][I]mc_vpu_impl.cpp          :86  : mcVpuLoad load mxvpu lib path: /opt/maca-3.7.1/lib/libmxvpu.so
+
+[02:29:45.765][MCC][I]AddDevice device_id:0, arch:xcore1000
+[02:29:45.765][MCC][I]Get compiler from environment variable MACA_CLANG_PATH: /opt/maca/mxgpu_llvm/bin.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:30:07.573][MXS][I]                    Node0     Node1
+[02:30:07.573][MXS][I]Gpu0                X
+[02:30:07.573][MXS][I]CpuBind             X         X
+get_mempolicy: Operation not permitted
+[02:30:07.573][MXS][I]MemBind             X         X
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:30:08.358][MXS][I]mcruntime           2%        98%
+[02:30:09.141][MXS][I]mccompiler          12%       88%
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:30:09.926][MXS][I]mxc-runtime         9%        91%
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:30:10.711][MXS][I]mxkw                3%        97%
+[02:30:10.711][PTI][I]mcpti_profiler.cpp       :618 : getModuleInfo:1,8,13,7,13,13,32,4,4
+
+[02:30:10.712][MCR][I]mx_device.cpp            :5792: agent_handle=0x55d57087d470
+[02:30:10.715][MCR][I]mx_device.cpp            :1446: created hardware queue 0x7f41fe00b000(HWq=0x7f3e0c001a90) with size 1024 with priority 0(L), cooperative: 0, is_exclusive: 0
+[02:30:10.715][MCR][I]mx_device.cpp            :1458: number of allocated hardware queues 0-0-1(H-N-L), number of users 0-0-1
+[02:30:10.721][MCR][W]mx_perf_counter.cpp      :568 : Perf is not exclusive, can not be disabled!
+[02:30:10.727][MCTX][I]mctxTPImpl.cpp           :186 : Automatically acquire a port.
+[02:30:10.727][MCTX][I]mcRpcAsyncImpl.cpp       :421 : mcRpcServerAsyncInit 0x55d57086d650 0
+[02:30:10.727][MCTX][I]mcRpcAsyncImpl.cpp       :500 : mcRpcAsyncServerTask start!
+[02:30:10.727][MCTX][I]mcRpcAsyncImpl.cpp       :472 : mcRpcServerAsyncRun start
+[02:30:10.728][MCTX][I]server.cpp               :69  : Server thread num: 1, listening on: 33895.
+mcToolsExtPid_UsedPort:216548-33895
+[info] MctxStreamProfilerCountDataGet Start
+[info] MctxStreamProfilerCountDataGet Loop
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[02:30:14.817][MXC][I]raw dispatch ts:[93176848283375,93176848284172]
+[02:30:14.817][MXC][I]dispatch ts translate ret [1790908214817040912, 1790908214817048882]
+[02:30:14.817][MXC][I]raw dispatch ts:[93176848302435,93176848303090]
+[02:30:14.817][MXC][I]dispatch ts translate ret [1790908214817231504, 1790908214817238053]
+[02:30:14.817][MXC][I]raw dispatch ts:[93176848308246,93176848308895]
+[02:30:14.817][MXC][I]dispatch ts translate ret [1790908214817289609, 1790908214817296099]
+[02:30:14.818][MXC][I]raw dispatch ts:[93176848413940,93176848414403]
+[02:30:14.818][MXC][I]dispatch ts translate ret [1790908214818346576, 1790908214818351206]
+[02:30:14.818][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.818][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.818][MXC][I]GpuDevice 0x7087d470 enable profiling, sdm_counter:170475644958018, sys_time:1790908214818961985
+[02:30:14.818][MXC][I]raw async_copy ts:[170475644990381,170475644992667]
+[02:30:14.818][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.818][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214818997943, 1790908214819000483]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645109619,170475645111571]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214819130430, 1790908214819132598]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645187095,170475645189023]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214819216515, 1790908214819218657]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645285050,170475645286993]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214819325353, 1790908214819327511]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645358003,170475645359923]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214819406412, 1790908214819408545]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645429842,170475645431785]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214819486233, 1790908214819488391]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645502260,170475645504695]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214819566698, 1790908214819569403]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645575965,170475645577893]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214819648592, 1790908214819650734]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645648989,170475645650957]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214819729730, 1790908214819731916]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645719320,170475645721251]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214819807876, 1790908214819810021]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645790675,170475645792602]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214819887159, 1790908214819889300]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645877706,170475645879625]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214819983860, 1790908214819985992]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475645949088,170475645951023]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820063173, 1790908214820065323]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475646019852,170475646021783]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820141800, 1790908214820143945]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475646092704,170475646094635]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820222747, 1790908214820224892]
+[02:30:14.819][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.819][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.819][MXC][I]raw async_copy ts:[170475646166202,170475646168123]
+[02:30:14.819][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.819][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820304411, 1790908214820306545]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475646237950,170475646239882]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820384131, 1790908214820386277]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475646310775,170475646312711]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820465048, 1790908214820467199]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475646382622,170475646384550]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820544878, 1790908214820547020]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475646455010,170475646456942]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820625309, 1790908214820627455]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475646532299,170475646534223]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820711186, 1790908214820713323]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475646604481,170475646606403]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820791388, 1790908214820793523]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475646676906,170475646678841]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820871860, 1790908214820874010]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475646749881,170475646751803]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214820952943, 1790908214820955078]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475646821685,170475646823633]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821032726, 1790908214821034890]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475646894437,170475646896359]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821113561, 1790908214821115696]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475646966042,170475646967966]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821193122, 1790908214821195259]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475647040559,170475647042499]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821275919, 1790908214821278074]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475647117633,170475647119571]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821361557, 1790908214821363710]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475647199281,170475647201225]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821452277, 1790908214821454437]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475647272556,170475647274489]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821533693, 1790908214821535840]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.820][MXC][I]raw async_copy ts:[170475647344881,170475647346811]
+[02:30:14.820][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.820][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821614055, 1790908214821616199]
+[02:30:14.820][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.820][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475647418147,170475647420074]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821695461, 1790908214821697602]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475647489082,170475647491001]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821774278, 1790908214821776410]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475647560857,170475647562809]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821854028, 1790908214821856196]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475647633690,170475647635618]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214821934953, 1790908214821937095]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475647705977,170475647707918]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822015272, 1790908214822017428]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475647782239,170475647784165]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822100008, 1790908214822102148]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475647855871,170475647857803]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822181821, 1790908214822183967]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475647928778,170475647930710]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822262829, 1790908214822264975]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475648001253,170475648003181]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822343357, 1790908214822345499]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475648072839,170475648074763]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822422897, 1790908214822425034]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475648143892,170475648145817]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822501845, 1790908214822503983]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475648216508,170475648218455]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822582529, 1790908214822584692]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475648289106,170475648291047]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822663193, 1790908214822665349]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475648365145,170475648367073]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822747681, 1790908214822749823]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475648437690,170475648439611]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822828287, 1790908214822830421]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475648510890,170475648512818]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822909620, 1790908214822911762]
+[02:30:14.821][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.821][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.821][MXC][I]raw async_copy ts:[170475648587960,170475648589895]
+[02:30:14.821][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.821][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214822995253, 1790908214822997403]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475648658488,170475648660418]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823073618, 1790908214823075762]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475648728831,170475648730763]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823151777, 1790908214823153923]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475648799477,170475648801405]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823230272, 1790908214823232414]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475648869487,170475648871414]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823308061, 1790908214823310202]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475648944745,170475648946679]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823391681, 1790908214823393829]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475649014704,170475649016626]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823469413, 1790908214823471548]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475649085744,170475649087691]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823548347, 1790908214823550510]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475649162067,170475649163994]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823633150, 1790908214823635291]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475649233585,170475649235508]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823712615, 1790908214823714751]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475649304117,170475649306045]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823790983, 1790908214823793125]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475649374881,170475649376815]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823869610, 1790908214823871758]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475649445303,170475649447234]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214823947857, 1790908214823950002]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475649517105,170475649519041]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214824027637, 1790908214824029788]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475649591019,170475649592951]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214824109763, 1790908214824111909]
+[02:30:14.822][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:14.822][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:14.822][MXC][I]raw async_copy ts:[170475649661672,170475649663599]
+[02:30:14.822][MXC][I]sdma_ts_.sdma_counter:170475644958018
+[02:30:14.822][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908214824188267, 1790908214824190408]
+[02:30:14.826][MXC][I]raw dispatch ts:[93176849274049,93176849274549]
+[02:30:14.826][MXC][I]dispatch ts translate ret [1790908214826947826, 1790908214826952826]
+[02:30:14.827][MXC][I]raw dispatch ts:[93176849315867,93176849316161]
+[02:30:14.827][MXC][I]dispatch ts translate ret [1790908214827365883, 1790908214827368822]
+[02:30:14.827][MXC][I]raw dispatch ts:[93176849327465,93176849327858]
+[02:30:14.827][MXC][I]dispatch ts translate ret [1790908214827482219, 1790908214827486163]
+[02:30:14.827][MXC][I]raw dispatch ts:[93176849332451,93176849332830]
+[02:30:14.827][MXC][I]dispatch ts translate ret [1790908214827532254, 1790908214827536058]
+[02:30:14.827][MXC][I]raw dispatch ts:[93176849356681,93176849357262]
+[02:30:14.827][MXC][I]dispatch ts translate ret [1790908214827774207, 1790908214827780012]
+[02:30:14.929][MXS][I]                    Node0     Node1
+[02:30:14.929][MXS][I]Gpu0                X
+[02:30:14.929][MXS][I]CpuBind             X         X
+get_mempolicy: Operation not permitted
+[02:30:14.929][MXS][I]MemBind             X         X
+[02:30:15.754][MXS][I]mcruntime           3%        97%
+[02:30:16.578][MXS][I]mccompiler          12%       88%
+[02:30:17.401][MXS][I]mxc-runtime         8%        92%
+[02:30:18.241][MXS][I]mxkw                2%        98%
+[02:30:18.241][MCC][I]Get compiler from environment variable MACA_CLANG_PATH: /opt/maca/mxgpu_llvm/bin.
+[02:30:18.241][MCC][I]Get compiler from environment variable MACA_CLANG_PATH: /opt/maca/mxgpu_llvm/bin.
+[02:30:18.245][MXC][I]raw dispatch ts:[93177191124896,93177191125502]
+[02:30:18.245][MXC][I]dispatch ts translate ret [1790908218245492241, 1790908218245498301]
+[02:30:18.245][MXC][I]raw dispatch ts:[93177191142461,93177191143017]
+[02:30:18.245][MXC][I]dispatch ts translate ret [1790908218245667876, 1790908218245673436]
+[02:30:18.245][MXC][I]raw dispatch ts:[93177191148193,93177191148763]
+[02:30:18.245][MXC][I]dispatch ts translate ret [1790908218245725189, 1790908218245730889]
+[02:30:18.245][MXC][I]raw dispatch ts:[93177191153020,93177191153611]
+[02:30:18.245][MXC][I]dispatch ts translate ret [1790908218245773454, 1790908218245779364]
+[02:30:18.245][MXC][I]raw dispatch ts:[93177191157624,93177191158188]
+[02:30:18.245][MXC][I]dispatch ts translate ret [1790908218245819802, 1790908218245825454]
+[02:30:18.245][MXC][I]raw dispatch ts:[93177191162454,93177191163036]
+[02:30:18.245][MXC][I]dispatch ts translate ret [1790908218245868208, 1790908218245874041]
+[02:30:18.245][MXC][I]raw dispatch ts:[93177191167207,93177191167774]
+[02:30:18.245][MXC][I]dispatch ts translate ret [1790908218245915845, 1790908218245921527]
+[02:30:18.245][MXC][I]raw dispatch ts:[93177191171803,93177191172382]
+[02:30:18.245][MXC][I]dispatch ts translate ret [1790908218245961630, 1790908218245967420]
+[02:30:18.246][MXC][I]raw dispatch ts:[93177191176504,93177191177072]
+[02:30:18.246][MXC][I]dispatch ts translate ret [1790908218246008640, 1790908218246014321]
+[02:30:18.246][MXC][I]raw dispatch ts:[93177191181196,93177191181754]
+[02:30:18.246][MXC][I]dispatch ts translate ret [1790908218246055562, 1790908218246061142]
+[02:30:18.246][MXC][I]raw dispatch ts:[93177191187309,93177191187888]
+[02:30:18.246][MXC][I]dispatch ts translate ret [1790908218246116416, 1790908218246122194]
+[02:30:18.252][MXC][I]raw dispatch ts:[93177191856771,93177191857348]
+[02:30:18.252][MXC][I]dispatch ts translate ret [1790908218252811144, 1790908218252816914]
+[02:30:18.259][MXC][I]raw dispatch ts:[93177192503045,93177192503626]
+[02:30:18.259][MXC][I]dispatch ts translate ret [1790908218259273889, 1790908218259279699]
+[02:30:18.262][MXC][I]raw dispatch ts:[93177192833750,93177192834306]
+[02:30:18.262][MXC][I]dispatch ts translate ret [1790908218262580968, 1790908218262586528]
+[02:30:18.262][MXC][I]raw dispatch ts:[93177192838688,93177192839258]
+[02:30:18.262][MXC][I]dispatch ts translate ret [1790908218262630348, 1790908218262636048]
+[02:30:18.262][MXC][I]raw dispatch ts:[93177192843124,93177192843693]
+[02:30:18.262][MXC][I]dispatch ts translate ret [1790908218262674708, 1790908218262680398]
+[02:30:18.262][MXC][I]raw dispatch ts:[93177192847677,93177192848257]
+[02:30:18.262][MXC][I]dispatch ts translate ret [1790908218262720330, 1790908218262726134]
+[02:30:18.262][MXC][I]raw dispatch ts:[93177192852315,93177192852871]
+[02:30:18.262][MXC][I]dispatch ts translate ret [1790908218262766743, 1790908218262772307]
+[02:30:18.262][MXC][I]raw dispatch ts:[93177192856833,93177192857396]
+[02:30:18.262][MXC][I]dispatch ts translate ret [1790908218262811957, 1790908218262817591]
+[02:30:18.262][MXC][I]raw dispatch ts:[93177192861256,93177192861814]
+[02:30:18.262][MXC][I]dispatch ts translate ret [1790908218262856310, 1790908218262861899]
+[02:30:18.262][MXC][I]raw dispatch ts:[93177192865923,93177192866489]
+[02:30:18.262][MXC][I]dispatch ts translate ret [1790908218262903049, 1790908218262908717]
+[02:30:18.262][MXC][I]raw dispatch ts:[93177192870322,93177192870884]
+[02:30:18.262][MXC][I]dispatch ts translate ret [1790908218262947105, 1790908218262952733]
+[02:30:18.263][MXC][I]raw dispatch ts:[93177192874767,93177192875346]
+[02:30:18.263][MXC][I]dispatch ts translate ret [1790908218262991186, 1790908218262996963]
+[02:30:18.263][MXC][I]raw dispatch ts:[93177192879635,93177192880196]
+[02:30:18.263][MXC][I]dispatch ts translate ret [1790908218263039760, 1790908218263045358]
+[02:30:18.263][MXC][I]raw dispatch ts:[93177192884276,93177192884842]
+[02:30:18.263][MXC][I]dispatch ts translate ret [1790908218263086070, 1790908218263091718]
+[02:30:18.263][MXC][I]raw dispatch ts:[93177192888836,93177192889398]
+[02:30:18.263][MXC][I]dispatch ts translate ret [1790908218263131901, 1790908218263137524]
+[02:30:18.263][MXC][I]raw dispatch ts:[93177192893406,93177192893973]
+[02:30:18.263][MXC][I]dispatch ts translate ret [1790908218263177624, 1790908218263183297]
+[02:30:18.263][MXC][I]raw dispatch ts:[93177192897989,93177192898555]
+[02:30:18.263][MXC][I]dispatch ts translate ret [1790908218263223478, 1790908218263229141]
+[02:30:18.263][MXC][I]raw dispatch ts:[93177192902391,93177192902953]
+[02:30:18.263][MXC][I]dispatch ts translate ret [1790908218263267433, 1790908218263273052]
+[02:30:18.263][MXC][I]raw dispatch ts:[93177192906910,93177192907464]
+[02:30:18.263][MXC][I]dispatch ts translate ret [1790908218263312612, 1790908218263318151]
+[02:30:18.263][MXC][I]raw dispatch ts:[93177192911338,93177192911899]
+[02:30:18.263][MXC][I]dispatch ts translate ret [1790908218263356882, 1790908218263362491]
+PROFILE_DONE case=1 calls=20
+[info] MctxStreamProfilerCountDataGet Loop
+[02:30:18.478][MCR][I]mc_device.cpp            :1002: tearDown enter!
+
+[02:30:18.479][MCR][I]mx_device.cpp            :1578: deleting hardware queue 0x7f41fe00b000 with refCount 0
+[02:30:18.479][MCR][I]mx_device.cpp            :1601: number of allocated hardware queues 0-0-0(H-N-L), number of users 0-0-0
+[02:30:18.479][MXC][I]~GpuDevice: Entering
+[02:30:18.479][MCTX][I]mcRpcAsyncImpl.cpp       :550 : callback mcRpcAsyncDone!
+[02:30:18.479][PTI][I]mcpti_tracer.hpp         :309 : stopProcessThread
+[02:30:18.479][MCTX][I]mcRpcAsyncImpl.cpp       :491 : mcRpcServerAsync TearDown!
+[02:30:18.479][MCTX][I]server.cpp               :116 : Server will tearDown[3].
+[02:30:18.484][MCTX][I]mcRpcAsyncImpl.cpp       :250 : ProfilerCountDataGet the last msg:[
+{
+"ISU" : {
+"15" : {
+"dpcId0" : [
+2697348348990,
+2698575640432,
+2697720176457,
+2698663950585,
+2700234553602,
+2700109990115,
+2702433434412,
+2700414694311,
+2701037297949,
+2699339803538,
+2697741860180,
+2696375004446,
+2696057290500
+],
+"dpcId1" : [
+2698042415919,
+2698459343221,
+2700416025323,
+0,
+2699552814179,
+2699500344534,
+2701329010174,
+2701256660841,
+2701107609877,
+2700794415236,
+2700422817566,
+2697246870192,
+2695771412270
+],
+"dpcId2" : [
+2698701559741,
+2698413460022,
+2699457669064,
+2697976503438,
+2701062996001,
+2700277349814,
+2701392925253,
+2700329916953,
+2701103991942,
+2699540966861,
+2697203441197,
+2695010782918,
+2693743371742
+],
+"dpcId3" : [
+2698249173169,
+2699135948151,
+2698685149001,
+2699164424789,
+2700239649368,
+2699718819105,
+2700798011535,
+2700729644986,
+2700489681723,
+2699032447611,
+2697654164135,
+2694961723160,
+2694447745141
+],
+"dpcId4" : [
+2699105642120,
+2698279105954,
+2698742557418,
+2698379400254,
+2699542238688,
+2700343153835,
+2701245025965,
+[02:30:18.495][MCTX][I]server.cpp               :348 : HandleRpcs exit. thread_no=[0].
+[info] MctxStreamProfilerCountDataGet Loop
+[02:30:19.495][MCTX][I]server.cpp               :89  : Server Shutdown!
+[02:30:19.495][MCTX][I]mcRpcAsyncImpl.cpp       :477 : mcRpcServerAsyncRun stop
+[02:30:19.580][MCTX][I]mctxTPImpl.cpp           :433 : clear port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+Loading tilelang libs from dev root: /root/tilelang-metax/build
+[02:30:31.067][MXS][I]| MACA_LAUNCH_BLOCKING           | 1               | 0               |
+[02:30:31.067][MXS][W]| MCTX_TARGET_INIT               | 1               | 0               |
+[02:30:31.069][MCR][I]mc_device.cpp            :562 : Signal SIGUSR1 now has a custom handler to enable mctx at runtime!
+[02:30:31.069][MCR][I]mc_device.cpp            :309 : mcSnapShotCtx: Attempting to open shared memory: /shm_snapshot_217010
+mctxAutoStart called!
+[02:30:31.070][MCTX][I]mctxTPImpl.cpp           :201 : MACA configuration file path redirected from ${MACA_PATH}/etc to MACA_ETC_PATH
+[02:30:31.070][MCTX][I]mctxTPImpl.cpp           :201 : MACA configuration file path redirected from ${MACA_PATH}/etc to MACA_ETC_PATH
+[02:30:31.070][MCTX][I]mctxTPImpl.cpp           :300 : profiler target ENV file[/opt/mcProfiler-ubuntu18.04/output20261002022858/mcProfiler.json] exist!
+[02:30:31.070][MCR][I]mc_device.cpp            :849 : Init enter!
+[02:30:31.070][MXC][I]MxcInit: entering
+[02:30:31.074][MXKW][I]topology.c              :1358: [topology_sysfs_get_system_props]PlatformCpuNodes:2 ,num_sysfs_nodes:17
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/2/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 1,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/3/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 2,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/4/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 3,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/5/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 4,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/6/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 5,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/7/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 6,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/8/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 7,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/9/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 8,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/300/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 9,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/301/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 10,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/302/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 11,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/303/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 12,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/309/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 13,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/310/gpu_id,res: 0,errno:1
+[02:30:31.074][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 14,ret is 0,is_node_supported is 0
+[02:30:31.074][MXKW][I]topology.c              :1460: [topology_sysfs_get_system_props]cpu total 2 nodes, map list:
+[02:30:31.074][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[0]:0
+[02:30:31.074][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[1]:1
+[02:30:31.074][MXKW][I]topology.c              :1465: [topology_sysfs_get_system_props]gpu total 1 nodes, map list:
+[02:30:31.074][MXKW][I]topology.c              :1468: [topology_sysfs_get_system_props]map_gpu[0]:14
+[02:30:31.074][MXKW][I]topology.c              :1516: [topology_sysfs_init_gpu_page_size]XCORE_PAGE_SIZE: 0x200000, GPU_PAGE_SIZE: 0x200000
+[02:30:31.074][MXKW][I]topology.c              :954 : [find_pci_info]create pci_info_array. It has 17 element. directory_name is 0.
+[02:30:31.074][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:30:31.074][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:30:31.074][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:30:31.074][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:30:31.074][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:30:31.074][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:30:31.074][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:30:31.074][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:30:31.074][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:30:31.074][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:30:31.074][MXKW][I]topology.c              :962 : [find_pci_info]node 305 's pci info is not found
+[02:30:31.074][MXKW][I]topology.c              :984 : [add_pci_info]added node 305 pci info , bdf_value:3840, domain_value:0
+[02:30:31.074][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 10, isa_minor is 0, MXName is
+[02:30:31.075][MXKW][I]fmm.c                   :2445: [init_mmap_apertures]Initialized unreserved SVM apertures: 0xa00000000 - 0x7fffffffffff
+[02:30:31.075][MXKW][I]topology.c              :1358: [topology_sysfs_get_system_props]PlatformCpuNodes:2 ,num_sysfs_nodes:17
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/2/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 1,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/3/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 2,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/4/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 3,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/5/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 4,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/6/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 5,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/7/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 6,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/8/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 7,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/9/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 8,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/300/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 9,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/301/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 10,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/302/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 11,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/303/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 12,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/309/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 13,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :283 : [get_directory_socket_id]fscanf path:/sys/devices/virtual/mxcd/mxcd/layout/nodes/310/gpu_id,res: 0,errno:1
+[02:30:31.075][MXKW][W]topology.c              :1424: [topology_sysfs_get_system_props]err_node_num is 14,ret is 0,is_node_supported is 0
+[02:30:31.075][MXKW][I]topology.c              :1460: [topology_sysfs_get_system_props]cpu total 2 nodes, map list:
+[02:30:31.075][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[0]:0
+[02:30:31.075][MXKW][I]topology.c              :1463: [topology_sysfs_get_system_props]map_cpu[1]:1
+[02:30:31.075][MXKW][I]topology.c              :1465: [topology_sysfs_get_system_props]gpu total 1 nodes, map list:
+[02:30:31.075][MXKW][I]topology.c              :1468: [topology_sysfs_get_system_props]map_gpu[0]:14
+[02:30:31.075][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:30:31.075][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:30:31.075][MXKW][I]topology.c              :962 : [find_pci_info]node 0 's pci info is not found
+[02:30:31.075][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/0/location file!
+[02:30:31.075][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:30:31.075][MXKW][I]topology.c              :2548: [topology_take_snapshot]node0 direct_links route:
+[02:30:31.075][MXKW][I]topology.c              :2562: [topology_take_snapshot]link0 type:2,  0--->1
+[02:30:31.075][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:30:31.075][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:30:31.075][MXKW][I]topology.c              :962 : [find_pci_info]node 1 's pci info is not found
+[02:30:31.075][MXKW][I]topology.c              :911 : [read_pci_info_from_file]can't open /sys/devices/virtual/mxcd/mxcd/layout/nodes/1/location file!
+[02:30:31.075][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 0, isa_minor is 0, MXName is
+[02:30:31.075][MXKW][I]topology.c              :2548: [topology_take_snapshot]node1 direct_links route:
+[02:30:31.075][MXKW][I]topology.c              :2562: [topology_take_snapshot]link0 type:2,  1--->0
+[02:30:31.075][MXKW][I]topology.c              :2573: [topology_take_snapshot]node1 indirect_links route:
+[02:30:31.075][MXKW][I]topology.c              :1944: [topology_sysfs_get_node_props]Device isa_major is 10, isa_minor is 0, MXName is
+[02:30:31.077][MXC][I]MxcInit: leaving
+[02:30:31.078][MXC][I]InitDma: Entering
+[02:30:31.078][MXC][I]InitDma: Leaving
+[02:30:31.079][MCR][I]mx_device.cpp            :2294: Device xcore1000 create, major:10, minor:0
+[02:30:31.079][MCR][I]mx_device.cpp            :2795: private_mem:436207616, info_.globalMemSize_:16341008384, gpu_single_alloc_percent:0.990000
+[02:30:31.079][MCR][I]mx_device.cpp            :2865: get registersPerMtreg_:64,info_dpcNum_:8,info_wavePerDpc_:416, wavefrontWidth_:64
+[02:30:31.079][MCR][I]mx_device.cpp            :3042: rmNum_:8, isuNum_:13, sl1Num_:7, vlsNum_:13, vl1Num_:13, l2cNum_:32, l2aNum_:4, l2xNum_:4
+
+[02:30:31.079][MCR][I]mx_device.cpp            :1091: getQueueCnt hwQueueNum:16
+[02:30:31.079][MCR][I]mx_device.cpp            :1153: agent_handle=0x556ee4651e80,hardware queues number:16, queue count configuration: 8-4-4(H-N-L), highForMccl:0
+[02:30:31.079][MCR][I]mx_device.cpp            :2445: Device xcore1000 create fininshed!
+
+[02:30:31.079][MCR][I]mx_device.cpp            :2294: Device xcore1000 create, major:10, minor:0
+[02:30:31.079][MCR][I]mx_device.cpp            :2795: private_mem:436207616, info_.globalMemSize_:16341008384, gpu_single_alloc_percent:0.990000
+[02:30:31.079][MCR][I]mx_device.cpp            :2865: get registersPerMtreg_:64,info_dpcNum_:8,info_wavePerDpc_:416, wavefrontWidth_:64
+[02:30:31.079][MCR][I]mx_device.cpp            :3042: rmNum_:8, isuNum_:13, sl1Num_:7, vlsNum_:13, vl1Num_:13, l2cNum_:32, l2aNum_:4, l2xNum_:4
+
+[02:30:31.080][MCR][I]mx_device.cpp            :1091: getQueueCnt hwQueueNum:16
+[02:30:31.080][MCR][I]mx_device.cpp            :1153: agent_handle=0x556ee4651e80,hardware queues number:16, queue count configuration: 8-4-4(H-N-L), highForMccl:0
+[02:30:31.080][MCR][I]mx_device.cpp            :2445: Device xcore1000 create fininshed!
+
+[02:30:31.080][MCR][I]mc_vpu_impl.cpp          :80  : mcVpuLoad mxvpu lib version: 1.0.20260512_081136
+
+[02:30:31.080][MCR][I]mc_vpu_impl.cpp          :86  : mcVpuLoad load mxvpu lib path: /opt/maca-3.7.1/lib/libmxvpu.so
+
+[02:30:31.080][MCC][I]AddDevice device_id:0, arch:xcore1000
+[02:30:31.080][MCC][I]Get compiler from environment variable MACA_CLANG_PATH: /opt/maca/mxgpu_llvm/bin.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:30:52.628][MXS][I]                    Node0     Node1
+[02:30:52.628][MXS][I]Gpu0                X
+[02:30:52.628][MXS][I]CpuBind             X         X
+get_mempolicy: Operation not permitted
+[02:30:52.629][MXS][I]MemBind             X         X
+[02:30:53.348][MXS][I]mcruntime           2%        98%
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:30:54.068][MXS][I]mccompiler          12%       88%
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:30:54.783][MXS][I]mxc-runtime         9%        91%
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[02:30:55.502][MXS][I]mxkw                3%        97%
+[02:30:55.502][PTI][I]mcpti_profiler.cpp       :618 : getModuleInfo:1,8,13,7,13,13,32,4,4
+
+[02:30:55.504][MCR][I]mx_device.cpp            :5792: agent_handle=0x556ee4651e80
+[02:30:55.506][MCR][I]mx_device.cpp            :1446: created hardware queue 0x7f3808a0b000(HWq=0x7f3418001a90) with size 1024 with priority 0(L), cooperative: 0, is_exclusive: 0
+[02:30:55.506][MCR][I]mx_device.cpp            :1458: number of allocated hardware queues 0-0-1(H-N-L), number of users 0-0-1
+[02:30:55.512][MCR][W]mx_perf_counter.cpp      :568 : Perf is not exclusive, can not be disabled!
+[02:30:55.514][MCTX][I]mctxTPImpl.cpp           :186 : Automatically acquire a port.
+[02:30:55.514][MCTX][I]mcRpcAsyncImpl.cpp       :421 : mcRpcServerAsyncInit 0x556ee4641e30 0
+[02:30:55.514][MCTX][I]mcRpcAsyncImpl.cpp       :500 : mcRpcAsyncServerTask start!
+[02:30:55.514][MCTX][I]mcRpcAsyncImpl.cpp       :472 : mcRpcServerAsyncRun start
+[02:30:55.515][MCTX][I]server.cpp               :69  : Server thread num: 1, listening on: 37757.
+mcToolsExtPid_UsedPort:217010-37757
+[info] MctxStreamProfilerCountDataGet Start
+[info] MctxStreamProfilerCountDataGet Loop
+[WARNING] Field "span" in type "ir.TupleType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.FuncType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "span" in type "ir.TensorMapType" duplicates an ancestor field in "ir.Type". Child types should not re-register inherited fields.
+[WARNING] Field "binding_blocks" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "output" in type "script.ir_builder.relax.FunctionFrame" duplicates an ancestor field in "script.ir_builder.relax.SeqExprFrame". Child types should not re-register inherited fields.
+[WARNING] Field "policy_type" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "m_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[WARNING] Field "n_warp" in type "tl.GemmSPWarpPolicy" duplicates an ancestor field in "tl.GemmWarpPolicy". Child types should not re-register inherited fields.
+[02:30:59.594][MXC][I]raw dispatch ts:[93181325980479,93181325981304]
+[02:30:59.594][MXC][I]dispatch ts translate ret [1790908259594440071, 1790908259594448321]
+[02:30:59.594][MXC][I]raw dispatch ts:[93181325999569,93181326000224]
+[02:30:59.594][MXC][I]dispatch ts translate ret [1790908259594630963, 1790908259594637512]
+[02:30:59.594][MXC][I]raw dispatch ts:[93181326005508,93181326006165]
+[02:30:59.594][MXC][I]dispatch ts translate ret [1790908259594690348, 1790908259594696918]
+[02:30:59.595][MXC][I]raw dispatch ts:[93181326109906,93181326110397]
+[02:30:59.595][MXC][I]dispatch ts translate ret [1790908259595734324, 1790908259595739234]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]GpuDevice 0xe4651e80 enable profiling, sdm_counter:170529377263218, sys_time:1790908259596311022
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377292333,170529377294675]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259596343372, 1790908259596345974]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377389484,170529377391489]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259596451317, 1790908259596453544]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377445152,170529377447127]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259596513170, 1790908259596515364]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377525211,170529377527194]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259596602125, 1790908259596604328]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377575819,170529377577799]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259596658356, 1790908259596660556]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377626294,170529377628305]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259596714439, 1790908259596716673]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377677057,170529377679548]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259596770843, 1790908259596773610]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377728600,170529377730582]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259596828113, 1790908259596830315]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377780237,170529377782235]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259596885487, 1790908259596887707]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377834684,170529377836666]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259596945984, 1790908259596948186]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377883231,170529377885221]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259596999925, 1790908259597002136]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529377954546,170529377956517]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597079164, 1790908259597081354]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529378006695,170529378008677]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597137107, 1790908259597139309]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.596][MXC][I]raw async_copy ts:[170529378056657,170529378058633]
+[02:30:59.596][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.596][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597192620, 1790908259597194815]
+[02:30:59.596][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.596][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378105868,170529378107846]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597247299, 1790908259597249496]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378155897,170529378157873]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597302887, 1790908259597305082]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378206761,170529378208737]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597359403, 1790908259597361598]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378258065,170529378260053]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597416407, 1790908259597418615]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378309371,170529378311358]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597473414, 1790908259597475621]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378359884,170529378361863]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597529539, 1790908259597531737]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378415678,170529378417653]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597591533, 1790908259597593727]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378465237,170529378467222]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597646598, 1790908259597648803]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378514728,170529378516738]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597701588, 1790908259597703821]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378565057,170529378567039]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597757509, 1790908259597759711]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378616152,170529378618153]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597814282, 1790908259597816505]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378666008,170529378667987]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597869677, 1790908259597871875]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378714813,170529378716791]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597923905, 1790908259597926102]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378764759,170529378766733]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259597979400, 1790908259597981593]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378818754,170529378820735]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598039395, 1790908259598041596]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378870900,170529378872877]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598097335, 1790908259598099531]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378926056,170529378928041]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598158619, 1790908259598160824]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529378976141,170529378978130]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598214269, 1790908259598216479]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529379027503,170529379029479]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598271338, 1790908259598273533]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529379076914,170529379078889]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598326239, 1790908259598328433]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529379127019,170529379129019]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598381912, 1790908259598384134]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529379179901,170529379181882]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598440669, 1790908259598442870]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529379230389,170529379232381]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.597][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598496767, 1790908259598498980]
+[02:30:59.597][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.597][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.597][MXC][I]raw async_copy ts:[170529379284471,170529379286451]
+[02:30:59.597][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598556858, 1790908259598559058]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379334317,170529379336337]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598612243, 1790908259598614487]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379384682,170529379386661]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598668204, 1790908259598670402]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379433632,170529379435614]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598722593, 1790908259598724795]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379483464,170529379485447]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598777962, 1790908259598780165]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379534435,170529379536415]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598834596, 1790908259598836796]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379583204,170529379585217]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598888784, 1790908259598891020]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379632341,170529379634283]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259598943380, 1790908259598945537]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379685641,170529379687626]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599002603, 1790908259599004808]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379738543,170529379740522]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599061383, 1790908259599063581]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379787697,170529379789677]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599115998, 1790908259599118198]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379837729,170529379839715]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599171589, 1790908259599173795]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379887494,170529379889479]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599226884, 1790908259599229089]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379938480,170529379940469]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599283535, 1790908259599285745]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529379988135,170529379990123]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599338707, 1790908259599340915]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529380037865,170529380039839]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599393963, 1790908259599396156]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529380091818,170529380093797]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599453910, 1790908259599456108]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529380143807,170529380145790]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599511676, 1790908259599513879]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529380193913,170529380195901]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599567349, 1790908259599569557]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529380243972,170529380245954]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599622970, 1790908259599625172]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529380292922,170529380294899]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599677359, 1790908259599679555]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529380342362,170529380344354]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599732293, 1790908259599734506]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529380392814,170529380394793]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599788350, 1790908259599790548]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.598][MXC][I]raw async_copy ts:[170529380441801,170529380443775]
+[02:30:59.598][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.598][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599842780, 1790908259599844973]
+[02:30:59.598][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.598][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.599][MXC][I]raw async_copy ts:[170529380491471,170529380493443]
+[02:30:59.599][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.599][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599897969, 1790908259599900160]
+[02:30:59.599][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.599][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.599][MXC][I]raw async_copy ts:[170529380544967,170529380546969]
+[02:30:59.599][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.599][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259599957409, 1790908259599959633]
+[02:30:59.599][MCR][I]mc_memory.cpp            :1671: copy strategy - H2DCpuCopy:0,D2HCpuCopy:0,cpuCopy:0,d2dCrossDevices:0,pageableHToDAsync:0
+[02:30:59.599][MCR][I]mc_memory.cpp            :1672: copy strategy - isAsync:0,waitComplete:1
+[02:30:59.599][MXC][I]raw async_copy ts:[170529380595928,170529380597898]
+[02:30:59.599][MXC][I]sdma_ts_.sdma_counter:170529377263218
+[02:30:59.599][MXC][I]DNOCfreq:900000000, async_copy ts translate ret [1790908259600014033, 1790908259600016221]
+[02:30:59.600][MXC][I]raw dispatch ts:[93181326611240,93181326611755]
+[02:30:59.600][MXC][I]dispatch ts translate ret [1790908259600747728, 1790908259600752878]
+[02:30:59.601][MXC][I]raw dispatch ts:[93181326640582,93181326640892]
+[02:30:59.601][MXC][I]dispatch ts translate ret [1790908259601041155, 1790908259601044255]
+[02:30:59.601][MXC][I]raw dispatch ts:[93181326650856,93181326651194]
+[02:30:59.601][MXC][I]dispatch ts translate ret [1790908259601143897, 1790908259601147277]
+[02:30:59.601][MXC][I]raw dispatch ts:[93181326655447,93181326655854]
+[02:30:59.601][MXC][I]dispatch ts translate ret [1790908259601189834, 1790908259601193905]
+[02:30:59.601][MXC][I]raw dispatch ts:[93181326678480,93181326679059]
+[02:30:59.601][MXC][I]dispatch ts translate ret [1790908259601420091, 1790908259601425879]
+[02:30:59.696][MXS][I]                    Node0     Node1
+[02:30:59.696][MXS][I]Gpu0                X
+[02:30:59.697][MXS][I]CpuBind             X         X
+get_mempolicy: Operation not permitted
+[02:30:59.697][MXS][I]MemBind             X         X
+[02:31:00.455][MXS][I]mcruntime           3%        97%
+[02:31:01.216][MXS][I]mccompiler          12%       88%
+[02:31:01.973][MXS][I]mxc-runtime         8%        92%
+[02:31:02.738][MXS][I]mxkw                2%        98%
+[02:31:02.738][MCC][I]Get compiler from environment variable MACA_CLANG_PATH: /opt/maca/mxgpu_llvm/bin.
+[02:31:02.739][MCC][I]Get compiler from environment variable MACA_CLANG_PATH: /opt/maca/mxgpu_llvm/bin.
+[02:31:02.742][MXC][I]raw dispatch ts:[93181640824774,93181640825368]
+[02:31:02.742][MXC][I]dispatch ts translate ret [1790908262742909742, 1790908262742915682]
+[02:31:02.743][MXC][I]raw dispatch ts:[93181640842576,93181640843142]
+[02:31:02.743][MXC][I]dispatch ts translate ret [1790908262743087750, 1790908262743093410]
+[02:31:02.743][MXC][I]raw dispatch ts:[93181640848435,93181640848992]
+[02:31:02.743][MXC][I]dispatch ts translate ret [1790908262743146334, 1790908262743151903]
+[02:31:02.743][MXC][I]raw dispatch ts:[93181640853397,93181640853979]
+[02:31:02.743][MXC][I]dispatch ts translate ret [1790908262743195950, 1790908262743201769]
+[02:31:02.743][MXC][I]raw dispatch ts:[93181640858074,93181640858653]
+[02:31:02.743][MXC][I]dispatch ts translate ret [1790908262743242967, 1790908262743248767]
+[02:31:02.743][MXC][I]raw dispatch ts:[93181640862828,93181640863396]
+[02:31:02.743][MXC][I]dispatch ts translate ret [1790908262743290589, 1790908262743296279]
+[02:31:02.743][MXC][I]raw dispatch ts:[93181640867547,93181640868121]
+[02:31:02.743][MXC][I]dispatch ts translate ret [1790908262743337861, 1790908262743343611]
+[02:31:02.743][MXC][I]raw dispatch ts:[93181640872039,93181640872597]
+[02:31:02.743][MXC][I]dispatch ts translate ret [1790908262743382425, 1790908262743387995]
+[02:31:02.743][MXC][I]raw dispatch ts:[93181640876748,93181640877318]
+[02:31:02.743][MXC][I]dispatch ts translate ret [1790908262743429430, 1790908262743435120]
+[02:31:02.743][MXC][I]raw dispatch ts:[93181640880991,93181640881546]
+[02:31:02.743][MXC][I]dispatch ts translate ret [1790908262743471784, 1790908262743477324]
+[02:31:02.743][MXC][I]raw dispatch ts:[93181640887227,93181640887793]
+[02:31:02.743][MXC][I]dispatch ts translate ret [1790908262743534417, 1790908262743540084]
+[02:31:02.747][MXC][I]raw dispatch ts:[93181641261313,93181641261893]
+[02:31:02.747][MXC][I]dispatch ts translate ret [1790908262747275537, 1790908262747281338]
+[02:31:02.750][MXC][I]raw dispatch ts:[93181641613174,93181641613730]
+[02:31:02.750][MXC][I]dispatch ts translate ret [1790908262750793772, 1790908262750799332]
+[02:31:02.752][MXC][I]raw dispatch ts:[93181641791146,93181641791707]
+[02:31:02.752][MXC][I]dispatch ts translate ret [1790908262752573644, 1790908262752579255]
+[02:31:02.752][MXC][I]raw dispatch ts:[93181641796104,93181641796684]
+[02:31:02.752][MXC][I]dispatch ts translate ret [1790908262752623227, 1790908262752629028]
+[02:31:02.752][MXC][I]raw dispatch ts:[93181641800624,93181641801180]
+[02:31:02.752][MXC][I]dispatch ts translate ret [1790908262752668431, 1790908262752673992]
+[02:31:02.752][MXC][I]raw dispatch ts:[93181641805006,93181641805564]
+[02:31:02.752][MXC][I]dispatch ts translate ret [1790908262752712265, 1790908262752717846]
+[02:31:02.752][MXC][I]raw dispatch ts:[93181641809516,93181641810081]
+[02:31:02.752][MXC][I]dispatch ts translate ret [1790908262752757371, 1790908262752763022]
+[02:31:02.752][MXC][I]raw dispatch ts:[93181641814343,93181641814905]
+[02:31:02.752][MXC][I]dispatch ts translate ret [1790908262752805649, 1790908262752811270]
+[02:31:02.752][MXC][I]raw dispatch ts:[93181641818997,93181641819555]
+[02:31:02.752][MXC][I]dispatch ts translate ret [1790908262752852171, 1790908262752857751]
+[02:31:02.752][MXC][I]raw dispatch ts:[93181641823576,93181641824146]
+[02:31:02.752][MXC][I]dispatch ts translate ret [1790908262752897958, 1790908262752903658]
+[02:31:02.752][MXC][I]raw dispatch ts:[93181641828062,93181641828638]
+[02:31:02.752][MXC][I]dispatch ts translate ret [1790908262752942816, 1790908262752948575]
+[02:31:02.753][MXC][I]raw dispatch ts:[93181641832874,93181641833444]
+[02:31:02.753][MXC][I]dispatch ts translate ret [1790908262752990933, 1790908262752996632]
+[02:31:02.753][MXC][I]raw dispatch ts:[93181641837393,93181641837944]
+[02:31:02.753][MXC][I]dispatch ts translate ret [1790908262753036119, 1790908262753041628]
+[02:31:02.753][MXC][I]raw dispatch ts:[93181641841807,93181641842370]
+[02:31:02.753][MXC][I]dispatch ts translate ret [1790908262753080256, 1790908262753085885]
+[02:31:02.753][MXC][I]raw dispatch ts:[93181641846272,93181641846829]
+[02:31:02.753][MXC][I]dispatch ts translate ret [1790908262753125032, 1790908262753130607]
+[02:31:02.753][MXC][I]raw dispatch ts:[93181641850975,93181641851533]
+[02:31:02.753][MXC][I]dispatch ts translate ret [1790908262753172109, 1790908262753177694]
+[02:31:02.753][MXC][I]raw dispatch ts:[93181641855543,93181641856120]
+[02:31:02.753][MXC][I]dispatch ts translate ret [1790908262753217835, 1790908262753223611]
+[02:31:02.753][MXC][I]raw dispatch ts:[93181641860184,93181641860736]/tmp/_MEIsw88Ct/phttp/http_server.py:89: UserWarning:
+
+The 'environ['werkzeug.server.shutdown']' function is deprecated and will be removed in Werkzeug 2.1.
+
+
+[02:31:02.753][MXC][I]dispatch ts translate ret [1790908262753264184, 1790908262753269705]
+[02:31:02.753][MXC][I]raw dispatch ts:[93181641864995,93181641865550]
+[02:31:02.753][MXC][I]dispatch ts translate ret [1790908262753312300, 1790908262753317851]
+[02:31:02.753][MXC][I]raw dispatch ts:[93181641869206,93181641869768]
+[02:31:02.753][MXC][I]dispatch ts translate ret [1790908262753354416, 1790908262753360036]
+PROFILE_DONE case=1 calls=20
+[info] MctxStreamProfilerCountDataGet Loop
+[02:31:02.963][MCR][I]mc_device.cpp            :1002: tearDown enter!
+
+[02:31:02.964][MCR][I]mx_device.cpp            :1578: deleting hardware queue 0x7f3808a0b000 with refCount 0
+[02:31:02.964][MCR][I]mx_device.cpp            :1601: number of allocated hardware queues 0-0-0(H-N-L), number of users 0-0-0
+[02:31:02.964][MXC][I]~GpuDevice: Entering
+[02:31:02.964][MCTX][I]mcRpcAsyncImpl.cpp       :550 : callback mcRpcAsyncDone!
+[02:31:02.964][PTI][I]mcpti_tracer.hpp         :309 : stopProcessThread
+[02:31:02.964][MCTX][I]mcRpcAsyncImpl.cpp       :491 : mcRpcServerAsync TearDown!
+[02:31:02.964][MCTX][I]server.cpp               :116 : Server will tearDown[3].
+[02:31:02.972][MCTX][I]mcRpcAsyncImpl.cpp       :250 : ProfilerCountDataGet the last msg:[
+{
+"ISU" : {
+"101" : {
+"dpcId0" : [
+3545771074681,
+3541957139904,
+3542955909563,
+3565118700982,
+3566521168689,
+3565550237391,
+3566451733007,
+3564624294762,
+3565918116452,
+3563735043759,
+3564119764944,
+3561801203918,
+3561490625771
+],
+"dpcId1" : [
+3568092698461,
+[info] MctxStreamProfilerCountDataGet Loop
+3566132525233,
+3568382488934,
+0,
+3566817047732,
+3564917642737,
+3567136958526,
+3565874452880,
+3565792994154,
+3564409729553,
+3565257808224,
+3563204523931,
+3563343771496
+],
+"dpcId2" : [
+3567797720143,
+3566237975932,
+3566834349090,
+3565188356594,
+3566266550107,
+3565702412242,
+3566621331920,
+3564303631982,
+3566014098166,
+3563148769837,
+3563498008949,
+3561753375205,
+3561349280454
+],
+"dpcId3" : [
+3567480040051,
+3566140185854,
+3566453405150,
+3565663087595,
+3566749423155,
+3565314375233,
+3566173038593,
+3565072332113,
+3565409347808,
+3563411409226,
+3564020469793,
+3561798289054,
+3561809704041
+],
+"dpcId4" : [
+3567557387618,
+3565777260693,
+3566513534870,
+3565280123972,
+3566023930152,
+3565124886079,
+3566422006506,
+[02:31:02.982][MCTX][I]server.cpp               :348 : HandleRpcs exit. thread_no=[0].
+[02:31:03.982][MCTX][I]server.cpp               :89  : Server Shutdown!
+[02:31:03.983][MCTX][I]mcRpcAsyncImpl.cpp       :477 : mcRpcServerAsyncRun stop
+[02:31:04.065][MCTX][I]mctxTPImpl.cpp           :433 : clear port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+[warning] get_srvrpc_port get rpc server ports failed: cannot retrieve rpc server port.
+
+[info] profiling task 32e7b458-ad2b-4862-89e0-e015cb7de353
+[info] complete task 32e7b458-ad2b-4862-89e0-e015cb7de353
+stop server
+perf done, please check report file /opt/mcProfiler-ubuntu18.04/output20261002022858
