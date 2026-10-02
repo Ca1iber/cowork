@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T03:29:16.513129+00:00",
-  "state": "V200_PROFILE_RUNNING_RUNTIME_INCIDENT_RETAINED",
+  "timestamp_utc": "2026-10-02T03:47:04.978139+00:00",
+  "state": "V200_CLOSED_WAITING_V201_HYPOTHESIS_REVIEW",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
@@ -26,15 +26,14 @@
     9,
     8
   ],
-  "job_pid": 4850,
-  "stage": "mcProfiler",
+  "job_pid": null,
+  "stage": "diagnostic_closed_partial_profile_evidence",
   "correctness_counts": {
     "candidate": 0,
-    "v200_completed_baseline_v28": 28,
-    "v200_completed_parent_v084": 28,
-    "v200_completed_total": 56,
-    "environment_gate_parent_v084_completed": 1,
-    "environment_gate_excluded_from_v200": true
+    "v200_original_v28": 28,
+    "v200_parent_v084": 28,
+    "v200_total": 56,
+    "environment_parent_smoke_separate": 1
   },
   "benchmark_paths": [
     "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/baseline_case*_subagent2.csv"
@@ -100,8 +99,8 @@
   "blockers": [
     "Profiling clean-process completion not demonstrated due cgroupOOM1 and early Killed in C8orig despite CLI0. Data and incident both retained."
   ],
-  "next_step": "Finish remaining fixed first profile jobs and6resources; then leader-approved single120s trace. No native/profile retry, no kernel edit.",
-  "source_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+  "next_step": "Await leader review/GO for singlecase5 output-only mechanism. No kernel or v201 artifact edits before approval.",
+  "source_commit": "d1c7891b163f6ce8b0ad7f96292d30ab5b736474",
   "environment_evidence_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/environment",
   "import_attempts": [
     {
@@ -148,15 +147,9 @@
     "timestamp_utc": "2026-10-02T03:07:04.693456+00:00"
   },
   "queued_post_baseline_pid": 4850,
-  "active_profile_process": {
-    "stage": "mcProfiler",
-    "case": 9,
-    "variant": "baseline_v28",
-    "pid": 35454,
-    "timestamp_utc": "2026-10-02T03:29:15.347239+00:00"
-  },
+  "active_profile_process": null,
   "benchmark_summary_path": "workers/worker2/v200_baseline_summary.json",
-  "profile_samples_completed": 8,
+  "profile_samples_completed": null,
   "profile_samples_planned": 12,
   "static_generated_gate": {
     "baseline_v28_cases": 14,
@@ -208,5 +201,35 @@
     "samples_captured": 2,
     "clean_process_gate": "NOT DEMONSTRATED",
     "agent_retries": 0
+  },
+  "candidate_source_created": false,
+  "closed_version": "v200_worker2_baseline_profile_subagent2",
+  "closed_status": "inconclusive_diagnostic_profile_incomplete_runtime_oom_scope_falsified",
+  "all_owned_jobs_terminal": true,
+  "profile_raw_records_captured": 12,
+  "profile_numeric_records": 10,
+  "profile_original_scope_consistent_records": 9,
+  "profile_unavailable_records": 2,
+  "profile_numeric_scope_fail_records": 1,
+  "original_gates": {
+    "profile_analysis": 1,
+    "post_pipeline": 1,
+    "trace_queue": 1,
+    "trace_tool_executed": false
+  },
+  "independent_resources": {
+    "records": 6,
+    "exit": 0,
+    "attention_runs": 0,
+    "full_references": 0
+  },
+  "report_path": "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/report_subagent2.md",
+  "proposal_path": "workers/worker2/proposals/case5_direct_output_v201.md",
+  "peer_review_path": "workers/worker2/reviews/peer_and_measurement_review_v201.json",
+  "code_relay_bundle": {
+    "path": "/tmp/nsa_worker2_code_d1c7891b163f.bundle",
+    "size": 3173428,
+    "sha256": "4d81e19c2f05c406b579cbced1482f1b1833889cb54056ce2d3a50055babbd63",
+    "prerequisite": "7bb0e33b35a7b5a02a8fb42e99d4151617316572"
   }
 }
