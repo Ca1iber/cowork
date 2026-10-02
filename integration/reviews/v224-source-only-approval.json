@@ -1,0 +1,37 @@
+{
+  "version": "v224",
+  "owner": "worker2",
+  "scope": "source+stdlib preparation only after advisory peer review",
+  "only_case": 3,
+  "key": [
+    1,
+    256,
+    1,
+    16,
+    128,
+    1,
+    16,
+    true
+  ],
+  "parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "mechanism": "QK8MMA one dependent Score4 chain -> two Score4 chains of4 +FP32 sum before originalmask",
+  "observed": "parent generatedCPP8 successive accumulations inScore4",
+  "critical_bottleneck": "UNPROVEN; profile219MMA~1.93% does not establish this dependency as dominant",
+  "prediction": "actualoptimizedIR two4-MMA accumulation chains plusadd",
+  "falsifiers": [
+    "compiler reverts original8chain",
+    "originalnaive1e-2fails fromregroup+F16P rounding",
+    "resource/endtoendperformance regression ornoise"
+  ],
+  "preserved": [
+    "other13parent14AST",
+    "QKVOutputlayouts/globalwidth",
+    "7warpbarriers",
+    "Num32",
+    "roundedF16P denominator",
+    "originalselected order and invalid behavior"
+  ],
+  "compile_native_profile_GO": false,
+  "no_sourceedit_before_peer_advisory": true,
+  "no_peer_code_plan_edits": true
+}
