@@ -1,0 +1,88 @@
+{
+  "refused_case": "job4 before native",
+  "first_sample_file": "/root/tilelang-metax/race_tests/nsa/rep/v107_worker1_phase_aware_terminal_monitor_sc-16g-2/job_04_power_v104/admission_first.json",
+  "whole_bytes": 3223244800,
+  "baseline": {
+    "identity_match": true,
+    "expected_tuple": {
+      "pid": 213447,
+      "starttime_ticks": 93125003,
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+    },
+    "actual_metadata": {
+      "pid": 213447,
+      "memory_KiB": {
+        "VmSize": 13417604,
+        "VmHWM": 3611504,
+        "VmRSS": 2397544
+      },
+      "all_thread_children": {
+        "213447": [],
+        "213448": [],
+        "213449": [],
+        "213450": [],
+        "213451": [],
+        "213452": [],
+        "213454": [],
+        "213688": [],
+        "213689": []
+      },
+      "phase_errors": [],
+      "ppid": 212213,
+      "pgid": 211770,
+      "state": "S",
+      "starttime_ticks": 93125003,
+      "comm": "MainThread",
+      "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+      "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n",
+      "critical_identity_available": true
+    },
+    "identified_but_unowned": true,
+    "RAM_fully_in_wholeCG_budget": true,
+    "not_owned_or_signal_authorized": true,
+    "child_exception": false
+  },
+  "cgroup": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "3223244800\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+    "memory.failcnt": "3180266\n",
+    "memory.stat": "cache 205647872\nrss 2773864448\nrss_huge 0\nshmem 28672\nmapped_file 51068928\ndirty 688128\nwriteback 0\nswap 839397376\npgpgin 4352822881\npgpgout 4352088093\npgfault 4806362063\npgmajfault 192032\ninactive_anon 829435904\nactive_anon 1974562816\ninactive_file 103743488\nactive_file 101867520\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 205647872\ntotal_rss 2773864448\ntotal_rss_huge 0\ntotal_shmem 28672\ntotal_mapped_file 51068928\ntotal_dirty 688128\ntotal_writeback 0\ntotal_swap 839397376\ntotal_pgpgin 4352822881\ntotal_pgpgout 4352088093\ntotal_pgfault 4806362063\ntotal_pgmajfault 192032\ntotal_inactive_anon 829435904\ntotal_active_anon 1974562816\ntotal_inactive_file 103743488\ntotal_active_file 101867520\ntotal_unevictable 0\n",
+    "oom_kill": 13,
+    "usage_bytes": 3223244800
+  },
+  "successful3_process_observed_peaks": [
+    {
+      "job": 1,
+      "variant": "baseline_v28",
+      "native_exit": 0,
+      "cleanrefs": 14,
+      "observed_whole_peak_bytes": 25081516032,
+      "observed_baseline_RSS_peak_KiB": 2358112,
+      "sample_count": 238
+    },
+    {
+      "job": 2,
+      "variant": "parent_v084",
+      "native_exit": 0,
+      "cleanrefs": 14,
+      "observed_whole_peak_bytes": 25151868928,
+      "observed_baseline_RSS_peak_KiB": 2397372,
+      "sample_count": 190
+    },
+    {
+      "job": 3,
+      "variant": "power_v104",
+      "native_exit": 0,
+      "cleanrefs": 14,
+      "observed_whole_peak_bytes": 25152122880,
+      "observed_baseline_RSS_peak_KiB": 2397544,
+      "sample_count": 120
+    }
+  ],
+  "source_no_edit": true,
+  "old3GiB_boundary_preserved": 3221225472,
+  "no_retry_or_changed_admission": true,
+  "observations_not_peak_bounds": true
+}

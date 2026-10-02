@@ -1,0 +1,144 @@
+{
+  "scope": "controlledstdlib shortchild observertests only,not NSA nativebenchmark",
+  "checks": [
+    {
+      "fixture": "poll_to_stat",
+      "PID": 364803,
+      "first_poll": null,
+      "actual_metadata": {
+        "pid": 364803,
+        "memory_KiB": {},
+        "all_thread_children": {
+          "364803": []
+        },
+        "phase_errors": [
+          {
+            "phase": "exe_readlink",
+            "error": "FileNotFoundError(2, 'No such file or directory')",
+            "errno": 2,
+            "filename": "/proc/364803/exe"
+          }
+        ],
+        "ppid": 364802,
+        "pgid": 364802,
+        "state": "Z",
+        "starttime_ticks": 95422964,
+        "comm": "python",
+        "cgroup": "13:rdma:/\n12:misc:/\n11:pids:/\n10:hugetlb:/\n9:memory:/\n8:cpu,cpuacct:/\n7:devices:/\n6:cpuset:/\n5:perf_event:/\n4:blkio:/\n3:net_cls,net_prio:/\n2:freezer:/\n1:name=systemd:/\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n",
+        "critical_identity_available": false
+      },
+      "decision": {
+        "decision": "terminal_confirmed",
+        "returncode": 0,
+        "authority": "original_Popen_handle",
+        "before_identity_judgement": true
+      },
+      "real_wait": 0,
+      "signal_sent": false
+    },
+    {
+      "fixture": "after_stat",
+      "PID": 364804,
+      "first_poll": null,
+      "actual_metadata": {
+        "pid": 364804,
+        "memory_KiB": {},
+        "all_thread_children": {
+          "364804": []
+        },
+        "phase_errors": [
+          {
+            "phase": "exe_readlink",
+            "error": "FileNotFoundError(2, 'No such file or directory')",
+            "errno": 2,
+            "filename": "/proc/364804/exe"
+          }
+        ],
+        "ppid": 364802,
+        "pgid": 364802,
+        "state": "R",
+        "starttime_ticks": 95422974,
+        "comm": "python",
+        "cgroup": "13:rdma:/\n12:misc:/\n11:pids:/\n10:hugetlb:/\n9:memory:/\n8:cpu,cpuacct:/\n7:devices:/\n6:cpuset:/\n5:perf_event:/\n4:blkio:/\n3:net_cls,net_prio:/\n2:freezer:/\n1:name=systemd:/\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n",
+        "critical_identity_available": false
+      },
+      "decision": {
+        "decision": "terminal_confirmed",
+        "returncode": 0,
+        "authority": "original_Popen_handle",
+        "before_identity_judgement": true
+      },
+      "real_wait": 0,
+      "signal_sent": false
+    },
+    {
+      "fixture": "after_exe",
+      "PID": 364805,
+      "first_poll": null,
+      "actual_metadata": {
+        "pid": 364805,
+        "memory_KiB": {},
+        "all_thread_children": {
+          "364805": []
+        },
+        "phase_errors": [],
+        "ppid": 364802,
+        "pgid": 364802,
+        "state": "R",
+        "starttime_ticks": 95422985,
+        "comm": "python",
+        "exe": "/opt/conda/bin/python3.12",
+        "cgroup": "13:rdma:/\n12:misc:/\n11:pids:/\n10:hugetlb:/\n9:memory:/\n8:cpu,cpuacct:/\n7:devices:/\n6:cpuset:/\n5:perf_event:/\n4:blkio:/\n3:net_cls,net_prio:/\n2:freezer:/\n1:name=systemd:/\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n",
+        "critical_identity_available": true
+      },
+      "decision": {
+        "decision": "terminal_confirmed",
+        "returncode": 0,
+        "authority": "original_Popen_handle",
+        "before_identity_judgement": true
+      },
+      "real_wait": 0,
+      "signal_sent": false
+    },
+    {
+      "fixture": "actual_alive_wrong_exe",
+      "PID": 364806,
+      "decision": {
+        "decision": "alive_identity_mismatch",
+        "returncode": null,
+        "authority": "live_critical_identity_and_Popen"
+      },
+      "real_wait": 0,
+      "signal_sent": false
+    },
+    {
+      "fixture": "optionalmetadata_fail_retains_actualcritical_identity",
+      "decision": {
+        "decision": "alive_identity_match",
+        "returncode": null,
+        "authority": "live_critical_identity_and_Popen"
+      },
+      "errors": [
+        {
+          "phase": "status",
+          "error": "FileNotFoundError(2, 'No such file or directory')",
+          "errno": 2,
+          "filename": "/tmp/nsa_v107_metadata_fixture_3imd52vb/364814/status"
+        },
+        {
+          "phase": "task_iterdir",
+          "error": "FileNotFoundError(2, 'No such file or directory')",
+          "errno": 2,
+          "filename": "/tmp/nsa_v107_metadata_fixture_3imd52vb/364814/task"
+        }
+      ],
+      "signal_sent": false,
+      "real_wait": 0
+    }
+  ],
+  "checks_passed": 5,
+  "GPU_or_native_NSA_or_reference_calls": 0,
+  "no_fake_CSV_or_latency": true,
+  "no_unknown_or_baseline_signal": true,
+  "oldv106gate1_unchanged": true
+}

@@ -1,0 +1,15 @@
+from pathlib import Path
+import sys,subprocess,time,json,hashlib,tempfile,os
+from process_monitor import read_pid_metadata,identity_decision
+r=Path('/root/tilelang-metax/race_tests/nsa/rep/v107_worker1_phase_aware_terminal_monitor_sc-16g-2');records=[]
+for phase in ['poll_to_stat','after_stat','after_exe']:
+ p=subprocess.Popen([sys.executable,'-S','-c','import time; time.sleep(0.06)']);initial=read_pid_metadata(p.pid);assert initial['critical_identity_available'];expected={k:initial[k] for k in ['pid','starttime_ticks','exe']};first=p.poll();assert first is None
+ def hook(x):
+  if (phase=='after_stat' and x=='stat') or (phase=='after_exe' and x=='exe_readlink'):time.sleep(0.10)
+ if phase=='poll_to_stat':time.sleep(0.10)
+ row=read_pid_metadata(p.pid,after_phase=hook);decision=identity_decision(p,row,expected);actual=p.wait(timeout=2);assert decision['decision']=='terminal_confirmed' and decision['returncode']==actual==0;records.append({'fixture':phase,'PID':p.pid,'first_poll':first,'actual_metadata':row,'decision':decision,'real_wait':actual,'signal_sent':False})
+p=subprocess.Popen([sys.executable,'-S','-c','import time; time.sleep(0.4)']);row=read_pid_metadata(p.pid);assert row['critical_identity_available'];wrong={k:row[k] for k in ['pid','starttime_ticks','exe']};wrong['exe']+='wrong';decision=identity_decision(p,row,wrong);assert decision['decision']=='alive_identity_mismatch' and p.poll() is None;actual=p.wait(timeout=2);records.append({'fixture':'actual_alive_wrong_exe','PID':p.pid,'decision':decision,'real_wait':actual,'signal_sent':False})
+p=subprocess.Popen([sys.executable,'-S','-c','import time; time.sleep(0.4)']);real=read_pid_metadata(p.pid);expected={k:real[k] for k in ['pid','starttime_ticks','exe']}
+with tempfile.TemporaryDirectory(prefix='nsa_v107_metadata_fixture_',dir='/tmp') as folder:
+ q=Path(folder)/str(p.pid);q.mkdir();(q/'stat').write_text((Path('/proc')/str(p.pid)/'stat').read_text());(q/'exe').symlink_to(real['exe']);(q/'cgroup').write_text(real['cgroup']);partial=read_pid_metadata(p.pid,proc_root=Path(folder));decision=identity_decision(p,partial,expected);assert partial['critical_identity_available'] and decision['decision']=='alive_identity_match';assert {'status','task_iterdir'}.issubset({x['phase'] for x in partial['phase_errors']});records.append({'fixture':'optionalmetadata_fail_retains_actualcritical_identity','decision':decision,'errors':partial['phase_errors'],'signal_sent':False})
+actual=p.wait(timeout=2);records[-1]['real_wait']=actual;result={'scope':'controlledstdlib shortchild observertests only,not NSA nativebenchmark','checks':records,'checks_passed':5,'GPU_or_native_NSA_or_reference_calls':0,'no_fake_CSV_or_latency':True,'no_unknown_or_baseline_signal':True,'oldv106gate1_unchanged':(r.parent/'v106_worker1_bounded_all14_editor_baseline_sc-16g-2/diagnostic.exit').read_text().strip()=='1'};(r/'controlled_exit_reproducer.json').write_text(json.dumps(result,indent=2)+chr(10));(r/'controlled_exit_reproducer.exit').write_text('0'+chr(10));print('CONTROLLED_EXIT_CHECKS0',5,'zeroGPU/NSA/reference')
