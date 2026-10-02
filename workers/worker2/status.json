@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T05:15:07.949377+00:00",
-  "state": "V202_FIXED_CASE8_SCREEN_RUNNING",
+  "timestamp_utc": "2026-10-02T05:30:01.661190+00:00",
+  "state": "V202_CLOSED_RUNTIME_OOM_INCONCLUSIVE",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "189ab5f4d56af37f558732c2dc0241aeb47e5b22",
+  "source_commit": "c993479f0dedb9a878915fb1d26087b3d0411110",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -79,27 +79,90 @@
         "stack_bytes": 0
       }
     },
-    "screen_orchestrator_pid": 92796,
-    "live": {
-      "stage": "fixed_native_selected_case8",
-      "run": 2,
-      "variant": "parent_v084",
-      "pid": 93945,
-      "timestamp_utc": "2026-10-02T05:15:07.876931+00:00",
-      "oom": 1
-    },
+    "screen_orchestrator_pid": null,
+    "live": null,
     "completed_reference_counts": {
-      "candidate": 0,
-      "total": 1
+      "candidate": 3,
+      "total": 9,
+      "failed_job_ref": 0
     },
     "planned_reference_counts": {
       "candidate": 4,
       "total": 12
     },
     "oom_baseline": 1,
-    "oom_current": 1,
+    "oom_current": 3,
     "formal_started": false,
-    "repeat_or_adaptive_retry": false
+    "repeat_or_adaptive_retry": false,
+    "closed_status": "failed_runtime_OOM_selected_screen_inconclusive",
+    "candidate_archive": "race_tests/nsa/submission/v202_worker2_c8_two_query_cta_subagent2/submission.py",
+    "archive_is_promotion": false,
+    "all_owned_jobs_terminal": true,
+    "screen_summary": {
+      "source_sha256": "ed46e5cd8732e463ff9cefd2e21035c9ca4426132001fe5d6c02c67c97b722a2",
+      "complete12jobs": false,
+      "job_stop": {
+        "run": 10,
+        "variant": "power_v202",
+        "exit": -9,
+        "oom_before": 1,
+        "oom_after": 3,
+        "inner_Killed": false,
+        "csv_valid": false,
+        "source_hash_ok": true
+      },
+      "actual_full_references": {
+        "candidate": 3,
+        "total": 9
+      },
+      "oom_final": 3,
+      "protocol": "single-source freshproc/full unchangednative; no postexport; fixed12 only",
+      "automatic_formal": false,
+      "status": "failed_runtime_or_validation_selected_screen"
+    },
+    "failed_native_pid": 102320,
+    "failed_returncode": -9,
+    "stop_stage": "beforeCSV creation; logonlyLoading tilelanglibs; specificcomponentUNKNOWN",
+    "run11_12_not_started": true,
+    "additional_runtime_marker_pid": 102519,
+    "additional_pid_owner": "UNKNOWN",
+    "partial_observations": {
+      "observations_only_not_complete_screen_verdict": true,
+      "samples_us": {
+        "baseline_v28": [
+          51.727000000000004,
+          51.656,
+          51.604
+        ],
+        "parent_v084": [
+          40.479,
+          40.135999999999996,
+          40.233
+        ],
+        "power_v202": [
+          41.861000000000004,
+          41.876,
+          41.457
+        ]
+      },
+      "partial_medians_us": {
+        "baseline_v28": 51.656,
+        "parent_v084": 40.233,
+        "power_v202": 41.861000000000004
+      },
+      "partial_candidate_vs_parent_pct": 4.04642954788359,
+      "complete_fixed_schedule": false,
+      "candidate_refs": 3,
+      "total_refs": 9,
+      "failed_job_ref": 0,
+      "run11_12_not_started": true
+    },
+    "code_relay_bundle": {
+      "path": "/tmp/nsa_worker2_code_c993479f0ded.bundle",
+      "size": 98839,
+      "sha256": "a4276bff9219fa936017a07a80b794b01b5c4efe2868a5237eba5b719fff98c8",
+      "prerequisite": "189ab5f4d56af37f558732c2dc0241aeb47e5b22"
+    }
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -176,6 +239,6 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Finish uniquefixedC8 B-P-C-C-P-Bx2; stopdeclaredfailures; evaluateonlytarget; returnrawresources toleader beforeanyfull14.",
-  "job_pid": 92796
+  "next_step": "Waitleaderreview for specificOOMdiagnostic ornewmechanism; no blindrepeat/successgate/full14.",
+  "job_pid": null
 }
