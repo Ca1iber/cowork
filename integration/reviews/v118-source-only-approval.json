@@ -1,0 +1,50 @@
+{
+  "version": "v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2",
+  "UTC": "2026-10-02T15:36:11.348309+00:00",
+  "approval": "dedicated C6 source-only candidate only; no import/compile/GPU yet",
+  "review_archive_SHA": "463fcee7e35afc0d749cb3339dcd58a257fa52808bf70429b51a19f4e88b5348",
+  "verified_text_hashes": 8,
+  "current_source_parent_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+  "current_source_top_AST_nodes": 18,
+  "exact_case_key": [
+    8,
+    1024,
+    1,
+    16,
+    128,
+    1,
+    32,
+    true
+  ],
+  "independentactualparentvector_bijection_and_contiguous4half_verified": true,
+  "V_plane_half_regions": [
+    [
+      0,
+      2048
+    ],
+    [
+      2048,
+      4096
+    ]
+  ],
+  "Output_half_regions": [
+    [
+      0,
+      1024
+    ],
+    [
+      1024,
+      2048
+    ]
+  ],
+  "both_outputs_disjoint_futureV1": true,
+  "mechanism": "plane-first Num16F32 +Voperand4half load/MMAstream; outputcoalesced16B and8192shared retained",
+  "math_required": "QK/P8roundedPden/F32 perfeature key0then1 +normalize/F16cast unchanged; allinvalidNaN unchanged",
+  "lifetimes_required": "bothkeytileV0/MMA/normalize/store beforeNumclear; preoverwritefull64sync; V1reads disjoint; finalsync packedgather; exactsource/CPP/IR audit before heavy",
+  "prior_failed_Num16_V16_attempt": "103 +2.691786% retained; no automaticrepeat orfamilyban",
+  "compile_falsifiers": "MT<90/staticmax>=5/stack0/dyn8192; sourceallocation notphysicalregister/actualoccupancy guarantee",
+  "ILP_MLP_compiler_hoist_risks_retained": true,
+  "profile117_scope_failure1_retained": true,
+  "no_newsource_or_all14_performance_claim_untilactualreview": true,
+  "header_required": "# codex-power v118"
+}

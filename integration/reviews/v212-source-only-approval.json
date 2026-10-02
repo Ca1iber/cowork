@@ -1,0 +1,28 @@
+{
+  "version": "v212_worker2_c8_direct_k_operand_subagent2",
+  "UTC": "2026-10-02T15:17:32.597804+00:00",
+  "approval": "source-only independent C8 candidate; no import/compile/GPU/native yet",
+  "parent_SHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "kernel_parent14ASTprefix_required": true,
+  "only_key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "independent_actual_parent_slot_1024_values_verified": true,
+  "direct8B_alignment_verified": true,
+  "mechanism": "only replace sharedK producer/consumer with directK4x8B; delete exactlypreK/postK barriers; originalQ/PV/math/Num16/8MMA/4shfl andkeptpreV lifetime preserved",
+  "expected_fullvalid_warp_syncs": 5,
+  "global_K_instruction_and_coalescing_cost": "2x16B->4x8B; address distribution changed; noactualtransaction/HBM claim",
+  "resource_gate_after_ownplan": "stack0/staticmax>=8/privateallocaAS5absent; retain everyMT/ST/globalwidth cost",
+  "parent_profile_scope": "v200limitednecessaryrecords/broaderOOM historyretained; noexclusive bottleneck proof",
+  "peer_review_received": true,
+  "source_after_creation": "leaderactualsource+inverseAST+onlyC8dispatch review before heavy",
+  "header_required": "# codex-power v212",
+  "new_heavy_GO": false
+}
