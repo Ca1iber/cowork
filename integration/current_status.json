@@ -29,7 +29,7 @@
     "all14_nonregression": "UNPROVEN"
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-02T22:59:26.362162+00:00",
+  "updated_at_utc": "2026-10-02T23:08:36.843044+00:00",
   "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
   "worker1": {
     "cases": [
@@ -38,19 +38,19 @@
       11,
       12
     ],
-    "last_closed_version": "v129",
-    "last_closed_source_commit": "f6c34a93aa6c7167092ddede18073ff958bbed03",
-    "last_result": "12ref PASS/4candidate, C93.834 vsCB13 93.668 +.177222%, bothround positive; rejected no retry;217hash/989samples/OOM13",
-    "active_version": "v132",
-    "stage": "original132 native fixed12 live; first actual launcher verified, original toolapproval timeout preflight had0markers and never launched",
-    "authorized_scope": "first originalcase8 B28-CB13-C301-C301-CB13-B28x2,4C12ref; all previous6G28OOM13 guards/no retry",
-    "native_GO": true,
+    "last_closed_version": "v132",
+    "last_closed_source_commit": "40c988e5559093c504c32abe81fe96e5f1e4c3d6",
+    "last_result": "C8 SC2.187872% selectedstable/2roundnegative/nooverlap/12ref4C PASS;220closedhash27actualhash995samples/OOM13/allwait0",
+    "active_version": "v131",
+    "stage": "PREP ONLY actualC6 boundedindex compilehelpers, then133 C301 full14helpers; noheavyGO yet",
+    "authorized_scope": "minimal actual C6 compile helper preparation only; v133 full14 text later, SC slot scheduled exclusively byleader",
+    "native_GO": false,
     "source_audit": "integration/reviews/v131-c6-source-leader-audit.json",
     "candidate_sha256": "cfeb8e5d18adb3c0d0c887633fc8dea1778ebfdfc100fdc9c9a77544c514515d",
     "approval": "integration/reviews/v132-c8-sc-native-approval.json",
-    "runtime_audit": "integration/reviews/v129-c6-native-leader-audit.json",
-    "source_SHA": "85192e76d8fee464a8dbfe41d5ec95d3a2a3688e5dc1c29b7803c6ff63253f6d",
-    "source_header": "v301 immutable",
+    "runtime_audit": "integration/reviews/v132-c8-sc-native-leader-audit.json",
+    "source_SHA": "ccc53385ebe87ce3fdd7cb9b76a861c6aaf04780e6893b2b19b53fd95803daaa",
+    "source_header": "v131 SOURCEONLY",
     "compile_GO": false,
     "actual_resource": [
       100,
@@ -60,9 +60,7 @@
       8192
     ],
     "profile_GO": false,
-    "review_correction": "prior126terminaldefect claim camefromdisplaytruncation; originalsourcecorrect, onlyformattingchange",
-    "active_PID": 616017,
-    "active_starttime_ticks": 100496493
+    "review_correction": "prior126terminaldefect claim camefromdisplaytruncation; originalsourcecorrect, onlyformattingchange"
   },
   "worker2": {
     "cases": [
@@ -90,10 +88,10 @@
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "PREP ONLY C5 boundedindex compile helpers; independent source/65536vectors proof andOJvalidator0 verified; no import/compile/native/profile",
-    "authorized_scope": "minimum C5 compile helper text preparation only, no new heavy work",
+    "stage": "first finite C5 compilechain terminal0/3stage0, P c544/hoste2e8 exact/C b8fbd/hostsame; generatedmechanism reviewpending; no nativeprofileGO",
+    "authorized_scope": "read-only actual generated CPP/IR/resource scope andclosure; no newheavy untilleaderreview",
     "native_GO": false,
-    "approval": "integration/reviews/v231-c8-profile-approval.json",
+    "approval": "integration/reviews/v232-c5-compile-approval.json",
     "last_result": "pairedC8 4raw10finite explicitFalse/104SHA/638samples/allwait0/OOM3, same shared100/conf0/noWG latency reduction, nosolecause",
     "runtime_audit": "integration/reviews/v231-c8-profile-leader-audit.json",
     "compile_GO": false,
@@ -120,7 +118,7 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-smoke/report.md"
   },
-  "leader_next": "Wait same verified132 originalSC handle; review232 C5 firstcompile helper, then131 C6 compile after132 terminal; preserve full14 nonregression gate and best113.",
+  "leader_next": "Review131 C6 compilehelpers and133 full14helpers, orderexclusiveSCslot; review232 actualC5mechanism before nativeGO; retain all14 nonregressiongate andbest113.",
   "pending_integration": {
     "version": "v300",
     "path": "/root/tilelang-metax/race_tests/nsa/submission/v300_leader_c9_bounded_index_full14_sc-16g-2/submission.py",
@@ -137,10 +135,11 @@
     "version": "v301",
     "path": "/root/tilelang-metax/race_tests/nsa/submission/v301_leader_c8_bounded_index_sc_crosscheck_sc-16g-2/submission.py",
     "source_SHA": "85192e76d8fee464a8dbfe41d5ec95d3a2a3688e5dc1c29b7803c6ff63253f6d",
-    "status": "first original native selectedC8 SC fixed12 authorized; full14 unproven/no promotion",
+    "status": "SC selectedstablelocal2.187872%; full14 andOJ unproven/no bestpromotion",
     "only_C8_changed": true,
     "other13_CB13_unchanged": true,
-    "commit": "f23209082fc43ecabcda0f07bb5a1cbf5ac1052f",
-    "branch": "code/integration-c8-review"
+    "commit": "aad7b4b4b8544a33e9235b2bf8a05b8a26f71412",
+    "branch": "code/integration-c8-review",
+    "SC_report": "integration/reviews/v132-c8-sc-results.md"
   }
 }
