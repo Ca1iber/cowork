@@ -34,5 +34,7 @@
   "shared_bytes_source_expected": 10496,
   "shared_Q_output_lifetime": "Q read by both warps before globalMax CTA barrier; output overwritten after final Num CTA barrier, KV slots disjoint",
   "math": "global head max then rounded F16P feeding both denom and PV; split0..3/4..7 FP32 sums regrouped, native required",
-  "source_review": "approved preparation for one bounded compile; no native GO"
+  "source_review": "approved preparation for one bounded compile; no native GO",
+  "executable_approval_correction": "revoked: new factory missing jit decorator; previous review checked mapping and math but normalized decorators",
+  "followup": "121 source-only rev02, or216 after closing215"
 }
