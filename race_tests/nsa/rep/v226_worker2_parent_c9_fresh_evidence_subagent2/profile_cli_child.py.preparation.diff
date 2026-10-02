@@ -1,0 +1,10 @@
+--- 
++++ 
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,sys,subprocess,hashlib,datetime
+-root=Path('/root/tilelang-metax');r=root/'race_tests/nsa/rep/v219_worker2_parent_c3_evidence_subagent2'
++root=Path('/root/tilelang-metax');r=root/'race_tests/nsa/rep/v226_worker2_parent_c9_fresh_evidence_subagent2'
+ print('PROFILE_CHILD_READY',flush=True);assert sys.stdin.buffer.readline()==b'GO\n'
+ m=json.loads((r/'fixed_profile_manifest.json').read_text())
+ for path,key in [('tool_path','toolSHA'),('driver_path','driverSHA'),('source_path','sourceSHA')]:

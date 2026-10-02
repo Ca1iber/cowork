@@ -1,0 +1,20 @@
+--- 
++++ 
+@@ -31,7 +31,7 @@
+  log=(o/'child.log').open('w');env={**os.environ,'PYTHONPATH':str(root)};proc=subprocess.Popen(argv,stdin=subprocess.PIPE,stdout=log,stderr=subprocess.STDOUT,cwd=root,env=env,start_new_session=True);d=U.info(proc.pid);assert U.identity_equal(d,d);owned[proc.pid]=d;save('child_identity.json',{'argv':argv,'identity':d});save('observer_identity.json',observer)
+  post=U.snapshot('post_admission');save('post_admission.json',post);current={q['pid']:q for q in post['visible_pids']}
+  if post['oom_kill']!=3 or post['usage_bytes']>plan['admission_usage_bytes'] or U.heavy(post,{**owned,os.getpid():observer}) or not U.identity_equal(d,current.get(proc.pid)):raise RuntimeError('POST_ADMISSION_GUARD')
+- proc.stdin.write(b'GO\n');proc.stdin.flush();proc.stdin.close();deadline=time.monotonic()+300;pending=None;spent=0.0;samples=0
++ proc.stdin.write(b'GO\n');proc.stdin.flush();proc.stdin.close();deadline=time.monotonic()+600;pending=None;spent=0.0;samples=0
+  with (o/'samples.jsonl').open('w') as stream:
+   while proc.poll() is None:
+    snap=U.snapshot('bounded_observation');cur={q['pid']:q for q in snap['visible_pids']};poll=proc.poll();state='terminal' if poll is not None else U.identity_state(d,cur.get(proc.pid));now=time.monotonic();mode=False
+@@ -50,7 +50,7 @@
+      if q['pid'] not in owned and q.get('exe') and isinstance(q.get('starttime_ticks'),int) and (q['ppid'] in verified or q['pid'] in ids):owned[q['pid']]=q;changed=True
+    snap['observed_owned_identities']=[{k:q[k] for k in ['pid','ppid','pgid','starttime_ticks','exe']} for q in owned.values()];snap['originalPopenpoll']=poll;snap['identity_state']=state;stream.write(json.dumps(snap)+'\n');stream.flush();samples+=1;save('live_stage.json',{'stage':stage,'PID':proc.pid,'samples':samples,'usage':snap['usage_bytes'],'OOM':snap['oom_kill']})
+    if snap['oom_kill']!=3 or snap['usage_bytes']>=plan['runtime_stop_usage_bytes'] or U.heavy(snap,{**owned,os.getpid():observer}):raise RuntimeError('RUNTIME_OOM_PRESSURE_UNKNOWN_GUARD')
+-   if now>=deadline:raise RuntimeError('300S_TIMEOUT')
++   if now>=deadline:raise RuntimeError('600S_TIMEOUT')
+    if any(x.strip()=='Killed' for x in (o/'child.log').read_text().splitlines()):raise RuntimeError('INNER_KILLED')
+    if poll is not None:break
+    time.sleep(min(0.05,max(0,1-spent-(time.monotonic()-pending))) if mode else 0.5)

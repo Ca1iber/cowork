@@ -1,0 +1,61 @@
+{
+  "parent_sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "exactcase": 9,
+  "officialkey": [
+    1,
+    8192,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "machine": "subagent2 archivedv200 codegen/resources",
+  "CPP_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case9_stage1.device.cpp",
+  "CPP_SHA": "85b2d06253ada7098991de3035caf9d03156c7914175fe2e03f0544756c498fe",
+  "host_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case9_stage1.host.cpp",
+  "hostSHA": "f69ccb3644e47fe5e96a2f97463a32c281f4cf1300784acc57ed3927fa101f34",
+  "actualscoped_targetcall_geometry": [
+    8192,
+    1,
+    64,
+    1,
+    1,
+    2048
+  ],
+  "resource_record": {
+    "case": 9,
+    "variant": "parent_v084",
+    "command": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-device-obj",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-resource-usage",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/resources/case9_parent_v084.mcbin",
+      "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case9_stage1.device.cpp"
+    ],
+    "exit": 0,
+    "raw": "seeoriginalresource_log"
+  },
+  "resource_log": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/resources/case9_parent_v084.log",
+  "resource_logSHA": "cd321fa34be0e61c5bdb49908a624263ead5e465c5b917c88469e3ff2d685c67",
+  "resource": [
+    42,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "SDK_SHA": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25",
+  "no_newresource_metadata_IR": true
+}
