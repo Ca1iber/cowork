@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-device-obj",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-resource-usage",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v202_worker2_c8_two_query_cta_subagent2/resources/case8_power_v202.mcbin",
+    "/root/tilelang-metax/race_tests/nsa/rep/v202_worker2_c8_two_query_cta_subagent2/codegen/power_v202/case8_stage1.device.cpp"
+  ],
+  "source_manifest": "compiled_metadata_identity.json",
+  "input_device_exists_and_SHA_checked": true,
+  "attention_ref": [
+    0,
+    0
+  ],
+  "mode": "one independent CPUresource build aftermetadata+ownership0",
+  "resource_gate": 0
+}

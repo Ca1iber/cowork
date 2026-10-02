@@ -1,0 +1,9 @@
+from pathlib import Path
+import json,hashlib,subprocess,re
+root=Path('/root/tilelang-metax');v='v202_worker2_c8_two_query_cta_subagent2';r=root/'race_tests/nsa/rep'/v
+assert (r/'metadata.exit').read_text().strip()=='0' and (r/'compiled_ownership_audit.exit').read_text().strip()=='0'
+m=json.loads((r/'compiled_metadata_identity.json').read_text());own=json.loads((r/'compiled_ownership_proof.json').read_text());src=Path(m['device_path']);assert src.exists() and hashlib.file_digest(src.open('rb'),'sha256').hexdigest()==m['device_sha256']
+out=r/'resources';out.mkdir();dest=out/'case8_power_v202.mcbin';cmd=['/opt/maca/mxgpu_llvm/bin/mxcc','-x','maca','-device-obj','-O3','-lineinfo','--offload-arch=xcore1000','-std=c++17','-I/root/tilelang-metax/src','-use-fast-math','-D__FAST_HALF_CVT__','-resource-usage','-o',str(dest),str(src)];z=subprocess.run(cmd,capture_output=True,text=True);raw=z.stdout+z.stderr;(r/'resource_capture.log').write_text(raw);(r/'resource_capture.exit').write_text(str(z.returncode)+'\n');assert z.returncode==0
+mt=re.search(r'Used\s+(\d+) MTregisters,\s*(\d+) STregisters,\s*(\d+) bytes shared mem',raw);w=re.search(r'staticMaxWarps/PEU\s*:\s*(\d+)',raw);st=re.search(r'(\d+) bytes stack frame',raw);assert mt and w and st
+result={'case':8,'variant':'power_v202','MT':int(mt[1]),'ST':int(mt[2]),'static_shared_bytes_reported':int(mt[3]),'dynamic_shared_bytes_host':own['dynamic_shared_bytes'],'static_max_warps_per_PEU':int(w[1]),'stack_bytes':int(st[1]),'not_measured_occupancy':True,'command':cmd,'device_sha256':m['device_sha256'],'parent':{'MT':42,'ST':20,'dynamic_shared_bytes_host':2048,'static_max_warps_per_PEU':8,'stack_bytes':0}};(r/'resource_summary.json').write_text(json.dumps(result,indent=2)+'\n');assert result['stack_bytes']==0
+print('V202_RESOURCE',json.dumps(result));print('OOM',Path('/sys/fs/cgroup/memory/memory.oom_control').read_text())

@@ -1,0 +1,109 @@
+{
+  "source_sha256": "ed46e5cd8732e463ff9cefd2e21035c9ca4426132001fe5d6c02c67c97b722a2",
+  "device_sha256": "cbfecac02c0a9979c477e8504bb5b2d88f7234398a2f441fb46ff4d90fbbdce6",
+  "host_sha256": "9c87695e102f851775051a130d7a15349251ce952e23cf238f7be694ebeaa677",
+  "actual_launch_threads": 128,
+  "actual_grid": [
+    2048,
+    2
+  ],
+  "dynamic_shared_bytes": 4096,
+  "warp_sync_sites": 7,
+  "CTA_syncs": 0,
+  "fulluint64_width64_shuffle_lines": [
+    "maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 32, 64));",
+    "maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 16, 64));",
+    "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 32, 64));",
+    "denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));"
+  ],
+  "normal_MFMA_textual_sites": 2,
+  "MMA_perquery": "two loops4; normal16x16x16f16 privatef16x4 operands, physicalMaca64warp, ownshared/ownquery andlocalarrays",
+  "private_operand_ownership_perquery": true,
+  "compiled_address_affine_checks": 5760,
+  "memory_records": [
+    {
+      "kind": "Q",
+      "half_count": 8,
+      "candidate_line": "*(uint4*)(qk_fetch + 0) = *(uint4*)(Q + (((((((int)blockIdx.y) * 4194304) + (((int)blockIdx.x) * 2048)) + ((((int)threadIdx.x) >> 6) * 1024)) + (part * 512)) + ((((int)threadIdx.x) & 63) * 8)));",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "shared",
+      "half_count": 4,
+      "candidate_line": "*(uint2*)(shared + ((((((((int)threadIdx.x) >> 6) * 1024) + (part * 512)) + (((((int)threadIdx.x) & 63) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ ((((int)threadIdx.x) & 63) >> 3)) * 8)) + (((pack ^ part) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack * 4));",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "shared",
+      "half_count": 4,
+      "candidate_line": "*(uint2*)(q_local + (chunk * 4)) = *(uint2*)(shared + (((((((int)threadIdx.x) >> 6) * 1024) + ((((int)threadIdx.x) & 15) * 64)) + ((((chunk * 2) + ((((int)threadIdx.x) & 63) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (((int)threadIdx.x) & 1)) * 4)));",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "Indices",
+      "half_count": null,
+      "candidate_line": "int block_start = (Indices[(((((int)blockIdx.y) * 4096) + (((int)blockIdx.x) * 2)) + (((int)threadIdx.x) >> 6))] * 16);",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "K",
+      "half_count": 8,
+      "candidate_line": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int64_t)((int)blockIdx.y)) * (int64_t)262144) + (((int64_t)part_1) * (int64_t)512)) + (((int64_t)block_start) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)63) * (int64_t)8)));",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "shared",
+      "half_count": 4,
+      "candidate_line": "*(uint2*)(shared + ((((((((int)threadIdx.x) >> 6) * 1024) + (part_1 * 512)) + (((((int)threadIdx.x) & 63) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ ((((int)threadIdx.x) & 63) >> 3)) * 8)) + (((pack_1 ^ part_1) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(qk_fetch + (pack_1 * 4));",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "shared",
+      "half_count": 4,
+      "candidate_line": "*(uint2*)(k_local + 0) = *(uint2*)(shared + (((((((int)threadIdx.x) >> 6) * 1024) + ((((int)threadIdx.x) & 15) * 64)) + ((((chunk_1 * 2) + ((((int)threadIdx.x) & 63) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ (((int)threadIdx.x) & 1)) * 4)));",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "V",
+      "half_count": 8,
+      "candidate_line": "*(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((int64_t)((int)blockIdx.y)) * (int64_t)262144) + (((((int64_t)((int)threadIdx.x)) & (int64_t)63) >> (int64_t)3) * (int64_t)128)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)row) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "shared",
+      "half_count": 2,
+      "candidate_line": "*(uint1*)(shared + (((((((int)threadIdx.x) >> 6) * 1024) + ((((((col & 3) * 16) + ((((int)threadIdx.x) & 7) * 2)) + (col >> 2)) ^ ((((int)threadIdx.x) & 31) >> 4)) * 16)) + (((((((int)threadIdx.x) & 63) >> 4) ^ ((((int)threadIdx.x) & 7) >> 1)) ^ (col & 3)) * 4)) + (((((int)threadIdx.x) & 15) >> 3) * 2))) = *(uint1*)(v_column + 0);",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "shared",
+      "half_count": 4,
+      "candidate_line": "*(uint2*)(v_operand + (chunk_2 * 4)) = *(uint2*)(shared + ((((((int)threadIdx.x) >> 6) * 1024) + ((((((((int)threadIdx.x) & 3) * 16) + (chunk_2 * 4)) + ((((int)threadIdx.x) & 15) >> 2)) ^ ((((int)threadIdx.x) & 31) >> 4)) * 16)) + (((((((int)threadIdx.x) & 63) >> 4) ^ chunk_2) ^ (((int)threadIdx.x) & 3)) * 4)));",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "shared",
+      "half_count": 4,
+      "candidate_line": "*(uint2*)(shared + (((((((int)threadIdx.x) >> 6) * 1024) + ((((int)threadIdx.x) & 15) * 64)) + ((((chunk_5 * 2) + ((((int)threadIdx.x) & 63) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + ((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) * 4))) = *(uint2*)(shared_local_cast + 0);",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "shared",
+      "half_count": 4,
+      "candidate_line": "*(uint2*)(output_fetch + (pack_2 * 4)) = *(uint2*)(shared + ((((((((int)threadIdx.x) >> 6) * 1024) + (part_2 * 512)) + (((((int)threadIdx.x) & 63) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ ((((int)threadIdx.x) & 63) >> 3)) * 8)) + ((pack_2 ^ part_2) * 4)));",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    },
+    {
+      "kind": "Output",
+      "half_count": 8,
+      "candidate_line": "*(uint4*)(Output + (((((((int)blockIdx.y) * 4194304) + (((int)blockIdx.x) * 2048)) + ((((int)threadIdx.x) >> 6) * 1024)) + (part_2 * 512)) + ((((int)threadIdx.x) & 63) * 8))) = *(uint4*)(output_fetch + 0);",
+      "all128_threads_and_loop_domain_equal_to_parent_query": true
+    }
+  ],
+  "all_naked_tid_uses_verified_by_actual_address_equivalence": true,
+  "guard": "sourceoutertoken<seq coversalluses; optimizerremovedbecauseactual2048pairs*2queries proves0..4095; bothruntimevalidpredicateswarp-uniform",
+  "numerical_AST_equivalent": true,
+  "attention_calls": 0,
+  "full_reference_count": 0,
+  "no_occupancy_or_sector_assertion": true
+}

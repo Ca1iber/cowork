@@ -1,0 +1,80 @@
+{
+  "id": "v202_worker2_c8_two_query_cta_subagent2",
+  "timestamp_utc": "2026-10-02T04:51:49.581168+00:00",
+  "source_base_commit": "189ab5f4d56af37f558732c2dc0241aeb47e5b22",
+  "parent_source": "race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "original_source": "race_tests/nsa/submission.py",
+  "original_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+  "candidate_path": "/tmp/nsa_worker2_v202_c8_two_query_cta.py",
+  "target_cases": [
+    8
+  ],
+  "target_key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "mechanism": "128threads,twophysicalwarp64 independentqueries,partitionedshared,packed16B remains",
+  "predicted": {
+    "threads": 128,
+    "grid": [
+      2048,
+      2
+    ],
+    "CTA_count": 4096,
+    "waves": 8192,
+    "shared_bytes": 4096,
+    "query_shared_half_partition_size": 1024,
+    "global_Q_K_V_Output_width_bytes": 16,
+    "syncwarp_static_sites": 7,
+    "MMA_operations_per_warp": [
+      "QK4x16x16x16f16",
+      "PV4x16x16x16f16"
+    ],
+    "shuffle_width": 64,
+    "shuffle_mask_uint64": 18446744073709551615,
+    "shuffle_xor": [
+      32,
+      16
+    ],
+    "CTA_barriers": 0
+  },
+  "metadata_only_attention_references": [
+    0,
+    0
+  ],
+  "native_screen_order": [
+    "baseline_v28",
+    "parent_v084",
+    "power_v202",
+    "power_v202",
+    "parent_v084",
+    "baseline_v28",
+    "baseline_v28",
+    "parent_v084",
+    "power_v202",
+    "power_v202",
+    "parent_v084",
+    "baseline_v28"
+  ],
+  "planned_references": {
+    "candidate": 4,
+    "total": 12,
+    "case": 8
+  },
+  "native": "existing run_variant one source per freshprocess/fullnaive_nsa/W10R50/originalseed_inputs_gradTrue_tol/no postexport",
+  "stop_rules": [
+    "nonzero/OOM increment/innerKilled/hash/CSV",
+    "metadata128MFMAownershipunproved/CTAbarrier/forbidden/stack>0",
+    "slow_equalreject/overlap_orpositiveRoundinconclusive/noadaptive/noautomaticformal"
+  ],
+  "leader_approved": true,
+  "peer_advice_applied": "alllane_exprwrapped64;group onlytoken/sharedbase;noParallel_fragment_annotation assumptions;guardallglobal/shared",
+  "oom_before": "oom_kill_disable 0\nunder_oom 0\noom_kill 1\n"
+}

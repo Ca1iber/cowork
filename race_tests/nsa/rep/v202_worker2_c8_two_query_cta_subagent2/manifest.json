@@ -1,0 +1,116 @@
+{
+  "id": "v202_worker2_c8_two_query_cta_subagent2",
+  "status": "failed_runtime_OOM_selected_screen_inconclusive",
+  "base_commit": "189ab5f4d56af37f558732c2dc0241aeb47e5b22",
+  "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
+  "branch": "exp/nsa-worker2-s1-from-v084",
+  "machine": "subagent2",
+  "hostname": "6b3727803ca4",
+  "candidate_sha256": "ed46e5cd8732e463ff9cefd2e21035c9ca4426132001fe5d6c02c67c97b722a2",
+  "header": "# codex-power v202",
+  "archive_is_promotion": false,
+  "screen": {
+    "source_sha256": "ed46e5cd8732e463ff9cefd2e21035c9ca4426132001fe5d6c02c67c97b722a2",
+    "complete12jobs": false,
+    "job_stop": {
+      "run": 10,
+      "variant": "power_v202",
+      "exit": -9,
+      "oom_before": 1,
+      "oom_after": 3,
+      "inner_Killed": false,
+      "csv_valid": false,
+      "source_hash_ok": true
+    },
+    "actual_full_references": {
+      "candidate": 3,
+      "total": 9
+    },
+    "oom_final": 3,
+    "protocol": "single-source freshproc/full unchangednative; no postexport; fixed12 only",
+    "automatic_formal": false,
+    "status": "failed_runtime_or_validation_selected_screen"
+  },
+  "partial_observations": {
+    "observations_only_not_complete_screen_verdict": true,
+    "samples_us": {
+      "baseline_v28": [
+        51.727000000000004,
+        51.656,
+        51.604
+      ],
+      "parent_v084": [
+        40.479,
+        40.135999999999996,
+        40.233
+      ],
+      "power_v202": [
+        41.861000000000004,
+        41.876,
+        41.457
+      ]
+    },
+    "partial_medians_us": {
+      "baseline_v28": 51.656,
+      "parent_v084": 40.233,
+      "power_v202": 41.861000000000004
+    },
+    "partial_candidate_vs_parent_pct": 4.04642954788359,
+    "complete_fixed_schedule": false,
+    "candidate_refs": 3,
+    "total_refs": 9,
+    "failed_job_ref": 0,
+    "run11_12_not_started": true
+  },
+  "gates": {
+    "metadata": 0,
+    "generated_static": 0,
+    "ownership_affine5760": 0,
+    "resource": 0,
+    "archive_static": 0,
+    "native_screen": 1
+  },
+  "resource": {
+    "case": 8,
+    "variant": "power_v202",
+    "MT": 44,
+    "ST": 22,
+    "static_shared_bytes_reported": 0,
+    "dynamic_shared_bytes_host": 4096,
+    "static_max_warps_per_PEU": 8,
+    "stack_bytes": 0,
+    "not_measured_occupancy": true,
+    "command": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-device-obj",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-resource-usage",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v202_worker2_c8_two_query_cta_subagent2/resources/case8_power_v202.mcbin",
+      "/root/tilelang-metax/race_tests/nsa/rep/v202_worker2_c8_two_query_cta_subagent2/codegen/power_v202/case8_stage1.device.cpp"
+    ],
+    "device_sha256": "cbfecac02c0a9979c477e8504bb5b2d88f7234398a2f441fb46ff4d90fbbdce6",
+    "parent": {
+      "MT": 42,
+      "ST": 20,
+      "dynamic_shared_bytes_host": 2048,
+      "static_max_warps_per_PEU": 8,
+      "stack_bytes": 0
+    }
+  },
+  "actual_candidate_cases": [
+    8
+  ],
+  "full14_gate": null,
+  "new_profiler_samples": 0,
+  "main_source_unchanged": true,
+  "next": "specific memoryriskdiagnostic ornewmechanism needspeer+leaderreview; do not blindly repeat singlefreshprocess protocol"
+}
