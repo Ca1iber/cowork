@@ -1,0 +1,25 @@
+{
+  "UTC": "2026-10-02T09:50:56.050848+00:00",
+  "version": "v208_worker2_c9_q_register_transpose_subagent2",
+  "approval": "one source-only implementation, no GPU import/compiler/native/profile authorization",
+  "reviewed_proposal_SHA": "c5d5048cf95a8979e06f84a0e1d83880aea334c53ac9829dfd8129032e984616",
+  "reviewed_peer_SHA": "3ca9629aabed1ab09028e188031e1b310eb40909d487e43cfc94c6ef22406f92",
+  "parent_source_SHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "leader_independent_readonly_coordinate_audit": {
+    "stage_packet_entries": 128,
+    "packet_mismatches": 0,
+    "final_Q_coordinates": 1024,
+    "final_mismatches": 0,
+    "global_Q_vectors": 128,
+    "Q_payload_bytes": 2048,
+    "exact_coverage": true,
+    "aligned_16B": true
+  },
+  "mechanism": "replace Qshared write/read with qLocal16 load plus two 4-word xor16/xor32 register transpose stages; remove Q-only sync",
+  "held": "Num16/math/K/V/output and six remaining syncs;8192x1 grid64threads2KiB;parent14ASTprefix/other13keys",
+  "candidate_header": "# codex-power v208",
+  "required_source_gates": "exact3imports, AST scope, real bits/coordinates/vector bounds, original validator, exact source SHA; no numerical correctness claim",
+  "owner_plan_wording_feedback": "Whole64-lane sector model gives2x; small issue subgroups may4x or8x for64/128B sector hypotheses. Preserve actual table and mark all uncalibrated, not actual transactions. Owner fixes wording only; no new measurements needed.",
+  "next": "Owner produces actual source and bounded metadata plan for leader review; no automatic heavy followup",
+  "ownership": "worker2 edits own source and plan; worker1 peer advisory only"
+}
