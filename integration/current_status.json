@@ -20,7 +20,7 @@
   "oj_total": 1204,
   "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
   "peer_exchange_actual": "Both workers directly discussed inverse mapping, global vector width, shared-V synchronization and failed-run semantics; own-branch records only",
-  "updated_at_utc": "2026-10-02T09:05:38.609875+00:00",
+  "updated_at_utc": "2026-10-02T09:18:14.117634+00:00",
   "worker1": {
     "cases": [
       6,
@@ -28,31 +28,22 @@
       11,
       12
     ],
-    "active_version": "v107 phase-aware onceall14",
+    "active_version": "v108 proposal only",
+    "stage": "v107 closed at fourth admission refusal; v108 peer/leader review pending",
+    "last_closed_source_commit": "ab34f0aa8800b9c6a8d9b14abe35bd27e543f980",
     "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
-    "last_closed_source_commit": "b072fae5a4aa15fdb707fc21b9ecff019e198582",
-    "stage": "v107 actualmaster368429 running,newfixedall14,no completeverdict",
-    "master_pid": 368429,
-    "last_reported_completed_jobs": 141,
-    "last_reported_candidate_refs": 46,
-    "last_reported_inclusive_refs": 140,
-    "oom_kill": 13,
-    "selected_screen_candidate_us": 68.941,
-    "selected_screen_parent_us": 72.2685,
-    "selected_screen_delta_pct": -4.604357,
-    "communication_head": "2c80e4d4b99df779554fd210e2344c4112e2db8f",
-    "observed_non_target_positive_cases_vs_parent": [
-      3,
-      4,
-      7,
-      8
-    ],
-    "positive_cases_scope": "prefix1..8 only; final ALL-positive risk selection after formal168",
-    "formal_gate": 1,
-    "no_restart": true,
-    "new_native_GO": "v107 fixedonly",
+    "last_closed_diagnostic_gate": 1,
     "observed_refs": 42,
-    "clean_accepted_refs": 28
+    "clean_accepted_refs": 42,
+    "clean_candidate_refs": 14,
+    "completed_native_processes": 3,
+    "planned_native_processes": 12,
+    "oom_kill": 13,
+    "selected_screen_delta_pct": -4.604357,
+    "all14_nonregression": "UNPROVEN",
+    "new_native_GO": false,
+    "failed_admission_bytes": 3223244800,
+    "failed_admission_limit_bytes": 3221225472
   },
   "worker2": {
     "cases": [
@@ -67,37 +58,23 @@
       13,
       14
     ],
-    "active_version": "v207 C9parentprofile proposal-only",
+    "active_version": "v207 C9 parent profiler",
+    "stage": "one CLI actual terminal0; all raw report scope audit pending",
     "last_closed_source_commit": "f7c53a69b83d3bf8ead72101ca2d26a14a3a8032",
-    "communication_head": "1137623b0c947c8dea4d77e5586b1588bc89ea6d",
-    "stage": "v207 correctC9 parentprofile/peer/actualargv reviewed;once CLIcounts2 GO,launchpending",
-    "oom_kill": 3,
-    "prior_v202": "run10 -9 and OOM1->3; 3C/9inclusive refs; incomplete screen retained",
-    "diagnostic_reference_calls": 0,
-    "diagnostic_attention_calls": 0,
-    "diagnostic_sample_count": 67,
-    "observed_cgroup_peak_bytes": 21680566272,
-    "candidate_sha256": "d1a58e61691db44287bd25e6b2aca80eaef2a173c925d3921d64a0645671b626",
-    "metadata_child_pid": 122964,
-    "metadata_returncode": 0,
-    "metadata_attention_reference_native": [
+    "parent_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "actual_cli_returncode": 0,
+    "samples": 313,
+    "elapsed_seconds": 165.75700656091794,
+    "observed_driver_process_count": 3,
+    "full_reference_native_newkernel": [
       0,
       0,
       0
     ],
-    "resources": {
-      "MT": 46,
-      "ST": 20,
-      "static_max_warps": 8,
-      "dynamic_shared_bytes": 2048,
-      "stack_bytes": 0
-    },
-    "final_ISA_width": "UNAVAILABLE",
-    "new_source_or_heavy_GO": "oneparentprofileCLI only",
-    "target_case": 5,
-    "backend_gate": 1,
-    "native_GO": false
+    "oom_kill": 3,
+    "profile_scope_verdict": "PENDING",
+    "new_heavy_GO": false
   },
-  "leader_next": "Audit source closures, review worker1 boundedwholeCG validation plan and worker2 distinct Vownership proposal; keep failedgates/prefix/no-reg risks immutable",
+  "leader_next": "Review owner v108 plan and peer advice; audit v207 raw scope before next distinct mechanism; preserve all failed gates and require full14 nonregression before integration.",
   "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration"
 }
