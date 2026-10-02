@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T07:01:56.742815+00:00",
-  "state": "V205_PROPOSAL_WAITING_LEADER_REVIEW",
+  "timestamp_utc": "2026-10-02T07:07:43.263393+00:00",
+  "state": "V205_SCOPE_CORRECTED_PENDING_REVIEW",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -33,7 +33,22 @@
     "only_stdlib_address_proof_ran": true,
     "peer_review_received": true,
     "leader_GO": false,
-    "planned_metadata_falsifier": "MT>=42 or stack/math/vector/sync failure => no native"
+    "planned_metadata_falsifier": "MT>=42 or stack/math/vector/sync failure => no native",
+    "only_key": [
+      4,
+      1024,
+      1,
+      16,
+      64,
+      1,
+      16,
+      true
+    ],
+    "actual_parent_grid": [
+      1024,
+      4
+    ],
+    "scope_correction_record": "reviews/v205_scope_correction.json"
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",

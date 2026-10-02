@@ -4,8 +4,8 @@
   "development_parent_commit": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
   "numerical_parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
   "only_key": [
-    1,
-    4096,
+    4,
+    1024,
     1,
     16,
     64,
@@ -62,5 +62,46 @@
     0,
     0,
     0
-  ]
+  ],
+  "actual_parent_dispatch_binding_source": "((4, 1024, 1, 16, 64, 1, 16, True), _make_power_s1_case4_dense)",
+  "scope_correction": {
+    "initial_written_key_was_official_case7": true,
+    "initial_snapshot": "initial_proposal_wrong_case7_key.json",
+    "candidate_source_or_heavy_never_executed": true,
+    "first_scope_lookup_exit": 1,
+    "first_error": "direct literal call lookup missed parent loop binding; factoryNone assertion",
+    "recovery_reads_actual_parent_loop_binding": true,
+    "new_attention_reference_native": [
+      0,
+      0,
+      0
+    ]
+  },
+  "actual_case5": {
+    "B": 4,
+    "SEQ_LEN": 1024,
+    "H": 1,
+    "HQ": 16,
+    "D": 64,
+    "S": 1,
+    "block_size": 16,
+    "is_causal": true
+  },
+  "actual_parent_host": "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case5_stage1.host.cpp",
+  "parent_hostSHA": "e2e8e4665e5750edaf19426c4ff12dd6409d74cee46cc4174e057cdac02367db",
+  "actual_grid": [
+    1024,
+    4
+  ],
+  "thread_block": [
+    64,
+    1,
+    1
+  ],
+  "dynamicshared_host": 2048,
+  "expected_full_waves": 4096,
+  "output_payload_bytes": 8388608,
+  "L1024_valid_aligned_V_max_row": 1023,
+  "invalid_negative_or_SEQ_LEN_sentinel_guard_no_Vread_design": "same0<=block_start<=token; sentinel1024*16>maxToken1023",
+  "per_query_partition_proof_independent_of_B_L": true
 }
