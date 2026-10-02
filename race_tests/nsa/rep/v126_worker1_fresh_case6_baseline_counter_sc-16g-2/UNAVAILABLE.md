@@ -1,0 +1,1 @@
+Native/reference/newmetadata/resource/IR/kernelchanges/Trace0. Runtimegrid notestablished; HBM/occupancy/clock/exclusive/unique bottleneck notmeasured. Resourcesreadonlybyexactsource/CPP/host/SDK SHA, notfreshresource. Old117gate1and125+4.76% preserved. Review-displaytruncationnotcodebug, priorcontroller AST-equivalent formatting only.
