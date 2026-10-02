@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T07:14:14.924314+00:00",
-  "state": "V205_SOURCE_STATIC0_PENDING_METADATA_REVIEW",
+  "timestamp_utc": "2026-10-02T07:26:03.834796+00:00",
+  "state": "V205_REJECTED_RESOURCE_CLOSED",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "f08aa718a232e8c9247af40588d6d4fdb18175fd",
+  "source_commit": "ff293bcf8c4cbf734e7b7fa41cce020f04cbb10f",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v205_worker2_c5_num8_output_reuse_subagent2",
-    "state": "PROPOSAL_ONLY",
+    "state": "REJECTED_PRE_NATIVE_MT_FALSIFIER",
     "case": 5,
     "candidate_source_created": true,
     "new_attention_reference_native": [
@@ -66,7 +66,33 @@
       0
     ],
     "actual_CPP_IR_resource": "UNAVAILABLE_not_run",
-    "hard_falsifier_MT_greater_or_equal": 42
+    "hard_falsifier_MT_greater_or_equal": 42,
+    "source_commit": "ff293bcf8c4cbf734e7b7fa41cce020f04cbb10f",
+    "metadata_exit": 0,
+    "SDK_commands_actual": 3,
+    "SDK_actual_exits": [
+      0,
+      0,
+      0
+    ],
+    "backend_helper_exit": 1,
+    "MT_parent_candidate": [
+      42,
+      46
+    ],
+    "ST_parent_candidate": [
+      20,
+      22
+    ],
+    "candidate_IR": "SKIPPED_MT_GATE",
+    "native_actual_counts": {
+      "candidate": 0,
+      "total": 0
+    },
+    "OOM": 3,
+    "inventory_files": 95,
+    "all_owned_PID_terminal": true,
+    "no_correctness_or_performance_verdict": true
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -203,7 +229,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "leader review exactcc0fcf candidate and sourceAST/key/math/guard/sync before boundedmetadata",
+  "next_step": "newC5Vownership proposal/stdlibproof/peer/leader review; noNum8retry",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",

@@ -1,0 +1,20 @@
+{
+  "shared_to_worker1_advisory_only": true,
+  "no_peercode_plan_edits": true,
+  "observer": "python-S/stdlib/0.5s wholeusage/OOM/memory.stat/allvisiblePID/allthreadchildren",
+  "lock": "nonblockingflock cooperativeparticipants only",
+  "admission": "wholeusage<=2GiB/unownedvisibleRSS<=1GiB pre andpostspawn beforestdinGO",
+  "native_launcher": "exec unchangedrun_variant afterGO; W10R50 untouched",
+  "stop": "whole>=28GiB/OOMincrement/newunknownheavy/nonzero/600s",
+  "termination": "onlyownverifiedPID+starttime+exe andobservedancestry; realwaitcode; neverunknownorPPID1byname",
+  "observations": "v203singleimport0 andv204fixed12native0/OOMstable; v202OOMremainsfailed",
+  "limits": [
+    "28GiB margin isengineeringbudget",
+    "0.5s canmisssubsamplepeaks",
+    "visiblePIDnamespace maymisscharges; RSSsum!=cgroupusage",
+    "childrenempty doesnotprove nofork/daemon",
+    "flock cannotblock uncooperativeheavy",
+    "PIDreparenting trackedonlyifalreadyobservedowned",
+    "successnotrootcauseorfuturesafetyproof"
+  ]
+}
