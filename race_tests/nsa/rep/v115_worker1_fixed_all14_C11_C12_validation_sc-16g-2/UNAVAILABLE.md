@@ -1,0 +1,1 @@
+No new MCProfiler/MCTracer/ISA/metadata/IR captured in nativeonly115. Other12 immutable113 actualdeviceidentity notexported; sourceidentity neverwaives positives. Stablefull14 performance no-reg versus84/OJscore notdemonstrated: medians androundpositive retained. Old108/109/114 measurements separate; no optionalrecapture/replay.
