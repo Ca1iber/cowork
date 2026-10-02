@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T15:28:38.511094+00:00",
-  "state": "V212_SOURCE_ONLY_COMPLETE_TRACE_DIAGNOSTIC_PROPOSAL",
+  "timestamp_utc": "2026-10-02T16:33:57.708845+00:00",
+  "state": "V212_COMPILE_COMPLETE_NATIVE_PREPARED_V213_TRACE_PREPARED",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v212_worker2_c8_direct_k_operand_subagent2",
-    "state": "V212_SOURCE_ONLY_COMPLETE_TRACE_DIAGNOSTIC_PROPOSAL",
+    "state": "V212_COMPILE_COMPLETE_NATIVE_PREPARED_V213_TRACE_PREPARED",
     "source_base_commit": "f581f927d21b47950e7e9914e2833f502050d963",
     "parent_sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
     "only_key": [
@@ -63,7 +63,41 @@
     "source_kernel_GO": "source-only executed",
     "new_heavy_GO": false,
     "cycle_trace_stage": "readonlyCLI_mapper_inventory_and_parentC8proposal_only",
-    "cycle_trace_capture_count": 0
+    "cycle_trace_capture_count": 0,
+    "compile_original_stage_waits": [
+      0,
+      0,
+      0
+    ],
+    "metadata_exports": 2,
+    "candidate_resource_IR_exits": [
+      0,
+      0
+    ],
+    "resource_parent_candidate": [
+      [
+        42,
+        20,
+        8,
+        0
+      ],
+      [
+        48,
+        24,
+        8,
+        0
+      ]
+    ],
+    "semantic_initial_recovery_actualwait": [
+      1,
+      0
+    ],
+    "semantic_gate": 0,
+    "native_execution_GO": false,
+    "native_refs": [
+      0,
+      0
+    ]
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -1432,7 +1466,7 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader source review and separate metadata/CycleTrace diagnostic approval; no heavy authorized",
+  "next_step": "Leader review actual212native and213trace helpers; no execution withoutseparateGO",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
@@ -1501,5 +1535,13 @@
       "sha256": "26c2cba70066e3087b52c623410b0b8eef061c9c74aa35e95848411c9aa03cb8",
       "prerequisite": "c993479f0dedb9a878915fb1d26087b3d0411110"
     }
+  },
+  "parallel_diagnostic": {
+    "version": "v213_worker2_parent_c8_cycletrace_smoke",
+    "state": "preparedonly_noTraceGO",
+    "actual_trace_count": 0,
+    "sampler_own_command_only": true,
+    "hardware_process_exclusive_scope": "UNAVAILABLE",
+    "must_not_parallel_other_heavy": true
   }
 }
