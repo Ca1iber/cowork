@@ -1,0 +1,27 @@
+{
+  "id": "v224_worker2_c3_split_qk_dependency_subagent2",
+  "stage": "ADVISORY_PENDING_SOURCE_NOT_WRITTEN",
+  "only_key": [
+    1,
+    256,
+    1,
+    16,
+    128,
+    1,
+    16,
+    true
+  ],
+  "parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "mechanism": "QKscore4 serialeightMMA -> ScoreA4firstfour+ScoreB4lastfour independentzero accumulators thenFP32A+B intooriginalscores beforecausal mask",
+  "evidence": "actualparentC3 CPP sequentialeightQKMMA sameScore4, static66MT20ST/max7; 219MMA~1.93% doesnotprove dependencydominance",
+  "preserved": "QK/V/Outputlayout/globalwidth/all7sync/Num32/roundedF16Pden/selectedorder/originalcausal+invalid",
+  "numeric_risk": "FP32 sumregroup alters scores/globalmax/PF16 rounding; eventualoriginalnaive1e-2 unchanged, no thresholdrelaxation",
+  "predicted_IR": "two independentfourMMA dependencechains thenFP32add; total16MMAunchanged",
+  "falsifiers": [
+    "compilerreverts8chain or dependencynotmaterialized",
+    "math/guard/invalid/uninitializeddrift/naivefail",
+    "extraScore4register/spill/addresscost/resourceorendtoendregression"
+  ],
+  "scope": "peeradvisorythen source+stdlib/compilepreparation only; noimport/compiler/profile/native/GPU untilrootGO",
+  "crosscase": "parent14prefix/exactC3only; others13deviceperformanceUNAVAILABLE"
+}
