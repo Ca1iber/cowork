@@ -1,8 +1,8 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T23:07:23.120101+00:00",
+  "utc": "2026-10-02T23:32:25.721141+00:00",
   "source_branch": "codex-power-v28-base",
-  "last_closed_source_commit": "40c988e5559093c504c32abe81fe96e5f1e4c3d6",
+  "last_closed_source_commit": "639871fe571030d34bade329f05efa4fc4bfbcda",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
@@ -11,9 +11,12 @@
     12
   ],
   "current": {
-    "version": "v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2",
-    "phase": "closed_SC_C8_selected_local_gain_full14_pending",
-    "allselfjobs_terminal": true
+    "version": "v134_worker1_c6_bounded_index_original_native_sc-16g-2",
+    "phase": "originalC6native_TEXT_ready_no_GO",
+    "planSHA": "7e4322448323ac0e0e9343035c7e1e77b8beecb9712e0fcdd6f6ca7669eb1dd7",
+    "manifestSHA": "ee6c5ce203651091c3f96b9a9a60fe0fb92df6641db4269ca20a886ac5677260",
+    "sourceccc_header131immutable": true,
+    "native_GPU_attempts": 0
   },
   "history": {
     "v101": {
@@ -511,11 +514,28 @@
       "memory995samples_peak27504517120_notupperbound_OOM13": true,
       "no_C301_SC_export_resource_IR_profile_orfull14_promotion": true,
       "initialpureSfreeze_cell1014_reviewtimeout_unexecuted_verified_and_onceallowedfreeze_retry_preserved": true
+    },
+    "v131": {
+      "sourcecommit": "639871fe571030d34bade329f05efa4fc4bfbcda",
+      "sourceccc_header131_originalCB13Num32V16": true,
+      "original5stage_allwait0_exports2pairs_resource1_firstIR1_0NSArefs": true,
+      "actualCPPonly2KVint64_to_i32_min992_inverseallbytes": true,
+      "IR32MMA0allocaAS5_7sync_KVscaled_i32_lateGEP64_rootreviewed": true,
+      "actual98MT22ST_max4_stack0_8192_not_runtimewin": true,
+      "CPPuint4_not_ISA_physicalwidth_llvm_scalarloads_ISAunknown": true,
+      "memory101samples_peak26770477056_notupperbound_OOM13": true
+    },
+    "v133_queue_prepared": {
+      "immutableleaderC3018519": true,
+      "fixed4source16all14_planned56C224": true,
+      "planSHA": "ee81116ce223862ecc8b0adbb1b07fc98b09a02a0af487074fdfbc3dd38ecd16",
+      "manifestSHA": "e447deb01d1588364d7330544199b4d8b6c2c7940b07a3088f9be39e8d853767",
+      "actualnative_attempts0": true
     }
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
-  "next": "Prepare131actualfinitecompilehelper first then133C301all14TEXT;noheavyuntilseparateleaderGO/exclusiveGPUslot",
-  "last_closed_version": "v132_worker1_leader_C301_C8_sc_crosscheck_sc-16g-2",
-  "last_closed_status": "selected_SC_C8_local_gain_requires_leader_full14_review"
+  "next": "Leader134C6originalnativeGO first ifapproved;133C301all14 queue immutable untilleader sorting/new combination;noGPUnow",
+  "last_closed_version": "v131_worker1_c6_bounded_kv_index_sc-16g-2",
+  "last_closed_status": "source_compile_mechanism_observed_native_performance_unmeasured"
 }

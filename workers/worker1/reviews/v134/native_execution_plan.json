@@ -1,0 +1,224 @@
+{
+  "native_original": {
+    "case_seed_reset_each_call": 0,
+    "full_naive": true,
+    "warmup": 10,
+    "repeat": 50,
+    "atol": 0.01,
+    "rtol": 0.01,
+    "F16_requires_grad": true,
+    "no_post_export_or_metadata": true,
+    "wrapper_sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f",
+    "case_runner_sha256": "6ebdb82ab43a844a908aeb33c08e2b4a6cf2b7385a20f903f123875b53534568"
+  },
+  "memory_engineering_budget": {
+    "cgroup_limit_bytes": 34359738368,
+    "new_admission_max_whole_bytes": 6442450944,
+    "additional_import_runtime_budget_not_upperbound_bytes": 23622320128,
+    "reserve_bytes": 4294967296,
+    "runtime_stop_whole_bytes": 30064771072,
+    "unknown_visible_heavy_RSS_bytes": 1073741824,
+    "sample_interval_seconds": 0.5,
+    "per_process_walltime_stop_seconds": 600,
+    "newthreshold_preregistered_before_any_newheavy": true,
+    "all_cgroup_limit_changes_forbidden": true,
+    "baseline_GiB": 6,
+    "additional_GiB": 22,
+    "reserve_GiB": 4,
+    "runtime_whole_GiB": 28
+  },
+  "monitor_repair": {
+    "critical_identity_fields": [
+      "pid",
+      "starttime_ticks",
+      "exe"
+    ],
+    "per_read_phase_errors_with_filename": true,
+    "optional_status_or_thread_error_keeps_read_critical_identity": true,
+    "authoritative_original_Popen_terminal_poll_before_identity_abort": true,
+    "explicit_alive_critical_mismatch_fails_immediately": true,
+    "unavailable_identity_terminal_confirmation_max_seconds": 1.0,
+    "confirmation_within_original600s_and_all_existing_guards": true,
+    "terminal0_cannot_erase_prior_other_abort": true,
+    "no_signal_on_unverified_or_terminal_PID": true,
+    "no_oldgate_repair_or_repeat": true,
+    "per_job_pending_since_initialized": true,
+    "pending_not_reset_on_repeated_unavailable": true,
+    "permissiondenied_independent_fixture": "UNAVAILABLE; notexecuted, no verifiedsignal, boundedpending/strictguards remain"
+  },
+  "expected_oom_before": 13,
+  "handshake_budget_seconds": 5,
+  "recognized_unowned_baseline": {
+    "pid": 213447,
+    "starttime_ticks": 93125003,
+    "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+    "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+  },
+  "runtime_abort": "NEW6GiBdouble admission, unchanged28GiBwhole runtime/unknown1GiB/OOM13/600s/baseline exacttuple/identity1s/0.5s/CSV/hash/nonzero/Killed: stop fixedprefix, no retry or polling for admission",
+  "partial_counts": "observed PASS rows separately from cleanterminal rows, never pad via plan or mergedCSV",
+  "budget_risks": [
+    "WholeCG includescache/kernel/sharedcharges/hiddennamespace, NodeHWM and oneexisting sample are notfuturebounds",
+    "6+22+4 reallocates existing32GiB, does not modifycgroup limit or weaken28GiB reserve stop",
+    "current exactdeps/currenttuple/unknown RSSguards remain; baselineeditor alwaysunowned, no signal/children exception",
+    "Loweradditional engineeringbudget22GiB is an estimate only; admission/refusal/aborts stoponce, no polluntilpass",
+    "CPU/GPUlibrarycontext/JIT/allocator/native reference mayneed more thanpastobservedpeak; 0.5s missestransients"
+  ],
+  "version": "v134_worker1_c6_bounded_index_original_native_sc-16g-2",
+  "UTC": "2026-10-02T23:30:16.385260+00:00",
+  "phase": "prepared_v134_C6_native_no_GO",
+  "selected_cases": [
+    6
+  ],
+  "official_tuple": [
+    8,
+    1024,
+    1,
+    16,
+    128,
+    1,
+    32,
+    true
+  ],
+  "planned_native_processes": 12,
+  "planned_candidate_fullrefs": 4,
+  "planned_inclusive_fullrefs": 12,
+  "scope": "ImmutableC131ccc/header131 originalC6 selectednative only;no newsource/export/SDK/IR/profile",
+  "hypothesis": "Actualscaledi32KVindex/min992/98MT vs100compiledobservations;originalfullnaive andfixedendtoend timing determine, extra min/cost mayfalsify;no occupancy/physical16Bclaim",
+  "performance": {
+    "primary": "C131 vs bestCB13 originalC6 median unique fixed12",
+    "thirdcontrol": "originalv28",
+    "median_ge_control": "reject",
+    "any_round_positive_or_range_overlap": "inconclusive/reject/no stablewin",
+    "all_raw_positive_outlier_retained": true,
+    "no_repeat_orautomaticformal": true
+  },
+  "old121_gate1_preserved": true,
+  "no_native_GO_yet": true,
+  "event_timing": "Originalevent enclosing50Pythoncalls, notpurekernel",
+  "jobs": [
+    {
+      "index": 1,
+      "round": 1,
+      "variant": "baseline_v28",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 2,
+      "round": 1,
+      "variant": "parent_v113",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 3,
+      "round": 1,
+      "variant": "candidate_v131",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 4,
+      "round": 1,
+      "variant": "candidate_v131",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 5,
+      "round": 1,
+      "variant": "parent_v113",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 6,
+      "round": 1,
+      "variant": "baseline_v28",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 7,
+      "round": 2,
+      "variant": "baseline_v28",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 8,
+      "round": 2,
+      "variant": "parent_v113",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 9,
+      "round": 2,
+      "variant": "candidate_v131",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 10,
+      "round": 2,
+      "variant": "candidate_v131",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 11,
+      "round": 2,
+      "variant": "parent_v113",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    },
+    {
+      "index": 12,
+      "round": 2,
+      "variant": "baseline_v28",
+      "NSA_CASES": "6",
+      "case_order": [
+        6
+      ],
+      "planned_full_refs": 1
+    }
+  ],
+  "old122_rejected_latency_preserved": true,
+  "originalNum32V16_not_rejectedV4": true,
+  "CPP_uint4_vs_ISA_limit": "declareduint4/16Bvectoraddressintent only;LLVMscalarloads andphysicalISAwidthUNAVAILABLE",
+  "old129_V4_rejected": "closedf6c34+.177222% kept independently notinherited/pool"
+}
