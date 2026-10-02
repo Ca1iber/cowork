@@ -1,0 +1,1 @@
+Native correctness/latency/profile/trace: NOT_PLANNED, zero fullrefs. ISA/register allocator map: UNAVAILABLE, SDKobjdump absent; no unsupported decoder executed. IR/SSA order is compiler evidence only. v118 MT<90 resource gate remains1; no oldgate repair or source edits.

@@ -1,0 +1,58 @@
+{
+  "UTC": "2026-10-02T16:32:08.524386+00:00",
+  "preparation_only_no_helpers_executed": true,
+  "changed_controller_functions": [
+    "verify"
+  ],
+  "all_guard_function_AST_equal": true,
+  "closed118_dependency_count": 17,
+  "script_syntax_AST0": true,
+  "all_exists_SHA0": true,
+  "SDK_IR_argv": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-maca-device-only",
+    "-S",
+    "-emit-llvm",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v119_worker1_existing_C6_codegen_lifetime_diagnostic_sc-16g-2/SDK/candidate118.ll",
+    "/root/tilelang-metax/race_tests/nsa/rep/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/codegen/candidate118/case6.device.cpp"
+  ],
+  "supervisor_argv": [
+    "/opt/conda/bin/python",
+    "-S",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v119_worker1_existing_C6_codegen_lifetime_diagnostic_sc-16g-2/supervise_controller.py",
+    "/root/tilelang-metax/race_tests/nsa/rep/v119_worker1_existing_C6_codegen_lifetime_diagnostic_sc-16g-2"
+  ],
+  "launcher_argv": [
+    "/opt/conda/bin/python",
+    "-S",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v119_worker1_existing_C6_codegen_lifetime_diagnostic_sc-16g-2/launch_evidence.py",
+    "/root/tilelang-metax/race_tests/nsa/rep/v119_worker1_existing_C6_codegen_lifetime_diagnostic_sc-16g-2"
+  ],
+  "stage_argv": [
+    [
+      "/opt/conda/bin/python",
+      "-S",
+      "-u",
+      "/root/tilelang-metax/race_tests/nsa/hack/v119_worker1_existing_C6_codegen_lifetime_diagnostic_sc-16g-2/capture_existing_IR.py"
+    ],
+    [
+      "/opt/conda/bin/python",
+      "-S",
+      "-u",
+      "/root/tilelang-metax/race_tests/nsa/hack/v119_worker1_existing_C6_codegen_lifetime_diagnostic_sc-16g-2/observe_existing_IR.py"
+    ]
+  ],
+  "no_onceguards_exist": true
+}

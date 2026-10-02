@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-maca-device-only",
+    "-S",
+    "-emit-llvm",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v119_worker1_existing_C6_codegen_lifetime_diagnostic_sc-16g-2/SDK/candidate118.ll",
+    "/root/tilelang-metax/race_tests/nsa/rep/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/codegen/candidate118/case6.device.cpp"
+  ],
+  "CPP_SHA": "d4ab8ae9028daa9d68b41da0352ef7bcedb14e81a44d8294155bc057314153b9",
+  "old118_resource_gate": 1,
+  "no_gate_repair": true,
+  "NSA_attention_calls": 0,
+  "fullrefs": 0
+}

@@ -1,0 +1,330 @@
+{
+  "version": "v119_worker1_existing_C6_codegen_lifetime_diagnostic_sc-16g-2",
+  "closedUTC": "2026-10-02T16:41:05.446548+00:00",
+  "status": "existing_CPP_first_IR_diagnostic_completed_no_optimization_claim",
+  "source_reference": {
+    "path": "/root/tilelang-metax/race_tests/nsa/experiments/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/candidate.py",
+    "sha256": "290ac7d13d219d161d14833fcfa777df6ae809982708bb6a95f1a4172a3acf2e"
+  },
+  "original_runtime_result": {
+    "UTC": "2026-10-02T16:37:22.003053+00:00",
+    "complete": true,
+    "failure": null,
+    "all_jobs": [
+      {
+        "index": 1,
+        "spec": {
+          "kind": "first_existing_IR"
+        },
+        "pid": 503765,
+        "pgid": 503765,
+        "UTC_terminal": "2026-10-02T16:37:20.197853+00:00",
+        "actual_exit": 0,
+        "stop_reason": null,
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4733292544\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1263005696\nrss 3130949632\nrss_huge 0\nshmem 307200\nmapped_file 52170752\ndirty 40960\nwriteback 0\nswap 760057856\npgpgin 4746551123\npgpgout 4745469746\npgfault 5275181259\npgmajfault 205014\ninactive_anon 2617929728\nactive_anon 548618240\ninactive_file 506843136\nactive_file 755859456\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1263005696\ntotal_rss 3130949632\ntotal_rss_huge 0\ntotal_shmem 307200\ntotal_mapped_file 52170752\ntotal_dirty 40960\ntotal_writeback 0\ntotal_swap 760057856\ntotal_pgpgin 4746551123\ntotal_pgpgout 4745469746\ntotal_pgfault 5275181259\ntotal_pgmajfault 205014\ntotal_inactive_anon 2617929728\ntotal_active_anon 548618240\ntotal_inactive_file 506843136\ntotal_active_file 755859456\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4733292544
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4735115264\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1263681536\nrss 3131252736\nrss_huge 0\nshmem 307200\nmapped_file 52170752\ndirty 266240\nwriteback 0\nswap 760004608\npgpgin 4746666642\npgpgout 4745585022\npgfault 5275301429\npgmajfault 205019\ninactive_anon 2618216448\nactive_anon 548618240\ninactive_file 507510784\nactive_file 755859456\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1263681536\ntotal_rss 3131252736\ntotal_rss_huge 0\ntotal_shmem 307200\ntotal_mapped_file 52170752\ntotal_dirty 266240\ntotal_writeback 0\ntotal_swap 760004608\ntotal_pgpgin 4746666642\ntotal_pgpgout 4745585022\ntotal_pgfault 5275301429\ntotal_pgmajfault 205019\ntotal_inactive_anon 2618216448\ntotal_active_anon 548618240\ntotal_inactive_file 507510784\ntotal_active_file 755859456\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4735115264
+        },
+        "owned_identities": {
+          "503765": {
+            "pid": 503765,
+            "starttime_ticks": 98238380,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 503756
+            },
+            "first_seen_UTC": "2026-10-02T16:37:17.697397+00:00"
+          },
+          "503766": {
+            "pid": 503766,
+            "starttime_ticks": 98238436,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc",
+            "observed_parent": {
+              "pid": 503765,
+              "starttime_ticks": 98238380,
+              "exe": "/opt/conda/bin/python3.12"
+            },
+            "first_seen_UTC": "2026-10-02T16:37:18.214727+00:00"
+          }
+        },
+        "NSA_attention_calls": 0,
+        "full_reference_checks": 0
+      },
+      {
+        "index": 2,
+        "spec": {
+          "kind": "CPU_IR_observation"
+        },
+        "pid": 503776,
+        "pgid": 503776,
+        "UTC_terminal": "2026-10-02T16:37:21.994546+00:00",
+        "actual_exit": 0,
+        "stop_reason": null,
+        "cgroup_before": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4735447040\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1263763456\nrss 3131400192\nrss_huge 0\nshmem 307200\nmapped_file 52170752\ndirty 348160\nwriteback 0\nswap 760004608\npgpgin 4746826499\npgpgout 4745744823\npgfault 5275461357\npgmajfault 205019\ninactive_anon 2618359808\nactive_anon 548618240\ninactive_file 507609088\nactive_file 755863552\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1263763456\ntotal_rss 3131400192\ntotal_rss_huge 0\ntotal_shmem 307200\ntotal_mapped_file 52170752\ntotal_dirty 348160\ntotal_writeback 0\ntotal_swap 760004608\ntotal_pgpgin 4746826499\ntotal_pgpgout 4745744823\ntotal_pgfault 5275461357\ntotal_pgmajfault 205019\ntotal_inactive_anon 2618359808\ntotal_active_anon 548618240\ntotal_inactive_file 507609088\ntotal_active_file 755863552\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4735447040
+        },
+        "cgroup_after": {
+          "memory.limit_in_bytes": "34359738368\n",
+          "memory.usage_in_bytes": "4736040960\n",
+          "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+          "memory.failcnt": "3180266\n",
+          "memory.stat": "cache 1264517120\nrss 3131572224\nrss_huge 0\nshmem 307200\nmapped_file 52170752\ndirty 1101824\nwriteback 0\nswap 759914496\npgpgin 4746879315\npgpgout 4745797414\npgfault 5275516205\npgmajfault 205030\ninactive_anon 2618589184\nactive_anon 548618240\ninactive_file 508166144\nactive_file 756015104\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1264517120\ntotal_rss 3131572224\ntotal_rss_huge 0\ntotal_shmem 307200\ntotal_mapped_file 52170752\ntotal_dirty 1101824\ntotal_writeback 0\ntotal_swap 759914496\ntotal_pgpgin 4746879315\ntotal_pgpgout 4745797414\ntotal_pgfault 5275516205\ntotal_pgmajfault 205030\ntotal_inactive_anon 2618589184\ntotal_active_anon 548618240\ntotal_inactive_file 508166144\ntotal_active_file 756015104\ntotal_unevictable 0\n",
+          "oom_kill": 13,
+          "usage_bytes": 4736040960
+        },
+        "owned_identities": {
+          "503776": {
+            "pid": 503776,
+            "starttime_ticks": 98238709,
+            "exe": "/opt/conda/bin/python3.12",
+            "observed_parent": {
+              "pid": 503756
+            },
+            "first_seen_UTC": "2026-10-02T16:37:20.988952+00:00"
+          }
+        },
+        "NSA_attention_calls": 0,
+        "full_reference_checks": 0
+      }
+    ],
+    "metadata_pairs": 0,
+    "resource_SDK_attempts": 0,
+    "first_IR_SDK_wait": "0",
+    "NSA_attention_calls": 0,
+    "fullrefs": 0,
+    "cgroup_initial": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "4734124032\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 1263005696\nrss 3130925056\nrss_huge 0\nshmem 307200\nmapped_file 52170752\ndirty 40960\nwriteback 0\nswap 760057856\npgpgin 4746471193\npgpgout 4745389823\npgfault 5275101239\npgmajfault 205014\ninactive_anon 2617888768\nactive_anon 548618240\ninactive_file 506839040\nactive_file 755859456\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1263005696\ntotal_rss 3130925056\ntotal_rss_huge 0\ntotal_shmem 307200\ntotal_mapped_file 52170752\ntotal_dirty 40960\ntotal_writeback 0\ntotal_swap 760057856\ntotal_pgpgin 4746471193\ntotal_pgpgout 4745389823\ntotal_pgfault 5275101239\ntotal_pgmajfault 205014\ntotal_inactive_anon 2617888768\ntotal_active_anon 548618240\ntotal_inactive_file 506839040\ntotal_active_file 755859456\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 4734124032
+    },
+    "cgroup_final": {
+      "memory.limit_in_bytes": "34359738368\n",
+      "memory.usage_in_bytes": "4735070208\n",
+      "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 13\n",
+      "memory.failcnt": "3180266\n",
+      "memory.stat": "cache 1264594944\nrss 3131637760\nrss_huge 0\nshmem 307200\nmapped_file 52170752\ndirty 1171456\nwriteback 0\nswap 759898112\npgpgin 4746959230\npgpgout 4745877292\npgfault 5275596101\npgmajfault 205032\ninactive_anon 2618662912\nactive_anon 548618240\ninactive_file 508301312\nactive_file 756015104\nunevictable 0\nhierarchical_memory_limit 34359738368\nhierarchical_memsw_limit 68719476736\ntotal_cache 1264594944\ntotal_rss 3131637760\ntotal_rss_huge 0\ntotal_shmem 307200\ntotal_mapped_file 52170752\ntotal_dirty 1171456\ntotal_writeback 0\ntotal_swap 759898112\ntotal_pgpgin 4746959230\ntotal_pgpgout 4745877292\ntotal_pgfault 5275596101\ntotal_pgmajfault 205032\ntotal_inactive_anon 2618662912\ntotal_active_anon 548618240\ntotal_inactive_file 508301312\ntotal_active_file 756015104\ntotal_unevictable 0\n",
+      "oom_kill": 13,
+      "usage_bytes": 4735070208
+    },
+    "old118_resource_gate1_retained": true,
+    "manual_lifetime_review_required": true,
+    "no_retry": true
+  },
+  "runtime_final": {
+    "UTC": "2026-10-02T16:39:53.025634+00:00",
+    "actual_waits": {
+      "stage.exit": "0",
+      "controller_actual.exit": "0",
+      "supervisor_actual.exit": "0",
+      "launcher_actual.exit": "0",
+      "SDK/IR_actual.exit": "0",
+      "IR_observation.exit": "0"
+    },
+    "guard_samples": 7,
+    "observed_wholepeak_bytes": 4827459584,
+    "peak_not_upperbound": true,
+    "OOM_values": [
+      13
+    ],
+    "owned_recorded_PIDs": [
+      503753,
+      503755,
+      503756,
+      503765,
+      503766,
+      503776
+    ],
+    "owned_current_live": [],
+    "all_self_jobs_terminal": true,
+    "no_signal_unknown_editor": true
+  },
+  "reference_counts": {
+    "candidate_source_v118": {
+      "path": "/root/tilelang-metax/race_tests/nsa/experiments/v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2/candidate.py",
+      "sha256": "290ac7d13d219d161d14833fcfa777df6ae809982708bb6a95f1a4172a3acf2e"
+    },
+    "candidate_fullrefs": 0,
+    "inclusive_fullrefs": 0,
+    "native_benchmark_processes": 0,
+    "NSA_attention_calls": 0,
+    "metadata_exports": 0,
+    "resource_SDK_attempts": 0,
+    "first_IR_SDK_attempts": 1,
+    "CPU_observation_stages": 1,
+    "old118_gate1_kept": true
+  },
+  "manual_IR_observations": {
+    "IR_SHA": "814d143b46a1736702e5a3fd150c254a4f745010eee29def9857ac1001616979",
+    "phases": [
+      {
+        "phase": "V0_load_MMA",
+        "line_range": [
+          1135,
+          1181
+        ],
+        "observation": "eight 4half LDSloads alternate with eight PV MFMA calls; key0 zero initializer then key1 previous accumulator",
+        "context": "for.cond528.preheader"
+      },
+      {
+        "phase": "lower_divide_sync_cast_store",
+        "line_range": [
+          1184,
+          1365
+        ],
+        "observation": "valid/invalid phi zero, sixteen F32 divide by same denominator; warp barrier1222 then F16 cast/packed-i64 stores1260/1295/1330/1365"
+      },
+      {
+        "phase": "V1_load_MMA",
+        "line_range": [
+          1368,
+          1428
+        ],
+        "observation": "shared half plane base constants2048/2112/2176/2240; eight V1 reads+PV, new zero initializers and originalkey1 accumulators; after all lower stores"
+      },
+      {
+        "phase": "upper_store_final_sync_gather",
+        "line_range": [
+          1497,
+          1620
+        ],
+        "observation": "upper stores1497/1529/1561/1593; warp1595 followed sharedgather1614/1618 and LLVM scalarized i64 globalstore align16; sourceCPP packeduint4 retained, finalISA width UNAVAILABLE"
+      }
+    ],
+    "selected_exact_lines": [
+      {
+        "line": 1107,
+        "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !226"
+      },
+      {
+        "line": 1127,
+        "text": "  br i1 %or.cond, label %if.end584, label %for.cond528.preheader, !dbg !230"
+      },
+      {
+        "line": 1135,
+        "text": "  %v_operand.sroa.0.0.copyload = load <4 x half>, ptr addrspace(3) %add.ptr564, align 8, !dbg !233"
+      },
+      {
+        "line": 1136,
+        "text": "  %192 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %v_operand.sroa.0.0.copyload, <4 x half> %probabilities.sroa.0.0, <4 x float> zeroinitializer), !dbg !234"
+      },
+      {
+        "line": 1181,
+        "text": "  %202 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %v_operand.sroa.0.0.copyload.3.1, <4 x half> %probabilities.sroa.9.0, <4 x float> %198), !dbg !234"
+      },
+      {
+        "line": 1185,
+        "text": "  %numerator.sroa.122.0 = phi <4 x float> [ zeroinitializer, %if.end505 ], [ %202, %for.cond528.preheader ], !dbg !229"
+      },
+      {
+        "line": 1188,
+        "text": "  %numerator.sroa.0.0 = phi <4 x float> [ zeroinitializer, %if.end505 ], [ %199, %for.cond528.preheader ], !dbg !229"
+      },
+      {
+        "line": 1193,
+        "text": "  %div = fdiv contract float %numerator.sroa.0.0.vec.extract, %denominator.sroa.0.1, !dbg !237"
+      },
+      {
+        "line": 1222,
+        "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !244"
+      },
+      {
+        "line": 1260,
+        "text": "  store i64 %__7.sroa.0.0.insert.insert, ptr addrspace(3) %add.ptr670, align 8, !dbg !278"
+      },
+      {
+        "line": 1295,
+        "text": "  store i64 %__7.sroa.0.0.insert.insert.1, ptr addrspace(3) %add.ptr670.1, align 8, !dbg !278"
+      },
+      {
+        "line": 1330,
+        "text": "  store i64 %__7.sroa.0.0.insert.insert.2, ptr addrspace(3) %add.ptr670.2, align 8, !dbg !278"
+      },
+      {
+        "line": 1365,
+        "text": "  store i64 %__7.sroa.0.0.insert.insert.3, ptr addrspace(3) %add.ptr670.3, align 8, !dbg !278"
+      },
+      {
+        "line": 1366,
+        "text": "  br i1 %or.cond, label %if.end622.1, label %for.cond528.preheader.1, !dbg !230"
+      },
+      {
+        "line": 1371,
+        "text": "  %add547.11080 = or disjoint i32 %add540.1, 2048, !dbg !231"
+      },
+      {
+        "line": 1375,
+        "text": "  %v_operand.sroa.0.0.copyload.11083 = load <4 x half>, ptr addrspace(3) %add.ptr564.11082, align 8, !dbg !233"
+      },
+      {
+        "line": 1376,
+        "text": "  %254 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %v_operand.sroa.0.0.copyload.11083, <4 x half> %probabilities.sroa.0.0, <4 x float> zeroinitializer), !dbg !234"
+      },
+      {
+        "line": 1406,
+        "text": "  %261 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %v_operand.sroa.0.0.copyload.11075.1, <4 x half> %probabilities.sroa.9.0, <4 x float> %254), !dbg !234"
+      },
+      {
+        "line": 1421,
+        "text": "  %264 = tail call contract <4 x float> @llvm.mxc.mma.f32.16x16x16f16(<4 x half> %v_operand.sroa.0.0.copyload.3.1.1, <4 x half> %probabilities.sroa.9.0, <4 x float> %260), !dbg !234"
+      },
+      {
+        "line": 1425,
+        "text": "  %numerator.sroa.122.1 = phi <4 x float> [ zeroinitializer, %if.end584 ], [ %264, %for.cond528.preheader.1 ], !dbg !229"
+      },
+      {
+        "line": 1497,
+        "text": "  store i64 %__7.sroa.0.0.insert.insert.11133, ptr addrspace(3) %add.ptr670.11137, align 8, !dbg !278"
+      },
+      {
+        "line": 1593,
+        "text": "  store i64 %__7.sroa.0.0.insert.insert.3.1, ptr addrspace(3) %add.ptr670.3.1, align 8, !dbg !278"
+      },
+      {
+        "line": 1595,
+        "text": "  tail call void @llvm.mxc.barrier.warp(), !dbg !283"
+      },
+      {
+        "line": 1614,
+        "text": "  %320 = load i64, ptr addrspace(3) %add.ptr714, align 8, !dbg !287"
+      },
+      {
+        "line": 1618,
+        "text": "  %321 = load i64, ptr addrspace(3) %add.ptr714.1, align 8, !dbg !287"
+      },
+      {
+        "line": 1620,
+        "text": "  store i64 %320, ptr addrspace(1) %add.ptr735, align 16, !dbg !289"
+      }
+    ],
+    "observed_instruction_order_only": true,
+    "not_final_CFG_or_physical_register_liveness_proof": true,
+    "no_new_correctness_or_speed_claim": true
+  },
+  "old118_MT90_gate1_retained": true,
+  "main_promotion": false,
+  "OJ": null
+}

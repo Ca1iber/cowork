@@ -1,0 +1,67 @@
+--- closed118_controller
++++ prepared119_controller
+@@ -1,8 +1,8 @@
+ from pathlib import Path
+ from decimal import Decimal
+ import json,hashlib,subprocess,os,time,datetime,csv,traceback,fcntl
+-root=Path('/root/tilelang-metax');p=root/'race_tests/nsa';v='v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2';r=p/'rep'/v
+-manifest=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());shared=json.loads((r/'shared_inputs_identity.json').read_text())['files'];cg=Path('/sys/fs/cgroup/memory');official=json.loads((p/'official_case.json').read_text());budget=plan['memory_engineering_budget']
++root=Path('/root/tilelang-metax');p=root/'race_tests/nsa';v='v119_worker1_existing_C6_codegen_lifetime_diagnostic_sc-16g-2';r=p/'rep'/v
++manifest=json.loads((r/'diagnostic_source_manifest.json').read_text());plan=json.loads((r/'diagnostic_execution_plan.json').read_text());shared=json.loads((r/'shared_inputs_identity.json').read_text())['files'];cg=Path('/sys/fs/cgroup/memory');official=json.loads((p/'official_case.json').read_text());budget=plan['memory_engineering_budget']
+ monitor_file=Path(manifest['tools']['process_monitor']['path']);assert monitor_file.is_file() and hashlib.sha256(monitor_file.read_bytes()).hexdigest()==manifest['tools']['process_monitor']['sha256']
+ from process_monitor import read_pid_metadata,identity_decision
+ def now():return datetime.datetime.now(datetime.timezone.utc).isoformat()
+@@ -15,8 +15,8 @@
+  for label,x in manifest['tools'].items():
+   f=Path(x['path']);assert f.is_file() and hashlib.sha256(f.read_bytes()).hexdigest()==x['sha256'],label
+  for f,d in shared.items():assert hashlib.sha256((root/f).read_bytes()).hexdigest()==d,f
+- for label in ['parent_C6_device','parent_C6_resource']:
+-  x=manifest[label];f=Path(x['path']);assert f.is_file() and hashlib.sha256(f.read_bytes()).hexdigest()==x['sha256']
++ for label,x in dict(manifest['closed118_dependencies'],**manifest['existing_inputs'],shared_identity_document=manifest['shared_identity_document']).items():
++  f=Path(x['path']);assert f.is_file() and hashlib.sha256(f.read_bytes()).hexdigest()==x['sha256'],label
+  assert (p/'rep/v104_worker1_s8_global_softmax_sc-16g-2/formal/diagnostic.exit').read_text().strip()=='1'
+  assert (p/'rep/v101_worker1_s2_fixed_selection_sc-16g-2/target_screen.exit').read_text().strip()=='137'
+  assert (p/'rep/v105_worker1_bounded_all14_runtime_diagnostic_sc-16g-2/diagnostic.exit').read_text().strip()=='1'
+@@ -108,20 +108,17 @@
+  if 'killed' in s:return 'innerKilled log'
+  if 'out of memory' in s:return 'innerOOM log'
+  return None
+-assert plan['phase']=='leader_GO_v118_bounded_compile_once'
+-verify();fd=os.open(r/'launch_once.lock',os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600);os.write(fd,json.dumps({'UTC':now(),'master_pid':os.getpid(),'scope':'reused116metadata_C6_C10_2firstresourceSDK_2firstMCcounts2'}).encode());os.close(fd);lock=open(manifest['cooperative_heavy_lock'],'a+');initial=cgstate();jobs=[];failure=None;active=None;known={}
++assert plan['phase']=='leader_GO_v119_existing_IR_once'
++verify();fd=os.open(r/'launch_once.lock',os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600);os.write(fd,json.dumps({'UTC':now(),'master_pid':os.getpid(),'scope':'first_existing_C6_IR_once_then_CPU_observation'}).encode());os.close(fd);lock=open(manifest['cooperative_heavy_lock'],'a+');initial=cgstate();jobs=[];failure=None;active=None;known={}
+ try:
+  assert initial['oom_kill']==13;fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+  for i,spec in enumerate(plan['guard_stage_jobs'],1):
+   verify();kind=spec['kind'];d=r/('stage_'+str(i).zfill(2)+'_'+kind);d.mkdir(exist_ok=False);first=census();(d/'admission_first.json').write_text(json.dumps(first,indent=2)+chr(10));reason=admission(first,initial['oom_kill'])
+   if reason:failure=reason;(d/'refused.json').write_text(json.dumps({'reason':reason,'spawned':False},indent=2)+chr(10));break
+   py=manifest['tools']['python']['path']
+-  assert kind in ['metadata_pair','source_device_audit','candidate_resource','candidate_IR','compiled_gate']
+-  if kind=='metadata_pair':cmd=[py,'-u',manifest['tools']['metadata_export']['path']]
+-  elif kind=='source_device_audit':cmd=[py,'-S','-u',manifest['tools']['codegen_audit']['path']]
+-  elif kind in ['candidate_resource','candidate_IR']:cmd=[py,'-S','-u',manifest['tools']['SDK_capture']['path'],'resource' if kind=='candidate_resource' else 'IR']
+-  else:cmd=[py,'-S','-u',manifest['tools']['compiled_gate']['path']]
+-  launch={'stage_index':i,'stage_spec':spec,'native_command':cmd,'manifest_path':str(r/'compile_source_manifest.json'),'ready_file':str(d/'child_ready.json'),'planned_PID_file':str(d/'child.pid'),'planned_PGID_file':str(d/'child.pgid'),'no_NSA_launch_or_ref_expected':True,'full_reference_checks_expected':0,'profile_attention_launch_count':0};(d/'launch_plan.json').write_text(json.dumps(launch,indent=2)+chr(10));gatecmd=[py,'-S','-u',manifest['tools']['native_gate']['path'],str(d/'launch_plan.json')];env=os.environ.copy();env.update(MACA_PATH='/opt/maca',PYTHONDONTWRITEBYTECODE='1',PYTHONWARNINGS='ignore',PYTHONPATH=str(root)+':'+str(p));known={};abort=None;pending=None;started=time.monotonic();logpath=d/'stage.log'
++  assert kind in ['first_existing_IR','CPU_IR_observation']
++  cmd=[py,'-S','-u',manifest['tools']['IR_capture' if kind=='first_existing_IR' else 'IR_observer']['path']]
++  launch={'stage_index':i,'stage_spec':spec,'native_command':cmd,'manifest_path':str(r/'diagnostic_source_manifest.json'),'ready_file':str(d/'child_ready.json'),'planned_PID_file':str(d/'child.pid'),'planned_PGID_file':str(d/'child.pgid'),'no_NSA_launch_or_ref_expected':True,'full_reference_checks_expected':0,'profile_attention_launch_count':0};(d/'launch_plan.json').write_text(json.dumps(launch,indent=2)+chr(10));gatecmd=[py,'-S','-u',manifest['tools']['native_gate']['path'],str(d/'launch_plan.json')];env=os.environ.copy();env.update(MACA_PATH='/opt/maca',PYTHONDONTWRITEBYTECODE='1',PYTHONWARNINGS='ignore',PYTHONPATH=str(root)+':'+str(p));known={};abort=None;pending=None;started=time.monotonic();logpath=d/'stage.log'
+   with logpath.open('w') as log,(d/'whole_memory_samples.jsonl').open('w') as mon:
+    active=subprocess.Popen(gatecmd,cwd=root,env=env,stdin=subprocess.PIPE,stdout=log,stderr=subprocess.STDOUT,text=True,start_new_session=True);pid=active.pid;pgid=os.getpgid(pid);(d/'child.pid').write_text(str(pid)+chr(10));(d/'child.pgid').write_text(str(pgid)+chr(10));(r/'active_stage.json').write_text(json.dumps(dict(launch,pid=pid,pgid=pgid),indent=2)+chr(10));ready=Path(launch['ready_file'])
+    while not ready.exists() and active.poll() is None and time.monotonic()-started<5:time.sleep(0.05)
+@@ -160,8 +157,6 @@
+   if unknown_heavy(last,known):reason=reason or 'terminalunknownheavy'
+   verify();remaining=[x for x in last['visible_PIDs'] if x.get('state')!='Z' and matches(x,known.get(x['pid'],{}))]
+   if remaining:reason=reason or 'ownedchildstilllive';terminate_owned(active,known,d/'owned_postexit_signal_wait.json')
+-  if not reason and kind=='metadata_pair':
+-   data=json.loads((r/'metadata_pair.json').read_text());assert len(data['records'])==2 and data['NSA_attention_calls']==data['fullrefs']==0
+   item={'index':i,'spec':spec,'pid':pid,'pgid':pgid,'UTC_terminal':now(),'actual_exit':code,'stop_reason':reason,'cgroup_before':first['cgroup'],'cgroup_after':last['cgroup'],'owned_identities':known,'NSA_attention_calls':0,'full_reference_checks':0};(d/'terminal_result.json').write_text(json.dumps(item,indent=2)+chr(10));jobs.append(item);(r/'completed_stage_jobs.json').write_text(json.dumps(jobs,indent=2)+chr(10));print('EVIDENCE_STAGE_TERMINAL',i,spec,code,reason,flush=True);active=None
+   if reason:failure=reason;break
+ except BaseException as error:
+@@ -172,5 +167,5 @@
+    x=bypid(snap).get(active.pid)
+    if x and x.get('critical_identity_available') and x.get('ppid')==os.getpid() and x.get('pgid')==active.pid and x.get('exe')==str(Path(manifest['tools']['python']['path']).resolve()):known[active.pid]=dict(identity(x),observed_parent={'pid':os.getpid()},first_seen_UTC=now())
+   terminate_owned(active,known,r/'exception_owned_signal_wait.json');active=None
+-complete=not failure and len(jobs)==5 and all(x['actual_exit']==0 and x['stop_reason'] is None for x in jobs);final=census();data=json.loads((r/'metadata_pair.json').read_text()) if (r/'metadata_pair.json').exists() else {'records':[]};res=json.loads((r/'SDK/resource_result.json').read_text()) if (r/'SDK/resource_result.json').exists() else None
+-(r/'stage_result.json').write_text(json.dumps({'UTC':now(),'complete':complete,'failure':failure,'all_jobs':jobs,'metadata_pairs':len(data['records']),'candidate_resource':res,'NSA_attention_calls':0,'fullrefs':0,'cgroup_initial':initial,'cgroup_final':final['cgroup'],'manual_lifetime_review_required_before_native':True,'no_retry':True},indent=2)+chr(10));(r/'final_census.json').write_text(json.dumps(final,indent=2)+chr(10));(r/'stage.exit').write_text(('0' if complete else '1')+chr(10));print('V118_BOUNDED_COMPILE_TERMINAL',complete,failure,flush=True);lock.close();raise SystemExit(0 if complete else 1)
++complete=not failure and len(jobs)==2 and all(x['actual_exit']==0 and x['stop_reason'] is None for x in jobs);final=census()
++(r/'stage_result.json').write_text(json.dumps({'UTC':now(),'complete':complete,'failure':failure,'all_jobs':jobs,'metadata_pairs':0,'resource_SDK_attempts':0,'first_IR_SDK_wait':(r/'SDK/IR_actual.exit').read_text().strip() if (r/'SDK/IR_actual.exit').exists() else 'UNAVAILABLE','NSA_attention_calls':0,'fullrefs':0,'cgroup_initial':initial,'cgroup_final':final['cgroup'],'old118_resource_gate1_retained':True,'manual_lifetime_review_required':True,'no_retry':True},indent=2)+chr(10));(r/'final_census.json').write_text(json.dumps(final,indent=2)+chr(10));(r/'stage.exit').write_text(('0' if complete else '1')+chr(10));print('V119_DIAGNOSTIC_TERMINAL',complete,failure,flush=True);lock.close();raise SystemExit(0 if complete else 1)

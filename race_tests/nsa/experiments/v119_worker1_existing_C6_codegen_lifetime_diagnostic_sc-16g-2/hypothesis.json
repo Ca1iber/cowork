@@ -1,0 +1,22 @@
+{
+  "version": "v119_worker1_existing_C6_codegen_lifetime_diagnostic_sc-16g-2",
+  "hypothesis": "The first optimized IR can show whether source V4 streaming survives as shared-load/MMA ordering or is hoisted/reloaded; equal MT90 does not identify allocator cause or physical live register ranges.",
+  "falsifier": "Unreadable/failed IR, nonzero SDK wait or any guard stops prefix; absent mapping from IR to V planes is UNAVAILABLE rather than inventing an ordering proof. Equal resources neither prove nor disprove source-level arrangement.",
+  "prior_version": {
+    "version": "v118_worker1_c6_num16_v4_plane_lifetimes_sc-16g-2",
+    "resource_gate_exit": 1,
+    "MT": 90,
+    "ST": 24,
+    "staticmax": 5,
+    "stack": 0,
+    "dynamicshared": 8192,
+    "prediction_MT_less_than90_failed": true,
+    "IR_attempts": 0,
+    "no_old_gate_repair": true
+  },
+  "interpretation_limits": [
+    "SSA instruction order/data dependencies are compiler observations, not final ISA/register allocation or runtime overlap.",
+    "Static MMA count/unroll may differ from fullvalid executed32; retain loops and PHIs, do not force expected32 by retry.",
+    "No new latency/correctness/occupancy/optimization verdict; old118 MTgate1 and103 latency regression retained."
+  ]
+}
