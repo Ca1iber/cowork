@@ -1,0 +1,22 @@
+{
+  "status": "readonly_for_leader_selection_only_no_source_heavy",
+  "case": 9,
+  "key": [
+    1,
+    8192,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "parent_CPP_SHA": "85b2d06253ada7098991de3035caf9d03156c7914175fe2e03f0544756c498fe",
+  "mechanism": "Vconsumer v_operand16\u21924; combine four sharedhalf4load loop and fourPV MFMA loop into chunk0..3 load4then correspondingMMA(vdata0,P0,Numchunk)",
+  "evidence": "exactC9CPP currently loads all4voperand chunks first then4independentPV MMA; localbuffer16half/Num16/42MT20ST. Fresh226 shared100/conf0 excludes banklayout justification; MTE68.4..68.9 onlycounter notHBM bound",
+  "predicted_measurement": "actualoptimizedIR shorterVoperandlive/load\u2192MMA SSA and no addedglobal/sharedbytes/MMA/barriers; resources allrecorded. Native maybenefit ifregisterschedule limits, hypothesis unproven",
+  "falsifiers": "compilerstillhoistsallloads or resources unchanged/greater and no schedule evidence, noAS5/stack violation, naivefail or fixednative nonwin",
+  "reverse_cost": "less loadILP/MLP and interleavedLDS/MFMA may increase waiting; allocation4 alone notphysicalregproof",
+  "preserved": "originalchunkorder/Pactualroundedden/globalproducerandoutput widths/layout/sync7/Num16/math",
+  "no_more_layout_or_producer_change": true
+}
