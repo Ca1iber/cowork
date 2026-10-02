@@ -1,0 +1,11 @@
+--- 
++++ 
+@@ -2,7 +2,7 @@
+ import os,sys,json,subprocess,time,fcntl,signal,hashlib
+ import bounded_utils as U
+ root=U.root;r=U.r;h=U.h;plan=U.plan
+-stage=sys.argv[1];assert stage in ['resource','profile'];o=r/(stage+'_observation');o.mkdir(exist_ok=True)
++stage=sys.argv[1];assert stage in ['parent_profile','candidate_profile'];o=r/(stage+'_observation');o.mkdir(exist_ok=True)
+ manifest=json.loads((r/(stage+'_launch_manifest.json')).read_text())
+ for item in manifest['fixed_inputs']:assert hashlib.sha256(Path(item['path']).read_bytes()).hexdigest()==item['sha256']
+ with (o/'once.guard').open('x') as f:f.write(str(time.time()))
