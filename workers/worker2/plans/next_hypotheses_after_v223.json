@@ -1,0 +1,42 @@
+{
+  "scope": "two concise alternatives forleaderselection only; no kernel/compile/native authorized",
+  "sourceparent": "P84 4c C3 original notfailed220/222",
+  "hypotheses": [
+    {
+      "case": 3,
+      "key": [
+        1,
+        256,
+        1,
+        16,
+        128,
+        1,
+        16,
+        true
+      ],
+      "mechanism": "two independent QK score4 accumulators for chunks0..3 and4..7, combine once before original causal/max/P; keep global/shared layouts and allbarriers",
+      "evidence": "P84 actualC3 has eight sequentialQK MFMA to sameScore4; parent16totalMMA/66MT, rawMMA~1.95% is not proof of dependency dominance",
+      "falsifier": "compiler fails to materialize twochains, resource/private spill rises, originalnaive fails after changedFP32sumgrouping, or fixednative no gain",
+      "numerical_risk": "sum reassociation changes scores/Prounding; original1e-2 remains, no relaxation",
+      "status": "advisory_only_no_source_or_heavy"
+    },
+    {
+      "case": 3,
+      "key": [
+        1,
+        256,
+        1,
+        16,
+        128,
+        1,
+        16,
+        true
+      ],
+      "mechanism": "delay Num32 zero initialization until immediately before PV, with explicit invalid-path zero init; originalmath/order/output unchanged",
+      "evidence": "P84 source initializes32floatnumerator before Kstage and eightQKMMA while q_local32/score4 live; actualcompiler may already deferzero hence hypothesis limited",
+      "falsifier": "actualIR already equivalent/deferred or candidatephysicalresources unchanged, anyinvalidNaN/math drift, or fixednative no gain",
+      "risk": "branch/zero handling overhead; sourceordering doesnotproveactualregisterlifetime",
+      "status": "advisory_only_no_source_or_heavy"
+    }
+  ]
+}
