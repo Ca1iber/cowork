@@ -29,7 +29,7 @@
     "all14_nonregression": "UNPROVEN"
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-02T18:49:39.093056+00:00",
+  "updated_at_utc": "2026-10-02T19:07:37.077720+00:00",
   "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
   "worker1": {
     "cases": [
@@ -38,19 +38,20 @@
       11,
       12
     ],
-    "last_closed_version": "v121",
-    "last_closed_source_commit": "37ee8fa89c82f11734034c5b91e9167d297e6fa0",
-    "last_result": "C122102.8275us vsCB1369.1785us, both rounds+48%, allC>P; OOM13 unchanged",
-    "active_version": "v122",
-    "stage": "122 actual fixed12 allcorrect but+48.6408% vsCB13 rejected; closure and pairedprofile123 preparation",
-    "authorized_scope": "one original C12 fixed12 versus best CB13",
+    "last_closed_version": "v122;123 profiler complete closurepending",
+    "last_closed_source_commit": "76644d36b1c849c9e4e001636a8d678aa3a49369",
+    "last_result": "C122+48.6408% rejected independently346hash/12CSV/952samples;123shared59.45% vsCB13100%",
+    "active_version": "v124",
+    "stage": "123twoCLI0 rawshared conflictdiagnosis; source-only Num layoutrepair preparation",
+    "authorized_scope": "after123closure, writer/reader Num shared indices chunk256+lane4+e only; preserve64MaxDen/math/CTA4/global",
     "native_GO": false,
     "active_PID": null,
     "source_audit": "integration/reviews/v121-actual-shared-alias-review.json",
     "candidate_sha256": "88bd3007df4a5173fec5de7c0471ac4d8462e1f44269c1c2ee2fae9cd60aca01",
     "approval": "integration/reviews/v122-native-approval.json",
     "next_version": "v123",
-    "next_scope": "prepare two original C12 MCPcounts2 profiles CB13 and C122; hypothesis shared-stride conflict, not proven"
+    "next_scope": "prepare two original C12 MCPcounts2 profiles CB13 and C122; hypothesis shared-stride conflict, not proven",
+    "runtime_audit": "integration/reviews/v122-native-leader-audit.json"
   },
   "worker2": {
     "cases": [
@@ -68,24 +69,24 @@
     "last_closed_version": "v219",
     "last_closed_source_commit": "f1aeb349bf3b6a1cefbbbfb2a02fbc49a436ce4a",
     "active_version": "v220",
-    "source_SHA": "21332fbff1793eda669c5d37533b02a183685e85061393265596b19fdb313d52",
-    "source_header": "v217",
+    "source_SHA": "f306db56959d7919932fbecace3dd2fef78cfd6df42014e9fea596bfbc2d1279",
+    "source_header": "v220",
     "actual_resource": [
-      40,
-      22,
+      64,
+      20,
       8,
       0,
-      2048
+      4096
     ],
     "old217_mechanism_gate": 1,
-    "stage": "source-only C3 shared plane-major layout fromP84; compileplan preparation",
+    "stage": "original C3 fixed12 two round native running",
     "authorized_scope": "Q/K/output shared map only, two64column planes; inversevalue/AST/JIT proofs before bounded compile GO",
-    "native_GO": false,
-    "active_PID": null,
-    "active_starttime_ticks": null,
-    "original_owner_PID": 340564,
-    "original_owner_starttime_ticks": 333838929,
-    "approval": "integration/reviews/v219-evidence-approval.json",
+    "native_GO": true,
+    "active_PID": 347203,
+    "active_starttime_ticks": 333947516,
+    "original_owner_PID": 347202,
+    "original_owner_starttime_ticks": 333947513,
+    "approval": "integration/reviews/v220-native-approval.json",
     "last_result": "75hashes and2rawreports independently checked, C3 shared efficiency80.49/conflict.8889cycles, resource66/20/max7",
     "runtime_audit": "integration/reviews/v219-raw-leader-audit.json"
   },
@@ -108,5 +109,5 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-availability.json"
   },
-  "leader_next": "Audit closed C12 native raw evidence, then C12 paired shared metrics and C3 resource/profile diagnostics; preserve CB13."
+  "leader_next": "Finish C3 fixed12 and independently inspect raw; review C12 thread-major Num source after profile closure; no new variant promoted"
 }
