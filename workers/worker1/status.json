@@ -1,8 +1,8 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-02T19:36:38.207392+00:00",
+  "utc": "2026-10-02T20:03:26.582186+00:00",
   "source_branch": "codex-power-v28-base",
-  "last_closed_source_commit": "d24d341172e9a389d40797bad15c3ff11c24c0dd",
+  "last_closed_source_commit": "8cf8198b6f60a1ce1c2723969d34b03229cdc1f8",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     6,
@@ -11,36 +11,19 @@
     12
   ],
   "current": {
-    "version": "v124_worker1_c12_lane_contiguous_partial_num_sc-16g-2",
-    "phase": "compile5wait0_originalC12_native_text_ready_no_GO",
-    "sourceSHA": "1c1b2041feb8709fa3313b738ce6cdcaa6e2b8291fabbb32a186a9708a183a0c",
-    "header124_jit64reduction_CTA4_math_global_preserved": true,
-    "source_validator_wait0": true,
-    "1024bijection_float4align16proof0": true,
-    "planSHA": "3888cdaa7745379edbf580b62ddea998affd716ef9a3bdfa510d425dcdf972b5",
-    "manifestSHA": "378b9a959fa94d7b15e1b909fed6ee7e49b36e43bd0f8c976a98079461ea3c48",
-    "review_archive": "/tmp/nsa_worker1_v124_source_compile_review_378b9a959fa9.tar.gz",
-    "archiveSHA": "46a6ce967ab9152f02f2e1c3b097c450b8ef194145cf79278801c9c37c64d8ff",
+    "version": "v125_worker1_c12_valid_block_slot_toggle_sc-16g-2",
+    "phase": "singlewarp_validslot_source_compile_text_ready_no_GO",
+    "sourceSHA": "b4142c732e025c2bfc52cdc2761bcb077d190c028a5d3cb5fe8b256510335e5b",
+    "properheader125_andJIT_CB13parent18prefix": true,
+    "validOnly_toggle_two1024slots": true,
+    "source256masks_postbar_witness_proof0": true,
+    "source_fullvalid_barrier35to18_shared2to4KiB_model": true,
+    "planSHA": "a9ff0dc1dbbb5b0aac2cf4e23b2918a7453d6429cb96da6e0a1e8969c9ed44c6",
+    "manifestSHA": "ad76dc293ab299d443f14f42d644c7036285ba20309bba2e639b82baafb040e3",
+    "review_archive": "/tmp/nsa_worker1_v125_source_compile_review_ad76dc293ab2.tar.gz",
+    "archiveSHA": "9b1176ad61a008793804dd1c961093d62cab866c1c50ba947a4ccc77612a3115",
     "newheavy_attempts": 0,
-    "no_activePID": true,
-    "compile5wait0": true,
-    "resource": [
-      68,
-      42,
-      7,
-      0,
-      10496
-    ],
-    "IR_SHA": "b1052bf660ea0b0d512753b527f20f2636ef6688e2ccca14ae2ab14ee06b837b",
-    "actualCPP_NumW_NumR_only2addresslines_changed": true,
-    "actualNum1024_headfeaturecorrespondence_align16": true,
-    "actual_codegen_package": "/tmp/nsa_worker1_v124_actual_codegen_b1052bf660ea.tar.gz",
-    "actual_codegen_SHA": "e9b372fe69a31a59922255ed42877f1cd93f04d252fea043f7720ccad53ddf00",
-    "native_review_package": "/tmp/nsa_worker1_v124_native_review_03868ac24548.tar.gz",
-    "native_review_SHA": "b2873e04774d9079cabbd4819f91a823372c48bcc158699b43ea657ad96f7cb1",
-    "native_plan_SHA": "d5d7e371f01d8b0987354a7121e13e24e20b36114242306543df15d2904516e1",
-    "native_manifest_SHA": "03868ac24548e6d61a7d1d14fdfdd921cb572127570811da3380c20bbcff9149",
-    "actual_native_refs": 0
+    "no_activePID": true
   },
   "history": {
     "v101": {
@@ -398,11 +381,26 @@
       "native_fullrefs_new": 0,
       "OOM13stable": true,
       "old12248_64pct_and1211_preserved": true
+    },
+    "v124": {
+      "sourcecommit": "8cf8198b6f60a1ce1c2723969d34b03229cdc1f8",
+      "compile5wait0_Num2addresses_actual1024correspondence": true,
+      "native12wait0_4C12clean_fullnaivePASS": true,
+      "Cmedian_us": "97.549",
+      "CB13median_us": "68.8665",
+      "vsCB13_pct": "41.64942315930096636245489460",
+      "rounds_pct": [
+        "41.28131965469422723675517120",
+        "41.78953014685628959538410240"
+      ],
+      "allC_gt_allP_nooverlap": true,
+      "OOM13stable": true,
+      "no_newprofile_orrepeat": true
     }
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
-  "next": "LeaderactualCPPIR andfixednative12reviewGO; no extraheavy orsource",
-  "last_closed_version": "v123_worker1_c12_parallel_shared_counter_diagnostic_sc-16g-2",
-  "last_closed_status": "finite_raw_profile_completed_shared_regression_observed_no_unique_cause"
+  "next": "Leader actual125source/lifetime/compilehelpers review; no newheavy untilGO",
+  "last_closed_version": "v124_worker1_c12_lane_contiguous_partial_num_sc-16g-2",
+  "last_closed_status": "rejected_latency_vs_best_CB13"
 }
