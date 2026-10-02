@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T10:12:55.549957+00:00",
-  "state": "V208_METADATA0_READY_SELECTED_REVIEW",
+  "timestamp_utc": "2026-10-02T10:17:22.101706+00:00",
+  "state": "V208_FIXED_C9_NATIVE_RUNNING",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v208_worker2_c9_q_register_transpose_subagent2",
-    "state": "METADATA_SEMANTIC0_NATIVE_PROPOSAL",
+    "state": "FIXED_C9_NATIVE_RUNNING",
     "only_key": [
       1,
       8192,
@@ -101,13 +101,29 @@
       2048
     ],
     "actual_CPP_IR_status": "VERIFIED_SEMANTIC0",
-    "currently_live_owned": 0,
+    "currently_live_owned": "monitor+currentknownancestry",
     "native_actual_refs": {
-      "candidate": 0,
-      "total": 0
+      "candidate": 2,
+      "total": 4
     },
-    "native_GO": false,
-    "OOM": 3
+    "native_GO": true,
+    "OOM": 3,
+    "native_observerPID": 191041,
+    "native_live": {
+      "stage": "fixed_C9_native_observed",
+      "run": 5,
+      "variant": "parent_v084",
+      "pid": 192113,
+      "observerPID": 191041,
+      "sample_count": 49,
+      "utc": "2026-10-02T10:17:21.654459+00:00",
+      "usage_bytes": 22095335424,
+      "oom": 3
+    },
+    "native_planned_refs": {
+      "candidate": 4,
+      "total": 12
+    }
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -517,8 +533,8 @@
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "leader review originalC9fixed12shortplan; noactualnativeuntilGO",
-  "job_pid": null,
+  "next_step": "finish originalfixed12 or stopfirstfailure; noadded sample/profile/formal",
+  "job_pid": 191041,
   "proposed_diagnostic": {
     "version": "v203",
     "no_kernel_edit": true,
