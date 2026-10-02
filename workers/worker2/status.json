@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T02:59:14.112020+00:00",
-  "state": "ENVIRONMENT_IMPORT_FAILED",
+  "timestamp_utc": "2026-10-02T03:03:42.091900+00:00",
+  "state": "V200_BASELINE_RUNNING",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
@@ -26,13 +26,18 @@
     9,
     8
   ],
-  "job_pid": null,
-  "stage": "first_isolated_import_terminal_exit1_before_TVM",
+  "job_pid": 2996,
+  "stage": "native_same_machine_baseline_B_P_P_B_all14",
   "correctness_counts": {
     "candidate": 0,
-    "all_sources": 0
+    "v200_plan_baseline_v28": 28,
+    "v200_plan_parent_v084": 28,
+    "v200_plan_total": 56,
+    "environment_gate_parent_v084_completed": 1
   },
-  "benchmark_paths": [],
+  "benchmark_paths": [
+    "race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/baseline_case*_subagent2.csv"
+  ],
   "profile_paths": [],
   "target_deltas": {},
   "non_target_deltas": {},
@@ -56,12 +61,10 @@
     "cpu_memory_limit_bytes": 34359738368,
     "oom_kill": 0
   },
-  "blockers": [
-    "Missing build/tvm runtime search directory; requesting bounded directory-only recovery or source machine directory contents."
-  ],
-  "next_step": "Resolve missing runtime directory without source edits or dependency install; preserve initial failure; one isolated recovery import, then official native case5 gate.",
+  "blockers": [],
+  "next_step": "Complete fixed all14 native baseline, then fixed two samples per source/case for mcProfiler cases5/8/9; publish evidence and a single mechanism for leader review before kernel edit.",
   "source_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
-  "environment_evidence_path": "/tmp/nsa_worker2_environment",
+  "environment_evidence_path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/environment",
   "import_attempts": [
     {
       "pid": 2360,
@@ -74,5 +77,25 @@
   ],
   "runtime_library_hashes_verified": true,
   "source_hashes_verified": true,
-  "git_status_clean": true
+  "git_status_clean": true,
+  "version": "v200_worker2_baseline_profile_subagent2",
+  "environment_ready": true,
+  "runtime_search_directory_recovery": {
+    "directory": "build/tvm",
+    "empty": true,
+    "source_edited": false,
+    "installed_or_built": false,
+    "initial_import_exit": 1,
+    "recovery_import_exit": 0,
+    "oom_kill_after": 0
+  },
+  "native_environment_gate": {
+    "pid": 2647,
+    "exit": 0,
+    "case": 5,
+    "latency_ms": 0.024812,
+    "full_reference_count": 1,
+    "source": "parent_v084",
+    "part_of_v200_counts": false
+  }
 }
