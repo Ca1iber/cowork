@@ -20,7 +20,7 @@
   "oj_total": 1204,
   "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
   "peer_exchange_actual": "Both workers directly discussed inverse mapping, global vector width, shared-V synchronization and failed-run semantics; own-branch records only",
-  "updated_at_utc": "2026-10-02T09:26:53.562371+00:00",
+  "updated_at_utc": "2026-10-02T10:01:25.703978+00:00",
   "worker1": {
     "cases": [
       6,
@@ -28,30 +28,43 @@
       11,
       12
     ],
-    "active_version": "v108 proposal only",
-    "stage": "v108 master376445/native376447 actual /proc live, first originalv28 job7CSV rows",
-    "last_closed_source_commit": "ab34f0aa8800b9c6a8d9b14abe35bd27e543f980",
+    "active_version": "v109_worker1_fixed_non_target_risk_confirmation_sc-16g-2",
+    "stage": "v109 actualmaster388657/native388664 verifiedlive;fixedrisk batch running",
+    "last_closed_source_commit": "bdadf18ed069e06e2c30468d002cc0d5e97d2793",
     "candidate_sha256": "27f6021b1edcdd3d48d8f8e7b0182492b8a3607b6ce0e7e28c8097bd6ec20e07",
-    "last_closed_diagnostic_gate": 1,
-    "observed_refs": 42,
-    "clean_accepted_refs": 42,
-    "clean_candidate_refs": 14,
-    "completed_native_processes": 3,
-    "planned_native_processes": 12,
-    "oom_kill": 13,
-    "selected_screen_delta_pct": -4.604357,
+    "completed_native_processes": 12,
+    "observed_refs": 168,
+    "clean_accepted_refs": 168,
+    "clean_candidate_refs": 56,
+    "actual_protocol_gate": 0,
+    "oom_before_after": [
+      13,
+      13
+    ],
+    "case12_candidate_us": 68.959,
+    "case12_parent_us": 72.202,
+    "case12_delta_vs_parent_pct": -4.4915653306002605,
+    "case12_delta_vs_v28_pct": -17.827203450926184,
+    "non_target_positive_median_cases": [
+      4,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "additional_round_positive_case": 13,
     "all14_nonregression": "UNPROVEN",
-    "new_native_GO": "v108 fixed12 only",
-    "failed_admission_bytes": 3223244800,
-    "failed_admission_limit_bytes": 3221225472,
-    "master_pid": 376445,
-    "master_starttime_ticks": 95643137,
-    "active_native_pid": 376447,
-    "active_native_starttime_ticks": 95643195,
-    "active_job": 1,
-    "freeze_plan_sha256": "c23238482ecbdbf64f0e775af8ec9a7322d827a2dbe4869b389d358dd75a9bcf",
-    "freeze_manifest_sha256": "6689a2a2b393d0a7b233e1042c95260ae38d89e258bf783925ecf0ce4939f5e7",
-    "freeze_controller_sha256": "7ad6bac530496bdfa7faef98146f4e992f087ab17c6289c4dee42780d6e3bccc"
+    "OJ": "UNAVAILABLE",
+    "new_native_metadata_profile_GO": "v109 fixednativeonly",
+    "main_submission_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "communication_head": "b273529f552cd51575598b9a188d73e81b4ed167",
+    "master_pid": 388657,
+    "master_starttime_ticks": 95845437,
+    "active_native_pid": 388664,
+    "active_native_starttime_ticks": 95845493,
+    "freeze_plan_sha256": "450c909752afdb190e0f2cd64398a007b326cbc2affc4622b840b5d07b20de8d",
+    "freeze_manifest_sha256": "b5deeb1bc4cfa95698bd3e34d4e74fe683d6ba7a153b53c275da170bf2a8670b"
   },
   "worker2": {
     "cases": [
@@ -66,9 +79,9 @@
       13,
       14
     ],
-    "active_version": "v207 C9 parent profiler",
-    "stage": "raw10metrics/waves/write scope independently audited; runtime grid unavailable; diagnostic closing",
-    "last_closed_source_commit": "f7c53a69b83d3bf8ead72101ca2d26a14a3a8032",
+    "active_version": "v208_worker2_c9_q_register_transpose_subagent2",
+    "stage": "actualsource and bounded plan reviewed;metadataonce approved;launchpending",
+    "last_closed_source_commit": "e61d29b899f32d3ea86681c984076568ff70dcf7",
     "parent_source_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
     "actual_cli_returncode": 0,
     "samples": 313,
@@ -81,8 +94,10 @@
     ],
     "oom_kill": 3,
     "profile_scope_verdict": "limited necessary numeric/waves/payload scope passes; exclusive runtime grid unavailable",
-    "new_heavy_GO": false
+    "new_heavy_GO": "v208 metadataonly",
+    "communication_head": "497965586bda7e46ca6ac4dc02030fe418f6e278",
+    "candidate_sha256": "46696428569b1cb16eb4aac52d07cefcdc28edc0c223a400937a880ad9a6a264"
   },
-  "leader_next": "Review owner v108 plan and peer advice; audit v207 raw scope before next distinct mechanism; preserve all failed gates and require full14 nonregression before integration.",
+  "leader_next": "Audit v108 closure, review fixed risk proposal and worker2 own C9 new mechanism; keep nonregression and all failed-gate evidence intact.",
   "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration"
 }
