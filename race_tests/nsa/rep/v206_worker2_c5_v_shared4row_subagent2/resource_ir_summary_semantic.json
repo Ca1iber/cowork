@@ -1,0 +1,118 @@
+[
+  {
+    "variant": "parent_v084",
+    "MT": 42,
+    "ST": 20,
+    "static_shared_bytes": 0,
+    "dynamic_shared_bytes": 2048,
+    "stack": 0,
+    "staticmax": 8,
+    "not_actual_occupancy": true,
+    "launch": [
+      1024,
+      4,
+      64,
+      1,
+      1,
+      2048
+    ],
+    "deviceSHA": "c544b9aee12ff8cc0acf6452367b8bdffc726c33b3d50c1ef6652fd22941582d",
+    "IR_SHA": "b8a9ef22312b15e2251bf3a98c6ece546d475c8703aa4a6a2dacf33fb3313791",
+    "IR_MMA_lines": [
+      299,
+      301,
+      303,
+      305,
+      597,
+      598,
+      599,
+      600
+    ],
+    "IR_warp_lines": [
+      223,
+      274,
+      296,
+      416,
+      560,
+      667,
+      804
+    ],
+    "IR_Vsharedstore_lines": [
+      475,
+      488,
+      501,
+      514,
+      525,
+      536,
+      547,
+      558
+    ],
+    "IR_Vsharedstore_bytes": 4,
+    "IR_Vsharedstore_count": 8,
+    "CPP_global_uint4_lines": {
+      "Q": "*(uint4*)(qk_fetch + 0) = *(uint4*)(Q + ((((((int)blockIdx.y) * 1048576) + (((int)blockIdx.x) * 1024)) + (part * 512)) + (((int)threadIdx.x) * 8)));",
+      "K": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + (((int64_t)part_1) * (int64_t)512)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));",
+      "V": "*(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)128)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)row) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));",
+      "Output": "*(uint4*)(Output + ((((((int)blockIdx.y) * 1048576) + (((int)blockIdx.x) * 1024)) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+    },
+    "kernel_no_private_alloca_no_numeric_FPtoInt": true,
+    "transport_phase_no_lane_branch": true,
+    "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+  },
+  {
+    "variant": "power_v206",
+    "MT": 46,
+    "ST": 20,
+    "static_shared_bytes": 0,
+    "dynamic_shared_bytes": 2048,
+    "stack": 0,
+    "staticmax": 8,
+    "not_actual_occupancy": true,
+    "launch": [
+      1024,
+      4,
+      64,
+      1,
+      1,
+      2048
+    ],
+    "deviceSHA": "36c82ae010a910c83ff6b9375debdf1b486323da25531c3f43a17aca9045f9ee",
+    "IR_SHA": "cce88aaa3514664184bc61f9337cba17232494bb59e75d8061951c168d8158fd",
+    "IR_MMA_lines": [
+      299,
+      301,
+      303,
+      305,
+      684,
+      685,
+      686,
+      687
+    ],
+    "IR_warp_lines": [
+      223,
+      274,
+      296,
+      416,
+      647,
+      754,
+      891
+    ],
+    "IR_Vsharedstore_lines": [
+      554,
+      585,
+      614,
+      645
+    ],
+    "IR_Vsharedstore_bytes": 8,
+    "IR_Vsharedstore_count": 4,
+    "CPP_global_uint4_lines": {
+      "Q": "*(uint4*)(qk_fetch + 0) = *(uint4*)(Q + ((((((int)blockIdx.y) * 1048576) + (((int)blockIdx.x) * 1024)) + (part * 512)) + (((int)threadIdx.x) * 8)));",
+      "K": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + (((int64_t)part_1) * (int64_t)512)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));",
+      "V": "*(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)128)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)row) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));",
+      "Output": "*(uint4*)(Output + ((((((int)blockIdx.y) * 1048576) + (((int)blockIdx.x) * 1024)) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+    },
+    "kernel_no_private_alloca_no_numeric_FPtoInt": true,
+    "transport_phase_no_lane_branch": true,
+    "sourceSHA": "d1a58e61691db44287bd25e6b2aca80eaef2a173c925d3921d64a0645671b626"
+  }
+]

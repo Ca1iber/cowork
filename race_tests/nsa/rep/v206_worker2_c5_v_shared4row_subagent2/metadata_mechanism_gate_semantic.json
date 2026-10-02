@@ -1,0 +1,234 @@
+{
+  "status": "CPP_IR_GATES0_PENDING_LEADER_NATIVE_REVIEW",
+  "resource_rows": [
+    {
+      "variant": "parent_v084",
+      "MT": 42,
+      "ST": 20,
+      "static_shared_bytes": 0,
+      "dynamic_shared_bytes": 2048,
+      "stack": 0,
+      "staticmax": 8,
+      "not_actual_occupancy": true,
+      "launch": [
+        1024,
+        4,
+        64,
+        1,
+        1,
+        2048
+      ],
+      "deviceSHA": "c544b9aee12ff8cc0acf6452367b8bdffc726c33b3d50c1ef6652fd22941582d",
+      "IR_SHA": "b8a9ef22312b15e2251bf3a98c6ece546d475c8703aa4a6a2dacf33fb3313791",
+      "IR_MMA_lines": [
+        299,
+        301,
+        303,
+        305,
+        597,
+        598,
+        599,
+        600
+      ],
+      "IR_warp_lines": [
+        223,
+        274,
+        296,
+        416,
+        560,
+        667,
+        804
+      ],
+      "IR_Vsharedstore_lines": [
+        475,
+        488,
+        501,
+        514,
+        525,
+        536,
+        547,
+        558
+      ],
+      "IR_Vsharedstore_bytes": 4,
+      "IR_Vsharedstore_count": 8,
+      "CPP_global_uint4_lines": {
+        "Q": "*(uint4*)(qk_fetch + 0) = *(uint4*)(Q + ((((((int)blockIdx.y) * 1048576) + (((int)blockIdx.x) * 1024)) + (part * 512)) + (((int)threadIdx.x) * 8)));",
+        "K": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + (((int64_t)part_1) * (int64_t)512)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));",
+        "V": "*(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)128)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)row) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));",
+        "Output": "*(uint4*)(Output + ((((((int)blockIdx.y) * 1048576) + (((int)blockIdx.x) * 1024)) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+      },
+      "kernel_no_private_alloca_no_numeric_FPtoInt": true,
+      "transport_phase_no_lane_branch": true,
+      "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+    },
+    {
+      "variant": "power_v206",
+      "MT": 46,
+      "ST": 20,
+      "static_shared_bytes": 0,
+      "dynamic_shared_bytes": 2048,
+      "stack": 0,
+      "staticmax": 8,
+      "not_actual_occupancy": true,
+      "launch": [
+        1024,
+        4,
+        64,
+        1,
+        1,
+        2048
+      ],
+      "deviceSHA": "36c82ae010a910c83ff6b9375debdf1b486323da25531c3f43a17aca9045f9ee",
+      "IR_SHA": "cce88aaa3514664184bc61f9337cba17232494bb59e75d8061951c168d8158fd",
+      "IR_MMA_lines": [
+        299,
+        301,
+        303,
+        305,
+        684,
+        685,
+        686,
+        687
+      ],
+      "IR_warp_lines": [
+        223,
+        274,
+        296,
+        416,
+        647,
+        754,
+        891
+      ],
+      "IR_Vsharedstore_lines": [
+        554,
+        585,
+        614,
+        645
+      ],
+      "IR_Vsharedstore_bytes": 8,
+      "IR_Vsharedstore_count": 4,
+      "CPP_global_uint4_lines": {
+        "Q": "*(uint4*)(qk_fetch + 0) = *(uint4*)(Q + ((((((int)blockIdx.y) * 1048576) + (((int)blockIdx.x) * 1024)) + (part * 512)) + (((int)threadIdx.x) * 8)));",
+        "K": "*(uint4*)(qk_fetch + 0) = *(uint4*)(K + ((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + (((int64_t)part_1) * (int64_t)512)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)((int)threadIdx.x)) * (int64_t)8)));",
+        "V": "*(uint4*)(v_fetch + (row * 8)) = *(uint4*)(V + (((((((int64_t)((int)blockIdx.y)) * (int64_t)65536) + ((((int64_t)((int)threadIdx.x)) >> (int64_t)3) * (int64_t)128)) + (((int64_t)block_start) * (int64_t)64)) + (((int64_t)row) * (int64_t)64)) + ((((int64_t)((int)threadIdx.x)) & (int64_t)7) * (int64_t)8)));",
+        "Output": "*(uint4*)(Output + ((((((int)blockIdx.y) * 1048576) + (((int)blockIdx.x) * 1024)) + (part_2 * 512)) + (((int)threadIdx.x) * 8))) = *(uint4*)(output_fetch + 0);"
+      },
+      "kernel_no_private_alloca_no_numeric_FPtoInt": true,
+      "transport_phase_no_lane_branch": true,
+      "sourceSHA": "d1a58e61691db44287bd25e6b2aca80eaef2a173c925d3921d64a0645671b626"
+    }
+  ],
+  "actual_packed_exchange_IR_bpermute_lines": [
+    474,
+    489,
+    504,
+    519
+  ],
+  "shuffle_def_use_proofs": [
+    {
+      "call_IR_line": 474,
+      "address_SSA": "%shl.i.i870",
+      "data_word_SSA": "%or",
+      "address_expr": "((lane xor8)<((lane&-64)+64)?lanexor8:lane)*4",
+      "full_lo_hi_masks": [
+        -1,
+        -1
+      ],
+      "word_expr": "zeroextend16low |(zeroextend16high<<16)",
+      "actual_def_use_verified": true
+    },
+    {
+      "call_IR_line": 489,
+      "address_SSA": "%shl.i.i870.1",
+      "data_word_SSA": "%or.1",
+      "address_expr": "((lane xor8)<((lane&-64)+64)?lanexor8:lane)*4",
+      "full_lo_hi_masks": [
+        -1,
+        -1
+      ],
+      "word_expr": "zeroextend16low |(zeroextend16high<<16)",
+      "actual_def_use_verified": true
+    },
+    {
+      "call_IR_line": 504,
+      "address_SSA": "%shl.i.i870.1961",
+      "data_word_SSA": "%or.1956",
+      "address_expr": "((lane xor8)<((lane&-64)+64)?lanexor8:lane)*4",
+      "full_lo_hi_masks": [
+        -1,
+        -1
+      ],
+      "word_expr": "zeroextend16low |(zeroextend16high<<16)",
+      "actual_def_use_verified": true
+    },
+    {
+      "call_IR_line": 519,
+      "address_SSA": "%shl.i.i870.1.1",
+      "data_word_SSA": "%or.1.1",
+      "address_expr": "((lane xor8)<((lane&-64)+64)?lanexor8:lane)*4",
+      "full_lo_hi_masks": [
+        -1,
+        -1
+      ],
+      "word_expr": "zeroextend16low |(zeroextend16high<<16)",
+      "actual_def_use_verified": true
+    }
+  ],
+  "initial_parser_exit1_preserved": true,
+  "first_recovery_exit1_preserved": true,
+  "second_recovery_exit1_preserved": true,
+  "all_actual_eight_extraction_nodes_defuse_verified": true,
+  "raw_Indices_and_uniform_guard_CPP_equal": true,
+  "received_word_extraction_def_use": [
+    {
+      "received_word_SSA": "%62",
+      "low_trunc_SSA": "%conv468",
+      "high_lshr16_SSA": "%shr467.1972",
+      "high_trunc_nuw_SSA": "%conv468.1973",
+      "eight_extractions_not_eliminated": true,
+      "high_upperbits_zero_by_logicalshift16": true
+    },
+    {
+      "received_word_SSA": "%66",
+      "low_trunc_SSA": "%conv468.2985",
+      "high_lshr16_SSA": "%shr467.3996",
+      "high_trunc_nuw_SSA": "%conv468.3997",
+      "eight_extractions_not_eliminated": true,
+      "high_upperbits_zero_by_logicalshift16": true
+    },
+    {
+      "received_word_SSA": "%70",
+      "low_trunc_SSA": "%conv468.1",
+      "high_lshr16_SSA": "%shr467.1.1",
+      "high_trunc_nuw_SSA": "%conv468.1.1",
+      "eight_extractions_not_eliminated": true,
+      "high_upperbits_zero_by_logicalshift16": true
+    },
+    {
+      "received_word_SSA": "%74",
+      "low_trunc_SSA": "%conv468.1.2",
+      "high_lshr16_SSA": "%shr467.1.3",
+      "high_trunc_nuw_SSA": "%conv468.1.3",
+      "eight_extractions_not_eliminated": true,
+      "high_upperbits_zero_by_logicalshift16": true
+    }
+  ],
+  "i32_exchange_xor8_with_full_lo_hi_masks_width64": true,
+  "transport_integer_bitpath_verified": true,
+  "IR_transport_no_float_numeric_cast_no_lane_branch": true,
+  "actual_CPP_sharedvector_coords_verified1024": true,
+  "globalperlane_QKVOutput_uint4_CPP_expressions_identical": true,
+  "normal_TIR_source_inverse_and_1024_packet_coordinate_bit_proof_link": "source_identity.json/ownership_proof.json",
+  "byteorder_little_endian_IR": true,
+  "CPP_four8B_sharedstore_materialized_IRfouri64": true,
+  "all8MMA_and7warpsync_preserved": true,
+  "no_kernel_alloca_or_private_spill": true,
+  "bank_models_uncalibrated": true,
+  "final_ISA_transaction_width_and_runtime_latency": "UNAVAILABLE_noISAdecoder_or_native",
+  "attention_reference_native": [
+    0,
+    0,
+    0
+  ],
+  "no_auto_native": true
+}

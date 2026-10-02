@@ -1,0 +1,73 @@
+{
+  "version": "v206_worker2_c5_v_shared4row_subagent2",
+  "status": "PROPOSAL_ONLY_NO_CANDIDATE_HEAVY",
+  "development_parent_commit": "ff293bcf8c4cbf734e7b7fa41cce020f04cbb10f",
+  "numerical_parentSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "only_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "official_case_number": 5,
+  "expected_grid": [
+    1024,
+    4
+  ],
+  "expected_threads": 64,
+  "expected_dynamic_shared": 2048,
+  "Num_float32_elements": 16,
+  "mechanism": "Vshared producer ownership2row8col\u21924row4col by four packeduint32xor8 shuffles; perlane global16Bfetch unchanged; sharedstore8x4B\u21924x8B",
+  "global_fetch": "retain originalfetch_row=(lane//8)*2,fetch_col=(lane%8)*8,2rows\u00d7vectorized8half; no producer_lane permutation andno extra globalread",
+  "exchange": "half=(lane//8)%2; peer=lane^8. Send opposite4columns of2rows as4uint32; keep own desired4cols; reconstruct4rows\u00d74cols. Explicit fulluint64mask/width64/xor8 atall4sites insideoriginal uniformvalidblock branch",
+  "bits": "T.reinterpret(uint16,half) then zeroextenduint32/shift16/or; uint32shfl; split uint16\u2192T.reinterpret(float16). Never numeric float16\u2192integer conversion",
+  "index_strategy": "fully unroll2rows2pairs and4cols; use if_then_else tochoose constantoldfetch lower/upper4 offsets, avoiding lane-dependentlocalarray indexing",
+  "preserved": [
+    "exactparentprefix/other13dispatch",
+    "QK/P/fullroundedPden/PV accumulation order/Num16/outputmath",
+    "oldpreVsync andpostVproducer-consumer sync/all7warpsync",
+    "same sharedv_slot layout andallVconsumer8Bloads",
+    "oldglobalQ/K/V/Output16B perlaneaddressesandcount/noearlyload/noNum8/no2queryCTA"
+  ],
+  "proofs": [
+    "ownership_proof.json",
+    "shared_vector_touches.json",
+    "shuffle_word_coordinates.json",
+    "bank_hypotheses.json",
+    "primary_API_sources.json"
+  ],
+  "parent_evidence": "validv200case5 parent4c profiles2samples WGnonconf100/conf0,WGload50.86/51.03cycles,MTE66.99/65.43,MMA6.66/6.50; parentCPP8uint1 Vstores/lane,42MT20ST/max8/stack0. No dominant bottleneck proved",
+  "bank_risk": "uncalibrated32/64bank,word4B,issue subgroup8/16/32/64 models: some32bank\u226532subgroup cases proposed multiplicity doubles; othermodels same. Not realbankconflict orlatency. Do not tune threshold to pass model",
+  "predicted_positive": "half sharedstore sourceinstruction count withsame2KiB/query payload may reduceissue overhead",
+  "predicted_negative": [
+    "4extra uint32shuffle plus pack/select/extract ALU may outweigh4fewer sharedstoreinstructions",
+    "recv4uint32/fetchlive/vcol4 canincreaseMT/ST",
+    "8B sharedstore maybe splitwordphases so storecount reduction maynotreduce backend work",
+    "bankconflict possible perhypotheticalgranularity; no physicalbankmapping known"
+  ],
+  "source_static_gate": "derive exactonlyC5tuple fromofficial JSON; prefix14AST andallmath/globalfetch/consumer/sync AST verified,normalTileLangprimitives/noextraimports/foreign/async/manualbuiltin",
+  "metadata_falsifiers": [
+    "stack>0 or staticmax<8 stop before native; MT/ST allreported noresourcewinclaim",
+    "actualCPP/optimizedIR notfour8B sharedVstores ornotfour32bitpackedxor8shuffles/materialization fails =>stop",
+    "packedpath must bitcast/intops only, nofptoui/fptosi orFP16 numeric valuecast fortransport",
+    "lane-dependentbranch mustnot enclose shuffle; fullwarp64 maskandwidth exact; globalvalidpredicate sameuniform",
+    "actualperlane globalVuint4addresses/count unchanged,all1024shared coordinates matcholdconsumer,7sync/Num16/eightMMA preserved",
+    "dynamicprivate/stack/laneindexedspill/sourcehash/forbidden/index/bounds/bitpattern failure stop"
+  ],
+  "future_metadata_if_GO": "sameparent+C206 exactC5 factories/freshprocess/JITKernel callguard/0attentionrefnative; twoCPP/hoststrictvalidators thenfirstresource+O3IR commands/sameflags; wholecglockdoubleadmission<=2GiB/unownedRSS<=1GiB/0.5s/28GiBstop/OOM/unknownheavy/nonzero/300stimeout/ownPIDverified/no retry",
+  "future_native_only_separate_leader_GO": "singleuniqueC5B28-P84-C206-C206-P84-B28x2/4C12inclusive fullrefs/exactrun_variant+naive/W10R50/seed0/F16/1e-2; eachfreshproc samewholecg guard/600s; anyfailureprefixstop/noadaptive/noformalauto; median>=parentreject,overlaporpositive-roundinconclusive",
+  "peer_advisory_received": true,
+  "new_import_compile_attention_native": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "extra_logical_register_shuffle_payload_bytes_per_query": 1024,
+  "shuffle_payload_not_HBM_or_sharedtraffic": true,
+  "peer_actual_advice": "half0 retains rows0/1 low4 and sends high4;half1 retains rows2/3 high4 and sendslow4; xor8/full64 guard uniform; actual uint32 bitreturn/four8B vectorization andconstant-offsetIR required; nofptoui alone not completebitproof"
+}

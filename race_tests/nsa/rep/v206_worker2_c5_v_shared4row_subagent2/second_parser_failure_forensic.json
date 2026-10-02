@@ -1,0 +1,30 @@
+{
+  "initial_parser_exit": 1,
+  "first_recovery_exit": 1,
+  "first_recovery_PID": 153949,
+  "failure": "explicittrunc count>=8 mirroredsource casts; optimizedIR legitimately eliminateshighhalf trunc",
+  "actual_lowhalf_trunc_lines": [
+    528,
+    531,
+    587,
+    590
+  ],
+  "actual_highhalf_lshr16_lines": [
+    556,
+    560,
+    616,
+    620
+  ],
+  "highhalf_zero_upperbits_by_i32_lshr16": true,
+  "already_passed_before_failure": [
+    "allfouraddressdefusexor8/fullLoHiMask/width64",
+    "dataword lowzext16/highzext16shift16-or",
+    "CPPglobaluint4perlanebyteexpressionsidentical",
+    "actualnewuint2sharedvector1024addressbijection",
+    "resource42to46ST20/stack0/staticmax8",
+    "8MMA7warp/noallocaprivate/noFPtoInt/noVphaselaneBR"
+  ],
+  "new_recovery_not_launched": true,
+  "no_source_compiler_native_retry": true,
+  "final_gate_not_passed_yet": true
+}
