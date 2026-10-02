@@ -1,0 +1,34 @@
+{
+  "index": 6,
+  "variant": "baseline_v28",
+  "utc_before": "2026-10-02T03:40:53.567156+00:00",
+  "command": [
+    "/opt/conda/bin/python",
+    "-u",
+    "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+  ],
+  "source": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+    "sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd"
+  },
+  "env_explicit": {
+    "MACA_PATH": "/opt/maca",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONWARNINGS": "ignore",
+    "PYTHONPATH": "/root/tilelang-metax:/root/tilelang-metax/race_tests/nsa",
+    "NSA_VARIANT_SOURCE": "/root/tilelang-metax/race_tests/nsa/submission.py",
+    "NSA_RESULTS_PATH": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_06_baseline_v28/native_case10.csv",
+    "NSA_CASES": "10"
+  },
+  "planned_pid_file": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_06_baseline_v28/native.pid",
+  "planned_pgid_file": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_06_baseline_v28/native.pgid",
+  "monitor_file": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_06_baseline_v28/memory_samples.jsonl",
+  "cgroup_before": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "2924314624\n",
+    "memory.max_usage_in_bytes": "34359869440\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+    "memory.failcnt": "2963204\n",
+    "oom_kill": 11
+  }
+}

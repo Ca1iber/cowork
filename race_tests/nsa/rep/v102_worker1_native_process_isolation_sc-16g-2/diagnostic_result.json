@@ -1,0 +1,667 @@
+{
+  "utc": "2026-10-02T03:45:19.856643+00:00",
+  "status": "fixed_isolated_protocol_completed_no_cause_claim",
+  "failure": null,
+  "native_jobs_terminal_recorded": 12,
+  "planned_native_jobs": 12,
+  "candidate_source_v101_observed_PASS_records": 4,
+  "all_source_observed_PASS_records": 12,
+  "variant_counts": {
+    "baseline_v28": 4,
+    "parent_v084": 4,
+    "candidate_source_v101": 4
+  },
+  "runtime_protocol_completed": true,
+  "cgroup_initial": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "2903613440\n",
+    "memory.max_usage_in_bytes": "34359869440\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+    "memory.failcnt": "2963204\n",
+    "oom_kill": 11
+  },
+  "cgroup_final": {
+    "memory.limit_in_bytes": "34359738368\n",
+    "memory.usage_in_bytes": "2933108736\n",
+    "memory.max_usage_in_bytes": "34359869440\n",
+    "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+    "memory.failcnt": "2963204\n",
+    "oom_kill": 11
+  },
+  "all_jobs": [
+    {
+      "index": 1,
+      "variant": "baseline_v28",
+      "pid": 243197,
+      "pgid": 243197,
+      "utc_terminal": "2026-10-02T03:38:17.404368+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2903609344\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2911420416\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_01_baseline_v28/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_01_baseline_v28/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.012570",
+          "status": "PASS"
+        }
+      ],
+      "samples": 21,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    {
+      "index": 2,
+      "variant": "parent_v084",
+      "pid": 244640,
+      "pgid": 244640,
+      "utc_terminal": "2026-10-02T03:38:57.445602+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2911653888\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2917666816\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_02_parent_v084/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_02_parent_v084/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.011438",
+          "status": "PASS"
+        }
+      ],
+      "samples": 20,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    {
+      "index": 3,
+      "variant": "candidate_source_v101",
+      "pid": 245977,
+      "pgid": 245977,
+      "utc_terminal": "2026-10-02T03:39:37.488658+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2917924864\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2918617088\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_03_candidate_source_v101/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_03_candidate_source_v101/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.012232",
+          "status": "PASS"
+        }
+      ],
+      "samples": 20,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    {
+      "index": 4,
+      "variant": "candidate_source_v101",
+      "pid": 247423,
+      "pgid": 247423,
+      "utc_terminal": "2026-10-02T03:40:15.527624+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2918739968\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2925256704\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_04_candidate_source_v101/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_04_candidate_source_v101/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.012334",
+          "status": "PASS"
+        }
+      ],
+      "samples": 19,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    {
+      "index": 5,
+      "variant": "parent_v084",
+      "pid": 248817,
+      "pgid": 248817,
+      "utc_terminal": "2026-10-02T03:40:53.565690+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2925502464\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2924195840\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_05_parent_v084/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_05_parent_v084/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.010972",
+          "status": "PASS"
+        }
+      ],
+      "samples": 19,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    {
+      "index": 6,
+      "variant": "baseline_v28",
+      "pid": 250106,
+      "pgid": 250106,
+      "utc_terminal": "2026-10-02T03:41:31.605497+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2924314624\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2926432256\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_06_baseline_v28/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_06_baseline_v28/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.012349",
+          "status": "PASS"
+        }
+      ],
+      "samples": 19,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    {
+      "index": 7,
+      "variant": "baseline_v28",
+      "pid": 251323,
+      "pgid": 251323,
+      "utc_terminal": "2026-10-02T03:42:09.645496+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2926546944\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2931978240\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_07_baseline_v28/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_07_baseline_v28/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.011715",
+          "status": "PASS"
+        }
+      ],
+      "samples": 19,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    {
+      "index": 8,
+      "variant": "parent_v084",
+      "pid": 252606,
+      "pgid": 252606,
+      "utc_terminal": "2026-10-02T03:42:47.702047+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2931961856\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2927554560\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_08_parent_v084/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_08_parent_v084/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.010260",
+          "status": "PASS"
+        }
+      ],
+      "samples": 19,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    {
+      "index": 9,
+      "variant": "candidate_source_v101",
+      "pid": 253896,
+      "pgid": 253896,
+      "utc_terminal": "2026-10-02T03:43:25.741260+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2927669248\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2932973568\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_09_candidate_source_v101/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_09_candidate_source_v101/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.011561",
+          "status": "PASS"
+        }
+      ],
+      "samples": 19,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    {
+      "index": 10,
+      "variant": "candidate_source_v101",
+      "pid": 255185,
+      "pgid": 255185,
+      "utc_terminal": "2026-10-02T03:44:03.778422+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2933084160\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2929938432\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_10_candidate_source_v101/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_10_candidate_source_v101/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.012211",
+          "status": "PASS"
+        }
+      ],
+      "samples": 19,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    {
+      "index": 11,
+      "variant": "parent_v084",
+      "pid": 256468,
+      "pgid": 256468,
+      "utc_terminal": "2026-10-02T03:44:41.815388+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2930049024\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2933907456\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_11_parent_v084/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_11_parent_v084/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.012006",
+          "status": "PASS"
+        }
+      ],
+      "samples": 19,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    },
+    {
+      "index": 12,
+      "variant": "baseline_v28",
+      "pid": 257757,
+      "pgid": 257757,
+      "utc_terminal": "2026-10-02T03:45:19.854611+00:00",
+      "native_exit": 0,
+      "cgroup_before": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2934013952\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "cgroup_after": {
+        "memory.limit_in_bytes": "34359738368\n",
+        "memory.usage_in_bytes": "2932867072\n",
+        "memory.max_usage_in_bytes": "34359869440\n",
+        "memory.oom_control": "oom_kill_disable 0\nunder_oom 0\noom_kill 11\n",
+        "memory.failcnt": "2963204\n",
+        "oom_kill": 11
+      },
+      "csv": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_12_baseline_v28/native_case10.csv",
+      "log": "/root/tilelang-metax/race_tests/nsa/rep/v102_worker1_native_process_isolation_sc-16g-2/job_12_baseline_v28/native.log",
+      "observed_PASS_records": 1,
+      "records": [
+        {
+          "case": "10",
+          "B": "1",
+          "SEQ_LEN": "256",
+          "H": "1",
+          "HQ": "16",
+          "D": "64",
+          "S": "2",
+          "block_size": "16",
+          "latency_ms": "0.012349",
+          "status": "PASS"
+        }
+      ],
+      "samples": 19,
+      "stop_reason": null,
+      "source_hashes_after": {
+        "baseline_v28": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+        "parent_v084": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "candidate_source_v101": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2"
+      }
+    }
+  ],
+  "v101_gate_unchanged": 137,
+  "candidate_source_unchanged": "e828f662199cccd32462389402776145390a96083f5748c649c0039b677c79f2",
+  "no_new_kernel": true,
+  "no_adaptive_retry": true,
+  "data_scope": "singlecase10 diagnostic,not full14 or OJ",
+  "monitor_scope": "sampledRSS/HWM/cgroup,not guaranteed peak/victim attribution",
+  "latency": {
+    "samples_us": {
+      "baseline_v28": [
+        "12.570000",
+        "12.349000",
+        "11.715000",
+        "12.349000"
+      ],
+      "parent_v084": [
+        "11.438000",
+        "10.972000",
+        "10.260000",
+        "12.006000"
+      ],
+      "candidate_source_v101": [
+        "12.232000",
+        "12.334000",
+        "11.561000",
+        "12.211000"
+      ]
+    },
+    "medians_us": {
+      "baseline_v28": "12.349000",
+      "parent_v084": "11.205000",
+      "candidate_source_v101": "12.221500"
+    },
+    "vs_parent_pct": "9.071842927264614011601963400",
+    "ranges_overlap": true,
+    "rounds": [
+      {
+        "round": 1,
+        "medians_us": {
+          "baseline_v28": "12.459500",
+          "parent_v084": "11.205000",
+          "candidate_source_v101": "12.283000"
+        },
+        "vs_parent_pct": "9.620705042391789379741187000"
+      },
+      {
+        "round": 2,
+        "medians_us": {
+          "baseline_v28": "12.032000",
+          "parent_v084": "11.133000",
+          "candidate_source_v101": "11.886000"
+        },
+        "vs_parent_pct": "6.763675559148477499326327100"
+      }
+    ],
+    "any_round_positive": true,
+    "diagnostic_conclusion": "not demonstrated",
+    "new_protocol_not_directly_comparable_to_old_v101_absolute_us": true
+  }
+}

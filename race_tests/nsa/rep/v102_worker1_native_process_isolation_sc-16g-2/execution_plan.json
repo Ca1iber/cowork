@@ -1,0 +1,59 @@
+{
+  "phase": "leader_GO_fixed_once",
+  "order": [
+    "baseline_v28",
+    "parent_v084",
+    "candidate_source_v101",
+    "candidate_source_v101",
+    "parent_v084",
+    "baseline_v28",
+    "baseline_v28",
+    "parent_v084",
+    "candidate_source_v101",
+    "candidate_source_v101",
+    "parent_v084",
+    "baseline_v28"
+  ],
+  "jobs": 12,
+  "case": 10,
+  "single_source_fresh_process_per_job": true,
+  "candidate_source_v101_full_reference_checks_planned": 4,
+  "all_sources_full_reference_checks_planned": 12,
+  "warmup": 10,
+  "repeat": 50,
+  "seed": 0,
+  "tolerance": "original1e-2unchanged",
+  "metadata_in_native_process": false,
+  "RSS_HWM_monitor_period_seconds": 2,
+  "stop_on": [
+    "any nonzero process exit",
+    "cgroup OOM counter increment",
+    "wrong/missing/extra CSV rows",
+    "source/wrapper/native hashes changed"
+  ],
+  "no_adaptive_retries": true,
+  "no_v101_gate_rewrite": true,
+  "timing_scope": "original event around50 Python calls,host enqueue gaps included; fresh process import/compile outside measured calls",
+  "profile_and_kernel_changes": false,
+  "monitor_scope": [
+    "native PID/PGID and discoverable children VmRSS/VmHWM",
+    "sampled cgroup usage/OOM every2s",
+    "job before/after cgroupOOM and actual terminal code"
+  ],
+  "monitor_limits": [
+    "2s can miss short peaks/children",
+    "sampledHWM not guaranteed finalpeak",
+    "parentRSS not cgroup total",
+    "cgroup contains other users/processes; increment not victim attribution"
+  ],
+  "stop_on_inner_log_anomaly": [
+    "Killed",
+    "explicit OOM or child abnormal exit evidence"
+  ],
+  "runtime_diagnostic_success": "all12 native processes truly terminal0,correct singlecasePASS CSV,unchanged source/native hashes,OOM unchanged,no inner anomaly; not proof of old OOM cause",
+  "latency_falsifier": "candidate finalmedian>=parent rejects; any remaining cycle positive delta/range overlap retained,no stable-improvement claim or adaptive repeat",
+  "peer_review": "direct worker2 received; suggestions incorporated; no execution approval",
+  "GO_received_utc": "2026-10-02T03:35:20.653022+00:00",
+  "GO": "leader explicit collaboration message",
+  "abort_behavior": "on runtime risk terminate only own freshly created native process group,waitactualterminal,stop furtherjobs; neverkillothers"
+}
