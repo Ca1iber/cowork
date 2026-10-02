@@ -1,0 +1,8 @@
+--- guardfix_rev01/native_whole_cgroup_utils.py
++++ guardfix_rev02/native_whole_cgroup_utils.py
+@@ -30,4 +30,4 @@
+ def save(name,data):(r/name).write_text(json.dumps(data,indent=2)+'\n')
+ def rss(d):return int(d['status'].get('VmRSS','0 kB').split()[0])*1024
+ def heavy(s,allowed):return [d for d in s['visible_pids'] if not identity_equal(allowed.get(d['pid']),d) and rss(d)>plan['unknown_heavy_RSS_bytes']]
+-def identity_equal(a,b):return a and b and all(a[k]==b[k] for k in ['pid','starttime_ticks','exe'])
++def identity_equal(a,b):return bool(a and b and a.get('exe') and b.get('exe') and isinstance(a.get('starttime_ticks'),int) and isinstance(b.get('starttime_ticks'),int) and all(a.get(k)==b.get(k) for k in ['pid','starttime_ticks','exe']))

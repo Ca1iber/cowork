@@ -1,0 +1,16 @@
+{
+  "proof_scope": "proposal-only token mapping/address algebra, not candidate/generatedcode validation",
+  "logicalqueries": 8192,
+  "B2_tokens4096_bijection": true,
+  "perlane_Q_Output_vector_base_checks": 1048576,
+  "grid": [
+    2048,
+    2
+  ],
+  "threads": 64,
+  "waves": 4096,
+  "Q_Output_payloadbytes": 16777216,
+  "K_V_source_formula_unchanged_for_all_legal_blockstarts": "b4096*64+(rawidx*16+row)*64+col, perquery rawidx independent; no content-sharing premise",
+  "uniformity": "pair/step/token/selectedIdx same across64 lanes; step guard/sync cannot diverge across physical warp",
+  "tail_contract": "target4096 even all8192 valid; retain token<seq_len whole-wave guard if generic ceiling grid"
+}

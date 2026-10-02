@@ -1,0 +1,40 @@
+{
+  "stage": "GUARDFIX_PREPARED_NO_NATIVE_GO",
+  "sourceSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+  "fixed12_order_unchanged": true,
+  "kernel_runner_inputs_unchanged": true,
+  "expected_OOM": 3,
+  "fixes": [
+    "initial/admission/post/runtime/terminal expect OOM3",
+    "currentpid-start-exe whitelist,validatedparent/threadancestry,criticalalive mismatch stops",
+    "terminalwhole/unknown/owneddescendant guard,finitepositive CSV",
+    "bounded verified-owned abortwait; unverifiedlive actualwaitUNAVAILABLE no unsafe signal"
+  ],
+  "actual_preflight_wait": 0,
+  "actual_preflight_PID": 239096,
+  "helpers": [
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/run_native_screen.py",
+      "sha256": "d2960a80fec1c6d2a6d13107ca41ff39372445b4eff2d064444e69a59efa80dc"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/native_whole_cgroup_utils.py",
+      "sha256": "81b3be6398848c67be85f856bfe7d7d300f325c70668f13e6bd5dc8d4766e099"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/native_exec.py",
+      "sha256": "547e45c040e544366d3a56eeb03fb7b1a24bc5cdeb9d825936909e94d429a4ab"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/native_guardfix_stdlib_preflight.py",
+      "sha256": "988306f25237033766c36cf48722764f03738efb6bc4fdf7f5958e1a50f3601a"
+    }
+  ],
+  "oldprepared_preserved": "/root/tilelang-metax/race_tests/nsa/experiments/v210_worker2_c8_serial_query_pair_subagent2/native_prepared_initial",
+  "onceguard_exists": false,
+  "new_native_reference_GPU": [
+    0,
+    0,
+    0
+  ]
+}

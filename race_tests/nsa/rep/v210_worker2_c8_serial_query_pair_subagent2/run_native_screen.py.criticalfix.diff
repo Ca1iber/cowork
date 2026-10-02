@@ -1,0 +1,13 @@
+--- guardfix_rev01/run_native_screen.py
++++ guardfix_rev02/run_native_screen.py
+@@ -69,7 +69,9 @@
+       verified={pid:d for pid,d in owned.items() if U.identity_equal(d,current.get(pid))}
+       ids={child for pid in verified for thread in current[pid]['thread_children'] for child in thread['children']}
+       for q in snap['visible_pids']:
+-       if q['pid'] not in owned and (q['ppid'] in verified or q['pid'] in ids):
++       if q['pid'] not in owned and q.get('exe') and isinstance(q.get('starttime_ticks'),int) and (q['ppid'] in verified or q['pid'] in ids):
++        parents=[pid for pid in verified if q['ppid']==pid or any(q['pid'] in t['children'] for t in current[pid]['thread_children'])]
++        job.setdefault('descendant_registration_events',[]).append({'child':{k:q[k] for k in ['pid','starttime_ticks','exe']},'verified_current_parents':[{k:current[pid][k] for k in ['pid','starttime_ticks','exe']} for pid in parents],'PPID_match':q['ppid'] in verified,'observed_thread_child_match':q['pid'] in ids})
+         owned[q['pid']]=q;changed=True
+      snap['observed_owned_identities']=[{k:q[k] for k in ['pid','ppid','pgid','starttime_ticks','exe']} for q in owned.values()]
+      stream.write(json.dumps(snap)+'\n');stream.flush();samples+=1

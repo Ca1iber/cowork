@@ -1,0 +1,67 @@
+{
+  "stage": "LIGHTWEIGHT_PROPOSAL_ONLY_NO_SOURCE_OR_HEAVY_GO",
+  "version": "v210_worker2_c8_serial_query_pair_subagent2",
+  "source_branch_checkpoint": "d4df40603a5f2093786e2385e417fff742aa04fc",
+  "parent_sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "official_case": 8,
+  "only_key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "mechanism": "One CTA64 sequentially processes two independent queries. Grid[2048,2], token=pair*2+step in serial2 loop; reuse original buffers without reusing their numerical contents. All13other keys stay parent.",
+  "changes": [
+    "allocoriginal2KBshared/localNum16/Q16/V16 and other arrays once perCTA outside serial2",
+    "inside each token<seq_len whole-wave guard execute exact parent core with fresh original Num/den/max initialization and full Qreload; Score/P/V only consumed after thisquery valid branch fully writes them",
+    "qstep0 finalOutputsharedgather completed then one boundary warp-sync before qstep1 Qshared write; original7sync perquery untouched",
+    "no KV content reuse/no query-independent index assumption/no async/shuffle/newprecision/prep kernel"
+  ],
+  "positive_hypothesis": "Halve CTA setups/launch groups, possibly hoist lane/batch/shared-address preparation across two queries; parent MTE does not prove scheduler or preparation dominant.",
+  "reverse_hypothesis": [
+    "4096waves vs8192 reduces independent scheduling/latency hiding; longer serial work may slow",
+    "one extra boundary warp-sync perpair, math and logical bytes not reduced",
+    "queryloop may add control/ST/longliveness/MT or code size; allocoutside not proof of same resources",
+    "same queries have independent selected blocks; no assumed cache reuse or hardware traversal order"
+  ],
+  "workload": {
+    "logicalqueries": 8192,
+    "old_CTA_waves": 8192,
+    "proposed_CTA_waves": 4096,
+    "outputbytes": 16777216,
+    "MMAperquery": 8,
+    "executedMMApernewwave": 16,
+    "Num": 16,
+    "sharedbytesperCTA": 2048,
+    "originalsyncperquery": 7,
+    "sync_executions_perpair": 15
+  },
+  "parent_evidence": "parent_C8_evidence.json exactraw hashes;42MT20ST/max8/stack0/dyn2048, MTE67.972/67.801,MMA6.755/6.738,shared100/0,8192waves/16MiB+448,+384. v200 broader OOM/unclean pipeline retained; necessary numeric scope, not exclusiveclean/bottleneck proof. No recapture.",
+  "index_math_sync_proofs": [
+    "query_pair_proof.json pure-S0:8192 logicalquery bijection and1048576 Q/Output vector basechecks",
+    "same perquery parent AST core and raw multiplyBS/guard; K/V b+blockstart addresses independent of pairing",
+    "invalidquery doesnot use previous Score/P/V; original0/0 NaN preserved",
+    "allwarp query/step/selected guard predicates uniform; only warp64sync, no fullCTA sync",
+    "O3 either unroll16MMA/15sync or loop8MMA with original7 periteration plus one step0 boundary; must verify control and buffer lifetime"
+  ],
+  "resource_falsifiers": [
+    "stack>0 or staticmax<parent8 =>stop, no native",
+    "newaddress/perquerymath/guard/key/vectorwidth/sharedalias reset wrong or extra interquery numericalreuse =>stop",
+    "pair boundary protection absent or all64lane barrier control unproven =>stop",
+    "MFMA/den/P/Num not two independent ordered queries in actualCPP/IR =>stop; record all MT/ST/code-size changes",
+    "cannot prove actual loop or unrolled execution counts =>stop, no source-only assumption"
+  ],
+  "future_gates": "source-only header210/exact3imports/parent14ASTprefix/onlyC8 after leaderGO; then separate bounded metadata parent+C210 compileexport0attention, compare parentexistingCPP SHA24237 exactSDKflags for resource reuse; candidate resource and firstIR after review; native only explicitGO fixedC8 B-P-C-C-P-Bx2/4C12refs originalW10R50/2GiB28guard/unknown1GiB/OOM3/no retry; positiveRound/overlap inconclusive or median>=parent reject. No automatic profile/full14/main/OJ.",
+  "peer_advisory_received": true,
+  "candidate_created": false,
+  "new_import_compile_profile_native": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "stage": "GUARDFIX2_PREPARED_NO_NATIVE_GO",
+  "sourceSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+  "fixed12_order_unchanged": true,
+  "kernel_runner_inputs_unchanged": true,
+  "expected_OOM": 3,
+  "fixes": [
+    "initial/admission/post/runtime/terminal expect OOM3",
+    "currentpid-start-exe whitelist,validatedparent/threadancestry,criticalalive mismatch stops",
+    "terminalwhole/unknown/owneddescendant guard,finitepositive CSV",
+    "bounded verified-owned abortwait; unverifiedlive actualwaitUNAVAILABLE no unsafe signal"
+  ],
+  "actual_preflight_wait": 0,
+  "actual_preflight_PID": 240595,
+  "helpers": [
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/run_native_screen.py",
+      "sha256": "b9d3cec1e6991640af8e35ec079e9acabf83d2b790b9243c859c08c4e2a8a1b8"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/native_whole_cgroup_utils.py",
+      "sha256": "eaf7eb6e9488e7a75820874b68d2497492b92af44815b26bc7bc59ba9925d3e7"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/native_exec.py",
+      "sha256": "547e45c040e544366d3a56eeb03fb7b1a24bc5cdeb9d825936909e94d429a4ab"
+    },
+    {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/native_guardfix2_stdlib_preflight.py",
+      "sha256": "64792687d3a0ba2c23285de3d2fc970564a627e27909f131be5f2ba615649c5c"
+    }
+  ],
+  "oldprepared_preserved": "/root/tilelang-metax/race_tests/nsa/experiments/v210_worker2_c8_serial_query_pair_subagent2/native_prepared_initial",
+  "onceguard_exists": false,
+  "new_native_reference_GPU": [
+    0,
+    0,
+    0
+  ],
+  "identity_requires_nonemptyexe_and_integerstart": true,
+  "descendant_registration_verified_parent_or_thread_evidence_recorded": true,
+  "previous_revision_preserved": "experiments/v210_worker2_c8_serial_query_pair_subagent2/native_guardfix_rev01"
+}

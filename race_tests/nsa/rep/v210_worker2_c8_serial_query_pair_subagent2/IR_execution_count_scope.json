@@ -1,0 +1,12 @@
+{
+  "IR_count_scope": "static kernel call sites, not measured GPU instruction executions",
+  "fullvalid_twoqueries": {
+    "MMA": 16,
+    "warp_sync": 15,
+    "softmaxden_shfl": 8
+  },
+  "conditional_MMA_count": "8*(valid_query0+valid_query1)",
+  "conditional_warp_sync_count": "7+4*(valid_query0+valid_query1), includes boundary1 and unconditionalQ/output3perquery",
+  "invalid_guard_uniform_all64lanes": true,
+  "no_reference_or_profile_for_thiscandidate": true
+}

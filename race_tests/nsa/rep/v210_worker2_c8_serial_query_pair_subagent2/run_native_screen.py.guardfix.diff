@@ -1,0 +1,106 @@
+--- prepared_initial/run_native_screen.py
++++ guardfix/run_native_screen.py
+@@ -1,8 +1,9 @@
+ from pathlib import Path
+-import os,sys,json,subprocess,csv,time,datetime,hashlib,fcntl,signal,re,statistics
++import os,sys,json,subprocess,csv,time,datetime,hashlib,fcntl,signal,re,statistics,math
+ import native_whole_cgroup_utils as U
+ root=U.root;r=U.r;h=U.h
+ nplan=json.loads((r/'native_screen_plan.json').read_text());pplan=U.plan
++expected_OOM=3
+ sources={'baseline_v28':(root/'race_tests/nsa/submission.py','42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd'),'parent_v084':(root/pplan['numerical_parent'],pplan['parent_sha256']),'power_v210':(Path(pplan['candidate_path']),'f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d')}
+ sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+ runner=Path(nplan['runner']);assert sha(runner)==nplan['runnerSHA']
+@@ -27,18 +28,23 @@
+    if U.identity_equal(d,now) and now['state']!='Z':
+     try:os.kill(pid,signal.SIGKILL);actions.append({'pid':pid,'signal':'KILL','identity_verified':True})
+     except ProcessLookupError:pass
+-  proc.wait()
++  try:proc.wait(timeout=5)
++  except subprocess.TimeoutExpired:actions.append({'actualwait':'UNAVAILABLE_still_live_after_verified_only_abort'})
+  return actions
+ try:
+  fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);lock_taken=True
+  lock.seek(0);lock.truncate();lock.write(json.dumps(U.info(os.getpid()))+'\n');lock.flush()
++ observer_identity=U.info(os.getpid());assert observer_identity and observer_identity['exe']
++ initial=U.snapshot('native_initial_guard');U.save('native_initial_guard.json',initial)
++ if initial['oom_kill']!=expected_OOM:raise RuntimeError('INITIAL_EXPECTED_OOM_MISMATCH')
+  for run,label in enumerate(nplan['fixed_order'],1):
+   source,expected=sources[label];assert sha(source)==expected and sha(runner)==nplan['runnerSHA']
+   stem=r/f'screen_run{run}_{label}';csvpath=stem.with_suffix('.csv');logpath=stem.with_suffix('.log')
+   job={'run':run,'variant':label,'source_path':str(source),'sourceSHA':expected,'reference_records':0};proc=None;owned={};reason=None;actions=[]
+   pre=U.snapshot('native_pre_admission');(stem.with_suffix('.pre.json')).write_text(json.dumps(pre)+'\n');job['oom_before']=pre['oom_kill']
+   try:
+-   if pre['usage_bytes']>pplan['admission_usage_bytes'] or U.heavy(pre,{os.getpid()}):raise RuntimeError('ADMISSION_REFUSED_USAGE_OR_UNOWNED_HEAVY')
++   if pre['oom_kill']!=expected_OOM:raise RuntimeError('ADMISSION_EXPECTED_OOM_MISMATCH')
++   if pre['usage_bytes']>pplan['admission_usage_bytes'] or U.heavy(pre,{os.getpid():observer_identity}):raise RuntimeError('ADMISSION_REFUSED_USAGE_OR_UNOWNED_HEAVY')
+    env={**os.environ,'PYTHONPATH':str(root)+':'+str(root/'race_tests/nsa'),'NSA_VARIANT_SOURCE':str(source),'NSA_RESULTS_PATH':str(csvpath),'NSA_CASES':'8'}
+    argv=['/opt/conda/bin/python','-S',str(h/'native_exec.py')];job['launcher_argv']=argv;job['native_argv']=['/opt/conda/bin/python',str(runner)]
+    log=logpath.open('w');proc=subprocess.Popen(argv,stdin=subprocess.PIPE,cwd=root,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+@@ -46,22 +52,32 @@
+    stem.with_suffix('.pid').write_text(str(proc.pid)+'\n')
+    stem.with_suffix('.identity.json').write_text(json.dumps(job,indent=2)+'\n')
+    post=U.snapshot('native_post_admission_before_release');stem.with_suffix('.post_admission.json').write_text(json.dumps(post)+'\n')
+-   if post['usage_bytes']>pplan['admission_usage_bytes'] or U.heavy(post,{os.getpid(),proc.pid}) or post['oom_kill']!=pre['oom_kill']:raise RuntimeError('SECOND_ADMISSION_REFUSED')
++   if post['usage_bytes']>pplan['admission_usage_bytes'] or U.heavy(post,{os.getpid():observer_identity,proc.pid:d}) or post['oom_kill']!=expected_OOM:raise RuntimeError('SECOND_ADMISSION_REFUSED')
++   post_current={q['pid']:q for q in post['visible_pids']}
++   if proc.poll() is not None or not U.identity_equal(d,post_current.get(proc.pid)):raise RuntimeError('PRE_RELEASE_OWNED_IDENTITY_OR_EXIT')
+    proc.stdin.write(b'GO\n');proc.stdin.flush();proc.stdin.close();job['released_native']=True
+    deadline=time.monotonic()+nplan['max_job_seconds'];samples=0
+    with stem.with_suffix('.samples.jsonl').open('w') as stream:
+     while proc.poll() is None:
+-     snap=U.snapshot('native_observation');changed=True
++     snap=U.snapshot('native_observation');current={q['pid']:q for q in snap['visible_pids']}
++     critical_reason=None
++     if proc.poll() is None and not U.identity_equal(owned[proc.pid],current.get(proc.pid)):
++      critical_reason='OWNED_MAIN_CRITICAL_IDENTITY_MISSING_OR_MISMATCH'
++     changed=True
+      while changed:
+-      changed=False;ids={x for q in snap['visible_pids'] if q['pid'] in owned for t in q['thread_children'] for x in t['children']}
++      changed=False
++      verified={pid:d for pid,d in owned.items() if U.identity_equal(d,current.get(pid))}
++      ids={child for pid in verified for thread in current[pid]['thread_children'] for child in thread['children']}
+       for q in snap['visible_pids']:
+-       if q['pid'] not in owned and (q['ppid'] in owned or q['pid'] in ids):owned[q['pid']]=q;changed=True
++       if q['pid'] not in owned and (q['ppid'] in verified or q['pid'] in ids):
++        owned[q['pid']]=q;changed=True
+      snap['observed_owned_identities']=[{k:q[k] for k in ['pid','ppid','pgid','starttime_ticks','exe']} for q in owned.values()]
+      stream.write(json.dumps(snap)+'\n');stream.flush();samples+=1
+      U.save('live_stage.json',{'stage':'fixed_C8_native_observed','run':run,'variant':label,'pid':proc.pid,'observerPID':os.getpid(),'sample_count':samples,'utc':snap['utc'],'usage_bytes':snap['usage_bytes'],'oom':snap['oom_kill']})
+-     if snap['usage_bytes']>=pplan['runtime_stop_usage_bytes']:reason='WHOLE_CGROUP_PRESSURE_THRESHOLD'
+-     elif snap['oom_kill']!=pre['oom_kill']:reason='OOM_COUNTER_INCREMENT'
+-     elif U.heavy(snap,set(owned)|{os.getpid()}):reason='UNOWNED_VISIBLE_HEAVY_THRESHOLD'
++     if critical_reason:reason=critical_reason
++     elif snap['usage_bytes']>=pplan['runtime_stop_usage_bytes']:reason='WHOLE_CGROUP_PRESSURE_THRESHOLD'
++     elif snap['oom_kill']!=expected_OOM:reason='OOM_COUNTER_INCREMENT'
++     elif U.heavy(snap,{**owned,os.getpid():observer_identity}):reason='UNOWNED_VISIBLE_HEAVY_THRESHOLD'
+      elif any(x.strip()=='Killed' for x in logpath.read_text().splitlines()):reason='INNER_KILLED'
+      elif time.monotonic()>=deadline:reason='JOB600S_TIMEOUT'
+      if reason:break
+@@ -73,11 +89,24 @@
+   except Exception as e:
+    job['stop_reason']=str(e)
+    if proc is not None and proc.poll() is None:actions=terminate_owned(proc,owned)
+-   if proc is not None:job['exit']=proc.wait()
++   if proc is not None:
++    job['exit']=proc.poll()
++    if job['exit'] is None:job['actualwait']='UNAVAILABLE_live_identity_unverified_or_aborttimeout'
+   job['owned_termination_actions']=actions
+   final=U.snapshot('after_native_exit');stem.with_suffix('.post_exit.json').write_text(json.dumps(final)+'\n');job['oom_after']=final['oom_kill']
++  terminal_current={q['pid']:q for q in final['visible_pids']}
++  descendants=[q for pid,q in terminal_current.items() if pid in owned and (proc is None or pid!=proc.pid) and q['state']!='Z']
++  job['terminal_observed_owned_descendants']=[{'pid':q['pid'],'starttime_ticks':q['starttime_ticks'],'exe':q['exe'],'current_tuple_verified':U.identity_equal(owned[q['pid']],q)} for q in descendants]
++  terminal_reason=None
++  if final['oom_kill']!=expected_OOM:terminal_reason='TERMINAL_EXPECTED_OOM_MISMATCH'
++  elif final['usage_bytes']>=pplan['runtime_stop_usage_bytes']:terminal_reason='TERMINAL_WHOLE_CGROUP_PRESSURE'
++  elif U.heavy(final,{**owned,os.getpid():observer_identity}):terminal_reason='TERMINAL_UNOWNED_HEAVY'
++  elif descendants:terminal_reason='TERMINAL_OWNED_DESCENDANTS_STILL_VISIBLE'
++  if terminal_reason:
++   job.setdefault('stop_reason',terminal_reason);job['terminal_guard_reason']=terminal_reason
++   if proc is not None:job['owned_termination_actions']+=terminate_owned(proc,owned)
+   local=list(csv.DictReader(csvpath.open())) if csvpath.exists() else []
+-  valid=len(local)==1 and local[0].get('status')=='PASS' and int(local[0]['case'])==8 and tuple(int(local[0][key]) for key in ['B','SEQ_LEN','H','HQ','D','S','block_size'])==(2,4096,1,16,64,1,16) and float(local[0]['latency_ms'])>0
++  valid=len(local)==1 and local[0].get('status')=='PASS' and int(local[0]['case'])==8 and tuple(int(local[0][key]) for key in ['B','SEQ_LEN','H','HQ','D','S','block_size'])==(2,4096,1,16,64,1,16) and math.isfinite(float(local[0]['latency_ms'])) and float(local[0]['latency_ms'])>0
+   job['csv_valid']=valid;job['inner_Killed']=bool(logpath.exists() and any(x.strip()=='Killed' for x in logpath.read_text().splitlines()))
+   job['source_hash_unchanged']=sha(source)==expected;job['runner_hash_unchanged']=sha(runner)==nplan['runnerSHA']
+   job['shared_hashes_unchanged']=all(sha(root/p)==s for p,s in expected_shared.items())

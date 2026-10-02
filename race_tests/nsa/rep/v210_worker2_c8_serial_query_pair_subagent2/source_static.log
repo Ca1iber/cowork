@@ -1,0 +1,43 @@
+{
+  "candidate_path": "/tmp/nsa_worker2_v210_c8_serial_query_pair.py",
+  "candidate_sha256": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+  "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+  "factory_name": "_make_worker2_c8_serial_query_pair",
+  "dispatch_key": [
+    2,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "official_case_number": 8,
+  "prefix_14_AST_nodes_equal": true,
+  "inverse_grid_loop_token_guard_boundary_restore_whole_factory_AST_equal": true,
+  "original_array_allocations_outside_serial_loop_equal": true,
+  "perquery_core_AST_identical": true,
+  "Num_float32_elements": 16,
+  "shared_half_elements": 1024,
+  "query_step_loop": "T.serial(2)",
+  "token": "query_pair*2+query_step",
+  "whole_wave_tail_guard": "token<seq_len",
+  "original_sync_sites_perquery": 7,
+  "extra_boundary_sync_site": "after entire q0Output/gather, before q1firstQsharedwrite; query_step==0",
+  "planned_executed_syncs_perpair": 15,
+  "source_sync_sites": 8,
+  "query_content_cache": false,
+  "independent_Indices_KV_perquery": true,
+  "perquery_Qreload_Num_den_max_reset_AST_unchanged": true,
+  "valid_branch_Score_P_V_overwrite_before_read_AST_unchanged": true,
+  "original_math_dtypes_vector_paths_unchanged": true,
+  "exact_import_count": 3,
+  "source_only_import_compile_attention_native": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "actualCPP_IR_executioncounts_resources": "UNAVAILABLE_not_compiled"
+}

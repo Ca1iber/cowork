@@ -1,0 +1,65 @@
+{
+  "complete12jobs": false,
+  "job_stop": {
+    "run": 2,
+    "variant": "parent_v084",
+    "source_path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v210_worker2_c8_serial_query_pair_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 242606,
+    "starttime_ticks": 331820089,
+    "pgid": 242606,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "samples": 78,
+    "stop_reason": "OWNED_MAIN_CRITICAL_IDENTITY_MISSING_OR_MISMATCH",
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 0
+  },
+  "actual_full_references": {
+    "candidate": 0,
+    "total": 1
+  },
+  "protocol": "fixed12/sourcefresh/wholecg0.5s/nativeW10R50unchanged",
+  "raw_PASS_CSV_record_count": 2,
+  "raw_all_records": [
+    {
+      "case": 8,
+      "run": 1,
+      "round": 1,
+      "variant": "baseline_v28",
+      "latency_ms": "0.051707",
+      "status": "PASS"
+    },
+    {
+      "case": 8,
+      "run": 2,
+      "round": 1,
+      "variant": "parent_v084",
+      "latency_ms": "0.040259",
+      "status": "PASS"
+    }
+  ],
+  "automatic_formal": false,
+  "currentOOM": 3,
+  "sourceSHA": "f98e604329f5b43f5ea6a2f34a12b9f9fb204cdc2d23da9524420c2ddcc2b83d",
+  "status": "failed_runtime_or_validation_selected_screen"
+}

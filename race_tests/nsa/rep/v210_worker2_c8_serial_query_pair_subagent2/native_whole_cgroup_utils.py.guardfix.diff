@@ -1,0 +1,9 @@
+--- prepared_initial/native_whole_cgroup_utils.py
++++ guardfix/native_whole_cgroup_utils.py
+@@ -29,5 +29,5 @@
+  return {'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'stage':stage,'usage_bytes':usage,'oom_kill':count,'memory':mem,'visible_pids':pids,'sample_missing_pids':missing,'observer':info(os.getpid())}
+ def save(name,data):(r/name).write_text(json.dumps(data,indent=2)+'\n')
+ def rss(d):return int(d['status'].get('VmRSS','0 kB').split()[0])*1024
+-def heavy(s,allowed):return [d for d in s['visible_pids'] if d['pid'] not in allowed and rss(d)>plan['unknown_heavy_RSS_bytes']]
++def heavy(s,allowed):return [d for d in s['visible_pids'] if not identity_equal(allowed.get(d['pid']),d) and rss(d)>plan['unknown_heavy_RSS_bytes']]
+ def identity_equal(a,b):return a and b and all(a[k]==b[k] for k in ['pid','starttime_ticks','exe'])
