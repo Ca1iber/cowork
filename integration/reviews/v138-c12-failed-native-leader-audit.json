@@ -1,0 +1,64 @@
+{
+  "protocol_version": "v138",
+  "code_version": "v137",
+  "sourceSHA": "9fc293d0bfab19a4ae6effa50f1dfd8127693141db7ba98c34e0d951c4979252",
+  "actual_inventory_verified": 86,
+  "status": "failed native prefix atjob5 unknownvisibleheavyRSS guard",
+  "planned_candidate_inclusive": [
+    4,
+    16
+  ],
+  "clean_candidate_inclusive": [
+    1,
+    4
+  ],
+  "completed_native0": 4,
+  "job5_owned_native_wait": -15,
+  "job5_references": 0,
+  "all_outer_original_wait1": true,
+  "native_memory_samples": 373,
+  "OOM": [
+    13
+  ],
+  "sampled_peak_bytes": 28043124736,
+  "peak_not_upperbound": true,
+  "raw_prefix": [
+    {
+      "job": 1,
+      "variant": "baseline_v28",
+      "latency_ms": "0.083190"
+    },
+    {
+      "job": 2,
+      "variant": "parent_v084",
+      "latency_ms": "0.072709"
+    },
+    {
+      "job": 3,
+      "variant": "power_v303",
+      "latency_ms": "0.069238"
+    },
+    {
+      "job": 4,
+      "variant": "candidate_v137",
+      "latency_ms": "0.069033"
+    }
+  ],
+  "no_formal_latency_verdict": true,
+  "unknown_trigger": {
+    "pid": 694049,
+    "start": 102079356,
+    "ppid": 694042,
+    "exe": "/opt/conda/bin/python3.12",
+    "RSS_KiB": 1274784,
+    "parent_exe": "/usr/bin/timeout",
+    "parent_start": 102079345,
+    "parent_ppid": 0,
+    "no_verified_owned_ancestry": true,
+    "task_origin_GPUuse": "UNKNOWN",
+    "no_cmdline_env_or_signals_to_unknown": true
+  },
+  "later_current_readonly_unknown_pair_missing": true,
+  "decision": "close without replay/fill/pooling; move to fresh readonly evidence hypothesis",
+  "compiled_proof_remains_independent": true
+}
