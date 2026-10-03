@@ -1,0 +1,67 @@
+{
+  "trigger_UTC": "2026-10-03T03:17:29.675471+00:00",
+  "trigger_unknown": {
+    "pid": 694049,
+    "ppid": 694042,
+    "starttime_ticks": 102079356,
+    "exe": "/opt/conda/bin/python3.12",
+    "comm": "python3",
+    "state": "R",
+    "critical_identity_available": true,
+    "memory_KiB": {
+      "VmSize": 7915580,
+      "VmHWM": 1274784,
+      "VmRSS": 1274784
+    }
+  },
+  "visible_parent_chain": [
+    {
+      "pid": 694049,
+      "ppid": 694042,
+      "starttime_ticks": 102079356,
+      "exe": "/opt/conda/bin/python3.12",
+      "comm": "python3",
+      "state": "R",
+      "critical_identity_available": true,
+      "memory_KiB": {
+        "VmSize": 7915580,
+        "VmHWM": 1274784,
+        "VmRSS": 1274784
+      }
+    },
+    {
+      "pid": 694042,
+      "ppid": 0,
+      "starttime_ticks": 102079345,
+      "exe": "/usr/bin/timeout",
+      "comm": "timeout",
+      "state": "S",
+      "critical_identity_available": true,
+      "memory_KiB": {
+        "VmSize": 2704,
+        "VmHWM": 1120,
+        "VmRSS": 1120
+      }
+    }
+  ],
+  "then_registered_owned_terminal_record": {
+    "693839": {
+      "pid": 693839,
+      "starttime_ticks": 102078195,
+      "exe": "/opt/conda/bin/python3.12",
+      "observed_parent": {
+        "pid": 692541
+      },
+      "first_seen_UTC": "2026-10-03T03:17:15.652515+00:00"
+    }
+  },
+  "unknown_complete_tuple_matches_owned": false,
+  "parent_complete_tuple_matches_registeredowned": false,
+  "namespace_shortfork_invisible_or_reparent_limits": true,
+  "owner_attribution": "UNKNOWN;not inferred fromPythonname/PPIDonly",
+  "no_unknown_cmdline_env_read_or_signal": true,
+  "owned_native_PID": 693839,
+  "owned_native_actualwait": -15,
+  "OOM": 13,
+  "whole_usage": 18894528512
+}

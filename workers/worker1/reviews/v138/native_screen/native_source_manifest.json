@@ -1,0 +1,95 @@
+{
+  "wrapper_path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py",
+  "recognized_unowned_baseline": {
+    "pid": 213447,
+    "starttime_ticks": 93125003,
+    "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+    "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+  },
+  "cooperative_heavy_lock": "/tmp/nsa_sc-16g-2_cooperative_heavy.lock",
+  "version": "v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2",
+  "sources": {
+    "baseline_v28": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+      "sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd"
+    },
+    "candidate_v137": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v137_worker1_c12_reciprocal_normalization_sc-16g-2/submission.py",
+      "sha256": "9fc293d0bfab19a4ae6effa50f1dfd8127693141db7ba98c34e0d951c4979252"
+    },
+    "power_v303": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/leader_best_known_v303/submission.py",
+      "sha256": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae"
+    },
+    "parent_v084": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+      "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+    }
+  },
+  "tools": {
+    "python": {
+      "path": "/opt/conda/bin/python",
+      "sha256": "0e4dbf3236310955eaeee14323756b54961e1d0dc12c680c441f50839a67eee0"
+    },
+    "native_wrapper": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py",
+      "sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f"
+    },
+    "bounded_controller": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/run_native_screen.py",
+      "sha256": "b88ef51dd3fad8988bd6821ea081a83bc0118a9720bc68670bb1c0afd02c788f"
+    },
+    "native_gate": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/owned_native_gate.py",
+      "sha256": "906d210a50da3773973a3ca34b8f770d83cf9cecce26581d499e6db695c36f31"
+    },
+    "process_monitor": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/process_monitor.py",
+      "sha256": "95253d2f451c24688e64c4413fff96c03cc1131180fc800a5c8a120f885117d3"
+    },
+    "supervisor": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/supervise_native_screen.py",
+      "sha256": "77eab04dcc02f8d511888f7055d083e8b1e21ef412b84a51a8e441116d19daaa"
+    },
+    "screen_launcher": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/launch_native_screen.py",
+      "sha256": "39d775aa7b2b69eaf458818d39fd4711b49c36b5d7e1d3ea30a660639fd0b950"
+    },
+    "all14_analyzer": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/analyze_all14.py",
+      "sha256": "14e60f532a4b7a7af15dd2b0e5584b1fd01c4230113bdbe2a1a02f1e500140c9"
+    }
+  },
+  "shared_identity_document": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/native_screen/shared_inputs_identity.json",
+    "sha256": "69ea3fdea7f639083ecdd65a62365a55c11e27088a99b9a590e498d2e87c312e"
+  },
+  "frozen_compiled_observation": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/compiled_observation_result.json",
+    "sha256": "50d6f524e0214a2216ae046c5cbf6764383d2a1ae18ca08e2659fdd7eae3deb0"
+  },
+  "frozen_IR_actual_exit": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/SDK/IR_actual.exit",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "frozen_compiled_observation_actual_exit": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/compiled_observation.exit",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "frozen_codegen_stage_exit": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/stage.exit",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "existing_parent_C12_device": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/codegen/parent303/case12.device.cpp",
+    "sha256": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13"
+  },
+  "existing_candidate_C12_device": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/codegen/candidate137/case12.device.cpp",
+    "sha256": "6e4ba7f8430b6bdf1ef3622abe431483ceb0c2944545febd21fb651d0cfa8cc5"
+  },
+  "frozen_normalization_math_scope_proof": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/actual_CPP_IR_normalization_proof.json",
+    "sha256": "5c16a168bbd5253b79569464e09676539c74a27dedb8ff531add4af4f6a879c5"
+  }
+}
