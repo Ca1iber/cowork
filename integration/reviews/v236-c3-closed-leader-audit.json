@@ -1,0 +1,99 @@
+{
+  "version": "v236",
+  "source_commit": "92ac5b619190fac6eed4f72abfb9264e8b1dc95c",
+  "sourceSHA": "23ab027ee21db05b599988927ddb6057cb18b77fe5a5201c47beafd88ce87587",
+  "baseSHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+  "closed_inventory_verified": 287,
+  "original_fixed16_order_and_shape_verified": true,
+  "candidate_inclusive_fullnaive_PASS": [
+    4,
+    16
+  ],
+  "all16_native_andoriginal_owner_wait0": true,
+  "native_compile_memory_samples": [
+    1266,
+    93
+  ],
+  "OOM": [
+    3
+  ],
+  "sampled_peak_bytes": 23627894784,
+  "peak_not_upperbound": true,
+  "raw_us": {
+    "baseline_v28": [
+      "11.679000",
+      "12.037000",
+      "12.058000",
+      "12.022000"
+    ],
+    "parent_v084": [
+      "10.153000",
+      "9.861000",
+      "10.045000",
+      "10.117000"
+    ],
+    "parent_C303": [
+      "10.112000",
+      "10.071000",
+      "10.168000",
+      "10.127000"
+    ],
+    "candidate_C236": [
+      "10.112000",
+      "10.230000",
+      "10.230000",
+      "10.086000"
+    ]
+  },
+  "median_us": {
+    "baseline_v28": "12.029500",
+    "parent_v084": "10.081000",
+    "parent_C303": "10.119500",
+    "candidate_C236": "10.171000"
+  },
+  "delta_pct": {
+    "baseline_v28": "-15.44951993017166133255746290",
+    "parent_v084": "0.892768574546175974605693900",
+    "parent_C303": "0.508918424823360837986066500"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "delta_pct": {
+        "baseline_v28": "-14.22668240850059031877213695",
+        "parent_v084": "1.638852803037873488558009400",
+        "parent_C303": "0.787791705891096467323985500"
+      }
+    },
+    {
+      "round": 2,
+      "delta_pct": {
+        "baseline_v28": "-15.63122923588039867109634551",
+        "parent_v084": "0.763813113778395000495982500",
+        "parent_C303": "0.103473762010347376201034700"
+      }
+    }
+  ],
+  "ranges_us": {
+    "baseline_v28": [
+      "11.679000",
+      "12.058000"
+    ],
+    "parent_v084": [
+      "9.861000",
+      "10.153000"
+    ],
+    "parent_C303": [
+      "10.071000",
+      "10.168000"
+    ],
+    "candidate_C236": [
+      "10.086000",
+      "10.230000"
+    ]
+  },
+  "decision": "rejected: candidate median>=primaryC303 and both rounds positive; ranges overlap retained; no promotion/no rerun",
+  "LLVM_not_actualISA_cost_cause_proof": true,
+  "other13_no_regression": "not tested in236; unchanged source no exemption",
+  "next": "read-only fresh hypothesis from actual current303 code/IR/profile evidence"
+}
