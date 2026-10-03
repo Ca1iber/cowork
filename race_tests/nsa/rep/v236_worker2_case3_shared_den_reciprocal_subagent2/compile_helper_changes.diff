@@ -1,0 +1,124 @@
+--- v234_worker2_case2_bounded_kv_index_subagent2/bounded_utils.py
++++ v236_worker2_case3_shared_den_reciprocal_subagent2/bounded_utils.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import os,sys,json,time,datetime,subprocess,fcntl,signal,re,hashlib
+-root=Path('/root/tilelang-metax');v='v234_worker2_case2_bounded_kv_index_subagent2';r=root/'race_tests/nsa/rep'/v;h=root/'race_tests/nsa/hack'/v
++root=Path('/root/tilelang-metax');v='v236_worker2_case3_shared_den_reciprocal_subagent2';r=root/'race_tests/nsa/rep'/v;h=root/'race_tests/nsa/hack'/v
+ plan=json.loads((r/'bounded_runtime_plan.json').read_text());cgroot=Path('/sys/fs/cgroup/memory')
+ def info(pid):
+  p=Path('/proc')/str(pid)
+--- v234_worker2_case2_bounded_kv_index_subagent2/compile_owner_wait.py
++++ v236_worker2_case3_shared_den_reciprocal_subagent2/compile_owner_wait.py
+@@ -1,10 +1,10 @@
+ from pathlib import Path
+ import json,os,subprocess,time
+-root=Path('/root/tilelang-metax');r=root/'race_tests/nsa/rep/v234_worker2_case2_bounded_kv_index_subagent2';h=root/'race_tests/nsa/hack/v234_worker2_case2_bounded_kv_index_subagent2'
++root=Path('/root/tilelang-metax');r=root/'race_tests/nsa/rep/v236_worker2_case3_shared_den_reciprocal_subagent2';h=root/'race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2'
+ def info(pid):
+  p=Path('/proc')/str(pid);f=(p/'stat').read_text().rsplit(') ',1)[1].split();return {'pid':pid,'ppid':int(f[1]),'pgid':int(f[2]),'starttime_ticks':int(f[19]),'exe':os.readlink(p/'exe')}
+ owner=info(os.getpid());rows=[]
+-for name,argv in [('metadata',['/opt/conda/bin/python','-S',str(h/'run_bounded_once.py'),'metadata']),('generated_geometry',['/opt/conda/bin/python','-S',str(h/'generated_geometry_gate.py')]),('backend',['/opt/conda/bin/python','-S',str(h/'run_bounded_once.py'),'backend'])]:
++for name,argv in [('metadata',['/opt/conda/bin/python','-S',str(h/'run_bounded_once.py'),'metadata']),('generated_geometry',['/opt/conda/bin/python','-S',str(h/'generated_geometry_gate.py')]),('backend',['/opt/conda/bin/python','-S',str(h/'run_bounded_once.py'),'backend']),('semantic_normalization',['/opt/conda/bin/python','-S',str(h/'audit_compiled_normalization.py')])]:
+  with (r/(name+'_owner.log')).open('w') as log:
+   p=subprocess.Popen(argv,cwd=root,stdout=log,stderr=subprocess.STDOUT,start_new_session=True);d=info(p.pid);record={'owner':owner,'stage':name,'argv':argv,'identity':d,'originalPopen_held':True};(r/(name+'_originalPopen_handle.json')).write_text(json.dumps(record,indent=2)+'\n');print('COMPILE_ORIGINAL_HANDLE',json.dumps(record),flush=True)
+   while True:
+@@ -13,6 +13,6 @@
+     q=r/(name+'_observation/live_stage.json');print('SAME_COMPILE_HANDLE',name,q.read_text() if q.exists() else 'running',flush=True)
+  record['actualwait']=code;rows.append(record);(r/(name+'_originalPopen_wait.json')).write_text(json.dumps(record,indent=2)+'\n');(r/'compile_chain_results.json').write_text(json.dumps(rows,indent=2)+'\n');print('COMPILE_STAGE_ACTUALWAIT',name,code,flush=True)
+  if code!=0:break
+-chaincode=0 if len(rows)==3 and all(x['actualwait']==0 for x in rows) else 1
++chaincode=0 if len(rows)==4 and all(x['actualwait']==0 for x in rows) else 1
+ (r/'compile_chain.exit').write_text(str(chaincode)+'\n')
+ raise SystemExit(chaincode)
+--- v234_worker2_case2_bounded_kv_index_subagent2/compile_pair_metadata.py
++++ v236_worker2_case3_shared_den_reciprocal_subagent2/compile_pair_metadata.py
+@@ -3,7 +3,7 @@
+ assert sys.stdin.readline().strip()=='GO'
+ from pathlib import Path
+ import json,hashlib,importlib.util
+-root=Path('/root/tilelang-metax');v='v234_worker2_case2_bounded_kv_index_subagent2';r=root/'race_tests/nsa/rep'/v
++root=Path('/root/tilelang-metax');v='v236_worker2_case3_shared_den_reciprocal_subagent2';r=root/'race_tests/nsa/rep'/v
+ manifest=json.loads((r/'metadata_launch_manifest.json').read_text())
+ for entry in manifest['fixed_inputs']:
+  p=Path(entry['path']);assert p.exists() and hashlib.sha256(p.read_bytes()).hexdigest()==entry['sha256'],str(p)
+@@ -11,7 +11,7 @@
+ from tilelang.jit.kernel import JITKernel
+ tilelang.set_log_level('ERROR')
+ identity=json.loads((r/'source_identity.json').read_text());plan=json.loads((r/'bounded_runtime_plan.json').read_text());key=tuple(plan['only_target_key'])
+-sources={'parent_CB13':(root/plan['numerical_parent'],plan['parent_sha256'],'_make_power_s1_case4_dense'),'power_v234':(Path(identity['candidate_path']),identity['candidate_sha256'],identity['factory_name'])}
++sources={'parent_C303':(root/plan['numerical_parent'],plan['parent_sha256'],'_make_power_s1_d128_dense'),'power_v236':(Path(identity['source_path']),identity['sourceSHA'],identity['factory'])}
+ def no_attention(*a,**kw):raise AssertionError('metadata cannot launchattention')
+ real=JITKernel.__call__;JITKernel.__call__=no_attention;rows=[]
+ try:
+@@ -22,7 +22,7 @@
+   entry=m._KERNEL_CACHE[key];cells=dict(zip(entry.__code__.co_freevars,[c.cell_contents for c in entry.__closure__]))
+   assert cells['key']==key and cells['factory'] is getattr(m,factory_name)
+   kernel=cells['factory'](*key);out=r/'codegen'/label;out.mkdir(parents=True)
+-  dev=out/'case2_stage1.device.cpp';host=out/'case2_stage1.host.cpp';kernel.export_sources(kernel_path=str(dev),host_path=str(host));assert dev.exists() and host.exists()
++  dev=out/'case3_stage1.device.cpp';host=out/'case3_stage1.host.cpp';kernel.export_sources(kernel_path=str(dev),host_path=str(host));assert dev.exists() and host.exists()
+   rows.append({'variant':label,'source_path':str(source),'source_sha256':sha,'factory_identity':True,'device_path':str(dev),'host_path':str(host),'device_sha256':hashlib.file_digest(dev.open('rb'),'sha256').hexdigest(),'host_sha256':hashlib.file_digest(host.open('rb'),'sha256').hexdigest(),'attention_calls':0,'full_reference_count':0})
+ finally:JITKernel.__call__=real
+ (r/'compiled_metadata_identity.json').write_text(json.dumps(rows,indent=2)+'\n');print('METADATA_PAIR_EXPORTED0ATTENTION',flush=True)
+--- v234_worker2_case2_bounded_kv_index_subagent2/generated_geometry_gate.py
++++ v236_worker2_case3_shared_den_reciprocal_subagent2/generated_geometry_gate.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,hashlib,re,subprocess
+-root=Path('/root/tilelang-metax');r=root/'race_tests/nsa/rep/v234_worker2_case2_bounded_kv_index_subagent2'
++root=Path('/root/tilelang-metax');r=root/'race_tests/nsa/rep/v236_worker2_case3_shared_den_reciprocal_subagent2'
+ assert json.loads((r/'metadata_observation/result.json').read_text())['gate']==0
+ rows=json.loads((r/'compiled_metadata_identity.json').read_text());assert len(rows)==2;results=[]
+ for d in rows:
+@@ -15,6 +15,17 @@
+  vals={}
+  for i in range(5,n):
+   a=re.findall(r'stack_ffi_any\)\['+str(i)+r'\]\.v_int64\) = \(\(int64_t\)(\d+)\);',region);assert len(a)==1,(i,a);vals[i]=int(a[0])
+- launch=[vals[i] for i in range(5,n)];assert launch==[128,1,64,1,1,2048],launch
++ launch=[vals[i] for i in range(5,n)];assert launch==[256,1,64,1,1,4096],launch
+  results.append({'variant':d['variant'],'sourceSHA':d['source_sha256'],'CPP_SHA':d['device_sha256'],'hostSHA':d['host_sha256'],'generated_actualwait':code,'actual_launch':launch,'argument_setup_region_SHA':hashlib.sha256(region.encode()).hexdigest(),'wholehost_not_scanned':True})
++parent,candidate=rows
++assert parent['variant']=='parent_C303' and candidate['variant']=='power_v236'
++assert parent['device_sha256']=='814735db527ddf73362721a41d5ffd6fe9d070e2c190d461900b06e9cb6ff671' and parent['host_sha256']=='fa1bde13abe760cef253640273dc380cbf293d15d9f3079bfa815d0a330556a2'
++assert candidate['host_sha256']==parent['host_sha256']
++a=Path(parent['device_path']).read_text();b=Path(candidate['device_path']).read_text()
++def outside_normalization(t):
++ marker='denominator[0] = (denominator[0] + __shfl_xor_sync((uint64_t)18446744073709551615, denominator[0], 16, 64));'
++ assert t.count(marker)==1;start=t.index(marker)+len(marker);end=t.index('__syncwarp();',start);return t[:start],t[end:],t[start:end]
++ap,asuf,an=outside_normalization(a);bp,bsuf,bn=outside_normalization(b);assert ap==bp and asuf==bsuf,'outside_normalization_CPP_scope_changed'
++assert 'float numerator[32];' in a and 'float numerator[32];' in b
++(r/'normalization_CPP_regions.json').write_text(json.dumps({'parent':an,'candidate':bn,'outside_byte_exact':True,'host_byte_exact':True,'Num32':True},indent=2)+'\n')
+ (r/'generated_geometry_gate.json').write_text(json.dumps({'gate':0,'records':results},indent=2)+'\n');print(json.dumps(results),flush=True)
+--- v234_worker2_case2_bounded_kv_index_subagent2/compile_backend_once.py
++++ v236_worker2_case3_shared_den_reciprocal_subagent2/compile_backend_once.py
+@@ -1,18 +1,18 @@
+ from pathlib import Path
+ import json,sys,hashlib,subprocess,re
+ print('BACKEND_CHILD_READY',flush=True);assert sys.stdin.buffer.readline()==b'GO\n'
+-root=Path('/root/tilelang-metax');r=root/'race_tests/nsa/rep/v234_worker2_case2_bounded_kv_index_subagent2';old=root/'race_tests/nsa/rep/v208_worker2_c9_q_register_transpose_subagent2';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
++root=Path('/root/tilelang-metax');r=root/'race_tests/nsa/rep/v236_worker2_case3_shared_den_reciprocal_subagent2';p219=root/'race_tests/nsa/rep/v219_worker2_parent_c3_evidence_subagent2';p235=root/'race_tests/nsa/rep/v235_worker2_case3_parent_normalization_ir_subagent2';sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+ assert json.loads((r/'generated_geometry_gate.json').read_text())['gate']==0
+-parent,candidate=json.loads((r/'compiled_metadata_identity.json').read_text());assert parent['variant']=='parent_CB13';assert parent['device_sha256']=='85b2d06253ada7098991de3035caf9d03156c7914175fe2e03f0544756c498fe';assert parent['host_sha256']=='df2f57399d1f44606aab2ca915397f40b3ac19640834e22a21591a1bd6cbdc75'
+-rows=json.loads((old/'backend_commands_results.json').read_text());pr=next(q for q in rows if q.get('variant')=='parent_v084' and q['kind']=='resource');pi=next(q for q in rows if q.get('variant')=='parent_v084' and q['kind']=='optimized_ir');assert pr['returncode']==pi['returncode']==0 and pr['input_device_sha256']==pi['input_device_sha256']==parent['device_sha256'];assert sha(Path(pr['argv'][0]))=='5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25';assert pi['argv'][0]==pr['argv'][0]
+-oldir=old/'codegen/parent_v084/case9_stage1.device.ll';assert sha(oldir)=='722c5764812db2d76ae3eb666aa824d0e6409fd402eba857001ef7368717bfea'
+-(r/'parent_C2_byteidentical_backend_reuse.json').write_text(json.dumps({'actualC2CPP_SHA':parent['device_sha256'],'actualC2hostSHA':parent['host_sha256'],'parentCB13SHA':parent['source_sha256'],'archivedparentdevice_resource_command':pr,'archivedparentdevice_IR_command':pi,'archivedIR_SHA':sha(oldir),'reuse_scope':'exactdeviceCPP/SDKflags only; noC9timing/counters orfailedcandidate references','parentresource':[42,20,8,0,2048],'newparentcommands':0},indent=2)+'\n')
+-p=Path(candidate['device_path']);assert sha(p)==candidate['device_sha256'];assert sha(Path(candidate['source_path']))==candidate['source_sha256'];results=[]
+-for kind,original,out in [('resource',pr,p.with_suffix('.mcbin')),('optimized_ir',pi,p.with_suffix('.ll'))]:
+- flags=original['argv'][:original['argv'].index('-o')];argv=flags+['-o',str(out),str(p)];stem=r/('power_v234_'+kind);rec={'kind':kind,'argv':argv,'input_CPP_SHA':candidate['device_sha256'],'sourceSHA':candidate['source_sha256'],'SDK_SHA':sha(Path(argv[0]))}
+- with stem.with_suffix('.log').open('w') as log:
+-  proc=subprocess.Popen(argv,stdout=log,stderr=subprocess.STDOUT);rec['PID']=proc.pid;stem.with_suffix('.command.json').write_text(json.dumps(rec,indent=2)+'\n');code=proc.wait()
+- rec['actualwait']=code;stem.with_suffix('.exit').write_text(str(code)+'\n');results.append(rec);(r/'backend_commands_results.json').write_text(json.dumps(results,indent=2)+'\n');assert code==0
++parent,candidate=json.loads((r/'compiled_metadata_identity.json').read_text());assert parent['variant']=='parent_C303' and candidate['variant']=='power_v236';assert parent['device_sha256']=='814735db527ddf73362721a41d5ffd6fe9d070e2c190d461900b06e9cb6ff671' and parent['host_sha256']=='fa1bde13abe760cef253640273dc380cbf293d15d9f3079bfa815d0a330556a2'
++pr=json.loads((p219/'resource_command_manifest.json').read_text());pi=json.loads((p235/'parent_ir_command_manifest.json').read_text());iw=json.loads((p235/'parent_C3_IR_SDK_original_wait.json').read_text());assert (p219/'parent_c3_resource.exit').read_text().strip()=='0' and iw['actualwait']==0
++assert sha(pr['argv'][-1])==pi['input_CPP_SHA']==parent['device_sha256'];assert pi['host_SHA']==parent['host_sha256'];assert sha(pr['argv'][0])==pi['SDK_SHA']=='5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25';assert pi['common_semantic_flags']==pr['argv'][:pr['argv'].index('-device-obj')];assert sha(pi['output'])==iw['output_SHA']=='a39bbe7ecdfff9b81ac47a715b84a4b62a1c55b75ab9535726b23a68618a69f1'
++(r/'parent_C3_exact_backend_reuse.json').write_text(json.dumps({'parent_currentC303_CPP_SHA':parent['device_sha256'],'parent_host_SHA':parent['host_sha256'],'resource_originalargv':pr['argv'],'resource_exit':0,'resource':[66,20,7,0,4096],'IR_path':pi['output'],'IR_SHA':iw['output_SHA'],'IR_actualwait':0,'new_parent_resource_IR_commands':0,'reuse':'exactCPP/host/SDK/common flags identity only; no borrowedtiming'},indent=2)+'\n')
++cpp=Path(candidate['device_path']);assert sha(cpp)==candidate['device_sha256'];assert sha(candidate['source_path'])==candidate['source_sha256'];rows=[]
++for kind,original,out in [('resource',pr,cpp.with_suffix('.mcbin')),('optimized_ir',pi,cpp.with_suffix('.ll'))]:
++ argv=original['argv'][:original['argv'].index('-o')]+['-o',str(out),str(cpp)];stem=r/('power_v236_'+kind);rec={'kind':kind,'argv':argv,'input_CPP_SHA':candidate['device_sha256'],'sourceSHA':candidate['source_sha256'],'SDK_SHA':sha(argv[0])}
++ with stem.with_suffix('.log').open('wb') as log:
++  p=subprocess.Popen(argv,cwd=root,stdout=log,stderr=subprocess.STDOUT);rec['PID']=p.pid;stem.with_suffix('.command.json').write_text(json.dumps(rec,indent=2)+'\n');code=p.wait()
++ rec['actualwait']=code;stem.with_suffix('.exit').write_text(str(code)+'\n');rows.append(rec);(r/'backend_commands_results.json').write_text(json.dumps(rows,indent=2)+'\n');assert code==0
+  if kind=='resource':
+   text=stem.with_suffix('.log').read_text();stack=re.search(r'(\d+) bytes stack frame',text);assert stack and int(stack[1])==0
+-print('BACKEND_CB13_C2_COMPLETE0ATTENTION',flush=True)
++print('C303_C3_CANDIDATE_RESOURCE_IR_COMPLETE0ATTENTION',flush=True)

@@ -1,0 +1,419 @@
+{
+  "gate": 0,
+  "sourceSHA": "23ab027ee21db05b599988927ddb6057cb18b77fe5a5201c47beafd88ce87587",
+  "candidate_CPP_SHA": "ec82d8381fc13a55d7e9219fa205728e45f4ec0e133bd0bb172a522f8233893e",
+  "IR_SHA": "ba5caf3e4f1827f754afaa944533e1170cacc78340cfd9b7f48066afcf32502c",
+  "FP32_shared_reciprocal": [
+    {
+      "line": 790,
+      "SSA": "%div",
+      "flags": [
+        "contract"
+      ],
+      "numerator": "1.000000e+00",
+      "denominator": "%add508",
+      "instruction": "%div = fdiv contract float 1.000000e+00, %add508, !dbg !230"
+    }
+  ],
+  "Num32_output_multiply": [
+    {
+      "line": 795,
+      "SSA": "%mul527",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.0.0.vec.extract"
+      ],
+      "instruction": "%mul527 = fmul contract float %div, %numerator.sroa.0.0.vec.extract, !dbg !232"
+    },
+    {
+      "line": 796,
+      "SSA": "%mul531",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.0.4.vec.extract"
+      ],
+      "instruction": "%mul531 = fmul contract float %div, %numerator.sroa.0.4.vec.extract, !dbg !233"
+    },
+    {
+      "line": 797,
+      "SSA": "%mul535",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.0.8.vec.extract"
+      ],
+      "instruction": "%mul535 = fmul contract float %div, %numerator.sroa.0.8.vec.extract, !dbg !234"
+    },
+    {
+      "line": 798,
+      "SSA": "%mul539",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.0.12.vec.extract"
+      ],
+      "instruction": "%mul539 = fmul contract float %div, %numerator.sroa.0.12.vec.extract, !dbg !235"
+    },
+    {
+      "line": 803,
+      "SSA": "%mul527.1",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.20.16.vec.extract"
+      ],
+      "instruction": "%mul527.1 = fmul contract float %div, %numerator.sroa.20.16.vec.extract, !dbg !232"
+    },
+    {
+      "line": 804,
+      "SSA": "%mul531.1",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.20.20.vec.extract"
+      ],
+      "instruction": "%mul531.1 = fmul contract float %div, %numerator.sroa.20.20.vec.extract, !dbg !233"
+    },
+    {
+      "line": 805,
+      "SSA": "%mul535.1",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.20.24.vec.extract"
+      ],
+      "instruction": "%mul535.1 = fmul contract float %div, %numerator.sroa.20.24.vec.extract, !dbg !234"
+    },
+    {
+      "line": 806,
+      "SSA": "%mul539.1",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.20.28.vec.extract"
+      ],
+      "instruction": "%mul539.1 = fmul contract float %div, %numerator.sroa.20.28.vec.extract, !dbg !235"
+    },
+    {
+      "line": 811,
+      "SSA": "%mul527.2",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.38.32.vec.extract"
+      ],
+      "instruction": "%mul527.2 = fmul contract float %div, %numerator.sroa.38.32.vec.extract, !dbg !232"
+    },
+    {
+      "line": 812,
+      "SSA": "%mul531.2",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.38.36.vec.extract"
+      ],
+      "instruction": "%mul531.2 = fmul contract float %div, %numerator.sroa.38.36.vec.extract, !dbg !233"
+    },
+    {
+      "line": 813,
+      "SSA": "%mul535.2",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.38.40.vec.extract"
+      ],
+      "instruction": "%mul535.2 = fmul contract float %div, %numerator.sroa.38.40.vec.extract, !dbg !234"
+    },
+    {
+      "line": 814,
+      "SSA": "%mul539.2",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.38.44.vec.extract"
+      ],
+      "instruction": "%mul539.2 = fmul contract float %div, %numerator.sroa.38.44.vec.extract, !dbg !235"
+    },
+    {
+      "line": 819,
+      "SSA": "%mul527.3",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.56.48.vec.extract"
+      ],
+      "instruction": "%mul527.3 = fmul contract float %div, %numerator.sroa.56.48.vec.extract, !dbg !232"
+    },
+    {
+      "line": 820,
+      "SSA": "%mul531.3",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.56.52.vec.extract"
+      ],
+      "instruction": "%mul531.3 = fmul contract float %div, %numerator.sroa.56.52.vec.extract, !dbg !233"
+    },
+    {
+      "line": 821,
+      "SSA": "%mul535.3",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.56.56.vec.extract"
+      ],
+      "instruction": "%mul535.3 = fmul contract float %div, %numerator.sroa.56.56.vec.extract, !dbg !234"
+    },
+    {
+      "line": 822,
+      "SSA": "%mul539.3",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.56.60.vec.extract"
+      ],
+      "instruction": "%mul539.3 = fmul contract float %div, %numerator.sroa.56.60.vec.extract, !dbg !235"
+    },
+    {
+      "line": 827,
+      "SSA": "%mul527.4",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.74.64.vec.extract"
+      ],
+      "instruction": "%mul527.4 = fmul contract float %div, %numerator.sroa.74.64.vec.extract, !dbg !232"
+    },
+    {
+      "line": 828,
+      "SSA": "%mul531.4",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.74.68.vec.extract"
+      ],
+      "instruction": "%mul531.4 = fmul contract float %div, %numerator.sroa.74.68.vec.extract, !dbg !233"
+    },
+    {
+      "line": 829,
+      "SSA": "%mul535.4",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.74.72.vec.extract"
+      ],
+      "instruction": "%mul535.4 = fmul contract float %div, %numerator.sroa.74.72.vec.extract, !dbg !234"
+    },
+    {
+      "line": 830,
+      "SSA": "%mul539.4",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.74.76.vec.extract"
+      ],
+      "instruction": "%mul539.4 = fmul contract float %div, %numerator.sroa.74.76.vec.extract, !dbg !235"
+    },
+    {
+      "line": 835,
+      "SSA": "%mul527.5",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.92.80.vec.extract"
+      ],
+      "instruction": "%mul527.5 = fmul contract float %div, %numerator.sroa.92.80.vec.extract, !dbg !232"
+    },
+    {
+      "line": 836,
+      "SSA": "%mul531.5",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.92.84.vec.extract"
+      ],
+      "instruction": "%mul531.5 = fmul contract float %div, %numerator.sroa.92.84.vec.extract, !dbg !233"
+    },
+    {
+      "line": 837,
+      "SSA": "%mul535.5",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.92.88.vec.extract"
+      ],
+      "instruction": "%mul535.5 = fmul contract float %div, %numerator.sroa.92.88.vec.extract, !dbg !234"
+    },
+    {
+      "line": 838,
+      "SSA": "%mul539.5",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.92.92.vec.extract"
+      ],
+      "instruction": "%mul539.5 = fmul contract float %div, %numerator.sroa.92.92.vec.extract, !dbg !235"
+    },
+    {
+      "line": 843,
+      "SSA": "%mul527.6",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.110.96.vec.extract"
+      ],
+      "instruction": "%mul527.6 = fmul contract float %div, %numerator.sroa.110.96.vec.extract, !dbg !232"
+    },
+    {
+      "line": 844,
+      "SSA": "%mul531.6",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.110.100.vec.extract"
+      ],
+      "instruction": "%mul531.6 = fmul contract float %div, %numerator.sroa.110.100.vec.extract, !dbg !233"
+    },
+    {
+      "line": 845,
+      "SSA": "%mul535.6",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.110.104.vec.extract"
+      ],
+      "instruction": "%mul535.6 = fmul contract float %div, %numerator.sroa.110.104.vec.extract, !dbg !234"
+    },
+    {
+      "line": 846,
+      "SSA": "%mul539.6",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.110.108.vec.extract"
+      ],
+      "instruction": "%mul539.6 = fmul contract float %div, %numerator.sroa.110.108.vec.extract, !dbg !235"
+    },
+    {
+      "line": 851,
+      "SSA": "%mul527.7",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.128.112.vec.extract"
+      ],
+      "instruction": "%mul527.7 = fmul contract float %div, %numerator.sroa.128.112.vec.extract, !dbg !232"
+    },
+    {
+      "line": 852,
+      "SSA": "%mul531.7",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.128.116.vec.extract"
+      ],
+      "instruction": "%mul531.7 = fmul contract float %div, %numerator.sroa.128.116.vec.extract, !dbg !233"
+    },
+    {
+      "line": 853,
+      "SSA": "%mul535.7",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.128.120.vec.extract"
+      ],
+      "instruction": "%mul535.7 = fmul contract float %div, %numerator.sroa.128.120.vec.extract, !dbg !234"
+    },
+    {
+      "line": 854,
+      "SSA": "%mul539.7",
+      "flags": [
+        "contract"
+      ],
+      "operands": [
+        "%div",
+        "%numerator.sroa.128.124.vec.extract"
+      ],
+      "instruction": "%mul539.7 = fmul contract float %div, %numerator.sroa.128.124.vec.extract, !dbg !235"
+    }
+  ],
+  "output_multiply_flags": {
+    "contract": 32
+  },
+  "Num32_actualCPP": true,
+  "MMA": 16,
+  "warp_sync": 7,
+  "bpermute": 4,
+  "actual_alloca_AS5": [
+    0,
+    0
+  ],
+  "outside_normalization_CPP_host_same": true,
+  "finalISA_cost": "UNAVAILABLE",
+  "numeric_latency": "UNAVAILABLE_notrun",
+  "other13_devicecode": "UNAVAILABLE_notexported"
+}

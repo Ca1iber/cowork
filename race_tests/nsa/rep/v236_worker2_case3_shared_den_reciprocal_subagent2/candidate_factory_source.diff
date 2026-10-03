@@ -1,0 +1,23 @@
+--- C303_parent_C3
++++ C236_onlyC3
+@@ -4,7 +4,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s1_d128_dense(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_worker2_case3_shared_den_reciprocal(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 128 and selected_blocks == 1 and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+@@ -121,9 +121,10 @@
+                             dtype='float32x4')
+             denominator[0] += T.shfl_xor(denominator[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF)
+             denominator[0] += T.shfl_xor(denominator[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF)
++            partial_sum[0] = 1.0 / denominator[0]
+             for chunk in T.unroll(8):
+                 for element in T.vectorized(4):
+-                    numerator[chunk * 4 + element] /= denominator[0]
++                    numerator[chunk * 4 + element] *= partial_sum[0]
+             T.sync_warp()
+             for chunk in T.unroll(8):
+                 for element in T.vectorized(4):

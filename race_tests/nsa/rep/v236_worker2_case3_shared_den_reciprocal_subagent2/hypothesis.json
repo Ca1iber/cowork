@@ -1,0 +1,26 @@
+{
+  "version": "v236_worker2_case3_shared_den_reciprocal_subagent2",
+  "stage": "SOURCE_ONLY",
+  "current_base": "completeC303985ffd, other13source preserved",
+  "only_case": [
+    1,
+    256,
+    1,
+    16,
+    128,
+    1,
+    16,
+    true
+  ],
+  "actual_parent_IR": "v235a39bbe,32fdivcontract same%add508",
+  "minimal_change": "oneFP32reciprocal inoriginaldeadpartial_sum thenNum32multiply insteaddivision",
+  "prediction_only": "future LLVM onefdiv +32fmul sharingreciprocal; actualISA/speedunknown",
+  "falsifiers": [
+    "backendalreadysharesreciprocal ornewexpressionnotmaterialized",
+    "actualwrongFPtype/private/spill ormath/layout/sync changes",
+    "originalnaivefailure",
+    "resource/newmultiplycost orselectedendtoendregression"
+  ],
+  "current_authorization": "source/static-only; no JIT SDK/GPU/import/native/profile, no nativepreparation",
+  "future_primary_control": "currentC303 whenseparatelyauthorized; neverassumeequalsP84orpoololdsamples"
+}

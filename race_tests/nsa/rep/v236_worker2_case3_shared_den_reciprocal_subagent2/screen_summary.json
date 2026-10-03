@@ -1,0 +1,246 @@
+{
+  "complete16jobs": true,
+  "job_stop": null,
+  "actual_full_references": {
+    "candidate": 4,
+    "total": 16
+  },
+  "planned_full_references": {
+    "candidate": 4,
+    "total": 16
+  },
+  "protocol": "fixed16/sourcefresh/originalCase3/W10R50unchanged/ownSub2guards",
+  "observed_PASS_reference_rows": 16,
+  "raw_all_records": [
+    {
+      "case": 3,
+      "run": 1,
+      "round": 1,
+      "variant": "baseline_v28",
+      "latency_ms": "0.011679",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 2,
+      "round": 1,
+      "variant": "parent_v084",
+      "latency_ms": "0.010153",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 3,
+      "round": 1,
+      "variant": "parent_C303",
+      "latency_ms": "0.010112",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 4,
+      "round": 1,
+      "variant": "candidate_C236",
+      "latency_ms": "0.010112",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 5,
+      "round": 1,
+      "variant": "candidate_C236",
+      "latency_ms": "0.010230",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 6,
+      "round": 1,
+      "variant": "parent_C303",
+      "latency_ms": "0.010071",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 7,
+      "round": 1,
+      "variant": "parent_v084",
+      "latency_ms": "0.009861",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 8,
+      "round": 1,
+      "variant": "baseline_v28",
+      "latency_ms": "0.012037",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 9,
+      "round": 2,
+      "variant": "baseline_v28",
+      "latency_ms": "0.012058",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 10,
+      "round": 2,
+      "variant": "parent_v084",
+      "latency_ms": "0.010045",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 11,
+      "round": 2,
+      "variant": "parent_C303",
+      "latency_ms": "0.010168",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 12,
+      "round": 2,
+      "variant": "candidate_C236",
+      "latency_ms": "0.010230",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 13,
+      "round": 2,
+      "variant": "candidate_C236",
+      "latency_ms": "0.010086",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 14,
+      "round": 2,
+      "variant": "parent_C303",
+      "latency_ms": "0.010127",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 15,
+      "round": 2,
+      "variant": "parent_v084",
+      "latency_ms": "0.010117",
+      "status": "PASS"
+    },
+    {
+      "case": 3,
+      "run": 16,
+      "round": 2,
+      "variant": "baseline_v28",
+      "latency_ms": "0.012022",
+      "status": "PASS"
+    }
+  ],
+  "automatic_promotion": false,
+  "currentOOM": 3,
+  "sourceSHA": "23ab027ee21db05b599988927ddb6057cb18b77fe5a5201c47beafd88ce87587",
+  "SC135_failure_untouched": true,
+  "no_pool_other_machine_samples": true,
+  "status": "completed_case3_four_source_for_leader_review_only",
+  "cases": [
+    {
+      "case": 3,
+      "samples_us": {
+        "baseline_v28": [
+          11.679,
+          12.037,
+          12.058,
+          12.022
+        ],
+        "parent_v084": [
+          10.153,
+          9.861,
+          10.045,
+          10.116999999999999
+        ],
+        "parent_C303": [
+          10.112,
+          10.071,
+          10.168,
+          10.127
+        ],
+        "candidate_C236": [
+          10.112,
+          10.229999999999999,
+          10.229999999999999,
+          10.086
+        ]
+      },
+      "medians_us": {
+        "baseline_v28": 12.0295,
+        "parent_v084": 10.081,
+        "parent_C303": 10.1195,
+        "candidate_C236": 10.171
+      },
+      "ranges_us": {
+        "baseline_v28": [
+          11.679,
+          12.058
+        ],
+        "parent_v084": [
+          9.861,
+          10.153
+        ],
+        "parent_C303": [
+          10.071,
+          10.168
+        ],
+        "candidate_C236": [
+          10.086,
+          10.229999999999999
+        ]
+      },
+      "candidate_delta_pct": {
+        "parent_C303": 0.5089184248233458,
+        "parent_v084": 0.8927685745461655,
+        "baseline_v28": -15.449519930171673
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": 11.858,
+            "parent_v084": 10.007000000000001,
+            "parent_C303": 10.0915,
+            "candidate_C236": 10.171
+          },
+          "candidate_delta_pct": {
+            "parent_C303": 0.7877917058910944,
+            "parent_v084": 1.6388528030378602,
+            "baseline_v28": -14.2266824085006
+          }
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": 12.04,
+            "parent_v084": 10.081,
+            "parent_C303": 10.1475,
+            "candidate_C236": 10.158
+          },
+          "candidate_delta_pct": {
+            "parent_C303": 0.10347376201034209,
+            "parent_v084": 0.7638131137783999,
+            "baseline_v28": -15.631229235880395
+          }
+        }
+      ],
+      "ranges_overlap": {
+        "parent_C303": true,
+        "parent_v084": true,
+        "baseline_v28": false
+      },
+      "positive_median_or_round_vs_C303_P84": true
+    }
+  ]
+}

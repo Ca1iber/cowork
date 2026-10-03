@@ -1,0 +1,1425 @@
+[
+  {
+    "run": 1,
+    "variant": "baseline_v28",
+    "source_path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+    "sourceSHA": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 483205,
+    "starttime_ticks": 336754148,
+    "pgid": 483205,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "descendant_registration_events": [
+      {
+        "child": {
+          "pid": 483310,
+          "starttime_ticks": 336756907,
+          "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+        },
+        "verified_current_parents": [
+          {
+            "pid": 483205,
+            "starttime_ticks": 336754148,
+            "exe": "/opt/conda/bin/python3.12"
+          }
+        ],
+        "PPID_match": true,
+        "observed_thread_child_match": true
+      },
+      {
+        "child": {
+          "pid": 483311,
+          "starttime_ticks": 336756908,
+          "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+        },
+        "verified_current_parents": [
+          {
+            "pid": 483310,
+            "starttime_ticks": 336756907,
+            "exe": "/opt/maca-3.7.1/mxgpu_llvm/bin/mxcc"
+          }
+        ],
+        "PPID_match": true,
+        "observed_thread_child_match": true
+      },
+      {
+        "child": {
+          "pid": 483315,
+          "starttime_ticks": 336757076,
+          "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+        },
+        "verified_current_parents": [
+          {
+            "pid": 483205,
+            "starttime_ticks": 336754148,
+            "exe": "/opt/conda/bin/python3.12"
+          }
+        ],
+        "PPID_match": true,
+        "observed_thread_child_match": true
+      },
+      {
+        "child": {
+          "pid": 483316,
+          "starttime_ticks": 336757076,
+          "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus"
+        },
+        "verified_current_parents": [
+          {
+            "pid": 483315,
+            "starttime_ticks": 336757076,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+          }
+        ],
+        "PPID_match": true,
+        "observed_thread_child_match": true
+      },
+      {
+        "child": {
+          "pid": 483324,
+          "starttime_ticks": 336757109,
+          "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+        },
+        "verified_current_parents": [
+          {
+            "pid": 483205,
+            "starttime_ticks": 336754148,
+            "exe": "/opt/conda/bin/python3.12"
+          }
+        ],
+        "PPID_match": true,
+        "observed_thread_child_match": true
+      },
+      {
+        "child": {
+          "pid": 483327,
+          "starttime_ticks": 336757131,
+          "exe": "/usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus"
+        },
+        "verified_current_parents": [
+          {
+            "pid": 483324,
+            "starttime_ticks": 336757109,
+            "exe": "/usr/bin/x86_64-linux-gnu-g++-13"
+          }
+        ],
+        "PPID_match": true,
+        "observed_thread_child_match": true
+      }
+    ],
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3367582.457356525,
+        "deadline": 3367583.457356525,
+        "metadata": {
+          "pid": 483205,
+          "ppid": 483204,
+          "pgid": 483205,
+          "starttime_ticks": 336754148,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/483205/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.423881100025028,
+        "total_missing_elapsed": 0.423881100025028,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.423881100025028,
+    "samples": 89,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 2,
+    "variant": "parent_v084",
+    "source_path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 483361,
+    "starttime_ticks": 336758288,
+    "pgid": 483361,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3367619.269193426,
+        "deadline": 3367620.269193426,
+        "metadata": {
+          "pid": 483361,
+          "ppid": 483204,
+          "pgid": 483361,
+          "starttime_ticks": 336758288,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/483361/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.4774881461635232,
+        "total_missing_elapsed": 0.4774881461635232,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.4774881461635232,
+    "samples": 81,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 3,
+    "variant": "parent_C303",
+    "source_path": "/tmp/nsa_leader_v303_readonly.py",
+    "sourceSHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 483497,
+    "starttime_ticks": 336761975,
+    "pgid": 483497,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_missing_total_seconds": 0.0,
+    "samples": 76,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 4,
+    "variant": "candidate_C236",
+    "source_path": "/tmp/nsa_worker2_v236_case3_shared_den_reciprocal.py",
+    "sourceSHA": "23ab027ee21db05b599988927ddb6057cb18b77fe5a5201c47beafd88ce87587",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 483612,
+    "starttime_ticks": 336765797,
+    "pgid": 483612,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3367695.404352114,
+        "deadline": 3367696.404352114,
+        "metadata": {
+          "pid": 483612,
+          "ppid": 483204,
+          "pgid": 483612,
+          "starttime_ticks": 336765797,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/483612/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.31729306979104877,
+        "total_missing_elapsed": 0.31729306979104877,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.31729306979104877,
+    "samples": 80,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 5,
+    "variant": "candidate_C236",
+    "source_path": "/tmp/nsa_worker2_v236_case3_shared_den_reciprocal.py",
+    "sourceSHA": "23ab027ee21db05b599988927ddb6057cb18b77fe5a5201c47beafd88ce87587",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 483746,
+    "starttime_ticks": 336769572,
+    "pgid": 483746,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3367733.116513945,
+        "deadline": 3367734.116513945,
+        "metadata": {
+          "pid": 483746,
+          "ppid": 483204,
+          "pgid": 483746,
+          "starttime_ticks": 336769572,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/483746/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.4774985588155687,
+        "total_missing_elapsed": 0.4774985588155687,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.4774985588155687,
+    "samples": 83,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 6,
+    "variant": "parent_C303",
+    "source_path": "/tmp/nsa_leader_v303_readonly.py",
+    "sourceSHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 483861,
+    "starttime_ticks": 336773360,
+    "pgid": 483861,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3367771.00146798,
+        "deadline": 3367772.00146798,
+        "metadata": {
+          "pid": 483861,
+          "ppid": 483204,
+          "pgid": 483861,
+          "starttime_ticks": 336773360,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/483861/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.37163790687918663,
+        "total_missing_elapsed": 0.37163790687918663,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.37163790687918663,
+    "samples": 81,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 7,
+    "variant": "parent_v084",
+    "source_path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 483976,
+    "starttime_ticks": 336777138,
+    "pgid": 483976,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3367809.253930065,
+        "deadline": 3367810.253930065,
+        "metadata": {
+          "pid": 483976,
+          "ppid": 483204,
+          "pgid": 483976,
+          "starttime_ticks": 336777138,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/483976/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.05058471905067563,
+        "total_missing_elapsed": 0.05058471905067563,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.05058471905067563,
+    "samples": 76,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 8,
+    "variant": "baseline_v28",
+    "source_path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+    "sourceSHA": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 484091,
+    "starttime_ticks": 336780931,
+    "pgid": 484091,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3367845.700019388,
+        "deadline": 3367846.700019388,
+        "metadata": {
+          "pid": 484091,
+          "ppid": 483204,
+          "pgid": 484091,
+          "starttime_ticks": 336780931,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/484091/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.10403291881084442,
+        "total_missing_elapsed": 0.10403291881084442,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.10403291881084442,
+    "samples": 74,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 9,
+    "variant": "baseline_v28",
+    "source_path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+    "sourceSHA": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 484204,
+    "starttime_ticks": 336784581,
+    "pgid": 484204,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3367882.198711223,
+        "deadline": 3367883.198711223,
+        "metadata": {
+          "pid": 484204,
+          "ppid": 483204,
+          "pgid": 484204,
+          "starttime_ticks": 336784581,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/484204/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.3707781811244786,
+        "total_missing_elapsed": 0.3707781811244786,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.3707781811244786,
+    "samples": 79,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 10,
+    "variant": "parent_v084",
+    "source_path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 484318,
+    "starttime_ticks": 336788257,
+    "pgid": 484318,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3367919.459287149,
+        "deadline": 3367920.459287149,
+        "metadata": {
+          "pid": 484318,
+          "ppid": 483204,
+          "pgid": 484318,
+          "starttime_ticks": 336788257,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/484318/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "terminal_confirmed",
+        "elapsed": 0.2152835982851684,
+        "total_missing_elapsed": 0.2152835982851684,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.2152835982851684,
+    "samples": 78,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 11,
+    "variant": "parent_C303",
+    "source_path": "/tmp/nsa_leader_v303_readonly.py",
+    "sourceSHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 484432,
+    "starttime_ticks": 336791968,
+    "pgid": 484432,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3367956.566404562,
+        "deadline": 3367957.566404562,
+        "metadata": {
+          "pid": 484432,
+          "ppid": 483204,
+          "pgid": 484432,
+          "starttime_ticks": 336791968,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/484432/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.3712839619256556,
+        "total_missing_elapsed": 0.3712839619256556,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.3712839619256556,
+    "samples": 80,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 12,
+    "variant": "candidate_C236",
+    "source_path": "/tmp/nsa_worker2_v236_case3_shared_den_reciprocal.py",
+    "sourceSHA": "23ab027ee21db05b599988927ddb6057cb18b77fe5a5201c47beafd88ce87587",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 484546,
+    "starttime_ticks": 336795694,
+    "pgid": 484546,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3367995.343144446,
+        "deadline": 3367996.343144446,
+        "metadata": {
+          "pid": 484546,
+          "ppid": 483204,
+          "pgid": 484546,
+          "starttime_ticks": 336795694,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/484546/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.10403612302616239,
+        "total_missing_elapsed": 0.10403612302616239,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.10403612302616239,
+    "samples": 78,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 13,
+    "variant": "candidate_C236",
+    "source_path": "/tmp/nsa_worker2_v236_case3_shared_den_reciprocal.py",
+    "sourceSHA": "23ab027ee21db05b599988927ddb6057cb18b77fe5a5201c47beafd88ce87587",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 484661,
+    "starttime_ticks": 336799545,
+    "pgid": 484661,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3368032.842104033,
+        "deadline": 3368033.842104033,
+        "metadata": {
+          "pid": 484661,
+          "ppid": 483204,
+          "pgid": 484661,
+          "starttime_ticks": 336799545,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/484661/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.4242402920499444,
+        "total_missing_elapsed": 0.4242402920499444,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.4242402920499444,
+    "samples": 82,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 14,
+    "variant": "parent_C303",
+    "source_path": "/tmp/nsa_leader_v303_readonly.py",
+    "sourceSHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 484779,
+    "starttime_ticks": 336803327,
+    "pgid": 484779,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3368070.664933544,
+        "deadline": 3368071.664933544,
+        "metadata": {
+          "pid": 484779,
+          "ppid": 483204,
+          "pgid": 484779,
+          "starttime_ticks": 336803327,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/484779/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.1550795678049326,
+        "total_missing_elapsed": 0.1550795678049326,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.1550795678049326,
+    "samples": 76,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 15,
+    "variant": "parent_v084",
+    "source_path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 484894,
+    "starttime_ticks": 336807082,
+    "pgid": 484894,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3368107.745191899,
+        "deadline": 3368108.745191899,
+        "metadata": {
+          "pid": 484894,
+          "ppid": 483204,
+          "pgid": 484894,
+          "starttime_ticks": 336807082,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/484894/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.1040267487987876,
+        "total_missing_elapsed": 0.1040267487987876,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.1040267487987876,
+    "samples": 75,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  },
+  {
+    "run": 16,
+    "variant": "baseline_v28",
+    "source_path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+    "sourceSHA": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
+    "reference_records": 1,
+    "oom_before": 3,
+    "launcher_argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v236_worker2_case3_shared_den_reciprocal_subagent2/native_exec.py"
+    ],
+    "native_argv": [
+      "/opt/conda/bin/python",
+      "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py"
+    ],
+    "pid": 485008,
+    "starttime_ticks": 336810785,
+    "pgid": 485008,
+    "exe": "/opt/conda/bin/python3.12",
+    "released_native": true,
+    "critical_confirmation_events": [
+      {
+        "event": "started",
+        "monotonic": 3368144.236850787,
+        "deadline": 3368145.236850787,
+        "metadata": {
+          "pid": 485008,
+          "ppid": 483204,
+          "pgid": 485008,
+          "starttime_ticks": 336810785,
+          "state": "R",
+          "comm": "python",
+          "exe": null,
+          "status": {
+            "Threads": "1"
+          },
+          "cgroup": [
+            "13:devices:/",
+            "12:perf_event:/",
+            "11:hugetlb:/",
+            "10:misc:/",
+            "9:pids:/",
+            "8:blkio:/",
+            "7:freezer:/",
+            "6:memory:/",
+            "5:cpu,cpuacct:/",
+            "4:net_cls,net_prio:/",
+            "3:rdma:/",
+            "2:cpuset:/",
+            "1:name=systemd:/",
+            "0::/system.slice/docker-6b3727803ca4aa73732514525e842715281a9b82fe3cd9b81ab4be5db83b4bad.scope"
+          ],
+          "thread_children": [],
+          "metadata_errors": [
+            {
+              "phase": "exe",
+              "errno": 2,
+              "filename": "/proc/485008/exe"
+            }
+          ],
+          "critical_complete": false,
+          "RSS_unavailable": true
+        }
+      },
+      {
+        "event": "after_loop_original_terminal",
+        "elapsed": 0.3176414002664387,
+        "total_missing_elapsed": 0.3176414002664387,
+        "actualPopenpoll": 0
+      }
+    ],
+    "critical_missing_total_seconds": 0.3176414002664387,
+    "samples": 78,
+    "exit": 0,
+    "owned_termination_actions": [],
+    "oom_after": 3,
+    "terminal_observed_owned_descendants": [],
+    "CSV_errors": [],
+    "csv_valid": true,
+    "inner_Killed": false,
+    "source_hash_unchanged": true,
+    "runner_hash_unchanged": true,
+    "shared_hashes_unchanged": true,
+    "clean_full_reference_record": 1
+  }
+]

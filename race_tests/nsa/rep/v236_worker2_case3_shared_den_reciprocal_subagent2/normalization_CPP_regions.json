@@ -1,0 +1,7 @@
+{
+  "parent": "\n  #pragma unroll\n  for (int chunk_4 = 0; chunk_4 < 8; ++chunk_4) {\n    float4 __6;\n      float4 v__4 = *(float4*)(numerator + (chunk_4 * 4));\n      float4 v__5 = make_float4(denominator[0], denominator[0], denominator[0], denominator[0]);\n      __6.x = (v__4.x/v__5.x);\n      __6.y = (v__4.y/v__5.y);\n      __6.z = (v__4.z/v__5.z);\n      __6.w = (v__4.w/v__5.w);\n    *(float4*)(numerator + (chunk_4 * 4)) = __6;\n  }\n  ",
+  "candidate": "\n  partial_sum[0] = (0x1p+0f/*1.000000e+00*/ / denominator[0]);\n  #pragma unroll\n  for (int chunk_4 = 0; chunk_4 < 8; ++chunk_4) {\n    float4 __6;\n      float4 v__4 = *(float4*)(numerator + (chunk_4 * 4));\n      float4 v__5 = make_float4(partial_sum[0], partial_sum[0], partial_sum[0], partial_sum[0]);\n      __6.x = (v__4.x*v__5.x);\n      __6.y = (v__4.y*v__5.y);\n      __6.z = (v__4.z*v__5.z);\n      __6.w = (v__4.w*v__5.w);\n    *(float4*)(numerator + (chunk_4 * 4)) = __6;\n  }\n  ",
+  "outside_byte_exact": true,
+  "host_byte_exact": true,
+  "Num32": true
+}
