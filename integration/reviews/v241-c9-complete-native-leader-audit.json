@@ -1,0 +1,59 @@
+{
+  "protocol": "v241 original C9 fixed4C16 complete",
+  "source_header": "v241",
+  "source_sha256": "08a899a15a5b11d99145ece30f20715035e939af8a71f5aaf4f11b84cadaaf1d",
+  "closure_inventories_verified": {
+    "v241_worker2_case9_two_query_warps_subagent2": 312
+  },
+  "correctness_C_total": [
+    4,
+    16
+  ],
+  "allnative_outer_truewait": 0,
+  "raw_us": {
+    "baseline_v28": [
+      "51.732000",
+      "51.891000",
+      "51.753000",
+      "51.656000"
+    ],
+    "candidate_C241": [
+      "42.429000",
+      "42.685000",
+      "42.122000",
+      "41.815000"
+    ],
+    "parent_C303": [
+      "40.207000",
+      "40.038000",
+      "40.356000",
+      "40.474000"
+    ],
+    "parent_v084": [
+      "40.238000",
+      "40.417000",
+      "40.402000",
+      "40.084000"
+    ]
+  },
+  "medians_us": {
+    "baseline_v28": "51.742500",
+    "candidate_C241": "42.275500",
+    "parent_C303": "40.281500",
+    "parent_v084": "40.320000"
+  },
+  "candidate_vs_current303_pct": "4.950163226294949294341074700",
+  "rounds_vs_current303_pct": [
+    "6.067667767462147174278771300",
+    "3.843869850303105282692069800"
+  ],
+  "candidate_vs84_pct": "4.849950396825396825396825400",
+  "ranges_overlap_current303": false,
+  "decision": "REJECT, bothround regressions and allcandidate samples slower; no promotion/retry",
+  "native_memory_samples": 1337,
+  "native_sampled_peak_bytes": 24121700352,
+  "OOM": 3,
+  "limits": "Two independentquerywarps mapping and FPmath verified; resources46MT/shared4KB vsparent42MT/2KB; measuredregression causal attribution unproven",
+  "best_submission": "v303 unchanged",
+  "compile_memory_samples": 96
+}
