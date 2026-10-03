@@ -35,7 +35,7 @@
     "installed_identically_both_containers": true
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-03T08:56:34.624375+00:00",
+  "updated_at_utc": "2026-10-03T09:01:14.798893+00:00",
   "all14_nonregression": "Observed OJ score nonregression for user-attributed v303 run: all14AC/1212 vs84 1204; exact uploadedSHA and repeated latency nonregression unproven",
   "worker1": {
     "cases": [
@@ -48,8 +48,8 @@
     "last_closed_source_commit": "c9dd8149eeb6afc5cea76ab018ac5721b38bbeda",
     "last_result": "Original145 stage0,0,0,0,1/allouter1; narrowdynamicK/V base proven, broadclassifier caught3normal latepointerconstants; no performanceverdict",
     "active_version": "v146 CPU semanticlatepointer classification / v145 source",
-    "stage": "145 originalgate1 retained128SHA; dynamicKVflatten32+only3lateconstant64rows proven; CPU-onlyclassification/nativeTEXT prep",
-    "authorized_scope": "NewCPU-only existing145IR fixedlateconstant-offset classification/helpertext andoriginalC10nativeTEXT; no recompilation/export/sourcechange/GPU",
+    "stage": "v146 CPU-only one existing145 IR semantic classification authorized; originalgate1 retained",
+    "authorized_scope": "One frozen CPU helper with original wait; prepare nativeTEXT only, no compiler/JIT/export/GPU/native",
     "native_GO": false,
     "source_audit": "integration/reviews/v145-c10-source-leader-audit.json",
     "candidate_sha256": "1bbb16fcae0c0e78833d6090c4edf9c6368c1eeedbffe7aef24d8d82bfdac291",
@@ -104,7 +104,9 @@
     "last_closed_source_commit_local": "8aa00033eee0f692788c3635002b48b59b115e3f",
     "next_case": 10,
     "local_blob_preservation": "scoped artifact gitattributes/recovery checkpoint; originalworkingbytes and auditedraw unchanged; corrected329SHA mismatches0 perworker",
-    "parent_IR_GO": false
+    "parent_IR_GO": false,
+    "CPU_GO": true,
+    "CPU_approval": "integration/reviews/v146-c10-CPU-approval.json"
   },
   "worker2": {
     "cases": [
@@ -296,5 +298,37 @@
     "Case7": "inconclusive \u22120.53481394% vs current303, ranges overlap",
     "correctness": "candidate4/4, inclusive16/16 for each experiment",
     "submission_changed": false
-  }
+  },
+  "source_only_peer_branches": [
+    {
+      "worker": "worker1",
+      "version": "v145",
+      "commit": "c6df379554576cc4b75be629e80d64d24848cf98",
+      "local_ref": "worker1-v145-source-only-review",
+      "remote_branch": "code/worker1-v145-source-review",
+      "parent_already_public": "8f37040db489a9f074874225fe49f6a72e5323f2",
+      "changed_files": [
+        "race_tests/nsa/submission/worker1_v145_source_only_review/README.md",
+        "race_tests/nsa/submission/worker1_v145_source_only_review/submission.py"
+      ],
+      "new_file_bytes": 114556,
+      "source_sha256": "1bbb16fcae0c0e78833d6090c4edf9c6368c1eeedbffe7aef24d8d82bfdac291",
+      "private_archive_history_excluded": true
+    },
+    {
+      "worker": "worker2",
+      "version": "v244",
+      "commit": "8214fa3ab3413fbcb5a8acc2784b5c49c6d0a5c4",
+      "local_ref": "worker2-v244-source-only-review",
+      "remote_branch": "code/worker2-v244-source-review",
+      "parent_already_public": "8f37040db489a9f074874225fe49f6a72e5323f2",
+      "changed_files": [
+        "race_tests/nsa/submission/worker2_v244_source_only_review/README.md",
+        "race_tests/nsa/submission/worker2_v244_source_only_review/submission.py"
+      ],
+      "new_file_bytes": 113272,
+      "source_sha256": "e82e8de2c75769f33bcf177cc7680b2fae340fa7f88dab22f5c623dfb25942b0",
+      "private_archive_history_excluded": true
+    }
+  ]
 }
