@@ -1,0 +1,95 @@
+{
+  "scope": "readonly stdlib existing exact parent artifacts only; zero new compile/import/GPU",
+  "case": 3,
+  "official_key": [
+    1,
+    256,
+    1,
+    16,
+    128,
+    1,
+    16,
+    true
+  ],
+  "current_parent_CB13SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+  "current_C3_factory_decorated_AST_SHA": "ef57c4139f6ad064ea5acefd1a61ff0f22ff31a33fee75c96d875989fdf3b29e",
+  "current_CB13_C3_factory_AST_equal_P84": true,
+  "actual_parent_CPP": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case3_stage1.device.cpp",
+    "SHA": "814735db527ddf73362721a41d5ffd6fe9d070e2c190d461900b06e9cb6ff671",
+    "Num32_line": 14,
+    "den_shuffles_lines": [
+      151,
+      152
+    ],
+    "normalization_loop_lines": [
+      154,
+      158,
+      159,
+      160,
+      161
+    ],
+    "logical_divisions_per_lane": 32,
+    "shared_denominator": true
+  },
+  "actual_parent_host": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case3_stage1.host.cpp",
+    "SHA": "fa1bde13abe760cef253640273dc380cbf293d15d9f3079bfa815d0a330556a2",
+    "geometry": [
+      256,
+      1,
+      64,
+      1,
+      1,
+      4096
+    ]
+  },
+  "exact_C3_parent_optimized_IR": "UNAVAILABLE_no_existing_matching_file",
+  "same_S1_D64_parent_IR_method_counterpart_only": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v208_worker2_c9_q_register_transpose_subagent2/codegen/parent_v084/case9_stage1.device.ll",
+    "SHA": "722c5764812db2d76ae3eb666aa824d0e6409fd402eba857001ef7368717bfea",
+    "kernel_scoped_fdiv_contract_count": 16,
+    "lines": [
+      631,
+      632,
+      633,
+      634,
+      639,
+      640,
+      641,
+      642,
+      647,
+      648,
+      649,
+      650,
+      655,
+      656,
+      657,
+      658
+    ],
+    "C3_instruction_count_inference": "NOT_PROVEN",
+    "C9_timing_or_counter_borrowing": false,
+    "finalISA_rcp_sharing": "UNAVAILABLE"
+  },
+  "C3_own_219_profile": {
+    "source": "exactP84 C3; GradFalse counter diagnostic distinct from native",
+    "rawSHAs": [
+      "caff37ffa91f4cf7de568662b8ed230c496ddcb012db0ba6fdca9b9add3fd6ad",
+      "aa6ab7ce06fb0f41b77270d3494d9f3af69ba8981213950196404072ef16e5f9"
+    ],
+    "MTE": [
+      13.024022248112251,
+      13.25272985623738
+    ],
+    "MMA": [
+      1.9339615403229329,
+      1.9679227628751563
+    ],
+    "shared_efficiency": [
+      80.48780487804879,
+      80.48780487804879
+    ],
+    "claim": "No divider/SFU bottleneck localization; no HBM/occupancy/exclusive conclusion"
+  },
+  "local_reader_correction": "Initial diagnostic count0 used first define/helper body; corrected exact native_sparse_attention_kernel scope gives16. No executed compile/runtime gate existed or changed."
+}
