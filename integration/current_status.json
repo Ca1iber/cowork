@@ -1,36 +1,42 @@
 {
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
-  "oj_reference_version": "v084",
+  "oj_reference_version": "v303",
   "oj_scores": [
     87,
     88,
-    87,
+    88,
     88,
     84,
-    82,
-    89,
-    85,
     84,
-    86,
-    87,
-    80,
     89,
+    86,
+    85,
+    87,
+    87,
+    81,
+    90,
     88
   ],
-  "oj_total": 1204,
+  "oj_total": 1212,
   "team_workflow": "leader assignments -> worker evidence/hypothesis -> direct peer review -> leader decision -> fixed screen -> peer result exchange -> leader full14/integration gate",
   "ownership": "Peer may advise and read; only owner modifies own code/plan; leader owns assignments and integration",
   "canonical_main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "best_known_packaging": {
-    "path": "/root/tilelang-metax/race_tests/nsa/submission/leader_best_known_v113/submission.py",
-    "source_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
-    "integration_commit": "753d1b707918cfbd9b4c5b199c15fdd1410c7056",
+    "version": "v303",
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/leader_best_known_v303/submission.py",
+    "source_SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "integration_commit": "8f37040db489a9f074874225fe49f6a72e5323f2",
     "branch": "code/integration",
-    "all14_nonregression": "UNPROVEN"
+    "all14_correctness": "v233 original fullnaive56C224 PASS; user OJ all14AC",
+    "OJ_scores_total": 1212,
+    "score_nonregression_vs84": "observed zero decreases, +8 total in user-reported run",
+    "repeated_latency_nonregression": "UNPROVEN",
+    "exact_uploadedSHA": "UNAVAILABLE",
+    "installed_identically_both_containers": true
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-03T01:55:39.604127+00:00",
-  "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
+  "updated_at_utc": "2026-10-03T02:04:43.235568+00:00",
+  "all14_nonregression": "Observed OJ score nonregression for user-attributed v303 run: all14AC/1212 vs84 1204; exact uploadedSHA and repeated latency nonregression unproven",
   "worker1": {
     "cases": [
       6,
@@ -41,17 +47,17 @@
     "last_closed_version": "v135_incomplete",
     "last_closed_source_commit": "4ff507aa7762013fef97fc8ec4c2c1ed6f87db42",
     "last_result": "v136 only first9 cleanPASS/2C; incomplete second round, no formal performance verdict",
-    "active_version": "v136",
-    "stage": "v136 fixed16 incomplete: job10 second admission wholeCG6444773376>6GiB; 9 clean refs incl2candidate, original controller/supervisor wait1; no retry",
-    "authorized_scope": "Close stopped prefix and read-only current memory/next hypothesis; no source/newGPU/SDK/profile permission until leader decision",
+    "active_version": "v136_closed_incomplete",
+    "stage": "72SHA/9CSV/745wholememory and originalwait1 independently audited; next C12 mechanism CPU-only on exact C303 base",
+    "authorized_scope": "CPU read-only C303 C12 current parent IR/CPP evidence and own proposal; no source/GPU/SDK",
     "native_GO": false,
     "source_audit": "integration/reviews/v136-c12-source-leader-audit.json",
     "candidate_sha256": "43fa3a9f024bb23e38ad13ad0c96662a24f697b7bed067cdc32d5e7702c92473",
     "approval": "integration/reviews/v136-c12-native-approval.json",
-    "runtime_audit": "integration/reviews/v135-failed-full14-leader-audit.json",
+    "runtime_audit": "integration/reviews/v136-c12-failed-native-leader-audit.json",
     "source_SHA": "43fa3a9f024bb23e38ad13ad0c96662a24f697b7bed067cdc32d5e7702c92473",
     "source_header": "v136",
-    "compile_GO": true,
+    "compile_GO": false,
     "actual_resource": [
       68,
       44,
@@ -69,7 +75,7 @@
     "controller_PID": 667751,
     "controller_starttime": 101535449,
     "GO_plan_SHA": "e263247e3c1513a8c1639afe02437f1f7be55d13506b456142d6134db73ee71c",
-    "last_live_verified_utc": "2026-10-03T01:50:34.815545+00:00",
+    "last_live_verified_utc": "terminal: original exits1 and owners missing",
     "active_PID": null,
     "latest_terminal_evidence": {
       "jobs_created": 10,
@@ -87,7 +93,8 @@
       "OOM": 13,
       "later_readonly_usage_bytes": 6381977600,
       "later_underlimit_not_retry_permission": true
-    }
+    },
+    "reported_source_close_commit": "fbbd28165de313ddfac842dce0d587282ae96b2d"
   },
   "worker2": {
     "cases": [
@@ -104,7 +111,7 @@
     ],
     "last_closed_version": "v234",
     "last_closed_source_commit": "fbb1a6b5e21b6ba402bd80abc06b32b6ec3ff6d7",
-    "active_version": "v234",
+    "active_version": "v235",
     "source_SHA": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
     "source_header": "v234",
     "actual_resource": [
@@ -115,13 +122,13 @@
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "Closed v234 inconclusive; selected C3 shared-den reciprocal hypothesis, exact parent IR bounded text PREP only",
-    "authorized_scope": "CPU/stdlib prepare one exact current-parent C3 stock O3 IR export; no SDK/source/GPU GO",
+    "stage": "Exact parent C3 stock O3IR SDK GO issued; fresh actual admission and original handle required",
+    "authorized_scope": "One existing parent C3 CPP O3IR export plus stdlib scoped stats; no candidate/source/JIT/GPU/resource/native/profile",
     "native_GO": false,
-    "approval": "integration/reviews/v234-c2-native-approval.json",
+    "approval": "integration/reviews/v235-c3-parent-ir-approval.json",
     "last_result": "C2 8.9035us vsCB13−1.694822%, both rounds negative but ranges overlap CB13/P84; inconclusive/no promote/no retry",
     "runtime_audit": "integration/reviews/v234-c2-closed-leader-audit.json",
-    "compile_GO": true,
+    "compile_GO": false,
     "profile_GO": false,
     "retained_local_gain": "v230 C8 -1.960300%; SC/full14/OJ unproven",
     "source_audit": "integration/reviews/v234-c2-source-leader-audit.json",
@@ -130,7 +137,9 @@
     "result": "integration/reviews/v234-c2-results.md",
     "next_version": "v235",
     "next_case": 3,
-    "next_decision": "integration/reviews/v235-c3-parent-ir-preparation-decision.json"
+    "next_decision": "integration/reviews/v235-c3-parent-ir-preparation-decision.json",
+    "source_GO": false,
+    "parent_IR_GO": true
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
@@ -151,7 +160,7 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-smoke/report.md"
   },
-  "leader_next": "Independently audit v136 stopped prefix; select new evidence-supported hypotheses from both workers, no retry/fill/promotion; v303 desktop unchanged.",
+  "leader_next": "Keep current OJ-tested C3031212 as base; audit original v235 parent IR and next C12 mechanism; incomplete136/noisy234 excluded from submission.",
   "pending_integration": {
     "version": "v300",
     "path": "/root/tilelang-metax/race_tests/nsa/submission/v300_leader_c9_bounded_index_full14_sc-16g-2/submission.py",
@@ -196,7 +205,16 @@
     "other11_CB13_preserved": true,
     "C11_C12_retained": true,
     "source_static_and_independent_peer_review": true,
-    "full14_correctness_nonregression": "Sub2v23356C224PASS proved; nonregressionUNPROVEN positivescase2/9 vsCB13 and1/2/7 vsP84, no promotion/OJclaim; SC135incomplete independent"
+    "full14_correctness_nonregression": "Sub2 v233 fullnaive56C224PASS; observed OJ all14AC1212/zero score regression vs84; local timing positives retained",
+    "OJ_result": {
+      "all14AC": true,
+      "total": 1212,
+      "vs84": 8,
+      "case_score_regressions": [],
+      "source_attribution": "user-reported Desktop v303; exact uploadSHA unavailable"
+    },
+    "not_best_promoted": false,
+    "candidate_status": "Current OJ-tested submission package; exact v303 retained, no new component edits"
   },
   "desktop_trial": {
     "version": "v303",
@@ -205,7 +223,35 @@
     "bytes": 104927,
     "verified_exact_copy": true,
     "all14_correctness": "56candidate/224inclusive PASS in v233",
-    "no_regression": "UNPROVEN",
-    "promotion": false
+    "no_regression": "Observed OJ score nonregression, repeated latency unproven",
+    "promotion": true,
+    "OJ_result": "User-reported all14AC1212; no case score below v84"
+  },
+  "previous_oj_v84": {
+    "scores": [
+      87,
+      88,
+      87,
+      88,
+      84,
+      82,
+      89,
+      85,
+      84,
+      86,
+      87,
+      80,
+      89,
+      88
+    ],
+    "total": 1204
+  },
+  "latest_oj_evidence": "evidence/oj/v303/result.json",
+  "previous_best_known_packaging": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/leader_best_known_v113/submission.py",
+    "source_SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+    "integration_commit": "753d1b707918cfbd9b4c5b199c15fdd1410c7056",
+    "branch": "code/integration",
+    "all14_nonregression": "UNPROVEN"
   }
 }
