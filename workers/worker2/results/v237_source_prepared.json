@@ -1,0 +1,119 @@
+{
+  "source_identity": {
+    "version": "v237_worker2_case7_bounded_kv_index_subagent2",
+    "source_path": "/tmp/nsa_worker2_v237_case7_bounded_kv_index.py",
+    "sourceSHA": "d7906be2f14fe771a2b129cb715115d6cc0c199ac471e85179f6687637554c0f",
+    "source_header": 237,
+    "base_source_path": "/tmp/nsa_leader_v303_readonly.py",
+    "baseSHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "complete_C303_AST_prefix24": true,
+    "top_AST_nodes": [
+      24,
+      26
+    ],
+    "factory": "_make_worker2_case7_bounded_kv_index",
+    "original_factory": "_make_power_s1_case4_dense",
+    "only_key": [
+      1,
+      4096,
+      1,
+      16,
+      64,
+      1,
+      16,
+      true
+    ],
+    "full_decorated_factory_inverse_AST_equal": true,
+    "exact3imports": [
+      "import tilelang",
+      "import tilelang.language as T",
+      "from tilelang.layout import make_swizzled_layout"
+    ],
+    "actual_original_block_start": "Indices[batch_id, token, kv_head, selected] * block_size",
+    "actual_original_guard": "block_start >= 0 and block_start <= token",
+    "original_raw_index_or_independent_block_count_check": false,
+    "causal_mask_raw_block_start_unchanged": true,
+    "only_global_row_replacements": [
+      "K bounded_start +pos//64",
+      "V bounded_start+fetch_row+row"
+    ],
+    "other13_source_unchanged": true,
+    "unchanged_cases": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "other13_generated_device_code": "UNAVAILABLE_source_only_notexported",
+    "numeric_math_layout_16B_7sync_unchanged": true,
+    "actual_JIT_SDK_GPU_native_profile": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "source_package": "/tmp/nsa_worker2_v237_source_preparation_d7906be2.tar.gz",
+  "package_bytes": 13681,
+  "package_SHA": "3c367d9339fee21d138a7bc41ca60584d3bec62e20fc4514574df00d5d40cfb1",
+  "scope_inventory": [
+    15,
+    14
+  ],
+  "actualCPUproof": {
+    "scope": "stdlibintegerproof, noDeviceexecution",
+    "actual_original_block_start": "Indices*16, no newraw_index",
+    "actual_original_guard": "block_start>=0 and block_start<=token, noindependentidxuppercheck",
+    "guard_implication": "token<=4095 anddefinedblock_start multiple16 ->validblock_start<=4080 ->clampidentity",
+    "legalidx": [
+      0,
+      255
+    ],
+    "valid_token_idx_pairs": 526336,
+    "complete_KV_16B_vectors": 65536,
+    "full_vector_end_maxhalf": 262143,
+    "lastbyte": 524287,
+    "alignment_bytes": 16,
+    "negative_and_SEQ4096sentinel_guard_false": true,
+    "arbitrary_int32_overflow_contract": "notexpanded",
+    "raw_causalmask_math_memory_order": "unchangedviawholedecoratedfactoryinverse"
+  },
+  "risk": {
+    "stage": "SOURCE_ONLY_NO_COMPILE_NATIVE_PROFILE_GO",
+    "base": "fullcurrent303985ffd, preserveallcurrentgains/other13",
+    "exact_case": [
+      1,
+      4096,
+      1,
+      16,
+      64,
+      1,
+      16,
+      true
+    ],
+    "actual_parent_evidence": "C7CPP85b2/host1c97 actual4096x1x64/dyn2048; exactbyteidentityparentIR722 hasearly64KVscaledintermediates, instructionanalysisonly noC9timing/counters borrowed",
+    "source_changes": "newboundonlyinsideactualoriginaltwo-termguard, onlyK/Vrowcoordinates replaced",
+    "prediction": "futureactual row-scaled i32 beforelate64bitGEP; pointerGEP64normal, sourceclampnotproof",
+    "falsifiers": [
+      "actualstillall64 orboundfoldedwithoutarithmeticchange",
+      "extra min/addressregs/MTST/stack/privatecost",
+      "freshcurrent303parentCPPnotexact85b2/host1c97 ->stopreport",
+      "originalfullnaive/latencyfailureorunstablefutureselectedresult"
+    ],
+    "cost_boundary": "no finalISAtransaction/occupancy orlatencyclaim; exactC7profilercounters unavailable",
+    "peer": "worker1 readonlyproofandguard/laterSSA/resource/naive/nativecounterexample advice; nopeer codeplan edits",
+    "current_authorization": "CPU/stdlibsource/staticonly;0Tilelangimport/JIT/SDK/GPU/native/profile"
+  },
+  "peer_code_plan_edit": false,
+  "heavy_GO": false
+}
