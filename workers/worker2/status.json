@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-03T02:02:12.652451+00:00",
-  "state": "v235_parent_C3_IR_prepared_await_separate_GO",
+  "timestamp_utc": "2026-10-03T02:09:08.778630+00:00",
+  "state": "v235_closed_current_parent_C3_IR_evidence",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "fbb1a6b5e21b6ba402bd80abc06b32b6ec3ff6d7",
+  "source_commit": "46cb7b0a31af3005ce9e5f070af6492a5458db37",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -21,24 +21,35 @@
   ],
   "current": {
     "version": "v235",
-    "stage": "parent_only_stock_O3IR_prepared_not_started",
-    "case": 3,
-    "parent_CPP_SHA": "814735db527ddf73362721a41d5ffd6fe9d070e2c190d461900b06e9cb6ff671",
-    "current_immutable_base_C303SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
-    "current_C3_P84_CB13_C303_decoratedfactory_AST_equal": true,
-    "new_kernel_sources": 0,
-    "actual_SDK_commands": 0,
-    "actual_attention_ref_native_profile": [
+    "stage": "closed_parent_C3_stock_IR_only",
+    "source_commit": "46cb7b0a31af3005ce9e5f070af6492a5458db37",
+    "stock_SDK_commands": 1,
+    "originalSDK_observer_CPUstats_outer_actualwaits": [
       0,
       0,
       0,
       0
     ],
+    "IR_SHA": "a39bbe7ecdfff9b81ac47a715b84a4b62a1c55b75ab9535726b23a68618a69f1",
+    "kernel_fdiv_count": 32,
+    "common_denominator": "%add508",
+    "fdiv_flags": {
+      "contract": 32
+    },
+    "named_reciprocal_calls": 0,
+    "ISA_sharing_cost": "UNAVAILABLE",
+    "memory_samples": 4,
+    "OOM": 3,
     "live_processes": 0,
-    "SDK_GO": false,
-    "stdlib_preflightwait": 0,
-    "package": "/tmp/nsa_worker2_v235_parent_C3_IR_preparation_rev02.tar.gz",
-    "package_SHA": "39105ef50e7ea360b45ce528456774c709f59cddcae4e2e5f7f128718d501920"
+    "new_kernel_attention_fullrefs_native_profile": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "future_source_base_C303SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "candidate_GO": false
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -1946,10 +1957,73 @@
       "verdict": "inconclusive_range_overlap",
       "new_GPU_authorization": false,
       "old233_case2positive_unwaived": true
+    },
+    "v235_prepared_snapshot": {
+      "version": "v235",
+      "stage": "parent_only_stock_O3IR_prepared_not_started",
+      "case": 3,
+      "parent_CPP_SHA": "814735db527ddf73362721a41d5ffd6fe9d070e2c190d461900b06e9cb6ff671",
+      "current_immutable_base_C303SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+      "current_C3_P84_CB13_C303_decoratedfactory_AST_equal": true,
+      "new_kernel_sources": 0,
+      "actual_SDK_commands": 0,
+      "actual_attention_ref_native_profile": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "live_processes": 0,
+      "SDK_GO": false,
+      "stdlib_preflightwait": 0,
+      "package": "/tmp/nsa_worker2_v235_parent_C3_IR_preparation_rev02.tar.gz",
+      "package_SHA": "39105ef50e7ea360b45ce528456774c709f59cddcae4e2e5f7f128718d501920"
+    },
+    "v235_closed": {
+      "version": "v235_worker2_case3_parent_normalization_ir_subagent2",
+      "status": "closed_finite_current_parent_C3_optimized_IR_evidence",
+      "new_candidate_sources": 0,
+      "new_metadata_resource_attention_fullrefs_native_profile_trace": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "stock_SDK_commands": 1,
+      "stockSDK_actualwait": 0,
+      "observer_actualwait": 0,
+      "scoped_stats_actualwait": 0,
+      "outer_originalPopen_actualwait": 0,
+      "memory_samples": 4,
+      "OOM": [
+        3,
+        3
+      ],
+      "observed_peak_bytes": 2258894848,
+      "owned_signals": [],
+      "critical_missing_seconds": 0.0,
+      "inputCPP_SHA": "814735db527ddf73362721a41d5ffd6fe9d070e2c190d461900b06e9cb6ff671",
+      "IR_SHA": "a39bbe7ecdfff9b81ac47a715b84a4b62a1c55b75ab9535726b23a68618a69f1",
+      "IR_bytes": 115016,
+      "normalization_fdiv_count": 32,
+      "denominator_SSA": "%add508",
+      "fdiv_flags": {
+        "contract": 32
+      },
+      "named_reciprocal_calls": 0,
+      "finalISA_rcp_sharing_and_cost": "UNAVAILABLE",
+      "bottleneck_or_speed": "UNKNOWN_not_measured",
+      "current_P84_CB13_C303_C3_complete_decorated_AST_equal": true,
+      "current_immutable_base_C303SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+      "candidate_source_GO": false,
+      "current_live_handles": 0
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Waitleaderreview/GO for oneparentC3stockIR only; no candidatekernel yet; any future source basedonC303 retainscurrent gains",
+  "next_step": "Waitleaderreview of exactparent32fdiv evidence; no candidate source or newSDK/GPU authorized; future source basedonfullC303",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
