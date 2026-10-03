@@ -29,7 +29,7 @@
     "all14_nonregression": "UNPROVEN"
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-03T01:50:34.815533+00:00",
+  "updated_at_utc": "2026-10-03T01:55:39.604127+00:00",
   "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
   "worker1": {
     "cases": [
@@ -40,11 +40,11 @@
     ],
     "last_closed_version": "v135_incomplete",
     "last_closed_source_commit": "4ff507aa7762013fef97fc8ec4c2c1ed6f87db42",
-    "last_result": "SC13clean182PASS/56candidate; job14CB13 unknown643787RSS>1G guard→owned−15/ref0/15,16unstarted;4outer1/OOM13/247hash1701samples; no formalcomparison orpromotion",
+    "last_result": "v136 only first9 cleanPASS/2C; incomplete second round, no formal performance verdict",
     "active_version": "v136",
-    "stage": "Original C12 fixed16 native live: root verified launcher667749/start101535434/controller667751/start101535449, Python3.12; first job started",
-    "authorized_scope": "One original case12 four-source fixed16; 4candidate/16inclusive fullnaive seed0GradF16tol1e-2W10R50, unchanged guards; no retry/profile/newsource",
-    "native_GO": true,
+    "stage": "v136 fixed16 incomplete: job10 second admission wholeCG6444773376>6GiB; 9 clean refs incl2candidate, original controller/supervisor wait1; no retry",
+    "authorized_scope": "Close stopped prefix and read-only current memory/next hypothesis; no source/newGPU/SDK/profile permission until leader decision",
+    "native_GO": false,
     "source_audit": "integration/reviews/v136-c12-source-leader-audit.json",
     "candidate_sha256": "43fa3a9f024bb23e38ad13ad0c96662a24f697b7bed067cdc32d5e7702c92473",
     "approval": "integration/reviews/v136-c12-native-approval.json",
@@ -69,7 +69,25 @@
     "controller_PID": 667751,
     "controller_starttime": 101535449,
     "GO_plan_SHA": "e263247e3c1513a8c1639afe02437f1f7be55d13506b456142d6134db73ee71c",
-    "last_live_verified_utc": "2026-10-03T01:50:34.815545+00:00"
+    "last_live_verified_utc": "2026-10-03T01:50:34.815545+00:00",
+    "active_PID": null,
+    "latest_terminal_evidence": {
+      "jobs_created": 10,
+      "clean_candidate_inclusive": [
+        2,
+        9
+      ],
+      "controller_supervisor_exit": [
+        1,
+        1
+      ],
+      "admission_first_bytes": 6438412288,
+      "admission_second_bytes": 6444773376,
+      "admission_limit_bytes": 6442450944,
+      "OOM": 13,
+      "later_readonly_usage_bytes": 6381977600,
+      "later_underlimit_not_retry_permission": true
+    }
   },
   "worker2": {
     "cases": [
@@ -97,8 +115,8 @@
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "Closed original C2 fixed16; 4C16 PASS; independent273hash/1356samples/truewait0 audit complete; CPU-only next mechanism analysis",
-    "authorized_scope": "Close v234 raw results and CPU-only next-candidate analysis; no new GPU/source/SDK until next decision",
+    "stage": "Closed v234 inconclusive; selected C3 shared-den reciprocal hypothesis, exact parent IR bounded text PREP only",
+    "authorized_scope": "CPU/stdlib prepare one exact current-parent C3 stock O3 IR export; no SDK/source/GPU GO",
     "native_GO": false,
     "approval": "integration/reviews/v234-c2-native-approval.json",
     "last_result": "C2 8.9035us vsCB13−1.694822%, both rounds negative but ranges overlap CB13/P84; inconclusive/no promote/no retry",
@@ -109,7 +127,10 @@
     "source_audit": "integration/reviews/v234-c2-source-leader-audit.json",
     "candidate_sha256": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
     "actual_audit": "integration/reviews/v234-c2-actual-leader-audit.json",
-    "result": "integration/reviews/v234-c2-results.md"
+    "result": "integration/reviews/v234-c2-results.md",
+    "next_version": "v235",
+    "next_case": 3,
+    "next_decision": "integration/reviews/v235-c3-parent-ir-preparation-decision.json"
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
@@ -130,7 +151,7 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-smoke/report.md"
   },
-  "leader_next": "Hold original v136 case12 native handle after actual admission; independently audit v234 raw16; workers share max-chain/index-bound lessons read-only, no peer edits. v303 desktop trial does not replace best.",
+  "leader_next": "Independently audit v136 stopped prefix; select new evidence-supported hypotheses from both workers, no retry/fill/promotion; v303 desktop unchanged.",
   "pending_integration": {
     "version": "v300",
     "path": "/root/tilelang-metax/race_tests/nsa/submission/v300_leader_c9_bounded_index_full14_sc-16g-2/submission.py",
