@@ -1,0 +1,24 @@
+{
+  "version": "v137",
+  "UTC": "2026-10-03T02:19:42.185699+00:00",
+  "source_only_GO": true,
+  "baseSHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+  "only_case": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    8,
+    16,
+    true
+  ],
+  "actual_parent_evidence": "CPP3885044e lines175-184 and IRde3bc lines2432-2459:16contract fdiv same den; source303 current factory identical",
+  "minimal_change": "After complete PV, reuse dead FP32 maximum[0]=1.0/denominator[0]; Num16 final division becomes multiply",
+  "scratch_correction": "Actual source has no partial_sum. Root independently checked maximum alloc1196/lastread1254/PV ends1283; confirmed replacement before candidate creation",
+  "preserve": "C303 full24 AST prefix and other13 selectors, P32 rounding/den/PV order/JIT/global/layout/sync/outputF16",
+  "numeric_risk": "extra FP32 rounding/FP16 midpoint; empty0/0 vs0*Inf expected NaN class, backend unproven; originalnaive1e-2 mandatory later",
+  "verification_required_now": "stdlib complete decoratedfactory inverse, exactkey/other13 proof, originalOJ static validator",
+  "compile_SDK_GPU_native_profile_GO": false,
+  "peer_boundary": "read/advisory only; owner alone edits own code/plan"
+}
