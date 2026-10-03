@@ -1,0 +1,56 @@
+{
+  "version": "v234",
+  "sourceSHA": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
+  "CPP_SHA": "652c5d5b1ae588387e6bddbff88a6e233448521293adcf7ac1fb6f89a84ba4ba",
+  "IR_SHA": "ea6f71d2398037511f5956815426f5c71873d31d23cb37ba3643f2b188cc65d2",
+  "actual_inventory_verified": 80,
+  "wholeCPP_only2KV_addresschanges": [
+    {
+      "line": 51,
+      "kind": "K"
+    },
+    {
+      "line": 125,
+      "kind": "V"
+    }
+  ],
+  "wholehost_same_parent_df2f": true,
+  "CPPuint4_intent_unchanged_ISAunavailable": true,
+  "actual_i32_row64_thenlatezext_GEP64": [
+    "%cond.i.i = tail call noundef range(i32 0, 113) i32 @llvm.smin.i32(i32 %mul93, i32 112)",
+    "%mul103 = shl nuw nsw i32 %cond.i.i, 6",
+    "%add104 = add nuw nsw i32 %mul103, %mul8",
+    "%13 = zext nneg i32 %add104 to i64, !dbg !73",
+    "%add345 = add nuw nsw i32 %add342, %mul103",
+    "%55 = zext nneg i32 %add345 to i64, !dbg !183"
+  ],
+  "extra_smin112_retained": true,
+  "counts": {
+    "MMA": 8,
+    "warp": 7,
+    "bpermute": 4
+  },
+  "alloca_opcode0_AS5_absent": true,
+  "candidate_resource": [
+    40,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "parent_resource": [
+    42,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "all3truewait0": true,
+  "raw_memory_samples": 93,
+  "sampled_peak_bytes_not_upper_bound": 23870898176,
+  "OOM_counters": [
+    3
+  ],
+  "native_correctness_latency": "pending; no233cause_or_fixclaim",
+  "eligible_next": "original C2 native fixedprotocol PREP; separateGO"
+}

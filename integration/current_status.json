@@ -29,7 +29,7 @@
     "all14_nonregression": "UNPROVEN"
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-03T01:10:30.637602+00:00",
+  "updated_at_utc": "2026-10-03T01:45:38.032410+00:00",
   "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
   "worker1": {
     "cases": [
@@ -42,26 +42,28 @@
     "last_closed_source_commit": "4ff507aa7762013fef97fc8ec4c2c1ed6f87db42",
     "last_result": "SC13clean182PASS/56candidate; job14CB13 unknown643787RSS>1G guard→owned−15/ref0/15,16unstarted;4outer1/OOM13/247hash1701samples; no formalcomparison orpromotion",
     "active_version": "v136",
-    "stage": "C12source43fa/JIT/fullfactoryinverse/prefix18/soleC12key andforwardNaN±0+8/empty rationale reviewed, originalvalidator0; limitedcompilehelper PREPONLY",
-    "authorized_scope": "stdlib/actuallimitedcompilehelper preparation only; no import/newGPU untilindependentGO; all originalSCguards unchanged",
-    "native_GO": false,
+    "stage": "Actual compile passed: maxnum depth34→12,37sites,64MMA,68MT44ST unchanged,30hash/100memorysamples/OOM13; native GO issued, fresh admission and launch pending",
+    "authorized_scope": "One original case12 four-source fixed16; 4candidate/16inclusive fullnaive seed0GradF16tol1e-2W10R50, unchanged guards; no retry/profile/newsource",
+    "native_GO": true,
     "source_audit": "integration/reviews/v136-c12-source-leader-audit.json",
-    "candidate_sha256": "cfeb8e5d18adb3c0d0c887633fc8dea1778ebfdfc100fdc9c9a77544c514515d",
-    "approval": "integration/reviews/v135-c303-full14-approval.json",
+    "candidate_sha256": "43fa3a9f024bb23e38ad13ad0c96662a24f697b7bed067cdc32d5e7702c92473",
+    "approval": "integration/reviews/v136-c12-native-approval.json",
     "runtime_audit": "integration/reviews/v135-failed-full14-leader-audit.json",
     "source_SHA": "43fa3a9f024bb23e38ad13ad0c96662a24f697b7bed067cdc32d5e7702c92473",
-    "source_header": "v136 SOURCEONLY",
-    "compile_GO": false,
+    "source_header": "v136",
+    "compile_GO": true,
     "actual_resource": [
-      98,
-      22,
-      4,
+      68,
+      44,
+      7,
       0,
-      8192
+      2048
     ],
     "profile_GO": false,
     "review_correction": "prior126terminaldefect claim camefromdisplaytruncation; originalsourcecorrect, onlyformattingchange",
-    "SC_unknown_prior_status": "readonly643787and643781nowmissing; wholeCG6199189504<6GiB/OOM13. Newactualpreflight required, no retryof135/guardwaiver."
+    "SC_unknown_prior_status": "readonly643787and643781nowmissing; wholeCG6199189504<6GiB/OOM13. Newactualpreflight required, no retryof135/guardwaiver.",
+    "actual_audit": "integration/reviews/v136-c12-actual-leader-audit.json",
+    "compile_checkpoint_commit": "56d7669ada472c70ed92da779071ead378b109d1"
   },
   "worker2": {
     "cases": [
@@ -80,25 +82,38 @@
     "last_closed_source_commit": "794a069eb3977713f1a1afc51e04fcb928302dc5",
     "active_version": "v234",
     "source_SHA": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
-    "source_header": "v234 SOURCEONLY",
+    "source_header": "v234",
     "actual_resource": [
-      38,
+      40,
       20,
       8,
       0,
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "C2 source7c983/fullprefix18/decoratedfactory inverse/exactsolekey/2048fullvectors proof reviewed, originalvalidator0; limitedcompilehelper PREPONLY",
-    "authorized_scope": "stdlib/limitedcompilehelper preparation only; originalSub2guards unchanged, no C9timing/counter borrowing orclaimregressioncause",
+    "stage": "Actual compile passed: C2 only K/V bounded coordinates,40MT20ST; worker reports original fixed16 completed, independent raw audit pending",
+    "authorized_scope": "Close v234 raw results and CPU-only next-candidate analysis; no new GPU/source/SDK until next decision",
     "native_GO": false,
-    "approval": "integration/reviews/v233-sub2-full14-approval.json",
+    "approval": "integration/reviews/v234-c2-native-approval.json",
     "last_result": "Sub2 56C224 fullnaive PASS/all16wait0/194hash2030samples/OOM3; C6−8.099% clear, C5−.535/C8−1.258 withrangeoverlap; positivesCB2,9/P84 1,2,7 retained/no promote",
     "runtime_audit": "integration/reviews/v233-full14-leader-audit.json",
-    "compile_GO": false,
+    "compile_GO": true,
     "profile_GO": false,
     "retained_local_gain": "v230 C8 -1.960300%; SC/full14/OJ unproven",
-    "source_audit": "integration/reviews/v234-c2-source-leader-audit.json"
+    "source_audit": "integration/reviews/v234-c2-source-leader-audit.json",
+    "candidate_sha256": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
+    "actual_audit": "integration/reviews/v234-c2-actual-leader-audit.json",
+    "reported_native_result": {
+      "candidate_inclusive_PASS": [
+        4,
+        16
+      ],
+      "candidate_median_us": 8.9035,
+      "vsCB13_pct": -1.694822,
+      "vsP84_pct": -4.688754,
+      "range_overlap": true,
+      "decision": "inconclusive/no promotion/no remeasurement; independent raw audit pending"
+    }
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
@@ -119,7 +134,7 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-smoke/report.md"
   },
-  "leader_next": "Review frozen136/234 actualcompilehelpers, runeach once onowncontainer withoriginaladmission/runtime/ownershipguards, inspectrealIR/resources before nativeGO; C303 remainsnotpromoted.",
+  "leader_next": "Hold original v136 case12 native handle after actual admission; independently audit v234 raw16; workers share max-chain/index-bound lessons read-only, no peer edits. v303 desktop trial does not replace best.",
   "pending_integration": {
     "version": "v300",
     "path": "/root/tilelang-metax/race_tests/nsa/submission/v300_leader_c9_bounded_index_full14_sc-16g-2/submission.py",
@@ -165,5 +180,15 @@
     "C11_C12_retained": true,
     "source_static_and_independent_peer_review": true,
     "full14_correctness_nonregression": "Sub2v23356C224PASS proved; nonregressionUNPROVEN positivescase2/9 vsCB13 and1/2/7 vsP84, no promotion/OJclaim; SC135incomplete independent"
+  },
+  "desktop_trial": {
+    "version": "v303",
+    "path": "/mnt/c/Users/Calibrum/Desktop/nsa_submission_v303.py",
+    "source_SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "bytes": 104927,
+    "verified_exact_copy": true,
+    "all14_correctness": "56candidate/224inclusive PASS in v233",
+    "no_regression": "UNPROVEN",
+    "promotion": false
   }
 }
