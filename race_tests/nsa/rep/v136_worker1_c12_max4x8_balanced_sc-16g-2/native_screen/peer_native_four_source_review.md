@@ -1,0 +1,1 @@
+Actualworker2 readonlyadvisory136: four controls independentlyraw/tworound/ranges;P84andCB13evenfactoryidentitycannotimplyequal timing.4candidate16inclusive onlyoriginalfullnaivePASS+realterminal0+guards, preserveNaN/emptygate/allpositive,outliers,no oldsamplepool. Peer suggestions notGO/plannedits;differentmachine234originalhandle independent.

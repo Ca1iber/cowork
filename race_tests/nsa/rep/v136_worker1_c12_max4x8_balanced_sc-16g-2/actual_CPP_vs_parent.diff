@@ -1,0 +1,31 @@
+--- parent388
++++ candidate5f56
+@@ -16,6 +16,7 @@
+   int has_valid[1];
+   float denominator[1];
+   half_t k_local[4];
++  float partial_maximum[4];
+   float maximum[1];
+   float numerator[16];
+   half_t v_fetch[16];
+@@ -89,11 +90,15 @@
+     }
+   }
+   if (has_valid[0]) {
+-    maximum[0] = -MACART_INF_F;
+-    #pragma unroll
+-    for (int element_2 = 0; element_2 < 32; ++element_2) {
+-      maximum[0] = max(maximum[0], scores[element_2]);
+-    }
++    #pragma unroll
++    for (int group = 0; group < 4; ++group) {
++      partial_maximum[group] = -MACART_INF_F;
++      #pragma unroll
++      for (int element_2 = 0; element_2 < 8; ++element_2) {
++        partial_maximum[group] = max(partial_maximum[group], scores[((group * 8) + element_2)]);
++      }
++    }
++    maximum[0] = max(max(partial_maximum[0], partial_maximum[1]), max(partial_maximum[2], partial_maximum[3]));
+     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 32, 64));
+     maximum[0] = max(maximum[0], __shfl_xor_sync((uint64_t)18446744073709551615, maximum[0], 16, 64));
+     #pragma unroll

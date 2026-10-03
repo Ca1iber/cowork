@@ -1,0 +1,10 @@
+--- v131_worker1_c6_bounded_kv_index_sc-16g-2/supervise_controller.py
++++ v136_worker1_c12_max4x8_balanced_sc-16g-2/supervise_controller.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,sys,hashlib,subprocess,os,datetime
+-r=Path(sys.argv[1]);m=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v131_bounded_compile_once';shared=m['shared_identity_document'];doc=Path(shared['path']);assert doc.is_file() and hashlib.sha256(doc.read_bytes()).hexdigest()==shared['sha256'];inputs=json.loads(doc.read_text())['files'];assert len(inputs)==6
++r=Path(sys.argv[1]);m=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v136_bounded_compile_once';shared=m['shared_identity_document'];doc=Path(shared['path']);assert doc.is_file() and hashlib.sha256(doc.read_bytes()).hexdigest()==shared['sha256'];inputs=json.loads(doc.read_text())['files'];assert len(inputs)==6
+ for relative,sha in inputs.items():f=Path('/root/tilelang-metax')/relative;assert f.is_file() and hashlib.sha256(f.read_bytes()).hexdigest()==sha
+ for x in list(m['sources'].values())+list(m['tools'].values()):assert Path(x['path']).is_file() and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256']
+ assert not (r/'master.pid').exists() and not (r/'launch_once.lock').exists();cmd=[m['tools']['python']['path'],'-S','-u',m['tools']['evidence_stage']['path']]

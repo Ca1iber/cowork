@@ -1,0 +1,94 @@
+[
+  {
+    "line": 15,
+    "text": "  half_t probabilities[32];"
+  },
+  {
+    "line": 19,
+    "text": "  float partial_maximum[4];"
+  },
+  {
+    "line": 21,
+    "text": "  float numerator[16];"
+  },
+  {
+    "line": 35,
+    "text": "  __syncwarp();"
+  },
+  {
+    "line": 48,
+    "text": "    *(uint2*)(probabilities + (i_1 * 4)) = make_uint2(__pack_half2(broadcast_var_1, broadcast_var_1), __pack_half2(broadcast_var_1, broadcast_var_1));"
+  },
+  {
+    "line": 57,
+    "text": "      __syncwarp();"
+  },
+  {
+    "line": 66,
+    "text": "      __syncwarp();"
+  },
+  {
+    "line": 95,
+    "text": "      partial_maximum[group] = -MACART_INF_F;"
+  },
+  {
+    "line": 98,
+    "text": "        partial_maximum[group] = max(partial_maximum[group], scores[((group * 8) + element_2)]);"
+  },
+  {
+    "line": 101,
+    "text": "    maximum[0] = max(max(partial_maximum[0], partial_maximum[1]), max(partial_maximum[2], partial_maximum[3]));"
+  },
+  {
+    "line": 135,
+    "text": "      *(uint2*)(probabilities + (selected_1 * 4)) = __1;"
+  },
+  {
+    "line": 139,
+    "text": "      denominator[0] = (denominator[0] + ((float)probabilities[element_3]));"
+  },
+  {
+    "line": 147,
+    "text": "    *(float4*)(numerator + (i_2 * 4)) = make_float4(broadcast_var_4, broadcast_var_4, broadcast_var_4, broadcast_var_4);"
+  },
+  {
+    "line": 153,
+    "text": "      __syncwarp();"
+  },
+  {
+    "line": 165,
+    "text": "      __syncwarp();"
+  },
+  {
+    "line": 173,
+    "text": "      *(((float32x4*)numerator) + chunk_3) = __builtin_mxc_mma_16x16x16f16(*(((float16x4*)v_operand) + chunk_3),"
+  },
+  {
+    "line": 174,
+    "text": "                    *(((float16x4*)probabilities) + selected_2),"
+  },
+  {
+    "line": 175,
+    "text": "                    *(((float32x4*)numerator) + chunk_3));"
+  },
+  {
+    "line": 183,
+    "text": "      float4 v__4 = *(float4*)(numerator + (chunk_4 * 4));"
+  },
+  {
+    "line": 189,
+    "text": "    *(float4*)(numerator + (chunk_4 * 4)) = __6;"
+  },
+  {
+    "line": 191,
+    "text": "  __syncwarp();"
+  },
+  {
+    "line": 195,
+    "text": "    float4 v__6 = *(float4*)(numerator + (chunk_5 * 4));"
+  },
+  {
+    "line": 201,
+    "text": "  __syncwarp();"
+  }
+]

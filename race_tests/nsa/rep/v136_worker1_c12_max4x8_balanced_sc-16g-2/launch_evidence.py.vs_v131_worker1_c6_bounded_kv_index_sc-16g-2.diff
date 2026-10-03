@@ -1,0 +1,12 @@
+--- v131_worker1_c6_bounded_kv_index_sc-16g-2/launch_evidence.py
++++ v136_worker1_c12_max4x8_balanced_sc-16g-2/launch_evidence.py
+@@ -1,7 +1,7 @@
+ from pathlib import Path
+ import sys,json,hashlib,subprocess,os,datetime
+-r=Path(sys.argv[1]);m=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v131_bounded_compile_once';assert not (r/'evidence_launcher_once.lock').exists() and not (r/'launch_once.lock').exists()
+-for k,x in list(m['sources'].items())+list(m['tools'].items())+[('shared_doc',m['shared_identity_document']),('parentCPP',m['parent_C6_device'])]:assert Path(x['path']).is_file() and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256'],k
++r=Path(sys.argv[1]);m=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v136_bounded_compile_once';assert not (r/'evidence_launcher_once.lock').exists() and not (r/'launch_once.lock').exists()
++for k,x in list(m['sources'].items())+list(m['tools'].items())+[('shared_doc',m['shared_identity_document']),('parentCPP',m['parent_C12_device'])]:assert Path(x['path']).is_file() and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256'],k
+ cmd=[m['tools']['python']['path'],'-S','-u',m['tools']['supervisor']['path'],str(r)];assert cmd==json.loads((r/'launch_preflight.json').read_text())['supervisor_argv'];fd=os.open(r/'evidence_launcher_once.lock',os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600);os.write(fd,json.dumps({'UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'launcher_PID':os.getpid(),'argv':cmd}).encode());os.close(fd)
+ with (r/'supervisor.log').open('w') as log:
+  p=subprocess.Popen(cmd,cwd='/root/tilelang-metax',stdout=log,stderr=subprocess.STDOUT,start_new_session=True);(r/'supervisor.pid').write_text(str(p.pid)+chr(10));(r/'supervisor.pgid').write_text(str(os.getpgid(p.pid))+chr(10));rc=p.wait()

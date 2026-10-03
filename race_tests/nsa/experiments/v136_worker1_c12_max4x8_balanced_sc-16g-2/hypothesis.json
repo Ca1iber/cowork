@@ -1,0 +1,45 @@
+{
+  "version": "v136_worker1_c12_max4x8_balanced_sc-16g-2",
+  "UTC": "2026-10-03T00:56:27.156496+00:00",
+  "phase": "leader_authorized_source_only_no_compile_GPU",
+  "parent": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+    "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+  },
+  "official_case": 12,
+  "tuple": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    8,
+    16,
+    true
+  ],
+  "factory": "_make_power_s8_global_softmax",
+  "mechanism": "Only localScore32 maximum:4independent8element chains eachsame\u2212inf seed/T.max, thenbalancedtwolevelpairmerge;sameoriginal2warpmaxshuffle",
+  "observed_current_IR": "CPP388504/sourceCB13factory/SDK5d/IRde3bc:32scalarmaxnumchain depth32+2warpmax34,notautomaticallybalanced",
+  "prediction": "Source4*8+3=35localmaxcalls vs32, intendeddepth8+2=10 then2warp12vs34;actualcompilerunroll/resources/ISA/runtimeunverified",
+  "falsifiers": [
+    "compilerrestoresserialchain/no intendeddepthchange",
+    "extra4localfloat/ILPcodecost/MTSTstack orruntime regresses",
+    "source mask/Pround/den/PV/empty/Nan semantics drift",
+    "originalnaive1e-2fail"
+  ],
+  "unchanged": [
+    "32scoreinit/rawvalid/causal/has_valid/-inf",
+    "actualroundedF16P/P32 drivesdenandPV",
+    "PVperfeature selectedorder/Num16",
+    "original2shuffles/shared/globalvectors/barriers/output",
+    "correctJITdecorator andCB13first18AST/other13source"
+  ],
+  "semantic_scope": "forwardnumericvalue/NaNclassification,notNaNpayload/signalingexception bitwiseequivalence;no tolerance orNaN gate relaxation",
+  "finite_inf": "SeededmaxovernonNaNvalues returns numericalmax exactly,including\u00b1inf;groupall\u2212inf returns\u2212inf;Inf\u2212Inf patternsunchanged",
+  "signedzero": "internalmaxsignmaydiffer;onlyoriginal(score\u2212max)*positiveFP32scale+8 consumer;forfinitezero differencebecomes\u00b10 then+8exactsame8;allnonzero scores use numericallysame max",
+  "NaN_sNaN": "Do notassumeassociativity/bitbehavior. AnyretainedNaNScore independentlymakesitsP NaN andF16round NaN,localF32denNaN;xor32/16 preservelane%16=head andpropagateto4quarters,alloutputfeatureFdivNaN. OtherheadsnoNaN usefinite/Infargument. NaNpayload/exceptionflagsnotAPIpromise;originalIRcontract only,nonnan/ninf/nszabsent",
+  "empty": "has_validfalse1425/1426bypassesmax/exp,keepsP0/den0/Num0 final0/0NaN,notforcedzero",
+  "evidence": "IR278..340 serialmax,352/364 originalwarpmax;369..407subtract-scale+8exp2/fptrunc;1437emptydenphi0;2432..2459Fdiv; source1246..1258 originalmax/P/den;rawheadmappinglane%16 andwidth64xor16/32 unchanged",
+  "primary_semantics_reference": "https://llvm.org/docs/LangRef.html#llvm-maxnum-intrinsic",
+  "no_newimport_compile_resource_profile_native_or_peerplanedit": true
+}

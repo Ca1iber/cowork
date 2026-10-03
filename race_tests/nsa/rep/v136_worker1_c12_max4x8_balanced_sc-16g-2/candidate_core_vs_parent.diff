@@ -1,0 +1,36 @@
+--- parent_currentS8
++++ max4x8
+@@ -4,7 +4,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s8_global_softmax(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_s8_max4x8_balanced(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+@@ -39,6 +39,7 @@
+             probabilities = T.alloc_local(32, dtype)
+             numerator = T.alloc_local(16, accum_dtype)
+             maximum = T.alloc_local(1, accum_dtype)
++            partial_maximum = T.alloc_local(4, accum_dtype)
+             denominator = T.alloc_local(1, accum_dtype)
+             v_fetch = T.alloc_local(16, dtype)
+             v_column = T.alloc_local(4, dtype)
+@@ -89,9 +90,13 @@
+                         scores[selected * 4 + element] = T.if_then_else(token >= block_start + (lane // 16) * 4 + element,
+                             scores[selected * 4 + element], -T.infinity(accum_dtype))
+             if has_valid[0]:
+-                maximum[0] = -T.infinity(accum_dtype)
+-                for element in T.unroll(32):
+-                    maximum[0] = T.max(maximum[0], scores[element])
++                for group in T.unroll(4):
++                    partial_maximum[group] = -T.infinity(accum_dtype)
++                    for element in T.unroll(8):
++                        partial_maximum[group] = T.max(partial_maximum[group], scores[group * 8 + element])
++                maximum[0] = T.max(
++                    T.max(partial_maximum[0], partial_maximum[1]),
++                    T.max(partial_maximum[2], partial_maximum[3]))
+                 maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF))
+                 maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF))
+                 for selected in T.unroll(8):
