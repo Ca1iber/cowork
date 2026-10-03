@@ -1,0 +1,72 @@
+{
+  "scalar": "maximum[0] float32 alloc_local(1)",
+  "parent_alloc_line": 1196,
+  "parent_last_P_exp_read_line": 1254,
+  "parent_PV_end_line": 1283,
+  "all_candidate_refs": [
+    {
+      "line": 1982,
+      "context": "Store",
+      "source": "maximum[0] = -T.infinity(accum_dtype)"
+    },
+    {
+      "line": 1984,
+      "context": "Store",
+      "source": "maximum[0] = T.max(maximum[0], scores[element])"
+    },
+    {
+      "line": 1984,
+      "context": "Load",
+      "source": "maximum[0] = T.max(maximum[0], scores[element])"
+    },
+    {
+      "line": 1985,
+      "context": "Store",
+      "source": "maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF))"
+    },
+    {
+      "line": 1985,
+      "context": "Load",
+      "source": "maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF))"
+    },
+    {
+      "line": 1985,
+      "context": "Load",
+      "source": "maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF))"
+    },
+    {
+      "line": 1986,
+      "context": "Store",
+      "source": "maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF))"
+    },
+    {
+      "line": 1986,
+      "context": "Load",
+      "source": "maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF))"
+    },
+    {
+      "line": 1986,
+      "context": "Load",
+      "source": "maximum[0] = T.max(maximum[0], T.shfl_xor(maximum[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF))"
+    },
+    {
+      "line": 1989,
+      "context": "Load",
+      "source": "probabilities[selected * 4 + element] = T.exp2((scores[selected * 4 + element] - maximum[0]) * scale + 8.0)"
+    },
+    {
+      "line": 2019,
+      "context": "Store",
+      "source": "maximum[0] = 1.0 / denominator[0]"
+    },
+    {
+      "line": 2022,
+      "context": "Load",
+      "source": "numerator[chunk * 4 + element] *= maximum[0]"
+    }
+  ],
+  "reciprocal_write_after_complete_den_and_PV": true,
+  "unconditional_in_original_normalization_position": true,
+  "no_added_allocation": true,
+  "empty_original_den0_Num0_to_0_times_inf_NaN_class": true
+}

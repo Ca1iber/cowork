@@ -1,0 +1,34 @@
+{
+  "version": "v137",
+  "phase": "source_only_wait_actual_review",
+  "base303_SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+  "source_SHA": "9fc293d0bfab19a4ae6effa50f1dfd8127693141db7ba98c34e0d951c4979252",
+  "only_key": [
+    4,
+    1024,
+    1,
+    16,
+    64,
+    8,
+    16,
+    true
+  ],
+  "observed": "parent IR16fdiv contract sameDen; KVscaled alreadyi32",
+  "bottleneck": "UNKNOWN",
+  "mechanism": "dead maximum[0]=1.0/den AFTER complete PV; Num16*=maximum, no newalloc",
+  "prediction": "one reciprocal dependency feeds16fmul; ISA/backend sharing unknown",
+  "falsifiers": [
+    "backend unchanged/already shares",
+    "spill/resources/math drift",
+    "originalnaive1e-2 failure",
+    "fixednative not stable vs current303"
+  ],
+  "preserve": "actualF16P32/Pden/PVorder/cast/global/layout/index/sync/JIT and other13 incl5/6/8/11",
+  "future_compile": "only separateGO; onefreshP303/C137 C12export, CPUscope, Cresource1/firstIR1/actualdefuseflags",
+  "no_native_helpers": true,
+  "original_contract": "seed0GradF16/naive1e-2/W10R50; all14 separately required",
+  "guards_future": "6+22estimate+4reserve/28/OOM13/unknown1G/.5s600/critical1s/Nodeexact/Popen/priorabort/cooplock/noretry",
+  "current_authorized": "stdlibsourceAST/staticOJ only",
+  "source_import_compile_GPU_native_profile": 0,
+  "v136": "oldfailed2C9prefix unchanged"
+}

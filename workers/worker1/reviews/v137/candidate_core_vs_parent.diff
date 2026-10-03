@@ -1,0 +1,23 @@
+--- _make_power_s8_global_softmax
++++ _make_power_c12_reciprocal_normalization
+@@ -4,7 +4,7 @@
+     tilelang.PassConfigKey.TL_DISABLE_WARP_SPECIALIZED: True,
+     tilelang.PassConfigKey.TL_DISABLE_THREAD_STORAGE_SYNC: True,
+ })
+-def _make_power_s8_global_softmax(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
++def _make_power_c12_reciprocal_normalization(batch, seq_len, kv_heads, query_heads, dim, selected_blocks, block_size, is_causal):
+     groups = query_heads // kv_heads
+     assert groups == 16 and dim == 64 and selected_blocks == 8 and block_size == 16 and is_causal
+     assert seq_len % block_size == 0
+@@ -126,9 +126,10 @@
+                             'float16x4', 'float16x4', 'float32x4',
+                             v_operand.data, chunk, probabilities.data, selected, numerator.data, chunk,
+                             dtype='float32x4')
++            maximum[0] = 1.0 / denominator[0]
+             for chunk in T.unroll(4):
+                 for element in T.vectorized(4):
+-                    numerator[chunk * 4 + element] /= denominator[0]
++                    numerator[chunk * 4 + element] *= maximum[0]
+             T.sync_warp()
+             for chunk in T.unroll(4):
+                 for element in T.vectorized(4):
