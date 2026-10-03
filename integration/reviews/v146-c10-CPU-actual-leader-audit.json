@@ -1,0 +1,24 @@
+{
+  "UTC": "2026-10-03T09:06:27.217530+00:00",
+  "version": "v146 CPU-only existing C145 IR classification",
+  "original_child_PID": 765021,
+  "original_Popen_wait": 0,
+  "actual_exit": 0,
+  "inventory14_SHA_verified": true,
+  "post_execution_17_dependencies_SHA_mismatches": [],
+  "original145_gate_stage_exit": [
+    1,
+    1
+  ],
+  "planSHA": "a0dce7fbf5f81336b52adcd86dd7f9b4797b5534f3d69be714adb6600ca8bb65",
+  "semantic_resultSHA": "1b6324dbeb9d03a0f06c18b209191305b9023dbaf23f583b74f7ee9840938e48",
+  "semantic_gate": true,
+  "independent_previous_actual_IR_audit": "integration/reviews/v145-c10-original-gate1-actual-leader-audit.json",
+  "dynamic_KV_flatten_i32_before_zext": true,
+  "only_wide_exceptions": "%133,%135,%137 constant OR64/128/192half after %131zext; independently address-equivalent",
+  "vectors_K2048_V4096_words8192": "verified",
+  "no_new_compiler_JIT_export_GPU": true,
+  "candidate_sourceSHA": "1bbb16fcae0c0e78833d6090c4edf9c6368c1eeedbffe7aef24d8d82bfdac291",
+  "native_GO": false,
+  "decision": "CPU actual gate passes; await original C10 native TEXT, retain original145 gate1"
+}
