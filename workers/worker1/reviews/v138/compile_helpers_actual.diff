@@ -1,0 +1,89 @@
+--- v137_worker1_c12_reciprocal_normalization_sc-16g-2/export_metadata_pair.py
++++ v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/export_metadata_pair.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,hashlib,importlib.util
+-b=Path('/root/tilelang-metax/race_tests/nsa');r=b/'rep/v137_worker1_c12_reciprocal_normalization_sc-16g-2';m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());assert p['phase']=='leader_GO_v137_bounded_compile_once'
++b=Path('/root/tilelang-metax/race_tests/nsa');r=b/'rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2';m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());assert p['phase']=='leader_GO_v138_bounded_compile_once'
+ for x in m['sources'].values():assert hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256']
+ import tilelang
+ from tilelang.jit.kernel import JITKernel
+--- v137_worker1_c12_reciprocal_normalization_sc-16g-2/audit_source_device.py
++++ v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/audit_source_device.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,hashlib,subprocess,re
+-r=Path('/root/tilelang-metax/race_tests/nsa/rep/v137_worker1_c12_reciprocal_normalization_sc-16g-2');m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());d=json.loads((r/'metadata_pair.json').read_text());assert len(d['records'])==2 and d['NSA_attention_calls']==d['fullrefs']==0;rows={x['variant']:x for x in d['records']};assert rows['parent303']['device_SHA']==m['parent_C12_device']['sha256'];checks=[]
++r=Path('/root/tilelang-metax/race_tests/nsa/rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2');m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());d=json.loads((r/'metadata_pair.json').read_text());assert len(d['records'])==2 and d['NSA_attention_calls']==d['fullrefs']==0;rows={x['variant']:x for x in d['records']};assert rows['parent303']['device_SHA']==m['parent_C12_device']['sha256'];checks=[]
+ for label,x in rows.items():
+  for k in ['device','host']:assert hashlib.sha256(Path(x[k+'_path']).read_bytes()).hexdigest()==x[k+'_SHA']
+  dev=Path(x['device_path']).read_text();host=Path(x['host_path']).read_text();end=host.rfind('TVMFFIFunctionCall(native_sparse_attention_kernel_packed');start=host.rfind('(((TVMFFIAny*)stack_ffi_any)[0].v_ptr) = Indices;',0,end);assert 0<=start<end;seg=host[start:end];args=[]
+--- v137_worker1_c12_reciprocal_normalization_sc-16g-2/capture_candidate_SDK.py
++++ v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/capture_candidate_SDK.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,hashlib,subprocess,sys,re,datetime
+-r=Path('/root/tilelang-metax/race_tests/nsa/rep/v137_worker1_c12_reciprocal_normalization_sc-16g-2');m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());mode=sys.argv[1];assert mode in ['resource','IR'];assert (r/'device_shape_static.exit').read_text().strip()=='0';x=next(x for x in json.loads((r/'metadata_pair.json').read_text())['records'] if x['variant']=='candidate137');src=Path(x['device_path']);assert hashlib.sha256(src.read_bytes()).hexdigest()==x['device_SHA'];tool=m['tools']['compiler'];assert hashlib.sha256(Path(tool['path']).read_bytes()).hexdigest()==tool['sha256'];cmd=p['candidate_'+mode+'_argv'];assert cmd[-1]==str(src) and cmd[0]==tool['path'];d=r/'SDK';d.mkdir(exist_ok=True);assert not Path(cmd[-2]).exists()
++r=Path('/root/tilelang-metax/race_tests/nsa/rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2');m=json.loads((r/'compile_source_manifest.json').read_text());p=json.loads((r/'compile_execution_plan.json').read_text());mode=sys.argv[1];assert mode in ['resource','IR'];assert (r/'device_shape_static.exit').read_text().strip()=='0';x=next(x for x in json.loads((r/'metadata_pair.json').read_text())['records'] if x['variant']=='candidate137');src=Path(x['device_path']);assert hashlib.sha256(src.read_bytes()).hexdigest()==x['device_SHA'];tool=m['tools']['compiler'];assert hashlib.sha256(Path(tool['path']).read_bytes()).hexdigest()==tool['sha256'];cmd=p['candidate_'+mode+'_argv'];assert cmd[-1]==str(src) and cmd[0]==tool['path'];d=r/'SDK';d.mkdir(exist_ok=True);assert not Path(cmd[-2]).exists()
+ if mode=='IR':assert (d/'resource_gate.exit').read_text().strip()=='0'
+ (r/('SDK_'+mode+'_command.json')).write_text(json.dumps({'argv':cmd,'source_SHA':x['device_SHA'],'attention_fullrefs':0},indent=2)+chr(10))
+ with (d/(mode+'.log')).open('w') as log:
+--- v137_worker1_c12_reciprocal_normalization_sc-16g-2/run_evidence_stage.py
++++ v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/run_evidence_stage.py
+@@ -1,7 +1,7 @@
+ from pathlib import Path
+ from decimal import Decimal
+ import json,hashlib,subprocess,os,time,datetime,csv,traceback,fcntl
+-root=Path('/root/tilelang-metax');p=root/'race_tests/nsa';v='v137_worker1_c12_reciprocal_normalization_sc-16g-2';r=p/'rep'/v
++root=Path('/root/tilelang-metax');p=root/'race_tests/nsa';v='v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2';r=p/'rep'/v
+ manifest=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());shared=json.loads((r/'shared_inputs_identity.json').read_text())['files'];cg=Path('/sys/fs/cgroup/memory');official=json.loads((p/'official_case.json').read_text());budget=plan['memory_engineering_budget']
+ monitor_file=Path(manifest['tools']['process_monitor']['path']);assert monitor_file.is_file() and hashlib.sha256(monitor_file.read_bytes()).hexdigest()==manifest['tools']['process_monitor']['sha256']
+ from process_monitor import read_pid_metadata,identity_decision
+@@ -60,7 +60,7 @@
+ def admission(sample,oom):
+  if not sample['identified_unowned_baseline']['identity_match']:return 'recognizedunowned baseline identity missing/changed'
+  if sample['cgroup']['oom_kill']!=oom:return 'OOMchanged beforeadmission'
+- if sample['cgroup']['usage_bytes']>budget['new_admission_max_whole_bytes']:return 'wholeCG exceeds new6GiB admission'
++ if sample['cgroup']['usage_bytes']>budget['new_admission_max_whole_bytes']:return 'wholeCG exceeds new7GiB admission'
+  if unknown_heavy(sample,{}):return 'unowned visibleRSS exceeds1GiB admission'
+  return None
+ 
+@@ -110,7 +110,7 @@
+  if 'killed' in s:return 'innerKilled log'
+  if 'out of memory' in s:return 'innerOOM log'
+  return None
+-assert plan['phase']=='leader_GO_v137_bounded_compile_once'
++assert plan['phase']=='leader_GO_v138_bounded_compile_once'
+ verify();fd=os.open(r/'launch_once.lock',os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600);os.write(fd,json.dumps({'UTC':now(),'master_pid':os.getpid(),'scope':'C12_two_warp_metadata2pairs_resource1_firstIR1_observation'}).encode());os.close(fd);lock=open(manifest['cooperative_heavy_lock'],'a+');initial=cgstate();jobs=[];failure=None;active=None;known={}
+ try:
+  assert initial['oom_kill']==13;fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+--- v137_worker1_c12_reciprocal_normalization_sc-16g-2/supervise_controller.py
++++ v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/supervise_controller.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,sys,hashlib,subprocess,os,datetime
+-r=Path(sys.argv[1]);m=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v137_bounded_compile_once';shared=m['shared_identity_document'];doc=Path(shared['path']);assert doc.is_file() and hashlib.sha256(doc.read_bytes()).hexdigest()==shared['sha256'];inputs=json.loads(doc.read_text())['files'];assert len(inputs)==6
++r=Path(sys.argv[1]);m=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v138_bounded_compile_once';shared=m['shared_identity_document'];doc=Path(shared['path']);assert doc.is_file() and hashlib.sha256(doc.read_bytes()).hexdigest()==shared['sha256'];inputs=json.loads(doc.read_text())['files'];assert len(inputs)==6
+ for relative,sha in inputs.items():f=Path('/root/tilelang-metax')/relative;assert f.is_file() and hashlib.sha256(f.read_bytes()).hexdigest()==sha
+ for x in list(m['sources'].values())+list(m['tools'].values()):assert Path(x['path']).is_file() and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256']
+ assert not (r/'master.pid').exists() and not (r/'launch_once.lock').exists();cmd=[m['tools']['python']['path'],'-S','-u',m['tools']['evidence_stage']['path']]
+--- v137_worker1_c12_reciprocal_normalization_sc-16g-2/launch_evidence.py
++++ v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/launch_evidence.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import sys,json,hashlib,subprocess,os,datetime
+-r=Path(sys.argv[1]);m=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v137_bounded_compile_once';assert not (r/'evidence_launcher_once.lock').exists() and not (r/'launch_once.lock').exists()
++r=Path(sys.argv[1]);m=json.loads((r/'compile_source_manifest.json').read_text());plan=json.loads((r/'compile_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v138_bounded_compile_once';assert not (r/'evidence_launcher_once.lock').exists() and not (r/'launch_once.lock').exists()
+ for k,x in list(m['sources'].items())+list(m['tools'].items())+[('shared_doc',m['shared_identity_document']),('parentCPP',m['parent_C12_device'])]:assert Path(x['path']).is_file() and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256'],k
+ cmd=[m['tools']['python']['path'],'-S','-u',m['tools']['supervisor']['path'],str(r)];assert cmd==json.loads((r/'launch_preflight.json').read_text())['supervisor_argv'];fd=os.open(r/'evidence_launcher_once.lock',os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600);os.write(fd,json.dumps({'UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'launcher_PID':os.getpid(),'argv':cmd}).encode());os.close(fd)
+ with (r/'supervisor.log').open('w') as log:
+--- v137_worker1_c12_reciprocal_normalization_sc-16g-2/observe_compiled.py
++++ v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2/observe_compiled.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,hashlib,re
+-r=Path('/root/tilelang-metax/race_tests/nsa/rep/v137_worker1_c12_reciprocal_normalization_sc-16g-2');m=json.loads((r/'compile_source_manifest.json').read_text());ir=r/'SDK/candidate137.ll';x=next(x for x in json.loads((r/'metadata_pair.json').read_text())['records'] if x['variant']=='candidate137');dev=Path(x['device_path']);assert hashlib.sha256(dev.read_bytes()).hexdigest()==x['device_SHA'];res=json.loads((r/'SDK/resource_result.json').read_text());assert (r/'SDK/IR_actual.exit').read_text().strip()=='0';lines=ir.read_text().splitlines();entries=[i for i,l in enumerate(lines) if l.startswith('define ') and '@native_sparse_attention_kernel(' in l];assert len(entries)==1;start=entries[0];end=next(i for i in range(start+1,len(lines)) if lines[i].strip()=='}');body=lines[start:end+1]
++r=Path('/root/tilelang-metax/race_tests/nsa/rep/v138_worker1_c12_reciprocal_budget7_compile_diagnostic_sc-16g-2');m=json.loads((r/'compile_source_manifest.json').read_text());ir=r/'SDK/candidate137.ll';x=next(x for x in json.loads((r/'metadata_pair.json').read_text())['records'] if x['variant']=='candidate137');dev=Path(x['device_path']);assert hashlib.sha256(dev.read_bytes()).hexdigest()==x['device_SHA'];res=json.loads((r/'SDK/resource_result.json').read_text());assert (r/'SDK/IR_actual.exit').read_text().strip()=='0';lines=ir.read_text().splitlines();entries=[i for i,l in enumerate(lines) if l.startswith('define ') and '@native_sparse_attention_kernel(' in l];assert len(entries)==1;start=entries[0];end=next(i for i in range(start+1,len(lines)) if lines[i].strip()=='}');body=lines[start:end+1]
+ MMA=[{'line':i,'text':l} for i,l in enumerate(body,start+1) if 'call' in l and '@llvm.mxc.mma.f32.16x16x16f16' in l];alloc=[{'line':i,'text':l} for i,l in enumerate(body,start+1) if re.search(r'^\s*%[^=]+\s*=\s*alloca\b',l)];private=[{'line':i,'text':l} for i,l in enumerate(body,start+1) if 'addrspace(5)' in l];events=[{'line':i,'text':l} for i,l in enumerate(body,start+1) if any(t in l for t in ['addrspace(3)','mma.f32','barrier','phi ','br i1','fptrunc','fdiv'])];cpp=[{'line':i,'text':l} for i,l in enumerate(dev.read_text().splitlines(),1) if any(t in l for t in ['__syncthreads','__syncwarp','maximum','denominator','probabilities','numerator','warp_id','kv_offset'])]
+ ok=len(MMA)==64 and not alloc and not private and res['stack']==0 and res['dynamicshared']==next(y['actual_launchargs'][-1] for y in json.loads((r/'device_shape_static_result.json').read_text())['checks'] if y['variant']=='candidate137')
+ out={'resource':res,'IR_SHA':hashlib.sha256(ir.read_bytes()).hexdigest(),'actual_static_MMA_count':len(MMA),'MMA_call_lines':MMA,'fullvalid_dynamic_model':'singlewarp64MMA source model; recordactualIRcall/loops, notruntimecount','alloca_opcode_lines':alloc,'AS5_lines':private,'mechanical_gate':ok,'actual_math_sync_lifetime_review':'PENDING leader review of actual CPP/IR samecurrent303 Score32/rawvalid/hasvalid/2maxshuffle/P32roundeddenPV/Num16/mathsync except final reciprocal normalization; actual normalization defuse/flags pendingreview; no automaticnative','no_physical_liveness_occupancy_or_latency_claim':True,'fullrefs':0}

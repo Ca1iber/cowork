@@ -1,0 +1,1 @@
+Readonlyworker2 advisory:notGO. New7+21+4 engineeringreallocation/runtime28;old1376GiB refusal0child retained. Priorwholepeak25.2 minusbaselineapproximately6 is not additionalupperbound. Cache/sharedaccounting/editor drift/subsamplepeaks may consume reserve; unknown1G/OOM/identity/terminal/priorabort andsingleadmissionfailstop unchanged. No peer code/plan changes.
