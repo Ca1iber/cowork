@@ -1,0 +1,52 @@
+{
+  "UTC": "2026-10-03T13:11:26.617002+00:00",
+  "decision": "ONE_SOURCE_GO_v150_C6_SHARED_Q_STAGED_K",
+  "inventory4_SHA_verified": true,
+  "currentfactory_AST_SHA": "5bf05615182cdac709cf3f7aed4a42a150539c8706aa1e6ba96e1fe201a3b096",
+  "CPP_SHA": "e74e12c513366d79bff96c4acc49b132a5ea43a09abdc88bf0296707ec6414cc",
+  "IR_SHA": "dc1456ae1830d131dbc326f411c0af79f8dcd855d75a9da89c78d7822b5821d2",
+  "actual56_Q_V_IR_line_texts_independently_verified": true,
+  "parent_resource_MT_ST_max_stack_dyn": [
+    98,
+    22,
+    4,
+    0,
+    8192
+  ],
+  "logic_mapping_independently_verified": {
+    "UTC": "2026-10-03T12:57:53.396545+00:00",
+    "scope": "Readonly logical layout model using exactcurrent303 qk_slot AST; no kernel/source/JIT/SDK/GPU execution",
+    "Q_half_slots": [
+      0,
+      2047
+    ],
+    "K_reused_half_slots": [
+      2048,
+      4095
+    ],
+    "slot_bijections_and_disjoint": true,
+    "Q_operand_half_checks": 2048,
+    "K_operand_half_checks": 4096,
+    "new_stage_K_complete16B_global_vectors_checked": 131072,
+    "max_half": 1048575,
+    "last_byte": 2097151,
+    "source_QK_MMA_order_model": "plane0chunks0..3 then plane1chunks0..3, eachchunk tile0then1 = originalchunk0..7 tile0then1",
+    "sync_lifetime_and_actual_codegen_and_performance": "UNVERIFIED; owner review required",
+    "source_GO": false
+  },
+  "solecase6_key": [
+    8,
+    1024,
+    1,
+    16,
+    128,
+    1,
+    32,
+    true
+  ],
+  "scope": "freshcurrent30324prefix plus onefactory/soleC6; one4096half shared Qlower/Kupper two64featurestages; q_local32to4; QKorderoriginalchunk0..7/tile0then1; math/P/V/Num/Out unchanged",
+  "sync_lifetime": "Q+K0combinedpost, K1pre protects K0reads, K1post publishes; originalVpre/post andOutpre/post retained; model7barriers afterunroll, actualsource/IR counts separately audited",
+  "falsifier": "actualall8Q vectors hoisted beforefirstQK or no shorteroperand lifetime, payload/order/sharedbounds mismatch/private stack, numeric or latency fail; resourcegrowth recorded, no fakeoccupancy claim",
+  "old_Vstream": "already tested correspondingconsumer; no repeat and no oldtiming transfer",
+  "compile_native_profile_GO": false
+}
