@@ -1,0 +1,301 @@
+{
+  "version": "v235_worker2_case3_parent_normalization_ir_subagent2",
+  "stage": "PREPARATION_ONLY_NO_SDK_GO",
+  "package": "/tmp/nsa_worker2_v235_parent_C3_IR_preparation_rev02.tar.gz",
+  "package_SHA": "39105ef50e7ea360b45ce528456774c709f59cddcae4e2e5f7f128718d501920",
+  "bytes": 13921,
+  "files_inventory": [
+    23,
+    22
+  ],
+  "proposal": {
+    "id": "v235_worker2_case3_parent_normalization_ir_subagent2",
+    "stage": "PREPARATION_ONLY",
+    "goal": "Observe exact current C3 parent normalized fdiv/reciprocal representation before any candidate source edit",
+    "one_command": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-maca-device-only",
+      "-S",
+      "-emit-llvm",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v235_worker2_case3_parent_normalization_ir_subagent2/case3_parent_optimized.device.ll",
+      "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case3_stage1.device.cpp"
+    ],
+    "scope": "one stock SDK O3 IR on existing exact parentCPP814735; no Tilelang/Torch import/metadata/resource/NSA/native/profile/Trace",
+    "guards": {
+      "id": "v235_worker2_case3_parent_normalization_ir_subagent2",
+      "heavy_lock": "/tmp/nsa_subagent2_heavy.lock",
+      "admission_usage_bytes": 3221225472,
+      "unknown_heavy_RSS_bytes": 1073741824,
+      "runtime_stop_usage_bytes": 30064771072,
+      "max_seconds": 600,
+      "max_samples": 12000,
+      "period_seconds": 0.5,
+      "parent_evidence_GO": false,
+      "source_kernel_edit_GO": false,
+      "native_GO": false,
+      "only_target_key": [
+        1,
+        256,
+        1,
+        16,
+        128,
+        1,
+        16,
+        true
+      ],
+      "numerical_parent": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+      "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+      "compile_GO": false,
+      "baseline_budget_bytes": 3221225472,
+      "additional_runtime_engineering_estimate_bytes": 26843545600,
+      "reserve_bytes": 4294967296,
+      "budget_sum_bytes": 34359738368,
+      "budget_is_upper_bound": false
+    },
+    "owner_flow": [
+      "existingstdlib preflight0",
+      "one originalPopen held bounded backend observer",
+      "one stockSDK child originalPopen truewait",
+      "only after observer0 CPU kernel-scoped arithmetic stats"
+    ],
+    "interpretation": [
+      "fdiv/rcp LLVM counts and flags are compiled representation, not final ISA cost/SFU bottleneck or speed",
+      "actual parent may already share reciprocal; retain this falsifier, do not create candidate here",
+      "empty/missing/SDKfailure/guard stops once without retry or newsettings"
+    ],
+    "input_provenance": "sc v111 original P84 C3 export; independently currentCB13 decoratedC3 AST same; own219 localresource66MT20ST/max7/stack0/dyn4096; no crosscardtiming",
+    "new_source_GPU_now": [
+      0,
+      0
+    ],
+    "peer": "worker1 requires actual parent flags/IR; extra rounding and emptyNaN separate from correctness; no peer code/plan edits",
+    "current_parent_factory_identity": {
+      "current_immutable_base": "/tmp/nsa_leader_v303_readonly.py",
+      "current_base_SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+      "current_base_header": 303,
+      "C3_key": [
+        1,
+        256,
+        1,
+        16,
+        128,
+        1,
+        16,
+        true
+      ],
+      "factory_name": "_make_power_s1_d128_dense",
+      "complete_decorated_factory_AST_SHA": "ef57c4139f6ad064ea5acefd1a61ff0f22ff31a33fee75c96d875989fdf3b29e",
+      "P84_CB13_C303_factory_AST_equal": true,
+      "sole_literal_C3_installer": [
+        "_make_power_s1_d128_dense"
+      ],
+      "source_files": [
+        {
+          "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+          "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+        },
+        {
+          "path": "/tmp/nsa_leader_CB13_readonly_submission.py",
+          "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+        },
+        {
+          "path": "/tmp/nsa_leader_v303_readonly.py",
+          "sha256": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae"
+        }
+      ],
+      "parent_CPP_provenance": "original P84 SCv111 exact814735; currentC303 factory same AST, no fresh C303 JIT/device export asserted",
+      "future_candidate_base": "C303985ffd prefix24 preservingC5/C6/C8/C11/C12+othercase source; only if separateleader sourceGO",
+      "current_new_source_SDK_GPU": [
+        0,
+        0,
+        0
+      ]
+    },
+    "future_candidate_base": "C303985ffd preserves existing validatedcases; no candidate authorized",
+    "only_change_to_old_preparation": "Readonly currentC303/C3 identity proof and frozen source input; all stockargv/guard helpers/limits untouched"
+  },
+  "command_manifest": {
+    "stage": "PREP_ONLY_NO_SDK_GO",
+    "kind": "one_stock_parent_C3_O3_IR",
+    "argv": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-maca-device-only",
+      "-S",
+      "-emit-llvm",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v235_worker2_case3_parent_normalization_ir_subagent2/case3_parent_optimized.device.ll",
+      "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case3_stage1.device.cpp"
+    ],
+    "input_CPP": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case3_stage1.device.cpp",
+    "input_CPP_SHA": "814735db527ddf73362721a41d5ffd6fe9d070e2c190d461900b06e9cb6ff671",
+    "host": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case3_stage1.host.cpp",
+    "host_SHA": "fa1bde13abe760cef253640273dc380cbf293d15d9f3079bfa815d0a330556a2",
+    "SDK_SHA": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25",
+    "sourceSHA": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "expected_geometry": [
+      256,
+      1,
+      64,
+      1,
+      1,
+      4096
+    ],
+    "output": "/root/tilelang-metax/race_tests/nsa/rep/v235_worker2_case3_parent_normalization_ir_subagent2/case3_parent_optimized.device.ll",
+    "original_resource_record": "/root/tilelang-metax/race_tests/nsa/rep/v219_worker2_parent_c3_evidence_subagent2/resource_command_manifest.json",
+    "original_resource_argv": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__",
+      "-device-obj",
+      "-resource-usage",
+      "-o",
+      "/root/tilelang-metax/race_tests/nsa/rep/v219_worker2_parent_c3_evidence_subagent2/case3_parent.device.mcbin",
+      "/tmp/nsa_worker2_v219_inputs/case3.device.cpp"
+    ],
+    "common_semantic_flags": [
+      "/opt/maca/mxgpu_llvm/bin/mxcc",
+      "-x",
+      "maca",
+      "-O3",
+      "-lineinfo",
+      "--offload-arch=xcore1000",
+      "-std=c++17",
+      "-I/root/tilelang-metax/src",
+      "-use-fast-math",
+      "-D__FAST_HALF_CVT__"
+    ],
+    "mode_difference": "resource -device-obj/-resource-usage replaced by stock -maca-device-only/-S/-emit-llvm; original otherflags identical; explicit distinct input/output paths",
+    "fixed_inputs": [
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case3_stage1.device.cpp",
+        "sha256": "814735db527ddf73362721a41d5ffd6fe9d070e2c190d461900b06e9cb6ff671",
+        "bytes": 9485
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case3_stage1.host.cpp",
+        "sha256": "fa1bde13abe760cef253640273dc380cbf293d15d9f3079bfa815d0a330556a2",
+        "bytes": 118787
+      },
+      {
+        "path": "/opt/maca/mxgpu_llvm/bin/mxcc",
+        "sha256": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25",
+        "bytes": 163585880
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v219_worker2_parent_c3_evidence_subagent2/resource_command_manifest.json",
+        "sha256": "27c2cf7bd47c40728bd22c2e9c6eef0f764dcf002d6d7744c0a53888af6db9c6",
+        "bytes": 3639
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+        "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+        "bytes": 61873
+      },
+      {
+        "path": "/tmp/nsa_leader_CB13_readonly_submission.py",
+        "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+        "bytes": 79332
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/official_case.json",
+        "sha256": "85f2c34acd793fb0a45084175acd7bcde48ff5d717a395d370800c30cf4e7036",
+        "bytes": 1410
+      },
+      {
+        "path": "/tmp/nsa_leader_v303_readonly.py",
+        "sha256": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+        "bytes": 104927
+      },
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/rep/v235_worker2_case3_parent_normalization_ir_subagent2/current_C303_C3_factory_identity.json",
+        "sha256": "cd7c34c6da185ae8583373193f222a8bf7cbd26a39f155edbb2431d2a2ad8ff9",
+        "bytes": 1402
+      }
+    ],
+    "original_existing_matching_C3_parent_IR": "UNAVAILABLE_local_parent_glob_no_matching_file",
+    "no_candidate_source": true,
+    "attention_fullref_native_profile": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "current_parent_factory_identity": "/root/tilelang-metax/race_tests/nsa/rep/v235_worker2_case3_parent_normalization_ir_subagent2/current_C303_C3_factory_identity.json",
+    "future_candidate_base": "immutable C303985ffd, no candidate source here"
+  },
+  "source_identity": {
+    "current_immutable_base": "/tmp/nsa_leader_v303_readonly.py",
+    "current_base_SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "current_base_header": 303,
+    "C3_key": [
+      1,
+      256,
+      1,
+      16,
+      128,
+      1,
+      16,
+      true
+    ],
+    "factory_name": "_make_power_s1_d128_dense",
+    "complete_decorated_factory_AST_SHA": "ef57c4139f6ad064ea5acefd1a61ff0f22ff31a33fee75c96d875989fdf3b29e",
+    "P84_CB13_C303_factory_AST_equal": true,
+    "sole_literal_C3_installer": [
+      "_make_power_s1_d128_dense"
+    ],
+    "source_files": [
+      {
+        "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+        "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+      },
+      {
+        "path": "/tmp/nsa_leader_CB13_readonly_submission.py",
+        "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+      },
+      {
+        "path": "/tmp/nsa_leader_v303_readonly.py",
+        "sha256": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae"
+      }
+    ],
+    "parent_CPP_provenance": "original P84 SCv111 exact814735; currentC303 factory same AST, no fresh C303 JIT/device export asserted",
+    "future_candidate_base": "C303985ffd prefix24 preservingC5/C6/C8/C11/C12+othercase source; only if separateleader sourceGO",
+    "current_new_source_SDK_GPU": [
+      0,
+      0,
+      0
+    ]
+  },
+  "guard_helpers_AST": "exact234 versiononly",
+  "purestdlib_C303_preflight_actualwait": 0,
+  "actual_new_source_SDK_GPU": [
+    0,
+    0,
+    0
+  ]
+}

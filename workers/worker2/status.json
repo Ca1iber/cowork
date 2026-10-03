@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-03T01:53:58.700082+00:00",
-  "state": "v234_closed_next_C3_normalization_readonly_proposal",
+  "timestamp_utc": "2026-10-03T02:02:12.652451+00:00",
+  "state": "v235_parent_C3_IR_prepared_await_separate_GO",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -20,55 +20,25 @@
     14
   ],
   "current": {
-    "version": "v234",
-    "stage": "closed_local_four_source_case2_inconclusive",
-    "sourceSHA": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
-    "parent_CB13SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
-    "compile_stage_actualwaits": [
-      0,
-      0,
-      0
-    ],
-    "native_outer_actualwait": 0,
-    "native_job_actualwaits": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+    "version": "v235",
+    "stage": "parent_only_stock_O3IR_prepared_not_started",
+    "case": 3,
+    "parent_CPP_SHA": "814735db527ddf73362721a41d5ffd6fe9d070e2c190d461900b06e9cb6ff671",
+    "current_immutable_base_C303SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "current_C3_P84_CB13_C303_decoratedfactory_AST_equal": true,
+    "new_kernel_sources": 0,
+    "actual_SDK_commands": 0,
+    "actual_attention_ref_native_profile": [
       0,
       0,
       0,
       0
     ],
-    "actual_clean_C_total_refs": [
-      4,
-      16
-    ],
-    "native_samples": 1263,
-    "compile_samples": 93,
-    "resource_P_C_MT_ST": [
-      [
-        42,
-        20
-      ],
-      [
-        40,
-        20
-      ]
-    ],
-    "OOM": 3,
     "live_processes": 0,
-    "verdict": "inconclusive_range_overlap",
-    "new_GPU_authorization": false,
-    "old233_case2positive_unwaived": true
+    "SDK_GO": false,
+    "stdlib_preflightwait": 0,
+    "package": "/tmp/nsa_worker2_v235_parent_C3_IR_preparation_rev02.tar.gz",
+    "package_SHA": "39105ef50e7ea360b45ce528456774c709f59cddcae4e2e5f7f128718d501920"
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -1925,10 +1895,61 @@
       "both_rounds_negative": true,
       "control_ranges_overlap": true,
       "status": "inconclusive_no_promotion_no_repeat"
+    },
+    "v234_final_current_snapshot": {
+      "version": "v234",
+      "stage": "closed_local_four_source_case2_inconclusive",
+      "sourceSHA": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
+      "parent_CB13SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+      "compile_stage_actualwaits": [
+        0,
+        0,
+        0
+      ],
+      "native_outer_actualwait": 0,
+      "native_job_actualwaits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actual_clean_C_total_refs": [
+        4,
+        16
+      ],
+      "native_samples": 1263,
+      "compile_samples": 93,
+      "resource_P_C_MT_ST": [
+        [
+          42,
+          20
+        ],
+        [
+          40,
+          20
+        ]
+      ],
+      "OOM": 3,
+      "live_processes": 0,
+      "verdict": "inconclusive_range_overlap",
+      "new_GPU_authorization": false,
+      "old233_case2positive_unwaived": true
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader selection pending: C3 Num32 shared reciprocal hypothesis; exact parent C3 optimizedIR unavailable, evidence-first stockSDK IR step only if separately authorized; no source or GPU now",
+  "next_step": "Waitleaderreview/GO for oneparentC3stockIR only; no candidatekernel yet; any future source basedonC303 retainscurrent gains",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
