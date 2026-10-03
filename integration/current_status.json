@@ -35,7 +35,7 @@
     "installed_identically_both_containers": true
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-03T15:16:22.248272+00:00",
+  "updated_at_utc": "2026-10-03T15:28:51.789076+00:00",
   "all14_nonregression": "Observed OJ score nonregression for user-attributed v303 run: all14AC/1212 vs84 1204; exact uploadedSHA and repeated latency nonregression unproven",
   "worker1": {
     "cases": [
@@ -46,10 +46,10 @@
     ],
     "last_closed_version": "v144 parentC10 IR diagnostic",
     "last_closed_source_commit": "c9dd8149eeb6afc5cea76ab018ac5721b38bbeda",
-    "last_result": "C149123.3485/current30369.248us +78.125722%, bothroundpositive/allcandidate>all303/nooverlap; 4C16fullnaivePASS/allwait0",
-    "active_version": "v151 existing source150 C6 diagnostic",
-    "stage": "Original151observer1 due unsupportednestedGEP; independentroot readonly parsepasses/QSSApeak1/resource100; preparing separate152CPUonly TEXT",
-    "authorized_scope": "Separate152 pureCPU existingIR/GEP syntax diagnostic TEXT only, original150/151 failures immutable/source150 frozen/no CPPedit/SDK/GPU",
+    "last_result": "v152 original launcher wait1: missing supervisor_argv before CPU observer; no new numeric/latency result",
+    "active_version": null,
+    "stage": "STOPPED_AFTER_CURRENT_TASK",
+    "authorized_scope": "Stopped at explicit user request; no next task authorized",
     "native_GO": false,
     "source_audit": "integration/reviews/v150-c6-source-leader-audit.json",
     "candidate_sha256": "a737203fc6dd4e09292533a63177d1b2d49bdfce8dc1b684a8e3aadbb5678906",
@@ -95,7 +95,7 @@
       "later_underlimit_not_retry_permission": true
     },
     "reported_source_close_commit": "88f12995d669e2b35c87cf5e0c6ad3b6bf41e866",
-    "source_GO": true,
+    "source_GO": false,
     "base_source_SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
     "next_decision": "integration/reviews/c6-sharedQ-stagedK-logical-model-readonly.json",
     "original_owner_PID": 777825,
@@ -114,7 +114,8 @@
       "2026-10-03T12:20:00Z",
       "2026-10-03T12:21:00Z"
     ],
-    "active_starttime": 105434393
+    "active_starttime": null,
+    "final_closure": "integration/reviews/v152-final-launch-failure-leader-closure.json"
   },
   "worker2": {
     "cases": [
@@ -131,7 +132,7 @@
     ],
     "last_closed_version": "v242/v243 Case9 ordinaryV alias rejected",
     "last_closed_source_commit": "92ac5b619190fac6eed4f72abfb9264e8b1dc95c",
-    "active_version": "v250 Case3 shared Q whole K source",
+    "active_version": null,
     "source_SHA": "b25f5449ae109c8ec625f2d70ee255e6beda107d99bd050fb8847237272b7d47",
     "source_header": "v250",
     "actual_resource": [
@@ -142,11 +143,11 @@
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "v250 C3 REJECT +1.84555% independently192SHA audited; current303 Case5 conditionalQ readonly review",
-    "authorized_scope": "Readonly exactcurrent303 C5 Qproducer/Idx/guard/empty dependencies and possible conditionalQ placement only, no shader/GPU",
+    "stage": "STOPPED_AFTER_CURRENT_TASK",
+    "authorized_scope": "Stopped at explicit user request; no next task authorized",
     "native_GO": false,
     "approval": "integration/reviews/v250-c3-native-approval.json",
-    "last_result": "C25010.3195/current30310.1325us +1.8455465%;bothroundpositive/high22.866kept/overlap;4C16correct/allwait0;REJECT",
+    "last_result": "Current303 Case5 readonly proposal delivered; no candidate/test; v250 remains rejected",
     "runtime_audit": "integration/reviews/v250-c3-complete-native-leader-audit.json",
     "compile_GO": false,
     "profile_GO": false,
@@ -175,8 +176,9 @@
     "holder_PID": 520807,
     "holder_starttime": 339059597,
     "last_closed_safe_summary_commit": "25cef826a37fdc5ac2d6ff61f766e14469984503",
-    "active_starttime": 341004279,
-    "original_handle": 30414
+    "active_starttime": null,
+    "original_handle": 30414,
+    "final_closure": "integration/reviews/currentC5-readonly-final-leader-closure.json"
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
@@ -197,7 +199,7 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-smoke/report.md"
   },
-  "leader_next": "Await248 truecompile terminal thenactualFP/value/address review; reviewcurrentC12 directK readonly proposal basedsource/IR andfreshparentcounters; 303 unchanged.",
+  "leader_next": "No further optimization or tests; both workers stopped after closing their current tasks.",
   "pending_integration": {
     "version": "v300",
     "path": "/root/tilelang-metax/race_tests/nsa/submission/v300_leader_c9_bounded_index_full14_sc-16g-2/submission.py",
@@ -375,5 +377,8 @@
     "no_async_copy": true,
     "source150_250_full_AST_scanned_no_forbidden_callees": true,
     "generated_CPP": "exported/read/stockcompiled unchanged only"
-  }
+  },
+  "team_status": "PAUSED_AT_USER_REQUEST_AFTER_CURRENT_TASKS",
+  "stop_request": "Finish current task, then stop both workers",
+  "best_submission_changed": false
 }
