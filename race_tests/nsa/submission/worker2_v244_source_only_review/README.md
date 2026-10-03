@@ -1,9 +1,9 @@
-# worker2 v244 source review
+# worker2 v244 completed source review
 
-Case8 direct output epilogue. Leader verified unchanged current303 prefix, exact whole-factory inverse, output bijection and complete vector bounds. Actual codegen conversion/resources/native performance are pending.
+Case8 C244 original four-source16 complete. All16 fullnaive checks and original waits pass. Median46.1155us vs current30339.700us: +16.15995%; bothrounds slower and allcandidate samples exceed all303samples. REJECT: no promotion/no repeat. Compilation and FP/output mapping passed; lowerMT and fewerbarriers do not establish a cause or performance benefit.
 
 Source SHA256: e82e8de2c75769f33bcf177cc7680b2fae340fa7f88dab22f5c623dfb25942b0
 
-Review: integration/reviews/v244-c8-source-leader-audit.json on cowork main.
+Leader audit: integration/reviews/v244-c8-complete-native-leader-audit.json on cowork main (df0ed452f).
 
-Current OJ submission remains v303. Only this source and README are added over the already published integration base; private experiment history and raw data are excluded.
+Current OJ submission remains v303. This source is retained for review only. Private raw experiment data and private history are excluded from this branch.
