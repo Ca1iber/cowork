@@ -1,0 +1,95 @@
+{
+  "wrapper_path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py",
+  "recognized_unowned_baseline": {
+    "pid": 213447,
+    "starttime_ticks": 93125003,
+    "exe": "/root/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/node",
+    "cgroup": "13:rdma:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n12:misc:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n11:pids:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n10:hugetlb:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n9:memory:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n8:cpu,cpuacct:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n7:devices:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n6:cpuset:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n5:perf_event:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n4:blkio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n3:net_cls,net_prio:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n2:freezer:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n1:name=systemd:/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n0::/system.slice/docker-4582fcb1c26ca27efe850613bab4f1b5332f7cb377aa2a975381bed1b51bc040.scope\n"
+  },
+  "cooperative_heavy_lock": "/tmp/nsa_sc-16g-2_cooperative_heavy.lock",
+  "version": "v136_worker1_c12_max4x8_balanced_sc-16g-2",
+  "sources": {
+    "baseline_v28": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission.py",
+      "sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd"
+    },
+    "candidate_v136": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v136_worker1_c12_max4x8_balanced_sc-16g-2/submission.py",
+      "sha256": "43fa3a9f024bb23e38ad13ad0c96662a24f697b7bed067cdc32d5e7702c92473"
+    },
+    "power_v113": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+      "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc"
+    },
+    "parent_v084": {
+      "path": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+      "sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0"
+    }
+  },
+  "tools": {
+    "python": {
+      "path": "/opt/conda/bin/python",
+      "sha256": "0e4dbf3236310955eaeee14323756b54961e1d0dc12c680c441f50839a67eee0"
+    },
+    "native_wrapper": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v000_codex_power_baseline_sc-16g-2/run_variant.py",
+      "sha256": "32c0ddec744347102cb939c5e9e88684cd00eb5d8009d5953118a560e058508f"
+    },
+    "bounded_controller": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v136_worker1_c12_max4x8_balanced_sc-16g-2/run_native_screen.py",
+      "sha256": "c218cf908aeed6e05cbe58a9a8f5e070a027803fdb6d755cfe861a365e52c548"
+    },
+    "native_gate": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v136_worker1_c12_max4x8_balanced_sc-16g-2/owned_native_gate.py",
+      "sha256": "906d210a50da3773973a3ca34b8f770d83cf9cecce26581d499e6db695c36f31"
+    },
+    "process_monitor": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v136_worker1_c12_max4x8_balanced_sc-16g-2/process_monitor.py",
+      "sha256": "95253d2f451c24688e64c4413fff96c03cc1131180fc800a5c8a120f885117d3"
+    },
+    "supervisor": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v136_worker1_c12_max4x8_balanced_sc-16g-2/supervise_native_screen.py",
+      "sha256": "8d2e0e754082fb4988a96fa2bf1c4869174c09051b3592f7f559b54992613004"
+    },
+    "screen_launcher": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v136_worker1_c12_max4x8_balanced_sc-16g-2/launch_native_screen.py",
+      "sha256": "0c453bfe6d9f67e98cf458845d4183a1c4bd8d85c18ad52fec41e2e99d2e8df5"
+    },
+    "all14_analyzer": {
+      "path": "/root/tilelang-metax/race_tests/nsa/hack/v136_worker1_c12_max4x8_balanced_sc-16g-2/analyze_all14.py",
+      "sha256": "2609c08c8f72833836661490721f47418d186004a3c522c154a0f2223504e5f0"
+    }
+  },
+  "shared_identity_document": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v136_worker1_c12_max4x8_balanced_sc-16g-2/native_screen/shared_inputs_identity.json",
+    "sha256": "69ea3fdea7f639083ecdd65a62365a55c11e27088a99b9a590e498d2e87c312e"
+  },
+  "frozen_compiled_observation": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v136_worker1_c12_max4x8_balanced_sc-16g-2/compiled_observation_result.json",
+    "sha256": "4e92692266b55f90b29f3a42a9fc45ad62323f01968ae968dca0dd7a68c44531"
+  },
+  "frozen_IR_actual_exit": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v136_worker1_c12_max4x8_balanced_sc-16g-2/SDK/IR_actual.exit",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "frozen_compiled_observation_actual_exit": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v136_worker1_c12_max4x8_balanced_sc-16g-2/compiled_observation.exit",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "frozen_codegen_stage_exit": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v136_worker1_c12_max4x8_balanced_sc-16g-2/stage.exit",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "existing_parent_C12_device": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v136_worker1_c12_max4x8_balanced_sc-16g-2/codegen/parent113/case12.device.cpp",
+    "sha256": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13"
+  },
+  "existing_candidate_C12_device": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v136_worker1_c12_max4x8_balanced_sc-16g-2/codegen/candidate136/case12.device.cpp",
+    "sha256": "5f56bb6b5ddcd36776b8ccee80cc432766369ca3fe466336520bf096544240ed"
+  },
+  "frozen_max_math_scope_proof": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v136_worker1_c12_max4x8_balanced_sc-16g-2/actual_CPP_max_math_flags_proof.json",
+    "sha256": "5fde24dcf5a2f8906457f0cea2cc68dd2c16f39bd96e64ac0ee5272667ee9a1c"
+  }
+}
