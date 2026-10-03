@@ -1,0 +1,21 @@
+{
+  "scope": "purestdlib numericalmodel/property checks, not backend/kernel/runtimecorrectness tests",
+  "score32_group8_partition_eachslot_once": true,
+  "qNaN_maxnum_model_left_right_zero_tie_all_combinations": true,
+  "constructed_case_count": 875,
+  "old_tree_comparisons": 3500,
+  "signedzero_original_f32_sub_scale_plus8_probe_count": 8448,
+  "scale_f32": 0.1803368777036667,
+  "NaN_head_propagation_origxor32_16_all64_origins": true,
+  "semantic_reasoning": [
+    "finite\u00b1inf seededmaxsame numeric byinduction",
+    "zero tie internalbits maydiff, originalpositiveScale/+8 consumeszero sign withoutnumericPdiff",
+    "qNaNignore seeded\u2212inf same numericmax;allqNaN remains\u2212inf",
+    "sNaNmaxnondeterminism notsimulated or bitpromise:originalNaNScore makeshalfPNan,denNan->sameheadoutputNan byIEEEvalueclassification,root no payload/exception requirement",
+    "hasvalidfalse originalbranch bypass/Num0den0NaN unchanged",
+    "anymax=+inf or\u2212inf Inf\u2212Infpatterns same ifnoNaNscore; keepactualPround/den/PV"
+  ],
+  "not_GPU_or_FP_exception_or_NaNpayload_bitproof": true,
+  "no_tolerance_or_source_specialcase_relaxation": true,
+  "noimportTorch_TileLang_compiler_resource_or_native": true
+}
