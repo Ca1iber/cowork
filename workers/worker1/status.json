@@ -1,6 +1,6 @@
 {
   "worker": "worker1",
-  "utc": "2026-10-03T02:24:13.542964+00:00",
+  "utc": "2026-10-03T02:36:56.767545+00:00",
   "source_branch": "codex-power-v28-base",
   "last_closed_source_commit": "fbbd28165de313ddfac842dce0d587282ae96b2d",
   "common_base_commit": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
@@ -12,12 +12,14 @@
   ],
   "current": {
     "version": "v137_worker1_c12_reciprocal_normalization_sc-16g-2",
-    "phase": "source_only_completed_wait_root_actual_review",
+    "phase": "source_root_reviewed_compile_TEXT_prepared_no_GO",
     "sourceSHA": "9fc293d0bfab19a4ae6effa50f1dfd8127693141db7ba98c34e0d951c4979252",
     "header": 137,
     "parent": "full303985ffd",
     "other13source_unchanged": true,
-    "GPU_import_compile_native_profile": 0
+    "GPU_import_compile_native_profile": 0,
+    "compile_planSHA": "f7d8b598d88d2a614dbc38917a584af19553159229473966049b1d49284d4d26",
+    "compile_manifestSHA": "52c0df1b7e5a802cc0a2ec79eb9faae0e3f86fd4d15986155e69f01d23cac3ce"
   },
   "history": {
     "v101": {
@@ -576,7 +578,7 @@
   },
   "main_sha256": "42911561dd0c60770cf9815607ca08794c98f1dd9d4ee2abfe9ef6bd70bca6dd",
   "ownership": "ownsource/cases only;peer advice not code/plan edits",
-  "next": "Wait root source review, then only separately authorized finite compile preparation. No native preparation or GPU.",
+  "next": "Wait separate root compile GO; only frozen five-stage C12 compile. No native preparation/execution.",
   "last_closed_version": "v136_worker1_c12_max4x8_balanced_sc-16g-2",
   "last_closed_status": "failed_second6GiB_admission_originalC12_native_incomplete_prefix_retained",
   "last_source_checkpoint": "fbbd28165de313ddfac842dce0d587282ae96b2d",

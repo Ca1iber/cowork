@@ -1,0 +1,1 @@
+Worker2 readonly, not approval: scope to exactkernel/dtype/flags; reciprocalSSA must feed16 normalizations, exclude softmax scaling. Accept scalar/vector logicalF32 width distinction or actualnamedF32rcp. Opcode anchored alloca and exactparentMMA/barrier names; wholeCPP/host mismatch stops. Resource/ISA sharing not speed proof; originalnaive later required. No peer edits.
