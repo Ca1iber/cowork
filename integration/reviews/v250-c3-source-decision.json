@@ -1,0 +1,57 @@
+{
+  "UTC": "2026-10-03T13:39:50.620608+00:00",
+  "decision": "ONE_SOURCE_GO_v250_C3_SHARED_Q_WHOLE_K",
+  "inventory2_SHA_verified": true,
+  "current_factory_AST_SHA": "ef57c4139f6ad064ea5acefd1a61ff0f22ff31a33fee75c96d875989fdf3b29e",
+  "parent_CPP_host_IR_SHA_verified": true,
+  "actual_Q8_preloads_K8_stores_postK_and8QK_MMA_lines_verified": true,
+  "logic_mapping_independently_verified": {
+    "UTC": "2026-10-03T13:36:46.954773+00:00",
+    "scope": "Readonly logical model from exactcurrent303 Case3 qk_slot AST; no shader/JIT/SDK/GPU",
+    "Q_lower_halfslots": [
+      0,
+      2047
+    ],
+    "K_upper_halfslots": [
+      2048,
+      4095
+    ],
+    "bijections_disjoint": true,
+    "Q_operand_half_checks": 2048,
+    "K_operand_half_checks": 2048,
+    "K_complete16B_vector_bounds_checked": 4096,
+    "max_half": 32767,
+    "last_byte": 65535,
+    "same_K_global_ownership_layout_model": true,
+    "shared_bytes_model": [
+      4096,
+      8192
+    ],
+    "actual_sync_liveness_resources_and_latency": "UNVERIFIED; worker proposal/actualcodegen required",
+    "source_GO": false
+  },
+  "solecase3_key": [
+    1,
+    256,
+    1,
+    16,
+    128,
+    1,
+    16,
+    true
+  ],
+  "scope": "Fresh30324prefix+onefactory+soleC3; shared2048->4096half Qlower/Kwholeupper; q_local32->4 andQload nearownMMA; original K16B globalownership/FP chain/Pden/Num32/V32/Out preserved",
+  "sync_choice": "combinedpublication5: remove initialQpost andpreK; mandatoryKpost publishes bothregions; originalVpre/post andOutpre/post stay; invalidOutpre retires initialQwrites before lower reuse",
+  "shared_bytes": [
+    4096,
+    8192
+  ],
+  "source_compile_native_profile_GO": {
+    "source": true,
+    "compile": false,
+    "native": false,
+    "profile": false
+  },
+  "actual_IR_resources_liveness_and_latency": "UNMEASURED; allQhoist/MT/extraLDS/sharedcapacity costs recorded, no speed assumption",
+  "full14_nonregression": "UNVERIFIED future gate before integration"
+}
