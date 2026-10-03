@@ -1,0 +1,559 @@
+{
+  "UTC": "2026-10-03T00:45:38.376560+00:00",
+  "scope": "existingcurrentC12 optimizedIR readonly,0importcompileGPUreference",
+  "current_source": {
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v113_worker1_s4_global_softmax_sc-16g-2/submission.py",
+    "sha256": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+    "factory": "_make_power_s8_global_softmax",
+    "fullASTincludingdecorator_same104": true
+  },
+  "deviceCPP": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/codegen_precompile/power_v104/case12_stage1.device.cpp",
+    "sha256": "3885044e77c4d0ce6fff26ff422b915a5c80c8ba2c2303c19a9d8e3039142f13"
+  },
+  "optimizedIR": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/codegen_optimized/power_v104.ll",
+    "sha256": "de3bcdfdac453609d68d33a9250f835720ffdc48661f03df20d69b1712b79277",
+    "archivedoriginal_exit": 0,
+    "kernel_lines": [
+      182,
+      2615
+    ]
+  },
+  "compiler_archived_and_current_same": {
+    "name": "compiler",
+    "path": "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "sha256": "5d0e23f021bc2dad273dbf73d5f67e74313428ef27bcca2d165ad106cbf14c25"
+  },
+  "archived_flags_argv": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-maca-device-only",
+    "-S",
+    "-emit-llvm",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/codegen_optimized/power_v104.ll",
+    "/root/tilelang-metax/race_tests/nsa/rep/v104_worker1_s8_global_softmax_sc-16g-2/codegen_precompile/power_v104/case12_stage1.device.cpp"
+  ],
+  "Indices": {
+    "8address_definitions_reused": true,
+    "16_global_i32_load_sites": true,
+    "no_value_CSE_across_QK_PV": true,
+    "pairs": [
+      {
+        "slot": 0,
+        "address": {
+          "line": 271,
+          "text": "  %arrayidx125 = getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %14, !dbg !65",
+          "rhs": "getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %14, !dbg !65"
+        },
+        "QK_value_load": {
+          "line": 272,
+          "SSA": "%15",
+          "text": "  %15 = load i32, ptr addrspace(1) %arrayidx125, align 4, !dbg !65, !tbaa !30"
+        },
+        "PV_value_load": {
+          "line": 1452,
+          "SSA": "%307",
+          "text": "  %307 = load i32, ptr addrspace(1) %arrayidx125, align 4, !dbg !213, !tbaa !30"
+        },
+        "same_address_not_same_value_SSA_no_load_CSE": true,
+        "QK_value_uses": [
+          "  %15 = load i32, ptr addrspace(1) %arrayidx125, align 4, !dbg !65, !tbaa !30",
+          "  %or.cond886 = icmp ugt i32 %15, %invariant.umin, !dbg !66",
+          "  %mul139 = shl nuw nsw i32 %15, 10",
+          "  %mul246 = shl nuw nsw i32 %15, 4"
+        ],
+        "PV_value_uses": [
+          "  %307 = load i32, ptr addrspace(1) %arrayidx125, align 4, !dbg !213, !tbaa !30",
+          "  %or.cond887 = icmp ugt i32 %307, %invariant.umin, !dbg !214",
+          "  %mul449 = shl nuw nsw i32 %307, 10"
+        ]
+      },
+      {
+        "slot": 1,
+        "address": {
+          "line": 992,
+          "text": "  %arrayidx125.1 = getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %212, !dbg !65",
+          "rhs": "getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %212, !dbg !65"
+        },
+        "QK_value_load": {
+          "line": 993,
+          "SSA": "%213",
+          "text": "  %213 = load i32, ptr addrspace(1) %arrayidx125.1, align 4, !dbg !65, !tbaa !30"
+        },
+        "PV_value_load": {
+          "line": 1574,
+          "SSA": "%338",
+          "text": "  %338 = load i32, ptr addrspace(1) %arrayidx125.1, align 4, !dbg !213, !tbaa !30"
+        },
+        "same_address_not_same_value_SSA_no_load_CSE": true,
+        "QK_value_uses": [
+          "  %213 = load i32, ptr addrspace(1) %arrayidx125.1, align 4, !dbg !65, !tbaa !30",
+          "  %or.cond886.1 = icmp ugt i32 %213, %invariant.umin, !dbg !66",
+          "  %mul139.1 = shl nuw nsw i32 %213, 10",
+          "  %mul246.1 = shl nuw nsw i32 %213, 4"
+        ],
+        "PV_value_uses": [
+          "  %338 = load i32, ptr addrspace(1) %arrayidx125.1, align 4, !dbg !213, !tbaa !30",
+          "  %or.cond887.1 = icmp ugt i32 %338, %invariant.umin, !dbg !214",
+          "  %mul449.1 = shl nuw nsw i32 %338, 10"
+        ]
+      },
+      {
+        "slot": 2,
+        "address": {
+          "line": 1054,
+          "text": "  %arrayidx125.2 = getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %224, !dbg !65",
+          "rhs": "getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %224, !dbg !65"
+        },
+        "QK_value_load": {
+          "line": 1055,
+          "SSA": "%225",
+          "text": "  %225 = load i32, ptr addrspace(1) %arrayidx125.2, align 4, !dbg !65, !tbaa !30"
+        },
+        "PV_value_load": {
+          "line": 1696,
+          "SSA": "%369",
+          "text": "  %369 = load i32, ptr addrspace(1) %arrayidx125.2, align 4, !dbg !213, !tbaa !30"
+        },
+        "same_address_not_same_value_SSA_no_load_CSE": true,
+        "QK_value_uses": [
+          "  %225 = load i32, ptr addrspace(1) %arrayidx125.2, align 4, !dbg !65, !tbaa !30",
+          "  %or.cond886.2 = icmp ugt i32 %225, %invariant.umin, !dbg !66",
+          "  %mul139.2 = shl nuw nsw i32 %225, 10",
+          "  %mul246.2 = shl nuw nsw i32 %225, 4"
+        ],
+        "PV_value_uses": [
+          "  %369 = load i32, ptr addrspace(1) %arrayidx125.2, align 4, !dbg !213, !tbaa !30",
+          "  %or.cond887.2 = icmp ugt i32 %369, %invariant.umin, !dbg !214",
+          "  %mul449.2 = shl nuw nsw i32 %369, 10"
+        ]
+      },
+      {
+        "slot": 3,
+        "address": {
+          "line": 1116,
+          "text": "  %arrayidx125.3 = getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %236, !dbg !65",
+          "rhs": "getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %236, !dbg !65"
+        },
+        "QK_value_load": {
+          "line": 1117,
+          "SSA": "%237",
+          "text": "  %237 = load i32, ptr addrspace(1) %arrayidx125.3, align 4, !dbg !65, !tbaa !30"
+        },
+        "PV_value_load": {
+          "line": 1818,
+          "SSA": "%400",
+          "text": "  %400 = load i32, ptr addrspace(1) %arrayidx125.3, align 4, !dbg !213, !tbaa !30"
+        },
+        "same_address_not_same_value_SSA_no_load_CSE": true,
+        "QK_value_uses": [
+          "  %237 = load i32, ptr addrspace(1) %arrayidx125.3, align 4, !dbg !65, !tbaa !30",
+          "  %or.cond886.3 = icmp ugt i32 %237, %invariant.umin, !dbg !66",
+          "  %mul139.3 = shl nuw nsw i32 %237, 10",
+          "  %mul246.3 = shl nuw nsw i32 %237, 4"
+        ],
+        "PV_value_uses": [
+          "  %400 = load i32, ptr addrspace(1) %arrayidx125.3, align 4, !dbg !213, !tbaa !30",
+          "  %or.cond887.3 = icmp ugt i32 %400, %invariant.umin, !dbg !214",
+          "  %mul449.3 = shl nuw nsw i32 %400, 10"
+        ]
+      },
+      {
+        "slot": 4,
+        "address": {
+          "line": 1178,
+          "text": "  %arrayidx125.4 = getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %248, !dbg !65",
+          "rhs": "getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %248, !dbg !65"
+        },
+        "QK_value_load": {
+          "line": 1179,
+          "SSA": "%249",
+          "text": "  %249 = load i32, ptr addrspace(1) %arrayidx125.4, align 4, !dbg !65, !tbaa !30"
+        },
+        "PV_value_load": {
+          "line": 1940,
+          "SSA": "%431",
+          "text": "  %431 = load i32, ptr addrspace(1) %arrayidx125.4, align 4, !dbg !213, !tbaa !30"
+        },
+        "same_address_not_same_value_SSA_no_load_CSE": true,
+        "QK_value_uses": [
+          "  %249 = load i32, ptr addrspace(1) %arrayidx125.4, align 4, !dbg !65, !tbaa !30",
+          "  %or.cond886.4 = icmp ugt i32 %249, %invariant.umin, !dbg !66",
+          "  %mul139.4 = shl nuw nsw i32 %249, 10",
+          "  %mul246.4 = shl nuw nsw i32 %249, 4"
+        ],
+        "PV_value_uses": [
+          "  %431 = load i32, ptr addrspace(1) %arrayidx125.4, align 4, !dbg !213, !tbaa !30",
+          "  %or.cond887.4 = icmp ugt i32 %431, %invariant.umin, !dbg !214",
+          "  %mul449.4 = shl nuw nsw i32 %431, 10"
+        ]
+      },
+      {
+        "slot": 5,
+        "address": {
+          "line": 1240,
+          "text": "  %arrayidx125.5 = getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %260, !dbg !65",
+          "rhs": "getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %260, !dbg !65"
+        },
+        "QK_value_load": {
+          "line": 1241,
+          "SSA": "%261",
+          "text": "  %261 = load i32, ptr addrspace(1) %arrayidx125.5, align 4, !dbg !65, !tbaa !30"
+        },
+        "PV_value_load": {
+          "line": 2062,
+          "SSA": "%462",
+          "text": "  %462 = load i32, ptr addrspace(1) %arrayidx125.5, align 4, !dbg !213, !tbaa !30"
+        },
+        "same_address_not_same_value_SSA_no_load_CSE": true,
+        "QK_value_uses": [
+          "  %261 = load i32, ptr addrspace(1) %arrayidx125.5, align 4, !dbg !65, !tbaa !30",
+          "  %or.cond886.5 = icmp ugt i32 %261, %invariant.umin, !dbg !66",
+          "  %mul139.5 = shl nuw nsw i32 %261, 10",
+          "  %mul246.5 = shl nuw nsw i32 %261, 4"
+        ],
+        "PV_value_uses": [
+          "  %462 = load i32, ptr addrspace(1) %arrayidx125.5, align 4, !dbg !213, !tbaa !30",
+          "  %or.cond887.5 = icmp ugt i32 %462, %invariant.umin, !dbg !214",
+          "  %mul449.5 = shl nuw nsw i32 %462, 10"
+        ]
+      },
+      {
+        "slot": 6,
+        "address": {
+          "line": 1302,
+          "text": "  %arrayidx125.6 = getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %272, !dbg !65",
+          "rhs": "getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %272, !dbg !65"
+        },
+        "QK_value_load": {
+          "line": 1303,
+          "SSA": "%273",
+          "text": "  %273 = load i32, ptr addrspace(1) %arrayidx125.6, align 4, !dbg !65, !tbaa !30"
+        },
+        "PV_value_load": {
+          "line": 2184,
+          "SSA": "%493",
+          "text": "  %493 = load i32, ptr addrspace(1) %arrayidx125.6, align 4, !dbg !213, !tbaa !30"
+        },
+        "same_address_not_same_value_SSA_no_load_CSE": true,
+        "QK_value_uses": [
+          "  %273 = load i32, ptr addrspace(1) %arrayidx125.6, align 4, !dbg !65, !tbaa !30",
+          "  %or.cond886.6 = icmp ugt i32 %273, %invariant.umin, !dbg !66",
+          "  %mul139.6 = shl nuw nsw i32 %273, 10",
+          "  %mul246.6 = shl nuw nsw i32 %273, 4"
+        ],
+        "PV_value_uses": [
+          "  %493 = load i32, ptr addrspace(1) %arrayidx125.6, align 4, !dbg !213, !tbaa !30",
+          "  %or.cond887.6 = icmp ugt i32 %493, %invariant.umin, !dbg !214",
+          "  %mul449.6 = shl nuw nsw i32 %493, 10"
+        ]
+      },
+      {
+        "slot": 7,
+        "address": {
+          "line": 1364,
+          "text": "  %arrayidx125.7 = getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %284, !dbg !65",
+          "rhs": "getelementptr inbounds i32, ptr addrspace(1) %Indices.coerce, i64 %284, !dbg !65"
+        },
+        "QK_value_load": {
+          "line": 1365,
+          "SSA": "%285",
+          "text": "  %285 = load i32, ptr addrspace(1) %arrayidx125.7, align 4, !dbg !65, !tbaa !30"
+        },
+        "PV_value_load": {
+          "line": 2306,
+          "SSA": "%524",
+          "text": "  %524 = load i32, ptr addrspace(1) %arrayidx125.7, align 4, !dbg !213, !tbaa !30"
+        },
+        "same_address_not_same_value_SSA_no_load_CSE": true,
+        "QK_value_uses": [
+          "  %285 = load i32, ptr addrspace(1) %arrayidx125.7, align 4, !dbg !65, !tbaa !30",
+          "  %or.cond886.7 = icmp ugt i32 %285, %invariant.umin, !dbg !66",
+          "  %mul139.7 = shl nuw nsw i32 %285, 10",
+          "  %mul246.7 = shl nuw nsw i32 %285, 4"
+        ],
+        "PV_value_uses": [
+          "  %524 = load i32, ptr addrspace(1) %arrayidx125.7, align 4, !dbg !213, !tbaa !30",
+          "  %or.cond887.7 = icmp ugt i32 %524, %invariant.umin, !dbg !214",
+          "  %mul449.7 = shl nuw nsw i32 %524, 10"
+        ]
+      }
+    ],
+    "loadsite_count_notISA_transactions_HBM_bytes": true
+  },
+  "max": {
+    "32scalar_maxnum_F32_call_nodes_from_negInf_seed_depth": 32,
+    "31intermax_edges_before_warp_reduce": 31,
+    "final_lane_max_SSA": "%47",
+    "first_line": 278,
+    "last_line": 340,
+    "all_scalar_nodes": {
+      "%16": {
+        "line": 278,
+        "text": "  %16 = tail call contract noundef float @llvm.maxnum.f32(float %scores.sroa.0.0.vec.extract, float 0xFFF0000000000000), !dbg !68",
+        "maxdeps": []
+      },
+      "%17": {
+        "line": 280,
+        "text": "  %17 = tail call contract noundef float @llvm.maxnum.f32(float %16, float %scores.sroa.0.4.vec.extract), !dbg !68",
+        "maxdeps": [
+          "%16"
+        ]
+      },
+      "%18": {
+        "line": 282,
+        "text": "  %18 = tail call contract noundef float @llvm.maxnum.f32(float %17, float %scores.sroa.0.8.vec.extract), !dbg !68",
+        "maxdeps": [
+          "%17"
+        ]
+      },
+      "%19": {
+        "line": 284,
+        "text": "  %19 = tail call contract noundef float @llvm.maxnum.f32(float %18, float %scores.sroa.0.12.vec.extract), !dbg !68",
+        "maxdeps": [
+          "%18"
+        ]
+      },
+      "%20": {
+        "line": 286,
+        "text": "  %20 = tail call contract noundef float @llvm.maxnum.f32(float %19, float %scores.sroa.23.16.vec.extract), !dbg !68",
+        "maxdeps": [
+          "%19"
+        ]
+      },
+      "%21": {
+        "line": 288,
+        "text": "  %21 = tail call contract noundef float @llvm.maxnum.f32(float %20, float %scores.sroa.23.20.vec.extract2341), !dbg !68",
+        "maxdeps": [
+          "%20"
+        ]
+      },
+      "%22": {
+        "line": 290,
+        "text": "  %22 = tail call contract noundef float @llvm.maxnum.f32(float %21, float %scores.sroa.23.24.vec.extract2348), !dbg !68",
+        "maxdeps": [
+          "%21"
+        ]
+      },
+      "%23": {
+        "line": 292,
+        "text": "  %23 = tail call contract noundef float @llvm.maxnum.f32(float %22, float %scores.sroa.23.28.vec.extract2355), !dbg !68",
+        "maxdeps": [
+          "%22"
+        ]
+      },
+      "%24": {
+        "line": 294,
+        "text": "  %24 = tail call contract noundef float @llvm.maxnum.f32(float %23, float %scores.sroa.44.32.vec.extract), !dbg !68",
+        "maxdeps": [
+          "%23"
+        ]
+      },
+      "%25": {
+        "line": 296,
+        "text": "  %25 = tail call contract noundef float @llvm.maxnum.f32(float %24, float %scores.sroa.44.36.vec.extract2370), !dbg !68",
+        "maxdeps": [
+          "%24"
+        ]
+      },
+      "%26": {
+        "line": 298,
+        "text": "  %26 = tail call contract noundef float @llvm.maxnum.f32(float %25, float %scores.sroa.44.40.vec.extract2377), !dbg !68",
+        "maxdeps": [
+          "%25"
+        ]
+      },
+      "%27": {
+        "line": 300,
+        "text": "  %27 = tail call contract noundef float @llvm.maxnum.f32(float %26, float %scores.sroa.44.44.vec.extract2384), !dbg !68",
+        "maxdeps": [
+          "%26"
+        ]
+      },
+      "%28": {
+        "line": 302,
+        "text": "  %28 = tail call contract noundef float @llvm.maxnum.f32(float %27, float %scores.sroa.65.48.vec.extract), !dbg !68",
+        "maxdeps": [
+          "%27"
+        ]
+      },
+      "%29": {
+        "line": 304,
+        "text": "  %29 = tail call contract noundef float @llvm.maxnum.f32(float %28, float %scores.sroa.65.52.vec.extract2399), !dbg !68",
+        "maxdeps": [
+          "%28"
+        ]
+      },
+      "%30": {
+        "line": 306,
+        "text": "  %30 = tail call contract noundef float @llvm.maxnum.f32(float %29, float %scores.sroa.65.56.vec.extract2406), !dbg !68",
+        "maxdeps": [
+          "%29"
+        ]
+      },
+      "%31": {
+        "line": 308,
+        "text": "  %31 = tail call contract noundef float @llvm.maxnum.f32(float %30, float %scores.sroa.65.60.vec.extract2413), !dbg !68",
+        "maxdeps": [
+          "%30"
+        ]
+      },
+      "%32": {
+        "line": 310,
+        "text": "  %32 = tail call contract noundef float @llvm.maxnum.f32(float %31, float %scores.sroa.86.64.vec.extract), !dbg !68",
+        "maxdeps": [
+          "%31"
+        ]
+      },
+      "%33": {
+        "line": 312,
+        "text": "  %33 = tail call contract noundef float @llvm.maxnum.f32(float %32, float %scores.sroa.86.68.vec.extract2428), !dbg !68",
+        "maxdeps": [
+          "%32"
+        ]
+      },
+      "%34": {
+        "line": 314,
+        "text": "  %34 = tail call contract noundef float @llvm.maxnum.f32(float %33, float %scores.sroa.86.72.vec.extract2435), !dbg !68",
+        "maxdeps": [
+          "%33"
+        ]
+      },
+      "%35": {
+        "line": 316,
+        "text": "  %35 = tail call contract noundef float @llvm.maxnum.f32(float %34, float %scores.sroa.86.76.vec.extract2442), !dbg !68",
+        "maxdeps": [
+          "%34"
+        ]
+      },
+      "%36": {
+        "line": 318,
+        "text": "  %36 = tail call contract noundef float @llvm.maxnum.f32(float %35, float %scores.sroa.107.80.vec.extract), !dbg !68",
+        "maxdeps": [
+          "%35"
+        ]
+      },
+      "%37": {
+        "line": 320,
+        "text": "  %37 = tail call contract noundef float @llvm.maxnum.f32(float %36, float %scores.sroa.107.84.vec.extract2457), !dbg !68",
+        "maxdeps": [
+          "%36"
+        ]
+      },
+      "%38": {
+        "line": 322,
+        "text": "  %38 = tail call contract noundef float @llvm.maxnum.f32(float %37, float %scores.sroa.107.88.vec.extract2464), !dbg !68",
+        "maxdeps": [
+          "%37"
+        ]
+      },
+      "%39": {
+        "line": 324,
+        "text": "  %39 = tail call contract noundef float @llvm.maxnum.f32(float %38, float %scores.sroa.107.92.vec.extract2471), !dbg !68",
+        "maxdeps": [
+          "%38"
+        ]
+      },
+      "%40": {
+        "line": 326,
+        "text": "  %40 = tail call contract noundef float @llvm.maxnum.f32(float %39, float %scores.sroa.128.96.vec.extract), !dbg !68",
+        "maxdeps": [
+          "%39"
+        ]
+      },
+      "%41": {
+        "line": 328,
+        "text": "  %41 = tail call contract noundef float @llvm.maxnum.f32(float %40, float %scores.sroa.128.100.vec.extract2486), !dbg !68",
+        "maxdeps": [
+          "%40"
+        ]
+      },
+      "%42": {
+        "line": 330,
+        "text": "  %42 = tail call contract noundef float @llvm.maxnum.f32(float %41, float %scores.sroa.128.104.vec.extract2493), !dbg !68",
+        "maxdeps": [
+          "%41"
+        ]
+      },
+      "%43": {
+        "line": 332,
+        "text": "  %43 = tail call contract noundef float @llvm.maxnum.f32(float %42, float %scores.sroa.128.108.vec.extract2500), !dbg !68",
+        "maxdeps": [
+          "%42"
+        ]
+      },
+      "%44": {
+        "line": 334,
+        "text": "  %44 = tail call contract noundef float @llvm.maxnum.f32(float %43, float %scores.sroa.149.112.vec.extract), !dbg !68",
+        "maxdeps": [
+          "%43"
+        ]
+      },
+      "%45": {
+        "line": 336,
+        "text": "  %45 = tail call contract noundef float @llvm.maxnum.f32(float %44, float %scores.sroa.149.116.vec.extract2515), !dbg !68",
+        "maxdeps": [
+          "%44"
+        ]
+      },
+      "%46": {
+        "line": 338,
+        "text": "  %46 = tail call contract noundef float @llvm.maxnum.f32(float %45, float %scores.sroa.149.120.vec.extract2522), !dbg !68",
+        "maxdeps": [
+          "%45"
+        ]
+      },
+      "%47": {
+        "line": 340,
+        "text": "  %47 = tail call contract noundef float @llvm.maxnum.f32(float %46, float %scores.sroa.149.124.vec.extract2529), !dbg !68",
+        "maxdeps": [
+          "%46"
+        ]
+      },
+      "%54": {
+        "line": 352,
+        "text": "  %54 = tail call contract noundef float @llvm.maxnum.f32(float %47, float %53), !dbg !88",
+        "maxdeps": [
+          "%47"
+        ]
+      },
+      "%61": {
+        "line": 364,
+        "text": "  %61 = tail call contract noundef float @llvm.maxnum.f32(float %54, float %60), !dbg !103",
+        "maxdeps": [
+          "%54"
+        ]
+      }
+    },
+    "including_XOR32_XOR16_maxcall_depth": 34,
+    "warp_final_SSA": "%61",
+    "warpmax_lines": [
+      352,
+      364
+    ],
+    "no_vector_reduce_fmax_or_balanced_scalar_tree": true,
+    "SSAdepth_not_cycle_or_runtime_bottleneck": true
+  },
+  "boundaries": {
+    "rawidx_before_multiply_range_causal_preserved": true,
+    "score_invalid_minusInf_and_has_valid_OR": true,
+    "empty_hasvalidfalse_branch_lines": [
+      1425,
+      1426
+    ],
+    "roundedP_half_PV_and_F32den_same_values_must_preserve": true,
+    "NaN_inf_signedzero_maxnum_order_not_relaxed_or_proven_futureequivalent": true,
+    "empty_den0_num0_finaldivision_NaN_not_force0": true,
+    "no_future_kernel_edits_or_authorization": true
+  }
+}
