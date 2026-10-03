@@ -1,0 +1,35 @@
+{
+  "UTC": "2026-10-03T12:43:35.484076+00:00",
+  "decision": "ONE_SOURCE_GO_v249_C14_BOUNDED_KV",
+  "source_baseSHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+  "inventory10_primary_and2_proposal_SHA_verified": true,
+  "current303_archived84_whole_decorated_AST_exact": true,
+  "currentfactory_AST_SHA": "0f3f1b9e4838a7297a02179eb00f33212d983ca9a6cbf535f631fe66f1e4dce6",
+  "CPP_SHA": "c6957b7274e656c0c03b0ed0959d2c5d322fcb549396cff9eb212fc7e69a7e1a",
+  "IR_SHA": "d11e156eb520ab7534276060467b2412883ac990055d02d553ebeffbf1ff91e9",
+  "actual_dynamic_KV_row_byte_scale_i64": {
+    "%mul109": "shl nsw i32 %11, 4",
+    "%conv128": "zext nneg i32 %mul109 to i64",
+    "%.idx": "shl nuw nsw i64 %conv128, 8"
+  },
+  "source_vector_domain": {
+    "K": 16384,
+    "V": 16384
+  },
+  "max_half": 131071,
+  "last_byte": 262143,
+  "sole_case14_key": [
+    2,
+    512,
+    2,
+    32,
+    64,
+    1,
+    16,
+    true
+  ],
+  "minimal_change": "Inside ORIGINAL block_start guard add bounded_start=min(max(block_start,0),496); ONLY two K/V row expressions use it; guard/mask/Q/Out/headoffset/math/layout/barriers unchanged",
+  "derivation": "complete freshcurrent303 24 AST prefix + one newdecoratedfactory + soleC14 install; no209candidate reuse",
+  "compile_GPU_native_GO": false,
+  "width_and_resource_and_latency": "UNMEASURED; no oldtiming transfer; actualnewcodegen andnative required"
+}
