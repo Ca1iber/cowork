@@ -2,7 +2,7 @@
 
 Unadopted candidate. Current OJ submission remains v303.
 
-Case6 first V panel read earlier. Original v140 compile audit failed on emitted predicate/declaration syntax. Independent v141 existing-code resource/IR checks passed; native fixed16 in progress. Performance and full14 nonregression not established.
+Case6 first V panel read earlier. Original v140 compile audit failed on emitted predicate/declaration syntax. Independent v141 existing-code resource/IR checks passed; Native fixed16 completed: all16 full naive references passed (candidate4/4). Candidate93.2095us versus current30386.5685us, +7.6714% slower; both rounds regressed and ranges do not overlap. Rejected with no promotion or repeat. Current submission remains v303.
 
 Source SHA256: `61c11c38e6ceba3446283f9adf467e8b3c2dacafd81340d498f754aaf891d45a`.
 
