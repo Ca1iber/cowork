@@ -1,0 +1,152 @@
+{
+  "identity": {
+    "version": "v236_worker2_case3_shared_den_reciprocal_subagent2",
+    "source_path": "/tmp/nsa_worker2_v236_case3_shared_den_reciprocal.py",
+    "sourceSHA": "23ab027ee21db05b599988927ddb6057cb18b77fe5a5201c47beafd88ce87587",
+    "source_header": 236,
+    "base_source_path": "/tmp/nsa_leader_v303_readonly.py",
+    "baseSHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "base_top_AST_nodes": 24,
+    "candidate_top_AST_nodes": 26,
+    "complete_C303_AST_prefix_exact": true,
+    "only_new_dispatch_key": [
+      1,
+      256,
+      1,
+      16,
+      128,
+      1,
+      16,
+      true
+    ],
+    "factory": "_make_worker2_case3_shared_den_reciprocal",
+    "original_factory": "_make_power_s1_d128_dense",
+    "complete_decorated_factory_inverse_AST_equal": true,
+    "decorator_AST_exact": true,
+    "exact3imports": [
+      "import tilelang",
+      "import tilelang.language as T",
+      "from tilelang.layout import make_swizzled_layout"
+    ],
+    "only_math_rewrite": [
+      "one partial_sum[0]=1.0/denominator[0] afteroriginaltwo shuffles",
+      "Num32 /=den to*=partial_sum[0]"
+    ],
+    "unchanged_source_cases": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "preserved_C303_gain_cases": [
+      5,
+      6,
+      8,
+      11,
+      12
+    ],
+    "other13_generated_device_code": "UNAVAILABLE_no_export_in_source_only_scope",
+    "no_JIT_SDK_GPU_native_profile_attempts": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "package": "/tmp/nsa_worker2_v236_source_preparation_23ab027e.tar.gz",
+  "bytes": 14681,
+  "SHA": "b89a5e52e2facf867b1847cb23b876416e3704b10ef9d568e3b11ad695c544f9",
+  "scope_inventory": [
+    16,
+    15
+  ],
+  "source_static_waits": [
+    0,
+    0
+  ],
+  "risk": {
+    "scope": "CPU sourceonly, not device numeric verification",
+    "parent_original_partial_sum_mentions": [
+      {
+        "line": 972,
+        "source": "partial_sum = T.alloc_local(1, accum_dtype)"
+      },
+      {
+        "line": 1023,
+        "source": "partial_sum[0] = 0"
+      },
+      {
+        "line": 1025,
+        "source": "partial_sum[0] += probabilities[element].astype(accum_dtype)"
+      },
+      {
+        "line": 1026,
+        "source": "denominator[0] += partial_sum[0]"
+      },
+      {
+        "line": 1048,
+        "source": "denominator[0] += T.shfl_xor(denominator[0], 32, width=64, mask=0xFFFFFFFFFFFFFFFF)"
+      },
+      {
+        "line": 1049,
+        "source": "denominator[0] += T.shfl_xor(denominator[0], 16, width=64, mask=0xFFFFFFFFFFFFFFFF)"
+      }
+    ],
+    "candidate_mentions": [
+      {
+        "line": 1936,
+        "source": "partial_sum = T.alloc_local(1, accum_dtype)"
+      },
+      {
+        "line": 1987,
+        "source": "partial_sum[0] = 0"
+      },
+      {
+        "line": 1989,
+        "source": "partial_sum[0] += probabilities[element].astype(accum_dtype)"
+      },
+      {
+        "line": 1990,
+        "source": "denominator[0] += partial_sum[0]"
+      },
+      {
+        "line": 2014,
+        "source": "partial_sum[0] = 1.0 / denominator[0]"
+      },
+      {
+        "line": 2017,
+        "source": "numerator[chunk * 4 + element] *= partial_sum[0]"
+      },
+      {
+        "line": 2022,
+        "source": "shared[out_slot(lane % 16, feature)] = numerator[chunk * 4 + element]"
+      }
+    ],
+    "lifetime": "originalpartial_sum last use feedsden beforePV; nooriginalread afterden shuffles. Newreciprocal overwrites it unconditionally onlyaftercompleteoriginalden reduction; noallocation/sharedlayout changes",
+    "numerical": "real arithmetic equivalent butFP32bit-equivalence not claimed; reciprocal round+multiply additionalround canchangeF16midpoint",
+    "finite_path": "original actualroundedPden/PV unchanged; intendedPmax256 and16keys givepositivefinite denominator underfiniteofficialscore path. This isnotGPUexp/div accuracy proof",
+    "empty_path": "zeroNum/zeroDen expectedIEEE0/0NaN vs0*InfNaN class; actualfastmath/backendNaNpayload/signedzero/Inf semantics unverified",
+    "flags": "stockuse-fast-math; originalparent32 fdivcontract. Futureactualdtype/flags/reciprocal32multiply andnoAS5/resource/native mustreview separately",
+    "mandatory_original_numeric_gate": "fullnaive1e-2 seed0GradF16/W10R50 unchanged iflater authorized; currentlynotrun",
+    "ISA_and_latency": "UNAVAILABLE_no claim32to1machinecost",
+    "preserved": "QK/Proundden/PV/Num32/globalindex/layout/width/7sync/F32toF16Output/currentC303other13"
+  },
+  "peer": {
+    "target": "worker1 readonly advisory beforeimplementation",
+    "advice": "finite actualroundedPden positive; reciprocal+multiply addsrounding/F16midpoint risk; emptyNaNclassnotpayload guarantee; parentfastmath mayalreadyshare ISA reciprocal; originalfullnaive necessary",
+    "own_adoption": "reuse deadpartialsum onlyafterfulloriginalden; keepallother math/layout/sync; no cost/speedclaim",
+    "peer_code_plan_modified": false,
+    "current_C303_base_retained": true
+  },
+  "stage": "source-only; wholeversion notclosed / no heavierGO"
+}
