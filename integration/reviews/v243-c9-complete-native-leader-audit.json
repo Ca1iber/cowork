@@ -1,0 +1,61 @@
+{
+  "protocol": "v243 original C9 fixed4C16 complete",
+  "source_header": "v242",
+  "source_sha256": "8c8104e2198c76d3234ad6eb227e6a3d7952713f4574ef5ef6275fa7bf0b2f64",
+  "closure_inventories_verified": {
+    "v242_worker2_case9_uint64_V_alias_subagent2": 81,
+    "v243_worker2_case9_existing_uint64_alias_diagnostic_subagent2": 270
+  },
+  "correctness_C_total": [
+    4,
+    16
+  ],
+  "allnative_outer_truewait": 0,
+  "raw_us": {
+    "baseline_v28": [
+      "51.635000",
+      "51.697000",
+      "52.562000",
+      "51.692000"
+    ],
+    "candidate_C242": [
+      "40.658000",
+      "40.607000",
+      "40.402000",
+      "40.238000"
+    ],
+    "parent_C303": [
+      "40.407000",
+      "40.115000",
+      "40.540000",
+      "40.607000"
+    ],
+    "parent_v084": [
+      "40.381000",
+      "40.131000",
+      "40.090000",
+      "40.013000"
+    ]
+  },
+  "medians_us": {
+    "baseline_v28": "51.694500",
+    "candidate_C242": "40.504500",
+    "parent_C303": "40.473500",
+    "parent_v084": "40.110500"
+  },
+  "candidate_vs_current303_pct": "0.076593326497584839462858400",
+  "rounds_vs_current303_pct": [
+    "0.922729192022056084051563500",
+    "-0.6247920440681725756959591900"
+  ],
+  "candidate_vs84_pct": "0.982286433726829633138455000",
+  "ranges_overlap_current303": true,
+  "decision": "REJECT_NO_NET_GAIN; primarymedian not faster, opposing rounds and overlap; no promotion/retry",
+  "native_memory_samples": 1388,
+  "old242_metadata_samples": 85,
+  "diagnostic243_samples": 10,
+  "native_sampled_peak_bytes": 24172568576,
+  "OOM": 3,
+  "limits": "Fouru64 Vwords and fullbit transport materialized, MT40 vs42; no stableend-to-endgain; ISA/occupancy/solecause unproven",
+  "best_submission": "v303 unchanged"
+}
