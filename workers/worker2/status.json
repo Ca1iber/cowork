@@ -1,11 +1,11 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-02T16:33:57.708845+00:00",
-  "state": "V212_COMPILE_COMPLETE_NATIVE_PREPARED_V213_TRACE_PREPARED",
+  "timestamp_utc": "2026-10-03T01:47:02.466901+00:00",
+  "state": "v234_closed_readonly_parent_evidence_analysis",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
-  "source_commit": "f581f927d21b47950e7e9914e2833f502050d963",
+  "source_commit": "fbb1a6b5e21b6ba402bd80abc06b32b6ec3ff6d7",
   "common_base": "7bb0e33b35a7b5a02a8fb42e99d4151617316572",
   "owned_cases": [
     1,
@@ -21,32 +21,54 @@
   ],
   "current": {
     "version": "v234",
-    "stage": "CB13Case2actual_codegen0_four_source_nativeprepared_awaitGO",
+    "stage": "closed_local_four_source_case2_inconclusive",
     "sourceSHA": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
     "parent_CB13SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
-    "compilewaits": [
+    "compile_stage_actualwaits": [
       0,
       0,
       0
     ],
-    "semantic_gate": 0,
-    "resource": [
-      40,
-      20,
-      8,
+    "native_outer_actualwait": 0,
+    "native_job_actualwaits": [
       0,
-      2048
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
-    "planned_C_total_refs": [
+    "actual_clean_C_total_refs": [
       4,
       16
     ],
-    "planned_sources": 4,
-    "native": 0,
-    "stdlibpreflightwait": 0,
+    "native_samples": 1263,
+    "compile_samples": 93,
+    "resource_P_C_MT_ST": [
+      [
+        42,
+        20
+      ],
+      [
+        40,
+        20
+      ]
+    ],
     "OOM": 3,
     "live_processes": 0,
-    "old233case2positive_unwaived": true
+    "verdict": "inconclusive_range_overlap",
+    "new_GPU_authorization": false,
+    "old233_case2positive_unwaived": true
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -1854,10 +1876,59 @@
       "SC135failed": "independent_preserved_no_pool",
       "validation_owner": "leader; casekernelownershipunchanged",
       "live_processes": 0
+    },
+    "v234_preparation_snapshot": {
+      "version": "v234",
+      "stage": "CB13Case2actual_codegen0_four_source_nativeprepared_awaitGO",
+      "sourceSHA": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
+      "parent_CB13SHA": "cb30f2f7982c3415af53a5c137f5563ec849eed7fe85228a4b05384e6b1e1bcc",
+      "compilewaits": [
+        0,
+        0,
+        0
+      ],
+      "semantic_gate": 0,
+      "resource": [
+        40,
+        20,
+        8,
+        0,
+        2048
+      ],
+      "planned_C_total_refs": [
+        4,
+        16
+      ],
+      "planned_sources": 4,
+      "native": 0,
+      "stdlibpreflightwait": 0,
+      "OOM": 3,
+      "live_processes": 0,
+      "old233case2positive_unwaived": true
+    },
+    "v234_closed": {
+      "source_commit": "fbb1a6b5e21b6ba402bd80abc06b32b6ec3ff6d7",
+      "sourceSHA": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
+      "scope_inventory": [
+        274,
+        273
+      ],
+      "clean_C_inclusive": [
+        4,
+        16
+      ],
+      "native_samples": 1263,
+      "compile_samples": 93,
+      "OOM": 3,
+      "median_delta_vsCB13": -1.6948216848846065,
+      "median_delta_vsP84": -4.688754482684776,
+      "both_rounds_negative": true,
+      "control_ranges_overlap": true,
+      "status": "inconclusive_no_promotion_no_repeat"
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader review actual212native and213trace helpers; no execution withoutseparateGO",
+  "next_step": "Only readonly current parent CPP/IR/profile evidence and at most one bounded next mechanism proposal; no source edits or heavy until leader selection",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",

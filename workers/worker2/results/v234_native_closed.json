@@ -1,0 +1,179 @@
+{
+  "source_commit": "fbb1a6b5e21b6ba402bd80abc06b32b6ec3ff6d7",
+  "source_bundle": "/tmp/nsa_worker2_code_fbb1a6b5e21b.bundle",
+  "bundle_SHA": "017b1ad052707402c6135bd36580479bc9def330ff8f9e7f28ef9930619aad89",
+  "bundle_bytes": 740940,
+  "manifest": "race_tests/nsa/rep/v234_worker2_case2_bounded_kv_index_subagent2/archive_sha256.json",
+  "scope_files": 274,
+  "inventory_files": 273,
+  "result": {
+    "version": "v234_worker2_case2_bounded_kv_index_subagent2",
+    "status": "closed_local_screen_inconclusive_range_overlap",
+    "candidate_source_SHA": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
+    "source_header": 234,
+    "only_changed_case": 2,
+    "parent": "CB13 immutable cb30 with18completeASTprefix",
+    "other13_source_unchanged": true,
+    "other13_generated_code": "UNAVAILABLE_not_exported_in_v234",
+    "actual_compile_stage_waits": [
+      0,
+      0,
+      0
+    ],
+    "actual_outer_compile_wait": 0,
+    "actual_native_outer_wait": 0,
+    "actual_native_job_waits": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "observed_clean_C_total_fullrefs": [
+      4,
+      16
+    ],
+    "native_samples": 1263,
+    "compile_samples": 93,
+    "OOM_before_after": [
+      3,
+      3
+    ],
+    "observed_whole_cgroup_peak_bytes": 24507289600,
+    "all_raw_values_preserved": true,
+    "comparisons": {
+      "case": 2,
+      "samples_us": {
+        "baseline_v28": [
+          9.235999999999999,
+          9.897,
+          9.923,
+          9.482000000000001
+        ],
+        "parent_v084": [
+          9.211,
+          9.472,
+          11.346,
+          9.027000000000001
+        ],
+        "parent_CB13": [
+          9.052,
+          9.457,
+          9.062000000000001,
+          8.678
+        ],
+        "candidate_C234": [
+          8.97,
+          9.211,
+          8.689,
+          8.837
+        ]
+      },
+      "medians_us": {
+        "baseline_v28": 9.6895,
+        "parent_v084": 9.3415,
+        "parent_CB13": 9.057,
+        "candidate_C234": 8.903500000000001
+      },
+      "ranges_us": {
+        "baseline_v28": [
+          9.235999999999999,
+          9.923
+        ],
+        "parent_v084": [
+          9.027000000000001,
+          11.346
+        ],
+        "parent_CB13": [
+          8.678,
+          9.457
+        ],
+        "candidate_C234": [
+          8.689,
+          9.211
+        ]
+      },
+      "candidate_delta_pct": {
+        "parent_CB13": -1.6948216848846065,
+        "parent_v084": -4.688754482684776,
+        "baseline_v28": -8.111873677692339
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": 9.5665,
+            "parent_v084": 9.3415,
+            "parent_CB13": 9.2545,
+            "candidate_C234": 9.0905
+          },
+          "candidate_delta_pct": {
+            "parent_CB13": -1.7721108649845996,
+            "parent_v084": -2.6869346464700516,
+            "baseline_v28": -4.975696440704535
+          }
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": 9.7025,
+            "parent_v084": 10.1865,
+            "parent_CB13": 8.870000000000001,
+            "candidate_C234": 8.763
+          },
+          "candidate_delta_pct": {
+            "parent_CB13": -1.2063134160090305,
+            "parent_v084": -13.974377853040798,
+            "baseline_v28": -9.683071373357388
+          }
+        }
+      ],
+      "ranges_overlap": {
+        "parent_CB13": true,
+        "parent_v084": true,
+        "baseline_v28": false
+      },
+      "positive_median_or_round_vs_CB13_P84": false
+    },
+    "no_promotion": true,
+    "no_retry": true,
+    "no_new_full14_profile_trace": "not_authorized_not_run",
+    "previous_v233_case2_positive_and11_269": "retained_independent_not_explained",
+    "resource_P_C": {
+      "MT": [
+        42,
+        40
+      ],
+      "ST": [
+        20,
+        20
+      ],
+      "static_max_warps": [
+        8,
+        8
+      ],
+      "stack_bytes": [
+        0,
+        0
+      ],
+      "dynamic_shared_bytes": [
+        2048,
+        2048
+      ]
+    },
+    "final_ISA_transaction_width": "UNAVAILABLE",
+    "cause_of_local_delta": "UNKNOWN",
+    "current_live_handles": 0
+  }
+}
