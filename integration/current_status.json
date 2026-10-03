@@ -29,7 +29,7 @@
     "all14_nonregression": "UNPROVEN"
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-02T23:27:42.754088+00:00",
+  "updated_at_utc": "2026-10-03T00:06:11.244455+00:00",
   "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
   "worker1": {
     "cases": [
@@ -38,19 +38,19 @@
       11,
       12
     ],
-    "last_closed_version": "v132",
-    "last_closed_source_commit": "40c988e5559093c504c32abe81fe96e5f1e4c3d6",
-    "last_result": "C8 SC2.187872% selectedstable/2roundnegative/nooverlap/12ref4C PASS;220closedhash27actualhash995samples/OOM13/allwait0",
-    "active_version": "v131",
-    "stage": "131 actual5compilewait0/24codehash/CPPonly2KVaddr/hostsame/32MMA/98MTvs100 reviewed; closecompile rawmemorypending; 134 C6nativehelpers PREPONLY; 133 C301full14frozen queued0GPU",
-    "authorized_scope": "131 closure/read-only evidence +134C6native helper text;133 remainsqueuednoGO; no nativeprofileautomatic",
-    "native_GO": false,
+    "last_closed_version": "v134",
+    "last_closed_source_commit": "1b17a26509200122acb351911e0c508c7f66d56b",
+    "last_result": "C6 selectedSC -7.524024%, bothround negative/nooverlap/4C12ref PASS;217closed27actualhash995samples/OOM13/allwait0",
+    "active_version": "v135",
+    "stage": "first original C303 integratedall14 live, original launcher636887/start100916290 held; 16fresh/56C224refs, results pending",
+    "authorized_scope": "first fixed16all14 originalW10R50/seed0GradF16tolerance1e-2;6G28OOM13/allguards/no retry/no overlap/newSDK/profile/promote",
+    "native_GO": true,
     "source_audit": "integration/reviews/v131-c6-source-leader-audit.json",
     "candidate_sha256": "cfeb8e5d18adb3c0d0c887633fc8dea1778ebfdfc100fdc9c9a77544c514515d",
-    "approval": "integration/reviews/v131-c6-compile-approval.json",
-    "runtime_audit": "integration/reviews/v131-c6-compiled-leader-audit.json",
-    "source_SHA": "ccc53385ebe87ce3fdd7cb9b76a861c6aaf04780e6893b2b19b53fd95803daaa",
-    "source_header": "v131 SOURCEONLY",
+    "approval": "integration/reviews/v135-c303-full14-approval.json",
+    "runtime_audit": "integration/reviews/v134-c6-native-leader-audit.json",
+    "source_SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "source_header": "v303 immutable",
     "compile_GO": false,
     "actual_resource": [
       98,
@@ -60,7 +60,9 @@
       8192
     ],
     "profile_GO": false,
-    "review_correction": "prior126terminaldefect claim camefromdisplaytruncation; originalsourcecorrect, onlyformattingchange"
+    "review_correction": "prior126terminaldefect claim camefromdisplaytruncation; originalsourcecorrect, onlyformattingchange",
+    "active_PID": 636887,
+    "active_starttime_ticks": 100916290
   },
   "worker2": {
     "cases": [
@@ -75,9 +77,9 @@
       13,
       14
     ],
-    "last_closed_version": "v231",
-    "last_closed_source_commit": "7a1dc6b3a8378f2692283894c06635a2446265f4",
-    "active_version": "v232",
+    "last_closed_version": "v232",
+    "last_closed_source_commit": "8e42e89305c9ca0673ab013f42275ea725b08cd5",
+    "active_version": "C303_peer_review",
     "source_SHA": "1d038ce6cd14ace06178c8398e19e88f7c4f7955118c74b8add4370410d20685",
     "source_header": "v232 SOURCEONLY",
     "actual_resource": [
@@ -88,20 +90,16 @@
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "first original C5fixed12 nativeGO/inprogress held original owner436007/controller436008; source1d038 unchanged",
-    "authorized_scope": "one original C5 B28-P84-C232-C232-P84-B28x2/4C12refs,3G28OOM3 allguards/no retry",
-    "native_GO": true,
+    "stage": "read-only C303 review passed, exact C5/C6 AST origins shared; currentC12 alreadyi32/two hypotheses communicated; no peer edits/GPU",
+    "authorized_scope": "read-only peer evidence review andowncoworkcommunication",
+    "native_GO": false,
     "approval": "integration/reviews/v232-c5-native-approval.json",
-    "last_result": "pairedC8 4raw10finite explicitFalse/104SHA/638samples/allwait0/OOM3, same shared100/conf0/noWG latency reduction, nosolecause",
-    "runtime_audit": "integration/reviews/v232-c5-compiled-leader-audit.json",
+    "last_result": "C5 selectedsub2 -1.303303%, bothround negative/nooverlap/gap.015us;4C12PASS/238hash/964native+92compile samples/OOM3/allwait0",
+    "runtime_audit": "integration/reviews/v232-c5-closed-leader-audit.json",
     "compile_GO": false,
     "profile_GO": false,
     "retained_local_gain": "v230 C8 -1.960300%; SC/full14/OJ unproven",
-    "source_audit": "integration/reviews/v232-c5-source-leader-audit.json",
-    "active_PID": 436008,
-    "active_starttime_ticks": 335536021,
-    "original_owner_PID": 436007,
-    "original_owner_starttime_ticks": 335536018
+    "source_audit": "integration/reviews/v232-c5-source-leader-audit.json"
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
@@ -122,7 +120,7 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-smoke/report.md"
   },
-  "leader_next": "Review134 C6 nativehelper and finish131memoryaudit; runC5/C6 individualtests inparallel, then compose confirmed gains and one full14 protocol. KeepC301133 queued if new candidates fail; no bestpromotion beforeverifiedall14.",
+  "leader_next": "Wait same live135 originalhandle, audit all16rawCSV224actualPASS and allpositive/outlier/rounds. No newsource orbestpromotion before integratedscope verified.",
   "pending_integration": {
     "version": "v300",
     "path": "/root/tilelang-metax/race_tests/nsa/submission/v300_leader_c9_bounded_index_full14_sc-16g-2/submission.py",
@@ -151,6 +149,22 @@
     "source": "C3018519 immutable",
     "prepared_planSHA": "ee81116ce223862ecc8b0adbb1b07fc98b09a02a0af487074fdfbc3dd38ecd16",
     "prepared_manifestSHA": "e447deb01d1588364d7330544199b4d8b6c2c7940b07a3088f9be39e8d853767",
-    "status": "frozenhelper package received, review/GO pending; no automaticfull14; optional next leader composition only after C5/C6 stable gains"
+    "status": "133 originalC301 frozen retained unused; superseded by first135 sourceC303 protocol"
+  },
+  "pending_integrated_candidate": {
+    "version": "v303",
+    "source_SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "path": "/root/tilelang-metax/race_tests/nsa/submission/v303_leader_c5_c6_c8_bounded_index_sc-16g-2/submission.py",
+    "commit": "ea3af7f152fc72459d72cb58b0c5470ec32803e1",
+    "branch": "code/integration-c5-c6-c8-review",
+    "only_changed_cases": [
+      5,
+      6,
+      8
+    ],
+    "other11_CB13_preserved": true,
+    "C11_C12_retained": true,
+    "source_static_and_independent_peer_review": true,
+    "full14_correctness_nonregression": "first135 underway; no bestpromotion/OJclaim"
   }
 }

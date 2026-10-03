@@ -1,0 +1,140 @@
+{
+  "version": "v232",
+  "closed_source_commit": "8e42e89305c9ca0673ab013f42275ea725b08cd5",
+  "closed_scope": 239,
+  "closed_inventory_verified": 238,
+  "candidate_sourceSHA": "1d038ce6cd14ace06178c8398e19e88f7c4f7955118c74b8add4370410d20685",
+  "raw_CSV_rows": [
+    {
+      "run": 1,
+      "variant": "baseline_v28",
+      "us": 31.084,
+      "raw_CSV_SHA": "c62acc94a76b9784eb441386a96720c6cdcae4a3a30529013b0bfb855d1450cc"
+    },
+    {
+      "run": 2,
+      "variant": "parent_v084",
+      "us": 24.325,
+      "raw_CSV_SHA": "5117da52babcb6a92bdfb6cf7e4feac17aef904b50266775833b41cc32d6a365"
+    },
+    {
+      "run": 3,
+      "variant": "power_v232",
+      "us": 23.849,
+      "raw_CSV_SHA": "57c26c137d7265189a72559c984b272adfcea5cba3a31d1e50f341fa5c61a039"
+    },
+    {
+      "run": 4,
+      "variant": "power_v232",
+      "us": 24.218,
+      "raw_CSV_SHA": "36fb56ac528eab2a8891de3b9744235271f9e7d8531d8a868d9df82cf023ee17"
+    },
+    {
+      "run": 5,
+      "variant": "parent_v084",
+      "us": 24.785999999999998,
+      "raw_CSV_SHA": "92b1663a921501bfa46d450397d3b03487dfab72609248ae4ba41b0e41a6765a"
+    },
+    {
+      "run": 6,
+      "variant": "baseline_v28",
+      "us": 31.022000000000002,
+      "raw_CSV_SHA": "d479c284d1cb8e9ef6b83e961ed9f2450d02839c8ca7412d67818b06b1a5fa07"
+    },
+    {
+      "run": 7,
+      "variant": "baseline_v28",
+      "us": 30.684,
+      "raw_CSV_SHA": "94e6d78bc574e7aed18b5eea793ce6ff3ae1328381be6afcf5482d65228c2e71"
+    },
+    {
+      "run": 8,
+      "variant": "parent_v084",
+      "us": 24.407,
+      "raw_CSV_SHA": "c73825957b6444a20983b3cae2460540972d09964efd224d2cf1f01136f79437"
+    },
+    {
+      "run": 9,
+      "variant": "power_v232",
+      "us": 24.247999999999998,
+      "raw_CSV_SHA": "832c1e3a1502b2f016b909f75b7e964cc6f983a4393b7fc9aeb37fb6152b4efc"
+    },
+    {
+      "run": 10,
+      "variant": "power_v232",
+      "us": 24.31,
+      "raw_CSV_SHA": "6f74425ebdda0df8a682307659cfce2c279b0f71941429a8acd88872a39cdd15"
+    },
+    {
+      "run": 11,
+      "variant": "parent_v084",
+      "us": 24.698999999999998,
+      "raw_CSV_SHA": "cdb7900be88abff8a1ed2897c5c20953d978e5588c8451b665ff5c93783650ae"
+    },
+    {
+      "run": 12,
+      "variant": "baseline_v28",
+      "us": 30.700000000000003,
+      "raw_CSV_SHA": "80d6d45b256ded21305157f391a9a128f86f53f7473b2a7a28cdd9869ba3a735"
+    }
+  ],
+  "native_original_wait_record": {
+    "owner": {
+      "pid": 436007,
+      "ppid": 1372,
+      "pgid": 436007,
+      "starttime_ticks": 335536018,
+      "exe": "/opt/conda/bin/python3.12"
+    },
+    "identity": {
+      "pid": 436008,
+      "ppid": 436007,
+      "pgid": 436008,
+      "starttime_ticks": 335536021,
+      "exe": "/opt/conda/bin/python3.12"
+    },
+    "argv": [
+      "/opt/conda/bin/python",
+      "-S",
+      "/root/tilelang-metax/race_tests/nsa/hack/v232_worker2_c5_bounded_kv_index_subagent2/run_native_screen.py"
+    ],
+    "originalPopen_held": true,
+    "actualwait": 0
+  },
+  "all12native_exit0": true,
+  "full_naive_PASS_candidate": 4,
+  "full_naive_PASS_inclusive": 12,
+  "medians_us": {
+    "baseline_v28": 30.861000000000004,
+    "parent_v084": 24.552999999999997,
+    "power_v232": 24.232999999999997
+  },
+  "ranges_us": {
+    "baseline_v28": [
+      30.684,
+      31.084
+    ],
+    "parent_v084": [
+      24.325,
+      24.785999999999998
+    ],
+    "power_v232": [
+      23.849,
+      24.31
+    ]
+  },
+  "candidate_vsP84_pct": -1.3033030586893646,
+  "rounds_vsP84_pct": [
+    -2.1257966646983317,
+    -1.1159532440027764
+  ],
+  "all_candidate_lt_all_parent": true,
+  "narrowest_gap_us": 0.015000000000000568,
+  "native_raw_memory_samples": 964,
+  "total_native_plus_compile_samples": 1056,
+  "sampled_peak_bytes_not_upper_bound": 24312569856,
+  "OOM_counters": [
+    3
+  ],
+  "status": "selected subagent2 local C5 gain; SC/full14/OJ unproven"
+}
