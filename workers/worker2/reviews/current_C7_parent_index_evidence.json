@@ -1,0 +1,122 @@
+{
+  "scope": "readonlycurrent303 ownedCase7; no newsource/import/SDK/GPU",
+  "exactkey": [
+    1,
+    4096,
+    1,
+    16,
+    64,
+    1,
+    16,
+    true
+  ],
+  "current303SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+  "current_factory": "_make_power_s1_case4_dense",
+  "decorated_factory_AST_SHA": "0f3f1b9e4838a7297a02179eb00f33212d983ca9a6cbf535f631fe66f1e4dce6",
+  "current_factory_equals_P84": true,
+  "C303_no_C7_override": true,
+  "actual_C7_CPP": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case7_stage1.device.cpp",
+  "CPP_SHA": "85b2d06253ada7098991de3035caf9d03156c7914175fe2e03f0544756c498fe",
+  "actual_C7_host": "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case7_stage1.host.cpp",
+  "hostSHA": "1c97b5ad4f088c16aa9f7f01e19a2058d3d04004e27ab92aa2491d872788d26c",
+  "scoped_geometry": [
+    4096,
+    1,
+    64,
+    1,
+    1,
+    2048
+  ],
+  "exact_sameCPP_parent_IR_reuse": {
+    "path": "/root/tilelang-metax/race_tests/nsa/rep/v208_worker2_c9_q_register_transpose_subagent2/codegen/parent_v084/case9_stage1.device.ll",
+    "SHA": "722c5764812db2d76ae3eb666aa824d0e6409fd402eba857001ef7368717bfea",
+    "purpose": "instructiononly exactCPP85b2/SDK5d identity; no C9 native/counters borrowed",
+    "K_scaled_early64_chain": [
+      {
+        "line": 269,
+        "instruction": "tail call void @llvm.mxc.barrier.warp(), !dbg !71"
+      },
+      {
+        "line": 270,
+        "instruction": "fence syncscope(\"warp\") acquire, !dbg !72"
+      },
+      {
+        "line": 271,
+        "instruction": "%conv102 = zext nneg i32 %mul93 to i64"
+      },
+      {
+        "line": 272,
+        "instruction": "%mul107 = zext nneg i32 %mul8 to i64"
+      },
+      {
+        "line": 273,
+        "instruction": "%invariant.gep = getelementptr inbounds %struct.__half, ptr addrspace(4) %K.coerce, i64 %mul107, !dbg !73"
+      },
+      {
+        "line": 274,
+        "instruction": "%.idx = shl nuw nsw i64 %conv102, 7, !dbg !74"
+      },
+      {
+        "line": 275,
+        "instruction": "%13 = getelementptr inbounds i8, ptr addrspace(4) %invariant.gep, i64 %.idx, !dbg !74"
+      },
+      {
+        "line": 276,
+        "instruction": "%qk_fetch.sroa.0.0.copyload1003 = load i64, ptr addrspace(4) %13, align 16, !dbg !75"
+      },
+      {
+        "line": 277,
+        "instruction": "%qk_fetch.sroa.10.0..sroa_idx = getelementptr inbounds i8, ptr addrspace(4) %13, i64 8, !dbg !75"
+      },
+      {
+        "line": 278,
+        "instruction": "%qk_fetch.sroa.10.0.copyload1006 = load i64, ptr addrspace(4) %qk_fetch.sroa.10.0..sroa_idx, align 8, !dbg !75"
+      },
+      {
+        "line": 279,
+        "instruction": "store i64 %qk_fetch.sroa.0.0.copyload1003, ptr addrspace(3) %add.ptr36, align 8, !dbg !76"
+      },
+      {
+        "line": 280,
+        "instruction": "store i64 %qk_fetch.sroa.10.0.copyload1006, ptr addrspace(3) %add.ptr36.1, align 8, !dbg !76"
+      },
+      {
+        "line": 413,
+        "instruction": "%mul343 = shl nuw nsw i64 %conv102, 6"
+      }
+    ],
+    "fresh_C303_C7_generated_code": "UNAVAILABLE_no export"
+  },
+  "actual_C7_CPP_sites": {
+    "rawidx_multiply_line": 46,
+    "K_global_uint4_load_line": 51,
+    "V_global_uint4_load_line": 125,
+    "all_global_width": "sourceCPPuint4 intent16B, finalISA unknown"
+  },
+  "official_clamp_address_CPU_proof": {
+    "legalidx": [
+      0,
+      255
+    ],
+    "rawstart": [
+      0,
+      4080
+    ],
+    "bound4080_identity": true,
+    "complete16B_KV_vectors": 65536,
+    "maxhalf": 262143,
+    "lastbyte": 524287,
+    "alignment": 16,
+    "negative_and_SEQ4096sentinel": "originalrawguardfalse, no actualKV read; do notextendint32overflowcontract"
+  },
+  "C7_actualprofiler": "UNAVAILABLE_no matching C7 counterrecords",
+  "C7_resource_IR_codeidentity_only": [
+    42,
+    20,
+    8,
+    0,
+    2048
+  ],
+  "bottleneck_speed": "UNKNOWN",
+  "unchanged_original_source_math": "Q/PV/Num16/roundedPden/causalmask/output/all16Baddresses+counts/7sync preserved iffutureonlyKVbound"
+}
