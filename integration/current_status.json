@@ -35,7 +35,7 @@
     "installed_identically_both_containers": true
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-03T04:13:31.830146+00:00",
+  "updated_at_utc": "2026-10-03T04:16:00.807318+00:00",
   "all14_nonregression": "Observed OJ score nonregression for user-attributed v303 run: all14AC/1212 vs84 1204; exact uploadedSHA and repeated latency nonregression unproven",
   "worker1": {
     "cases": [
@@ -48,7 +48,7 @@
     "last_closed_source_commit": "c9dd8149eeb6afc5cea76ab018ac5721b38bbeda",
     "last_result": "Full257SHA closed:compile5wait0/99memory;native1C4refs/job5unknownguard/373memory/allouterwait1, no performance verdict; unknown pair latermissing",
     "active_version": "v139",
-    "stage": "v139 actualcompile102SHA99samples/allwait0/8IdxsameSSA_KVguards/68-44unchanged audited; originalC12native20SHA helper reviewed and GO issued, fresh launch pending",
+    "stage": "Original C12 indexreuse139 native live; rootmatched708682/start102413538/controller708684/start102413552,GOplan4c2235d1,job02P84",
     "authorized_scope": "Only originalC12 fixedfour-source16 fullnaive1e-2/seed0GradF16/W10R50/4C16, SC7+21+4/32limit/runtime28/allotherguards,no retry/source/SDK/profile",
     "native_GO": true,
     "source_audit": "integration/reviews/v139-c12-source-leader-audit.json",
@@ -72,11 +72,11 @@
     "compile_checkpoint_commit": "56d7669ada472c70ed92da779071ead378b109d1",
     "original_launcher_PID": 667749,
     "original_launcher_starttime": 101535434,
-    "controller_PID": 686811,
-    "controller_starttime": 101938211,
-    "GO_plan_SHA": "ff8b8d8a99b4a1299bf8f8dd8a3480bc6676dbbe8e8d509107bbc251139e0198",
-    "last_live_verified_utc": "2026-10-03T02:54:52.017089+00:00",
-    "active_PID": null,
+    "controller_PID": 708684,
+    "controller_starttime": 102413552,
+    "GO_plan_SHA": "4c2235d187ab4f34f8cf892abca770cd75469b66a4e2ddf8d5734fdc252eabf2",
+    "last_live_verified_utc": "2026-10-03T04:16:00.807328+00:00",
+    "active_PID": 708682,
     "latest_terminal_evidence": {
       "jobs_created": 10,
       "clean_candidate_inclusive": [
@@ -98,8 +98,8 @@
     "source_GO": true,
     "base_source_SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
     "next_decision": "integration/reviews/v138-c12-memory-budget-preparation.json",
-    "original_owner_PID": 686808,
-    "original_owner_starttime": 101938152,
+    "original_owner_PID": 708682,
+    "original_owner_starttime": 102413538,
     "original_owner_terminal_wait1": true
   },
   "worker2": {
@@ -115,7 +115,7 @@
       13,
       14
     ],
-    "last_closed_version": "v236_rejected",
+    "last_closed_version": "v237_inconclusive",
     "last_closed_source_commit": "92ac5b619190fac6eed4f72abfb9264e8b1dc95c",
     "active_version": "v237",
     "source_SHA": "d7906be2f14fe771a2b129cb715115d6cc0c199ac471e85179f6687637554c0f",
@@ -128,19 +128,19 @@
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "Reported C7 original16native/allwait0/4C16PASS; median−.0328% vs303 but r1positive/rangesoverlap -> inconclusive, independent raw native audit pending",
+    "stage": "C7fixed16 independently audited286SHA/1421samples/allwait0/4C16PASS; tinynegative median butfirstpositive/rangeoverlap -> inconclusive; exactC7profile PREP",
     "authorized_scope": "Close C7originalraw locally and prepare exactcurrent303C7 limitedprofile text/stdlib only; no actualprofile/GPU/source/SDK",
     "native_GO": false,
     "approval": "integration/reviews/v236-c3-native-approval.json",
-    "last_result": "C10.171us/P30310.1195us +.508918%; both rounds positive; rejected/no promotion/no rerun",
-    "runtime_audit": "integration/reviews/v236-c3-closed-leader-audit.json",
+    "last_result": "C24.3995/30324.4075us −.0327768%; first+1.2186686/second−.3713101; overlap/no promote/no retry",
+    "runtime_audit": "integration/reviews/v237-c7-closed-leader-audit.json",
     "compile_GO": false,
     "profile_GO": false,
     "retained_local_gain": "v230 C8 -1.960300%; SC/full14/OJ unproven",
     "source_audit": "integration/reviews/v237-c7-source-leader-audit.json",
     "candidate_sha256": "d7906be2f14fe771a2b129cb715115d6cc0c199ac471e85179f6687637554c0f",
     "actual_audit": "integration/reviews/v237-c7-actual-leader-audit.json",
-    "result": "integration/reviews/v236-c3-results.md",
+    "result": "integration/reviews/v237-c7-results.md",
     "next_version": "v236",
     "next_case": 3,
     "next_decision": "integration/reviews/v235-c3-parent-ir-preparation-decision.json",
@@ -156,21 +156,7 @@
     "last_live_verified_utc": "2026-10-03T02:52:49.035485+00:00",
     "active_PID": null,
     "original_owner_terminal_wait0": true,
-    "reported_result": {
-      "candidate_us": 24.3995,
-      "C303_us": 24.4075,
-      "vs303_pct": -0.0327768,
-      "rounds_pct": [
-        1.2186686,
-        -0.3713101
-      ],
-      "vsP84_pct": 0.3908741,
-      "decision": "inconclusive no promotion/no retry",
-      "candidate_inclusive_correctness": [
-        4,
-        16
-      ]
-    }
+    "last_closed_source_commit_local": "1cd70383312429b0b380d4350cef2cfb9418b6bb"
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
@@ -191,7 +177,7 @@
     "rootcause": "UNPROVEN",
     "evidence": "evidence/cycle-trace-smoke/report.md"
   },
-  "leader_next": "Hold originalC12native handle after fresh launch; independently audit C7raw16 and review exactC7profile PREP; current OJ3031212 unchanged, fullraw stayslocal.",
+  "leader_next": "Hold original139 C12native tofixed16; review exactcurrent303 C7profile prep; no archive/privatehistory externalpush, current3031212 unchanged.",
   "pending_integration": {
     "version": "v300",
     "path": "/root/tilelang-metax/race_tests/nsa/submission/v300_leader_c9_bounded_index_full14_sc-16g-2/submission.py",
