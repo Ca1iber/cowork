@@ -29,7 +29,7 @@
     "all14_nonregression": "UNPROVEN"
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-03T01:45:38.032410+00:00",
+  "updated_at_utc": "2026-10-03T01:50:34.815533+00:00",
   "all14_nonregression": "UNPROVEN: v115 positives retained; no newer OJ scores",
   "worker1": {
     "cases": [
@@ -42,7 +42,7 @@
     "last_closed_source_commit": "4ff507aa7762013fef97fc8ec4c2c1ed6f87db42",
     "last_result": "SC13clean182PASS/56candidate; job14CB13 unknown643787RSS>1G guard→owned−15/ref0/15,16unstarted;4outer1/OOM13/247hash1701samples; no formalcomparison orpromotion",
     "active_version": "v136",
-    "stage": "Actual compile passed: maxnum depth34→12,37sites,64MMA,68MT44ST unchanged,30hash/100memorysamples/OOM13; native GO issued, fresh admission and launch pending",
+    "stage": "Original C12 fixed16 native live: root verified launcher667749/start101535434/controller667751/start101535449, Python3.12; first job started",
     "authorized_scope": "One original case12 four-source fixed16; 4candidate/16inclusive fullnaive seed0GradF16tol1e-2W10R50, unchanged guards; no retry/profile/newsource",
     "native_GO": true,
     "source_audit": "integration/reviews/v136-c12-source-leader-audit.json",
@@ -63,7 +63,13 @@
     "review_correction": "prior126terminaldefect claim camefromdisplaytruncation; originalsourcecorrect, onlyformattingchange",
     "SC_unknown_prior_status": "readonly643787and643781nowmissing; wholeCG6199189504<6GiB/OOM13. Newactualpreflight required, no retryof135/guardwaiver.",
     "actual_audit": "integration/reviews/v136-c12-actual-leader-audit.json",
-    "compile_checkpoint_commit": "56d7669ada472c70ed92da779071ead378b109d1"
+    "compile_checkpoint_commit": "56d7669ada472c70ed92da779071ead378b109d1",
+    "original_launcher_PID": 667749,
+    "original_launcher_starttime": 101535434,
+    "controller_PID": 667751,
+    "controller_starttime": 101535449,
+    "GO_plan_SHA": "e263247e3c1513a8c1639afe02437f1f7be55d13506b456142d6134db73ee71c",
+    "last_live_verified_utc": "2026-10-03T01:50:34.815545+00:00"
   },
   "worker2": {
     "cases": [
@@ -78,8 +84,8 @@
       13,
       14
     ],
-    "last_closed_version": "v233",
-    "last_closed_source_commit": "794a069eb3977713f1a1afc51e04fcb928302dc5",
+    "last_closed_version": "v234",
+    "last_closed_source_commit": "fbb1a6b5e21b6ba402bd80abc06b32b6ec3ff6d7",
     "active_version": "v234",
     "source_SHA": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
     "source_header": "v234",
@@ -91,29 +97,19 @@
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "Actual compile passed: C2 only K/V bounded coordinates,40MT20ST; worker reports original fixed16 completed, independent raw audit pending",
+    "stage": "Closed original C2 fixed16; 4C16 PASS; independent273hash/1356samples/truewait0 audit complete; CPU-only next mechanism analysis",
     "authorized_scope": "Close v234 raw results and CPU-only next-candidate analysis; no new GPU/source/SDK until next decision",
     "native_GO": false,
     "approval": "integration/reviews/v234-c2-native-approval.json",
-    "last_result": "Sub2 56C224 fullnaive PASS/all16wait0/194hash2030samples/OOM3; C6−8.099% clear, C5−.535/C8−1.258 withrangeoverlap; positivesCB2,9/P84 1,2,7 retained/no promote",
-    "runtime_audit": "integration/reviews/v233-full14-leader-audit.json",
+    "last_result": "C2 8.9035us vsCB13−1.694822%, both rounds negative but ranges overlap CB13/P84; inconclusive/no promote/no retry",
+    "runtime_audit": "integration/reviews/v234-c2-closed-leader-audit.json",
     "compile_GO": true,
     "profile_GO": false,
     "retained_local_gain": "v230 C8 -1.960300%; SC/full14/OJ unproven",
     "source_audit": "integration/reviews/v234-c2-source-leader-audit.json",
     "candidate_sha256": "7c9838e1471baddf3dadda12a899f7beba902e3dc769154ba2d246f328cd65c0",
     "actual_audit": "integration/reviews/v234-c2-actual-leader-audit.json",
-    "reported_native_result": {
-      "candidate_inclusive_PASS": [
-        4,
-        16
-      ],
-      "candidate_median_us": 8.9035,
-      "vsCB13_pct": -1.694822,
-      "vsP84_pct": -4.688754,
-      "range_overlap": true,
-      "decision": "inconclusive/no promotion/no remeasurement; independent raw audit pending"
-    }
+    "result": "integration/reviews/v234-c2-results.md"
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
