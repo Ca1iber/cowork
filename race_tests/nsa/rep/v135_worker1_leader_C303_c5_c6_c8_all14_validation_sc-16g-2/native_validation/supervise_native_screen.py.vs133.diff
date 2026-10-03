@@ -1,0 +1,10 @@
+--- v133_worker1_leader_C301_four_source_all14_validation_sc-16g-2/supervise_native_screen.py
++++ v135_worker1_leader_C303_c5_c6_c8_all14_validation_sc-16g-2/supervise_native_screen.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import json,sys,hashlib,subprocess,os,datetime
+-r=Path(sys.argv[1]);m=json.loads((r/'native_source_manifest.json').read_text());plan=json.loads((r/'native_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v133_all14_once';shared=m['shared_identity_document'];doc=Path(shared['path']);assert doc.is_file() and hashlib.sha256(doc.read_bytes()).hexdigest()==shared['sha256'];inputs=json.loads(doc.read_text())['files'];assert len(inputs)==6
++r=Path(sys.argv[1]);m=json.loads((r/'native_source_manifest.json').read_text());plan=json.loads((r/'native_execution_plan.json').read_text());assert plan['phase']=='leader_GO_v135_all14_once';shared=m['shared_identity_document'];doc=Path(shared['path']);assert doc.is_file() and hashlib.sha256(doc.read_bytes()).hexdigest()==shared['sha256'];inputs=json.loads(doc.read_text())['files'];assert len(inputs)==6
+ for relative,sha in inputs.items():f=Path('/root/tilelang-metax')/relative;assert f.is_file() and hashlib.sha256(f.read_bytes()).hexdigest()==sha
+ for x in list(m['sources'].values())+list(m['tools'].values()):assert Path(x['path']).is_file() and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256']
+ assert not (r/'master.pid').exists() and not (r/'launch_once.lock').exists();cmd=[m['tools']['python']['path'],'-S','-u',m['tools']['bounded_controller']['path']]

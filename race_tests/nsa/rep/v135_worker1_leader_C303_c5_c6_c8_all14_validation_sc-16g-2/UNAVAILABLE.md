@@ -1,0 +1,1 @@
+Full16/224 formalperformance unavailable:13cleanprocesses182refs(C56) thenjob14CB13 native−15/unknownheavyguard/0refs;15/16notstarted. AllcompletedrawCSV retained/no mediancomplete/no pooling/fill/retry. No newmetadata/SDK/profile/trace/OJ/promotion. Unknownowner643787originUNKNOWN/noinspectioncmd-env/signal. Source/guards/budget unchanged,SCnewGPUonholduntilleaderstateclear.
