@@ -35,7 +35,7 @@
     "installed_identically_both_containers": true
   },
   "schema": 3,
-  "updated_at_utc": "2026-10-03T09:11:27.755401+00:00",
+  "updated_at_utc": "2026-10-03T09:12:58.576885+00:00",
   "all14_nonregression": "Observed OJ score nonregression for user-attributed v303 run: all14AC/1212 vs84 1204; exact uploadedSHA and repeated latency nonregression unproven",
   "worker1": {
     "cases": [
@@ -48,12 +48,12 @@
     "last_closed_source_commit": "c9dd8149eeb6afc5cea76ab018ac5721b38bbeda",
     "last_result": "Original145 stage0,0,0,0,1/allouter1; narrowdynamicK/V base proven, broadclassifier caught3normal latepointerconstants; no performanceverdict",
     "active_version": "v146 CPU semanticlatepointer classification / v145 source",
-    "stage": "v146 actual original CPU wait0/new semanticgate0/17deps unchanged/old145gate1 retained; nativeTEXT pending",
+    "stage": "v146 original C10 fixed16 native authorized for fixed09:20UTC window, fresh admission once",
     "authorized_scope": "One frozen CPU helper with original wait; prepare nativeTEXT only, no compiler/JIT/export/GPU/native",
-    "native_GO": false,
+    "native_GO": true,
     "source_audit": "integration/reviews/v145-c10-source-leader-audit.json",
     "candidate_sha256": "1bbb16fcae0c0e78833d6090c4edf9c6368c1eeedbffe7aef24d8d82bfdac291",
-    "approval": "integration/reviews/v145-c10-compile-approval.json",
+    "approval": "integration/reviews/v146-c10-native-approval.json",
     "runtime_audit": "integration/reviews/v143-c12-failed-native-leader-audit.json",
     "source_SHA": "1bbb16fcae0c0e78833d6090c4edf9c6368c1eeedbffe7aef24d8d82bfdac291",
     "source_header": "v145",
@@ -107,7 +107,8 @@
     "parent_IR_GO": false,
     "CPU_GO": false,
     "CPU_approval": "integration/reviews/v146-c10-CPU-approval.json",
-    "CPU_actual_audit": "integration/reviews/v146-c10-CPU-actual-leader-audit.json"
+    "CPU_actual_audit": "integration/reviews/v146-c10-CPU-actual-leader-audit.json",
+    "earliest_start_UTC": "2026-10-03T09:20:00Z"
   },
   "worker2": {
     "cases": [
@@ -135,7 +136,7 @@
       2048
     ],
     "old217_mechanism_gate": 1,
-    "stage": "v244 frozen finite five-stage compilation authorized once; native disabled pending actual RN/IR review",
+    "stage": "v244 unique five-stage compilation actually started; original owner handle retained",
     "authorized_scope": "One fresh parent/candidate metadata + CPU scope + first candidate resource/O3IR + actual CPU audit under original Sub2 guards",
     "native_GO": false,
     "approval": "integration/reviews/v244-c8-compile-approval.json",
@@ -156,15 +157,17 @@
     "next_control_source": "C303985ffd current OJ1212 submission",
     "parent_IR_source_close_reported": "46cb7b0a31af3005ce9e5f070af6492a5458db37",
     "parent_IR_source_close_commit": "46cb7b0a31af3005ce9e5f070af6492a5458db37",
-    "original_owner_PID": 514258,
-    "original_owner_starttime": 338664412,
+    "original_owner_PID": 520809,
+    "original_owner_starttime": 339059624,
     "controller_PID": 514260,
     "controller_starttime": 338664420,
     "last_live_verified_utc": "2026-10-03T04:29:37.093636+00:00",
-    "active_PID": null,
+    "active_PID": 520809,
     "original_owner_terminal_wait0": true,
     "last_closed_source_commit_local": "f60b0f2193d9cafbca85e4dae463ad50488c096c",
-    "GO_plan_SHA": "4b1f3e29a9ca3d4572e0d64faddcc17e6cd3672963fd991565291600a2ead9ed"
+    "GO_plan_SHA": "b53ce072f1a8005c6f782b53f77cf31f7e87029b7d3054ad4af5bfb6a3d32e6e",
+    "holder_PID": 520807,
+    "holder_starttime": 339059597
   },
   "retained_measured_gains": {
     "version": "v113 tested v115",
