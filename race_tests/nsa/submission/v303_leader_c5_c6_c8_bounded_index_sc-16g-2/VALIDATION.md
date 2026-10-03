@@ -17,3 +17,9 @@ Integrated all14 original16fresh/224ref protocol v135 is being prepared; no full
 SC first protocol ended at job14: unknown visible Python PID643787 >1GiB RSS triggered guard, verified owned CB13 control terminated−15. 13clean original processes yielded182PASS incl56C; jobs15/16notstarted. Four original outer/controller/diag exits1/OOM13 unchanged. Leader247closedhash1701samples independently verified. No retry/padding/no-regclaim, unknown notsignaled/cmd/env notread.
 
 Sub2 first independent v233 original16fresh/all14/224 protocol is authorized and live with own3GiB28/OOM3 guards, sameimmutable985f source. No samples pooled with incompleteSC orlocalscreens, no bestpromotion/OJ claim.
+
+## Independent Sub2 v233 completed, not promoted
+
+16 originalfresh processes,56candidate/224inclusive fullnaive PASS, allnative/outer originalwaits0/OOM3 unchanged. Leader194closedhash/16rawCSV/2030memorysamples independently verified. C6 median86.623 vsCB1394.2565us (-8.098646%), bothrounds negative and nonoverlap. C5 median-0.535418%/C8-1.257814%vsCB13 withoverlappingranges.
+
+Performance nonregression UNPROVEN: median positive cases2,9 vsCB13 and1,2,7 vsP84; case2+2.348196%vsP84. Anypositive round/median cases1,2,3,7,9,14 preserved. No outlierremoved, no credit for unchanged C13 drop. SC135 incomplete remains independent. Best source not promoted, no OJ claim. Full raw table: https://github.com/Ca1iber/cowork/blob/main/integration/reviews/v233-full14-results.md .
