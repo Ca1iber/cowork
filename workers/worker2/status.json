@@ -1,7 +1,7 @@
 {
   "worker": "worker2",
-  "timestamp_utc": "2026-10-03T02:13:48.328939+00:00",
-  "state": "v236_C303_based_C3_source_only_prepared_awaitreview",
+  "timestamp_utc": "2026-10-03T02:29:33.579576+00:00",
+  "state": "v236_frozen_finite_compile_prepared_awaitGO",
   "container": "subagent2",
   "hostname": "6b3727803ca4",
   "source_branch": "exp/nsa-worker2-s1-from-v084",
@@ -21,7 +21,7 @@
   ],
   "current": {
     "version": "v236",
-    "stage": "SOURCE_ONLY_CPU_checked_no_heavy",
+    "stage": "COMPILE_PREPARED_NO_ACTUAL_HEAVY_GO",
     "sourceSHA": "23ab027ee21db05b599988927ddb6057cb18b77fe5a5201c47beafd88ce87587",
     "source_header": 236,
     "base_C303SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
@@ -56,7 +56,19 @@
     ],
     "live_processes": 0,
     "new_native_helpers_prepared": false,
-    "no_ISA_cost_or_latency_claim": true
+    "no_ISA_cost_or_latency_claim": true,
+    "compile_package": "/tmp/nsa_worker2_v236_compile_preparation_23ab027e.tar.gz",
+    "compile_package_SHA": "7aadf0564bb53bb10fd462e94cbdc22723432dfca611e45bc2d7b11691ce7958",
+    "stdlib_preflight_actualwait": 0,
+    "actual_import_JIT_SDK_GPU_native_profile": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "native_helpers_prepared": false
   },
   "history": {
     "closed_version": "v201_worker2_c5_direct_output_subagent2",
@@ -2059,10 +2071,61 @@
       ],
       "future_source_base_C303SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
       "candidate_GO": false
+    },
+    "v236_source_snapshot": {
+      "version": "v236",
+      "stage": "COMPILE_PREPARED_NO_ACTUAL_HEAVY_GO",
+      "sourceSHA": "23ab027ee21db05b599988927ddb6057cb18b77fe5a5201c47beafd88ce87587",
+      "source_header": 236,
+      "base_C303SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+      "complete_C303prefix24": true,
+      "only_case": 3,
+      "full_decorated_factory_inverse": true,
+      "original_OJ_source_actualwait": 0,
+      "inverse_CPU_actualwait": 0,
+      "unchanged_source_cases": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "other13_devicecode": "UNAVAILABLE_notexported",
+      "actual_JIT_SDK_attention_refs_native_profile": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "live_processes": 0,
+      "new_native_helpers_prepared": false,
+      "no_ISA_cost_or_latency_claim": true,
+      "compile_package": "/tmp/nsa_worker2_v236_compile_preparation_23ab027e.tar.gz",
+      "compile_package_SHA": "7aadf0564bb53bb10fd462e94cbdc22723432dfca611e45bc2d7b11691ce7958",
+      "stdlib_preflight_actualwait": 0,
+      "actual_import_JIT_SDK_GPU_native_profile": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "native_helpers_prepared": false
     }
   },
   "peer_review_current": "v104peer5suggestionssent; advisoryonly; nopeerfilesedited",
-  "next_step": "Leader actualsource review; no JIT/SDK/GPU/native/profile or newnative preparation authorization",
+  "next_step": "Leader actualcompilehelper review; no import/JIT/SDK/GPU or nativepreparation untilseparate authorization",
   "job_pid": null,
   "proposed_diagnostic": {
     "version": "v203",
