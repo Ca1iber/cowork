@@ -1,0 +1,61 @@
+{
+  "protocol": "v240 original C7 fixed4C16 complete",
+  "source_header": "v239",
+  "source_sha256": "69a7036e0f34cc61260a67c43ad3f6d864d210b33a77c5537b4283a69b7eaa3a",
+  "closure_inventories_verified": {
+    "v239_worker2_case7_Voperand4_stream_subagent2": 80,
+    "v240_worker2_case7_existing_V4_codegen_diagnostic_subagent2": 274
+  },
+  "correctness_C_total": [
+    4,
+    16
+  ],
+  "allnative_outer_truewait": 0,
+  "raw_us": {
+    "baseline_v28": [
+      "32.225000",
+      "30.838000",
+      "30.879000",
+      "30.945000"
+    ],
+    "candidate_C239": [
+      "24.637000",
+      "24.371000",
+      "24.279000",
+      "24.356000"
+    ],
+    "parent_C303": [
+      "24.643000",
+      "24.755000",
+      "24.320000",
+      "24.346000"
+    ],
+    "parent_v084": [
+      "24.187000",
+      "24.202000",
+      "24.525000",
+      "24.422000"
+    ]
+  },
+  "medians_us": {
+    "baseline_v28": "30.912000",
+    "candidate_C239": "24.363500",
+    "parent_C303": "24.494500",
+    "parent_v084": "24.312000"
+  },
+  "candidate_vs_current303_pct": "-0.5348139378227765416726203800",
+  "rounds_vs_current303_pct": [
+    "-0.7895056480019433985181586300",
+    "-0.0636995027329141495088973800"
+  ],
+  "candidate_vs84_pct": "0.211829549193813754524514600",
+  "ranges_overlap_current303": true,
+  "decision": "INCONCLUSIVE under preregistered gate; no promotion/retry",
+  "native_memory_samples": 1318,
+  "old239_metadata_samples": 88,
+  "diagnostic240_samples": 10,
+  "native_sampled_peak_bytes": 23954075648,
+  "OOM": 3,
+  "limits": "source and actualIRstream valid, resourcecounts unchanged; stable runtime gain unproven; no othercase or crossmachine inference",
+  "best_submission": "v303 unchanged"
+}
