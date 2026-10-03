@@ -1,0 +1,38 @@
+{
+  "UTC": "2026-10-03T14:30:22.711475+00:00",
+  "inventory67_SHA_verified": true,
+  "original_metadata_two_pairs_and_CPU_scope_waits": [
+    0,
+    1
+  ],
+  "original_fourouter_waits": 1,
+  "original_scope_failure": "declcanon first#pragma boundary included block_start initializer/den assignment/if; read-only source inspection confirms",
+  "corrected_scope_separate_readonly_result": {
+    "whole_CPP_only_exactQK_qalloc_alpha_declorder": true,
+    "wholehost_same": true,
+    "actual_globalK16B_vectors": 131072,
+    "syntax_sync6": true,
+    "model_sync7_not_IRcount": true,
+    "addresses": [
+      "((((((((int)blockIdx.y) * 131072) + (part_1 * 1024)) + ((((int)threadIdx.x) >> 3) * 128)) + (min(block_start, 992) * 128)) + (k_plane * 64)) + ((((int)threadIdx.x) & 7) * 8))",
+      "(((((part_1 * 512) + ((((int)threadIdx.x) >> 3) * 64)) + (((((int)threadIdx.x) & 7) ^ (((int)threadIdx.x) >> 3)) * 8)) + (((pack_1 ^ (part_1 & 1)) ^ 0) * 4)) + 2048)",
+      "((((k_plane * 1024) + ((((int)threadIdx.x) & 15) * 64)) + ((((chunk * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ k_plane) * 4))",
+      "(((((key_tile * 1024) + ((((int)threadIdx.x) & 15) * 64)) + ((((chunk * 2) + (((int)threadIdx.x) >> 5)) ^ (((int)threadIdx.x) & 7)) * 8)) + (((((((int)threadIdx.x) & 31) >> 4) ^ ((((int)threadIdx.x) & 15) >> 3)) ^ 0) * 4)) + 2048)"
+    ],
+    "all_other_FP_V_Num_Out_scope_exact": true
+  },
+  "declaration_lines_only": [
+    11,
+    24
+  ],
+  "prologue_lines_preserved": [
+    25,
+    27
+  ],
+  "sourceSHA": "7cb6b846b21be3451b38c731150486d098779e1e7b7920d84efd99b0118c488f",
+  "candidateCPP_SHA": "cd615de5b13249f92ad808f406ffe9e6b05211e9b55f83157087d7269926735a",
+  "host_same": true,
+  "original_helper_gate_logs_unchanged": true,
+  "newJIT_metadata_SDK_GPU": 0,
+  "decision": "prepare separate v151 CPUscope + first unstarted SDK/IR/observer TEXT only; no execution GO yet"
+}
