@@ -1,0 +1,174 @@
+{
+  "source_commit": "92ac5b619190fac6eed4f72abfb9264e8b1dc95c",
+  "source_bundle": "/tmp/nsa_worker2_code_92ac5b619190.bundle",
+  "bundle_bytes": 427500,
+  "bundle_SHA": "bbe96db744a449ffd20dc09c8c88785884ab026914e9d070580ca61f00b410ec",
+  "scope_inventory": [
+    288,
+    287
+  ],
+  "result": {
+    "version": "v236_worker2_case3_shared_den_reciprocal_subagent2",
+    "status": "closed_rejected_no_net_gain_vs_currentC303",
+    "sourceSHA": "23ab027ee21db05b599988927ddb6057cb18b77fe5a5201c47beafd88ce87587",
+    "source_header": 236,
+    "immutable_base_C303SHA": "985ffd6e24aec784f9abe8ba1a12d45de60476da93a432156d4366005be76bae",
+    "onlycase": 3,
+    "other13_source_unchanged": true,
+    "other13_devicecode_and_performance": "UNAVAILABLE_notexported_orbenchmarked",
+    "actual_compile_stage_waits": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "actual_compile_outerwait": 0,
+    "actual_native_job_waits": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "actual_native_outerwait": 0,
+    "actual_clean_C_inclusive": [
+      4,
+      16
+    ],
+    "native_samples": 1266,
+    "compile_samples": 93,
+    "OOM": [
+      3,
+      3
+    ],
+    "observed_peak_bytes": 23627894784,
+    "compiled_parent_candidate_resources": [
+      [
+        66,
+        20,
+        7,
+        0,
+        4096
+      ],
+      [
+        66,
+        20,
+        7,
+        0,
+        4096
+      ]
+    ],
+    "actualLLVM": "oneFP32fdiv1/den shared32fmulcontract;16MMA7warp4bpermute/0allocaAS5",
+    "comparison": {
+      "case": 3,
+      "samples_us": {
+        "baseline_v28": [
+          11.679,
+          12.037,
+          12.058,
+          12.022
+        ],
+        "parent_v084": [
+          10.153,
+          9.861,
+          10.045,
+          10.116999999999999
+        ],
+        "parent_C303": [
+          10.112,
+          10.071,
+          10.168,
+          10.127
+        ],
+        "candidate_C236": [
+          10.112,
+          10.229999999999999,
+          10.229999999999999,
+          10.086
+        ]
+      },
+      "medians_us": {
+        "baseline_v28": 12.0295,
+        "parent_v084": 10.081,
+        "parent_C303": 10.1195,
+        "candidate_C236": 10.171
+      },
+      "ranges_us": {
+        "baseline_v28": [
+          11.679,
+          12.058
+        ],
+        "parent_v084": [
+          9.861,
+          10.153
+        ],
+        "parent_C303": [
+          10.071,
+          10.168
+        ],
+        "candidate_C236": [
+          10.086,
+          10.229999999999999
+        ]
+      },
+      "candidate_delta_pct": {
+        "parent_C303": 0.5089184248233458,
+        "parent_v084": 0.8927685745461655,
+        "baseline_v28": -15.449519930171673
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "medians_us": {
+            "baseline_v28": 11.858,
+            "parent_v084": 10.007000000000001,
+            "parent_C303": 10.0915,
+            "candidate_C236": 10.171
+          },
+          "candidate_delta_pct": {
+            "parent_C303": 0.7877917058910944,
+            "parent_v084": 1.6388528030378602,
+            "baseline_v28": -14.2266824085006
+          }
+        },
+        {
+          "round": 2,
+          "medians_us": {
+            "baseline_v28": 12.04,
+            "parent_v084": 10.081,
+            "parent_C303": 10.1475,
+            "candidate_C236": 10.158
+          },
+          "candidate_delta_pct": {
+            "parent_C303": 0.10347376201034209,
+            "parent_v084": 0.7638131137783999,
+            "baseline_v28": -15.631229235880395
+          }
+        }
+      ],
+      "ranges_overlap": {
+        "parent_C303": true,
+        "parent_v084": true,
+        "baseline_v28": false
+      },
+      "positive_median_or_round_vs_C303_P84": true
+    },
+    "empty_nonfinite_arbitrary_contract": "UNAVAILABLE_originalselectedreference_only",
+    "allraw_outlier_positives_overlap_retained": true,
+    "ISA_physicalcost_or_cause": "UNKNOWN",
+    "newfull14_profile_Trace_extraSDK": "none",
+    "promotion_retry": false,
+    "current_live_handles": 0
+  }
+}
