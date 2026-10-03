@@ -1,0 +1,33 @@
+{
+  "scope": "existing exact C3 IR readonly",
+  "IR_SHA": "a39bbe7ecdfff9b81ac47a715b84a4b62a1c55b75ab9535726b23a68618a69f1",
+  "all32_fdiv_denominator": "%add508",
+  "denominator_definition_chain": [
+    {
+      "line": 789,
+      "instruction": "%add508 = fadd contract float %add503, %120, !dbg !229"
+    },
+    {
+      "line": 777,
+      "instruction": "%add503 = fadd contract float %denominator.sroa.0.0, %114, !dbg !215"
+    },
+    {
+      "line": 788,
+      "instruction": "%120 = bitcast i32 %119 to float, !dbg !228"
+    },
+    {
+      "line": 765,
+      "instruction": "%denominator.sroa.0.0 = phi float [ 0.000000e+00, %entry ], [ %add348, %if.then ], !dbg !203"
+    },
+    {
+      "line": 776,
+      "instruction": "%114 = bitcast i32 %113 to float, !dbg !214"
+    },
+    {
+      "line": 787,
+      "instruction": "%119 = tail call noundef i32 @llvm.mxc.bsm.bpermute(i32 %shl.i.i796, i32 %115), !dbg !227"
+    }
+  ],
+  "depth_limit": "three readonly SSA layers; original whole IR retained",
+  "LLVM_named_reciprocal0_not_finalISA_proof": true
+}

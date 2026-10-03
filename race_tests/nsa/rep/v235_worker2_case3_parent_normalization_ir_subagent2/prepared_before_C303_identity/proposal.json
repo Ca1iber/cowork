@@ -1,0 +1,72 @@
+{
+  "id": "v235_worker2_case3_parent_normalization_ir_subagent2",
+  "stage": "PREPARATION_ONLY",
+  "goal": "Observe exact current C3 parent normalized fdiv/reciprocal representation before any candidate source edit",
+  "one_command": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__",
+    "-maca-device-only",
+    "-S",
+    "-emit-llvm",
+    "-o",
+    "/root/tilelang-metax/race_tests/nsa/rep/v235_worker2_case3_parent_normalization_ir_subagent2/case3_parent_optimized.device.ll",
+    "/root/tilelang-metax/race_tests/nsa/rep/v200_worker2_baseline_profile_subagent2/codegen/parent_v084/case3_stage1.device.cpp"
+  ],
+  "scope": "one stock SDK O3 IR on existing exact parentCPP814735; no Tilelang/Torch import/metadata/resource/NSA/native/profile/Trace",
+  "guards": {
+    "id": "v235_worker2_case3_parent_normalization_ir_subagent2",
+    "heavy_lock": "/tmp/nsa_subagent2_heavy.lock",
+    "admission_usage_bytes": 3221225472,
+    "unknown_heavy_RSS_bytes": 1073741824,
+    "runtime_stop_usage_bytes": 30064771072,
+    "max_seconds": 600,
+    "max_samples": 12000,
+    "period_seconds": 0.5,
+    "parent_evidence_GO": false,
+    "source_kernel_edit_GO": false,
+    "native_GO": false,
+    "only_target_key": [
+      1,
+      256,
+      1,
+      16,
+      128,
+      1,
+      16,
+      true
+    ],
+    "numerical_parent": "/root/tilelang-metax/race_tests/nsa/submission/v084_codex_power_s1_d32_d128_pair_sc-16g-2/submission.py",
+    "parent_sha256": "4c674c79e4128f3c9f233fa6694c1a8f825d1048293accd9250fb5e2d86472b0",
+    "compile_GO": false,
+    "baseline_budget_bytes": 3221225472,
+    "additional_runtime_engineering_estimate_bytes": 26843545600,
+    "reserve_bytes": 4294967296,
+    "budget_sum_bytes": 34359738368,
+    "budget_is_upper_bound": false
+  },
+  "owner_flow": [
+    "existingstdlib preflight0",
+    "one originalPopen held bounded backend observer",
+    "one stockSDK child originalPopen truewait",
+    "only after observer0 CPU kernel-scoped arithmetic stats"
+  ],
+  "interpretation": [
+    "fdiv/rcp LLVM counts and flags are compiled representation, not final ISA cost/SFU bottleneck or speed",
+    "actual parent may already share reciprocal; retain this falsifier, do not create candidate here",
+    "empty/missing/SDKfailure/guard stops once without retry or newsettings"
+  ],
+  "input_provenance": "sc v111 original P84 C3 export; independently currentCB13 decoratedC3 AST same; own219 localresource66MT20ST/max7/stack0/dyn4096; no crosscardtiming",
+  "new_source_GPU_now": [
+    0,
+    0
+  ],
+  "peer": "worker1 requires actual parent flags/IR; extra rounding and emptyNaN separate from correctness; no peer code/plan edits"
+}

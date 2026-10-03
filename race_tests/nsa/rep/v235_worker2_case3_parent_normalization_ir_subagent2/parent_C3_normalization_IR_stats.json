@@ -1,0 +1,365 @@
+{
+  "gate": 0,
+  "scope": "exact existing parent C3 kernel optimized LLVM representation only; no finalISA cost or speed inference",
+  "input_CPP_SHA": "814735db527ddf73362721a41d5ffd6fe9d070e2c190d461900b06e9cb6ff671",
+  "IR_SHA": "a39bbe7ecdfff9b81ac47a715b84a4b62a1c55b75ab9535726b23a68618a69f1",
+  "kernel_header": "define protected metaxgpu_kernel void @native_sparse_attention_kernel(ptr addrspace(1) noalias nocapture noundef readonly %Indices.coerce, ptr addrspace(4) noalias nocapture noundef readonly %K.coerce, ptr addrspace(1) noalias nocapture noundef writeonly %Output.coerce, ptr addrspace(4) noalias nocapture noundef readonly %Q.coerce, ptr addrspace(4) noalias nocapture noundef readonly %V.coerce) local_unnamed_addr #3 !dbg !40 {",
+  "kernel_floating_opcode_counts": {
+    "fsub": 4,
+    "fmul": 8,
+    "fadd": 15,
+    "fdiv": 32
+  },
+  "fdiv_count": 32,
+  "fdiv": [
+    {
+      "line": 794,
+      "instruction": "%div = fdiv contract float %numerator.sroa.0.0.vec.extract, %add508, !dbg !231",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.0.0.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 795,
+      "instruction": "%div528 = fdiv contract float %numerator.sroa.0.4.vec.extract, %add508, !dbg !232",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.0.4.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 796,
+      "instruction": "%div532 = fdiv contract float %numerator.sroa.0.8.vec.extract, %add508, !dbg !233",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.0.8.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 797,
+      "instruction": "%div536 = fdiv contract float %numerator.sroa.0.12.vec.extract, %add508, !dbg !234",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.0.12.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 802,
+      "instruction": "%div.1 = fdiv contract float %numerator.sroa.20.16.vec.extract, %add508, !dbg !231",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.20.16.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 803,
+      "instruction": "%div528.1 = fdiv contract float %numerator.sroa.20.20.vec.extract, %add508, !dbg !232",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.20.20.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 804,
+      "instruction": "%div532.1 = fdiv contract float %numerator.sroa.20.24.vec.extract, %add508, !dbg !233",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.20.24.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 805,
+      "instruction": "%div536.1 = fdiv contract float %numerator.sroa.20.28.vec.extract, %add508, !dbg !234",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.20.28.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 810,
+      "instruction": "%div.2 = fdiv contract float %numerator.sroa.38.32.vec.extract, %add508, !dbg !231",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.38.32.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 811,
+      "instruction": "%div528.2 = fdiv contract float %numerator.sroa.38.36.vec.extract, %add508, !dbg !232",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.38.36.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 812,
+      "instruction": "%div532.2 = fdiv contract float %numerator.sroa.38.40.vec.extract, %add508, !dbg !233",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.38.40.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 813,
+      "instruction": "%div536.2 = fdiv contract float %numerator.sroa.38.44.vec.extract, %add508, !dbg !234",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.38.44.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 818,
+      "instruction": "%div.3 = fdiv contract float %numerator.sroa.56.48.vec.extract, %add508, !dbg !231",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.56.48.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 819,
+      "instruction": "%div528.3 = fdiv contract float %numerator.sroa.56.52.vec.extract, %add508, !dbg !232",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.56.52.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 820,
+      "instruction": "%div532.3 = fdiv contract float %numerator.sroa.56.56.vec.extract, %add508, !dbg !233",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.56.56.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 821,
+      "instruction": "%div536.3 = fdiv contract float %numerator.sroa.56.60.vec.extract, %add508, !dbg !234",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.56.60.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 826,
+      "instruction": "%div.4 = fdiv contract float %numerator.sroa.74.64.vec.extract, %add508, !dbg !231",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.74.64.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 827,
+      "instruction": "%div528.4 = fdiv contract float %numerator.sroa.74.68.vec.extract, %add508, !dbg !232",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.74.68.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 828,
+      "instruction": "%div532.4 = fdiv contract float %numerator.sroa.74.72.vec.extract, %add508, !dbg !233",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.74.72.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 829,
+      "instruction": "%div536.4 = fdiv contract float %numerator.sroa.74.76.vec.extract, %add508, !dbg !234",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.74.76.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 834,
+      "instruction": "%div.5 = fdiv contract float %numerator.sroa.92.80.vec.extract, %add508, !dbg !231",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.92.80.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 835,
+      "instruction": "%div528.5 = fdiv contract float %numerator.sroa.92.84.vec.extract, %add508, !dbg !232",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.92.84.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 836,
+      "instruction": "%div532.5 = fdiv contract float %numerator.sroa.92.88.vec.extract, %add508, !dbg !233",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.92.88.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 837,
+      "instruction": "%div536.5 = fdiv contract float %numerator.sroa.92.92.vec.extract, %add508, !dbg !234",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.92.92.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 842,
+      "instruction": "%div.6 = fdiv contract float %numerator.sroa.110.96.vec.extract, %add508, !dbg !231",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.110.96.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 843,
+      "instruction": "%div528.6 = fdiv contract float %numerator.sroa.110.100.vec.extract, %add508, !dbg !232",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.110.100.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 844,
+      "instruction": "%div532.6 = fdiv contract float %numerator.sroa.110.104.vec.extract, %add508, !dbg !233",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.110.104.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 845,
+      "instruction": "%div536.6 = fdiv contract float %numerator.sroa.110.108.vec.extract, %add508, !dbg !234",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.110.108.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 850,
+      "instruction": "%div.7 = fdiv contract float %numerator.sroa.128.112.vec.extract, %add508, !dbg !231",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.128.112.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 851,
+      "instruction": "%div528.7 = fdiv contract float %numerator.sroa.128.116.vec.extract, %add508, !dbg !232",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.128.116.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 852,
+      "instruction": "%div532.7 = fdiv contract float %numerator.sroa.128.120.vec.extract, %add508, !dbg !233",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.128.120.vec.extract",
+      "denominator": "%add508"
+    },
+    {
+      "line": 853,
+      "instruction": "%div536.7 = fdiv contract float %numerator.sroa.128.124.vec.extract, %add508, !dbg !234",
+      "scalar_parse_available": true,
+      "flags": [
+        "contract"
+      ],
+      "numerator": "%numerator.sroa.128.124.vec.extract",
+      "denominator": "%add508"
+    }
+  ],
+  "common_denominator_groups": {
+    "%add508": 32
+  },
+  "fdiv_flags_counts": {
+    "contract": 32
+  },
+  "rcp_or_recip_named_call_count": 0,
+  "rcp_or_recip_named_calls": [],
+  "flags_from_stock_command": [
+    "/opt/maca/mxgpu_llvm/bin/mxcc",
+    "-x",
+    "maca",
+    "-O3",
+    "-lineinfo",
+    "--offload-arch=xcore1000",
+    "-std=c++17",
+    "-I/root/tilelang-metax/src",
+    "-use-fast-math",
+    "-D__FAST_HALF_CVT__"
+  ],
+  "finalISA_shared_rcp": "UNAVAILABLE",
+  "new_candidate_source_attention_fullrefs_native_profile": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "instruction_count_is_not_bottleneck": true
+}

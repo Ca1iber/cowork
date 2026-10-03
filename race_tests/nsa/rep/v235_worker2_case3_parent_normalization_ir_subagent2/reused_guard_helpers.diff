@@ -1,0 +1,10 @@
+--- v234_worker2_case2_bounded_kv_index_subagent2/bounded_utils.py
++++ v235_worker2_case3_parent_normalization_ir_subagent2/bounded_utils.py
+@@ -1,6 +1,6 @@
+ from pathlib import Path
+ import os,sys,json,time,datetime,subprocess,fcntl,signal,re,hashlib
+-root=Path('/root/tilelang-metax');v='v234_worker2_case2_bounded_kv_index_subagent2';r=root/'race_tests/nsa/rep'/v;h=root/'race_tests/nsa/hack'/v
++root=Path('/root/tilelang-metax');v='v235_worker2_case3_parent_normalization_ir_subagent2';r=root/'race_tests/nsa/rep'/v;h=root/'race_tests/nsa/hack'/v
+ plan=json.loads((r/'bounded_runtime_plan.json').read_text());cgroot=Path('/sys/fs/cgroup/memory')
+ def info(pid):
+  p=Path('/proc')/str(pid)
